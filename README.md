@@ -32,7 +32,7 @@ alt="GitHub issues">
 ![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11-intro.gif)
   
 ## Features
-A customer asked me to quickly present Windows 11. So i threw some of the blog entries from [theverge](https://www.theverge.com), [windowscentral](https://www.windowscentral.com) and others into an form and added a magic - feature demonstration - button. Now you can navigate your way through a short Windows 11 tour using this magic button, which only works under Windows 11. Under windows 10 you can of course also click through the app, but with a little less fun. 
+A customer asked me to quickly present Windows 11. So i threw some of the blog entries from [theverge](https://www.theverge.com), [windowscentral](https://www.windowscentral.com) and others into an form and added a magic - feature demonstration - button. Now you can navigate your way through a short Windows 11 tour using this magic button, which only works under Windows 11. Under Windows 10 you can of course also click through the app, but with a little less fun. 
   
 **An internet connection is required to use the app**
   
