@@ -15,7 +15,7 @@ alt="GitHub issues">
 
 # ThisIsWin11
 
-### Take a tour of what's new in Windows 11
+### Take a tour of what's new in Windows 11 and apply the right configuration
 
 
 ![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11-intro.gif)
