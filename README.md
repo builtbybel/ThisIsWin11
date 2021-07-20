@@ -27,7 +27,7 @@ You can of course also use the app and click through under Windows 10, but with 
   
 **An internet connection is required to use the app.**
   
- For the future i plan to open the possibility to configure Windows 11 in the wizard as well. Basic things like background image, privacy etc.
+ For the future i plan to open the possibility to configure Windows 11 in the wizard as well. Basic things like background image, privacy etc, provide tweaks to get better started e.g. how to get classic context menu of file explorer back and community optimizations.
   
  ## Download
 - (Latest release) [Download](https://github.com/builtbybel/ThisIsWin11/releases)
