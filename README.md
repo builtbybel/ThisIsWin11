@@ -1,28 +1,25 @@
-<h1 align="center">
-  <br>
-  <a href="http://www.builtbybel.com"><img src="https://raw.githubusercontent.com/builtbybel/ThisIsWin11/main/src/TIW11/AppIcon.ico" alt="ThisIsWin11" width="200"></a>
-  <br>
-  ThisIsWin11
-  <br>
-</h1>
-
-<h2 align="center">Take a tour of what's new in Windows 11</h2>
-
-<p align="center">
 <a href="https://github.com/builtbybel/ReadySunValley/releases/latest" target="_blank">
 <img alt="Latest GitHub release" src="https://img.shields.io/github/release/builtbybel/thisiswin11.svg?style=flat-square" />
-</a>
 
-<a href="https://github.com/builtbybel/ReadySunValley/releases" target="_blank">
-<img alt="Downloads on GitHub" src="https://img.shields.io/github/downloads/builtbybel/thisiswin11/total.svg?style=flat-square" />
-</a>
-
-<a href="https://github.com/builtbybel/ReadySunValley/commits/master">
+ <a href="https://github.com/builtbybel/ReadySunValley/commits/master">
 <img src="https://img.shields.io/github/last-commit/builtbybel/thisiswin11.svg?style=flat-square&logo=github&logoColor=white"
 alt="GitHub last commit">
 <a href="https://github.com/builtbybel/ReadySunValley/issues">
 <img src="https://img.shields.io/github/issues-raw/builtbybel/thisiswin11.svg?style=flat-square&logo=github&logoColor=white"
 alt="GitHub issues">
+  
+
+<a href="https://github.com/builtbybel/ReadySunValley/releases" target="_blank">
+<img alt="Downloads on GitHub" src="https://img.shields.io/github/downloads/builtbybel/thisiswin11/total.svg?style=flat-square" />
+</a>
+
+# ThisIsWin11
+
+Take a tour of what's new in Windows 11
+
+
+
+
 </p>
   <p align="center">
   <a href="#features">Features</a> •
