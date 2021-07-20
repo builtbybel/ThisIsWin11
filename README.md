@@ -13,7 +13,7 @@ alt="GitHub issues">
 <img alt="Downloads on GitHub" src="https://img.shields.io/github/downloads/builtbybel/thisiswin11/total.svg?style=flat-square" />
 </a>
 
-# ThisIsWin11
+# ThisIsWin11 (Preview)
 
 ### Take a tour of what's new in Windows 11 and apply the right configuration the quick way
 
