@@ -1,1 +1,4 @@
-Nothing new.
+
+- Initial release
+- Refactored code to feature plans (also allowing to configure Win11)
+- Refactored UI
