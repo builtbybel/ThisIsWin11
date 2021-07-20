@@ -36,5 +36,7 @@ A customer asked me to quickly present Windows 11. So i threw some of the news f
   
 **An internet connection is required to use the app**
   
+ For the future i plan to open the possibility to configure Windows 11 in the wizard as well. Basic things like background image, privacy etc.
+  
  ## Download
 - (Latest release) [Download](https://github.com/builtbybel/ThisIsWin11/releases)
