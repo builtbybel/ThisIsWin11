@@ -15,17 +15,9 @@ alt="GitHub issues">
 
 # ThisIsWin11
 
-Take a tour of what's new in Windows 11
+### Take a tour of what's new in Windows 11
 
 
-
-
-</p>
-  <p align="center">
-  <a href="#features">Features</a> •
-  <a href="#download">Download</a>
-</p>
-  
 ![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11-intro.gif)
   
 ## Features
