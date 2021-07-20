@@ -23,7 +23,7 @@ alt="GitHub issues">
 ## Features
 A customer asked me to quickly present Windows 11. So i threw some of the news from [theverge](https://www.theverge.com), [windowscentral](https://www.windowscentral.com) and others into an form and added a magic - feature demonstration - button. Now you can navigate your way through a short Windows 11 tour using this magic button, which only works under Windows 11. 
  
-You can of course also use the app and click thorough under Windows 10, but with a little less fun. 
+You can of course also use the app and click through under Windows 10, but with a little less fun. 
   
 **An internet connection is required to use the app.**
   
