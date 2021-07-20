@@ -16,7 +16,7 @@
         WallpapersNSounds,
         LockScreen,
         TouchKeyboard,
-        AnroidApps,
+        AndroidApps,
         Thanks
     }
 }

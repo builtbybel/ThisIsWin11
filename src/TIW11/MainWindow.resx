@@ -120,23 +120,7 @@
   <metadata name="tt.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="tt.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="menuMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>77, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="assetOpenGitHub.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAiJJREFUSEvd
-        lU1r1FAYheMHSgUVVyIIBVvQYW5SsG66c9GFqC0qfiG69leoWXRyb6R2oRuhIH6s9AeI+/6CopaRYSY3
-        Yy2CUHRh3RnPHc9M7k0npLPUB14m855z3klykzve/0127c0eLdQF7atn2perqE3WaurL54mQN4yH9tHA
-        gFkM+oTKKqqdBmqOsWoyL9uF0D3Ub2tIVRnvkslyTDk6kIuF8AilHnHMcMyluoFoRgt5Gcdrbr9X7VSo
-        6526mnL70XmOc8nOhnthaNlm0zPa55mlsa6Iz2BdjpjSQeN0e1odtnLWD8jmx3q4z2gO3SCaLxizTm1h
-        nHIpHdE4WswNXXTc+5cFY8ucOeVSNqbDA8ZrZ/H4vqCcA+GDY/KjS5Qq4ToNsqj3lHJg+mabWpPhIUqV
-        GK+dRW1SykHzh21qnowPUqrELLidRW1RykHTuUVpEF2lVEkSqJt2Fu9Dh1IOhFeuSa5jHU5RLkWLuAbv
-        hp1F7jXlHC2iK7aJ9TP11X08+ydoG9AVDydSIR/As1XIZHgBb9OWY14OiH8fNyEX8Pm2H0A9oW0AesUr
-        7tfX1uTj/bS5pCK6CIPZuH6tB/FxfH+H4++61jhGy4B0StU50Clk7tAynMRXcc/oR5KtofT+KwrDceXL
-        lTuqMSS+VAytIbRCaRv2cJzQ0/7etSOSQJ5DsGnCbG2Dw7/gsbzF1mhkXri7dPsFuJ13d7Jf/ct43h8o
-        1jKqDLJlDQAAAABJRU5ErkJggg==
-</value>
-  </data>
 </root>

@@ -15,28 +15,31 @@ namespace ThisIsWin11
             InitializeComponent();
             UISelection();
             NavigationView();
+            EnumTableOfContents();
         }
 
+        /// <summary>
+        /// Some UI nicety
+        /// </summary>
         private void UISelection()
         {
-            // GUI options
-            this.Text += Program.GetCurrentVersionTostring();
             this.MinimumSize = new Size(800, 735);
 
+            // Presenter button ONLY on Win11
             if (osInfo.IsWin11())
             {
-                lnkSubHeader.Text = "Windows 11 aka Sun Valley" + "\x20" // OS Info
+                lnkSubHeader.Text = "Windows 11 aka Sun Valley" + "\x20"
                           + osInfo.GetVersion() + "\x20"
                           + osInfo.Is64Bit();
             }
             else
             {
-                btnPresenter.Enabled = false;                          // Disable Presenter
+                btnPresenter.Enabled = false;
                 lnkSubHeader.Text = "This is not Windows 11";
             }
 
-            lblMainMenu.Text = "\ue700";                                // Hamburger menu
-            btnRecheck.Text = "\ue72c";                                 // Refresh
+            btnSettings.Text = "\uE713";        // Settings
+            btnRecheck.Text = "\ue72c";        // Reset
 
             // Some tooltip options
             ToolTip tt = new ToolTip
@@ -51,6 +54,7 @@ namespace ThisIsWin11
             if (INavPage > PageTitle.Welcome)
             {
                 INavPage = 0;
+                cbTable.SelectedIndex = 0;
             }
 
             NavigationView();
@@ -65,13 +69,9 @@ namespace ThisIsWin11
             {
                 case PageTitle.Welcome:
                     lblFeature.Text = "Welcome";
-                    richDesc.Text = "Use the<Next> and<Previous> buttons to navigate through the features of Windows 11.\n\n" +
+                    richDesc.Text = "How to use\nUse the<Next> and<Previous> buttons to navigate through the features of Windows 11.\n\n" +
                                     "Use the <Show the Magic> button to get the feature presented once (if it is available).\n\n" +
-                                    "If you are not yet working with Windows 11, the <Magic> button will unfortunately not work.\n\n" +
-                                    "Info about this app\n" +
-                                    Program.GetCurrentVersionTostring() + "\n\n" +
-                                    "It's all open source https://github.com/builtbybel/ThisIsWin11\n\n" +
-                                    "(C) 2021, Builtbybel";
+                                    "If you are not yet working with Windows 11, the <Magic> button will unfortunately not work.";
                     pbView.ImageLocation = "";
                     break;
 
@@ -130,7 +130,9 @@ namespace ThisIsWin11
 
                 case PageTitle.SnapLayouts:
                     lblFeature.Text = "Snap Layouts";
-                    richDesc.Text = "When you're working in a bunch of open windows, Windows 11 will let you arrange them in different layouts on the screen, and will save all of those windows in that arrangement. ";
+                    richDesc.Text = "Snap is a productivity feature that helps users arrange applications and other windows logically on-screen.\n\n" +
+                        "In 2019, Microsoft relaunched the PowerToys brand with a new utility called FancyZones that extends the Snap experience to allow for more complex and useful on-screen window layouts. A key part of this utility, incredibly, has been integrated into Windows 11 and is now called Snap Layouts.\n\n" +
+                        "When you're working in a bunch of open windows, Windows 11 will let you arrange them in different layouts on the screen, and will save all of those windows in that arrangement. ";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/8-snaplayouts.png?raw=true";
                     break;
 
@@ -168,7 +170,7 @@ namespace ThisIsWin11
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/13-touchkeyboard.jpg?raw=true";
                     break;
 
-                case PageTitle.AnroidApps:
+                case PageTitle.AndroidApps:
                     lblFeature.Text = "Android Apps Support";
                     richDesc.Text = "Android apps will be coming to Windows 11 and installable from within the new Microsoft Store via the Amazon Appstore.\n\n" +
                         "However, Android app support has not been added in the current 22000.51 preview build. Microsoft has confirmed that the option to install Android apps will arrive in the upcoming builds.\n\n" +
@@ -217,7 +219,8 @@ namespace ThisIsWin11
 
                     try
                     {
-                        Helpers.Keystrokes.Send("^{ESC}");
+                        Helpers.Keystrokes.KeyDown(Keys.LWin);
+                        Helpers.Keystrokes.KeyUp(Keys.LWin);
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); break; }
 
@@ -226,7 +229,10 @@ namespace ThisIsWin11
                 case PageTitle.ActionCenter:
                     try
                     {
-                        Process.Start("ms-actioncenter://");
+                        Helpers.Keystrokes.KeyDown(Keys.LWin);
+                        Helpers.Keystrokes.KeyDown(Keys.A);
+                        Helpers.Keystrokes.KeyUp(Keys.LWin);
+                        Helpers.Keystrokes.KeyUp(Keys.A);
                     }
                     catch (Exception ex)
                     {
@@ -239,9 +245,10 @@ namespace ThisIsWin11
                 case PageTitle.FileExplorer:
                     try
                     {
-                        Helpers.WKeystrokes.KeyDown(Keys.LWin);
-                        Helpers.WKeystrokes.KeyDown(Keys.E);
-                        Helpers.WKeystrokes.KeyUp(Keys.LWin);
+                        Helpers.Keystrokes.KeyDown(Keys.LWin);
+                        Helpers.Keystrokes.KeyDown(Keys.E);
+                        Helpers.Keystrokes.KeyUp(Keys.LWin);
+                        Helpers.Keystrokes.KeyUp(Keys.E);
                     }
                     catch (Exception ex)
                     {
@@ -291,9 +298,10 @@ namespace ThisIsWin11
                 case PageTitle.SnapLayouts:
                     try
                     {
-                        Helpers.WKeystrokes.KeyDown(Keys.LWin);
-                        Helpers.WKeystrokes.KeyDown(Keys.Z);
-                        Helpers.WKeystrokes.KeyUp(Keys.LWin);
+                        Helpers.Keystrokes.KeyDown(Keys.LWin);
+                        Helpers.Keystrokes.KeyDown(Keys.Z);
+                        Helpers.Keystrokes.KeyUp(Keys.LWin);
+                        Helpers.Keystrokes.KeyUp(Keys.Z);
                     }
                     catch (Exception ex)
                     {
@@ -307,9 +315,10 @@ namespace ThisIsWin11
 
                     try
                     {
-                        Helpers.WKeystrokes.KeyDown(Keys.LWin);
-                        Helpers.WKeystrokes.KeyDown(Keys.W);
-                        Helpers.WKeystrokes.KeyUp(Keys.LWin);
+                        Helpers.Keystrokes.KeyDown(Keys.LWin);
+                        Helpers.Keystrokes.KeyDown(Keys.W);
+                        Helpers.Keystrokes.KeyUp(Keys.LWin);
+                        Helpers.Keystrokes.KeyUp(Keys.W);
                     }
                     catch (Exception ex)
                     {
@@ -376,7 +385,7 @@ namespace ThisIsWin11
 
                     break;
 
-                case PageTitle.AnroidApps:
+                case PageTitle.AndroidApps:
 
                     try
                     {
@@ -400,13 +409,37 @@ namespace ThisIsWin11
             }
         }
 
+        /// <summary>
+        ///  Add some watermark
+        /// </summary>
+    /*    private void pbView_Paint(object sender, PaintEventArgs e)
+        {
+            if (INavPage == 0)
+
+            {
+                return;
+            }
+            using (Font font = new Font("Segeo UI Semiglight", 8))
+            {
+                e.Graphics.DrawString("https://github.com/builtbybel/ThisIsWin11", font, Brushes.HotPink, new Point(0, 0));
+            }
+        } */
+
         private void richDesc_LinkClicked(object sender, LinkClickedEventArgs e) => ThisIsWin11.Helpers.Utils.LaunchUri(e.LinkText);
 
-        private void assetOpenGitHub_Click(object sender, EventArgs e) => Process.Start(Helpers.Strings.Uri.GitRepo);
-
-        private void btnShareScreen_Click(object sender, EventArgs e) => CaptureToShare();
-
         private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("ms-settings:about");
+
+        private void btnSettings_Click(object sender, EventArgs e) => this.menuMain.Show(Cursor.Position.X, Cursor.Position.Y);
+
+        private void optionCaptureToShare_Click(object sender, EventArgs e) => CaptureToShare();
+
+        private void infoApp_Click(object sender, EventArgs e)
+        {
+            richDesc.Text = "Info about this App\n" +
+                                    Program.GetCurrentVersionTostring() + "\n\n" +
+                                    "It's all open source https://github.com/builtbybel/ThisIsWin11\n\n" +
+                                    "(C) 2021, Builtbybel";
+        }
 
         private void CaptureToShare()
         {
@@ -431,6 +464,21 @@ namespace ThisIsWin11
                 MessageBox.Show("Click <OK> to prepare the Twitter status. After that you just need to upload the result image you just created." + dialog.FileName);
                 Process.Start(Helpers.Strings.TweetIntent); // Tweet Web Intent
             }
+        }
+
+        private void EnumTableOfContents()
+        {
+            cbTable.DataSource = Enum.GetValues(typeof(PageTitle));
+        }
+
+        private void cbTable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PageTitle index;
+            Enum.TryParse<PageTitle>(cbTable.SelectedValue.ToString(), out index);
+
+            INavPage = index;
+
+            NavigationView();
         }
     }
 }
