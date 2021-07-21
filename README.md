@@ -15,7 +15,7 @@ alt="GitHub issues">
 
 # ThisIsWin11 (Preview)
 
-### Take a tour of what's new in Windows 11 and apply the right configuration the quick way
+### Guides you step by step in getting to know and setting up Windows 11
 
 
 ![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11-intro.gif)
