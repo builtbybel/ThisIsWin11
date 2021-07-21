@@ -18,7 +18,7 @@ alt="GitHub issues">
 ### Guides you step by step in getting to know and setting up Windows 11
 
 
-![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11-intro.gif)
+![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11.png)
   
 ## Features
 A customer asked me to quickly present Windows 11. So i threw some of the news from [theverge](https://www.theverge.com), [windowscentral](https://www.windowscentral.com) and others into an form and added a magic - feature demonstration - button. Now you can navigate your way through a short Windows 11 tour using this magic button, which only works under Windows 11. 
