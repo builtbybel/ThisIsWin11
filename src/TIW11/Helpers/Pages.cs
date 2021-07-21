@@ -17,6 +17,8 @@
         LockScreen,
         TouchKeyboard,
         AndroidApps,
+        Privacy,
+        Apps,
         Thanks
     }
 }
