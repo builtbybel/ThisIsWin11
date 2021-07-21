@@ -83,7 +83,7 @@ namespace ThisIsWin11
             this.lblSubHeader.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblSubHeader.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblSubHeader.Location = new System.Drawing.Point(13, 19);
+            this.lblSubHeader.Location = new System.Drawing.Point(13, 21);
             this.lblSubHeader.Name = "lblSubHeader";
             this.lblSubHeader.Size = new System.Drawing.Size(290, 32);
             this.lblSubHeader.TabIndex = 134;
@@ -253,7 +253,7 @@ namespace ThisIsWin11
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(339, 32);
             this.lblHeader.TabIndex = 25;
-            this.lblHeader.Text = "What\'s new in Windows 11";
+            this.lblHeader.Text = "Get started with Windows 11";
             // 
             // lnkSubHeader
             // 

@@ -34,12 +34,12 @@ namespace ThisIsWin11
             }
             else
             {
-                btnPresenter.Enabled = false;
+                // btnPresenter.Enabled = false;
                 lnkSubHeader.Text = "*This is not Windows 11 (some features are not available)";
             }
 
             btnSettings.Text = "\uE713";       // Settings
-            btnRecheck.Text = "\ue72c";        // Reset
+            btnRecheck.Text = "\ue72c";        // Refresh
             btnBack.Text = "\uE72B";           // Back
             btnNext.Text = "\uE72A";           // Next
 
@@ -63,6 +63,41 @@ namespace ThisIsWin11
             Helpers.Utils.AppUpdate(); // Check for app updates
         }
 
+        private void btnBack_Click(object sender, System.EventArgs e)
+        {
+            if (INavPage > PageTitle.Welcome)
+            {
+                INavPage--;
+                cbTable.SelectedItem = INavPage++;
+            }
+
+            NavigationView();
+        }
+
+        private void btnNext_Click(object sender, System.EventArgs e)
+        {
+            INavPage++;
+            NavigationView();
+
+            cbTable.SelectedItem = INavPage++;
+        }
+
+        // Enum Breadcrumbs to cb
+        private void EnumTableOfContents()
+        {
+            cbTable.DataSource = Enum.GetValues(typeof(PageTitle));
+        }
+
+        private void cbTable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PageTitle index;
+            Enum.TryParse<PageTitle>(cbTable.SelectedValue.ToString(), out index);
+
+            INavPage = index;
+
+            NavigationView();
+        }
+
         public void NavigationView()
         {
             btnBack.Enabled = INavPage > PageTitle.Welcome;
@@ -71,8 +106,8 @@ namespace ThisIsWin11
             {
                 case PageTitle.Welcome:
                     btnConfigurator.Enabled = true;
-                    lblSubHeader.Text = "Welcome";
-                    richDesc.Text = "How to use:\nUse the <Next> and <Previous> buttons to navigate through the features of Windows 11.\n\n" +
+                    lblSubHeader.Text = "Welcome, " + Environment.UserName;
+                    richDesc.Text = "Lets make sure everything is set up how you want it.\n\nUse the <Next> and <Previous> buttons to navigate through the features of Windows 11.\n\n" +
                                     "Use the <Demonstrate this page> button to get the feature presented once (if it is available).\n\n" +
                                     "Pages marked with <This page can be configured> will allow you to apply immediately the right configuration (in development).\n\n" +
                                     "If you are not yet working with Windows 11, the <Demonstrate this page> button will not work.";
@@ -96,7 +131,7 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.ActionCenter:
-                    btnConfigurator.Enabled = false;
+                    btnConfigurator.Enabled = true;
                     lblSubHeader.Text = "Action Center";
                     richDesc.Text = "Another great feature of Windows 11 is the revamped Action Center.\n\n" +
                                     "It follows a design language that we have seen on mobile OSes, and I quite like this mobile - first approach to important system toggles\n\n" +
@@ -105,7 +140,7 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.FileExplorer:
-                    btnConfigurator.Enabled = false;
+                    btnConfigurator.Enabled = true;
                     lblSubHeader.Text = "Modern File Explorer";
                     richDesc.Text = "The new experience of file explorer didn’t come with multiple Tabs options similar to tabs in the Microsoft Edge browser.\n\n" +
                                      "By default, File Explorer is now optimized for tablet users.\n\n" +
@@ -117,8 +152,8 @@ namespace ThisIsWin11
                     btnConfigurator.Enabled = false;
                     lblSubHeader.Text = "New Microsoft Store";
                     richDesc.Text = "There’s a complete UI overhaul on the app store and some speed improvements.\n\n" +
-                           "The key change is allowing more apps into the store. The Microsoft Store is changing on Windows 11, and eventually Windows 10, to include any traditional desktop apps.\n\n" +
-                           "Microsoft previously restricted developers to its Universal Windows Apps, before then allowing some desktop apps that were packaged to use its store for updates. Now any app can be part of the store, a move that aligns with the Windows Package Manager Microsoft released last year.";
+                                   "The key change is allowing more apps into the store. The Microsoft Store is changing on Windows 11, and eventually Windows 10, to include any traditional desktop apps.\n\n" +
+                                    "Microsoft previously restricted developers to its Universal Windows Apps, before then allowing some desktop apps that were packaged to use its store for updates. Now any app can be part of the store, a move that aligns with the Windows Package Manager Microsoft released last year.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-msstore.png?raw=true";
                     break;
 
@@ -126,13 +161,13 @@ namespace ThisIsWin11
                     btnConfigurator.Enabled = false;
                     lblSubHeader.Text = "Redesigned Settings App";
                     richDesc.Text = "The Settings app has been redesigned with a radically different look and it is now using a new navigation menu on the left, similar to Control Panel.\n\n" +
-                              "It comes with a slightly reorganized layout which enables easier access to all your PC settings.\n\n" +
-                              "We’re also getting new pages to customize the touch keyboard, Windows snapping, multitasking and other advanced features like “Wake on Touch” in the new operating system.";
+                                    "It comes with a slightly reorganized layout which enables easier access to all your PC settings.\n\n" +
+                                    "We’re also getting new pages to customize the touch keyboard, Windows snapping, multitasking and other advanced features like “Wake on Touch” in the new operating system.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-settingsapp.png?raw=true";
                     break;
 
                 case PageTitle.WindowsUpdates:
-                    btnConfigurator.Enabled = false;
+                    btnConfigurator.Enabled = true;
                     lblSubHeader.Text = "Faster Windows Updates";
                     richDesc.Text = "Yes, you read that right. With Windows 11, you will have a much faster Windows update process, thanks to the background installation mechanism. Microsoft has promised that Windows updates will now be 40% smaller, making the process even more efficient. ";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-windowsupdates.png?raw=true";
@@ -142,8 +177,8 @@ namespace ThisIsWin11
                     btnConfigurator.Enabled = false;
                     lblSubHeader.Text = "Snap Layouts";
                     richDesc.Text = "Snap is a productivity feature that helps users arrange applications and other windows logically on-screen.\n\n" +
-                        "In 2019, Microsoft relaunched the PowerToys brand with a new utility called FancyZones that extends the Snap experience to allow for more complex and useful on-screen window layouts. A key part of this utility, incredibly, has been integrated into Windows 11 and is now called Snap Layouts.\n\n" +
-                        "When you're working in a bunch of open windows, Windows 11 will let you arrange them in different layouts on the screen, and will save all of those windows in that arrangement. ";
+                                    "In 2019, Microsoft relaunched the PowerToys brand with a new utility called FancyZones that extends the Snap experience to allow for more complex and useful on-screen window layouts. A key part of this utility, incredibly, has been integrated into Windows 11 and is now called Snap Layouts.\n\n" +
+                                    "When you're working in a bunch of open windows, Windows 11 will let you arrange them in different layouts on the screen, and will save all of those windows in that arrangement. ";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-snaplayouts.png?raw=true";
                     break;
 
@@ -171,7 +206,7 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.LockScreen:
-                    btnConfigurator.Enabled = false;
+                    btnConfigurator.Enabled = true;
                     lblSubHeader.Text = "New Minimal Lock Screen";
                     richDesc.Text = "Windows 11 supports animated lock-screen background on PCs that have accelerometer.\n\n" +
                                     "It applies an acrylic blur in the background, and the new variable Segoe UI font makes things even better. If you don’t want all the links and recommendations on the lock screen, you can disable them from Settings for a clean lock screen.";
@@ -182,7 +217,7 @@ namespace ThisIsWin11
                     btnConfigurator.Enabled = false;
                     lblSubHeader.Text = "Touch Keyboard Improvements";
                     richDesc.Text = "Windows 11 comes with a Touch Keyboard feature that remains turned off by default. You can use this touch keyboard on a computer or laptop, which is not a touch screen. It is a handy application if your physical keyboard is totally not working or a few keys are not working.\n\n" +
-                                "Microsoft made it more intuitive to use by drawing inspiration from smartphone keyboards.\n\nEven you can use this Touch Keyboard as a substitute for a mechanical keyboard.";
+                                    "Microsoft made it more intuitive to use by drawing inspiration from smartphone keyboards.\n\nEven you can use this Touch Keyboard as a substitute for a mechanical keyboard.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-touchkeyboard.png?raw=true";
                     break;
 
@@ -190,18 +225,18 @@ namespace ThisIsWin11
                     btnConfigurator.Enabled = false;
                     lblSubHeader.Text = "Android Apps Support";
                     richDesc.Text = "Android apps will be coming to Windows 11 and installable from within the new Microsoft Store via the Amazon Appstore.\n\n" +
-                        "However, Android app support has not been added in the current 22000.51 preview build. Microsoft has confirmed that the option to install Android apps will arrive in the upcoming builds.\n\n" +
-                        "The best part is that you can even sideload APKs on your Windows 11 PC.";
+                                    "However, Android app support has not been added in the current 22000.51 preview build. Microsoft has confirmed that the option to install Android apps will arrive in the upcoming builds.\n\n" +
+                                    "The best part is that you can even sideload APKs on your Windows 11 PC.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-androidapps.png?raw=true";
                     break;
 
                 case PageTitle.Privacy:
-                    btnConfigurator.Enabled = false;
+                    btnConfigurator.Enabled = true;
                     lblSubHeader.Text = "Privacy";
                     richDesc.Text = "One thing Microsoft didn't discuss is about Windows 11 privacy.\n\n" +
-                        "Since Windows 11 Home will essentially require a Microsoft account for most users, data harvesting is part of the package. \n\n" +
-                        "In Windows 11, you'll be able to continue editing cloud files per its algorithmically populated Recommended section in the new Start Menu.\n" +
-                        "Your browser history will sync between Edge on PC and Edge on mobile, as it already does. Your Skype and Teams conversations will sync as you'd expect too, and your Windows 11 features will migrate to new PCs if you upgrade.";
+                                    "Since Windows 11 Home will essentially require a Microsoft account for most users, data harvesting is part of the package. \n\n" +
+                                    "In Windows 11, you'll be able to continue editing cloud files per its algorithmically populated \"Recommended\" section in the new Start Menu.\n" +
+                                    "Your browser history will sync between Edge on PC and Edge on mobile, as it already does. Your Skype and Teams conversations will sync as you'd expect too, and your Windows 11 features will migrate to new PCs if you upgrade.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-privacy.png?raw=true";
                     break;
 
@@ -209,9 +244,9 @@ namespace ThisIsWin11
                     btnConfigurator.Enabled = true;
                     lblSubHeader.Text = "Apps";
                     richDesc.Text = "First Windows 11 preview still insists with bloatware.\n\n" +
-                        "Apparently Windows 11 is also lighter than Windows 10 as for the preinstalled apps.\n\n" +
-                        "The good thing is that at least some of the Windows 10 apps aren’t installed. However, you will still have installed all the hoard of apps that belong to Microsoft, such as Mail and Calendar, Your Phone, Mixed Reality Portal, Solitaire Collection, Get Help, Paoint 3D, XBox Game Bar, etc.\n\n" +
-                        "Use the <Configure this page> link to uninstall pre-installed apps.";
+                                     "Apparently Windows 11 is also lighter than Windows 10 as for the preinstalled apps.\n\n" +
+                                    "The good thing is that at least some of the Windows 10 apps aren’t installed. However, you will still have installed all the hoard of apps that belong to Microsoft, such as Mail and Calendar, Your Phone, Mixed Reality Portal, Solitaire Collection, Get Help, Paoint 3D, XBox Game Bar, etc.\n\n" +
+                                     "Use the <Configure this page> link to uninstall pre-installed apps.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-apps.png?raw=true";
                     break;
 
@@ -222,25 +257,6 @@ namespace ThisIsWin11
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-end.png?raw=true";
                     break;
             }
-        }
-
-        private void btnBack_Click(object sender, System.EventArgs e)
-        {
-            if (INavPage > PageTitle.Welcome)
-            {
-                INavPage--;
-                cbTable.SelectedItem = INavPage++;
-            }
-
-            NavigationView();
-        }
-
-        private void btnNext_Click(object sender, System.EventArgs e)
-        {
-            INavPage++;
-            NavigationView();
-
-            cbTable.SelectedItem = INavPage++;
         }
 
         private void btnPresenter_CheckedChanged(object sender, System.EventArgs e)
@@ -488,10 +504,22 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.ActionCenter:
-
+                    Process.Start("ms-settings:notifications");
                     break;
 
                 case PageTitle.FileExplorer:
+
+                    try
+                    {
+                        Process proc = new Process();
+                        proc.StartInfo.UseShellExecute = false;
+                        proc.StartInfo.FileName = "rundll32.exe";
+                        proc.StartInfo.Arguments = "shell32.dll,Options_RunDLL 0";
+                        proc.Start();
+
+                        break;
+                    }
+                    catch { }
 
                     break;
 
@@ -504,7 +532,7 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.WindowsUpdates:
-
+                    Process.Start("ms-settings:windowsupdate-options");
                     break;
 
                 case PageTitle.SnapLayouts:
@@ -524,6 +552,7 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.LockScreen:
+                    Process.Start("ms-settings:lockscreen");
 
                     break;
 
@@ -536,7 +565,7 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.Privacy:
-
+                    Process.Start("ms-settings:privacy-general");
                     break;
 
                 case PageTitle.Apps:
@@ -623,21 +652,6 @@ namespace ThisIsWin11
                 MessageBox.Show("Click <OK> to prepare the Twitter status. After that you just need to upload the result image you just created." + dialog.FileName);
                 Process.Start(Helpers.Strings.TweetIntent); // Tweet Web Intent
             }
-        }
-
-        private void EnumTableOfContents()
-        {
-            cbTable.DataSource = Enum.GetValues(typeof(PageTitle));
-        }
-
-        private void cbTable_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            PageTitle index;
-            Enum.TryParse<PageTitle>(cbTable.SelectedValue.ToString(), out index);
-
-            INavPage = index;
-
-            NavigationView();
         }
     }
 }
