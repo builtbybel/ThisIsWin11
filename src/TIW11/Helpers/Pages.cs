@@ -17,8 +17,10 @@
         LockScreen,
         TouchKeyboard,
         AndroidApps,
+        Gaming,
         Privacy,
         Apps,
-        Thanks
+        Thanks,
+        Custom
     }
 }

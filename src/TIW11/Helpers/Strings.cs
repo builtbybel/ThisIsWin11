@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ThisIsWin11.Helpers
+﻿namespace ThisIsWin11.Helpers
 {
     internal class Strings
     {
@@ -17,7 +11,6 @@ namespace ThisIsWin11.Helpers
             public const string GitUpdateRepo = "https://github.com/builtbybel/thisiswin11/releases/tag/";
             public const string GitVersionCheck = "https://raw.githubusercontent.com/builtbybel/thisiswin11/master/appversion.txt";
             public const string GitVersionHint = "https://raw.githubusercontent.com/builtbybel/thisiswin11/main/changes.txt";
-
         }
     }
 }

@@ -53,7 +53,6 @@ namespace ThisIsWin11.Helpers
         /// <summary>
         /// Launch Urls in richtext
         /// </summary>
-        /// <param name="url"></param>
         public static void LaunchUri(string url)
         {
             if (IsHttpURL(url)) Process.Start(url);
