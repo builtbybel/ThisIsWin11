@@ -2,7 +2,7 @@
 {
     public enum PageTitle
     {
-        Welcome = 0,
+        GetStarted= 0,
         NewLook,
         StartMenu,
         ActionCenter,
@@ -20,7 +20,7 @@
         Gaming,
         Privacy,
         Apps,
-        Thanks,
+        Finish,
         Custom
     }
 }

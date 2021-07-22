@@ -11,7 +11,7 @@ namespace ThisIsWin11
 {
     public partial class MainWindow : Form
     {
-        private PageTitle INavPage = PageTitle.Welcome;
+        private PageTitle INavPage = PageTitle.GetStarted;
         private Features.OS osInfo = new Features.OS();
 
         public MainWindow()
@@ -20,6 +20,11 @@ namespace ThisIsWin11
             NavigationView();
             EnumTableOfContents();
             UISelection();
+        }
+
+        private void MainWindow_Shown(object sender, EventArgs e)
+        {
+            Helpers.Utils.AppUpdate(); // Check for app updates
         }
 
         /// <summary>
@@ -42,10 +47,10 @@ namespace ThisIsWin11
                 lnkSubHeader.Text = "*This is not Windows 11 (some features are not available)";
             }
 
-            btnSettings.Text = "\uE713";       // Settings
+            btnSettings.Text = "\uE713";      // Settings
             btnHome.Text = "\uE80F";          // Home
-            btnBack.Text = "\uE72B";           // Back
-            btnNext.Text = "\uE72A";           // Next
+            btnBack.Text = "\uE72B";          // Back
+            btnNext.Text = "\uE72A";          // Next
 
             // Some tooltip options
             _ = new ToolTip
@@ -57,19 +62,18 @@ namespace ThisIsWin11
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            if (INavPage > PageTitle.Welcome)
+            if (INavPage > PageTitle.GetStarted)
             {
                 INavPage = 0;
                 cbTable.SelectedIndex = 0;
             }
 
             NavigationView();
-            Helpers.Utils.AppUpdate(); // Check for app updates
         }
 
         private void btnBack_Click(object sender, System.EventArgs e)
         {
-            if (INavPage > PageTitle.Welcome)
+            if (INavPage > PageTitle.GetStarted)
             {
                 INavPage--;
                 cbTable.SelectedItem = INavPage++;
@@ -80,10 +84,19 @@ namespace ThisIsWin11
 
         private void btnNext_Click(object sender, System.EventArgs e)
         {
-            INavPage++;
-            NavigationView();
+            if (INavPage == PageTitle.Custom)
+            {
+                INavPage = 0;
+                cbTable.SelectedIndex = 0;
+                NavigationView();
+            }
+            else
+            {
+                INavPage++;
+                NavigationView();
 
-            cbTable.SelectedItem = INavPage++;
+                cbTable.SelectedItem = INavPage++;
+            }
         }
 
         // Enum Breadcrumbs to cb
@@ -104,18 +117,18 @@ namespace ThisIsWin11
 
         public void NavigationView()
         {
-            btnBack.Enabled = INavPage > PageTitle.Welcome;
+            btnBack.Enabled = INavPage > PageTitle.GetStarted;
 
             switch (INavPage)
             {
-                case PageTitle.Welcome:
+                case PageTitle.GetStarted:
                     btnPresenter.Enabled = true;
                     btnConfigurator.Enabled = false;
                     btnOptimizer.Enabled = false;
                     pbView.Visible = true;
                     lblSubHeader.Text = "Welcome, " + Environment.UserName;
                     richDesc.Text = "Lets make sure everything is set up how you want it.\n\nUse the <Next> and <Previous> buttons to navigate through the features of Windows 11.\n\n" +
-                                    "Use the <Demonstrate this page> button to get the feature presented once (if it is available).\n\n" +
+                                    "Use the <This page can be previewed> button to get the feature presented once (if it is available).\n\n" +
                                     "Pages marked with <This page can be configured> will allow you to change immediately the Windows configuration.\n\n" +
                                     "Pages marked with <This page can be optimized> will allow you to apply custom changes and scripts from the community.";
                     pbView.ImageLocation = "";
@@ -166,7 +179,7 @@ namespace ThisIsWin11
                 case PageTitle.FileExplorer:
                     btnPresenter.Enabled = true;
                     btnConfigurator.Enabled = true;
-                    btnOptimizer.Enabled = false;
+                    btnOptimizer.Enabled = true;
                     pbView.Visible = true;
                     lblSubHeader.Text = "Modern File Explorer";
                     richDesc.Text = "The new experience of file explorer didn’t come with multiple Tabs options similar to tabs in the Microsoft Edge browser.\n\n" +
@@ -192,8 +205,8 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.SettingsApp:
+                    btnPresenter.Enabled = true;
                     btnConfigurator.Enabled = false;
-                    btnOptimizer.Enabled = false;
                     btnOptimizer.Enabled = false;
                     pbView.Visible = true;
                     lblSubHeader.Text = "Redesigned Settings App";
@@ -329,7 +342,7 @@ namespace ThisIsWin11
                 case PageTitle.Privacy:
                     btnPresenter.Enabled = false;
                     btnConfigurator.Enabled = true;
-                    btnOptimizer.Enabled = false;
+                    btnOptimizer.Enabled = true;
                     pbView.Visible = true;
                     lblSubHeader.Text = "Privacy";
                     richDesc.Text = "One thing Microsoft didn't discuss is about Windows 11 privacy.\n\n" +
@@ -349,20 +362,19 @@ namespace ThisIsWin11
                     lblSubHeader.Text = "Apps";
                     richDesc.Text = "First Windows 11 preview still insists with bloatware.\n\n" +
                                      "Apparently Windows 11 is also lighter than Windows 10 as for the preinstalled apps.\n\n" +
-                                    "The good thing is that at least some of the Windows 10 apps aren’t installed. However, you will still have installed all the hoard of apps that belong to Microsoft, such as Mail and Calendar, Your Phone, Mixed Reality Portal, Solitaire Collection, Get Help, Paint 3D, XBox Game Bar, etc.\n\n" +
-                                     "Use the <Configure this page> link to uninstall pre-installed apps.";
+                                    "The good thing is that at least some of the Windows 10 apps aren’t installed. However, you will still have installed all the hoard of apps that belong to Microsoft, such as Mail and Calendar, Your Phone, Mixed Reality Portal, Solitaire Collection, Get Help, Paint 3D, XBox Game Bar, etc.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-apps.png?raw=true";
 
                     DisableCustomizationPKg();
                     break;
 
-                case PageTitle.Thanks:
+                case PageTitle.Finish:
                     btnPresenter.Enabled = false;
                     btnConfigurator.Enabled = true;
                     btnOptimizer.Enabled = false;
                     pbView.Visible = true;
                     lblSubHeader.Text = "That's it";
-                    richDesc.Text = "Thanks for using me.";
+                    richDesc.Text = "We're finish setting up your device.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-end.png?raw=true";
 
                     DisableCustomizationPKg();
@@ -388,7 +400,7 @@ namespace ThisIsWin11
         {
             switch (INavPage)
             {
-                case PageTitle.Welcome:
+                case PageTitle.GetStarted:
                     MessageBox.Show("All right, take it easy. There's nothing to see here.");
                     break;
 
@@ -570,7 +582,7 @@ namespace ThisIsWin11
 
                     break;
 
-                case PageTitle.Thanks:
+                case PageTitle.Finish:
 
                     btnHome.PerformClick();
                     break;
@@ -585,7 +597,7 @@ namespace ThisIsWin11
         {
             switch (INavPage)
             {
-                case PageTitle.Welcome:
+                case PageTitle.GetStarted:
                     break;
 
                 case PageTitle.NewLook:
@@ -672,114 +684,14 @@ namespace ThisIsWin11
 
                     break;
 
-                case PageTitle.Thanks:
+                case PageTitle.Finish:
 
-                    if (MessageBox.Show("Thanks for the tour!\n\n" +
-                        "You might want to look for app updates so that the next tour will be even more exciting?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) // New release available!
-                    {
-                        Helpers.Utils.AppUpdate(); // Update check
-                        btnHome.PerformClick();
-                    }
-                    break;
-
-                case PageTitle.Custom:
-
-                    break;
-            }
-        }
-
-        private void btnOptimizer_Click(object sender, EventArgs e)
-        {
-            switch (INavPage)
-            {
-                case PageTitle.Welcome:
-
-                    break;
-
-                case PageTitle.NewLook:
-
-                    break;
-
-                case PageTitle.StartMenu:
-
-                    break;
-
-                case PageTitle.ActionCenter:
-
-                    break;
-
-                case PageTitle.FileExplorer:
-
-                    break;
-
-                case PageTitle.MicrosoftStore:
-
-                    break;
-
-                case PageTitle.SettingsApp:
-
-                    break;
-
-                case PageTitle.WindowsUpdates:
-
-                    break;
-
-                case PageTitle.SnapLayouts:
-
-                    break;
-
-                case PageTitle.Widgets:
-
-                    break;
-
-                case PageTitle.GestureControls:
-
-                    break;
-
-                case PageTitle.WallpapersNSounds:
-
-                    break;
-
-                case PageTitle.LockScreen:
-
-                    break;
-
-                case PageTitle.TouchKeyboard:
-
-                    break;
-
-                case PageTitle.AndroidApps:
-
-                    break;
-
-                case PageTitle.Gaming:
-
-                    break;
-
-                case PageTitle.Privacy:
-
-                    break;
-
-                case PageTitle.Apps:
-
-                    if (MessageBox.Show("Do you want to uninstall some of these pre-installed apps in bulk?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) // New release available!
-                    {
-                        var startInfo = new ProcessStartInfo()
-                        {
-                            FileName = "powershell.exe",
-                            Arguments = "Get-AppxPackage -AllUsers | Out-GridView -PassThru | Remove-AppxPackage",
-                            UseShellExecute = false,
-                            CreateNoWindow = false,
-                        }; Process.Start(startInfo).WaitForExit();
-                    }
-                    break;
-
-                case PageTitle.Thanks:
+                    btnHome.PerformClick();
 
                     break;
 
                 case PageTitle.Custom:
-                    RunScripter();
+
                     break;
             }
         }
@@ -881,51 +793,59 @@ namespace ThisIsWin11
 
         private async void RunScripter()
         {
-            if (lstPS.CheckedItems.Count == 0)
+            if (!osInfo.IsWin11())
             {
-                MessageBox.Show("Please select a script.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("We could not recognize this system as Windows 11. Some scripts are not tested on this operating system and could lead to malfunction.");
             }
 
-            for (int i = 0; i < lstPS.Items.Count; i++)
+            if (MessageBox.Show("Do you want to apply selected scripts?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (lstPS.GetItemChecked(i))
+                if (lstPS.CheckedItems.Count == 0)
                 {
-                    lstPS.SelectedIndex = i;
-                    string psdir = @"custom\" + lstPS.SelectedItem.ToString() + ".ps1";
-                    var ps1File = psdir;
+                    MessageBox.Show("Please select a script.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
-                    var equals = new[] { "Silent" };
-                    var str = richDesc.Text;
-
-                    btnOptimizer.Text = "Processing";
-
-                    if (equals.Any(str.Contains))                   // Silent
+                for (int i = 0; i < lstPS.Items.Count; i++)
+                {
+                    if (lstPS.GetItemChecked(i))
                     {
-                        var startInfo = new ProcessStartInfo()
+                        lstPS.SelectedIndex = i;
+                        string psdir = @"custom\" + lstPS.SelectedItem.ToString() + ".ps1";
+                        var ps1File = psdir;
+
+                        var equals = new[] { "Silent" };
+                        var str = richDesc.Text;
+
+                        btnOptimizer.Text = "Processing";
+
+                        if (equals.Any(str.Contains))                   // Silent
                         {
-                            FileName = "powershell.exe",
-                            Arguments = $"-executionpolicy bypass -file \"{ps1File}\"",
-                            UseShellExecute = false,
-                            CreateNoWindow = true,
-                        };
+                            var startInfo = new ProcessStartInfo()
+                            {
+                                FileName = "powershell.exe",
+                                Arguments = $"-executionpolicy bypass -file \"{ps1File}\"",
+                                UseShellExecute = false,
+                                CreateNoWindow = true,
+                            };
 
-                        await Task.Run(() => { Process.Start(startInfo).WaitForExit(); });
-                    }
-                    else                                            // Create ConsoleWindow
-                    {
-                        var startInfo = new ProcessStartInfo()
+                            await Task.Run(() => { Process.Start(startInfo).WaitForExit(); });
+                        }
+                        else                                            // Create ConsoleWindow
                         {
-                            FileName = "powershell.exe",
-                            Arguments = $"-executionpolicy bypass -file \"{ps1File}\"",
-                            UseShellExecute = false,
-                        };
+                            var startInfo = new ProcessStartInfo()
+                            {
+                                FileName = "powershell.exe",
+                                Arguments = $"-executionpolicy bypass -noexit -file \"{ps1File}\"",
+                                UseShellExecute = false,
+                            };
 
-                        await Task.Run(() => { Process.Start(startInfo).WaitForExit(); });
+                            await Task.Run(() => { Process.Start(startInfo).WaitForExit(); });
+                        }
+
+                        btnOptimizer.Text = "This page can be optimized";
+
+                        MessageBox.Show("Custom script " + "\"" + lstPS.Text + "\" " + "has been successfully executed.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
-                    btnOptimizer.Text = "This page can be optimized";
-
-                    MessageBox.Show("Custom script " + "\"" + lstPS.Text + "\" " + "has been successfully executed.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -949,6 +869,15 @@ namespace ThisIsWin11
                                     "It's all open source https://github.com/builtbybel/ThisIsWin11\n\n" +
                                     "MIT License\n\n" +
                                     "(C) 2021, Builtbybel";
+        }
+
+        private void btnOptimizer_Click(object sender, EventArgs e)
+        {
+            if (INavPage == (PageTitle)19) RunScripter();
+            else
+            {
+                INavPage = (PageTitle)19; NavigationView();
+            }
         }
     }
 }

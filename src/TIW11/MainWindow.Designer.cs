@@ -86,12 +86,12 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstPS.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lstPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstPS.Font = new System.Drawing.Font("Segoe UI Semilight", 12.75F);
+            this.lstPS.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstPS.ForeColor = System.Drawing.Color.Black;
             this.lstPS.FormattingEnabled = true;
             this.lstPS.Location = new System.Drawing.Point(18, 459);
             this.lstPS.Name = "lstPS";
-            this.lstPS.Size = new System.Drawing.Size(366, 250);
+            this.lstPS.Size = new System.Drawing.Size(366, 242);
             this.lstPS.Sorted = true;
             this.lstPS.TabIndex = 137;
             this.lstPS.ThreeDCheckBoxes = true;
@@ -230,12 +230,13 @@ namespace ThisIsWin11
             this.btnOptimizer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOptimizer.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnOptimizer.Enabled = false;
             this.btnOptimizer.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnOptimizer.FlatAppearance.BorderSize = 0;
             this.btnOptimizer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOptimizer.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F);
             this.btnOptimizer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnOptimizer.Location = new System.Drawing.Point(16, 251);
+            this.btnOptimizer.Location = new System.Drawing.Point(16, 245);
             this.btnOptimizer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOptimizer.Name = "btnOptimizer";
             this.btnOptimizer.Size = new System.Drawing.Size(337, 32);
@@ -254,7 +255,7 @@ namespace ThisIsWin11
             this.btnConfigurator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfigurator.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F);
             this.btnConfigurator.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnConfigurator.Location = new System.Drawing.Point(16, 211);
+            this.btnConfigurator.Location = new System.Drawing.Point(16, 205);
             this.btnConfigurator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConfigurator.Name = "btnConfigurator";
             this.btnConfigurator.Size = new System.Drawing.Size(337, 32);
@@ -279,7 +280,7 @@ namespace ThisIsWin11
             this.btnPresenter.Name = "btnPresenter";
             this.btnPresenter.Size = new System.Drawing.Size(337, 32);
             this.btnPresenter.TabIndex = 130;
-            this.btnPresenter.Text = "Demonstrate this page";
+            this.btnPresenter.Text = "This page can be previewed";
             this.btnPresenter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnPresenter.UseVisualStyleBackColor = false;
             this.btnPresenter.CheckedChanged += new System.EventHandler(this.btnPresenter_CheckedChanged);
@@ -367,10 +368,11 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textPS.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textPS.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPS.Font = new System.Drawing.Font("Cascadia Code Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPS.Location = new System.Drawing.Point(21, 116);
             this.textPS.Multiline = true;
             this.textPS.Name = "textPS";
+            this.textPS.ReadOnly = true;
             this.textPS.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textPS.Size = new System.Drawing.Size(374, 654);
             this.textPS.TabIndex = 137;
@@ -424,6 +426,7 @@ namespace ThisIsWin11
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThisIsWin11 (Preview)";
+            this.Shown += new System.EventHandler(this.MainWindow_Shown);
             this.pnlLeft.ResumeLayout(false);
             this.pnlLeft.PerformLayout();
             this.pnlMiddle.ResumeLayout(false);
@@ -458,9 +461,9 @@ namespace ThisIsWin11
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.ToolStripMenuItem infoApp;
         private System.Windows.Forms.ToolStripMenuItem optionCaptureToShare;
-        private System.Windows.Forms.Button btnOptimizer;
         private System.Windows.Forms.CheckedListBox lstPS;
         private System.Windows.Forms.TextBox textPS;
+        private System.Windows.Forms.Button btnOptimizer;
     }
 }
 
