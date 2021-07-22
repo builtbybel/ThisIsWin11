@@ -1,7 +1,6 @@
 
 - Initial release
-- Refactored UI
-- New application icon
-- Added gaming page
-- Added customization page
-- Numerous code improvements and fixes
+- Refactored code
+- Improved stability
+- Improved security
+- UI Improvements
