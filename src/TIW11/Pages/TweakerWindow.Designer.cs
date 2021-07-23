@@ -30,7 +30,7 @@ namespace ThisIsWin11
         private void InitializeComponent()
         {
             this.lstPS = new System.Windows.Forms.CheckedListBox();
-            this.btnOK = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.richDesc = new System.Windows.Forms.RichTextBox();
             this.lblSubHeader = new System.Windows.Forms.Label();
             this.btnApply = new System.Windows.Forms.Button();
@@ -49,39 +49,38 @@ namespace ThisIsWin11
             this.lstPS.FormattingEnabled = true;
             this.lstPS.Location = new System.Drawing.Point(27, 135);
             this.lstPS.Name = "lstPS";
-            this.lstPS.Size = new System.Drawing.Size(351, 242);
+            this.lstPS.Size = new System.Drawing.Size(353, 286);
             this.lstPS.Sorted = true;
             this.lstPS.TabIndex = 138;
             this.lstPS.ThreeDCheckBoxes = true;
             this.lstPS.SelectedIndexChanged += new System.EventHandler(this.lstPS_SelectedIndexChanged);
             // 
-            // btnOK
+            // btnBack
             // 
-            this.btnOK.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.btnOK.FlatAppearance.BorderSize = 0;
-            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(28, 80);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 30);
-            this.btnOK.TabIndex = 139;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = false;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            this.btnBack.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.Black;
+            this.btnBack.Location = new System.Drawing.Point(16, 23);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(50, 32);
+            this.btnBack.TabIndex = 139;
+            this.btnBack.Text = "<";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // richDesc
             // 
-            this.richDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.richDesc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richDesc.BackColor = System.Drawing.Color.WhiteSmoke;
             this.richDesc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richDesc.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richDesc.Location = new System.Drawing.Point(27, 395);
+            this.richDesc.Location = new System.Drawing.Point(27, 442);
             this.richDesc.Name = "richDesc";
             this.richDesc.ReadOnly = true;
-            this.richDesc.Size = new System.Drawing.Size(351, 253);
+            this.richDesc.Size = new System.Drawing.Size(353, 206);
             this.richDesc.TabIndex = 140;
             this.richDesc.Text = "";
             this.richDesc.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richDesc_LinkClicked);
@@ -96,7 +95,7 @@ namespace ThisIsWin11
             this.lblSubHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubHeader.ForeColor = System.Drawing.Color.DimGray;
             this.lblSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblSubHeader.Location = new System.Drawing.Point(13, 21);
+            this.lblSubHeader.Location = new System.Drawing.Point(72, 21);
             this.lblSubHeader.Name = "lblSubHeader";
             this.lblSubHeader.Size = new System.Drawing.Size(310, 32);
             this.lblSubHeader.TabIndex = 141;
@@ -106,11 +105,12 @@ namespace ThisIsWin11
             // 
             this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnApply.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnApply.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnApply.FlatAppearance.BorderSize = 0;
             this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApply.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApply.ForeColor = System.Drawing.Color.Black;
-            this.btnApply.Location = new System.Drawing.Point(165, 680);
+            this.btnApply.Location = new System.Drawing.Point(104, 680);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(213, 30);
             this.btnApply.TabIndex = 142;
@@ -125,9 +125,9 @@ namespace ThisIsWin11
             this.btnImport.FlatAppearance.BorderSize = 0;
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImport.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImport.Location = new System.Drawing.Point(27, 677);
+            this.btnImport.Location = new System.Drawing.Point(27, 680);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(50, 32);
+            this.btnImport.Size = new System.Drawing.Size(50, 30);
             this.btnImport.TabIndex = 143;
             this.btnImport.Text = "+";
             this.btnImport.UseVisualStyleBackColor = false;
@@ -138,12 +138,12 @@ namespace ThisIsWin11
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(467, 761);
+            this.ClientSize = new System.Drawing.Size(406, 761);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.lblSubHeader);
             this.Controls.Add(this.richDesc);
-            this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lstPS);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "TweakerWindow";
@@ -151,6 +151,7 @@ namespace ThisIsWin11
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThisIsWin11";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TweakerWindow_FormClosing);
+            this.Shown += new System.EventHandler(this.TweakerWindow_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,7 +160,7 @@ namespace ThisIsWin11
         #endregion
 
         private System.Windows.Forms.CheckedListBox lstPS;
-        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnBack;
         public System.Windows.Forms.RichTextBox richDesc;
         private System.Windows.Forms.Label lblSubHeader;
         private System.Windows.Forms.Button btnApply;

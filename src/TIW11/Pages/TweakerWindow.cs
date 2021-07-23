@@ -21,6 +21,7 @@ namespace ThisIsWin11
             InitializeComponent();
             InitializeCustomizationPkg();
 
+            btnBack.Text = "\uE72B";          // Back
             btnImport.Text = "\uE710";          // Import scripts
         }
 
@@ -48,72 +49,68 @@ namespace ThisIsWin11
 
         public async void RunScripter()
         {
-            if (!osInfo.IsWin11())
+            if (lstPS.CheckedItems.Count == 0)
             {
-                MessageBox.Show("We could not recognize this system as Windows 11. Some scripts are not tested on this operating system and could lead to malfunction.");
+                MessageBox.Show("No script selected.");
             }
-
-            if (MessageBox.Show("Do you want to apply selected scripts?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            else
             {
-                if (lstPS.CheckedItems.Count == 0)
+                if (!osInfo.IsWin11())
                 {
-                    MessageBox.Show("Please select a script.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("We could not recognize this system as Windows 11. Some scripts are not tested on this operating system and could lead to malfunction.");
                 }
 
-                for (int i = 0; i < lstPS.Items.Count; i++)
+                if (MessageBox.Show("Do you want to apply selected scripts?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (lstPS.GetItemChecked(i))
+                    for (int i = 0; i < lstPS.Items.Count; i++)
                     {
-                        lstPS.SelectedIndex = i;
-                        string psdir = @"custom\" + lstPS.SelectedItem.ToString() + ".ps1";
-                        var ps1File = psdir;
-
-                        var equals = new[] { "Silent" };
-                        var str = richDesc.Text;
-
-                        btnApply.Text = "Processing";
-
-                        if (equals.Any(str.Contains))                   // Silent
+                        if (lstPS.GetItemChecked(i))
                         {
-                            var startInfo = new ProcessStartInfo()
+                            lstPS.SelectedIndex = i;
+                            string psdir = @"custom\" + lstPS.SelectedItem.ToString() + ".ps1";
+                            var ps1File = psdir;
+
+                            var equals = new[] { "Silent" };
+
+                            this.Enabled = false;
+                            var str = richDesc.Text;
+
+                            btnApply.Text = "Processing " + lstPS.Text;
+
+                            if (equals.Any(str.Contains))                   // Silent
                             {
-                                FileName = "powershell.exe",
-                                Arguments = $"-executionpolicy bypass -file \"{ps1File}\"",
-                                UseShellExecute = false,
-                                CreateNoWindow = true,
-                            };
+                                var startInfo = new ProcessStartInfo()
+                                {
+                                    FileName = "powershell.exe",
+                                    Arguments = $"-executionpolicy bypass -file \"{ps1File}\"",
+                                    UseShellExecute = false,
+                                    CreateNoWindow = true,
+                                };
 
-                            await Task.Run(() => { Process.Start(startInfo).WaitForExit(); });
-                        }
-                        else                                            // Create ConsoleWindow
-                        {
-                            var startInfo = new ProcessStartInfo()
+                                await Task.Run(() => { Process.Start(startInfo).WaitForExit(); });
+                            }
+                            else                                            // Create ConsoleWindow
                             {
-                                FileName = "powershell.exe",
-                                Arguments = $"-executionpolicy bypass -noexit -file \"{ps1File}\"",
-                                UseShellExecute = false,
-                            };
+                                var startInfo = new ProcessStartInfo()
+                                {
+                                    FileName = "powershell.exe",
+                                    Arguments = $"-executionpolicy bypass -noexit -file \"{ps1File}\"",
+                                    UseShellExecute = false,
+                                };
 
-                            await Task.Run(() => { Process.Start(startInfo).WaitForExit(); });
+                                await Task.Run(() => { Process.Start(startInfo).WaitForExit(); });
+                            }
                         }
-
-                        btnApply.Text = "Apply selected";
-
-                        MessageBox.Show("Custom script " + "\"" + lstPS.Text + "\" " + "has been successfully executed.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       
                     }
+                    btnApply.Text = "Apply selected";
+                    this.Enabled = true;
+
+                    MessageBox.Show("Selected scripts have been successfully executed.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            {
-                this.mainForm.ShowLeftPanel = true;
-                this.mainForm.textPS.Visible = false;
-
-                this.Hide();
-            }
-        }
 
         private void lstPS_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -140,10 +137,27 @@ namespace ThisIsWin11
 
         private void btnApply_Click(object sender, EventArgs e) => RunScripter();
 
-        private void richDesc_LinkClicked(object sender, LinkClickedEventArgs e) => ThisIsWin11.Helpers.Utils.LaunchUri(e.LinkText);
+        private void richDesc_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
 
-        private void TweakerWindow_FormClosing(object sender, FormClosingEventArgs e) => mainForm.textPS.Visible = false;
+        private void TweakerWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mainForm.textPS.Visible = false; mainForm.pbView.Visible = true;
+        }
 
         private void btnImport_Click(object sender, EventArgs e) => MessageBox.Show("Not available in this release.", "Import script");
+
+        private void TweakerWindow_Shown(object sender, EventArgs e)
+        {
+            mainForm.pbView.Visible = false;
+            mainForm.textPS.Visible = true;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.mainForm.ShowLeftPanel = true;
+            this.mainForm.textPS.Visible = false;
+
+            this.Hide();
+        }
     }
 }

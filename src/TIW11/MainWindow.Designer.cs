@@ -51,9 +51,9 @@ namespace ThisIsWin11
             this.textPS = new System.Windows.Forms.TextBox();
             this.pbView = new System.Windows.Forms.PictureBox();
             this.menuMain = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuTweaker = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCaptureToShare = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAppInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuTweaker = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLeft.SuspendLayout();
             this.pnlMiddle.SuspendLayout();
             this.pnlRight.SuspendLayout();
@@ -172,6 +172,7 @@ namespace ThisIsWin11
             this.richDesc.Size = new System.Drawing.Size(366, 571);
             this.richDesc.TabIndex = 133;
             this.richDesc.Text = "";
+            this.richDesc.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richDesc_LinkClicked);
             // 
             // cbTable
             // 
@@ -379,6 +380,13 @@ namespace ThisIsWin11
             this.menuMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuMain.Size = new System.Drawing.Size(331, 94);
             // 
+            // menuTweaker
+            // 
+            this.menuTweaker.Name = "menuTweaker";
+            this.menuTweaker.Size = new System.Drawing.Size(330, 30);
+            this.menuTweaker.Text = "Open Tweaker";
+            this.menuTweaker.Click += new System.EventHandler(this.menuTweaker_Click);
+            // 
             // menuCaptureToShare
             // 
             this.menuCaptureToShare.Name = "menuCaptureToShare";
@@ -391,13 +399,6 @@ namespace ThisIsWin11
             this.menuAppInfo.Name = "menuAppInfo";
             this.menuAppInfo.Size = new System.Drawing.Size(330, 30);
             this.menuAppInfo.Text = "About this App";
-            // 
-            // menuTweaker
-            // 
-            this.menuTweaker.Name = "menuTweaker";
-            this.menuTweaker.Size = new System.Drawing.Size(330, 30);
-            this.menuTweaker.Text = "Open Tweaker";
-            this.menuTweaker.Click += new System.EventHandler(this.menuTweaker_Click);
             // 
             // MainWindow
             // 
@@ -450,7 +451,7 @@ namespace ThisIsWin11
         public System.Windows.Forms.RichTextBox richDesc;
         public System.Windows.Forms.TextBox textPS;
         private System.Windows.Forms.ToolStripMenuItem menuTweaker;
-        private System.Windows.Forms.PictureBox pbView;
+        public System.Windows.Forms.PictureBox pbView;
     }
 }
 

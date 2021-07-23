@@ -59,11 +59,11 @@
     <Compile Include="Helpers\Keystrokes.cs" />
     <Compile Include="Helpers\Strings.cs" />
     <Compile Include="Helpers\Utils.cs" />
-    <Compile Include="Pages\InfoWindow.cs">
+    <Compile Include="Pages\AboutWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\InfoWindow.Designer.cs">
-      <DependentUpon>InfoWindow.cs</DependentUpon>
+    <Compile Include="Pages\AboutWindow.Designer.cs">
+      <DependentUpon>AboutWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -79,8 +79,8 @@
     <Compile Include="Pages\TweakerWindow.Designer.cs">
       <DependentUpon>TweakerWindow.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Pages\InfoWindow.resx">
-      <DependentUpon>InfoWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\AboutWindow.resx">
+      <DependentUpon>AboutWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
