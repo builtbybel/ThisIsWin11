@@ -1,3 +1,4 @@
 
 - Refactored Tweaker code (runs as an "independent" instance and can also be opened via Settings > Open Tweaker menu)
-- Numeorus other code improvements (modular structure of some pages, i.e. Info, Tweaker etc.
+
+- Numeorus other code improvements (modular structure of some pages, i.e. Info, Tweaker etc.)
