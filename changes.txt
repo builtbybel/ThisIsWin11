@@ -1,5 +1,5 @@
 
-- Improved stability of Tweaker
+- Refactored Tweak module  (runs as an "independent" form and can also be opened via Settings > Open Tweaker menu)
+- Improved stability of Tweak module
 - Added several new tweaks/scripts
-- Numerous other code improvements
-
+- Numerous other code improvements (modular structure of some pages, i.e. Info, Tweaker etc.)
