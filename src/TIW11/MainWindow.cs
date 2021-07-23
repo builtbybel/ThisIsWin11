@@ -1,10 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ThisIsWin11
@@ -14,18 +11,26 @@ namespace ThisIsWin11
         private PageTitle INavPage = PageTitle.GetStarted;
         private Features.OS osInfo = new Features.OS();
 
+        private Dictionary<string, Form> panelForms = new Dictionary<string, Form>();
+        private Dictionary<string, ToolStripMenuItem> panelMenu = new Dictionary<string, ToolStripMenuItem>();
+        private Dictionary<string, Button> panelButtons = new Dictionary<string, Button>();
+
         public MainWindow()
         {
             InitializeComponent();
             NavigationView();
             EnumTableOfContents();
             UISelection();
+
+            RegisterButton(new TweakerWindow(this), btnOptimizer); // Tweaker window
+            RegisterMenu(new InfoWindow(this), menuAppInfo); // AppInfo window
         }
 
         private void MainWindow_Shown(object sender, EventArgs e)
         {
             Helpers.Utils.AppUpdate(); // Check for app updates
         }
+
 
         /// <summary>
         /// Some UI nicety
@@ -43,7 +48,7 @@ namespace ThisIsWin11
             }
             else
             {
-                //btnPresenter.Visible = false;
+                btnPresenter.Visible = false;
                 lnkSubHeader.Text = "*This is not Windows 11 (some features are not available)";
             }
 
@@ -59,6 +64,79 @@ namespace ThisIsWin11
                 IsBalloon = true
             };
         }
+
+        public void RegisterMenu(Form form, ToolStripMenuItem menu)
+        {
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            panelForms.Add(form.Name, form);
+
+            menu.Tag = form.Name;
+            menu.Click += SwitchMenu;
+            panelMenu.Add(form.Name, menu);
+        }
+
+        private void SwitchMenu(object sender, EventArgs e)
+        {
+            string viewMenu = ((ToolStripMenuItem)sender).Tag.ToString();
+
+            ActivateMenu(viewMenu);
+        }
+
+        public void ActivateMenu(string viewMenu)
+        {
+            Form form = panelForms[viewMenu];
+            this.pnlLeft.Hide();
+            this.Controls.Add(form);
+            this.pnlLeft.BackColor = form.BackColor;
+            form.Show();
+        }
+
+        public void RegisterButton(Form form, Button button)
+        {
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            panelForms.Add(form.Name, form);
+
+            button.Tag = form.Name;
+            button.Click += SwitchButton;
+            panelButtons.Add(form.Name, button);
+        }
+
+        private void SwitchButton(object sender, EventArgs e)
+        {
+            string viewButton = ((Control)sender).Tag.ToString();
+
+            ActivateMenu(viewButton);
+        }
+
+        public void ActivateButton(string viewButton)
+        {
+            Form form = panelForms[viewButton];
+            this.pnlLeft.Hide();
+            this.Controls.Add(form);
+            this.pnlLeft.BackColor = form.BackColor;
+            form.Show();
+        }
+
+        public string TweakerDescription { get { return textPS.Text; } set { textPS.Text = value; } }
+
+        public bool ShowLeftPanel { set { pnlLeft.Visible = value; } }
+
+        /// <summary>
+        /// Buttons/Links and menu events
+        /// </summary>
+
+        private void menuTweaker_Click(object sender, EventArgs e)
+        {
+            TweakerWindow tw = new TweakerWindow(this); tw.Show(this); textPS.Visible = true;
+        }
+
+        private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("ms-settings:about");
+
+        private void btnSettings_Click(object sender, EventArgs e) => this.menuMain.Show(Cursor.Position.X, Cursor.Position.Y);
+
+        private void menuCaptureToShare_Click(object sender, EventArgs e) => CaptureToShare();
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -99,6 +177,11 @@ namespace ThisIsWin11
             }
         }
 
+        private void btnOptimizer_Click(object sender, EventArgs e)
+        {
+            INavPage = (PageTitle)19; NavigationView();
+        }
+
         // Enum Breadcrumbs to cb
         private void EnumTableOfContents()
         {
@@ -133,7 +216,6 @@ namespace ThisIsWin11
                                     "Pages marked with <This page can be optimized> will allow you to apply custom changes and scripts from the community.";
                     pbView.ImageLocation = "";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.NewLook:
@@ -145,7 +227,6 @@ namespace ThisIsWin11
                     richDesc.Text = "As you already see, Windows 11 features a clean design with rounded corners, pastel shades and a centered Start menu and Taskbar.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-look.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.StartMenu:
@@ -159,7 +240,6 @@ namespace ThisIsWin11
                                         "It has a flyout design with pinned and recommended apps accompanying each other. So far in my usage, the recommendations are pretty good. It quickly offers me access to documents, photos, and apps I have recently installed.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-startmenu.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.ActionCenter:
@@ -173,7 +253,6 @@ namespace ThisIsWin11
                                     "You can now simply click on the unified “WiFi, volume and battery” button to open the new Action Center. It packs all the necessary controls, including brightness and volume sliders. You can also add more toggles like before.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-actioncenter.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.FileExplorer:
@@ -187,7 +266,6 @@ namespace ThisIsWin11
                                     "The File Explorer interface is not changing dramatically, but there are several noticeable changes. For example, Microsoft is replacing the Windows 8-era ribbon toolbar with a redesigned top menu called command bar allowing you quick access to commonly used actions like share, delete, rename, etc";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-fileexplorer.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.MicrosoftStore:
@@ -201,7 +279,6 @@ namespace ThisIsWin11
                                     "Microsoft previously restricted developers to its Universal Windows Apps, before then allowing some desktop apps that were packaged to use its store for updates. Now any app can be part of the store, a move that aligns with the Windows Package Manager Microsoft released last year.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-msstore.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.SettingsApp:
@@ -215,7 +292,6 @@ namespace ThisIsWin11
                                     "We’re also getting new pages to customize the touch keyboard, Windows snapping, multitasking and other advanced features like “Wake on Touch” in the new operating system.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-settingsapp.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.WindowsUpdates:
@@ -227,7 +303,6 @@ namespace ThisIsWin11
                     richDesc.Text = "Yes, you read that right. With Windows 11, you will have a much faster Windows update process, thanks to the background installation mechanism. Microsoft has promised that Windows updates will now be 40% smaller, making the process even more efficient. ";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-windowsupdates.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.SnapLayouts:
@@ -241,7 +316,6 @@ namespace ThisIsWin11
                                     "When you're working in a bunch of open windows, Windows 11 will let you arrange them in different layouts on the screen, and will save all of those windows in that arrangement. ";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-snaplayouts.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.Widgets:
@@ -253,7 +327,6 @@ namespace ThisIsWin11
                     richDesc.Text = "With Windows 11, Microsoft has brought Widgets, where you can find all kinds of information with just a click. It’s similar to Google Assistant’s Snapshot and the “Today View” in Apple’s iOS 15 or macOS Monterey.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-widgets.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.GestureControls:
@@ -266,7 +339,6 @@ namespace ThisIsWin11
                                     "Now, you can customize three-finger and four-finger swipes according to your preference.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-gestures.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.WallpapersNSounds:
@@ -279,7 +351,6 @@ namespace ThisIsWin11
                                     "Also, the startup and notification sound is really good.\nPress the Magic Button to listen to the startup sound.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-wallpapers.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.LockScreen:
@@ -292,7 +363,6 @@ namespace ThisIsWin11
                                     "It applies an acrylic blur in the background, and the new variable Segoe UI font makes things even better. If you don’t want all the links and recommendations on the lock screen, you can disable them from Settings for a clean lock screen.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-lockscreen.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.TouchKeyboard:
@@ -304,8 +374,6 @@ namespace ThisIsWin11
                     richDesc.Text = "Windows 11 comes with a Touch Keyboard feature that remains turned off by default. You can use this touch keyboard on a computer or laptop, which is not a touch screen. It is a handy application if your physical keyboard is totally not working or a few keys are not working.\n\n" +
                                     "Microsoft made it more intuitive to use by drawing inspiration from smartphone keyboards.\n\nEven you can use this Touch Keyboard as a substitute for a mechanical keyboard.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-touchkeyboard.png?raw=true";
-
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.AndroidApps:
@@ -319,7 +387,6 @@ namespace ThisIsWin11
                                     "The best part is that you can even sideload APKs on your Windows 11 PC.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-androidapps.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.Gaming:
@@ -336,7 +403,6 @@ namespace ThisIsWin11
 
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-gaming.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.Privacy:
@@ -351,7 +417,6 @@ namespace ThisIsWin11
                                     "Your browser history will sync between Edge on PC and Edge on mobile, as it already does. Your Skype and Teams conversations will sync as you'd expect too, and your Windows 11 features will migrate to new PCs if you upgrade.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-privacy.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.Apps:
@@ -365,7 +430,6 @@ namespace ThisIsWin11
                                     "The good thing is that at least some of the Windows 10 apps aren’t installed. However, you will still have installed all the hoard of apps that belong to Microsoft, such as Mail and Calendar, Your Phone, Mixed Reality Portal, Solitaire Collection, Get Help, Paint 3D, XBox Game Bar, etc.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-apps.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.Finish:
@@ -377,19 +441,17 @@ namespace ThisIsWin11
                     richDesc.Text = "We're finish setting up your device.";
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-end.png?raw=true";
 
-                    DisableCustomizationPKg();
                     break;
 
                 case PageTitle.Custom:
+
                     btnPresenter.Enabled = false;
                     btnConfigurator.Enabled = false;
                     btnOptimizer.Enabled = true;
                     pbView.Visible = false;
                     lblSubHeader.Text = "Community customizations";
-                    richDesc.Text = "You will find here custom tweaks and script files to customize Windows 11 according to your wishes.\n\nTo apply a custmization press <This page can be optimized> button.";
+                    richDesc.Text = "You will find here custom tweaks and script files to customize Windows 11 according to your wishes.\n\nTo open the customization page press <This page can be optimized> button.";
 
-                    InitializeCustomizationPkg();
-                    lstPS.Visible = true;
                     textPS.Visible = true;
 
                     break;
@@ -696,22 +758,6 @@ namespace ThisIsWin11
             }
         }
 
-        /// <summary>
-        ///  Add some watermark to pb
-        /// </summary>
-        /*    private void pbView_Paint(object sender, PaintEventArgs e)
-            {
-                if (INavPage == 0)
-
-                {
-                    return;
-                }
-                using (Font font = new Font("Segeo UI Semiglight", 8))
-                {
-                    e.Graphics.DrawString("https://github.com/builtbybel/ThisIsWin11", font, Brushes.HotPink, new Point(0, 0));
-                }
-            } */
-
         private void CaptureToShare()
         {
             Form f = ActiveForm;
@@ -734,149 +780,6 @@ namespace ThisIsWin11
 
                 MessageBox.Show("Click <OK> to prepare the Twitter status. After that you just need to upload the result image you just created." + dialog.FileName);
                 Process.Start(Helpers.Strings.TweetIntent); // Tweet Web Intent
-            }
-        }
-
-        /// <summary>
-        /// Customization page
-        /// </summary>
-        private void InitializeCustomizationPkg()
-        {
-            string path = @"custom";
-            if (Directory.Exists(path))
-            {
-                PopulatePS();
-            }
-        }
-
-        private void DisableCustomizationPKg()
-        {
-            lstPS.Visible = false;
-            textPS.Visible = false;
-        }
-
-        private void PopulatePS()
-        {
-            lstPS.Items.Clear();
-
-            DirectoryInfo dirs = new DirectoryInfo(@"custom");
-            FileInfo[] listSettings = dirs.GetFiles("*.ps1");
-            foreach (FileInfo fi in listSettings)
-            {
-                lstPS.Items.Add(Path.GetFileNameWithoutExtension(fi.Name));
-                lstPS.Enabled = true;
-            }
-        }
-
-        private void lstPS_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string psdir = @"custom\" + lstPS.Text + ".ps1";
-
-            try
-            {
-                using (StreamReader sr = new StreamReader(psdir, Encoding.Default))
-                {
-                    StringBuilder content = new StringBuilder();
-
-                    while (!sr.EndOfStream)
-                        content.AppendLine(sr.ReadLine());
-
-                    // Code section
-                    textPS.Text = content.ToString();
-
-                    // Info scection
-                    richDesc.Text = string.Join(Environment.NewLine, System.IO.File.ReadAllLines(psdir).Where(s => s.StartsWith("###")).Select(s => s.Substring(3).Replace("###", "\r\n\n")));
-                }
-            }
-            catch { }
-        }
-
-        private async void RunScripter()
-        {
-            if (!osInfo.IsWin11())
-            {
-                MessageBox.Show("We could not recognize this system as Windows 11. Some scripts are not tested on this operating system and could lead to malfunction.");
-            }
-
-            if (MessageBox.Show("Do you want to apply selected scripts?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                if (lstPS.CheckedItems.Count == 0)
-                {
-                    MessageBox.Show("Please select a script.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-                for (int i = 0; i < lstPS.Items.Count; i++)
-                {
-                    if (lstPS.GetItemChecked(i))
-                    {
-                        lstPS.SelectedIndex = i;
-                        string psdir = @"custom\" + lstPS.SelectedItem.ToString() + ".ps1";
-                        var ps1File = psdir;
-
-                        var equals = new[] { "Silent" };
-                        var str = richDesc.Text;
-
-                        btnOptimizer.Text = "Processing";
-
-                        if (equals.Any(str.Contains))                   // Silent
-                        {
-                            var startInfo = new ProcessStartInfo()
-                            {
-                                FileName = "powershell.exe",
-                                Arguments = $"-executionpolicy bypass -file \"{ps1File}\"",
-                                UseShellExecute = false,
-                                CreateNoWindow = true,
-                            };
-
-                            await Task.Run(() => { Process.Start(startInfo).WaitForExit(); });
-                        }
-                        else                                            // Create ConsoleWindow
-                        {
-                            var startInfo = new ProcessStartInfo()
-                            {
-                                FileName = "powershell.exe",
-                                Arguments = $"-executionpolicy bypass -noexit -file \"{ps1File}\"",
-                                UseShellExecute = false,
-                            };
-
-                            await Task.Run(() => { Process.Start(startInfo).WaitForExit(); });
-                        }
-
-                        btnOptimizer.Text = "This page can be optimized";
-
-                        MessageBox.Show("Custom script " + "\"" + lstPS.Text + "\" " + "has been successfully executed.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// Buttons/Links and menu events
-        /// </summary>
-        private void richDesc_LinkClicked(object sender, LinkClickedEventArgs e) => ThisIsWin11.Helpers.Utils.LaunchUri(e.LinkText);
-
-        private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("ms-settings:about");
-
-        private void btnSettings_Click(object sender, EventArgs e) => this.menuMain.Show(Cursor.Position.X, Cursor.Position.Y);
-
-        private void optionCaptureToShare_Click(object sender, EventArgs e) => CaptureToShare();
-
-        private void infoApp_Click(object sender, EventArgs e)
-        {
-            lblSubHeader.Text = infoApp.Text;
-            richDesc.Text = this.Text + "\n" +
-                                    "Version: " + Program.GetCurrentVersionTostring() + "\n\n" +
-                                    "It's all open source https://github.com/builtbybel/ThisIsWin11\n\n" +
-                                    "MIT License\n\n" +
-                                    "(C) 2021, Builtbybel";
-        }
-
-        private void btnOptimizer_Click(object sender, EventArgs e)
-        {
-            if (INavPage == (PageTitle)19) RunScripter();
-            else
-            {
-                INavPage = (PageTitle)19; NavigationView();
             }
         }
     }
