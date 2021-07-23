@@ -1,4 +1,5 @@
 
-- Refactored Tweaker code (runs as an "independent" instance and can also be opened via Settings > Open Tweaker menu)
+- Improved stability of Tweaker
+- Added several new tweaks/scripts
+- Numerous other code improvements
 
-- Numeorus other code improvements (modular structure of some pages, i.e. Info, Tweaker etc.)
