@@ -3,3 +3,6 @@
 - Improved stability of Tweak module
 - Added several new tweaks/scripts
 - Numerous other code improvements (modular structure of some pages, i.e. Info, Tweaker etc.)
+
+Complete release notes can be found here:
+https://github.com/builtbybel/ThisIsWin11/releases
