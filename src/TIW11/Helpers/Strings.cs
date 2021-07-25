@@ -3,7 +3,7 @@
     internal class Strings
     {
         public static readonly string TweetIntent = "https://twitter.com/intent/tweet?text=" +
-        "This%20is%20a%20%23Windows11/%20feature!%20Checked%20with%20%23ThisIsWin11%20%23app";
+        "This%20is%20a%20%23Windows11%20feature!%20Checked%20with%20%23ThisIsWin11%20%23app";
 
         public static class Uri
         {

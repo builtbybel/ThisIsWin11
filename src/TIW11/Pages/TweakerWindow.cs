@@ -11,18 +11,21 @@ namespace ThisIsWin11
 {
     public partial class TweakerWindow : Form
     {
-        private Features.OS osInfo = new Features.OS();
-
+        public static string mAppLogsDir = @"custom\logs";
+        private Showcase.OS osInfo = new Showcase.OS();
         private MainWindow mainForm = null;
 
         public TweakerWindow(Form frm)
         {
             mainForm = frm as MainWindow;
+
             InitializeComponent();
             InitializeCustomizationPkg();
 
+            this.ActiveControl = lblSubHeader;
+
             btnBack.Text = "\uE72B";          // Back
-            btnImport.Text = "\uE710";          // Import scripts
+            btnImport.Text = "\uE710";        // Import
         }
 
         private void InitializeCustomizationPkg()
@@ -47,7 +50,17 @@ namespace ThisIsWin11
             }
         }
 
-        public async void RunScripter()
+        private void CreateLogsDir()
+        {
+            try
+            {
+                if (!Directory.Exists(mAppLogsDir))
+                    Directory.CreateDirectory(mAppLogsDir);
+            }
+            catch { }
+        }
+
+        public async void RunTweaker()
         {
             if (lstPS.CheckedItems.Count == 0)
             {
@@ -70,10 +83,13 @@ namespace ThisIsWin11
                             string psdir = @"custom\" + lstPS.SelectedItem.ToString() + ".ps1";
                             var ps1File = psdir;
 
-                            var equals = new[] { "Silent" };
+                            var equals = new[] { "Requires -RunsSilent" };
 
-                            this.Enabled = false;
-                            var str = richDesc.Text;
+                            var str = rtbDesc.Text;
+                            btnCancel.Visible = true;
+                            progress.Visible = true;
+                            progress.Style = ProgressBarStyle.Marquee;
+                            progress.MarqueeAnimationSpeed = 30;
 
                             btnApply.Text = "Processing " + lstPS.Text;
 
@@ -100,17 +116,21 @@ namespace ThisIsWin11
 
                                 await Task.Run(() => { Process.Start(startInfo).WaitForExit(); });
                             }
+
+                            // Write log
+                            CreateLogsDir();
+                            File.WriteAllText(@"custom\logs\" + lstPS.Text + ".txt", "last applied: " + DateTime.Now.ToString() + Environment.NewLine + mainForm.rtbPS.Text);
                         }
-                       
                     }
+
                     btnApply.Text = "Apply selected";
-                    this.Enabled = true;
+                    progress.Visible = false;
+                    btnCancel.Visible = false;
 
                     MessageBox.Show("Selected scripts have been successfully executed.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
-
 
         private void lstPS_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -129,35 +149,128 @@ namespace ThisIsWin11
                     mainForm.TweakerDescription = content.ToString();
 
                     // Info section
-                    richDesc.Text = string.Join(Environment.NewLine, System.IO.File.ReadAllLines(psdir).Where(s => s.StartsWith("###")).Select(s => s.Substring(3).Replace("###", "\r\n\n")));
+                    rtbDesc.Text = string.Join(Environment.NewLine, File.ReadAllLines(psdir).Where(s => s.StartsWith("###")).Select(s => s.Substring(3).Replace("###", "\n")));
                 }
             }
             catch { }
         }
 
-        private void btnApply_Click(object sender, EventArgs e) => RunScripter();
-
-        private void richDesc_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
-
         private void TweakerWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            mainForm.textPS.Visible = false; mainForm.pbView.Visible = true;
+            mainForm.rtbPS.Visible = false; mainForm.pbView.Visible = true;
         }
-
-        private void btnImport_Click(object sender, EventArgs e) => MessageBox.Show("Not available in this release.", "Import script");
 
         private void TweakerWindow_Shown(object sender, EventArgs e)
         {
             mainForm.pbView.Visible = false;
-            mainForm.textPS.Visible = true;
+            mainForm.rtbPS.Visible = true;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.mainForm.ShowLeftPanel = true;
-            this.mainForm.textPS.Visible = false;
+            this.mainForm.PanelLeftShow = true;
+            this.mainForm.rtbPS.Visible = false;
 
             this.Hide();
+        }
+
+        private void rtbDesc_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
+
+        private void btnApply_Click(object sender, EventArgs e) => RunTweaker();
+
+        private void btnImport_Click(object sender, EventArgs e) => this.menuTweaker.Show(Cursor.Position.X, Cursor.Position.Y);
+
+        private void menuTweakerNewWindow_Click(object sender, EventArgs e)
+        {
+            TweakerWindow tw = new TweakerWindow(mainForm); tw.Show();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            String CurrentUser = Environment.UserName;
+            Process[] allProcesses = Process.GetProcessesByName("powershell");
+            if (null != allProcesses)
+            {
+                Process process = new Process();
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                startInfo.FileName = "cmd.exe";
+                startInfo.Arguments = "/C TASKKILL /F /FI \"USERNAME eq " + CurrentUser + "\" /IM powershell.exe";
+                process.StartInfo = startInfo;
+                process.Start();
+                process.WaitForExit();
+            }
+
+            btnCancel.Visible = false;
+        }
+
+        private void menuTweaksEdit_Click(object sender, EventArgs e)
+        {
+            if (lstPS.SelectedIndex == -1)
+            {
+                MessageBox.Show("No script selected.");
+                return;
+            }
+
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "powershell_ise.exe";
+                process.StartInfo.Arguments = "\"" + @"custom\" + "\\" + lstPS.SelectedItem.ToString() + ".ps1" + "\"";
+                process.Start();
+            }
+            catch { }
+        }
+
+        private void menuTweaksSave_Click(object sender, EventArgs e)
+        {
+            if (lstPS.SelectedIndex == -1)
+            {
+                MessageBox.Show("No script selected.");
+                return;
+            }
+
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Filter = "*.txt|*.txt|*.ps1|*.ps1";
+            dlg.FileName = lstPS.Text + "-Copy";
+            dlg.DefaultExt = ".ps1";
+            dlg.RestoreDirectory = true;
+            dlg.InitialDirectory = Application.StartupPath + @"\custom";
+            dlg.FilterIndex = 2;
+
+            try
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    File.WriteAllText(dlg.FileName, mainForm.rtbPS.Text, Encoding.UTF8);
+                    //Refresh
+                    PopulatePS();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void menuTweaksImport_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not available in this release.");
+        }
+
+        private void menuTweaksApplied_Click(object sender, EventArgs e)
+        {
+            DirectoryInfo dirs = new DirectoryInfo(@"custom\logs\");
+            FileInfo[] listApplied = dirs.GetFiles("*.txt");
+
+            StringBuilder message = new StringBuilder();
+
+            foreach (FileInfo fi in listApplied)
+            {
+                message.AppendLine("- " + Path.GetFileNameWithoutExtension(fi.Name));
+            }
+
+            MessageBox.Show("List of applied scripts/tweaks:" + "\r\n\n" + message.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

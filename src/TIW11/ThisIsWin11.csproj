@@ -53,8 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\LockScreen.cs" />
-    <Compile Include="Features\OS.cs" />
     <Compile Include="Helpers\Pages.cs" />
     <Compile Include="Helpers\Keystrokes.cs" />
     <Compile Include="Helpers\Strings.cs" />
@@ -79,6 +77,8 @@
     <Compile Include="Pages\TweakerWindow.Designer.cs">
       <DependentUpon>TweakerWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Showcase\LockScreen.cs" />
+    <Compile Include="Showcase\OS.cs" />
     <EmbeddedResource Include="Pages\AboutWindow.resx">
       <DependentUpon>AboutWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,5 +116,6 @@
   <ItemGroup>
     <Content Include="AppIcon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

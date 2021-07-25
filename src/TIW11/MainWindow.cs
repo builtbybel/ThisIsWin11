@@ -9,7 +9,8 @@ namespace ThisIsWin11
     public partial class MainWindow : Form
     {
         private PageTitle INavPage = PageTitle.GetStarted;
-        private Features.OS osInfo = new Features.OS();
+        private Showcase.OS osInfo = new Showcase.OS();
+        private Helpers.Utils utilInfo = new Helpers.Utils();
 
         private Dictionary<string, Form> panelForms = new Dictionary<string, Form>();
         private Dictionary<string, ToolStripMenuItem> panelMenu = new Dictionary<string, ToolStripMenuItem>();
@@ -22,18 +23,16 @@ namespace ThisIsWin11
             EnumTableOfContents();
             UISelection();
 
-            RegisterButton(new TweakerWindow(this), btnOptimizer); // Tweaker window
-            RegisterMenu(new AboutWindow(this), menuAppInfo); // About window
+            RegisterButton(new TweakerWindow(this), btnTweaker);    // Tweaker window
+            RegisterMenu(new AboutWindow(this), menuAppInfo);       // About window
         }
 
         private void MainWindow_Shown(object sender, EventArgs e)
         {
-            Helpers.Utils.AppUpdate(); // Check for app updates
+            utilInfo.CheckForUpdates(true);
         }
 
-        /// <summary>
-        /// Some UI nicety
-        /// </summary>
+        // Some UI nicety
         private void UISelection()
         {
             this.MinimumSize = new Size(800, 735);
@@ -118,22 +117,24 @@ namespace ThisIsWin11
             form.Show();
         }
 
-        public string TweakerDescription { get { return textPS.Text; } set { textPS.Text = value; } }
+        public string TweakerDescription { get { return rtbPS.Text; } set { rtbPS.Text = value; } }
 
-        public bool ShowLeftPanel { set { pnlLeft.Visible = value; } }
+        public bool PanelLeftShow { set { pnlLeft.Visible = value; } }
 
         /// <summary>
         /// Buttons/Links and menu events
         /// </summary>
-        private void menuTweaker_Click(object sender, EventArgs e) { TweakerWindow tw = new TweakerWindow(this); tw.Show(this); textPS.Visible = true; }
+        private void menuTweaker_Click(object sender, EventArgs e) { TweakerWindow tw = new TweakerWindow(this); tw.Show(); rtbPS.Visible = true; }
 
         private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("ms-settings:about");
 
         private void btnSettings_Click(object sender, EventArgs e) => this.menuMain.Show(Cursor.Position.X, Cursor.Position.Y);
 
-        private void menuCaptureToShare_Click(object sender, EventArgs e) => CaptureToShare();
+        private void menuCaptureToShare_Click(object sender, EventArgs e) => utilInfo.CaptureToShare(this);
 
-        private void richDesc_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
+        private void rtbDesc_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
+
+        private void pbView_Paint(object sender, PaintEventArgs e) => pbView.Controls.Add(btnPresenter);
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -174,9 +175,9 @@ namespace ThisIsWin11
             }
         }
 
-        private void btnOptimizer_Click(object sender, EventArgs e)
+        private void btnTweaker_Click(object sender, EventArgs e)
         {
-            textPS.Visible = true;
+            rtbPS.Visible = true;
             INavPage = (PageTitle)19; NavigationView();
         }
 
@@ -192,8 +193,9 @@ namespace ThisIsWin11
             Enum.TryParse<PageTitle>(cbTable.SelectedValue.ToString(), out index);
 
             INavPage = index;
-
             NavigationView();
+
+            rtbPS.Visible = false;
         }
 
         public void NavigationView()
@@ -203,49 +205,49 @@ namespace ThisIsWin11
             switch (INavPage)
             {
                 case PageTitle.GetStarted:
-                    btnPresenter.Enabled = true;
+                    btnPresenter.Visible = false;
                     btnConfigurator.Enabled = false;
-                    btnOptimizer.Enabled = false;
+                    btnTweaker.Enabled = false;
                     lblSubHeader.Text = "Welcome, " + Environment.UserName;
-                    richDesc.Text = "Lets make sure everything is set up how you want it.\n\nUse the <Next> and <Previous> buttons to navigate through the features of Windows 11.\n\n" +
-                                    "Use the <This page can be previewed> button to get the feature presented once (if it is available).\n\n" +
-                                    "Pages marked with <This page can be configured> will allow you to change immediately the Windows configuration.\n\n" +
-                                    "Pages marked with <This page can be optimized> will allow you to apply custom changes and scripts from the community.";
+                    rtbDesc.Text = "Lets make sure everything is set up how you want it.\n\nUse the <Next> and <Previous> buttons to navigate through the features of Windows 11.\n\n" +
+                                    "Use the <Preview this page> button on the right panel to get the feature presented once (if it is available).\n\n" +
+                                    "Pages marked with <Configure this page> will allow you to change immediately the Windows configuration.\n\n" +
+                                    "Pages marked with <Optimize this page> will allow you to apply custom changes and scripts from the community.";
                     pbView.Visible = true;
                     pbView.ImageLocation = "";
 
                     break;
 
                 case PageTitle.NewLook:
-                    btnPresenter.Enabled = false;
+                    btnPresenter.Visible = false;
                     btnConfigurator.Enabled = true;
-                    btnOptimizer.Enabled = false;
+                    btnTweaker.Enabled = true;
                     lblSubHeader.Text = "A new look";
-                    richDesc.Text = "As you already see, Windows 11 features a clean design with rounded corners, pastel shades and a centered Start menu and Taskbar.";
+                    rtbDesc.Text = "As you already see, Windows 11 features a clean design with rounded corners, pastel shades and a centered Start menu and Taskbar.";
                     pbView.Visible = true;
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-look.png?raw=true";
 
                     break;
 
                 case PageTitle.StartMenu:
-                    btnPresenter.Enabled = true;
+                    btnPresenter.Visible = true;
                     btnConfigurator.Enabled = true;
-                    btnOptimizer.Enabled = false;
+                    btnTweaker.Enabled = false;
                     lblSubHeader.Text = "New Start Menu";
-                    richDesc.Text = "Of all the new Windows 11 features, the new launcher-style floating Start Menu is the most distinctive part of Microsoft’s next-gen desktop OS.\n\n" +
+                    rtbDesc.Text = "Of all the new Windows 11 features, the new launcher-style floating Start Menu is the most distinctive part of Microsoft’s next-gen desktop OS.\n\n" +
                                         "Unlike the traditional Start Menu, the new Start — as Microsoft is calling it — sits right at the center of the taskbar.\n\n" +
-                                        "It has a flyout design with pinned and recommended apps accompanying each other. So far in my usage, the recommendations are pretty good. It quickly offers me access to documents, photos, and apps I have recently installed.";
+                                        "It has a flyout design with pinned and recommended apps accompanying each other.";
                     pbView.Visible = true;
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-startmenu.png?raw=true";
 
                     break;
 
                 case PageTitle.ActionCenter:
-                    btnPresenter.Enabled = true;
+                    btnPresenter.Visible = true;
                     btnConfigurator.Enabled = true;
-                    btnOptimizer.Enabled = false;
+                    btnTweaker.Enabled = false;
                     lblSubHeader.Text = "Action Center";
-                    richDesc.Text = "Another great feature of Windows 11 is the revamped Action Center.\n\n" +
+                    rtbDesc.Text = "Another great feature of Windows 11 is the revamped Action Center.\n\n" +
                                     "It follows a design language that we have seen on mobile OSes, and I quite like this mobile - first approach to important system toggles\n\n" +
                                     "You can now simply click on the unified “WiFi, volume and battery” button to open the new Action Center. It packs all the necessary controls, including brightness and volume sliders. You can also add more toggles like before.";
                     pbView.Visible = true;
@@ -254,11 +256,11 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.FileExplorer:
-                    btnPresenter.Enabled = true;
+                    btnPresenter.Visible = true;
                     btnConfigurator.Enabled = true;
-                    btnOptimizer.Enabled = true;
+                    btnTweaker.Enabled = true;
                     lblSubHeader.Text = "Modern File Explorer";
-                    richDesc.Text = "The new experience of file explorer didn’t come with multiple Tabs options similar to tabs in the Microsoft Edge browser.\n\n" +
+                    rtbDesc.Text = "The new experience of file explorer didn’t come with multiple Tabs options similar to tabs in the Microsoft Edge browser.\n\n" +
                                      "By default, File Explorer is now optimized for tablet users.\n\n" +
                                     "The File Explorer interface is not changing dramatically, but there are several noticeable changes. For example, Microsoft is replacing the Windows 8-era ribbon toolbar with a redesigned top menu called command bar allowing you quick access to commonly used actions like share, delete, rename, etc";
                     pbView.Visible = true;
@@ -267,11 +269,11 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.MicrosoftStore:
-                    btnPresenter.Enabled = true;
+                    btnPresenter.Visible = true;
                     btnConfigurator.Enabled = false;
-                    btnOptimizer.Enabled = true;
+                    btnTweaker.Enabled = true;
                     lblSubHeader.Text = "New Microsoft Store";
-                    richDesc.Text = "There’s a complete UI overhaul on the app store and some speed improvements.\n\n" +
+                    rtbDesc.Text = "There’s a complete UI overhaul on the app store and some speed improvements.\n\n" +
                                    "The key change is allowing more apps into the store. The Microsoft Store is changing on Windows 11, and eventually Windows 10, to include any traditional desktop apps.\n\n" +
                                     "Microsoft previously restricted developers to its Universal Windows Apps, before then allowing some desktop apps that were packaged to use its store for updates. Now any app can be part of the store, a move that aligns with the Windows Package Manager Microsoft released last year.";
                     pbView.Visible = true;
@@ -280,11 +282,11 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.SettingsApp:
-                    btnPresenter.Enabled = true;
+                    btnPresenter.Visible = true;
                     btnConfigurator.Enabled = false;
-                    btnOptimizer.Enabled = true;
+                    btnTweaker.Enabled = true;
                     lblSubHeader.Text = "Redesigned Settings App";
-                    richDesc.Text = "The Settings app has been redesigned with a radically different look and it is now using a new navigation menu on the left, similar to Control Panel.\n\n" +
+                    rtbDesc.Text = "The Settings app has been redesigned with a radically different look and it is now using a new navigation menu on the left, similar to Control Panel.\n\n" +
                                     "It comes with a slightly reorganized layout which enables easier access to all your PC settings.\n\n" +
                                     "We’re also getting new pages to customize the touch keyboard, Windows snapping, multitasking and other advanced features like “Wake on Touch” in the new operating system.";
                     pbView.Visible = true;
@@ -293,22 +295,22 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.WindowsUpdates:
-                    btnPresenter.Enabled = true;
+                    btnPresenter.Visible = true;
                     btnConfigurator.Enabled = true;
-                    btnOptimizer.Enabled = false;
+                    btnTweaker.Enabled = false;
                     lblSubHeader.Text = "Faster Windows Updates";
-                    richDesc.Text = "Yes, you read that right. With Windows 11, you will have a much faster Windows update process, thanks to the background installation mechanism. Microsoft has promised that Windows updates will now be 40% smaller, making the process even more efficient. ";
+                    rtbDesc.Text = "Yes, you read that right. With Windows 11, you will have a much faster Windows update process, thanks to the background installation mechanism. Microsoft has promised that Windows updates will now be 40% smaller, making the process even more efficient. ";
                     pbView.Visible = true;
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-windowsupdates.png?raw=true";
 
                     break;
 
                 case PageTitle.SnapLayouts:
-                    btnPresenter.Enabled = true;
+                    btnPresenter.Visible = true;
                     btnConfigurator.Enabled = false;
-                    btnOptimizer.Enabled = false;
+                    btnTweaker.Enabled = false;
                     lblSubHeader.Text = "Snap Layouts";
-                    richDesc.Text = "Snap is a productivity feature that helps users arrange applications and other windows logically on-screen.\n\n" +
+                    rtbDesc.Text = "Snap is a productivity feature that helps users arrange applications and other windows logically on-screen.\n\n" +
                                     "In 2019, Microsoft relaunched the PowerToys brand with a new utility called FancyZones that extends the Snap experience to allow for more complex and useful on-screen window layouts. A key part of this utility, incredibly, has been integrated into Windows 11 and is now called Snap Layouts.\n\n" +
                                     "When you're working in a bunch of open windows, Windows 11 will let you arrange them in different layouts on the screen, and will save all of those windows in that arrangement. ";
                     pbView.Visible = true;
@@ -317,22 +319,22 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.Widgets:
-                    btnPresenter.Enabled = true;
+                    btnPresenter.Visible = true;
                     btnConfigurator.Enabled = false;
-                    btnOptimizer.Enabled = false;
+                    btnTweaker.Enabled = false;
                     lblSubHeader.Text = "Widgets";
-                    richDesc.Text = "With Windows 11, Microsoft has brought Widgets, where you can find all kinds of information with just a click. It’s similar to Google Assistant’s Snapshot and the “Today View” in Apple’s iOS 15 or macOS Monterey.";
+                    rtbDesc.Text = "With Windows 11, Microsoft has brought Widgets, where you can find all kinds of information with just a click. It’s similar to Google Assistant’s Snapshot and the “Today View” in Apple’s iOS 15 or macOS Monterey.";
                     pbView.Visible = true;
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-widgets.png?raw=true";
 
                     break;
 
                 case PageTitle.GestureControls:
-                    btnPresenter.Enabled = false;
+                    btnPresenter.Visible = false;
                     btnConfigurator.Enabled = true;
-                    btnOptimizer.Enabled = false;
+                    btnTweaker.Enabled = false;
                     lblSubHeader.Text = "Advanced Gesture Controls";
-                    richDesc.Text = "Gestures have long been part of Windows 10, but frankly speaking, they were not very smooth, and the transitions between apps and virtual desktops were awful. With the new Advanced Gesture Controls and mandatory precision touchpad requirement for Windows 11, things might get better.\n\n" +
+                    rtbDesc.Text = "Gestures have long been part of Windows 10, but frankly speaking, they were not very smooth, and the transitions between apps and virtual desktops were awful. With the new Advanced Gesture Controls and mandatory precision touchpad requirement for Windows 11, things might get better.\n\n" +
                                     "Now, you can customize three-finger and four-finger swipes according to your preference.";
                     pbView.Visible = true;
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-gestures.png?raw=true";
@@ -340,11 +342,11 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.WallpapersNSounds:
-                    btnPresenter.Enabled = false;
+                    btnPresenter.Visible = true;
                     btnConfigurator.Enabled = true;
-                    btnOptimizer.Enabled = false;
+                    btnTweaker.Enabled = false;
                     lblSubHeader.Text = "New Wallpapers && Sounds";
-                    richDesc.Text = "Along with Windows 11, Microsoft has also brought a series of beautiful wallpapers, sounds, and themes. Wallpapers such as Captured Motion, Flow, Sunrise, Glow are some of the nicest wallpapers you can find on a desktop OS.\n\n" +
+                    rtbDesc.Text = "Along with Windows 11, Microsoft has also brought a series of beautiful wallpapers, sounds, and themes. Wallpapers such as Captured Motion, Flow, Sunrise, Glow are some of the nicest wallpapers you can find on a desktop OS.\n\n" +
                                     "Also, the startup and notification sound is really good.\nPress the Magic Button to listen to the startup sound.\n\n" +
                                     "You will find great new wallpapers for Microsoft products also here https://wallpaperhub.app";
                     pbView.Visible = true;
@@ -353,11 +355,11 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.LockScreen:
-                    btnPresenter.Enabled = true;
+                    btnPresenter.Visible = true;
                     btnConfigurator.Enabled = true;
-                    btnOptimizer.Enabled = false;
+                    btnTweaker.Enabled = false;
                     lblSubHeader.Text = "New Minimal Lock Screen";
-                    richDesc.Text = "Windows 11 supports animated lock-screen background on PCs that have accelerometer.\n\n" +
+                    rtbDesc.Text = "Windows 11 supports animated lock-screen background on PCs that have accelerometer.\n\n" +
                                     "It applies an acrylic blur in the background, and the new variable Segoe UI font makes things even better. If you don’t want all the links and recommendations on the lock screen, you can disable them from Settings for a clean lock screen.";
                     pbView.Visible = true;
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-lockscreen.png?raw=true";
@@ -365,22 +367,22 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.TouchKeyboard:
-                    btnPresenter.Enabled = false;
+                    btnPresenter.Visible = false;
                     btnConfigurator.Enabled = true;
-                    btnOptimizer.Enabled = false;
+                    btnTweaker.Enabled = false;
                     lblSubHeader.Text = "Touch Keyboard Improvements";
-                    richDesc.Text = "Windows 11 comes with a Touch Keyboard feature that remains turned off by default. You can use this touch keyboard on a computer or laptop, which is not a touch screen. It is a handy application if your physical keyboard is totally not working or a few keys are not working.\n\n" +
+                    rtbDesc.Text = "Windows 11 comes with a Touch Keyboard feature that remains turned off by default. You can use this touch keyboard on a computer or laptop, which is not a touch screen. It is a handy application if your physical keyboard is totally not working or a few keys are not working.\n\n" +
                                     "Microsoft made it more intuitive to use by drawing inspiration from smartphone keyboards.\n\nEven you can use this Touch Keyboard as a substitute for a mechanical keyboard.";
                     pbView.Visible = true;
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-touchkeyboard.png?raw=true";
                     break;
 
                 case PageTitle.AndroidApps:
-                    btnPresenter.Enabled = true;
+                    btnPresenter.Visible = true;
                     btnConfigurator.Enabled = false;
-                    btnOptimizer.Enabled = false;
+                    btnTweaker.Enabled = false;
                     lblSubHeader.Text = "Android Apps Support";
-                    richDesc.Text = "Android apps will be coming to Windows 11 and installable from within the new Microsoft Store via the Amazon Appstore.\n\n" +
+                    rtbDesc.Text = "Android apps will be coming to Windows 11 and installable from within the new Microsoft Store via the Amazon Appstore.\n\n" +
                                     "However, Android app support has not been added in the current 22000.51 preview build. Microsoft has confirmed that the option to install Android apps will arrive in the upcoming builds.\n\n" +
                                     "The best part is that you can even sideload APKs on your Windows 11 PC.";
                     pbView.Visible = true;
@@ -389,11 +391,11 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.Gaming:
-                    btnPresenter.Enabled = false;
+                    btnPresenter.Visible = false;
                     btnConfigurator.Enabled = true;
-                    btnOptimizer.Enabled = true;
+                    btnTweaker.Enabled = true;
                     lblSubHeader.Text = "Gaming";
-                    richDesc.Text = "If you're a gamer, Windows 11 was made for you and the following three features will make it great for gaming.\n\n" +
+                    rtbDesc.Text = "If you're a gamer, Windows 11 was made for you and the following three features will make it great for gaming.\n\n" +
                                     "1. During the Windows 11 unveiling, Microsoft announced support for Auto HDR that would elevate the viewing experience while playing games.\n\n" +
                                     "HDR stands for High Dynamic Range, as opposed to SDR or Standard Dynamic Range. With a higher range of colors, HDR gives more vibrant and realistic colors to your video games and makes the sceneries look even better.\n\n" +
                                     "2. Microsoft also revealed that the DirectStorage API will come to Windows PCs. DirectStorage is an API that allows the GPU to load game data directly from the SSD and skip the CPU processing. With DirectStorage, the GPU processes and decompresses the data itself.\n\n" +
@@ -404,11 +406,11 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.Privacy:
-                    btnPresenter.Enabled = false;
+                    btnPresenter.Visible = false;
                     btnConfigurator.Enabled = true;
-                    btnOptimizer.Enabled = true;
+                    btnTweaker.Enabled = true;
                     lblSubHeader.Text = "Privacy";
-                    richDesc.Text = "One thing Microsoft didn't discuss is about Windows 11 privacy.\n\n" +
+                    rtbDesc.Text = "One thing Microsoft didn't discuss is about Windows 11 privacy.\n\n" +
                                     "Since Windows 11 Home will essentially require a Microsoft account for most users, data harvesting is part of the package. \n\n" +
                                     "In Windows 11, you'll be able to continue editing cloud files per its algorithmically populated \"Recommended\" section in the new Start Menu.\n" +
                                     "Your browser history will sync between Edge on PC and Edge on mobile, as it already does. Your Skype and Teams conversations will sync as you'd expect too, and your Windows 11 features will migrate to new PCs if you upgrade.";
@@ -418,11 +420,11 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.Apps:
-                    btnPresenter.Enabled = false;
+                    btnPresenter.Visible = false;
                     btnConfigurator.Enabled = true;
-                    btnOptimizer.Enabled = true;
+                    btnTweaker.Enabled = true;
                     lblSubHeader.Text = "Apps";
-                    richDesc.Text = "First Windows 11 preview still insists with bloatware.\n\n" +
+                    rtbDesc.Text = "First Windows 11 preview still insists with bloatware.\n\n" +
                                      "Apparently Windows 11 is also lighter than Windows 10 as for the preinstalled apps.\n\n" +
                                     "The good thing is that at least some of the Windows 10 apps aren’t installed. However, you will still have installed all the hoard of apps that belong to Microsoft, such as Mail and Calendar, Your Phone, Mixed Reality Portal, Solitaire Collection, Get Help, Paint 3D, XBox Game Bar, etc.";
                     pbView.Visible = true;
@@ -431,11 +433,11 @@ namespace ThisIsWin11
                     break;
 
                 case PageTitle.Finish:
-                    btnPresenter.Enabled = false;
+                    btnPresenter.Visible = false;
                     btnConfigurator.Enabled = true;
-                    btnOptimizer.Enabled = false;
+                    btnTweaker.Enabled = false;
                     lblSubHeader.Text = "That's it";
-                    richDesc.Text = "We're finish setting up your device.";
+                    rtbDesc.Text = "We're finish setting up your device.";
                     pbView.Visible = true;
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-end.png?raw=true";
 
@@ -443,13 +445,14 @@ namespace ThisIsWin11
 
                 case PageTitle.Custom:
 
-                    btnPresenter.Enabled = false;
+                    btnPresenter.Visible = false;
                     btnConfigurator.Enabled = false;
-                    btnOptimizer.Enabled = true;
+                    btnTweaker.Enabled = true;
                     lblSubHeader.Text = "Community customizations";
-                    richDesc.Text = "You will find here custom tweaks and script files to customize Windows 11 according to your wishes.\n\nTo open the customization page press <This page can be optimized> button.";
+                    rtbDesc.Text = "You will find here custom tweaks and script files to customize Windows 11 according to your wishes.\n\nTo open the customization page press <Optimize this page> button.\n\n\n\n" +
+                                    "To obtain new objects (tweaks, scripts, templates etc.) visit the GitHub repository of the app: https://github.com/builtbybel/ThisIsWin11";
                     pbView.Visible = false;
-                    pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-end.png?raw=true";
+                    pbView.ImageLocation = "";
 
                     break;
             }
@@ -603,7 +606,7 @@ namespace ThisIsWin11
 
                     try
                     {
-                        Features.LockScreen.LockWorkStation();
+                        Showcase.LockScreen.LockWorkStation();
                     }
                     catch (Exception ex)
                     {
@@ -753,31 +756,6 @@ namespace ThisIsWin11
                 case PageTitle.Custom:
 
                     break;
-            }
-        }
-
-        private void CaptureToShare()
-        {
-            Form f = ActiveForm;
-            Bitmap bmp = new Bitmap(f.Width, f.Height);
-            f.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
-
-            SaveFileDialog dialog = new SaveFileDialog
-            {
-                InitialDirectory = Application.StartupPath,
-                Title = "Location",
-                Filter = "PNG Images|*.png",
-                FileName = "ThisIsWin11-" + lblSubHeader.Text + "\x20" + osInfo.ComputerName
-            };
-
-            DialogResult result = dialog.ShowDialog(this);
-
-            if (result == DialogResult.OK)
-            {
-                bmp.Save(dialog.FileName);
-
-                MessageBox.Show("Click <OK> to prepare the Twitter status. After that you just need to upload the result image you just created." + dialog.FileName);
-                Process.Start(Helpers.Strings.TweetIntent); // Tweet Web Intent
             }
         }
     }
