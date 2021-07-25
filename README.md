@@ -21,7 +21,8 @@ alt="GitHub issues">
 ![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11.png)
  
 ### Customize Windows 11 to your needs 
-![ThisIsWin11_zvRzrw8mwf](https://user-images.githubusercontent.com/57478606/126897617-f28873b6-123a-4ce4-93ef-ac71bff6ad74.png)
+![ThisIsWin11_ydwIW8YhXG](https://user-images.githubusercontent.com/57478606/126909035-e4fe19f1-f579-4924-a4f6-c9bf9bcd6f60.png)
+
 
 
 
