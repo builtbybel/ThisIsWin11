@@ -1,8 +1,8 @@
 
-- Refactored Tweak module  (runs as an "independent" form and can also be opened via Settings > Open Tweaker menu)
-- Improved stability of Tweak module
-- Added several new tweaks/scripts
-- Numerous other code improvements (modular structure of some pages, i.e. Info, Tweaker etc.)
+- Enhanced Custom/Tweak module (added functions to Open in new window, Cancel a running script, Import, Edit and Show applied tweaks)
+- Refactored Showcase of Win11 features
+- Improved scripting engine and several tweaks
+- Numerous other fixes in code and UI
 
 Complete release notes can be found here:
-https://github.com/builtbybel/ThisIsWin11/releases
+https://github.com/builtbybel/ThisIsWin11/releases/tag/0.25.0
