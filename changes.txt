@@ -1,8 +1,6 @@
 
-- Enhanced Custom/Tweak module (added functions to Open in new window, Cancel a running script, Import, Edit and Show applied tweaks)
-- Refactored Showcase of Win11 features
-- Improved scripting engine and several tweaks
-- Numerous other fixes in code and UI
+- Added Windows 11 debloater/apps uninstaller module (you'll find it in the Apps page or Settings menu > Open Debloater page)
+- Numerous improvements in code and UI
 
 Complete release notes can be found here:
-https://github.com/builtbybel/ThisIsWin11/releases/tag/0.25.0
+https://github.com/builtbybel/ThisIsWin11/releases/tag/0.30.0
