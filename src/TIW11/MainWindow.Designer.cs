@@ -48,10 +48,11 @@ namespace ThisIsWin11
             this.pnlRight = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.lblPreview = new System.Windows.Forms.Label();
-            this.pbView = new System.Windows.Forms.PictureBox();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
+            this.pbView = new System.Windows.Forms.PictureBox();
             this.menuMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuTweaker = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuApps = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCaptureToShare = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAppInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLeft.SuspendLayout();
@@ -63,6 +64,7 @@ namespace ThisIsWin11
             // 
             // pnlLeft
             // 
+            this.pnlLeft.AutoScroll = true;
             this.pnlLeft.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlLeft.Controls.Add(this.lblSubHeader);
             this.pnlLeft.Controls.Add(this.btnBack);
@@ -218,7 +220,7 @@ namespace ThisIsWin11
             this.btnTweaker.Name = "btnTweaker";
             this.btnTweaker.Size = new System.Drawing.Size(337, 32);
             this.btnTweaker.TabIndex = 138;
-            this.btnTweaker.Text = "Optimize this page";
+            this.btnTweaker.Text = "Customize this page";
             this.btnTweaker.UseVisualStyleBackColor = false;
             this.btnTweaker.Click += new System.EventHandler(this.btnTweaker_Click);
             // 
@@ -247,12 +249,13 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHeader.AutoEllipsis = true;
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.ForeColor = System.Drawing.Color.DeepPink;
             this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblHeader.Location = new System.Drawing.Point(12, 21);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(339, 32);
             this.lblHeader.TabIndex = 25;
-            this.lblHeader.Text = "Get started with Windows 11";
+            this.lblHeader.Text = "Get Started with Windows 11";
             // 
             // lnkSubHeader
             // 
@@ -263,7 +266,7 @@ namespace ThisIsWin11
             this.lnkSubHeader.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lnkSubHeader.LinkColor = System.Drawing.Color.DeepPink;
+            this.lnkSubHeader.LinkColor = System.Drawing.Color.Black;
             this.lnkSubHeader.Location = new System.Drawing.Point(13, 68);
             this.lnkSubHeader.Name = "lnkSubHeader";
             this.lnkSubHeader.Size = new System.Drawing.Size(338, 18);
@@ -283,9 +286,9 @@ namespace ThisIsWin11
             this.btnPresenter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPresenter.ForeColor = System.Drawing.Color.White;
             this.btnPresenter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnPresenter.Location = new System.Drawing.Point(0, 189);
+            this.btnPresenter.Location = new System.Drawing.Point(0, 299);
             this.btnPresenter.Name = "btnPresenter";
-            this.btnPresenter.Size = new System.Drawing.Size(395, 32);
+            this.btnPresenter.Size = new System.Drawing.Size(429, 32);
             this.btnPresenter.TabIndex = 139;
             this.btnPresenter.Text = "Preview this page";
             this.btnPresenter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -318,7 +321,7 @@ namespace ThisIsWin11
             this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.HotPink;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.Location = new System.Drawing.Point(345, 0);
+            this.btnSettings.Location = new System.Drawing.Point(346, 0);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(48, 51);
             this.btnSettings.TabIndex = 136;
@@ -330,27 +333,15 @@ namespace ThisIsWin11
             this.lblPreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPreview.AutoEllipsis = true;
-            this.lblPreview.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblPreview.BackColor = System.Drawing.Color.Transparent;
             this.lblPreview.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPreview.ForeColor = System.Drawing.Color.DimGray;
             this.lblPreview.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblPreview.Location = new System.Drawing.Point(21, 21);
             this.lblPreview.Name = "lblPreview";
-            this.lblPreview.Size = new System.Drawing.Size(121, 32);
+            this.lblPreview.Size = new System.Drawing.Size(155, 32);
             this.lblPreview.TabIndex = 135;
             this.lblPreview.Text = "Preview";
-            // 
-            // pbView
-            // 
-            this.pbView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pbView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pbView.Location = new System.Drawing.Point(0, 116);
-            this.pbView.Name = "pbView";
-            this.pbView.Size = new System.Drawing.Size(395, 654);
-            this.pbView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbView.TabIndex = 127;
-            this.pbView.TabStop = false;
-            this.pbView.Paint += new System.Windows.Forms.PaintEventHandler(this.pbView_Paint);
             // 
             // rtbPS
             // 
@@ -368,23 +359,43 @@ namespace ThisIsWin11
             this.rtbPS.Text = "";
             this.rtbPS.Visible = false;
             // 
+            // pbView
+            // 
+            this.pbView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pbView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pbView.Location = new System.Drawing.Point(0, 116);
+            this.pbView.Name = "pbView";
+            this.pbView.Size = new System.Drawing.Size(395, 654);
+            this.pbView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbView.TabIndex = 127;
+            this.pbView.TabStop = false;
+            this.pbView.Paint += new System.Windows.Forms.PaintEventHandler(this.pbView_Paint);
+            // 
             // menuMain
             // 
             this.menuMain.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuTweaker,
+            this.menuApps,
             this.menuCaptureToShare,
             this.menuAppInfo});
             this.menuMain.Name = "menuMain";
             this.menuMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuMain.Size = new System.Drawing.Size(329, 94);
+            this.menuMain.Size = new System.Drawing.Size(329, 124);
             // 
             // menuTweaker
             // 
             this.menuTweaker.Name = "menuTweaker";
             this.menuTweaker.Size = new System.Drawing.Size(328, 30);
-            this.menuTweaker.Text = "Open Tweaker";
+            this.menuTweaker.Text = "Open Tweaker page";
             this.menuTweaker.Click += new System.EventHandler(this.menuTweaker_Click);
+            // 
+            // menuApps
+            // 
+            this.menuApps.Name = "menuApps";
+            this.menuApps.Size = new System.Drawing.Size(328, 30);
+            this.menuApps.Text = "Open Debloater page";
+            this.menuApps.Click += new System.EventHandler(this.menuApps_Click);
             // 
             // menuCaptureToShare
             // 
@@ -418,7 +429,6 @@ namespace ThisIsWin11
             this.pnlLeft.PerformLayout();
             this.pnlMiddle.ResumeLayout(false);
             this.pnlRight.ResumeLayout(false);
-            this.pnlRight.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbView)).EndInit();
             this.menuMain.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -442,7 +452,6 @@ namespace ThisIsWin11
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.ToolStripMenuItem menuAppInfo;
         private System.Windows.Forms.ToolStripMenuItem menuCaptureToShare;
-        private System.Windows.Forms.Button btnTweaker;
         private System.Windows.Forms.Panel pnlLeft;
         public System.Windows.Forms.RichTextBox rtbDesc;
         private System.Windows.Forms.ToolStripMenuItem menuTweaker;
@@ -450,6 +459,8 @@ namespace ThisIsWin11
         public System.Windows.Forms.Label lblSubHeader;
         public System.Windows.Forms.RichTextBox rtbPS;
         private System.Windows.Forms.CheckBox btnPresenter;
+        private System.Windows.Forms.Button btnTweaker;
+        private System.Windows.Forms.ToolStripMenuItem menuApps;
     }
 }
 

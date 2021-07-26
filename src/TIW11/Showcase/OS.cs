@@ -26,7 +26,14 @@ namespace ThisIsWin11.Showcase
 
         public string GetVersion()
         {
-            return (string)Registry.GetValue("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion", "DisplayVersion", "");
+            RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
+
+            var UBR = key.GetValue("UBR").ToString();
+            var CurrentBuild = key.GetValue("CurrentBuild").ToString();
+
+            string version = CurrentBuild + "." + UBR;
+
+            return "Build " + version;
         }
 
         public string Is64Bit()

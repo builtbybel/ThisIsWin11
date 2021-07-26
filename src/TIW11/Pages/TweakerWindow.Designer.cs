@@ -34,15 +34,15 @@ namespace ThisIsWin11
             this.menuTweaksEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTweaksSave = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTweaker = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuTweaksApplied = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTweakerNewWindow = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuTweaksApplied = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblSubHeader = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.lstPS = new System.Windows.Forms.CheckedListBox();
             this.progress = new System.Windows.Forms.ProgressBar();
-            this.btnImport = new System.Windows.Forms.Button();
+            this.btnTweakerMenu = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.rtbDesc = new System.Windows.Forms.RichTextBox();
             this.menuTweaker.SuspendLayout();
@@ -80,14 +80,7 @@ namespace ThisIsWin11
             this.menuTweaksApplied});
             this.menuTweaker.Name = "menuMain";
             this.menuTweaker.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuTweaker.Size = new System.Drawing.Size(412, 176);
-            // 
-            // menuTweaksApplied
-            // 
-            this.menuTweaksApplied.Name = "menuTweaksApplied";
-            this.menuTweaksApplied.Size = new System.Drawing.Size(411, 30);
-            this.menuTweaksApplied.Text = "Show applied";
-            this.menuTweaksApplied.Click += new System.EventHandler(this.menuTweaksApplied_Click);
+            this.menuTweaker.Size = new System.Drawing.Size(412, 154);
             // 
             // menuTweakerNewWindow
             // 
@@ -96,6 +89,13 @@ namespace ThisIsWin11
             this.menuTweakerNewWindow.Size = new System.Drawing.Size(411, 30);
             this.menuTweakerNewWindow.Text = "Open in new window";
             this.menuTweakerNewWindow.Click += new System.EventHandler(this.menuTweakerNewWindow_Click);
+            // 
+            // menuTweaksApplied
+            // 
+            this.menuTweaksApplied.Name = "menuTweaksApplied";
+            this.menuTweaksApplied.Size = new System.Drawing.Size(411, 30);
+            this.menuTweaksApplied.Text = "Show applied";
+            this.menuTweaksApplied.Click += new System.EventHandler(this.menuTweaksApplied_Click);
             // 
             // panel1
             // 
@@ -136,9 +136,9 @@ namespace ThisIsWin11
             this.lblSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblSubHeader.Location = new System.Drawing.Point(72, 21);
             this.lblSubHeader.Name = "lblSubHeader";
-            this.lblSubHeader.Size = new System.Drawing.Size(310, 32);
+            this.lblSubHeader.Size = new System.Drawing.Size(181, 32);
             this.lblSubHeader.TabIndex = 159;
-            this.lblSubHeader.Text = "Community customizations";
+            this.lblSubHeader.Text = "Customizations";
             // 
             // btnBack
             // 
@@ -168,7 +168,7 @@ namespace ThisIsWin11
             this.lstPS.FormattingEnabled = true;
             this.lstPS.Location = new System.Drawing.Point(27, 132);
             this.lstPS.Name = "lstPS";
-            this.lstPS.Size = new System.Drawing.Size(377, 264);
+            this.lstPS.Size = new System.Drawing.Size(373, 264);
             this.lstPS.Sorted = true;
             this.lstPS.TabIndex = 157;
             this.lstPS.ThreeDCheckBoxes = true;
@@ -176,39 +176,38 @@ namespace ThisIsWin11
             // 
             // progress
             // 
-            this.progress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.progress.Location = new System.Drawing.Point(109, 697);
+            this.progress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.progress.Location = new System.Drawing.Point(27, 697);
             this.progress.MarqueeAnimationSpeed = 30;
             this.progress.Name = "progress";
             this.progress.Size = new System.Drawing.Size(213, 5);
             this.progress.TabIndex = 156;
             this.progress.Visible = false;
             // 
-            // btnImport
+            // btnTweakerMenu
             // 
-            this.btnImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnImport.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnImport.FlatAppearance.BorderSize = 0;
-            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImport.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImport.Location = new System.Drawing.Point(27, 648);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(50, 30);
-            this.btnImport.TabIndex = 155;
-            this.btnImport.Text = "+";
-            this.btnImport.UseVisualStyleBackColor = false;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            this.btnTweakerMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTweakerMenu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnTweakerMenu.FlatAppearance.BorderSize = 0;
+            this.btnTweakerMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTweakerMenu.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTweakerMenu.Location = new System.Drawing.Point(353, 0);
+            this.btnTweakerMenu.Name = "btnTweakerMenu";
+            this.btnTweakerMenu.Size = new System.Drawing.Size(48, 51);
+            this.btnTweakerMenu.TabIndex = 155;
+            this.btnTweakerMenu.UseVisualStyleBackColor = false;
+            this.btnTweakerMenu.Click += new System.EventHandler(this.btnTweakerMenu_Click);
             // 
             // btnApply
             // 
-            this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnApply.BackColor = System.Drawing.Color.Gainsboro;
             this.btnApply.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnApply.FlatAppearance.BorderSize = 0;
             this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApply.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApply.ForeColor = System.Drawing.Color.Black;
-            this.btnApply.Location = new System.Drawing.Point(109, 648);
+            this.btnApply.Location = new System.Drawing.Point(27, 648);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(213, 30);
             this.btnApply.TabIndex = 154;
@@ -242,7 +241,7 @@ namespace ThisIsWin11
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lstPS);
             this.Controls.Add(this.progress);
-            this.Controls.Add(this.btnImport);
+            this.Controls.Add(this.btnTweakerMenu);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.rtbDesc);
             this.Controls.Add(this.panel1);
@@ -252,7 +251,7 @@ namespace ThisIsWin11
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThisIsWin11";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TweakerWindow_FormClosing);
-            this.Shown += new System.EventHandler(this.TweakerWindow_Shown);
+            this.Load += new System.EventHandler(this.TweakerWindow_Load);
             this.menuTweaker.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -271,7 +270,7 @@ namespace ThisIsWin11
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.CheckedListBox lstPS;
         private System.Windows.Forms.ProgressBar progress;
-        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnTweakerMenu;
         private System.Windows.Forms.Button btnApply;
         public System.Windows.Forms.RichTextBox rtbDesc;
         private System.Windows.Forms.ToolStripMenuItem menuTweaksApplied;

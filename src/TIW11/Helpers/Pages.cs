@@ -2,7 +2,7 @@
 {
     public enum PageTitle
     {
-        GetStarted= 0,
+        GetStarted = 0,
         NewLook,
         StartMenu,
         ActionCenter,

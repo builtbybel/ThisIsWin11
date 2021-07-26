@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Net;
+using System.Windows.Forms;
 
 namespace ThisIsWin11
 {
@@ -11,13 +11,14 @@ namespace ThisIsWin11
         public AboutWindow(Form frm)
         {
             mainForm = frm as MainWindow;
-            InitializeComponent();
 
-            btnBack.Text = "\uE72B";   
+            InitializeComponent();
         }
 
         private void AboutWindow_Load(object sender, EventArgs e)
         {
+            btnBack.Text = "\uE72B";
+
             string changelog = new WebClient().DownloadString(Helpers.Strings.Uri.GitVersionHint);
             rtbAbout.Text = mainForm.Text + "\nVersion: " + Program.GetCurrentVersionTostring() + "\n" +
                             "Builtbybel\n\n" +

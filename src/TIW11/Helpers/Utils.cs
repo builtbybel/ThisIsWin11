@@ -16,7 +16,7 @@ namespace ThisIsWin11.Helpers
 
         private MainWindow mainForm = null;
 
-        // Capture screen and post web intent to twitter
+        //capture screen and post web intent to twitter
         public void CaptureToShare(Form frm)
         {
             mainForm = frm as MainWindow;
@@ -40,11 +40,11 @@ namespace ThisIsWin11.Helpers
                 bmp.Save(dialog.FileName);
 
                 MessageBox.Show("Click <OK> to prepare the Twitter status. After that you just need to upload the result image you just created." + dialog.FileName);
-                Process.Start(Helpers.Strings.TweetIntent); // Tweet Web Intent
+                Process.Start(Helpers.Strings.TweetIntent); //tweet Web Intent
             }
         }
 
-        public void CheckForUpdates(bool NoInet)
+        public void CheckForUpdates(bool InetStatusMessage)
         {
             if (IsInet() == true)
             {
@@ -66,11 +66,11 @@ namespace ThisIsWin11.Helpers
 
                 if (equals == 0)
                 {
-                    return; // Up-to-date
+                    return; //up-to-date
                 }
                 else if (equals < 0)
                 {
-                    return; // Higher than available
+                    return; //higher than available
                 }
                 else // New version
                 {
@@ -82,13 +82,13 @@ namespace ThisIsWin11.Helpers
             }
             else if (IsInet() == false)
             {
-                if (NoInet == true)
+                if (InetStatusMessage == true)
                 {
                     MessageBox.Show("Checking for App updates failed.\n\nCheck your Internet connection and try again.");
                 }
             }
 
-            // Check Inet
+            //check Inet
             bool IsInet()
             {
                 try
@@ -106,13 +106,13 @@ namespace ThisIsWin11.Helpers
             }
         }
 
-        /// Launch Urls in rtb control
+        //launch Urls in rtb control
         public static void LaunchUri(string url)
         {
             if (IsHttpURL(url)) Process.Start(url);
         }
 
-        /// Check Urls in in rtb control
+        //check Urls in in rtb control
         public static bool IsHttpURL(string url)
         {
             return

@@ -4,11 +4,9 @@ using System.Windows.Forms;
 namespace ThisIsWin11.Helpers
 
 {
-    // Ref. https://docs.microsoft.com/dotnet/api/system.windows.forms.sendkeys?view=net-5.0
+    //ref. https://docs.microsoft.com/dotnet/api/system.windows.forms.sendkeys?view=net-5.0
 
-    /// <summary>
-    /// As CTRL+ESC does not simulate the WIN key, here som P/Invoke
-    /// </summary>
+    //as CTRL+ESC does not simulate the WIN key, here som P/Invoke
     internal static class Keystrokes
     {
         [DllImport("user32.dll")]

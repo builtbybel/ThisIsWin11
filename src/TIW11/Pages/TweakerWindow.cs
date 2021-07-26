@@ -12,6 +12,7 @@ namespace ThisIsWin11
     public partial class TweakerWindow : Form
     {
         public static string mAppLogsDir = @"custom\logs";
+
         private Showcase.OS osInfo = new Showcase.OS();
         private MainWindow mainForm = null;
 
@@ -20,12 +21,33 @@ namespace ThisIsWin11
             mainForm = frm as MainWindow;
 
             InitializeComponent();
+        }
+
+        private void TweakerWindow_Load(object sender, EventArgs e)
+        {
             InitializeCustomizationPkg();
 
+            this.Text = mainForm.Text;
             this.ActiveControl = lblSubHeader;
 
-            btnBack.Text = "\uE72B";          // Back
-            btnImport.Text = "\uE710";        // Import
+            btnBack.Text = "\uE72B";
+            btnTweakerMenu.Text = "\uE712";
+
+            mainForm.pbView.Visible = false;
+            mainForm.rtbPS.Visible = true;
+        }
+
+        private void TweakerWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mainForm.rtbPS.Visible = false; mainForm.pbView.Visible = true;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.mainForm.PanelLeftShow = true;
+            this.mainForm.rtbPS.Visible = false;
+
+            this.Hide();
         }
 
         private void InitializeCustomizationPkg()
@@ -83,7 +105,7 @@ namespace ThisIsWin11
                             string psdir = @"custom\" + lstPS.SelectedItem.ToString() + ".ps1";
                             var ps1File = psdir;
 
-                            var equals = new[] { "Requires -RunsSilent" };
+                            var equals = new[] { "Requires -RunSilent" };
 
                             var str = rtbDesc.Text;
                             btnCancel.Visible = true;
@@ -93,7 +115,7 @@ namespace ThisIsWin11
 
                             btnApply.Text = "Processing " + lstPS.Text;
 
-                            if (equals.Any(str.Contains))                   // Silent
+                            if (equals.Any(str.Contains))                   //silent
                             {
                                 var startInfo = new ProcessStartInfo()
                                 {
@@ -105,7 +127,7 @@ namespace ThisIsWin11
 
                                 await Task.Run(() => { Process.Start(startInfo).WaitForExit(); });
                             }
-                            else                                            // Create ConsoleWindow
+                            else                                            //create ConsoleWindow
                             {
                                 var startInfo = new ProcessStartInfo()
                                 {
@@ -155,30 +177,11 @@ namespace ThisIsWin11
             catch { }
         }
 
-        private void TweakerWindow_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            mainForm.rtbPS.Visible = false; mainForm.pbView.Visible = true;
-        }
-
-        private void TweakerWindow_Shown(object sender, EventArgs e)
-        {
-            mainForm.pbView.Visible = false;
-            mainForm.rtbPS.Visible = true;
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.mainForm.PanelLeftShow = true;
-            this.mainForm.rtbPS.Visible = false;
-
-            this.Hide();
-        }
-
         private void rtbDesc_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
 
         private void btnApply_Click(object sender, EventArgs e) => RunTweaker();
 
-        private void btnImport_Click(object sender, EventArgs e) => this.menuTweaker.Show(Cursor.Position.X, Cursor.Position.Y);
+        private void btnTweakerMenu_Click(object sender, EventArgs e) => this.menuTweaker.Show(Cursor.Position.X, Cursor.Position.Y);
 
         private void menuTweakerNewWindow_Click(object sender, EventArgs e)
         {
@@ -260,17 +263,21 @@ namespace ThisIsWin11
 
         private void menuTweaksApplied_Click(object sender, EventArgs e)
         {
-            DirectoryInfo dirs = new DirectoryInfo(@"custom\logs\");
-            FileInfo[] listApplied = dirs.GetFiles("*.txt");
-
-            StringBuilder message = new StringBuilder();
-
-            foreach (FileInfo fi in listApplied)
+            try
             {
-                message.AppendLine("- " + Path.GetFileNameWithoutExtension(fi.Name));
-            }
+                DirectoryInfo dirs = new DirectoryInfo(@"custom\logs\");
+                FileInfo[] listApplied = dirs.GetFiles("*.txt");
 
-            MessageBox.Show("List of applied scripts/tweaks:" + "\r\n\n" + message.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                StringBuilder message = new StringBuilder();
+
+                foreach (FileInfo fi in listApplied)
+                {
+                    message.AppendLine("- " + Path.GetFileNameWithoutExtension(fi.Name));
+                }
+
+                MessageBox.Show("List of applied scripts/tweaks:" + "\r\n\n" + message.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch { MessageBox.Show("No scripts applied."); }
         }
     }
 }

@@ -23,8 +23,9 @@ namespace ThisIsWin11
             EnumTableOfContents();
             UISelection();
 
-            RegisterButton(new TweakerWindow(this), btnTweaker);    // Tweaker window
-            RegisterMenu(new AboutWindow(this), menuAppInfo);       // About window
+            RegisterButton(new TweakerWindow(this), btnTweaker);    //tweaker window
+            RegisterMenu(new AppsWindow(this), menuApps);           //apps window
+            RegisterMenu(new AboutWindow(this), menuAppInfo);       //about window
         }
 
         private void MainWindow_Shown(object sender, EventArgs e)
@@ -32,12 +33,12 @@ namespace ThisIsWin11
             utilInfo.CheckForUpdates(true);
         }
 
-        // Some UI nicety
+        //some UI nicety
         private void UISelection()
         {
-            this.MinimumSize = new Size(800, 735);
+            this.MinimumSize = new Size(810, 755);
 
-            // Presenter button ONLY on Win11
+            //presenter button ONLY on Win11
             if (osInfo.IsWin11())
             {
                 lnkSubHeader.Text = "*Windows 11 aka Sun Valley" + "\x20"
@@ -46,17 +47,16 @@ namespace ThisIsWin11
             }
             else
             {
-                btnPresenter.Visible = false;
+                //btnPresenter.Visible = false;
                 lnkSubHeader.Text = "*This is not Windows 11 (some features are not available)";
             }
 
-            btnSettings.Text = "\uE713";      // Settings
-            btnHome.Text = "\uE80F";          // Home
-            btnBack.Text = "\uE72B";          // Back
-            btnNext.Text = "\uE72A";          // Next
+            btnSettings.Text = "\uE713";      //settings
+            btnHome.Text = "\uE80F";          //home
+            btnBack.Text = "\uE72B";          //back
+            btnNext.Text = "\uE72A";          //next
 
-            // Some tooltip options
-            _ = new ToolTip
+            _ = new ToolTip                   //some tooltip options
             {
                 AutoPopDelay = 15000,
                 IsBalloon = true
@@ -95,7 +95,6 @@ namespace ThisIsWin11
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
             panelForms.Add(form.Name, form);
-
             button.Tag = form.Name;
             button.Click += SwitchButton;
             panelButtons.Add(form.Name, button);
@@ -121,10 +120,13 @@ namespace ThisIsWin11
 
         public bool PanelLeftShow { set { pnlLeft.Visible = value; } }
 
-        /// <summary>
-        /// Buttons/Links and menu events
-        /// </summary>
+        //buttons, links and menu events
         private void menuTweaker_Click(object sender, EventArgs e) { TweakerWindow tw = new TweakerWindow(this); tw.Show(); rtbPS.Visible = true; }
+
+        private void menuApps_Click(object sender, EventArgs e)
+        {
+            INavPage = (PageTitle)17; NavigationView();
+        }
 
         private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("ms-settings:about");
 
@@ -177,11 +179,23 @@ namespace ThisIsWin11
 
         private void btnTweaker_Click(object sender, EventArgs e)
         {
-            rtbPS.Visible = true;
-            INavPage = (PageTitle)19; NavigationView();
+            switch (INavPage)
+            {
+                case PageTitle.Apps:
+
+                    menuApps.PerformClick();
+                    break;
+
+                case PageTitle.Custom:
+
+                    INavPage = (PageTitle)17; NavigationView();
+                    rtbPS.Visible = true;
+                    pbView.Visible = false;
+                    break;
+            }
         }
 
-        // Enum Breadcrumbs to cb
+        //enum Breadcrumbs to cb
         private void EnumTableOfContents()
         {
             cbTable.DataSource = Enum.GetValues(typeof(PageTitle));
@@ -209,10 +223,10 @@ namespace ThisIsWin11
                     btnConfigurator.Enabled = false;
                     btnTweaker.Enabled = false;
                     lblSubHeader.Text = "Welcome, " + Environment.UserName;
-                    rtbDesc.Text = "Lets make sure everything is set up how you want it.\n\nUse the <Next> and <Previous> buttons to navigate through the features of Windows 11.\n\n" +
+                    rtbDesc.Text = "Lets make sure everything is set up how you want it.\n\nUse the <Next> and <Previous> buttons to run a guided tour of Windows 11.\n\n" +
                                     "Use the <Preview this page> button on the right panel to get the feature presented once (if it is available).\n\n" +
                                     "Pages marked with <Configure this page> will allow you to change immediately the Windows configuration.\n\n" +
-                                    "Pages marked with <Optimize this page> will allow you to apply custom changes and scripts from the community.";
+                                    "Pages marked with <Customize this page> will allow you to apply custom changes and scripts from the community.";
                     pbView.Visible = true;
                     pbView.ImageLocation = "";
 
@@ -426,7 +440,8 @@ namespace ThisIsWin11
                     lblSubHeader.Text = "Apps";
                     rtbDesc.Text = "First Windows 11 preview still insists with bloatware.\n\n" +
                                      "Apparently Windows 11 is also lighter than Windows 10 as for the preinstalled apps.\n\n" +
-                                    "The good thing is that at least some of the Windows 10 apps aren’t installed. However, you will still have installed all the hoard of apps that belong to Microsoft, such as Mail and Calendar, Your Phone, Mixed Reality Portal, Solitaire Collection, Get Help, Paint 3D, XBox Game Bar, etc.";
+                                    "The good thing is that at least some of the Windows 10 apps aren’t installed. However, you will still have installed all the hoard of apps that belong to Microsoft, such as Mail and Calendar, Your Phone, Mixed Reality Portal, Solitaire Collection, Get Help, Paint 3D, XBox Game Bar, etc.\n\n" +
+                                    "To uninstall pre-installed apps press <Customize this page> button.";
                     pbView.Visible = true;
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-apps.png?raw=true";
 
@@ -449,7 +464,7 @@ namespace ThisIsWin11
                     btnConfigurator.Enabled = false;
                     btnTweaker.Enabled = true;
                     lblSubHeader.Text = "Community customizations";
-                    rtbDesc.Text = "You will find here custom tweaks and script files to customize Windows 11 according to your wishes.\n\nTo open the customization page press <Optimize this page> button.\n\n\n\n" +
+                    rtbDesc.Text = "You will find here custom tweaks and script files to customize Windows 11 according to your wishes.\n\nTo open the customization page press <Customize this page> button.\n\n\n\n" +
                                     "To obtain new objects (tweaks, scripts, templates etc.) visit the GitHub repository of the app: https://github.com/builtbybel/ThisIsWin11";
                     pbView.Visible = false;
                     pbView.ImageLocation = "";
