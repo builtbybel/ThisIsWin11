@@ -1,6 +1,8 @@
 
 - Patched Apps/debloater module with better apps detection and status report, some async functions (no more UI freezing) and possibility to hide system apps, import own bloatware lists (try importing "bloatwareapps-11.txt" located in data folder) and several other UI fixes.
+
 - Refactored data storing (now everything app related is stored in root "data" folder of ThisIsWin11 (old "custom" folder is no longer necessary and can be removed)
+
 - Changed default font in Preview window to Consolas (it was previously Cascadia Code which is per default available on Win11, but Consolas is just my favorite monospaced font)
 
 Complete release notes can be found here:
