@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Management.Automation;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ThisIsWin11
@@ -9,6 +13,10 @@ namespace ThisIsWin11
     {
         private List<string> removeUWPList = new List<string>();
         private List<string> removeUWPFailedList = new List<string>();
+        private List<string> removeUWPSystem = new List<string>();
+       private  List<string> removeUWPCommunity = new List<string>();
+
+        private readonly PowerShell powerShell = PowerShell.Create();
 
         private MainWindow mainForm = null;
 
@@ -21,41 +29,34 @@ namespace ThisIsWin11
 
         private void AppsWindow_Load(object sender, EventArgs e)
         {
-            InitializeUWP();
+            InitializeUWPSystem(); //systemapps from resource file
+            InitializeUWP();      //now our system apps
 
             this.Text = mainForm.Text;
             btnBack.Text = "\uE72B";
             btnAppsMenu.Text = "\uE712";
+
+            mainForm.rtbPS.Visible = true;
+            mainForm.rtbPS.Text = lstUWP.Items.Count.ToString() + " pre-installed apps have been found on your Windows 11 installation.\n\n\n" +
+                                                                   "It's a simple thing to remove some of these apps. Just hit the <Uninstall> button on your left.";
         }
 
-        public void InitializeUWP()
+        private void InitializeUWP()
         {
             lstUWP.Items.Clear();
+            powerShell.Commands.Clear();
+            powerShell.AddCommand("get-appxpackage");
+            powerShell.AddCommand("Select").AddParameter("property", "name");
 
-            using (PowerShell script = PowerShell.Create())
+            foreach (PSObject result in powerShell.Invoke())
             {
-                if (checkAppsAllUsers.Checked)
-                {
-                    script.AddScript("Get-AppxPackage -AllUsers | Select Name | Out-String -Stream");
-                }
-                else
-                {
-                    script.AddScript("Get-AppxPackage | Select Name | Out-String -Stream");
-                }
+                string current = result.ToString();
+                // Show ONLY NON-SYSTEM apps by comparing found apps with file systemapps.txt
+                if (removeUWPSystem != null) if ((removeUWPSystem.Any(current.Contains)) && !checkAppsSystem.Checked) continue;
 
-                string trimmed = string.Empty;
-                foreach (PSObject x in script.Invoke())
-                {
-                    trimmed = x.ToString().Trim();
-                    if (!string.IsNullOrEmpty(trimmed) && !trimmed.Contains("---"))
-                    {
-                        if (trimmed != "Name") lstUWP.Items.Add(trimmed);
-                    }
-                }
+                if (lstUWP.Items.Contains(Regex.Replace(current, "(@{Name=)|(})", ""))) continue;
+                lstUWP.Items.Add(Regex.Replace(current, "(@{Name=)|(})", ""));
             }
-
-            mainForm.rtbPS.Text = lstUWP.Items.Count.ToString() + " pre-installed apps have been found on your Windows 11 installation.\n\n\n" +
-                "It's a simple thing to remove some of these apps. Just hit the <Uninstall> button on your right.";
         }
 
         private void RemoveUWP(string app)
@@ -64,14 +65,7 @@ namespace ThisIsWin11
 
             using (PowerShell script = PowerShell.Create())
             {
-                if (checkAppsAllUsers.Checked)
-                {
-                    script.AddScript("Get-AppxPackage " + app + " | Remove-AppxPackage -AllUsers");
-                }
-                else
-                {
-                    script.AddScript("Get-AppxPackage " + app + " | Remove-AppxPackage");
-                }
+                script.AddScript("Get-AppxPackage " + app + " | Remove-AppxPackage");
 
                 script.Invoke();
                 error = script.HadErrors;
@@ -92,6 +86,7 @@ namespace ThisIsWin11
         private void RefreshUWP(bool unsetting)
         {
             lstUWP.Items.Clear();
+            InitializeUWPSystem();
             InitializeUWP();
 
             try
@@ -104,7 +99,37 @@ namespace ThisIsWin11
             catch { }
         }
 
-        private void btnRemoveUWP_Click(object sender, EventArgs e)
+        private void InitializeUWPSystem()
+        {
+            System.IO.StreamReader Database = null;
+
+            try
+            {   //Try to open the file
+                Database = System.IO.File.OpenText(Helpers.Strings.Data.DataRootDir + "systemapps.txt");
+            }
+            catch (System.IO.FileNotFoundException)
+            {
+                System.IO.StreamWriter sw = System.IO.File.CreateText( Helpers.Strings.Data.DataRootDir + "systemapps.txt");    //create file if it doesnt exisits
+                sw.Write(Resources.systemapps);                                                                                 //populate it with built in preset
+                sw.Close();
+
+                Database = System.IO.File.OpenText(Helpers.Strings.Data.DataRootDir + "systemapps.txt");
+            }
+            finally
+            {
+                if (Database.Peek() > 0)                                                                                        //exists and not empty
+                {
+                    string buff;
+                    while ((buff = Database.ReadLine()) != null)
+                    {
+                        removeUWPSystem.Add(buff);
+                    }
+                };
+                Database.Close();
+            }
+        }
+
+        private async void btnRemoveUWP_Click(object sender, EventArgs e)
         {
             string selectedApps = string.Empty;
             string successList = string.Empty;
@@ -112,6 +137,7 @@ namespace ThisIsWin11
 
             removeUWPList.Clear();
             removeUWPFailedList.Clear();
+            mainForm.rtbPS.Clear();
             this.Enabled = false;
 
             if (lstUWP.CheckedItems.Count > 0)
@@ -124,7 +150,9 @@ namespace ThisIsWin11
                 {
                     foreach (string app in lstUWP.CheckedItems)
                     {
-                        RemoveUWP(app);
+                        await Task.Run(() => RemoveUWP(app));
+
+                        mainForm.rtbPS.Text += Environment.NewLine + "Uninstalling " + app.ToString();
                     }
 
                     RefreshUWP(true);
@@ -145,8 +173,9 @@ namespace ThisIsWin11
                     if (removeUWPList.Count != 0)
                     {
                         message += "The folowing app(s) have been removed successfully:" + Environment.NewLine + successList;
-                         message += Environment.NewLine + "A Community syncing function is in the works. This will automatically flag and remove the really unnecessary apps for you." +
-                                     "This way we make sure you don't uninstall an important app. If you accidentally uninstall an important app, you can always reinstall all the apps preinstalled by Windows 11 in ThisIsWin11 Tweaker module.";
+                        message += Environment.NewLine + "A Community syncing function is in the works. This will automatically flag and remove the really unnecessary apps for you." +
+                                    "This way we make sure you don't uninstall an important app. If you accidentally uninstall an important app, you can always reinstall all the apps preinstalled by Windows 11 in ThisIsWin11 Tweaker module." +
+                                    Environment.NewLine + Environment.NewLine;
                     }
 
                     if (removeUWPFailedList.Count != 0)
@@ -157,12 +186,9 @@ namespace ThisIsWin11
                                                          "Please also check ThisIsWin11 Tweaker module to see if you can find a community debloating script. These are often more aggressive.";
                     }
 
-
                     mainForm.rtbPS.Visible = true;
                     mainForm.pbView.Visible = false;
                     mainForm.rtbPS.Text = message;
-
-
                 }
             }
             else
@@ -202,7 +228,7 @@ namespace ThisIsWin11
             this.Hide();
         }
 
-        private void checkAppsAllUsers_CheckedChanged(object sender, EventArgs e)
+        private void checkAppsSystem_CheckedChanged(object sender, EventArgs e)
         {
             RefreshUWP(false);
         }
@@ -224,6 +250,37 @@ namespace ThisIsWin11
                 else if (menuAppsSelect.Checked == false)
                     lstUWP.SetItemChecked(i, menuAppsSelect.Checked = false);
             }
+        }
+
+        private void menuAppsImport_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog f = new OpenFileDialog();
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                lstUWP.Items.Clear();
+
+                List<string> lines = new List<string>();
+                using (StreamReader r = new StreamReader(f.OpenFile()))
+                {
+                    string line;
+                    while ((line = r.ReadLine()) != null)
+                    {
+                        lstUWP.Items.Add(line);
+
+                    }
+                }
+            }
+        }
+
+        private void menuAppsSync_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not available in this release.");
+        }
+
+        private void menuAppsRefresh_Click(object sender, EventArgs e)
+        {
+            InitializeUWPSystem();
+            InitializeUWP();      
         }
     }
 }

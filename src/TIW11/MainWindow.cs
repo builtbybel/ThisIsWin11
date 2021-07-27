@@ -37,6 +37,7 @@ namespace ThisIsWin11
         private void UISelection()
         {
             this.MinimumSize = new Size(810, 755);
+            rtbPS.SelectionIndent = 25;
 
             //presenter button ONLY on Win11
             if (osInfo.IsWin11())
@@ -188,9 +189,8 @@ namespace ThisIsWin11
 
                 case PageTitle.Custom:
 
-                    INavPage = (PageTitle)17; NavigationView();
-                    rtbPS.Visible = true;
-                    pbView.Visible = false;
+                    INavPage = (PageTitle)19; NavigationView();
+
                     break;
             }
         }
@@ -773,5 +773,7 @@ namespace ThisIsWin11
                     break;
             }
         }
+
+       
     }
 }

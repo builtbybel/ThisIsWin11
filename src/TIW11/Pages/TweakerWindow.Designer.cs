@@ -225,7 +225,7 @@ namespace ThisIsWin11
             this.rtbDesc.Location = new System.Drawing.Point(27, 427);
             this.rtbDesc.Name = "rtbDesc";
             this.rtbDesc.ReadOnly = true;
-            this.rtbDesc.Size = new System.Drawing.Size(377, 180);
+            this.rtbDesc.Size = new System.Drawing.Size(374, 180);
             this.rtbDesc.TabIndex = 153;
             this.rtbDesc.Text = "";
             this.rtbDesc.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbDesc_LinkClicked);

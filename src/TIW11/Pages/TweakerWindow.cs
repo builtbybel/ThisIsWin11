@@ -11,7 +11,7 @@ namespace ThisIsWin11
 {
     public partial class TweakerWindow : Form
     {
-        public static string mAppLogsDir = @"custom\logs";
+        public static string mAppLogsDir = Helpers.Strings.Data.PackagesLogsDir;
 
         private Showcase.OS osInfo = new Showcase.OS();
         private MainWindow mainForm = null;
@@ -35,6 +35,7 @@ namespace ThisIsWin11
 
             mainForm.pbView.Visible = false;
             mainForm.rtbPS.Visible = true;
+
         }
 
         private void TweakerWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -52,7 +53,7 @@ namespace ThisIsWin11
 
         private void InitializeCustomizationPkg()
         {
-            string path = @"custom";
+            string path = Helpers.Strings.Data.PackagesRootDir;
             if (Directory.Exists(path))
             {
                 PopulatePS();
@@ -63,7 +64,7 @@ namespace ThisIsWin11
         {
             lstPS.Items.Clear();
 
-            DirectoryInfo dirs = new DirectoryInfo(@"custom");
+            DirectoryInfo dirs = new DirectoryInfo(Helpers.Strings.Data.PackagesRootDir);
             FileInfo[] listSettings = dirs.GetFiles("*.ps1");
             foreach (FileInfo fi in listSettings)
             {
@@ -102,7 +103,7 @@ namespace ThisIsWin11
                         if (lstPS.GetItemChecked(i))
                         {
                             lstPS.SelectedIndex = i;
-                            string psdir = @"custom\" + lstPS.SelectedItem.ToString() + ".ps1";
+                            string psdir = Helpers.Strings.Data.PackagesRootDir + lstPS.SelectedItem.ToString() + ".ps1";
                             var ps1File = psdir;
 
                             var equals = new[] { "Requires -RunSilent" };
@@ -141,7 +142,7 @@ namespace ThisIsWin11
 
                             // Write log
                             CreateLogsDir();
-                            File.WriteAllText(@"custom\logs\" + lstPS.Text + ".txt", "last applied: " + DateTime.Now.ToString() + Environment.NewLine + mainForm.rtbPS.Text);
+                            File.WriteAllText(Helpers.Strings.Data.PackagesLogsDir + lstPS.Text + ".txt", "last applied: " + DateTime.Now.ToString() + Environment.NewLine + mainForm.rtbPS.Text);
                         }
                     }
 
@@ -156,7 +157,10 @@ namespace ThisIsWin11
 
         private void lstPS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string psdir = @"custom\" + lstPS.Text + ".ps1";
+           
+            string psdir = Helpers.Strings.Data.PackagesRootDir + lstPS.Text + ".ps1";
+            mainForm.pbView.Visible = false;
+            mainForm.rtbPS.Visible = true;
 
             try
             {
@@ -219,7 +223,7 @@ namespace ThisIsWin11
             {
                 Process process = new Process();
                 process.StartInfo.FileName = "powershell_ise.exe";
-                process.StartInfo.Arguments = "\"" + @"custom\" + "\\" + lstPS.SelectedItem.ToString() + ".ps1" + "\"";
+                process.StartInfo.Arguments = "\"" + Helpers.Strings.Data.PackagesRootDir + "\\" + lstPS.SelectedItem.ToString() + ".ps1" + "\"";
                 process.Start();
             }
             catch { }
@@ -238,7 +242,7 @@ namespace ThisIsWin11
             dlg.FileName = lstPS.Text + "-Copy";
             dlg.DefaultExt = ".ps1";
             dlg.RestoreDirectory = true;
-            dlg.InitialDirectory = Application.StartupPath + @"\custom";
+            dlg.InitialDirectory = Helpers.Strings.Data.PackagesRootDir;
             dlg.FilterIndex = 2;
 
             try
@@ -265,7 +269,7 @@ namespace ThisIsWin11
         {
             try
             {
-                DirectoryInfo dirs = new DirectoryInfo(@"custom\logs\");
+                DirectoryInfo dirs = new DirectoryInfo(Helpers.Strings.Data.PackagesLogsDir);
                 FileInfo[] listApplied = dirs.GetFiles("*.txt");
 
                 StringBuilder message = new StringBuilder();
@@ -275,7 +279,7 @@ namespace ThisIsWin11
                     message.AppendLine("- " + Path.GetFileNameWithoutExtension(fi.Name));
                 }
 
-                MessageBox.Show("List of applied scripts/tweaks:" + "\r\n\n" + message.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("List of applied tweaks:" + "\r\n\n" + message.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch { MessageBox.Show("No scripts applied."); }
         }

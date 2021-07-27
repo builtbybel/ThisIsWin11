@@ -87,6 +87,11 @@
     <Compile Include="Pages\TweakerWindow.Designer.cs">
       <DependentUpon>TweakerWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Showcase\LockScreen.cs" />
     <Compile Include="Showcase\OS.cs" />
     <EmbeddedResource Include="Pages\AboutWindow.resx">
@@ -112,6 +117,11 @@
     <EmbeddedResource Include="Pages\TweakerWindow.resx">
       <DependentUpon>TweakerWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -128,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppIcon.ico" />
+    <None Include="Resources\systemapps.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -30,18 +30,29 @@ namespace ThisIsWin11
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ToolStripMenuItem menuAppsSync;
             this.lstUWP = new System.Windows.Forms.CheckedListBox();
-            this.checkAppsAllUsers = new System.Windows.Forms.CheckBox();
+            this.checkAppsSystem = new System.Windows.Forms.CheckBox();
             this.btnRemoveUWP = new System.Windows.Forms.Button();
             this.lblSubHeader = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnAppsMenu = new System.Windows.Forms.Button();
             this.menuApps = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuAppsNewWindow = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAppsImport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAppsSelect = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAppsRemoveAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAppsRefresh = new System.Windows.Forms.ToolStripMenuItem();
+            menuAppsSync = new System.Windows.Forms.ToolStripMenuItem();
             this.menuApps.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // menuAppsSync
+            // 
+            menuAppsSync.Name = "menuAppsSync";
+            menuAppsSync.Size = new System.Drawing.Size(288, 30);
+            menuAppsSync.Text = "Run Community syncing";
+            menuAppsSync.Click += new System.EventHandler(this.menuAppsSync_Click);
             // 
             // lstUWP
             // 
@@ -55,28 +66,28 @@ namespace ThisIsWin11
             this.lstUWP.FormattingEnabled = true;
             this.lstUWP.Location = new System.Drawing.Point(27, 132);
             this.lstUWP.Name = "lstUWP";
-            this.lstUWP.Size = new System.Drawing.Size(375, 480);
+            this.lstUWP.Size = new System.Drawing.Size(373, 480);
             this.lstUWP.Sorted = true;
             this.lstUWP.TabIndex = 60;
             this.lstUWP.ThreeDCheckBoxes = true;
             // 
-            // checkAppsAllUsers
+            // checkAppsSystem
             // 
-            this.checkAppsAllUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkAppsAllUsers.AutoSize = true;
-            this.checkAppsAllUsers.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.checkAppsAllUsers.FlatAppearance.BorderColor = System.Drawing.Color.MediumVioletRed;
-            this.checkAppsAllUsers.FlatAppearance.BorderSize = 0;
-            this.checkAppsAllUsers.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
-            this.checkAppsAllUsers.ForeColor = System.Drawing.Color.Black;
-            this.checkAppsAllUsers.Location = new System.Drawing.Point(28, 625);
-            this.checkAppsAllUsers.Margin = new System.Windows.Forms.Padding(2);
-            this.checkAppsAllUsers.Name = "checkAppsAllUsers";
-            this.checkAppsAllUsers.Size = new System.Drawing.Size(181, 25);
-            this.checkAppsAllUsers.TabIndex = 103;
-            this.checkAppsAllUsers.Text = "Show apps of all users";
-            this.checkAppsAllUsers.UseVisualStyleBackColor = false;
-            this.checkAppsAllUsers.CheckedChanged += new System.EventHandler(this.checkAppsAllUsers_CheckedChanged);
+            this.checkAppsSystem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkAppsSystem.AutoSize = true;
+            this.checkAppsSystem.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.checkAppsSystem.FlatAppearance.BorderColor = System.Drawing.Color.MediumVioletRed;
+            this.checkAppsSystem.FlatAppearance.BorderSize = 0;
+            this.checkAppsSystem.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
+            this.checkAppsSystem.ForeColor = System.Drawing.Color.Black;
+            this.checkAppsSystem.Location = new System.Drawing.Point(28, 625);
+            this.checkAppsSystem.Margin = new System.Windows.Forms.Padding(2);
+            this.checkAppsSystem.Name = "checkAppsSystem";
+            this.checkAppsSystem.Size = new System.Drawing.Size(154, 25);
+            this.checkAppsSystem.TabIndex = 103;
+            this.checkAppsSystem.Text = "Show system apps";
+            this.checkAppsSystem.UseVisualStyleBackColor = false;
+            this.checkAppsSystem.CheckedChanged += new System.EventHandler(this.checkAppsSystem_CheckedChanged);
             // 
             // btnRemoveUWP
             // 
@@ -148,33 +159,50 @@ namespace ThisIsWin11
             this.menuApps.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuApps.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAppsNewWindow,
+            this.menuAppsImport,
+            menuAppsSync,
+            this.menuAppsRefresh,
             this.menuAppsSelect,
             this.menuAppsRemoveAll});
             this.menuApps.Name = "menuMain";
             this.menuApps.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuApps.Size = new System.Drawing.Size(263, 94);
+            this.menuApps.Size = new System.Drawing.Size(289, 206);
             // 
             // menuAppsNewWindow
             // 
             this.menuAppsNewWindow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuAppsNewWindow.Name = "menuAppsNewWindow";
-            this.menuAppsNewWindow.Size = new System.Drawing.Size(262, 30);
+            this.menuAppsNewWindow.Size = new System.Drawing.Size(288, 30);
             this.menuAppsNewWindow.Text = "Open in new window";
             this.menuAppsNewWindow.Click += new System.EventHandler(this.menuAppsNewWindow_Click);
+            // 
+            // menuAppsImport
+            // 
+            this.menuAppsImport.Name = "menuAppsImport";
+            this.menuAppsImport.Size = new System.Drawing.Size(288, 30);
+            this.menuAppsImport.Text = "Import Bloatware list";
+            this.menuAppsImport.Click += new System.EventHandler(this.menuAppsImport_Click);
             // 
             // menuAppsSelect
             // 
             this.menuAppsSelect.Name = "menuAppsSelect";
-            this.menuAppsSelect.Size = new System.Drawing.Size(262, 30);
+            this.menuAppsSelect.Size = new System.Drawing.Size(288, 30);
             this.menuAppsSelect.Text = "Select all";
             this.menuAppsSelect.Click += new System.EventHandler(this.menuAppsSelect_Click);
             // 
             // menuAppsRemoveAll
             // 
             this.menuAppsRemoveAll.Name = "menuAppsRemoveAll";
-            this.menuAppsRemoveAll.Size = new System.Drawing.Size(262, 30);
+            this.menuAppsRemoveAll.Size = new System.Drawing.Size(288, 30);
             this.menuAppsRemoveAll.Text = "Remove all apps";
             this.menuAppsRemoveAll.Click += new System.EventHandler(this.menuAppsRemoveAll_Click);
+            // 
+            // menuAppsRefresh
+            // 
+            this.menuAppsRefresh.Name = "menuAppsRefresh";
+            this.menuAppsRefresh.Size = new System.Drawing.Size(288, 30);
+            this.menuAppsRefresh.Text = "Refresh";
+            this.menuAppsRefresh.Click += new System.EventHandler(this.menuAppsRefresh_Click);
             // 
             // AppsWindow
             // 
@@ -186,7 +214,7 @@ namespace ThisIsWin11
             this.Controls.Add(this.lblSubHeader);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnRemoveUWP);
-            this.Controls.Add(this.checkAppsAllUsers);
+            this.Controls.Add(this.checkAppsSystem);
             this.Controls.Add(this.lstUWP);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "AppsWindow";
@@ -203,7 +231,7 @@ namespace ThisIsWin11
         #endregion
 
         private System.Windows.Forms.CheckedListBox lstUWP;
-        private System.Windows.Forms.CheckBox checkAppsAllUsers;
+        private System.Windows.Forms.CheckBox checkAppsSystem;
         private System.Windows.Forms.Button btnRemoveUWP;
         private System.Windows.Forms.Label lblSubHeader;
         private System.Windows.Forms.Button btnBack;
@@ -212,5 +240,7 @@ namespace ThisIsWin11
         private System.Windows.Forms.ToolStripMenuItem menuAppsNewWindow;
         private System.Windows.Forms.ToolStripMenuItem menuAppsRemoveAll;
         private System.Windows.Forms.ToolStripMenuItem menuAppsSelect;
+        private System.Windows.Forms.ToolStripMenuItem menuAppsImport;
+        private System.Windows.Forms.ToolStripMenuItem menuAppsRefresh;
     }
 }

@@ -302,11 +302,11 @@ namespace ThisIsWin11
             // pnlRight
             // 
             this.pnlRight.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlRight.Controls.Add(this.cbTable);
             this.pnlRight.Controls.Add(this.btnSettings);
             this.pnlRight.Controls.Add(this.lblPreview);
-            this.pnlRight.Controls.Add(this.cbTable);
-            this.pnlRight.Controls.Add(this.pbView);
             this.pnlRight.Controls.Add(this.rtbPS);
+            this.pnlRight.Controls.Add(this.pbView);
             this.pnlRight.Controls.Add(this.btnPresenter);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlRight.Location = new System.Drawing.Point(771, 0);
@@ -351,10 +351,10 @@ namespace ThisIsWin11
             this.rtbPS.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rtbPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbPS.DetectUrls = false;
-            this.rtbPS.Font = new System.Drawing.Font("Cascadia Code Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbPS.Location = new System.Drawing.Point(21, 126);
+            this.rtbPS.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbPS.Location = new System.Drawing.Point(0, 116);
             this.rtbPS.Name = "rtbPS";
-            this.rtbPS.Size = new System.Drawing.Size(374, 644);
+            this.rtbPS.Size = new System.Drawing.Size(394, 613);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = "";
             this.rtbPS.Visible = false;
