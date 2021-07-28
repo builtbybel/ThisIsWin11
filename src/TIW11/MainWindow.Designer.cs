@@ -52,6 +52,7 @@ namespace ThisIsWin11
             this.pbView = new System.Windows.Forms.PictureBox();
             this.menuMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuTweaker = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPackageManager = new System.Windows.Forms.ToolStripMenuItem();
             this.menuApps = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCaptureToShare = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAppInfo = new System.Windows.Forms.ToolStripMenuItem();
@@ -350,14 +351,14 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbPS.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rtbPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbPS.DetectUrls = false;
-            this.rtbPS.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbPS.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbPS.Location = new System.Drawing.Point(0, 116);
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.Size = new System.Drawing.Size(394, 613);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = "";
             this.rtbPS.Visible = false;
+            this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
             // 
             // pbView
             // 
@@ -376,19 +377,27 @@ namespace ThisIsWin11
             this.menuMain.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuTweaker,
+            this.menuPackageManager,
             this.menuApps,
             this.menuCaptureToShare,
             this.menuAppInfo});
             this.menuMain.Name = "menuMain";
             this.menuMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuMain.Size = new System.Drawing.Size(329, 124);
+            this.menuMain.Size = new System.Drawing.Size(329, 176);
             // 
             // menuTweaker
             // 
             this.menuTweaker.Name = "menuTweaker";
             this.menuTweaker.Size = new System.Drawing.Size(328, 30);
-            this.menuTweaker.Text = "Open Tweaker page";
+            this.menuTweaker.Text = "Open Tweaker ";
             this.menuTweaker.Click += new System.EventHandler(this.menuTweaker_Click);
+            // 
+            // menuPackageManager
+            // 
+            this.menuPackageManager.Name = "menuPackageManager";
+            this.menuPackageManager.Size = new System.Drawing.Size(328, 30);
+            this.menuPackageManager.Text = "Open Package Manager";
+            this.menuPackageManager.Click += new System.EventHandler(this.menuPackageManager_Click);
             // 
             // menuApps
             // 
@@ -419,7 +428,7 @@ namespace ThisIsWin11
             this.Controls.Add(this.pnlRight);
             this.Controls.Add(this.pnlMiddle);
             this.Controls.Add(this.pnlLeft);
-            this.MinimumSize = new System.Drawing.Size(814, 735);
+            this.MinimumSize = new System.Drawing.Size(1182, 809);
             this.Name = "MainWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -461,6 +470,7 @@ namespace ThisIsWin11
         private System.Windows.Forms.CheckBox btnPresenter;
         private System.Windows.Forms.Button btnTweaker;
         private System.Windows.Forms.ToolStripMenuItem menuApps;
+        private System.Windows.Forms.ToolStripMenuItem menuPackageManager;
     }
 }
 

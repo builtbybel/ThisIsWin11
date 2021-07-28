@@ -23,9 +23,10 @@ namespace ThisIsWin11
             EnumTableOfContents();
             UISelection();
 
-            RegisterButton(new TweakerWindow(this), btnTweaker);    //tweaker window
-            RegisterMenu(new AppsWindow(this), menuApps);           //apps window
-            RegisterMenu(new AboutWindow(this), menuAppInfo);       //about window
+            RegisterButton(new TweakerWindow(this), btnTweaker);             //tweaker window
+            RegisterMenu(new PackagesWindow(this), menuPackageManager);     //packages window
+            RegisterMenu(new AppsWindow(this), menuApps);                   //apps window
+            RegisterMenu(new AboutWindow(this), menuAppInfo);               //about window
         }
 
         private void MainWindow_Shown(object sender, EventArgs e)
@@ -37,7 +38,7 @@ namespace ThisIsWin11
         private void UISelection()
         {
             this.MinimumSize = new Size(810, 755);
-            rtbPS.SelectionIndent = 25;
+            rtbPS.SelectionIndent = 25;     //margin of preview rtb
 
             //presenter button ONLY on Win11
             if (osInfo.IsWin11())
@@ -67,9 +68,11 @@ namespace ThisIsWin11
         public void RegisterMenu(Form form, ToolStripMenuItem menu)
         {
             form.TopLevel = false;
+            form.Parent = this;
             form.FormBorderStyle = FormBorderStyle.None;
+            form.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Bottom);
+            form.AutoScroll = true;
             panelForms.Add(form.Name, form);
-
             menu.Tag = form.Name;
             menu.Click += SwitchMenu;
             panelMenu.Add(form.Name, menu);
@@ -94,7 +97,10 @@ namespace ThisIsWin11
         public void RegisterButton(Form form, Button button)
         {
             form.TopLevel = false;
+            form.Parent = this;
             form.FormBorderStyle = FormBorderStyle.None;
+            form.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Bottom);
+            form.AutoScroll = true;
             panelForms.Add(form.Name, form);
             button.Tag = form.Name;
             button.Click += SwitchButton;
@@ -124,6 +130,11 @@ namespace ThisIsWin11
         //buttons, links and menu events
         private void menuTweaker_Click(object sender, EventArgs e) { TweakerWindow tw = new TweakerWindow(this); tw.Show(); rtbPS.Visible = true; }
 
+        private void menuPackageManager_Click(object sender, EventArgs e)
+        {
+            INavPage = (PageTitle)5; NavigationView();
+        }
+
         private void menuApps_Click(object sender, EventArgs e)
         {
             INavPage = (PageTitle)17; NavigationView();
@@ -138,6 +149,8 @@ namespace ThisIsWin11
         private void rtbDesc_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
 
         private void pbView_Paint(object sender, PaintEventArgs e) => pbView.Controls.Add(btnPresenter);
+
+        private void rtbPS_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -182,6 +195,11 @@ namespace ThisIsWin11
         {
             switch (INavPage)
             {
+                case PageTitle.MicrosoftStore:
+
+                    menuPackageManager.PerformClick();
+                    break;
+
                 case PageTitle.Apps:
 
                     menuApps.PerformClick();
@@ -465,7 +483,7 @@ namespace ThisIsWin11
                     btnTweaker.Enabled = true;
                     lblSubHeader.Text = "Community customizations";
                     rtbDesc.Text = "You will find here custom tweaks and script files to customize Windows 11 according to your wishes.\n\nTo open the customization page press <Customize this page> button.\n\n\n\n" +
-                                    "To obtain new objects (tweaks, scripts, templates etc.) visit the GitHub repository of the app: https://github.com/builtbybel/ThisIsWin11";
+                                    "To obtain new collections (tweaks, scripts, templates etc.) visit the GitHub repository of the app: https://github.com/builtbybel/ThisIsWin11/tree/main/collections";
                     pbView.Visible = false;
                     pbView.ImageLocation = "";
 
@@ -773,7 +791,5 @@ namespace ThisIsWin11
                     break;
             }
         }
-
-       
     }
 }

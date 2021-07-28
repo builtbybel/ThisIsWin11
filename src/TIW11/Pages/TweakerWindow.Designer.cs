@@ -34,8 +34,8 @@ namespace ThisIsWin11
             this.menuTweaksEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTweaksSave = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTweaker = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuTweakerNewWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTweaksApplied = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuTweakerNewWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblSubHeader = new System.Windows.Forms.Label();
@@ -73,14 +73,21 @@ namespace ThisIsWin11
             // 
             this.menuTweaker.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuTweaker.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuTweakerNewWindow,
             this.menuTweaksImport,
             this.menuTweaksEdit,
             this.menuTweaksSave,
-            this.menuTweaksApplied});
+            this.menuTweaksApplied,
+            this.menuTweakerNewWindow});
             this.menuTweaker.Name = "menuMain";
             this.menuTweaker.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuTweaker.Size = new System.Drawing.Size(412, 154);
+            // 
+            // menuTweaksApplied
+            // 
+            this.menuTweaksApplied.Name = "menuTweaksApplied";
+            this.menuTweaksApplied.Size = new System.Drawing.Size(411, 30);
+            this.menuTweaksApplied.Text = "Show applied";
+            this.menuTweaksApplied.Click += new System.EventHandler(this.menuTweaksApplied_Click);
             // 
             // menuTweakerNewWindow
             // 
@@ -90,13 +97,6 @@ namespace ThisIsWin11
             this.menuTweakerNewWindow.Text = "Open in new window";
             this.menuTweakerNewWindow.Click += new System.EventHandler(this.menuTweakerNewWindow_Click);
             // 
-            // menuTweaksApplied
-            // 
-            this.menuTweaksApplied.Name = "menuTweaksApplied";
-            this.menuTweaksApplied.Size = new System.Drawing.Size(411, 30);
-            this.menuTweaksApplied.Text = "Show applied";
-            this.menuTweaksApplied.Click += new System.EventHandler(this.menuTweaksApplied_Click);
-            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
@@ -105,7 +105,7 @@ namespace ThisIsWin11
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(0, 711);
+            this.panel1.Size = new System.Drawing.Size(0, 770);
             this.panel1.TabIndex = 146;
             // 
             // btnCancel
@@ -136,9 +136,9 @@ namespace ThisIsWin11
             this.lblSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblSubHeader.Location = new System.Drawing.Point(72, 21);
             this.lblSubHeader.Name = "lblSubHeader";
-            this.lblSubHeader.Size = new System.Drawing.Size(181, 32);
+            this.lblSubHeader.Size = new System.Drawing.Size(163, 32);
             this.lblSubHeader.TabIndex = 159;
-            this.lblSubHeader.Text = "Customizations";
+            this.lblSubHeader.Text = "Apply Tweaks";
             // 
             // btnBack
             // 
@@ -168,7 +168,7 @@ namespace ThisIsWin11
             this.lstPS.FormattingEnabled = true;
             this.lstPS.Location = new System.Drawing.Point(27, 132);
             this.lstPS.Name = "lstPS";
-            this.lstPS.Size = new System.Drawing.Size(373, 264);
+            this.lstPS.Size = new System.Drawing.Size(373, 308);
             this.lstPS.Sorted = true;
             this.lstPS.TabIndex = 157;
             this.lstPS.ThreeDCheckBoxes = true;
@@ -177,7 +177,7 @@ namespace ThisIsWin11
             // progress
             // 
             this.progress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.progress.Location = new System.Drawing.Point(27, 697);
+            this.progress.Location = new System.Drawing.Point(27, 746);
             this.progress.MarqueeAnimationSpeed = 30;
             this.progress.Name = "progress";
             this.progress.Size = new System.Drawing.Size(213, 5);
@@ -207,7 +207,7 @@ namespace ThisIsWin11
             this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApply.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApply.ForeColor = System.Drawing.Color.Black;
-            this.btnApply.Location = new System.Drawing.Point(27, 648);
+            this.btnApply.Location = new System.Drawing.Point(27, 697);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(213, 30);
             this.btnApply.TabIndex = 154;
@@ -222,7 +222,7 @@ namespace ThisIsWin11
             this.rtbDesc.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rtbDesc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbDesc.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbDesc.Location = new System.Drawing.Point(27, 427);
+            this.rtbDesc.Location = new System.Drawing.Point(27, 486);
             this.rtbDesc.Name = "rtbDesc";
             this.rtbDesc.ReadOnly = true;
             this.rtbDesc.Size = new System.Drawing.Size(374, 180);
@@ -235,7 +235,7 @@ namespace ThisIsWin11
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(406, 711);
+            this.ClientSize = new System.Drawing.Size(406, 770);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblSubHeader);
             this.Controls.Add(this.btnBack);

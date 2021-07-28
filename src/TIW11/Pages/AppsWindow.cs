@@ -14,7 +14,6 @@ namespace ThisIsWin11
         private List<string> removeUWPList = new List<string>();
         private List<string> removeUWPFailedList = new List<string>();
         private List<string> removeUWPSystem = new List<string>();
-       private  List<string> removeUWPCommunity = new List<string>();
 
         private readonly PowerShell powerShell = PowerShell.Create();
 
@@ -38,7 +37,11 @@ namespace ThisIsWin11
 
             mainForm.rtbPS.Visible = true;
             mainForm.rtbPS.Text = lstUWP.Items.Count.ToString() + " pre-installed apps have been found on your Windows 11 installation.\n\n\n" +
-                                                                   "It's a simple thing to remove some of these apps. Just hit the <Uninstall> button on your left.";
+                                                                   "It's a simple thing to remove some of these apps. Just hit the <Uninstall> button on your left." +
+                                                                   Environment.NewLine + Environment.NewLine +
+                                                                   "You can also import a custom bloatware list, e.g. you can find a list of pre-installed Windows 11 apps here:\n" +
+                                                                   "https://github.com/builtbybel/ThisIsWin11/blob/main/collections/bloatwareapps-11.txt\n\n" +
+                                                                   "Save the file raw and use the import function in the upper left menu.";
         }
 
         private void InitializeUWP()
@@ -56,6 +59,57 @@ namespace ThisIsWin11
 
                 if (lstUWP.Items.Contains(Regex.Replace(current, "(@{Name=)|(})", ""))) continue;
                 lstUWP.Items.Add(Regex.Replace(current, "(@{Name=)|(})", ""));
+            }
+        }
+
+        private void RefreshUWP(bool unsetting)
+        {
+            lstUWP.Items.Clear();
+            InitializeUWPSystem();
+            InitializeUWP();
+
+            try
+            {
+                if (unsetting)
+                {
+                    lstUWP.SelectedIndex = -1;
+                }
+            }
+            catch { }
+        }
+
+        private void menuAppsRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshUWP(true);
+        }
+
+        private void InitializeUWPSystem()
+        {
+            StreamReader Database = null;
+
+            try
+            {
+                Database = File.OpenText(Helpers.Strings.Data.DataRootDir + "systemapps.txt");
+            }
+            catch (FileNotFoundException) //create file if it doesnt exisits
+            {
+                StreamWriter sw = File.CreateText(Helpers.Strings.Data.DataRootDir + "systemapps.txt");
+                sw.Write(Resources.systemapps);    //populate it with built in preset
+                sw.Close();
+
+                Database = File.OpenText(Helpers.Strings.Data.DataRootDir + "systemapps.txt");
+            }
+            finally
+            {
+                if (Database.Peek() > 0) //exists and not empty
+                {
+                    string buff;
+                    while ((buff = Database.ReadLine()) != null)
+                    {
+                        removeUWPSystem.Add(buff);
+                    }
+                };
+                Database.Close();
             }
         }
 
@@ -81,52 +135,6 @@ namespace ThisIsWin11
             }
 
             return;
-        }
-
-        private void RefreshUWP(bool unsetting)
-        {
-            lstUWP.Items.Clear();
-            InitializeUWPSystem();
-            InitializeUWP();
-
-            try
-            {
-                if (unsetting)
-                {
-                    lstUWP.SelectedIndex = -1;
-                }
-            }
-            catch { }
-        }
-
-        private void InitializeUWPSystem()
-        {
-            System.IO.StreamReader Database = null;
-
-            try
-            {   //Try to open the file
-                Database = System.IO.File.OpenText(Helpers.Strings.Data.DataRootDir + "systemapps.txt");
-            }
-            catch (System.IO.FileNotFoundException)
-            {
-                System.IO.StreamWriter sw = System.IO.File.CreateText( Helpers.Strings.Data.DataRootDir + "systemapps.txt");    //create file if it doesnt exisits
-                sw.Write(Resources.systemapps);                                                                                 //populate it with built in preset
-                sw.Close();
-
-                Database = System.IO.File.OpenText(Helpers.Strings.Data.DataRootDir + "systemapps.txt");
-            }
-            finally
-            {
-                if (Database.Peek() > 0)                                                                                        //exists and not empty
-                {
-                    string buff;
-                    while ((buff = Database.ReadLine()) != null)
-                    {
-                        removeUWPSystem.Add(buff);
-                    }
-                };
-                Database.Close();
-            }
         }
 
         private async void btnRemoveUWP_Click(object sender, EventArgs e)
@@ -228,16 +236,16 @@ namespace ThisIsWin11
             this.Hide();
         }
 
+        private void btnAppsMenu_Click(object sender, EventArgs e) => this.menuApps.Show(Cursor.Position.X, Cursor.Position.Y);
+
+        private void menuAppsSync_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not available in this release.");
+        }
+
         private void checkAppsSystem_CheckedChanged(object sender, EventArgs e)
         {
             RefreshUWP(false);
-        }
-
-        private void btnAppsMenu_Click(object sender, EventArgs e) => this.menuApps.Show(Cursor.Position.X, Cursor.Position.Y);
-
-        private void menuAppsNewWindow_Click(object sender, EventArgs e)
-        {
-            AppsWindow uwp = new AppsWindow(mainForm); uwp.Show();
         }
 
         private void menuAppsSelect_Click(object sender, EventArgs e)
@@ -255,7 +263,10 @@ namespace ThisIsWin11
         private void menuAppsImport_Click(object sender, EventArgs e)
         {
             OpenFileDialog f = new OpenFileDialog();
+            f.InitialDirectory = Helpers.Strings.Data.DataRootDir;
+
             if (f.ShowDialog() == DialogResult.OK)
+
             {
                 lstUWP.Items.Clear();
 
@@ -266,21 +277,14 @@ namespace ThisIsWin11
                     while ((line = r.ReadLine()) != null)
                     {
                         lstUWP.Items.Add(line);
-
                     }
                 }
             }
         }
 
-        private void menuAppsSync_Click(object sender, EventArgs e)
+        private void menuAppsNewWindow_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not available in this release.");
-        }
-
-        private void menuAppsRefresh_Click(object sender, EventArgs e)
-        {
-            InitializeUWPSystem();
-            InitializeUWP();      
+            AppsWindow apps = new AppsWindow(mainForm); apps.Show();
         }
     }
 }

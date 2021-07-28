@@ -42,10 +42,10 @@ namespace ThisIsWin11
             this.rtbAbout.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rtbAbout.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbAbout.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbAbout.Location = new System.Drawing.Point(16, 141);
+            this.rtbAbout.Location = new System.Drawing.Point(27, 141);
             this.rtbAbout.Name = "rtbAbout";
             this.rtbAbout.ReadOnly = true;
-            this.rtbAbout.Size = new System.Drawing.Size(368, 558);
+            this.rtbAbout.Size = new System.Drawing.Size(374, 617);
             this.rtbAbout.TabIndex = 0;
             this.rtbAbout.Text = "";
             this.rtbAbout.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbAbout_LinkClicked);
@@ -87,7 +87,7 @@ namespace ThisIsWin11
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(406, 711);
+            this.ClientSize = new System.Drawing.Size(406, 770);
             this.Controls.Add(this.lblSubHeader);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.rtbAbout);

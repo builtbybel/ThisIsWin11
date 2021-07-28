@@ -40,9 +40,9 @@ namespace ThisIsWin11
             this.menuApps = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuAppsNewWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAppsImport = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAppsRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAppsSelect = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAppsRemoveAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAppsRefresh = new System.Windows.Forms.ToolStripMenuItem();
             menuAppsSync = new System.Windows.Forms.ToolStripMenuItem();
             this.menuApps.SuspendLayout();
             this.SuspendLayout();
@@ -50,8 +50,8 @@ namespace ThisIsWin11
             // menuAppsSync
             // 
             menuAppsSync.Name = "menuAppsSync";
-            menuAppsSync.Size = new System.Drawing.Size(288, 30);
-            menuAppsSync.Text = "Run Community syncing";
+            menuAppsSync.Size = new System.Drawing.Size(285, 30);
+            menuAppsSync.Text = "Run community syncing";
             menuAppsSync.Click += new System.EventHandler(this.menuAppsSync_Click);
             // 
             // lstUWP
@@ -66,7 +66,7 @@ namespace ThisIsWin11
             this.lstUWP.FormattingEnabled = true;
             this.lstUWP.Location = new System.Drawing.Point(27, 132);
             this.lstUWP.Name = "lstUWP";
-            this.lstUWP.Size = new System.Drawing.Size(373, 480);
+            this.lstUWP.Size = new System.Drawing.Size(373, 528);
             this.lstUWP.Sorted = true;
             this.lstUWP.TabIndex = 60;
             this.lstUWP.ThreeDCheckBoxes = true;
@@ -78,12 +78,12 @@ namespace ThisIsWin11
             this.checkAppsSystem.BackColor = System.Drawing.Color.WhiteSmoke;
             this.checkAppsSystem.FlatAppearance.BorderColor = System.Drawing.Color.MediumVioletRed;
             this.checkAppsSystem.FlatAppearance.BorderSize = 0;
-            this.checkAppsSystem.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
-            this.checkAppsSystem.ForeColor = System.Drawing.Color.Black;
-            this.checkAppsSystem.Location = new System.Drawing.Point(28, 625);
+            this.checkAppsSystem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkAppsSystem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.checkAppsSystem.Location = new System.Drawing.Point(27, 665);
             this.checkAppsSystem.Margin = new System.Windows.Forms.Padding(2);
             this.checkAppsSystem.Name = "checkAppsSystem";
-            this.checkAppsSystem.Size = new System.Drawing.Size(154, 25);
+            this.checkAppsSystem.Size = new System.Drawing.Size(163, 25);
             this.checkAppsSystem.TabIndex = 103;
             this.checkAppsSystem.Text = "Show system apps";
             this.checkAppsSystem.UseVisualStyleBackColor = false;
@@ -98,7 +98,7 @@ namespace ThisIsWin11
             this.btnRemoveUWP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveUWP.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveUWP.ForeColor = System.Drawing.Color.Black;
-            this.btnRemoveUWP.Location = new System.Drawing.Point(27, 670);
+            this.btnRemoveUWP.Location = new System.Drawing.Point(27, 705);
             this.btnRemoveUWP.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveUWP.Name = "btnRemoveUWP";
             this.btnRemoveUWP.Size = new System.Drawing.Size(213, 30);
@@ -158,58 +158,58 @@ namespace ThisIsWin11
             // 
             this.menuApps.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuApps.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuAppsNewWindow,
             this.menuAppsImport,
             menuAppsSync,
             this.menuAppsRefresh,
             this.menuAppsSelect,
-            this.menuAppsRemoveAll});
+            this.menuAppsRemoveAll,
+            this.menuAppsNewWindow});
             this.menuApps.Name = "menuMain";
             this.menuApps.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuApps.Size = new System.Drawing.Size(289, 206);
+            this.menuApps.Size = new System.Drawing.Size(286, 206);
             // 
             // menuAppsNewWindow
             // 
             this.menuAppsNewWindow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuAppsNewWindow.Name = "menuAppsNewWindow";
-            this.menuAppsNewWindow.Size = new System.Drawing.Size(288, 30);
+            this.menuAppsNewWindow.Size = new System.Drawing.Size(285, 30);
             this.menuAppsNewWindow.Text = "Open in new window";
             this.menuAppsNewWindow.Click += new System.EventHandler(this.menuAppsNewWindow_Click);
             // 
             // menuAppsImport
             // 
             this.menuAppsImport.Name = "menuAppsImport";
-            this.menuAppsImport.Size = new System.Drawing.Size(288, 30);
-            this.menuAppsImport.Text = "Import Bloatware list";
+            this.menuAppsImport.Size = new System.Drawing.Size(285, 30);
+            this.menuAppsImport.Text = "Import bloatware list";
             this.menuAppsImport.Click += new System.EventHandler(this.menuAppsImport_Click);
+            // 
+            // menuAppsRefresh
+            // 
+            this.menuAppsRefresh.Name = "menuAppsRefresh";
+            this.menuAppsRefresh.Size = new System.Drawing.Size(285, 30);
+            this.menuAppsRefresh.Text = "Refresh";
+            this.menuAppsRefresh.Click += new System.EventHandler(this.menuAppsRefresh_Click);
             // 
             // menuAppsSelect
             // 
             this.menuAppsSelect.Name = "menuAppsSelect";
-            this.menuAppsSelect.Size = new System.Drawing.Size(288, 30);
+            this.menuAppsSelect.Size = new System.Drawing.Size(285, 30);
             this.menuAppsSelect.Text = "Select all";
             this.menuAppsSelect.Click += new System.EventHandler(this.menuAppsSelect_Click);
             // 
             // menuAppsRemoveAll
             // 
             this.menuAppsRemoveAll.Name = "menuAppsRemoveAll";
-            this.menuAppsRemoveAll.Size = new System.Drawing.Size(288, 30);
+            this.menuAppsRemoveAll.Size = new System.Drawing.Size(285, 30);
             this.menuAppsRemoveAll.Text = "Remove all apps";
             this.menuAppsRemoveAll.Click += new System.EventHandler(this.menuAppsRemoveAll_Click);
-            // 
-            // menuAppsRefresh
-            // 
-            this.menuAppsRefresh.Name = "menuAppsRefresh";
-            this.menuAppsRefresh.Size = new System.Drawing.Size(288, 30);
-            this.menuAppsRefresh.Text = "Refresh";
-            this.menuAppsRefresh.Click += new System.EventHandler(this.menuAppsRefresh_Click);
             // 
             // AppsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(406, 711);
+            this.ClientSize = new System.Drawing.Size(406, 770);
             this.Controls.Add(this.btnAppsMenu);
             this.Controls.Add(this.lblSubHeader);
             this.Controls.Add(this.btnBack);
