@@ -25,6 +25,8 @@ alt="GitHub issues">
 
 ![ThisIsWin11_g9mnmb0utQ](https://user-images.githubusercontent.com/57478606/127226421-b8eb3409-cddf-47ce-a405-1baf5fffed51.png)
 
+![ThisIsWin11_3kLHW6y1uu](https://user-images.githubusercontent.com/57478606/127375236-fb79b25f-4e55-4f21-9607-b885dd430408.png)
+
   
 ## Features
 A customer asked me to quickly present Windows 11. So i threw some of the news from [theverge](https://www.theverge.com), [windowscentral](https://www.windowscentral.com) and others into an form and added a magic - feature demonstration - button. Now you can navigate your way through a short Windows 11 tour using this magic button, which only works under Windows 11. 
