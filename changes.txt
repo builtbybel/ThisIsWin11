@@ -1,9 +1,8 @@
 
-- Patched Apps/debloater module with better apps detection and status report, some async functions (no more UI freezing) and possibility to hide system apps, import own bloatware lists (try importing "bloatwareapps-11.txt" located in data folder) and several other UI fixes.
-
-- Refactored data storing (now everything app related is stored in root "data" folder of ThisIsWin11 (old "custom" folder is no longer necessary and can be removed)
-
-- Changed default font in Preview window to Consolas (it was previously Cascadia Code which is per default available on Win11, but Consolas is just my favorite monospaced font)
+- Added Package Manager module built on Winget
+- Fixed some critical DPI, resizing an anchoring issues within new module instances (the UI is so far polished and reaches stable status)
+- Added new privacy tweak to disable unnecessary Windows 11 services
+- Code refactoring
 
 Complete release notes can be found here:
-https://github.com/builtbybel/ThisIsWin11/releases/tag/0.31.0
+https://github.com/builtbybel/ThisIsWin11/releases/tag/0.35.0
