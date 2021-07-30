@@ -28,7 +28,6 @@ namespace ThisIsWin11.Helpers
             SaveFileDialog dialog = new SaveFileDialog
             {
                 InitialDirectory = Application.StartupPath,
-                Title = "Location",
                 Filter = "PNG Images|*.png",
                 FileName = "ThisIsWin11-" + mainForm.lblSubHeader.Text + "\x20" + osInfo.ComputerName
             };
@@ -40,7 +39,7 @@ namespace ThisIsWin11.Helpers
                 bmp.Save(dialog.FileName);
 
                 MessageBox.Show("Click <OK> to prepare the Twitter status. After that you just need to upload the result image you just created." + dialog.FileName);
-                Process.Start(Helpers.Strings.TweetIntent); //tweet Web Intent
+                Process.Start(Strings.TweetIntent); //tweet Web Intent
             }
         }
 
@@ -70,9 +69,9 @@ namespace ThisIsWin11.Helpers
                 }
                 else if (equals < 0)
                 {
-                    return; //higher than available
+                    return; //um, unofficial!
                 }
-                else // New version
+                else //update available
                 {
                     if (MessageBox.Show("A new app version " + LatestVersion + " is available.\nDo you want to goto the Github update page?" + Environment.NewLine + versionContent, "App update available", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {

@@ -38,11 +38,13 @@ namespace ThisIsWin11
             this.btnBack = new System.Windows.Forms.Button();
             this.btnAppsMenu = new System.Windows.Forms.Button();
             this.menuApps = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuAppsNewWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAppsImport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAppsRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAppsSelect = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAppsRemoveAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAppsNewWindow = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAppsInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             menuAppsSync = new System.Windows.Forms.ToolStripMenuItem();
             this.menuApps.SuspendLayout();
             this.SuspendLayout();
@@ -156,6 +158,7 @@ namespace ThisIsWin11
             // 
             // menuApps
             // 
+            this.menuApps.BackColor = System.Drawing.Color.Gainsboro;
             this.menuApps.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuApps.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAppsImport,
@@ -163,18 +166,13 @@ namespace ThisIsWin11
             this.menuAppsRefresh,
             this.menuAppsSelect,
             this.menuAppsRemoveAll,
-            this.menuAppsNewWindow});
+            this.menuAppsNewWindow,
+            this.toolStripSeparator1,
+            this.menuAppsInfo});
             this.menuApps.Name = "menuMain";
             this.menuApps.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuApps.Size = new System.Drawing.Size(286, 206);
-            // 
-            // menuAppsNewWindow
-            // 
-            this.menuAppsNewWindow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuAppsNewWindow.Name = "menuAppsNewWindow";
-            this.menuAppsNewWindow.Size = new System.Drawing.Size(285, 30);
-            this.menuAppsNewWindow.Text = "Open in new window";
-            this.menuAppsNewWindow.Click += new System.EventHandler(this.menuAppsNewWindow_Click);
+            this.menuApps.Size = new System.Drawing.Size(286, 242);
+            this.menuApps.Text = "Info";
             // 
             // menuAppsImport
             // 
@@ -203,6 +201,26 @@ namespace ThisIsWin11
             this.menuAppsRemoveAll.Size = new System.Drawing.Size(285, 30);
             this.menuAppsRemoveAll.Text = "Remove all apps";
             this.menuAppsRemoveAll.Click += new System.EventHandler(this.menuAppsRemoveAll_Click);
+            // 
+            // menuAppsNewWindow
+            // 
+            this.menuAppsNewWindow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuAppsNewWindow.Name = "menuAppsNewWindow";
+            this.menuAppsNewWindow.Size = new System.Drawing.Size(285, 30);
+            this.menuAppsNewWindow.Text = "Open in new window";
+            this.menuAppsNewWindow.Click += new System.EventHandler(this.menuAppsNewWindow_Click);
+            // 
+            // menuAppsInfo
+            // 
+            this.menuAppsInfo.Name = "menuAppsInfo";
+            this.menuAppsInfo.Size = new System.Drawing.Size(285, 30);
+            this.menuAppsInfo.Text = "Info";
+            this.menuAppsInfo.Click += new System.EventHandler(this.menuAppsInfo_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(282, 6);
             // 
             // AppsWindow
             // 
@@ -242,5 +260,7 @@ namespace ThisIsWin11
         private System.Windows.Forms.ToolStripMenuItem menuAppsSelect;
         private System.Windows.Forms.ToolStripMenuItem menuAppsImport;
         private System.Windows.Forms.ToolStripMenuItem menuAppsRefresh;
+        private System.Windows.Forms.ToolStripMenuItem menuAppsInfo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

@@ -61,6 +61,37 @@
     <Compile Include="Helpers\Keystrokes.cs" />
     <Compile Include="Helpers\Strings.cs" />
     <Compile Include="Helpers\Utils.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\AccountInfo.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\AppNotifications.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\BackgroundApps.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\Calendar.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\Call.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\CallHistory.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\Camera.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\CellularData.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\Contacts.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\DiagnosticInformation.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\Documents.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\Email.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\EyeGaze.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\FileSystem.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\Messaging.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\Microphone.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\Motion.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\Notifications.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\OtherDevices.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\Pictures.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\Radios.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\Tasks.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\TrackingApps.cs" />
+    <Compile Include="Win11Privacy\Assessments\Apps\Videos.cs" />
+    <Compile Include="Win11Privacy\Assessments\Privacy\Feedback.cs" />
+    <Compile Include="Win11Privacy\Assessments\Privacy\LocationTracking.cs" />
+    <Compile Include="Win11Privacy\Assessments\Privacy\Advertising.cs" />
+    <Compile Include="Win11Privacy\Assessments\Privacy\DiagnosticData.cs" />
+    <Compile Include="Win11Privacy\Assessments\Privacy\CompatibilityTelemetry.cs" />
+    <Compile Include="Win11Privacy\Assessments\Privacy\Telemetry.cs" />
+    <Compile Include="Win11Privacy\ErrorHelper.cs" />
     <Compile Include="Pages\AboutWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +116,12 @@
     <Compile Include="Pages\PackagesWindow.Designer.cs">
       <DependentUpon>PackagesWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PrivacyWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\PrivacyWindow.Designer.cs">
+      <DependentUpon>PrivacyWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pages\TweakerWindow.cs">
@@ -100,6 +137,10 @@
     </Compile>
     <Compile Include="Showcase\LockScreen.cs" />
     <Compile Include="Showcase\OS.cs" />
+    <Compile Include="Win11Privacy\AssessmentNode.cs" />
+    <Compile Include="Win11Privacy\ITreeNode.cs" />
+    <Compile Include="Win11Privacy\AssessmentBase.cs" />
+    <Compile Include="Win11Privacy\RegistryHelper.cs" />
     <EmbeddedResource Include="Pages\AboutWindow.resx">
       <DependentUpon>AboutWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,9 +150,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\AppsWindow.resx">
       <DependentUpon>AppsWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\PackagesWindow.resx">
       <DependentUpon>PackagesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PrivacyWindow.resx">
+      <DependentUpon>PrivacyWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

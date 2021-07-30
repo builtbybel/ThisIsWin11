@@ -16,6 +16,10 @@ namespace ThisIsWin11
         private Showcase.OS osInfo = new Showcase.OS();
         private MainWindow mainForm = null;
 
+        private static readonly string componentsVersion = "11";
+
+        private void menuTweakerInfo_Click(object sender, EventArgs e) => MessageBox.Show("PimpApp\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         public TweakerWindow(Form frm)
         {
             mainForm = frm as MainWindow;
@@ -35,7 +39,6 @@ namespace ThisIsWin11
 
             mainForm.pbView.Visible = false;
             mainForm.rtbPS.Visible = true;
-
         }
 
         private void TweakerWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -45,7 +48,7 @@ namespace ThisIsWin11
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.mainForm.PanelLeftShow = true;
+            this.mainForm.PanelForms = true;
             this.mainForm.rtbPS.Visible = false;
 
             this.Hide();
@@ -157,7 +160,6 @@ namespace ThisIsWin11
 
         private void lstPS_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
             string psdir = Helpers.Strings.Data.PackagesRootDir + lstPS.Text + ".ps1";
             mainForm.pbView.Visible = false;
             mainForm.rtbPS.Visible = true;
@@ -172,7 +174,7 @@ namespace ThisIsWin11
                         content.AppendLine(sr.ReadLine());
 
                     // Code section
-                    mainForm.TweakerDescription = content.ToString();
+                    mainForm.rtbPS.Text = content.ToString();
 
                     // Info section
                     rtbDesc.Text = string.Join(Environment.NewLine, File.ReadAllLines(psdir).Where(s => s.StartsWith("###")).Select(s => s.Substring(3).Replace("###", "\n")));

@@ -23,10 +23,11 @@ namespace ThisIsWin11
             EnumTableOfContents();
             UISelection();
 
+            RegisterMenu(new PrivacyWindow(this), menuPrivacy);              //privacy window
             RegisterButton(new TweakerWindow(this), btnTweaker);             //tweaker window
-            RegisterMenu(new PackagesWindow(this), menuPackageManager);     //packages window
-            RegisterMenu(new AppsWindow(this), menuApps);                   //apps window
-            RegisterMenu(new AboutWindow(this), menuAppInfo);               //about window
+            RegisterMenu(new PackagesWindow(this), menuPackageManager);      //packages window
+            RegisterMenu(new AppsWindow(this), menuApps);                    //apps window
+            RegisterMenu(new AboutWindow(this), menuAppInfo);                //about window
         }
 
         private void MainWindow_Shown(object sender, EventArgs e)
@@ -58,11 +59,6 @@ namespace ThisIsWin11
             btnBack.Text = "\uE72B";          //back
             btnNext.Text = "\uE72A";          //next
 
-            _ = new ToolTip                   //some tooltip options
-            {
-                AutoPopDelay = 15000,
-                IsBalloon = true
-            };
         }
 
         public void RegisterMenu(Form form, ToolStripMenuItem menu)
@@ -123,21 +119,30 @@ namespace ThisIsWin11
             form.Show();
         }
 
-        public string TweakerDescription { get { return rtbPS.Text; } set { rtbPS.Text = value; } }
-
-        public bool PanelLeftShow { set { pnlLeft.Visible = value; } }
+        public bool PanelForms { set { pnlLeft.Visible = value; } }
 
         //buttons, links and menu events
         private void menuTweaker_Click(object sender, EventArgs e) { TweakerWindow tw = new TweakerWindow(this); tw.Show(); rtbPS.Visible = true; }
 
+        private void menuPrivacy_Click(object sender, EventArgs e)
+        {
+            INavPage = (PageTitle)16;
+            pbView.Visible = false;
+            rtbPS.Visible = true;
+        }
+
         private void menuPackageManager_Click(object sender, EventArgs e)
         {
-            INavPage = (PageTitle)5; NavigationView();
+            INavPage = (PageTitle)5;
+            pbView.Visible = false;
+            rtbPS.Visible = true;
         }
 
         private void menuApps_Click(object sender, EventArgs e)
         {
-            INavPage = (PageTitle)17; NavigationView();
+            INavPage = (PageTitle)17;
+            pbView.Visible = false;
+            rtbPS.Visible = true;
         }
 
         private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("ms-settings:about");
@@ -198,11 +203,22 @@ namespace ThisIsWin11
                 case PageTitle.MicrosoftStore:
 
                     menuPackageManager.PerformClick();
+                    pbView.Visible = false;
+                    rtbPS.Visible = true;
+                    break;
+
+                case PageTitle.Privacy:
+
+                    menuPrivacy.PerformClick();
+                    pbView.Visible = false;
+                    rtbPS.Visible = true;
                     break;
 
                 case PageTitle.Apps:
 
                     menuApps.PerformClick();
+                    pbView.Visible = false;
+                    rtbPS.Visible = true;
                     break;
 
                 case PageTitle.Custom:
@@ -226,8 +242,6 @@ namespace ThisIsWin11
 
             INavPage = index;
             NavigationView();
-
-            rtbPS.Visible = false;
         }
 
         public void NavigationView()

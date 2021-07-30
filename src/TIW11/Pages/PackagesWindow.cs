@@ -44,7 +44,7 @@ namespace ThisIsWin11
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.mainForm.PanelLeftShow = true;
+            this.mainForm.PanelForms = true;
             this.mainForm.rtbPS.Visible = false;
 
             this.Hide();
@@ -142,7 +142,7 @@ namespace ThisIsWin11
                 await Task.Run(() => InstallPackages("winget install --id=" + package + " -e"));
             }
 
-            mainForm.rtbPS.Text += Environment.NewLine + "I'm done.\nI'm open.\nFollow me on https://github.com/builtbybel/ThisIsWin11";
+            mainForm.rtbPS.Text += Environment.NewLine + "I'm done.\nI'm open.\nFollow me on " + Helpers.Strings.Uri.GitRepo;
 
             this.Enabled = true;
         }
@@ -174,7 +174,7 @@ namespace ThisIsWin11
                     );
                 }
             }
-            catch  { }
+            catch { }
         }
 
         private void wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)

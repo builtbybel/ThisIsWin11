@@ -148,6 +148,7 @@ namespace ThisIsWin11
             // 
             // menuPackages
             // 
+            this.menuPackages.BackColor = System.Drawing.Color.Gainsboro;
             this.menuPackages.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuPackages.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuPackagesImport,
@@ -157,13 +158,13 @@ namespace ThisIsWin11
             this.menuPackagesNewWindow});
             this.menuPackages.Name = "menuMain";
             this.menuPackages.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuPackages.Size = new System.Drawing.Size(263, 154);
+            this.menuPackages.Size = new System.Drawing.Size(263, 176);
             // 
             // menuPackagesImport
             // 
             this.menuPackagesImport.Name = "menuPackagesImport";
             this.menuPackagesImport.Size = new System.Drawing.Size(262, 30);
-            this.menuPackagesImport.Text = "Import packages list";
+            this.menuPackagesImport.Text = "Import package list";
             this.menuPackagesImport.Click += new System.EventHandler(this.menuPackagesImport_Click);
             // 
             // menuPackagesExport
@@ -214,7 +215,6 @@ namespace ThisIsWin11
             // 
             // progress
             // 
-            this.progress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.progress.Location = new System.Drawing.Point(78, 106);
             this.progress.MarqueeAnimationSpeed = 30;
             this.progress.Name = "progress";
@@ -224,8 +224,8 @@ namespace ThisIsWin11
             // 
             // PackagesWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(406, 770);
             this.Controls.Add(this.progress);
@@ -239,6 +239,7 @@ namespace ThisIsWin11
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "PackagesWindow";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThisIsWin11";
             this.Load += new System.EventHandler(this.PackagesWindow_Load);
             this.menuPackages.ResumeLayout(false);

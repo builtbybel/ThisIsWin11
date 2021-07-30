@@ -22,15 +22,16 @@ namespace ThisIsWin11
             string changelog = new WebClient().DownloadString(Helpers.Strings.Uri.GitVersionHint);
             rtbAbout.Text = mainForm.Text + "\nVersion: " + Program.GetCurrentVersionTostring() + "\n" +
                             "Builtbybel\n\n" +
-                            "GitHub: https://github.com/builtbybel/ThisIsWin11\n" +
-                            "Twitter: https://twitter.com/builtbybel\n\n" +
-                            "MIT License\n\n\n" +
+                            "GitHub: " + Helpers.Strings.Uri.GitRepo +
+                            "\nTwitter: " + Helpers.Strings.Uri.Twitter +
+                            "\nDonate: " + Helpers.Strings.Uri.Donate +
+                            "\n\nMIT License\n\n\n" +
                             "New in this version:" + changelog;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.mainForm.PanelLeftShow = true;
+            this.mainForm.PanelForms = true;
             this.Hide();
         }
 

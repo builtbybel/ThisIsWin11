@@ -44,16 +44,17 @@ namespace ThisIsWin11
             this.lblHeader = new System.Windows.Forms.Label();
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.btnPresenter = new System.Windows.Forms.CheckBox();
-            this.tt = new System.Windows.Forms.ToolTip(this.components);
             this.pnlRight = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.lblPreview = new System.Windows.Forms.Label();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
             this.pbView = new System.Windows.Forms.PictureBox();
             this.menuMain = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuTweaker = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuPackageManager = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPrivacy = new System.Windows.Forms.ToolStripMenuItem();
             this.menuApps = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPackageManager = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuTweaker = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuCaptureToShare = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAppInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLeft.SuspendLayout();
@@ -126,7 +127,6 @@ namespace ThisIsWin11
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(50, 32);
             this.btnHome.TabIndex = 128;
-            this.tt.SetToolTip(this.btnHome, "Home");
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
@@ -296,10 +296,6 @@ namespace ThisIsWin11
             this.btnPresenter.UseVisualStyleBackColor = false;
             this.btnPresenter.CheckedChanged += new System.EventHandler(this.btnPresenter_CheckedChanged);
             // 
-            // tt
-            // 
-            this.tt.IsBalloon = true;
-            // 
             // pnlRight
             // 
             this.pnlRight.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -374,37 +370,52 @@ namespace ThisIsWin11
             // 
             // menuMain
             // 
+            this.menuMain.BackColor = System.Drawing.Color.Gainsboro;
             this.menuMain.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuTweaker,
-            this.menuPackageManager,
+            this.menuPrivacy,
             this.menuApps,
+            this.menuPackageManager,
+            this.menuTweaker,
+            this.toolStripSeparator1,
             this.menuCaptureToShare,
             this.menuAppInfo});
             this.menuMain.Name = "menuMain";
             this.menuMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuMain.Size = new System.Drawing.Size(329, 176);
+            this.menuMain.Size = new System.Drawing.Size(329, 190);
             // 
-            // menuTweaker
+            // menuPrivacy
             // 
-            this.menuTweaker.Name = "menuTweaker";
-            this.menuTweaker.Size = new System.Drawing.Size(328, 30);
-            this.menuTweaker.Text = "Open Tweaker ";
-            this.menuTweaker.Click += new System.EventHandler(this.menuTweaker_Click);
-            // 
-            // menuPackageManager
-            // 
-            this.menuPackageManager.Name = "menuPackageManager";
-            this.menuPackageManager.Size = new System.Drawing.Size(328, 30);
-            this.menuPackageManager.Text = "Open Package Manager";
-            this.menuPackageManager.Click += new System.EventHandler(this.menuPackageManager_Click);
+            this.menuPrivacy.Name = "menuPrivacy";
+            this.menuPrivacy.Size = new System.Drawing.Size(328, 30);
+            this.menuPrivacy.Text = "Check Win11 privacy";
+            this.menuPrivacy.Click += new System.EventHandler(this.menuPrivacy_Click);
             // 
             // menuApps
             // 
             this.menuApps.Name = "menuApps";
             this.menuApps.Size = new System.Drawing.Size(328, 30);
-            this.menuApps.Text = "Open Debloater page";
+            this.menuApps.Text = "Debloat Win11";
             this.menuApps.Click += new System.EventHandler(this.menuApps_Click);
+            // 
+            // menuPackageManager
+            // 
+            this.menuPackageManager.Name = "menuPackageManager";
+            this.menuPackageManager.Size = new System.Drawing.Size(328, 30);
+            this.menuPackageManager.Text = "Install apps";
+            this.menuPackageManager.Click += new System.EventHandler(this.menuPackageManager_Click);
+            // 
+            // menuTweaker
+            // 
+            this.menuTweaker.Name = "menuTweaker";
+            this.menuTweaker.Size = new System.Drawing.Size(328, 30);
+            this.menuTweaker.Text = "Open tweaker";
+            this.menuTweaker.Click += new System.EventHandler(this.menuTweaker_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(325, 6);
             // 
             // menuCaptureToShare
             // 
@@ -452,7 +463,6 @@ namespace ThisIsWin11
         private System.Windows.Forms.LinkLabel lnkSubHeader;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.ToolTip tt;
         private System.Windows.Forms.Panel pnlRight;
         private System.Windows.Forms.ComboBox cbTable;
         private System.Windows.Forms.Label lblPreview;
@@ -471,6 +481,8 @@ namespace ThisIsWin11
         private System.Windows.Forms.Button btnTweaker;
         private System.Windows.Forms.ToolStripMenuItem menuApps;
         private System.Windows.Forms.ToolStripMenuItem menuPackageManager;
+        private System.Windows.Forms.ToolStripMenuItem menuPrivacy;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

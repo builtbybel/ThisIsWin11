@@ -36,6 +36,7 @@ namespace ThisIsWin11
             this.menuTweaker = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuTweaksApplied = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTweakerNewWindow = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuTweakerInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblSubHeader = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@ namespace ThisIsWin11
             this.btnTweakerMenu = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.rtbDesc = new System.Windows.Forms.RichTextBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuTweaker.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,16 +73,19 @@ namespace ThisIsWin11
             // 
             // menuTweaker
             // 
+            this.menuTweaker.BackColor = System.Drawing.Color.Gainsboro;
             this.menuTweaker.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuTweaker.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuTweaksImport,
             this.menuTweaksEdit,
             this.menuTweaksSave,
             this.menuTweaksApplied,
-            this.menuTweakerNewWindow});
+            this.menuTweakerNewWindow,
+            this.toolStripSeparator1,
+            this.menuTweakerInfo});
             this.menuTweaker.Name = "menuMain";
             this.menuTweaker.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuTweaker.Size = new System.Drawing.Size(412, 154);
+            this.menuTweaker.Size = new System.Drawing.Size(412, 212);
             // 
             // menuTweaksApplied
             // 
@@ -96,6 +101,13 @@ namespace ThisIsWin11
             this.menuTweakerNewWindow.Size = new System.Drawing.Size(411, 30);
             this.menuTweakerNewWindow.Text = "Open in new window";
             this.menuTweakerNewWindow.Click += new System.EventHandler(this.menuTweakerNewWindow_Click);
+            // 
+            // menuTweakerInfo
+            // 
+            this.menuTweakerInfo.Name = "menuTweakerInfo";
+            this.menuTweakerInfo.Size = new System.Drawing.Size(411, 30);
+            this.menuTweakerInfo.Text = "Info";
+            this.menuTweakerInfo.Click += new System.EventHandler(this.menuTweakerInfo_Click);
             // 
             // panel1
             // 
@@ -136,9 +148,9 @@ namespace ThisIsWin11
             this.lblSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblSubHeader.Location = new System.Drawing.Point(72, 21);
             this.lblSubHeader.Name = "lblSubHeader";
-            this.lblSubHeader.Size = new System.Drawing.Size(163, 32);
+            this.lblSubHeader.Size = new System.Drawing.Size(160, 32);
             this.lblSubHeader.TabIndex = 159;
-            this.lblSubHeader.Text = "Apply Tweaks";
+            this.lblSubHeader.Text = "Apply tweaks";
             // 
             // btnBack
             // 
@@ -230,6 +242,11 @@ namespace ThisIsWin11
             this.rtbDesc.Text = "";
             this.rtbDesc.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbDesc_LinkClicked);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(408, 6);
+            // 
             // TweakerWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -275,5 +292,7 @@ namespace ThisIsWin11
         public System.Windows.Forms.RichTextBox rtbDesc;
         private System.Windows.Forms.ToolStripMenuItem menuTweaksApplied;
         private System.Windows.Forms.ToolStripMenuItem menuTweakerNewWindow;
+        private System.Windows.Forms.ToolStripMenuItem menuTweakerInfo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

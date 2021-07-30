@@ -19,6 +19,10 @@ namespace ThisIsWin11
 
         private MainWindow mainForm = null;
 
+        private static readonly string componentsVersion = "20";
+
+        private void menuAppsInfo_Click(object sender, EventArgs e) => MessageBox.Show("Bloatbox (for Win11)\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         public AppsWindow(Form frm)
         {
             mainForm = frm as MainWindow;
@@ -231,7 +235,8 @@ namespace ThisIsWin11
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.mainForm.PanelLeftShow = true;
+            this.mainForm.PanelForms = true;
+            this.mainForm.rtbPS.Visible = false;
 
             this.Hide();
         }
@@ -255,7 +260,7 @@ namespace ThisIsWin11
             {
                 if (menuAppsSelect.Checked == true)
                     lstUWP.SetItemChecked(i, menuAppsSelect.Checked = true);
-                else if (menuAppsSelect.Checked == false)
+                else
                     lstUWP.SetItemChecked(i, menuAppsSelect.Checked = false);
             }
         }
