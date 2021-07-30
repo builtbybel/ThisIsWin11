@@ -40,7 +40,7 @@ You can of course also use the app and click through under Windows 10, but with 
   
 **An internet connection is required to use the app.**
   
-### For the future i plan to open the possibility to configure Windows 11 in the wizard as well. Basic things like background image, security, privacy, apps etc, provide tweaks to get better started with Windows 11 and community optimizations. Maybe uniting the best of all my apps written for Windows 10 under one roof
+For the future i plan to open the possibility to configure Windows 11 in the wizard as well. Basic things like background image, security, privacy, apps etc, provide tweaks to get better started with Windows 11 and community optimizations. Maybe uniting the best of all my apps written for Windows 10 under one roof
   
  ## Download
 - (Latest release) [Download](https://github.com/builtbybel/ThisIsWin11/releases)
