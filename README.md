@@ -21,10 +21,16 @@ alt="GitHub issues">
 ![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11.png)
  
 ### Customize Windows 11 to your needs 
+
 ![ThisIsWin11_8r7Ifmtkzs](https://user-images.githubusercontent.com/57478606/127226302-d72f41dc-b47b-4a8f-967e-22db7e521aab.png)
 
+ ### Analyse your privacy
+ ![127641446-573ac4b1-46b2-4eeb-816e-f9778f62ef12](https://user-images.githubusercontent.com/57478606/127666706-aa696572-f122-49ab-b7f2-39e2da9229dd.png)
+ 
+ ### Apply custom tweaks
 ![ThisIsWin11_g9mnmb0utQ](https://user-images.githubusercontent.com/57478606/127226421-b8eb3409-cddf-47ce-a405-1baf5fffed51.png)
-
+ 
+ ### Remove apps shipped with Windows 11
 ![ThisIsWin11_3kLHW6y1uu](https://user-images.githubusercontent.com/57478606/127375236-fb79b25f-4e55-4f21-9607-b885dd430408.png)
 
   
@@ -35,7 +41,7 @@ You can of course also use the app and click through under Windows 10, but with 
   
 **An internet connection is required to use the app.**
   
- For the future i plan to open the possibility to configure Windows 11 in the wizard as well. Basic things like background image, privacy etc, provide tweaks to get better started e.g. how to get classic context menu of file explorer back and community optimizations.
+### For the future i plan to open the possibility to configure Windows 11 in the wizard as well. Basic things like background image, security, privacy, apps etc, provide tweaks to get better started with Windows 11 and community optimizations. Maybe uniting the best of all my apps written for Windows 10 under one roof
   
  ## Download
 - (Latest release) [Download](https://github.com/builtbybel/ThisIsWin11/releases)
