@@ -1,8 +1,5 @@
 
-- Added Package Manager module built on Winget
-- Fixed some critical DPI, resizing an anchoring issues within new module instances (the UI is so far polished and reaches stable status)
-- Added new privacy tweak to disable unnecessary Windows 11 services
-- Code refactoring
+- Major release with new Privacy module. 
 
-Complete release notes can be found here:
-https://github.com/builtbybel/ThisIsWin11/releases/tag/0.35.0
+Please check the complete release here:
+https://github.com/builtbybel/ThisIsWin11/releases/tag/0.50.0
