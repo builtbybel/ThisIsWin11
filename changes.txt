@@ -1,5 +1,5 @@
 
 ThisIsWin11 is out of preview status.
 
-Click <Yes> to open the GitHub releases page and check the complete release of version 0.60
+Click <Yes> to open the GitHub releases page and check the complete release notes of version 0.60
 https://github.com/builtbybel/ThisIsWin11/releases/tag/0.60.0
