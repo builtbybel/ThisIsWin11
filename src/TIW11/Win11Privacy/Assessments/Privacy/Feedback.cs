@@ -1,7 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 
-namespace ThisIsWin11.Assessment.Privacy
+namespace ThisIsWin11.Lucent11.Assessment.Privacy
 {
     internal class Feedback : AssessmentBase
     {
@@ -42,6 +42,23 @@ namespace ThisIsWin11.Assessment.Privacy
             }
             catch (Exception ex)
             { logger.Log("Could not disable Feedback {0}", ex.Message); }
+
+            return false;
+        }
+
+        public override bool UndoAssessment()
+        {
+            try
+            {
+                var RegKey = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Siuf\Rules", true);
+                RegKey.DeleteValue("NumberOfSIUFInPeriod");
+                RegKey.DeleteValue("PeriodInNanoSeconds");
+
+                logger.Log("- Feedback has been successfully enabled.");
+                return true;
+            }
+            catch
+            { }
 
             return false;
         }

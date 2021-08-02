@@ -1,7 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 
-namespace ThisIsWin11.Assessment.Privacy
+namespace ThisIsWin11.Lucent11.Assessment.Privacy
 {
     internal class Telemetry : AssessmentBase
     {
@@ -25,6 +25,10 @@ namespace ThisIsWin11.Assessment.Privacy
 
         public override bool CheckAssessment()
         {
+
+            WindowsHelper.IsServiceRunning("DiagTrack");
+            WindowsHelper.IsServiceRunning("dmwappushservice");
+
             return !(
                  RegistryHelper.IntEquals(TelemetryKey, "AllowTelemetry", DesiredValue) &&
                  RegistryHelper.IntEquals(DiagTrack, "Start", 4) &&
@@ -41,6 +45,9 @@ namespace ThisIsWin11.Assessment.Privacy
                 Registry.SetValue(DiagTrack, "Start", 4, RegistryValueKind.DWord);
                 Registry.SetValue(dmwappushservice, "Start", 4, RegistryValueKind.DWord);
 
+                WindowsHelper.DisableService("DiagTrack");
+                WindowsHelper.DisableService("dmwappushservice");
+
                 logger.Log("- Connected User Experiences and Telemetry has been successfully disabled.");
                 logger.Log(TelemetryKey + Environment.NewLine + DiagTrack + Environment.NewLine + dmwappushservice);
 
@@ -48,6 +55,27 @@ namespace ThisIsWin11.Assessment.Privacy
             }
             catch (Exception ex)
             { logger.Log("Could not disable telemetry: {0}", ex.Message); }
+
+            return false;
+        }
+
+        public override bool UndoAssessment()
+        {
+            try
+            {
+                Registry.SetValue(TelemetryKey, "AllowTelemetry", 3, RegistryValueKind.DWord);
+                Registry.SetValue(DiagTrack, "Start", 2, RegistryValueKind.DWord);
+                Registry.SetValue(dmwappushservice, "Start", 2, RegistryValueKind.DWord);
+
+                WindowsHelper.EnableService("DiagTrack");
+                WindowsHelper.EnableService("dmwappushservice");
+
+                logger.Log("- Connected User Experiences and Telemetry has been successfully enabled.");
+                logger.Log(TelemetryKey + Environment.NewLine + DiagTrack + Environment.NewLine + dmwappushservice);
+                return true;
+            }
+            catch (Exception ex)
+            { logger.Log("Could not enable telemetry: {0}", ex.Message); }
 
             return false;
         }

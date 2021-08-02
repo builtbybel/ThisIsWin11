@@ -1,10 +1,9 @@
 ﻿using Microsoft.Win32;
 
-namespace ThisIsWin11.Assessment.Apps
+namespace ThisIsWin11.Lucent11.Assessment.Apps
 {
     internal class AccountInfo : AssessmentBase
     {
-
         private static readonly ErrorHelper logger = ErrorHelper.Instance;
 
         private const string AppKey = @"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userAccountInformation";
@@ -43,5 +42,18 @@ namespace ThisIsWin11.Assessment.Apps
             return false;
         }
 
+        public override bool UndoAssessment()
+        {
+            try
+            {
+                Registry.SetValue(AppKey, "Value", "Allow", RegistryValueKind.String);
+                logger.Log("- App access to account info has been successfully enabled.");
+                return true;
+            }
+            catch
+            { }
+
+            return false;
+        }
     }
 }

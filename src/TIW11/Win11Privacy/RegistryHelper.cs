@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace ThisIsWin11.Assessment
+namespace ThisIsWin11.Lucent11.Assessment
 {
     ///check whether registry values equal
     internal class RegistryHelper

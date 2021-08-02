@@ -1,4 +1,4 @@
-﻿namespace ThisIsWin11.Assessment
+﻿namespace ThisIsWin11.Lucent11.Assessment
 {
     public abstract class AssessmentBase
     {
@@ -30,6 +30,6 @@
         /// Revert the Assessment
         /// </summary>
         /// <returns>Returns true if the asssessment was successfull, false otherwise.</returns>
-        //public abstract bool UndoAssessment();
+        public abstract bool UndoAssessment();
     }
 }

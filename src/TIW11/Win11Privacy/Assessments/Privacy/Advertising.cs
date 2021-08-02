@@ -1,7 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 
-namespace ThisIsWin11.Assessment.Privacy
+namespace ThisIsWin11.Lucent11.Assessment.Privacy
 {
     internal class Advertising : AssessmentBase
     {
@@ -38,7 +38,21 @@ namespace ThisIsWin11.Assessment.Privacy
                 return true;
             }
             catch (Exception ex)
-            { logger.Log("Could not disable Advertising ID for Relevant Ads {0}", ex.Message); }
+            { logger.Log("Could not disable advertising ID for Relevant Ads {0}", ex.Message); }
+
+            return false;
+        }
+
+        public override bool UndoAssessment()
+        {
+            try
+            {
+                Registry.SetValue(AdsKey, "Enabled", 1, RegistryValueKind.DWord);
+                logger.Log("- Advertising ID for Relevant Ads has been successfully enabled.");
+                return true;
+            }
+            catch
+            { }
 
             return false;
         }

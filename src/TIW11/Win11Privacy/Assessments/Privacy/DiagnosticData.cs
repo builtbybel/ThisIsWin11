@@ -1,7 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 
-namespace ThisIsWin11.Assessment.Privacy
+namespace ThisIsWin11.Lucent11.Assessment.Privacy
 {
     internal class DiagnosticData : AssessmentBase
     {
@@ -39,6 +39,20 @@ namespace ThisIsWin11.Assessment.Privacy
             }
             catch (Exception ex)
             { logger.Log("Could not disable Diagnostic data {0}", ex.Message); }
+
+            return false;
+        }
+
+        public override bool UndoAssessment()
+        {
+            try
+            {
+                Registry.SetValue(DiagnosticKey, "TailoredExperiencesWithDiagnosticDataEnabled", 1, RegistryValueKind.DWord);
+                logger.Log("- Diagnostic data has been successfully enabled.");
+                return true;
+            }
+            catch
+            { }
 
             return false;
         }

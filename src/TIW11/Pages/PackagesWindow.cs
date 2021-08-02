@@ -27,27 +27,22 @@ namespace ThisIsWin11
         {
             IntializePackages();
             IsWingetInstalled();
-
-            this.Text = mainForm.Text;
-            btnBack.Text = "\uE72B";
-            btnPackagesMenu.Text = "\uE712";
-
-            mainForm.rtbPS.Visible = true;
-            mainForm.rtbPS.Text = "Automate your next installation and create your own Windows 11 essentials.\n\n" +
-                                  "You will find a list of all supported Windows Package Manager (winget) packages here: https://github.com/microsoft/winget-pkgs/tree/master/manifests\n" +
-                                   "Or just get them from here: https://winstall.app\n\n\n\n" +
-                                   "How to use:\n" +
-                                   "1. Select your packages\n" +
-                                   "2. Create your packages by clicking on <Create Package> button\n" +
-                                   "3. Install your packages with Button <Run Installer>";
+            UISelection();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        //some UI nicety
+        private void UISelection()
         {
-            this.mainForm.PanelForms = true;
-            this.mainForm.rtbPS.Visible = false;
+            this.Text = mainForm.Text;
+            btnPackagesMenu.Text = "\uE712";
 
-            this.Hide();
+            rtbPS.Text = "Automate your next installation and create your own Windows 11 essentials.\n\n" +
+                         "You will find a list of all supported Windows Package Manager packages here: https://github.com/microsoft/winget-pkgs/tree/master/manifests\n" +
+                         "Or just get them from here: https://winstall.app\n\n\n\n" +
+                         "How to use:\n" +
+                         "1. Select your packages\n" +
+                         "2. Create your packages by clicking on <Create Package> button\n" +
+                         "3. Install your packages with Button <Run Installer>";
         }
 
         private void IntializePackages()
@@ -68,7 +63,7 @@ namespace ThisIsWin11
 
         private void btnCreatePackage_Click(object sender, EventArgs e)
         {
-            mainForm.rtbPS.Clear();
+            rtbPS.Clear();
 
             if (lstPackages.CheckedItems.Count == 0)
             {
@@ -87,10 +82,36 @@ namespace ThisIsWin11
                         message.AppendLine("- " + lstPackages.Items[i].ToString());
                     }
                 }
-                mainForm.rtbPS.Text = string.Join(@" ; ", selectedItems);
+                rtbPS.Text = string.Join(@" ; ", selectedItems);
 
                 MessageBox.Show("The following packages has been created:\n\n" + message.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private async void btnRunPackage_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(rtbPS.Text))
+            {
+                MessageBox.Show("No package created.");
+                return;
+            }
+
+            StringBuilder message = new StringBuilder();
+
+            foreach (string package in lstPackages.CheckedItems)
+            {
+                btnRunPackage.Enabled = false;
+                rtbPS.Clear();
+                message.AppendLine("- " + package);
+
+                rtbPS.Text += Environment.NewLine + "Installing " + Environment.NewLine + message.ToString();
+
+                await Task.Run(() => InstallPackages("winget install --id=" + package + " -e"));
+            }
+
+            rtbPS.Text += Environment.NewLine + "I'm done.\nI'm open.\nFollow me on " + Helpers.Strings.Uri.GitRepo;
+
+            btnRunPackage.Enabled = true;
         }
 
         private void InstallPackages(string package)
@@ -119,32 +140,6 @@ namespace ThisIsWin11
                 {
                 }
             }
-        }
-
-        private async void BtnRunPackage_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(mainForm.rtbPS.Text))
-            {
-                MessageBox.Show("No package created.");
-                return;
-            }
-
-            StringBuilder message = new StringBuilder();
-
-            foreach (string package in lstPackages.CheckedItems)
-            {
-                this.Enabled = false;
-                mainForm.rtbPS.Clear();
-                message.AppendLine("- " + package);
-
-                mainForm.rtbPS.Text += Environment.NewLine + "Installing " + Environment.NewLine + message.ToString();
-
-                await Task.Run(() => InstallPackages("winget install --id=" + package + " -e"));
-            }
-
-            mainForm.rtbPS.Text += Environment.NewLine + "I'm done.\nI'm open.\nFollow me on " + Helpers.Strings.Uri.GitRepo;
-
-            this.Enabled = true;
         }
 
         private void IsWingetInstalled()
@@ -235,7 +230,7 @@ namespace ThisIsWin11
 
         private void menuPackagesExport_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(mainForm.rtbPS.Text))
+            if (!rtbPS.Text.Contains("winget install"))
             {
                 MessageBox.Show("No package created.");
             }
@@ -251,7 +246,7 @@ namespace ThisIsWin11
                 {
                     if (dlg.ShowDialog() == DialogResult.OK)
                     {
-                        File.WriteAllText(dlg.FileName, mainForm.rtbPS.Text, Encoding.UTF8);
+                        File.WriteAllText(dlg.FileName, rtbPS.Text, Encoding.UTF8);
                     }
                 }
                 catch (Exception ex)
@@ -277,5 +272,7 @@ namespace ThisIsWin11
         {
             IntializePackages();
         }
+
+        private void rtbPS_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
     }
 }

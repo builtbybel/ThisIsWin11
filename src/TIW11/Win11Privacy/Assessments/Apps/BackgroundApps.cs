@@ -1,6 +1,6 @@
 ﻿using Microsoft.Win32;
 
-namespace ThisIsWin11.Assessment.Apps
+namespace ThisIsWin11.Lucent11.Assessment.Apps
 {
     internal class BackgroundApps : AssessmentBase
     {
@@ -42,5 +42,18 @@ namespace ThisIsWin11.Assessment.Apps
             return false;
         }
 
+        public override bool UndoAssessment()
+        {
+            try
+            {
+                Registry.SetValue(AppKey, "GlobalUserDisabled", 0, RegistryValueKind.DWord);
+                logger.Log("- App access to running in background has been successfully enabled.");
+                return true;
+            }
+            catch
+            { }
+
+            return false;
+        }
     }
 }

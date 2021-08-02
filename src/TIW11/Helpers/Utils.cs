@@ -14,14 +14,14 @@ namespace ThisIsWin11.Helpers
         public static Version CurrentVersion = new Version(Application.ProductVersion);
         public static Version LatestVersion;
 
-        private MainWindow mainForm = null;
+        private HomeWindow showcaseForm = null;
 
         //capture screen and post web intent to twitter
         public void CaptureToShare(Form frm)
         {
-            mainForm = frm as MainWindow;
+            showcaseForm = frm as HomeWindow;
 
-            Form f = mainForm;
+            Form f = showcaseForm;
             Bitmap bmp = new Bitmap(f.Width, f.Height);
             f.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
 
@@ -29,10 +29,10 @@ namespace ThisIsWin11.Helpers
             {
                 InitialDirectory = Application.StartupPath,
                 Filter = "PNG Images|*.png",
-                FileName = "ThisIsWin11-" + mainForm.lblSubHeader.Text + "\x20" + osInfo.ComputerName
+                FileName = "ThisIsWin11-" + showcaseForm.lblHeader.Text + "\x20" + osInfo.ComputerName
             };
 
-            DialogResult result = dialog.ShowDialog(mainForm);
+            DialogResult result = dialog.ShowDialog(showcaseForm);
 
             if (result == DialogResult.OK)
             {
@@ -63,13 +63,13 @@ namespace ThisIsWin11.Helpers
 
                 var equals = LatestVersion.CompareTo(CurrentVersion);
 
-                if (equals == 0)
+                if (equals == 0) //up-to-date
                 {
-                    return; //up-to-date
+                    MessageBox.Show("No new release found.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else if (equals < 0)
+                else if (equals < 0) //um, unofficial!
                 {
-                    return; //um, unofficial!
+                    MessageBox.Show("No new release found.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else //update available
                 {

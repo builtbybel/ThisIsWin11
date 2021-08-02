@@ -1,7 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 
-namespace ThisIsWin11.Assessment.Privacy
+namespace ThisIsWin11.Lucent11.Assessment.Privacy
 {
     internal class LocationTracking : AssessmentBase
     {
@@ -39,6 +39,20 @@ namespace ThisIsWin11.Assessment.Privacy
             }
             catch (Exception ex)
             { logger.Log("Could not disable location tracking {0}", ex.Message); }
+
+            return false;
+        }
+
+        public override bool UndoAssessment()
+        {
+            try
+            {
+                Registry.SetValue(LocationKey, "Value", "Allow", RegistryValueKind.String);
+                logger.Log("- Location tracking info has been successfully enabled.");
+                return true;
+            }
+            catch
+            { }
 
             return false;
         }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ThisIsWin11
+namespace ThisIsWin11.Lucent11
 {
     internal class ErrorHelper
     {

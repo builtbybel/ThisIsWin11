@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
-using ThisIsWin11.Assessment;
+using ThisIsWin11.Lucent11.Assessment;
 
-namespace ThisIsWin11
+namespace ThisIsWin11.Lucent11
 {
     internal class AssessmentNode : TreeNode
     {

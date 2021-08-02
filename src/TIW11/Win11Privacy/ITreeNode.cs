@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace ThisIsWin11.ITreeNode
+namespace ThisIsWin11.Lucent11.ITreeNode
 {
     public static class ITreeNode
     {

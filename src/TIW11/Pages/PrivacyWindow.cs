@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -8,51 +7,45 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ThisIsWin11.ITreeNode;
+using ThisIsWin11.Lucent11;
+using ThisIsWin11.Lucent11.ITreeNode;
 
 namespace ThisIsWin11
 {
     public partial class PrivacyWindow : Form
     {
-        private static readonly string componentsVersion = "10 Beta";
+        private static readonly string componentsVersion = "20 Beta";
         private Showcase.OS osInfo = new Showcase.OS();
 
         private int progression = 0;
         private int progressionIncrease = 0;
 
         private static readonly ErrorHelper logger = ErrorHelper.Instance;
-        private MainWindow mainForm = null;
 
         private void menuPrivacyInfo_Click(object sender, EventArgs e) => MessageBox.Show("Lucent11\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        public PrivacyWindow(Form frm)
+        public PrivacyWindow()
         {
-            mainForm = frm as MainWindow;
-
             InitializeComponent();
         }
 
-        private void PrivacyWindow_Load(object sender, EventArgs e)
+        private void PrivacyWindow_Shown(object sender, EventArgs e)
         {
             InitializeAssessments();
-            logger.SetTarget(mainForm.rtbPS);
+            UISelection();
 
-            btnBack.Text = "\uE72B";
-            btnPrivacyMenu.Text = "\uE712";
-
-            mainForm.rtbPS.Visible = true;
-            mainForm.rtbPS.Text = "As long as Windows 11 is in development, privacy settings will be rolled out cautiously." +
-                                    Environment.NewLine + Environment.NewLine +
-                                    "If you have tried one or the other fix and tweak, feel free to suggest it here: " + Helpers.Strings.Uri.GitRepo +
-                                    "\n\nDisable \"Diagnostic data\" only if you’re not in the Windows Insider program. Currently, as Windows 11 is only available through it, you shouldn’t disable it.";
+            logger.SetTarget(rtbPS);        //logs messages to rtbPS
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        //some UI nicety
+        private void UISelection()
         {
-            this.mainForm.PanelForms = true;
-            this.mainForm.rtbPS.Visible = false;
+            btnPrivacyMenu.Text = "\uE712";
 
-            this.Hide();
+            rtbPS.Text = "As long as Windows 11 is in development, privacy settings will be rolled out cautiously." +
+                         Environment.NewLine + Environment.NewLine +
+                         "If you have tried one or the other fix and tweak, feel free to suggest it here: " + Helpers.Strings.Uri.GitRepo +
+                         "\n\nDisable \"Diagnostic data\" only if you’re not in the Windows Insider program. Currently, as Windows 11 is only available through it, you shouldn’t disable it.";
         }
 
         public void InitializeAssessments()
@@ -67,42 +60,44 @@ namespace ThisIsWin11
             };
 
             TreeNode privacy = new TreeNode("Privacy", new TreeNode[] {
-                new AssessmentNode(new Assessment.Privacy.Telemetry()),
-                new AssessmentNode(new Assessment.Privacy.CompatibilityTelemetry()),
-                new AssessmentNode(new Assessment.Privacy.DiagnosticData()),
-                new AssessmentNode(new Assessment.Privacy.LocationTracking()),
-                new AssessmentNode(new Assessment.Privacy.Advertising()),
-                new AssessmentNode(new Assessment.Privacy.Feedback()),
+                new AssessmentNode(new Lucent11.Assessment.Privacy.DiagnosticData()),
+                new AssessmentNode(new Lucent11.Assessment.Privacy.Telemetry()),
+                new AssessmentNode(new Lucent11.Assessment.Privacy.CompatibilityTelemetry()),
+                new AssessmentNode(new Lucent11.Assessment.Privacy.LocationTracking()),
+                new AssessmentNode(new Lucent11.Assessment.Privacy.Advertising()),
+                new AssessmentNode(new Lucent11.Assessment.Privacy.Feedback()),
+                new AssessmentNode(new Lucent11.Assessment.Privacy.SuggestedContent()),
+                new AssessmentNode(new Lucent11.Assessment.Privacy.Biometrics()),
             })
             {
                 Checked = true
             };
 
             TreeNode apps = new TreeNode("Apps permissions", new TreeNode[] {
-                new AssessmentNode(new Assessment.Apps.AppNotifications()),
-                new AssessmentNode(new Assessment.Apps.Camera()),
-                new AssessmentNode(new Assessment.Apps.Microphone()),
-                new AssessmentNode(new Assessment.Apps.Call()),
-                new AssessmentNode(new Assessment.Apps.Notifications()),
-                new AssessmentNode(new Assessment.Apps.AccountInfo()),
-                new AssessmentNode(new Assessment.Apps.Contacts()),
-                new AssessmentNode(new Assessment.Apps.Calendar()),
-                new AssessmentNode(new Assessment.Apps.CallHistory()),
-                new AssessmentNode(new Assessment.Apps.Email()),
-                new AssessmentNode(new Assessment.Apps.Tasks()),
-                new AssessmentNode(new Assessment.Apps.Messaging()),
-                new AssessmentNode(new Assessment.Apps.Motion()),
-                new AssessmentNode(new Assessment.Apps.OtherDevices()),
-                new AssessmentNode(new Assessment.Apps.BackgroundApps()),
-                new AssessmentNode(new Assessment.Apps.TrackingApps()),
-                new AssessmentNode(new Assessment.Apps.DiagnosticInformation()),
-                new AssessmentNode(new Assessment.Apps.Documents()),
-                new AssessmentNode(new Assessment.Apps.Pictures()),
-                new AssessmentNode(new Assessment.Apps.Videos()),
-                new AssessmentNode(new Assessment.Apps.Radios()),
-                new AssessmentNode(new Assessment.Apps.FileSystem()),
-                new AssessmentNode(new Assessment.Apps.EyeGaze()),
-                new AssessmentNode(new Assessment.Apps.CellularData()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.AppNotifications()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.Camera()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.Microphone()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.Call()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.Notifications()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.AccountInfo()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.Contacts()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.Calendar()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.CallHistory()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.Email()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.Tasks()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.Messaging()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.Motion()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.OtherDevices()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.BackgroundApps()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.TrackingApps()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.DiagnosticInformation()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.Documents()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.Pictures()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.Videos()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.Radios()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.FileSystem()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.EyeGaze()),
+                new AssessmentNode(new Lucent11.Assessment.Apps.CellularData()),
             })
             {
                 Checked = true
@@ -124,14 +119,43 @@ namespace ThisIsWin11
             tvwAssessments.EndUpdate();
         }
 
-        private void SelectAssessmentNodes(TreeNodeCollection trNodeCollection, bool isCheck)
+        private List<AssessmentNode> CollectAssessmentNodes()
         {
-            foreach (TreeNode trNode in trNodeCollection)
+            List<AssessmentNode> selectedAssessments = new List<AssessmentNode>();
+
+            foreach (TreeNode treeNode in tvwAssessments.Nodes.All())
             {
-                trNode.Checked = isCheck;
-                if (trNode.Nodes.Count > 0)
-                    SelectAssessmentNodes(trNode.Nodes, isCheck);
+                if (treeNode.Checked && treeNode.GetType() == typeof(AssessmentNode))
+                {
+                    selectedAssessments.Add((AssessmentNode)treeNode);
+                }
             }
+
+            progressionIncrease = (int)Math.Floor(100.0f / selectedAssessments.Count);
+
+            return selectedAssessments;
+        }
+
+        private void Reset()
+        {
+            progression = 0;
+            progressionIncrease = 0;
+
+            progress.Value = 0;
+            progress.Visible = true;
+            rtbPS.Text = "";
+        }
+
+        private void DoProgress(int value)
+        {
+            progression = value;
+            progress.Value = progression;
+        }
+
+        private void IncrementProgress()
+        {
+            progression += progressionIncrease;
+            progress.Value = progression;
         }
 
         private async void btnPrivacyAnalyse_Click(object sender, EventArgs e)
@@ -163,8 +187,6 @@ namespace ThisIsWin11
                     node.Checked = false; //uncheck all fixed
                     //logger.Log("Already fixed: {0}", node.Text);
                 }
-
-                detail.Tag = treatment;
             }
 
             DoProgress(100);
@@ -172,7 +194,7 @@ namespace ThisIsWin11
             //add some sum
             StringBuilder sum = new StringBuilder();
             sum.Append(Environment.NewLine);
-            sum.Append("=============== Results ===============\n");
+            sum.Append("======= Results =======\n");
             sum.Append($"{selectedAssessments.Count} privacy issues has been checked.\r\n");
             sum.Append($"{selectedAssessments.Count - performAssessmentsCount} privacy issues already fixed (we've unchecked it).\r\n");
             sum.Append(Environment.NewLine);
@@ -187,9 +209,23 @@ namespace ThisIsWin11
             {
                 var treatment = node.Assessment;
                 ConfiguredTaskAwaitable<bool> performTask = Task<bool>.Factory.StartNew(() => treatment.DoAssessment()).ConfigureAwait(true);
-                Stopwatch stopWatch = new Stopwatch();
 
                 var result = await performTask;
+                IncrementProgress();
+            }
+
+            DoProgress(100);
+        }
+
+        private async void UndoAssessments(List<AssessmentNode> treeNodes)
+        {
+            foreach (AssessmentNode node in treeNodes)
+            {
+                var treatment = node.Assessment;
+                ConfiguredTaskAwaitable<bool> performTask = Task<bool>.Factory.StartNew(() => treatment.UndoAssessment()).ConfigureAwait(true);
+
+                var result = await performTask;
+                IncrementProgress();
             }
 
             DoProgress(100);
@@ -203,36 +239,25 @@ namespace ThisIsWin11
             ApplyAssessments(performNodes);
         }
 
-        private List<AssessmentNode> CollectAssessmentNodes()
+        private void menuPrivacyUndo_Click(object sender, EventArgs e)
         {
-            List<AssessmentNode> selectedAssessments = new List<AssessmentNode>();
-
-            foreach (TreeNode treeNode in tvwAssessments.Nodes.All())
+            if (MessageBox.Show("Do you really want to revert all selected settings to Windows 11 default state?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-                if (treeNode.Checked && treeNode.GetType() == typeof(AssessmentNode))
-                {
-                    selectedAssessments.Add((AssessmentNode)treeNode);
-                }
+                Reset();
+
+                List<AssessmentNode> performNodes = CollectAssessmentNodes();
+                UndoAssessments(performNodes);
             }
-
-            progressionIncrease = (int)Math.Floor(100.0f / selectedAssessments.Count);
-
-            return selectedAssessments;
         }
 
-        private void Reset()
+        private void SelectAssessmentNodes(TreeNodeCollection trNodeCollection, bool isCheck)
         {
-            progress.Visible = true;
-            mainForm.rtbPS.Text = "";
-
-            progressionIncrease = 0;
-            progress.Value = 0;
-        }
-
-        private void DoProgress(int value)
-        {
-            progression = value;
-            progress.Value = progression;
+            foreach (TreeNode trNode in trNodeCollection)
+            {
+                trNode.Checked = isCheck;
+                if (trNode.Nodes.Count > 0)
+                    SelectAssessmentNodes(trNode.Nodes, isCheck);
+            }
         }
 
         private void CheckTreeViewNodes(TreeNode node, bool isChecked)
@@ -260,16 +285,14 @@ namespace ThisIsWin11
             tvwAssessments.EndUpdate();
         }
 
-        private void btnPrivacyMenu_Click(object sender, EventArgs e) => this.menuPrivacy.Show(Cursor.Position.X, Cursor.Position.Y);
-
         private void menuPrivacyNewWindow_Click(object sender, EventArgs e)
         {
-            PrivacyWindow privacy = new PrivacyWindow(mainForm); privacy.Show();
+            PrivacyWindow privacy = new PrivacyWindow(); privacy.Show();
         }
 
         private void menuPrivacyExportLog_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(mainForm.rtbPS.Text))
+            if (String.IsNullOrEmpty(rtbPS.Text))
             {
                 MessageBox.Show("Nothing to export.");
             }
@@ -286,7 +309,7 @@ namespace ThisIsWin11
                 {
                     if (dlg.ShowDialog() == DialogResult.OK)
                     {
-                        File.WriteAllText(dlg.FileName, mainForm.rtbPS.Text, Encoding.UTF8);
+                        File.WriteAllText(dlg.FileName, rtbPS.Text, Encoding.UTF8);
                     }
                 }
                 catch (Exception ex)
@@ -306,6 +329,8 @@ namespace ThisIsWin11
                 SelectAssessmentNodes(tvwAssessments.Nodes, false);
         }
 
-     
+        private void btnPrivacyMenu_Click(object sender, EventArgs e) => this.menuPrivacy.Show(Cursor.Position.X, Cursor.Position.Y);
+
+        private void rtbPS_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
     }
 }

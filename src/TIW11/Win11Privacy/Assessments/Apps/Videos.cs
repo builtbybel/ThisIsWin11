@@ -1,6 +1,6 @@
 ﻿using Microsoft.Win32;
 
-namespace ThisIsWin11.Assessment.Apps
+namespace ThisIsWin11.Lucent11.Assessment.Apps
 {
     internal class Videos : AssessmentBase
     {
@@ -42,6 +42,18 @@ namespace ThisIsWin11.Assessment.Apps
             return false;
         }
 
+        public override bool UndoAssessment()
+        {
+            try
+            {
+                Registry.SetValue(AppKey, "Value", "Allow", RegistryValueKind.String);
+                logger.Log("- App access to videoshas been successfully enabled.");
+                return true;
+            }
+            catch
+            { }
 
+            return false;
+        }
     }
 }

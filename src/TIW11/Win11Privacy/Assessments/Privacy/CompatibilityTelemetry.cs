@@ -1,7 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 
-namespace ThisIsWin11.Assessment.Privacy
+namespace ThisIsWin11.Lucent11.Assessment.Privacy
 {
     internal class CompatibilityTelemetry : AssessmentBase
     {
@@ -31,6 +31,7 @@ namespace ThisIsWin11.Assessment.Privacy
         {
             try
             {
+
                 Registry.SetValue(TelemetryKey, "Debugger", DesiredValue, RegistryValueKind.String);
                 logger.Log("- Compatibility Telemetry has been successfully disabled.");
                 logger.Log(TelemetryKey);
@@ -38,6 +39,22 @@ namespace ThisIsWin11.Assessment.Privacy
             }
             catch (Exception ex)
             { logger.Log("Could not disable compatibility telemetry: {0}", ex.Message); }
+
+            return false;
+        }
+
+        public override bool UndoAssessment()
+        {
+            try
+            {
+                var RegKey = Registry.LocalMachine.OpenSubKey(@"Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CompatTelRunner.exe", true);
+                RegKey.DeleteValue("Debugger");
+
+                logger.Log("- Compatibility Telemetry has been successfully enabled.");
+                return true;
+            }
+            catch
+            { }
 
             return false;
         }

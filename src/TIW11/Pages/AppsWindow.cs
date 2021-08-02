@@ -17,35 +17,32 @@ namespace ThisIsWin11
 
         private readonly PowerShell powerShell = PowerShell.Create();
 
-        private MainWindow mainForm = null;
+        private static readonly string componentsVersion = "22";
 
-        private static readonly string componentsVersion = "20";
+        private void menuAppsInfo_Click(object sender, EventArgs e) => MessageBox.Show("Kickassbloat\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        private void menuAppsInfo_Click(object sender, EventArgs e) => MessageBox.Show("Bloatbox (for Win11)\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        public AppsWindow(Form frm)
+        public AppsWindow()
         {
-            mainForm = frm as MainWindow;
-
             InitializeComponent();
         }
 
-        private void AppsWindow_Load(object sender, EventArgs e)
+        private void AppsWindow_Shown(object sender, EventArgs e)
         {
-            InitializeUWPSystem(); //systemapps from resource file
-            InitializeUWP();      //now our system apps
+            InitializeUWPSystem();   //systemapps from resource file
+            InitializeUWP();         //now our system apps
+            UISelection();
+        }
 
-            this.Text = mainForm.Text;
-            btnBack.Text = "\uE72B";
+        //some UI nicety
+        private void UISelection()
+        {
             btnAppsMenu.Text = "\uE712";
 
-            mainForm.rtbPS.Visible = true;
-            mainForm.rtbPS.Text = lstUWP.Items.Count.ToString() + " pre-installed apps have been found on your Windows 11 installation.\n\n\n" +
-                                                                   "It's a simple thing to remove some of these apps. Just hit the <Uninstall> button on your left." +
-                                                                   Environment.NewLine + Environment.NewLine +
-                                                                   "You can also import a custom bloatware list, e.g. you can find a list of pre-installed Windows 11 apps here:\n" +
-                                                                   "https://github.com/builtbybel/ThisIsWin11/blob/main/collections/bloatwareapps-11.txt\n\n" +
-                                                                   "Save the file raw and use the import function in the upper left menu.";
+            rtbPS.Text = lstUWP.Items.Count.ToString() + " pre-installed apps have been found on your Windows 11 installation.\n\n\n" +
+                                                          "It's a simple thing to remove some of these apps. Just hit the <Uninstall> button on your left." +
+                                                           Environment.NewLine + Environment.NewLine +
+                                                           "You can also import a custom bloatware list, e.g. you can find a list of pre-installed Windows 11 apps in the data root of this app.\n\n" +
+                                                           "Use the import function in the upper left menu and select file \"bloatwareapps-11\".";
         }
 
         private void InitializeUWP()
@@ -58,7 +55,7 @@ namespace ThisIsWin11
             foreach (PSObject result in powerShell.Invoke())
             {
                 string current = result.ToString();
-                // Show ONLY NON-SYSTEM apps by comparing found apps with file systemapps.txt
+                // Show ONLY NON-SYSTEM apps by comparing found apps with systemapps.txt
                 if (removeUWPSystem != null) if ((removeUWPSystem.Any(current.Contains)) && !checkAppsSystem.Checked) continue;
 
                 if (lstUWP.Items.Contains(Regex.Replace(current, "(@{Name=)|(})", ""))) continue;
@@ -149,8 +146,8 @@ namespace ThisIsWin11
 
             removeUWPList.Clear();
             removeUWPFailedList.Clear();
-            mainForm.rtbPS.Clear();
-            this.Enabled = false;
+            rtbPS.Clear();
+            btnRemoveUWP.Enabled = false;
 
             if (lstUWP.CheckedItems.Count > 0)
             {
@@ -164,7 +161,7 @@ namespace ThisIsWin11
                     {
                         await Task.Run(() => RemoveUWP(app));
 
-                        mainForm.rtbPS.Text += Environment.NewLine + "Uninstalling " + app.ToString();
+                        rtbPS.Text += Environment.NewLine + "Uninstalling " + app.ToString();
                     }
 
                     RefreshUWP(true);
@@ -187,7 +184,7 @@ namespace ThisIsWin11
                         message += "The folowing app(s) have been removed successfully:" + Environment.NewLine + successList;
                         message += Environment.NewLine + "A Community syncing function is in the works. This will automatically flag and remove the really unnecessary apps for you." +
                                     "This way we make sure you don't uninstall an important app. If you accidentally uninstall an important app, you can always reinstall all the apps preinstalled by Windows 11 in ThisIsWin11 Tweaker module." +
-                                    Environment.NewLine + Environment.NewLine;
+                                    Environment.NewLine + Environment.NewLine + lstUWP.Items.Count + " apps are left.";
                     }
 
                     if (removeUWPFailedList.Count != 0)
@@ -195,25 +192,22 @@ namespace ThisIsWin11
                         message += "The following app(s) could not be removed: " + Environment.NewLine + failedList;
                         message += Environment.NewLine + "Note, however, this app won't allow you to remove a few of the most important built-in apps, like Microsoft Edge, .NET framework, UI.Xaml etc." +
                                                          "as these apps are needed for the Windows 11 Experience and for other programs. If you try, you’ll see an error message saying the removal failed.\n\n" +
-                                                         "Please also check ThisIsWin11 Tweaker module to see if you can find a community debloating script. These are often more aggressive.";
+                                                         "Please also check ThisIsWin11 automation module to see if you can find a community debloating task. These are often more aggressive.";
                     }
 
-                    mainForm.rtbPS.Visible = true;
-                    mainForm.pbView.Visible = false;
-                    mainForm.rtbPS.Text = message;
+                    btnRemoveUWP.Enabled = true;
+                    rtbPS.Text = message;
                 }
             }
             else
             {
                 MessageBox.Show("No apps selected.");
             }
-
-            this.Enabled = true;
         }
 
         private void menuAppsRemoveAll_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("This will remove all preinstalled apps for the logged in user, except the Microsoft Store. Do you wish to continue?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            if (MessageBox.Show("This will remove all preinstalled apps for the logged in user, except the Microsoft Store. Do you wish to continue?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 using (PowerShell script = PowerShell.Create())
                 {
@@ -231,14 +225,6 @@ namespace ThisIsWin11
                     { MessageBox.Show(ex.Message); }
                 }
             }
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.mainForm.PanelForms = true;
-            this.mainForm.rtbPS.Visible = false;
-
-            this.Hide();
         }
 
         private void btnAppsMenu_Click(object sender, EventArgs e) => this.menuApps.Show(Cursor.Position.X, Cursor.Position.Y);
@@ -289,7 +275,9 @@ namespace ThisIsWin11
 
         private void menuAppsNewWindow_Click(object sender, EventArgs e)
         {
-            AppsWindow apps = new AppsWindow(mainForm); apps.Show();
+            AppsWindow apps = new AppsWindow(); apps.Show();
         }
+
+        private void rtbPS_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
     }
 }
