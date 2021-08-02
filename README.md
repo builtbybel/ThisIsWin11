@@ -13,9 +13,9 @@ alt="GitHub issues">
 <img alt="Downloads on GitHub" src="https://img.shields.io/github/downloads/builtbybel/thisiswin11/total.svg?style=flat-square" />
 </a>
 
-# ThisIsWin11 (Preview)
+# ThisIsWin11 
 
-### Guides you step by step in getting to know and setting up Windows 11
+### The real PowerToys for Windows 11 which guides you step by step in getting to know and setting up Windows 11
 
 ![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11.png)
 
