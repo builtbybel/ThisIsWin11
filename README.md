@@ -15,7 +15,7 @@ alt="GitHub issues">
 
 # ThisIsWin11 
 
-### The real PowerToys for Windows 11 which guides you step by step in getting to know and setting up Windows 11
+### Guides you step by step in getting to know and setting up Windows 11
 
 ![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11.png)
 
