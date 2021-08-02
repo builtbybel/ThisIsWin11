@@ -17,20 +17,7 @@ alt="GitHub issues">
 
 ### Guides you step by step in getting to know and setting up Windows 11
 
-
 ![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11.png)
- 
-### Customize Windows 11 to your needs 
-![ThisIsWin11_8r7Ifmtkzs](https://user-images.githubusercontent.com/57478606/127226302-d72f41dc-b47b-4a8f-967e-22db7e521aab.png)
-
- ### Analyse your privacy
- ![127641446-573ac4b1-46b2-4eeb-816e-f9778f62ef12](https://user-images.githubusercontent.com/57478606/127666706-aa696572-f122-49ab-b7f2-39e2da9229dd.png)
- 
- ### Apply custom tweaks
-![ThisIsWin11_g9mnmb0utQ](https://user-images.githubusercontent.com/57478606/127226421-b8eb3409-cddf-47ce-a405-1baf5fffed51.png)
- 
- ### Install essential Windows 11 apps
-![ThisIsWin11_3kLHW6y1uu](https://user-images.githubusercontent.com/57478606/127375236-fb79b25f-4e55-4f21-9607-b885dd430408.png)
 
   
 ## Features
