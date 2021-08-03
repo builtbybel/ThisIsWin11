@@ -21,13 +21,20 @@ alt="GitHub issues">
 
   
 ## Features
-A customer asked me to quickly present Windows 11. So i threw some of the news from [theverge](https://www.theverge.com), [windowscentral](https://www.windowscentral.com) and others into an form and added a magic - feature demonstration - button. Now you can navigate your way through a short Windows 11 tour using this magic button, which only works under Windows 11. 
+ I have started a new project with ThisIsWin11 two weeks ago which was dedicated exclusively to getting to know Windows 11. The app has left yesterday the preview status and is now slowly expanded as a practical all-rounder for Windows 11, similar to Microsoft PowerToys.
  
-You can of course also use the app and click through under Windows 10, but with a little less fun. 
+The app currently offers five modules:
+
+- Presenter: The start screen guides you through an pictured introduction to the new operating system Windows 11 and allows you quickly to configure it.
+- Lucent11: This module allows you checking and optimizing Windows 11 privacy among other things (all changes made can also be undone)
+- Kickassbloat will help you removing pre-installed Windows 11 apps
+- Packages is there for you to quickly install one or the other app
+- PowerClicks allows you automating several Windows 11 tasks based on PowerShell and community scripts.
+ 
+If you know my previous apps for Windows 10 (Privatezilla, Bloatbox etc.) then you will see that ThisIsWin11 app combines the best of these apps under one interface but on Win11.
   
 **An internet connection is required to use the app.**
   
-For the future i plan to open the possibility to configure Windows 11 in the wizard as well. Basic things like background image, security, privacy, apps etc, provide tweaks to get better started with Windows 11 and community optimizations. Maybe uniting the best of all my apps written for Windows 10 under one roof
   
  ## Download
 - (Latest release) [Download](https://github.com/builtbybel/ThisIsWin11/releases)
