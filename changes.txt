@@ -6,5 +6,5 @@
 - Kickassbloat module has been upgraded and gets the familiar UI of Bloatbox for Windows 10
 - Several minor UI and code fixes
 
-Complete release notes can be found here
+Complete release notes can be found here:
 https://github.com/builtbybel/ThisIsWin11/releases/tag/0.60.0
