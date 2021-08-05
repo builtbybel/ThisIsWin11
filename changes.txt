@@ -7,4 +7,4 @@
 - Several minor UI and code fixes
 
 Complete release notes can be found here:
-https://github.com/builtbybel/ThisIsWin11/releases/tag/0.60.0
+https://github.com/builtbybel/ThisIsWin11/releases/tag/0.61.0
