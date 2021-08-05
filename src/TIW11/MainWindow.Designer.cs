@@ -29,35 +29,57 @@ namespace ThisIsWin11
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlLeft = new System.Windows.Forms.Panel();
+            this.btnMore = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnAutomate = new System.Windows.Forms.Button();
             this.btnPackages = new System.Windows.Forms.Button();
             this.btnApps = new System.Windows.Forms.Button();
-            this.btnPrivacy = new System.Windows.Forms.Button();
-            this.lblMainMenu = new System.Windows.Forms.Button();
+            this.btnSystem = new System.Windows.Forms.Button();
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.menuMain = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuMainComponents = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLeft.SuspendLayout();
+            this.menuMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLeft
             // 
             this.pnlLeft.AutoScroll = true;
             this.pnlLeft.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlLeft.Controls.Add(this.btnMore);
             this.pnlLeft.Controls.Add(this.btnHome);
             this.pnlLeft.Controls.Add(this.btnSettings);
             this.pnlLeft.Controls.Add(this.btnAutomate);
             this.pnlLeft.Controls.Add(this.btnPackages);
             this.pnlLeft.Controls.Add(this.btnApps);
-            this.pnlLeft.Controls.Add(this.btnPrivacy);
-            this.pnlLeft.Controls.Add(this.lblMainMenu);
+            this.pnlLeft.Controls.Add(this.btnSystem);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLeft.Location = new System.Drawing.Point(0, 0);
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.pnlLeft.Size = new System.Drawing.Size(78, 770);
             this.pnlLeft.TabIndex = 130;
+            // 
+            // btnMore
+            // 
+            this.btnMore.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMore.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMore.FlatAppearance.BorderSize = 0;
+            this.btnMore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMore.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMore.ForeColor = System.Drawing.Color.DimGray;
+            this.btnMore.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnMore.Location = new System.Drawing.Point(3, 370);
+            this.btnMore.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMore.Name = "btnMore";
+            this.btnMore.Size = new System.Drawing.Size(72, 61);
+            this.btnMore.TabIndex = 145;
+            this.btnMore.Text = "...";
+            this.btnMore.UseVisualStyleBackColor = false;
+            this.btnMore.Click += new System.EventHandler(this.btnMore_Click);
             // 
             // btnHome
             // 
@@ -145,40 +167,22 @@ namespace ThisIsWin11
             this.btnApps.Text = "Apps";
             this.btnApps.UseVisualStyleBackColor = false;
             // 
-            // btnPrivacy
+            // btnSystem
             // 
-            this.btnPrivacy.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPrivacy.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPrivacy.FlatAppearance.BorderSize = 0;
-            this.btnPrivacy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrivacy.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrivacy.ForeColor = System.Drawing.Color.DimGray;
-            this.btnPrivacy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnPrivacy.Location = new System.Drawing.Point(3, 94);
-            this.btnPrivacy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnPrivacy.Name = "btnPrivacy";
-            this.btnPrivacy.Size = new System.Drawing.Size(72, 61);
-            this.btnPrivacy.TabIndex = 139;
-            this.btnPrivacy.Text = "Privacy";
-            this.btnPrivacy.UseVisualStyleBackColor = false;
-            // 
-            // lblMainMenu
-            // 
-            this.lblMainMenu.AutoSize = true;
-            this.lblMainMenu.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblMainMenu.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.lblMainMenu.FlatAppearance.BorderSize = 0;
-            this.lblMainMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.HotPink;
-            this.lblMainMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblMainMenu.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMainMenu.ForeColor = System.Drawing.Color.Black;
-            this.lblMainMenu.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblMainMenu.Location = new System.Drawing.Point(0, 2);
-            this.lblMainMenu.Name = "lblMainMenu";
-            this.lblMainMenu.Size = new System.Drawing.Size(48, 51);
-            this.lblMainMenu.TabIndex = 113;
-            this.lblMainMenu.UseVisualStyleBackColor = false;
-            this.lblMainMenu.Visible = false;
+            this.btnSystem.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSystem.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSystem.FlatAppearance.BorderSize = 0;
+            this.btnSystem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSystem.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSystem.ForeColor = System.Drawing.Color.DimGray;
+            this.btnSystem.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnSystem.Location = new System.Drawing.Point(3, 94);
+            this.btnSystem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSystem.Name = "btnSystem";
+            this.btnSystem.Size = new System.Drawing.Size(72, 61);
+            this.btnSystem.TabIndex = 139;
+            this.btnSystem.Text = "System";
+            this.btnSystem.UseVisualStyleBackColor = false;
             // 
             // pnlContainer
             // 
@@ -190,6 +194,23 @@ namespace ThisIsWin11
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(1088, 770);
             this.pnlContainer.TabIndex = 136;
+            // 
+            // menuMain
+            // 
+            this.menuMain.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.menuMain.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuMainComponents});
+            this.menuMain.Name = "menuMain";
+            this.menuMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuMain.Size = new System.Drawing.Size(181, 56);
+            // 
+            // menuMainComponents
+            // 
+            this.menuMainComponents.Name = "menuMainComponents";
+            this.menuMainComponents.Size = new System.Drawing.Size(180, 30);
+            this.menuMainComponents.Text = "More...";
+            this.menuMainComponents.Click += new System.EventHandler(this.menuMainComponents_Click);
             // 
             // MainWindow
             // 
@@ -206,22 +227,24 @@ namespace ThisIsWin11
             this.Text = "ThisIsWin11";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.pnlLeft.ResumeLayout(false);
-            this.pnlLeft.PerformLayout();
+            this.menuMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button lblMainMenu;
         private System.Windows.Forms.Panel pnlLeft;
         private System.Windows.Forms.Panel pnlContainer;
         public System.Windows.Forms.Button btnSettings;
-        public System.Windows.Forms.Button btnPrivacy;
+        public System.Windows.Forms.Button btnSystem;
         public System.Windows.Forms.Button btnAutomate;
         public System.Windows.Forms.Button btnPackages;
         public System.Windows.Forms.Button btnApps;
         public System.Windows.Forms.Button btnHome;
+        public System.Windows.Forms.Button btnMore;
+        private System.Windows.Forms.ContextMenuStrip menuMain;
+        private System.Windows.Forms.ToolStripMenuItem menuMainComponents;
     }
 }
 

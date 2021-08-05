@@ -30,7 +30,7 @@ namespace ThisIsWin11
         private void InitializeComponent()
         {
             this.rtbAbout = new System.Windows.Forms.RichTextBox();
-            this.lblSubHeader = new System.Windows.Forms.Label();
+            this.lblHeader = new System.Windows.Forms.Label();
             this.btnCheckForUpdates = new System.Windows.Forms.Button();
             this.lblSettingsUpdates = new System.Windows.Forms.Label();
             this.lblSettingsAbout = new System.Windows.Forms.Label();
@@ -52,21 +52,21 @@ namespace ThisIsWin11
             this.rtbAbout.Text = "";
             this.rtbAbout.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbAbout_LinkClicked);
             // 
-            // lblSubHeader
+            // lblHeader
             // 
-            this.lblSubHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSubHeader.AutoEllipsis = true;
-            this.lblSubHeader.AutoSize = true;
-            this.lblSubHeader.BackColor = System.Drawing.Color.White;
-            this.lblSubHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubHeader.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblSubHeader.Location = new System.Drawing.Point(24, 19);
-            this.lblSubHeader.Name = "lblSubHeader";
-            this.lblSubHeader.Size = new System.Drawing.Size(103, 32);
-            this.lblSubHeader.TabIndex = 135;
-            this.lblSubHeader.Text = "Settings";
+            this.lblHeader.AutoEllipsis = true;
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.BackColor = System.Drawing.Color.White;
+            this.lblHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.ForeColor = System.Drawing.Color.DimGray;
+            this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblHeader.Location = new System.Drawing.Point(24, 19);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(103, 32);
+            this.lblHeader.TabIndex = 135;
+            this.lblHeader.Text = "Settings";
             // 
             // btnCheckForUpdates
             // 
@@ -126,7 +126,7 @@ namespace ThisIsWin11
             this.Controls.Add(this.lblSettingsAbout);
             this.Controls.Add(this.lblSettingsUpdates);
             this.Controls.Add(this.btnCheckForUpdates);
-            this.Controls.Add(this.lblSubHeader);
+            this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.rtbAbout);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "SettingsWindow";
@@ -142,7 +142,7 @@ namespace ThisIsWin11
         #endregion
 
         private System.Windows.Forms.RichTextBox rtbAbout;
-        private System.Windows.Forms.Label lblSubHeader;
+        private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Button btnCheckForUpdates;
         private System.Windows.Forms.Label lblSettingsUpdates;
         private System.Windows.Forms.Label lblSettingsAbout;

@@ -104,12 +104,14 @@ namespace ThisIsWin11
                 rtbPS.Clear();
                 message.AppendLine("- " + package);
 
-                rtbPS.Text += Environment.NewLine + "Installing " + Environment.NewLine + message.ToString();
+                rtbPS.Text += Environment.NewLine + "Installing " + Environment.NewLine + message.ToString() +
+                             Environment.NewLine + "You can continue working while we install...";
+  
 
                 await Task.Run(() => InstallPackages("winget install --id=" + package + " -e"));
             }
 
-            rtbPS.Text += Environment.NewLine + "I'm done.\nI'm open.\nFollow me on " + Helpers.Strings.Uri.GitRepo;
+            rtbPS.Text += Environment.NewLine + Environment.NewLine + "I'm done.\nI'm open.\nFollow me on " + Helpers.Strings.Uri.GitRepo;
 
             btnRunPackage.Enabled = true;
         }
@@ -223,7 +225,7 @@ namespace ThisIsWin11
             }
         }
 
-        private void menuPackagesNewWindow_Click(object sender, EventArgs e)
+        private void menuPackagesPopOut_Click(object sender, EventArgs e)
         {
             PackagesWindow package = new PackagesWindow(mainForm); package.Show();
         }

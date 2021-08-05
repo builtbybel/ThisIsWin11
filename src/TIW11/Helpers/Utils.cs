@@ -69,7 +69,7 @@ namespace ThisIsWin11.Helpers
                 }
                 else if (equals < 0) //um, unofficial!
                 {
-                    MessageBox.Show("No new release found.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Looks like an unoffical release.\nTry again later...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else //update available
                 {

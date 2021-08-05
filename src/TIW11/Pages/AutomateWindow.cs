@@ -314,7 +314,7 @@ namespace ThisIsWin11
 
         private void btnAutomateMenu_Click(object sender, EventArgs e) => this.menuAutomate.Show(Cursor.Position.X, Cursor.Position.Y);
 
-        private void menuAutomateNewWindow_Click(object sender, EventArgs e)
+        private void menuAutomatePopOut_Click(object sender, EventArgs e)
         {
             AutomateWindow automate = new AutomateWindow(); automate.Show();
         }

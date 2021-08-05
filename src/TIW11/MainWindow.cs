@@ -17,10 +17,10 @@ namespace ThisIsWin11
             UISelection();
 
             RegisterView(new HomeWindow(this), btnHome);                    //home page
-            RegisterView(new PrivacyWindow(), btnPrivacy);                  //privacy page
+            RegisterView(new SystemWindow(), btnSystem);                    //system page
             RegisterView(new AppsWindow(), btnApps);                        //apps page
             RegisterView(new PackagesWindow(this), btnPackages);            //packages page
-            RegisterView(new AutomateWindow(), btnAutomate);                    //automate page
+            RegisterView(new AutomateWindow(), btnAutomate);                //automate page
             RegisterView(new SettingsWindow(this), btnSettings);            //settings page
         }
 
@@ -38,11 +38,12 @@ namespace ThisIsWin11
 
             //nav icons
             btnHome.Text = "\xEA8A" + "\n\nHome";
-            btnPrivacy.Text = "\xE72E" + "\n\nPrivacy";
+            btnSystem.Text = "\xE770" + "\n\nSystem";
             btnApps.Text = "\xE71D" + "\n\nApps";
             btnPackages.Text = "\xE7B8" + "\n\nPackages";
             btnAutomate.Text = "\xE771" + "\n\nAutomate";
             btnSettings.Text = "\xE713" + "\n\nSettings";
+            btnMore.Text = "\uE10C";
         }
 
         public void RegisterView(Form form, Button button)
@@ -73,5 +74,20 @@ namespace ThisIsWin11
             this.pnlContainer.Controls.Add(form);
             form.Show();
         }
+
+        private void menuMainComponents_Click(object sender, EventArgs e)
+        {
+            ComponentsWindow formComponents= new ComponentsWindow();
+            formComponents.TopLevel = false;
+            formComponents.AutoScroll = true;
+            formComponents.FormBorderStyle = FormBorderStyle.None;
+            formComponents.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom);
+            formComponents.Dock = DockStyle.Fill;
+            this.pnlContainer.Controls.Clear();
+            this.pnlContainer.Controls.Add(formComponents);
+            formComponents.Show();
+        }
+
+        private void btnMore_Click(object sender, EventArgs e) => this.menuMain.Show(Cursor.Position.X, Cursor.Position.Y);
     }
 }

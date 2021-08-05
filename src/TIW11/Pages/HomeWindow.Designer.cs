@@ -38,7 +38,7 @@ namespace ThisIsWin11
             this.btnCustomizer = new System.Windows.Forms.Button();
             this.btnPresenter = new System.Windows.Forms.CheckBox();
             this.pbView = new System.Windows.Forms.PictureBox();
-            this.lblPreview = new System.Windows.Forms.Label();
+            this.lblSubHeader = new System.Windows.Forms.Label();
             this.pnlMiddle = new System.Windows.Forms.Panel();
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.btnBack = new System.Windows.Forms.Button();
@@ -90,7 +90,7 @@ namespace ThisIsWin11
             this.btnShowcaseMenu.FlatAppearance.BorderSize = 0;
             this.btnShowcaseMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.HotPink;
             this.btnShowcaseMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowcaseMenu.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowcaseMenu.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowcaseMenu.Location = new System.Drawing.Point(322, 0);
             this.btnShowcaseMenu.Name = "btnShowcaseMenu";
             this.btnShowcaseMenu.Size = new System.Drawing.Size(48, 51);
@@ -108,7 +108,7 @@ namespace ThisIsWin11
             this.btnConfigurator.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfigurator.ForeColor = System.Drawing.Color.Black;
             this.btnConfigurator.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnConfigurator.Location = new System.Drawing.Point(82, 166);
+            this.btnConfigurator.Location = new System.Drawing.Point(83, 206);
             this.btnConfigurator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConfigurator.Name = "btnConfigurator";
             this.btnConfigurator.Size = new System.Drawing.Size(181, 32);
@@ -143,7 +143,7 @@ namespace ThisIsWin11
             this.btnCustomizer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomizer.ForeColor = System.Drawing.Color.White;
             this.btnCustomizer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCustomizer.Location = new System.Drawing.Point(82, 126);
+            this.btnCustomizer.Location = new System.Drawing.Point(83, 166);
             this.btnCustomizer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCustomizer.Name = "btnCustomizer";
             this.btnCustomizer.Size = new System.Drawing.Size(181, 32);
@@ -189,20 +189,20 @@ namespace ThisIsWin11
             this.pbView.TabStop = false;
             this.pbView.Paint += new System.Windows.Forms.PaintEventHandler(this.pbView_Paint);
             // 
-            // lblPreview
+            // lblSubHeader
             // 
-            this.lblPreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblSubHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPreview.AutoEllipsis = true;
-            this.lblPreview.BackColor = System.Drawing.Color.Transparent;
-            this.lblPreview.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPreview.ForeColor = System.Drawing.Color.Black;
-            this.lblPreview.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblPreview.Location = new System.Drawing.Point(24, 19);
-            this.lblPreview.Name = "lblPreview";
-            this.lblPreview.Size = new System.Drawing.Size(660, 32);
-            this.lblPreview.TabIndex = 135;
-            this.lblPreview.Text = "Get Started with Windows 11";
+            this.lblSubHeader.AutoEllipsis = true;
+            this.lblSubHeader.BackColor = System.Drawing.Color.Transparent;
+            this.lblSubHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubHeader.ForeColor = System.Drawing.Color.Black;
+            this.lblSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblSubHeader.Location = new System.Drawing.Point(24, 19);
+            this.lblSubHeader.Name = "lblSubHeader";
+            this.lblSubHeader.Size = new System.Drawing.Size(660, 32);
+            this.lblSubHeader.TabIndex = 135;
+            this.lblSubHeader.Text = "Get Started with Windows 11";
             // 
             // pnlMiddle
             // 
@@ -211,7 +211,7 @@ namespace ThisIsWin11
             this.pnlMiddle.BackColor = System.Drawing.Color.White;
             this.pnlMiddle.Controls.Add(this.lnkSubHeader);
             this.pnlMiddle.Controls.Add(this.btnBack);
-            this.pnlMiddle.Controls.Add(this.lblPreview);
+            this.pnlMiddle.Controls.Add(this.lblSubHeader);
             this.pnlMiddle.Controls.Add(this.btnNext);
             this.pnlMiddle.Controls.Add(this.btnHome);
             this.pnlMiddle.Controls.Add(this.linkLabel1);
@@ -364,7 +364,7 @@ namespace ThisIsWin11
         private System.Windows.Forms.Panel pnlRight;
         private System.Windows.Forms.ComboBox cbTable;
         private System.Windows.Forms.Button btnShowcaseMenu;
-        private System.Windows.Forms.Label lblPreview;
+        private System.Windows.Forms.Label lblSubHeader;
         private System.Windows.Forms.CheckBox btnPresenter;
         public System.Windows.Forms.PictureBox pbView;
         private System.Windows.Forms.Panel pnlMiddle;

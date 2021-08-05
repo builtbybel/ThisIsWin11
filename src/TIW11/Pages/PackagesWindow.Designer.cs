@@ -30,7 +30,7 @@ namespace ThisIsWin11
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblSubHeader = new System.Windows.Forms.Label();
+            this.lblHeader = new System.Windows.Forms.Label();
             this.lstPackages = new System.Windows.Forms.CheckedListBox();
             this.btnCreatePackage = new System.Windows.Forms.Button();
             this.btnRunPackage = new System.Windows.Forms.Button();
@@ -40,32 +40,31 @@ namespace ThisIsWin11
             this.menuPackagesExport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPackagesRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPackagesSelect = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuPackagesNewWindow = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPackagesPopOut = new System.Windows.Forms.ToolStripMenuItem();
             this.btnInstallWinget = new System.Windows.Forms.Button();
             this.progress = new System.Windows.Forms.ProgressBar();
             this.pnlRight = new System.Windows.Forms.Panel();
-            this.btnOverflow = new System.Windows.Forms.Button();
             this.lblPreview = new System.Windows.Forms.Label();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
             this.menuPackages.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblSubHeader
+            // lblHeader
             // 
-            this.lblSubHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSubHeader.AutoEllipsis = true;
-            this.lblSubHeader.AutoSize = true;
-            this.lblSubHeader.BackColor = System.Drawing.Color.White;
-            this.lblSubHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubHeader.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblSubHeader.Location = new System.Drawing.Point(24, 19);
-            this.lblSubHeader.Name = "lblSubHeader";
-            this.lblSubHeader.Size = new System.Drawing.Size(188, 32);
-            this.lblSubHeader.TabIndex = 139;
-            this.lblSubHeader.Text = "Install packages";
+            this.lblHeader.AutoEllipsis = true;
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.BackColor = System.Drawing.Color.White;
+            this.lblHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.ForeColor = System.Drawing.Color.DimGray;
+            this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblHeader.Location = new System.Drawing.Point(24, 19);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(188, 32);
+            this.lblHeader.TabIndex = 139;
+            this.lblHeader.Text = "Install packages";
             // 
             // lstPackages
             // 
@@ -144,46 +143,46 @@ namespace ThisIsWin11
             this.menuPackagesExport,
             this.menuPackagesRefresh,
             this.menuPackagesSelect,
-            this.menuPackagesNewWindow});
+            this.menuPackagesPopOut});
             this.menuPackages.Name = "menuMain";
             this.menuPackages.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuPackages.Size = new System.Drawing.Size(263, 154);
+            this.menuPackages.Size = new System.Drawing.Size(259, 154);
             // 
             // menuPackagesImport
             // 
             this.menuPackagesImport.Name = "menuPackagesImport";
-            this.menuPackagesImport.Size = new System.Drawing.Size(262, 30);
+            this.menuPackagesImport.Size = new System.Drawing.Size(258, 30);
             this.menuPackagesImport.Text = "Import package list";
             this.menuPackagesImport.Click += new System.EventHandler(this.menuPackagesImport_Click);
             // 
             // menuPackagesExport
             // 
             this.menuPackagesExport.Name = "menuPackagesExport";
-            this.menuPackagesExport.Size = new System.Drawing.Size(262, 30);
+            this.menuPackagesExport.Size = new System.Drawing.Size(258, 30);
             this.menuPackagesExport.Text = "Export to PowerShell";
             this.menuPackagesExport.Click += new System.EventHandler(this.menuPackagesExport_Click);
             // 
             // menuPackagesRefresh
             // 
             this.menuPackagesRefresh.Name = "menuPackagesRefresh";
-            this.menuPackagesRefresh.Size = new System.Drawing.Size(262, 30);
+            this.menuPackagesRefresh.Size = new System.Drawing.Size(258, 30);
             this.menuPackagesRefresh.Text = "Refresh";
             this.menuPackagesRefresh.Click += new System.EventHandler(this.menuPackagesRefresh_Click);
             // 
             // menuPackagesSelect
             // 
             this.menuPackagesSelect.Name = "menuPackagesSelect";
-            this.menuPackagesSelect.Size = new System.Drawing.Size(262, 30);
+            this.menuPackagesSelect.Size = new System.Drawing.Size(258, 30);
             this.menuPackagesSelect.Text = "Select all";
             this.menuPackagesSelect.Click += new System.EventHandler(this.menuPackagesSelect_Click);
             // 
-            // menuPackagesNewWindow
+            // menuPackagesPopOut
             // 
-            this.menuPackagesNewWindow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuPackagesNewWindow.Name = "menuPackagesNewWindow";
-            this.menuPackagesNewWindow.Size = new System.Drawing.Size(262, 30);
-            this.menuPackagesNewWindow.Text = "Open in new window";
-            this.menuPackagesNewWindow.Click += new System.EventHandler(this.menuPackagesNewWindow_Click);
+            this.menuPackagesPopOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuPackagesPopOut.Name = "menuPackagesPopOut";
+            this.menuPackagesPopOut.Size = new System.Drawing.Size(258, 30);
+            this.menuPackagesPopOut.Text = "Pop-out-App";
+            this.menuPackagesPopOut.Click += new System.EventHandler(this.menuPackagesPopOut_Click);
             // 
             // btnInstallWinget
             // 
@@ -217,7 +216,6 @@ namespace ThisIsWin11
             // pnlRight
             // 
             this.pnlRight.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlRight.Controls.Add(this.btnOverflow);
             this.pnlRight.Controls.Add(this.lblPreview);
             this.pnlRight.Controls.Add(this.rtbPS);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
@@ -225,19 +223,6 @@ namespace ThisIsWin11
             this.pnlRight.Name = "pnlRight";
             this.pnlRight.Size = new System.Drawing.Size(371, 770);
             this.pnlRight.TabIndex = 163;
-            // 
-            // btnOverflow
-            // 
-            this.btnOverflow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOverflow.FlatAppearance.BorderSize = 0;
-            this.btnOverflow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.HotPink;
-            this.btnOverflow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOverflow.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOverflow.Location = new System.Drawing.Point(322, 0);
-            this.btnOverflow.Name = "btnOverflow";
-            this.btnOverflow.Size = new System.Drawing.Size(48, 51);
-            this.btnOverflow.TabIndex = 136;
-            this.btnOverflow.UseVisualStyleBackColor = true;
             // 
             // lblPreview
             // 
@@ -283,7 +268,7 @@ namespace ThisIsWin11
             this.Controls.Add(this.btnRunPackage);
             this.Controls.Add(this.btnCreatePackage);
             this.Controls.Add(this.lstPackages);
-            this.Controls.Add(this.lblSubHeader);
+            this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.pnlRight);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "PackagesWindow";
@@ -300,21 +285,20 @@ namespace ThisIsWin11
 
         #endregion
 
-        private System.Windows.Forms.Label lblSubHeader;
+        private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.CheckedListBox lstPackages;
         private System.Windows.Forms.Button btnCreatePackage;
         private System.Windows.Forms.Button btnRunPackage;
         private System.Windows.Forms.Button btnPackagesMenu;
         private System.Windows.Forms.ContextMenuStrip menuPackages;
         private System.Windows.Forms.ToolStripMenuItem menuPackagesImport;
-        private System.Windows.Forms.ToolStripMenuItem menuPackagesNewWindow;
+        private System.Windows.Forms.ToolStripMenuItem menuPackagesPopOut;
         private System.Windows.Forms.ToolStripMenuItem menuPackagesExport;
         private System.Windows.Forms.ToolStripMenuItem menuPackagesSelect;
         private System.Windows.Forms.ToolStripMenuItem menuPackagesRefresh;
         private System.Windows.Forms.Button btnInstallWinget;
         private System.Windows.Forms.ProgressBar progress;
         private System.Windows.Forms.Panel pnlRight;
-        private System.Windows.Forms.Button btnOverflow;
         private System.Windows.Forms.Label lblPreview;
         public System.Windows.Forms.RichTextBox rtbPS;
     }

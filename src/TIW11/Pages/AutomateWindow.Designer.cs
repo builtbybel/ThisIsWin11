@@ -35,12 +35,12 @@ namespace ThisIsWin11
             this.menuAutomateSave = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAutomate = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuAutomateApplied = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAutomateNewWindow = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAutomatePopOut = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAutomateSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.menuAutomateInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.lblSubHeader = new System.Windows.Forms.Label();
+            this.lblHeader = new System.Windows.Forms.Label();
             this.lstPS = new System.Windows.Forms.CheckedListBox();
             this.progress = new System.Windows.Forms.ProgressBar();
             this.btnAutomateMenu = new System.Windows.Forms.Button();
@@ -84,7 +84,7 @@ namespace ThisIsWin11
             this.menuAutomateEdit,
             this.menuAutomateSave,
             this.menuAutomateApplied,
-            this.menuAutomateNewWindow,
+            this.menuAutomatePopOut,
             this.menuAutomateSeparator,
             this.menuAutomateInfo});
             this.menuAutomate.Name = "menuMain";
@@ -98,13 +98,13 @@ namespace ThisIsWin11
             this.menuAutomateApplied.Text = "Show applied";
             this.menuAutomateApplied.Click += new System.EventHandler(this.menuAutomateApplied_Click);
             // 
-            // menuAutomateNewWindow
+            // menuAutomatePopOut
             // 
-            this.menuAutomateNewWindow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuAutomateNewWindow.Name = "menuAutomateNewWindow";
-            this.menuAutomateNewWindow.Size = new System.Drawing.Size(411, 30);
-            this.menuAutomateNewWindow.Text = "Open in new window";
-            this.menuAutomateNewWindow.Click += new System.EventHandler(this.menuAutomateNewWindow_Click);
+            this.menuAutomatePopOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuAutomatePopOut.Name = "menuAutomatePopOut";
+            this.menuAutomatePopOut.Size = new System.Drawing.Size(411, 30);
+            this.menuAutomatePopOut.Text = "Pop-out-App";
+            this.menuAutomatePopOut.Click += new System.EventHandler(this.menuAutomatePopOut_Click);
             // 
             // menuAutomateSeparator
             // 
@@ -146,21 +146,21 @@ namespace ThisIsWin11
             this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // lblSubHeader
+            // lblHeader
             // 
-            this.lblSubHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSubHeader.AutoEllipsis = true;
-            this.lblSubHeader.AutoSize = true;
-            this.lblSubHeader.BackColor = System.Drawing.Color.White;
-            this.lblSubHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubHeader.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblSubHeader.Location = new System.Drawing.Point(24, 19);
-            this.lblSubHeader.Name = "lblSubHeader";
-            this.lblSubHeader.Size = new System.Drawing.Size(186, 32);
-            this.lblSubHeader.TabIndex = 159;
-            this.lblSubHeader.Text = "Automate tasks";
+            this.lblHeader.AutoEllipsis = true;
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.BackColor = System.Drawing.Color.White;
+            this.lblHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.ForeColor = System.Drawing.Color.DimGray;
+            this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblHeader.Location = new System.Drawing.Point(24, 19);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(186, 32);
+            this.lblHeader.TabIndex = 159;
+            this.lblHeader.Text = "Automate tasks";
             // 
             // lstPS
             // 
@@ -305,7 +305,7 @@ namespace ThisIsWin11
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1087, 770);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.lblSubHeader);
+            this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.lstPS);
             this.Controls.Add(this.progress);
             this.Controls.Add(this.btnAutomateMenu);
@@ -334,14 +334,14 @@ namespace ThisIsWin11
         private System.Windows.Forms.ContextMenuStrip menuAutomate;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label lblSubHeader;
+        private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.CheckedListBox lstPS;
         private System.Windows.Forms.ProgressBar progress;
         private System.Windows.Forms.Button btnAutomateMenu;
         private System.Windows.Forms.Button btnApply;
         public System.Windows.Forms.RichTextBox rtbDesc;
         private System.Windows.Forms.ToolStripMenuItem menuAutomateApplied;
-        private System.Windows.Forms.ToolStripMenuItem menuAutomateNewWindow;
+        private System.Windows.Forms.ToolStripMenuItem menuAutomatePopOut;
         private System.Windows.Forms.ToolStripMenuItem menuAutomateInfo;
         private System.Windows.Forms.ToolStripSeparator menuAutomateSeparator;
         private System.Windows.Forms.Panel pnlRight;

@@ -45,7 +45,7 @@ namespace ThisIsWin11
             btnHome.Text = "\uE80F";
             btnBack.Text = "\uE72B";
             btnNext.Text = "\uE72A";
-            btnShowcaseMenu.Text = "\uE10C";
+            btnShowcaseMenu.Text = "\uE72D"; 
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -120,7 +120,7 @@ namespace ThisIsWin11
                     btnCustomizer.Visible = false;
                     lblHeader.Text = "Welcome, " + Environment.UserName;
                     rtbDesc.Text = "Lets make sure everything is set up how you want it.\n\nUse the <Next> and <Previous> buttons to run a guided tour of Windows 11.\n\n" +
-                                    "Use the <Preview this page> button on the right panel to get the feature presented once (if it is available).\n" +
+                                    "Use the <Preview this page> button on the left panel to get the feature presented once (if it is available).\n" +
                                     "Pages marked with <Configure this page> will allow you to change immediately the Windows configuration.\n" +
                                     "Pages marked with <Customize this page> will allow you to apply custom tasks from the community.";
                     pbView.Visible = true;
@@ -680,7 +680,7 @@ namespace ThisIsWin11
 
                 case PageTitle.Privacy:
 
-                    mainForm.btnPrivacy.PerformClick();
+                    mainForm.btnSystem.PerformClick();
                     break;
 
                 case PageTitle.Apps:
