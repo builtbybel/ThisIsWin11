@@ -74,9 +74,11 @@ namespace ThisIsWin11
             this.lstPackages.BackColor = System.Drawing.Color.White;
             this.lstPackages.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstPackages.CheckOnClick = true;
+            this.lstPackages.ColumnWidth = 300;
             this.lstPackages.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstPackages.FormattingEnabled = true;
             this.lstPackages.Location = new System.Drawing.Point(24, 99);
+            this.lstPackages.MultiColumn = true;
             this.lstPackages.Name = "lstPackages";
             this.lstPackages.Size = new System.Drawing.Size(691, 600);
             this.lstPackages.Sorted = true;

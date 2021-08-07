@@ -7,14 +7,14 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ThisIsWin11.Lucent11;
-using ThisIsWin11.Lucent11.ITreeNode;
+using ThisIsWin11.PumpedApp;
+using ThisIsWin11.PumpedApp.ITreeNode;
 
 namespace ThisIsWin11
 {
     public partial class SystemWindow : Form
     {
-        private static readonly string componentsVersion = "25 Beta";
+        private static readonly string componentsVersion = "40 Preview";
 
         private Showcase.OS osInfo = new Showcase.OS();
 
@@ -23,7 +23,7 @@ namespace ThisIsWin11
 
         private static readonly ErrorHelper logger = ErrorHelper.Instance;
 
-        private void menuSystemInfo_Click(object sender, EventArgs e) => MessageBox.Show("Lucent11\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        private void menuSystemInfo_Click(object sender, EventArgs e) => MessageBox.Show("PumpedApp\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         public SystemWindow()
         {
@@ -35,18 +35,19 @@ namespace ThisIsWin11
             InitializeAssessments();
             UISelection();
 
-            logger.SetTarget(rtbPS);        //logs messages to rtbPS
         }
 
         //some UI nicety
         private void UISelection()
         {
+            logger.SetTarget(rtbPS);        //logs messages to target rtb
             btnSystemMenu.Text = "\uE712";
 
             rtbPS.Text = "As long as Windows 11 is in development, system and privacy settings will be rolled out cautiously." +
                          Environment.NewLine + Environment.NewLine +
                          "If you have tried one or the other fix and tweak, feel free to suggest it here: " + Helpers.Strings.Uri.GitRepo +
-                         "\n\nDisable \"Diagnostic data\" only if you’re not in the Windows Insider program. Currently, as Windows 11 is only available through it, you shouldn’t disable it.";
+                         "\n\nClick the <Check> button to run a quick check of your Windows 11 configuration." +
+                         "\n\nYou can always restore the default Windows 11 settings. The option for this can be found in the upper right menu.";
         }
 
         public void InitializeAssessments()
@@ -60,54 +61,75 @@ namespace ThisIsWin11
                 Checked = true,
             };
 
+            TreeNode appearance = new TreeNode("Personalization", new TreeNode[] {
+                new AssessmentNode(new PumpedApp.Assessment.Personalization.AppsTheme()),
+                new AssessmentNode(new PumpedApp.Assessment.Personalization.WindowsTheme()),
+                new AssessmentNode(new PumpedApp.Assessment.Personalization.SnapAssistFlyout()),
+                new AssessmentNode(new PumpedApp.Assessment.Personalization.Widgets()),
+                new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarAl()),
+                new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarSearch()),
+                new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarChat()),
+                new AssessmentNode(new PumpedApp.Assessment.Personalization.HiddenFileFolder()),
+                new AssessmentNode(new PumpedApp.Assessment.Personalization.HiddenFileExt()),
+
+            })
+            {
+                Checked = true,
+            };
+
+
             TreeNode system = new TreeNode("System", new TreeNode[] {
-                new AssessmentNode(new Lucent11.Assessment.System.Fax()),
-                new AssessmentNode(new Lucent11.Assessment.System.XPSWriter()),
-                new AssessmentNode(new Lucent11.Assessment.System.EnableWSL()),
+                new AssessmentNode(new PumpedApp.Assessment.System.Fax()),
+                new AssessmentNode(new PumpedApp.Assessment.System.XPSWriter()),
+                new AssessmentNode(new PumpedApp.Assessment.System.EnableWSL()),
+                new AssessmentNode(new PumpedApp.Assessment.System.TeamsAutostart()),
+            })
+            {
+                Checked = true,
+            };
+
+            TreeNode privacy = new TreeNode("Privacy (to disable)", new TreeNode[] {
+                new AssessmentNode(new PumpedApp.Assessment.Privacy.DiagnosticData()),
+                new AssessmentNode(new PumpedApp.Assessment.Privacy.Telemetry()),
+                new AssessmentNode(new PumpedApp.Assessment.Privacy.CompatibilityTelemetry()),
+                new AssessmentNode(new PumpedApp.Assessment.Privacy.LocationTracking()),
+                new AssessmentNode(new PumpedApp.Assessment.Privacy.Advertising()),
+                new AssessmentNode(new PumpedApp.Assessment.Privacy.Feedback()),
+                new AssessmentNode(new PumpedApp.Assessment.Privacy.SuggestedContent()),
+                new AssessmentNode(new PumpedApp.Assessment.Privacy.Biometrics()),
+                new AssessmentNode(new PumpedApp.Assessment.Privacy.AppsAutoInstall()),
+                new AssessmentNode(new PumpedApp.Assessment.Privacy.WindowsTips()),
+                new AssessmentNode(new PumpedApp.Assessment.Privacy.TailoredExperiences()),
             })
             {
                 Checked = true
             };
 
-            TreeNode privacy = new TreeNode("Privacy", new TreeNode[] {
-                new AssessmentNode(new Lucent11.Assessment.Privacy.DiagnosticData()),
-                new AssessmentNode(new Lucent11.Assessment.Privacy.Telemetry()),
-                new AssessmentNode(new Lucent11.Assessment.Privacy.CompatibilityTelemetry()),
-                new AssessmentNode(new Lucent11.Assessment.Privacy.LocationTracking()),
-                new AssessmentNode(new Lucent11.Assessment.Privacy.Advertising()),
-                new AssessmentNode(new Lucent11.Assessment.Privacy.Feedback()),
-                new AssessmentNode(new Lucent11.Assessment.Privacy.SuggestedContent()),
-                new AssessmentNode(new Lucent11.Assessment.Privacy.Biometrics()),
-            })
-            {
-                Checked = true
-            };
-
-            TreeNode apps = new TreeNode("Apps permissions", new TreeNode[] {
-                new AssessmentNode(new Lucent11.Assessment.Apps.AppNotifications()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.Camera()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.Microphone()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.Call()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.Notifications()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.AccountInfo()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.Contacts()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.Calendar()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.CallHistory()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.Email()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.Tasks()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.Messaging()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.Motion()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.OtherDevices()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.BackgroundApps()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.TrackingApps()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.DiagnosticInformation()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.Documents()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.Pictures()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.Videos()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.Radios()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.FileSystem()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.EyeGaze()),
-                new AssessmentNode(new Lucent11.Assessment.Apps.CellularData()),
+            TreeNode apps = new TreeNode("Apps permissions (to disable)", new TreeNode[] {
+                new AssessmentNode(new PumpedApp.Assessment.Apps.AppNotifications()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.Camera()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.Microphone()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.Call()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.Notifications()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.AccountInfo()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.Contacts()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.Calendar()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.CallHistory()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.Email()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.Tasks()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.Messaging()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.Motion()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.OtherDevices()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.BackgroundApps()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.TrackingApps()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.DiagnosticInformation()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.Documents()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.Pictures()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.Videos()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.Radios()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.FileSystem()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.EyeGaze()),
+                new AssessmentNode(new PumpedApp.Assessment.Apps.CellularData()),
             })
             {
                 Checked = true
@@ -115,6 +137,7 @@ namespace ThisIsWin11
 
             root.Nodes.AddRange(new TreeNode[]
             {
+                appearance,
                 system,
                 privacy,
                 apps,
@@ -187,7 +210,7 @@ namespace ThisIsWin11
                 // logger.Log("Check {0}", node.Text);
 
                 bool shouldPerform = await analyzeTask;
-                StringBuilder issues = new StringBuilder();
+                lnkSubHeader.Text = node.Text;
 
                 if (shouldPerform)
                 {
@@ -212,9 +235,10 @@ namespace ThisIsWin11
             sum.Append($"{selectedAssessments.Count} issues has been checked.\r\n");
             sum.Append($"{selectedAssessments.Count - performAssessmentsCount} issues already fixed (we've unchecked it).\r\n");
             sum.Append(Environment.NewLine);
-            sum.Append($"{performAssessmentsCount} issues needs to be fixed.\r\n");
+            sum.Append($"{performAssessmentsCount} issues needs to be fixed (just a recommendation).\r\n");
 
             logger.Log(sum.ToString(), "");
+            lnkSubHeader.Text = performAssessmentsCount + " items requires attention.";
         }
 
         private async void ApplyAssessments(List<AssessmentNode> treeNodes)
@@ -224,11 +248,14 @@ namespace ThisIsWin11
                 var treatment = node.Assessment;
                 ConfiguredTaskAwaitable<bool> performTask = Task<bool>.Factory.StartNew(() => treatment.DoAssessment()).ConfigureAwait(true);
 
+                lnkSubHeader.Text = node.Text;
+
                 var result = await performTask;
                 IncrementProgress();
             }
 
             DoProgress(100);
+            lnkSubHeader.Text = "";
         }
 
         private async void UndoAssessments(List<AssessmentNode> treeNodes)
@@ -238,11 +265,14 @@ namespace ThisIsWin11
                 var treatment = node.Assessment;
                 ConfiguredTaskAwaitable<bool> performTask = Task<bool>.Factory.StartNew(() => treatment.UndoAssessment()).ConfigureAwait(true);
 
+                lnkSubHeader.Text = "Undo: " + node.Text;
+
                 var result = await performTask;
                 IncrementProgress();
             }
 
             DoProgress(100);
+            lnkSubHeader.Text = "";
         }
 
         private void btnSystemFix_Click(object sender, EventArgs e)

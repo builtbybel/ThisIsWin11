@@ -45,7 +45,7 @@ namespace ThisIsWin11
             btnHome.Text = "\uE80F";
             btnBack.Text = "\uE72B";
             btnNext.Text = "\uE72A";
-            btnShowcaseMenu.Text = "\uE72D"; 
+            btnShowcaseMenu.Text = "\uE72D";
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -142,7 +142,7 @@ namespace ThisIsWin11
                 case PageTitle.StartMenu:
                     btnPresenter.Visible = true;
                     btnConfigurator.Visible = true;
-                    btnCustomizer.Visible = false;
+                    btnCustomizer.Visible = true;
                     lblHeader.Text = "New Start Menu";
                     rtbDesc.Text = "Of all the new Windows 11 features, the new launcher-style floating Start Menu is the most distinctive part of Microsoft’s next-gen desktop OS.\n\n" +
                                         "Unlike the traditional Start Menu, the new Start — as Microsoft is calling it — sits right at the center of the taskbar.\n\n" +
@@ -218,7 +218,7 @@ namespace ThisIsWin11
                 case PageTitle.SnapLayouts:
                     btnPresenter.Visible = true;
                     btnConfigurator.Visible = false;
-                    btnCustomizer.Visible = false;
+                    btnCustomizer.Visible = true;
                     lblHeader.Text = "Snap Layouts";
                     rtbDesc.Text = "Snap is a productivity feature that helps users arrange applications and other windows logically on-screen.\n\n" +
                                     "In 2019, Microsoft relaunched the PowerToys brand with a new utility called FancyZones that extends the Snap experience to allow for more complex and useful on-screen window layouts. A key part of this utility, incredibly, has been integrated into Windows 11 and is now called Snap Layouts.\n\n" +
@@ -231,7 +231,7 @@ namespace ThisIsWin11
                 case PageTitle.Widgets:
                     btnPresenter.Visible = true;
                     btnConfigurator.Visible = false;
-                    btnCustomizer.Visible = false;
+                    btnCustomizer.Visible = true;
                     lblHeader.Text = "Widgets";
                     rtbDesc.Text = "With Windows 11, Microsoft has brought Widgets, where you can find all kinds of information with just a click. It’s similar to Google Assistant’s Snapshot and the “Today View” in Apple’s iOS 15 or macOS Monterey.";
                     pbView.Visible = true;
@@ -673,9 +673,29 @@ namespace ThisIsWin11
         {
             switch (INavPage)
             {
+                case PageTitle.NewLook:
+
+                    mainForm.btnSystem.PerformClick();
+                    break;
+
+                case PageTitle.StartMenu:
+
+                    mainForm.btnSystem.PerformClick();
+                    break;
+
                 case PageTitle.MicrosoftStore:
 
                     mainForm.btnPackages.PerformClick();
+                    break;
+
+                case PageTitle.SnapLayouts:
+
+                    mainForm.btnSystem.PerformClick();
+                    break;
+
+                case PageTitle.Widgets:
+
+                    mainForm.btnSystem.PerformClick();
                     break;
 
                 case PageTitle.Privacy:

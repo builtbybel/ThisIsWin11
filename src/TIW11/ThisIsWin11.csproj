@@ -61,9 +61,22 @@
     <Compile Include="Helpers\Keystrokes.cs" />
     <Compile Include="Helpers\Strings.cs" />
     <Compile Include="Helpers\Utils.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\System\EnableWSL.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\System\FaxPrinter.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\System\XPSWriter.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\AppsTheme.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\HiddenFileExt.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\SnapAssistFlyout.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarAl.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarChat.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarSearch.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\Widgets.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\WindowsTheme.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\AppsAutoInstall.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\TailoredExperiences.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\WindowsTips.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\HiddenFileFolder.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\System\EnableWSL.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\System\FaxPrinter.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\System\TeamsAutostart.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\System\XPSWriter.cs" />
     <Compile Include="Pages\ComponentsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,39 +89,39 @@
     <Compile Include="Pages\HomeWindow.Designer.cs">
       <DependentUpon>HomeWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Lucent11\Assessments\Apps\AccountInfo.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\AppNotifications.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\BackgroundApps.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\Calendar.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\Call.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\CallHistory.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\Camera.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\CellularData.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\Contacts.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\DiagnosticInformation.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\Documents.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\Email.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\EyeGaze.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\FileSystem.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\Messaging.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\Microphone.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\Motion.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\Notifications.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\OtherDevices.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\Pictures.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\Radios.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\Tasks.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\TrackingApps.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Apps\Videos.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Privacy\Biometrics.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Privacy\Advertising.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Privacy\Feedback.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Privacy\LocationTracking.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Privacy\SuggestedContent.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Privacy\DiagnosticData.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Privacy\CompatibilityTelemetry.cs" />
-    <Compile Include="Modules\Lucent11\Assessments\Privacy\Telemetry.cs" />
-    <Compile Include="Modules\Lucent11\ErrorHelper.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\AccountInfo.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\AppNotifications.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\BackgroundApps.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Calendar.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Call.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\CallHistory.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Camera.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\CellularData.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Contacts.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\DiagnosticInformation.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Documents.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Email.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\EyeGaze.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\FileSystem.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Messaging.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Microphone.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Motion.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Notifications.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\OtherDevices.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Pictures.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Radios.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Tasks.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\TrackingApps.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Apps\Videos.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\Biometrics.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\Advertising.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\Feedback.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\LocationTracking.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\SuggestedContent.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\DiagnosticData.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\CompatibilityTelemetry.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Privacy\Telemetry.cs" />
+    <Compile Include="Modules\PumpedApp\ErrorHelper.cs" />
     <Compile Include="Pages\SettingsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,11 +167,11 @@
     </Compile>
     <Compile Include="Showcase\LockScreen.cs" />
     <Compile Include="Showcase\OS.cs" />
-    <Compile Include="Modules\Lucent11\AssessmentNode.cs" />
-    <Compile Include="Modules\Lucent11\ITreeNode.cs" />
-    <Compile Include="Modules\Lucent11\AssessmentBase.cs" />
-    <Compile Include="Modules\Lucent11\RegistryHelper.cs" />
-    <Compile Include="Modules\Lucent11\WindowsHelper.cs" />
+    <Compile Include="Modules\PumpedApp\AssessmentNode.cs" />
+    <Compile Include="Modules\PumpedApp\ITreeNode.cs" />
+    <Compile Include="Modules\PumpedApp\AssessmentBase.cs" />
+    <Compile Include="Modules\PumpedApp\RegistryHelper.cs" />
+    <Compile Include="Modules\PumpedApp\WindowsHelper.cs" />
     <EmbeddedResource Include="Pages\ComponentsWindow.resx">
       <DependentUpon>ComponentsWindow.cs</DependentUpon>
     </EmbeddedResource>

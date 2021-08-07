@@ -46,6 +46,7 @@ namespace ThisIsWin11
             this.pnlRight = new System.Windows.Forms.Panel();
             this.lblPreview = new System.Windows.Forms.Label();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
+            this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.menuSystem.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.SuspendLayout();
@@ -70,16 +71,15 @@ namespace ThisIsWin11
             this.lblHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHeader.AutoEllipsis = true;
-            this.lblHeader.AutoSize = true;
             this.lblHeader.BackColor = System.Drawing.Color.Transparent;
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.DimGray;
             this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblHeader.Location = new System.Drawing.Point(24, 19);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(163, 32);
+            this.lblHeader.Size = new System.Drawing.Size(669, 32);
             this.lblHeader.TabIndex = 161;
-            this.lblHeader.Text = "Check system";
+            this.lblHeader.Text = "Check Windows 11";
             // 
             // btnSystemCheck
             // 
@@ -159,9 +159,9 @@ namespace ThisIsWin11
             // 
             this.progress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progress.Location = new System.Drawing.Point(24, 78);
+            this.progress.Location = new System.Drawing.Point(30, 78);
             this.progress.Name = "progress";
-            this.progress.Size = new System.Drawing.Size(669, 5);
+            this.progress.Size = new System.Drawing.Size(663, 5);
             this.progress.TabIndex = 166;
             this.progress.Visible = false;
             // 
@@ -242,6 +242,22 @@ namespace ThisIsWin11
             this.rtbPS.Text = "";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
             // 
+            // lnkSubHeader
+            // 
+            this.lnkSubHeader.ActiveLinkColor = System.Drawing.Color.MediumVioletRed;
+            this.lnkSubHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lnkSubHeader.AutoEllipsis = true;
+            this.lnkSubHeader.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkSubHeader.ForeColor = System.Drawing.Color.Black;
+            this.lnkSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lnkSubHeader.LinkColor = System.Drawing.Color.MediumVioletRed;
+            this.lnkSubHeader.Location = new System.Drawing.Point(28, 57);
+            this.lnkSubHeader.Name = "lnkSubHeader";
+            this.lnkSubHeader.Size = new System.Drawing.Size(660, 18);
+            this.lnkSubHeader.TabIndex = 171;
+            // 
             // SystemWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -249,6 +265,7 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.Controls.Add(this.lnkSubHeader);
             this.Controls.Add(this.btnSystemFix);
             this.Controls.Add(this.progress);
             this.Controls.Add(this.tvwAssessments);
@@ -260,12 +277,11 @@ namespace ThisIsWin11
             this.Name = "SystemWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lucent11";
+            this.Text = "PumpedApp";
             this.Shown += new System.EventHandler(this.SystemWindow_Shown);
             this.menuSystem.ResumeLayout(false);
             this.pnlRight.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -287,5 +303,6 @@ namespace ThisIsWin11
         private System.Windows.Forms.Label lblPreview;
         public System.Windows.Forms.RichTextBox rtbPS;
         private System.Windows.Forms.ToolStripMenuItem menuSystemUndo;
+        private System.Windows.Forms.LinkLabel lnkSubHeader;
     }
 }

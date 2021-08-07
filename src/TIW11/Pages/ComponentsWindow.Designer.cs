@@ -76,7 +76,6 @@ namespace ThisIsWin11
             this.Name = "ComponentsWindow";
             this.ShowIcon = false;
             this.Text = "ThisIsWin11";
-            this.Shown += new System.EventHandler(this.ComponentsWindow_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

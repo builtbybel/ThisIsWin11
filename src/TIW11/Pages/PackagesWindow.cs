@@ -38,7 +38,7 @@ namespace ThisIsWin11
 
             rtbPS.Text = "Automate your next installation and create your own Windows 11 essentials.\n\n" +
                          "You will find a list of all supported Windows Package Manager packages here: https://github.com/microsoft/winget-pkgs/tree/master/manifests\n" +
-                         "Or just get them from here: https://winstall.app\n\n\n\n" +
+                         "Or just get them from here:\nhttps://winstall.app\n\n\n\n" +
                          "How to use:\n" +
                          "1. Select your packages\n" +
                          "2. Create your packages by clicking on <Create Package> button\n" +
@@ -100,6 +100,9 @@ namespace ThisIsWin11
 
             foreach (string package in lstPackages.CheckedItems)
             {
+                progress.Visible = true;
+                progress.Style = ProgressBarStyle.Marquee;
+                progress.MarqueeAnimationSpeed = 30;
                 btnRunPackage.Enabled = false;
                 rtbPS.Clear();
                 message.AppendLine("- " + package);
@@ -113,6 +116,7 @@ namespace ThisIsWin11
 
             rtbPS.Text += Environment.NewLine + Environment.NewLine + "I'm done.\nI'm open.\nFollow me on " + Helpers.Strings.Uri.GitRepo;
 
+            progress.Visible = false;
             btnRunPackage.Enabled = true;
         }
 
