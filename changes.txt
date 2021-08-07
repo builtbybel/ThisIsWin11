@@ -17,5 +17,5 @@
 - Updated packages module
 - Minor UI improvements
 
-Complete release notes can be found here
+Complete release notes can be found here:
 https://github.com/builtbybel/ThisIsWin11/releases/tag/0.65.0
