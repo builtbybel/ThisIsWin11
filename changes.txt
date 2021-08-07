@@ -1,5 +1,6 @@
 
 - Improved system module which also got a new name "PumpedApp" (Previously Lucent11), since the focus is no longer only on privacy but rather on the fast and bulk configuration of Windows 11
+- Fixed critical update check bug (it may be that version 0.61 does not report infos for updates)
 - Added new Personalization area to system module
 - Added option to system > personalization module to "Use apps dark theme"
 - Added option to system > personalization module to "Use Windows dark theme"
