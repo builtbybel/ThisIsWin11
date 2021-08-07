@@ -1,10 +1,21 @@
 
-- Improved privacy module and rebuilt to system module, as it will do system relevant checks in addition to privacy options in the future
-- Added option to system module to "Remove Windows Fax Printer"
-- Added option to system module to "Remove XPS Documents Writer"
-- Added option to system module to "Enable Microsoft Windows Subsystem for Linux"
-- Kickassbloat module has been upgraded and gets the familiar UI of Bloatbox for Windows 10
-- Several minor UI and code fixes
+- Improved system module which also got a new name "PumpedApp" (Previously Lucent11), since the focus is no longer only on privacy but rather on the fast and bulk configuration of Windows 11
+- Added new Personalization area to system module
+- Added option to system > personalization module to "Use apps dark theme"
+- Added option to system > personalization module to "Use Windows dark theme"
+- Added option to system > personalization module to "Disable Snap Assist"
+- Added option to system > personalization module to "Disable Widget"
+- Added option to system > personalization module to "Align Taskbar to left"
+- Added option to system > personalization module to "Hide Search icon on taskbar"
+- Added option to system > personalization module to "Hide Chat icon (Microsoft Teams) on Taskbar
+- Added option to system > personalization module to "Show hidden files, folders and drives in File Explorer"
+- Added option to system > personalization module to "Show hidden file name extensions"
+- Added option to system module to "Disable Microsoft Teams on Startup"
+- Added option to systen > privacy module to to disable "Windows 11 tips"
+- Added option to systen > privacy module to to disable "Tailored experiences"
+- Added option to systen > privacy module to to disable "Automatic installation of apps"
+- Updated packages module
+- Minor UI improvements
 
 Complete release notes can be found here
-https://github.com/builtbybel/ThisIsWin11/releases/tag/0.61.0
+https://github.com/builtbybel/ThisIsWin11/releases/tag/0.65.0
