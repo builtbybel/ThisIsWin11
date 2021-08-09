@@ -61,12 +61,17 @@
     <Compile Include="Helpers\Keystrokes.cs" />
     <Compile Include="Helpers\Strings.cs" />
     <Compile Include="Helpers\Utils.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Gaming\PowerThrottling.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Gaming\GameDVR.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Gaming\VisualFX.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\AppsTheme.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\FileExplorer.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\HiddenFileExt.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\SnapAssistFlyout.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarAl.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarChat.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarSearch.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\Transparency.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\Widgets.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\WindowsTheme.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Privacy\AppsAutoInstall.cs" />

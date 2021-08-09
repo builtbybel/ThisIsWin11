@@ -37,7 +37,7 @@ namespace ThisIsWin11
         private void UISelection()
         {
             btnAppsMenu.Text = "\uE712";
-            rtbPS.Text = "I am just a Recycle Bin.\n\n" + 
+            rtbPS.Text = "I am just a Recycle Bin.\n\n" +
                          "Throw everything you don't need into the bin and press <Empty Recycle Bin> button to remove it permanently.\n\n" +
                          "You can also import a custom bloatware list, e.g. you can find a list of pre-installed Windows 11 apps in the data root of this app.\n\n" +
                          "Use the import function in the upper left menu and select file \"bloatwareapps-11\".";
@@ -138,8 +138,8 @@ namespace ThisIsWin11
 
         private void menuAppsRefresh_Click(object sender, EventArgs e)
         {
-            InitializeUWPSystem();  
-            InitializeUWP();        
+            InitializeUWPSystem();
+            InitializeUWP();
         }
 
         private void RemoveUWP(string app)
@@ -176,7 +176,7 @@ namespace ThisIsWin11
             {
                 selectedApps += app + Environment.NewLine;
             }
-            if (MessageBox.Show("Do you want to uninstall all selected app(s)?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Do you want to empty the Recylce Bin and delete all the apps in it?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 removeUWPList.Clear();
                 removeUWPFailedList.Clear();

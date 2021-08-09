@@ -14,7 +14,7 @@ namespace ThisIsWin11
 {
     public partial class SystemWindow : Form
     {
-        private static readonly string componentsVersion = "40 Preview";
+        private static readonly string componentsVersion = "50 Preview";
 
         private Showcase.OS osInfo = new Showcase.OS();
 
@@ -34,7 +34,6 @@ namespace ThisIsWin11
         {
             InitializeAssessments();
             UISelection();
-
         }
 
         //some UI nicety
@@ -64,19 +63,19 @@ namespace ThisIsWin11
             TreeNode appearance = new TreeNode("Personalization", new TreeNode[] {
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.AppsTheme()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.WindowsTheme()),
+                new AssessmentNode(new PumpedApp.Assessment.Personalization.Transparency()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.SnapAssistFlyout()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.Widgets()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarAl()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarSearch()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarChat()),
+                new AssessmentNode(new PumpedApp.Assessment.Personalization.FileExplorer()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.HiddenFileFolder()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.HiddenFileExt()),
-
             })
             {
                 Checked = true,
             };
-
 
             TreeNode system = new TreeNode("System", new TreeNode[] {
                 new AssessmentNode(new PumpedApp.Assessment.System.Fax()),
@@ -87,6 +86,16 @@ namespace ThisIsWin11
             {
                 Checked = true,
             };
+
+            TreeNode gaming = new TreeNode("Gaming", new TreeNode[] {
+                new AssessmentNode(new PumpedApp.Assessment.Gaming.GameDVR()),
+                new AssessmentNode(new PumpedApp.Assessment.Gaming.PowerThrottling()),
+                new AssessmentNode(new PumpedApp.Assessment.Gaming.VisualFX()),
+            })
+            {
+                Checked = true,
+            };
+
 
             TreeNode privacy = new TreeNode("Privacy (to disable)", new TreeNode[] {
                 new AssessmentNode(new PumpedApp.Assessment.Privacy.DiagnosticData()),
@@ -139,6 +148,7 @@ namespace ThisIsWin11
             {
                 appearance,
                 system,
+                gaming,
                 privacy,
                 apps,
             });
@@ -170,6 +180,8 @@ namespace ThisIsWin11
 
         private void Reset()
         {
+            lnkSystemPreset.Visible = false;
+
             progression = 0;
             progressionIncrease = 0;
 
@@ -194,7 +206,6 @@ namespace ThisIsWin11
         {
             Reset();
 
-            //some tvw nicety
             tvwAssessments.ExpandAll();
             tvwAssessments.Nodes[0].EnsureVisible();
 
@@ -363,5 +374,71 @@ namespace ThisIsWin11
         private void btnSystemMenu_Click(object sender, EventArgs e) => this.menuSystem.Show(Cursor.Position.X, Cursor.Position.Y);
 
         private void rtbPS_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
+
+        private void menuSystemExportProfile_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog f = new SaveFileDialog();
+            f.InitialDirectory = Helpers.Strings.Data.DataRootDir;
+            f.FileName = "tiw11-profile";
+            f.Filter = "ThisIsWin11 files *.tiw1|*.tiw1";
+
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter writer = new StreamWriter(f.OpenFile()))
+                {
+                    foreach (TreeNode treeNode in tvwAssessments.Nodes.All())
+                    {
+                        if (!treeNode.Checked)
+                            continue;
+                        writer.WriteLine(String.Format("{0}", treeNode.Text));
+                    }
+
+                    writer.Close();
+                }
+                MessageBox.Show("Profile has been successfully exported.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void menuSystemImportProfile_Click(object sender, EventArgs e)
+        {
+            lnkSystemPreset.Visible = false;
+
+            OpenFileDialog f = new OpenFileDialog();
+            f.InitialDirectory = Helpers.Strings.Data.DataRootDir;
+            f.FileName = "windows10-profile";
+            f.Filter = "ThisIsWin11 files *.tiw1|*.tiw1";
+
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                SelectAssessmentNodes(tvwAssessments.Nodes, false);
+                tvwAssessments.ExpandAll();
+                tvwAssessments.Nodes[0].EnsureVisible();
+                using (StreamReader reader = new StreamReader(f.OpenFile()))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        string line = reader.ReadLine();
+                        foreach (TreeNode treeNode in tvwAssessments.Nodes.All())
+                        {
+                            if (treeNode.Text.Contains(line))
+                            {
+                                treeNode.BackColor = Color.Yellow;
+                                treeNode.Text += "\x20" + "(" + Path.GetFileNameWithoutExtension(f.FileName) + ")";
+                                treeNode.Checked = true;
+                            }
+                        }
+                    }
+                    MessageBox.Show("Profile has been successfully imported.\n\nWe have highlighted the configuration that would be enabled (no changes are done yet).", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                lnkSystemPreset.Visible = true;
+            }
+        }
+
+        private void lnkSystemPreset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => menuSystemImportProfile.PerformClick();
+
+        private void tvwAssessments_Click(object sender, EventArgs e) => lnkSystemPreset.Visible = false;
     }
 }

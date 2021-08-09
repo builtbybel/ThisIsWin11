@@ -35,6 +35,8 @@ namespace ThisIsWin11
             this.btnSystemCheck = new System.Windows.Forms.Button();
             this.menuSystem = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuSystemUndo = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSystemImportProfile = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSystemExportProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSystemExportLog = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSystemSelect = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSystemPopOut = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +49,7 @@ namespace ThisIsWin11
             this.lblPreview = new System.Windows.Forms.Label();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
+            this.lnkSystemPreset = new System.Windows.Forms.LinkLabel();
             this.menuSystem.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.SuspendLayout();
@@ -105,6 +108,8 @@ namespace ThisIsWin11
             this.menuSystem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuSystem.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuSystemUndo,
+            this.menuSystemImportProfile,
+            this.menuSystemExportProfile,
             this.menuSystemExportLog,
             this.menuSystemSelect,
             this.menuSystemPopOut,
@@ -112,7 +117,7 @@ namespace ThisIsWin11
             this.menuSystemVersioning});
             this.menuSystem.Name = "menuMain";
             this.menuSystem.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuSystem.Size = new System.Drawing.Size(389, 160);
+            this.menuSystem.Size = new System.Drawing.Size(389, 220);
             // 
             // menuSystemUndo
             // 
@@ -120,6 +125,20 @@ namespace ThisIsWin11
             this.menuSystemUndo.Size = new System.Drawing.Size(388, 30);
             this.menuSystemUndo.Text = "Restore default Windows 11 settings";
             this.menuSystemUndo.Click += new System.EventHandler(this.menuSystemUndo_Click);
+            // 
+            // menuSystemImportProfile
+            // 
+            this.menuSystemImportProfile.Name = "menuSystemImportProfile";
+            this.menuSystemImportProfile.Size = new System.Drawing.Size(388, 30);
+            this.menuSystemImportProfile.Text = "Import profile";
+            this.menuSystemImportProfile.Click += new System.EventHandler(this.menuSystemImportProfile_Click);
+            // 
+            // menuSystemExportProfile
+            // 
+            this.menuSystemExportProfile.Name = "menuSystemExportProfile";
+            this.menuSystemExportProfile.Size = new System.Drawing.Size(388, 30);
+            this.menuSystemExportProfile.Text = "Export profile";
+            this.menuSystemExportProfile.Click += new System.EventHandler(this.menuSystemExportProfile_Click);
             // 
             // menuSystemExportLog
             // 
@@ -181,6 +200,7 @@ namespace ThisIsWin11
             this.tvwAssessments.Size = new System.Drawing.Size(691, 576);
             this.tvwAssessments.TabIndex = 168;
             this.tvwAssessments.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvwAssessments_AfterCheck);
+            this.tvwAssessments.Click += new System.EventHandler(this.tvwAssessments_Click);
             // 
             // btnSystemFix
             // 
@@ -258,6 +278,23 @@ namespace ThisIsWin11
             this.lnkSubHeader.Size = new System.Drawing.Size(660, 18);
             this.lnkSubHeader.TabIndex = 171;
             // 
+            // lnkSystemPreset
+            // 
+            this.lnkSystemPreset.ActiveLinkColor = System.Drawing.Color.HotPink;
+            this.lnkSystemPreset.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lnkSystemPreset.AutoEllipsis = true;
+            this.lnkSystemPreset.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkSystemPreset.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lnkSystemPreset.LinkColor = System.Drawing.Color.DimGray;
+            this.lnkSystemPreset.Location = new System.Drawing.Point(92, 364);
+            this.lnkSystemPreset.Name = "lnkSystemPreset";
+            this.lnkSystemPreset.Size = new System.Drawing.Size(580, 30);
+            this.lnkSystemPreset.TabIndex = 172;
+            this.lnkSystemPreset.TabStop = true;
+            this.lnkSystemPreset.Text = "Click here to load a preset and let Windows 11 look and feel like Windows 10";
+            this.lnkSystemPreset.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSystemPreset_LinkClicked);
+            // 
             // SystemWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -265,6 +302,7 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.Controls.Add(this.lnkSystemPreset);
             this.Controls.Add(this.lnkSubHeader);
             this.Controls.Add(this.btnSystemFix);
             this.Controls.Add(this.progress);
@@ -304,5 +342,8 @@ namespace ThisIsWin11
         public System.Windows.Forms.RichTextBox rtbPS;
         private System.Windows.Forms.ToolStripMenuItem menuSystemUndo;
         private System.Windows.Forms.LinkLabel lnkSubHeader;
+        private System.Windows.Forms.ToolStripMenuItem menuSystemExportProfile;
+        private System.Windows.Forms.ToolStripMenuItem menuSystemImportProfile;
+        private System.Windows.Forms.LinkLabel lnkSystemPreset;
     }
 }

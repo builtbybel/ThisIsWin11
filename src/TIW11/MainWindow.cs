@@ -37,12 +37,12 @@ namespace ThisIsWin11
             this.MinimumSize = new Size(810, 755);
 
             //nav icons
-            btnHome.Text = "\xEA8A" + "\n\nHome";
-            btnSystem.Text = "\xE770" + "\n\nSystem";
-            btnApps.Text = "\xE71D" + "\n\nApps";
-            btnPackages.Text = "\xE7B8" + "\n\nPackages";
-            btnAutomate.Text = "\xE771" + "\n\nAutomate";
-            btnSettings.Text = "\xE713" + "\n\nSettings";
+            btnHome.Text = "\uEA8A" + "\n\nHome";
+            btnSystem.Text = "\uE770" + "\n\nSystem";
+            btnApps.Text = "\uE71D" + "\n\nApps";
+            btnPackages.Text = "\uE7B8" + "\n\nPackages";
+            btnAutomate.Text = "\uE771" + "\n\nAutomate";
+            btnSettings.Text = "\uE713" + "\n\nSettings";
             btnMore.Text = "\uE10C";
         }
 
@@ -77,7 +77,7 @@ namespace ThisIsWin11
 
         private void menuMainComponents_Click(object sender, EventArgs e)
         {
-            ComponentsWindow formComponents= new ComponentsWindow();
+            ComponentsWindow formComponents = new ComponentsWindow();
             formComponents.TopLevel = false;
             formComponents.AutoScroll = true;
             formComponents.FormBorderStyle = FormBorderStyle.None;

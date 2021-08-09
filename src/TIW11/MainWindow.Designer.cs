@@ -140,7 +140,7 @@ namespace ThisIsWin11
             this.btnPackages.FlatAppearance.BorderSize = 0;
             this.btnPackages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPackages.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPackages.ForeColor = System.Drawing.Color.DimGray;
+            this.btnPackages.ForeColor = System.Drawing.Color.SandyBrown;
             this.btnPackages.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnPackages.Location = new System.Drawing.Point(3, 232);
             this.btnPackages.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -157,7 +157,7 @@ namespace ThisIsWin11
             this.btnApps.FlatAppearance.BorderSize = 0;
             this.btnApps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApps.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApps.ForeColor = System.Drawing.Color.DimGray;
+            this.btnApps.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btnApps.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnApps.Location = new System.Drawing.Point(3, 163);
             this.btnApps.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -174,7 +174,7 @@ namespace ThisIsWin11
             this.btnSystem.FlatAppearance.BorderSize = 0;
             this.btnSystem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSystem.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSystem.ForeColor = System.Drawing.Color.DimGray;
+            this.btnSystem.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.btnSystem.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnSystem.Location = new System.Drawing.Point(3, 94);
             this.btnSystem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -203,12 +203,12 @@ namespace ThisIsWin11
             this.menuMainComponents});
             this.menuMain.Name = "menuMain";
             this.menuMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuMain.Size = new System.Drawing.Size(181, 56);
+            this.menuMain.Size = new System.Drawing.Size(142, 34);
             // 
             // menuMainComponents
             // 
             this.menuMainComponents.Name = "menuMainComponents";
-            this.menuMainComponents.Size = new System.Drawing.Size(180, 30);
+            this.menuMainComponents.Size = new System.Drawing.Size(141, 30);
             this.menuMainComponents.Text = "More...";
             this.menuMainComponents.Click += new System.EventHandler(this.menuMainComponents_Click);
             // 

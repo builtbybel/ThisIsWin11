@@ -30,7 +30,7 @@ namespace ThisIsWin11
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pnlRight = new System.Windows.Forms.Panel();
+            this.pnlLeft = new System.Windows.Forms.Panel();
             this.cbTable = new System.Windows.Forms.ComboBox();
             this.btnShowcaseMenu = new System.Windows.Forms.Button();
             this.btnConfigurator = new System.Windows.Forms.Button();
@@ -48,27 +48,27 @@ namespace ThisIsWin11
             this.rtbDesc = new System.Windows.Forms.RichTextBox();
             this.menuShowcase = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuCaptureToShare = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlRight.SuspendLayout();
+            this.pnlLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbView)).BeginInit();
             this.pnlMiddle.SuspendLayout();
             this.menuShowcase.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlRight
+            // pnlLeft
             // 
-            this.pnlRight.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlRight.Controls.Add(this.cbTable);
-            this.pnlRight.Controls.Add(this.btnShowcaseMenu);
-            this.pnlRight.Controls.Add(this.btnConfigurator);
-            this.pnlRight.Controls.Add(this.lblHeader);
-            this.pnlRight.Controls.Add(this.btnCustomizer);
-            this.pnlRight.Controls.Add(this.btnPresenter);
-            this.pnlRight.Controls.Add(this.pbView);
-            this.pnlRight.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlRight.Location = new System.Drawing.Point(0, 0);
-            this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(371, 770);
-            this.pnlRight.TabIndex = 163;
+            this.pnlLeft.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlLeft.Controls.Add(this.cbTable);
+            this.pnlLeft.Controls.Add(this.btnShowcaseMenu);
+            this.pnlLeft.Controls.Add(this.btnConfigurator);
+            this.pnlLeft.Controls.Add(this.lblHeader);
+            this.pnlLeft.Controls.Add(this.btnCustomizer);
+            this.pnlLeft.Controls.Add(this.btnPresenter);
+            this.pnlLeft.Controls.Add(this.pbView);
+            this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLeft.Location = new System.Drawing.Point(0, 0);
+            this.pnlLeft.Name = "pnlLeft";
+            this.pnlLeft.Size = new System.Drawing.Size(371, 770);
+            this.pnlLeft.TabIndex = 163;
             // 
             // cbTable
             // 
@@ -200,7 +200,7 @@ namespace ThisIsWin11
             this.lblSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblSubHeader.Location = new System.Drawing.Point(24, 19);
             this.lblSubHeader.Name = "lblSubHeader";
-            this.lblSubHeader.Size = new System.Drawing.Size(660, 32);
+            this.lblSubHeader.Size = new System.Drawing.Size(672, 32);
             this.lblSubHeader.TabIndex = 135;
             this.lblSubHeader.Text = "Get Started with Windows 11";
             // 
@@ -234,7 +234,7 @@ namespace ThisIsWin11
             this.lnkSubHeader.LinkColor = System.Drawing.Color.Black;
             this.lnkSubHeader.Location = new System.Drawing.Point(24, 68);
             this.lnkSubHeader.Name = "lnkSubHeader";
-            this.lnkSubHeader.Size = new System.Drawing.Size(660, 18);
+            this.lnkSubHeader.Size = new System.Drawing.Size(672, 18);
             this.lnkSubHeader.TabIndex = 24;
             this.lnkSubHeader.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSubHeader_LinkClicked);
             // 
@@ -315,7 +315,7 @@ namespace ThisIsWin11
             this.rtbDesc.Location = new System.Drawing.Point(24, 172);
             this.rtbDesc.Name = "rtbDesc";
             this.rtbDesc.ReadOnly = true;
-            this.rtbDesc.Size = new System.Drawing.Size(680, 503);
+            this.rtbDesc.Size = new System.Drawing.Size(672, 503);
             this.rtbDesc.TabIndex = 133;
             this.rtbDesc.Text = "";
             // 
@@ -344,13 +344,13 @@ namespace ThisIsWin11
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1087, 770);
             this.Controls.Add(this.pnlMiddle);
-            this.Controls.Add(this.pnlRight);
+            this.Controls.Add(this.pnlLeft);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "HomeWindow";
             this.ShowIcon = false;
             this.Text = "ThisIsWin11";
             this.Shown += new System.EventHandler(this.HomeWindow_Shown);
-            this.pnlRight.ResumeLayout(false);
+            this.pnlLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbView)).EndInit();
             this.pnlMiddle.ResumeLayout(false);
             this.pnlMiddle.PerformLayout();
@@ -361,7 +361,7 @@ namespace ThisIsWin11
         }
 
         #endregion
-        private System.Windows.Forms.Panel pnlRight;
+        private System.Windows.Forms.Panel pnlLeft;
         private System.Windows.Forms.ComboBox cbTable;
         private System.Windows.Forms.Button btnShowcaseMenu;
         private System.Windows.Forms.Label lblSubHeader;

@@ -109,7 +109,6 @@ namespace ThisIsWin11
 
                 rtbPS.Text += Environment.NewLine + "Installing " + Environment.NewLine + message.ToString() +
                              Environment.NewLine + "You can continue working while we install...";
-  
 
                 await Task.Run(() => InstallPackages("winget install --id=" + package + " -e"));
             }

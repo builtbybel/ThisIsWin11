@@ -16,7 +16,6 @@ namespace ThisIsWin11
             mainForm = frm as MainWindow;
 
             InitializeComponent();
-    
         }
 
         private void SettingsWindow_Load(object sender, EventArgs e)
@@ -26,19 +25,16 @@ namespace ThisIsWin11
 
         private void UISelection()
         {
-            rtbAbout.Text = mainForm.Text + "\nVersion: " + Program.GetCurrentVersionTostring() + "\n" +
-                       "Builtbybel\n\n" +
-                       "GitHub: " + Helpers.Strings.Uri.GitRepo +
+            rtbAbout.Text = mainForm.Text + "\nVersion: " + Program.GetCurrentVersionTostring() +
+                       "\nBuiltbybel" +
+                       "\n\nGitHub: " + Helpers.Strings.Uri.GitRepo +
                        "\nTwitter: " + Helpers.Strings.Uri.Twitter +
                        "\nDonate: " + Helpers.Strings.Uri.Donate +
-                       "\n\nMIT License\n\n\n" +
-                       "New in this version:" + changelog;
+                       "\n\nMIT License" +
+                       "\n\n\nNew in this version:" + changelog;
         }
 
-        private void btnCheckForUpdates_Click(object sender, EventArgs e)
-        {
-            utilInfo.CheckForUpdates(true);
-        }
+        private void btnCheckForUpdates_Click(object sender, EventArgs e) => utilInfo.CheckForUpdates(true);
 
         private void rtbAbout_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
     }

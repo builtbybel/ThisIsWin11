@@ -673,34 +673,9 @@ namespace ThisIsWin11
         {
             switch (INavPage)
             {
-                case PageTitle.NewLook:
-
-                    mainForm.btnSystem.PerformClick();
-                    break;
-
-                case PageTitle.StartMenu:
-
-                    mainForm.btnSystem.PerformClick();
-                    break;
-
                 case PageTitle.MicrosoftStore:
 
                     mainForm.btnPackages.PerformClick();
-                    break;
-
-                case PageTitle.SnapLayouts:
-
-                    mainForm.btnSystem.PerformClick();
-                    break;
-
-                case PageTitle.Widgets:
-
-                    mainForm.btnSystem.PerformClick();
-                    break;
-
-                case PageTitle.Privacy:
-
-                    mainForm.btnSystem.PerformClick();
                     break;
 
                 case PageTitle.Apps:
@@ -708,9 +683,14 @@ namespace ThisIsWin11
                     mainForm.btnApps.PerformClick();
                     break;
 
-                default:
+                case PageTitle.Custom:
 
                     mainForm.btnAutomate.PerformClick();
+                    break;
+
+                default:
+
+                    mainForm.btnSystem.PerformClick();
                     break;
             }
         }
