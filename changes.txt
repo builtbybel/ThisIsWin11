@@ -3,7 +3,7 @@
 - Added option to import/export configuration profiles in system module (Overflow/three dots menu > Import/Export)
 Two preset profiles are available in data folder of TIW11
 Windows10-profile which will give you the Windows 10 look and feel (if applied)
-Gaming-profile which will adjust some Windows 11 settings for a better gamign experience (if applied)
+Gaming-profile which will adjust some Windows 11 settings for a better gaming experience (if applied)
 - Added new gaming area to system module
 - UI fixes and improvements
 
