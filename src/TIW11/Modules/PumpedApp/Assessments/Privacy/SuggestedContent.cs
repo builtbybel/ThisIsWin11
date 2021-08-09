@@ -42,7 +42,6 @@ namespace ThisIsWin11.PumpedApp.Assessment.Privacy
                 logger.Log("- Suggested content in Settings app has been successfully disabled.");
                 logger.Log(keyName + Environment.NewLine + keyName2 + Environment.NewLine + keyName3);
                 return true;
-
             }
             catch (Exception ex)
             { logger.Log("Could not disable suggested content in Settings app {0}", ex.Message); }

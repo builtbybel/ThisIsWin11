@@ -3,7 +3,7 @@ using System;
 
 namespace ThisIsWin11.PumpedApp.Assessment.Privacy
 {
-    internal class AppsAutoInstall: AssessmentBase
+    internal class AppsAutoInstall : AssessmentBase
     {
         private static readonly ErrorHelper logger = ErrorHelper.Instance;
 

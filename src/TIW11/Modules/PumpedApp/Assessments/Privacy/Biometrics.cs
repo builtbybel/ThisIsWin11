@@ -4,14 +4,14 @@ using System;
 namespace ThisIsWin11.PumpedApp.Assessment.Privacy
 {
     internal class Biometrics : AssessmentBase
-    { 
+    {
         private static readonly ErrorHelper logger = ErrorHelper.Instance;
 
         private const string keyName = @"HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Biometrics";
         private const int desiredValue = 0;
 
         public override string ID()
-        { 
+        {
             return "Windows Hello Biometrics";
         }
 

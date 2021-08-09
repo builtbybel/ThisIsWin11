@@ -31,7 +31,6 @@ namespace ThisIsWin11.PumpedApp.Assessment.Privacy
         {
             try
             {
-
                 Registry.SetValue(keyName, "Debugger", desiredValue, RegistryValueKind.String);
                 logger.Log("- Compatibility Telemetry has been successfully disabled.");
                 logger.Log(keyName);

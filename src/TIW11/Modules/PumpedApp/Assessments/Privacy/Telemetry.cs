@@ -25,7 +25,6 @@ namespace ThisIsWin11.PumpedApp.Assessment.Privacy
 
         public override bool CheckAssessment()
         {
-
             WindowsHelper.IsServiceRunning("DiagTrack");
             WindowsHelper.IsServiceRunning("dmwappushservice");
 
