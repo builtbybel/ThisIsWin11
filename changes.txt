@@ -1,21 +1,11 @@
 
-- Improved system module which also got a new name "PumpedApp" (Previously Lucent11), since the focus is no longer only on privacy but rather on the fast and bulk configuration of Windows 11
-- Added new Personalization area to system module
-- Added option to system > personalization module to "Use apps dark theme"
-- Added option to system > personalization module to "Use Windows dark theme"
-- Added option to system > personalization module to "Disable Snap Assist"
-- Added option to system > personalization module to "Disable Widget"
-- Added option to system > personalization module to "Align Taskbar to left"
-- Added option to system > personalization module to "Hide Search icon on taskbar"
-- Added option to system > personalization module to "Hide Chat icon (Microsoft Teams) on Taskbar
-- Added option to system > personalization module to "Show hidden files, folders and drives in File Explorer"
-- Added option to system > personalization module to "Show hidden file name extensions"
-- Added option to system module to "Disable Microsoft Teams on Startup"
-- Added option to systen > privacy module to to disable "Windows 11 tips"
-- Added option to systen > privacy module to to disable "Tailored experiences"
-- Added option to systen > privacy module to to disable "Automatic installation of apps"
-- Updated packages module
-- Minor UI improvements
+- Refactored systeme module aka PumpedApp
+- Added option to import/export configuration profiles in system module (Overflow/three dots menu > Import/Export)
+Two preset profiles are available in data folder of TIW11
+Windows10-profile which will give you the Windows 10 look and feel (if applied)
+Gaming-profile which will adjust some Windows 11 settings for a better gamign experience (if applied)
+- Added new gaming area to system module
+- UI fixes and improvements
 
 Complete release notes can be found here:
-https://github.com/builtbybel/ThisIsWin11/releases/tag/0.65.0
+https://github.com/builtbybel/ThisIsWin11/releases/tag/0.70.0
