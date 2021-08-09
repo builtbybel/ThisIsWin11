@@ -7,5 +7,5 @@ Gaming-profile which will adjust some Windows 11 settings for a better gamign ex
 - Added new gaming area to system module
 - UI fixes and improvements
 
-Complete release notes can be found here:
+Complete release notes can be found here
 https://github.com/builtbybel/ThisIsWin11/releases/tag/0.70.0
