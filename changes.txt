@@ -1,14 +1,5 @@
 
-- Refactored systeme module aka PumpedApp
-- Added option to import/export configuration profiles in system module (Overflow/three dots menu > Import/Export)
-Two preset profiles are available in data folder of TIW11
-Windows10-profile which will give you the Windows 10 look and feel (if applied)
-Gaming-profile which will adjust some Windows 11 settings for a better gaming experience (if applied)
-- Added new gaming area to system module
-- UI fixes and improvements
-
-0.70.1
-- Minor gui fix (the colored navigation bar was a feature of a test build and was removed from this build again)
-
-Complete release notes can be found here
-https://github.com/builtbybel/ThisIsWin11/releases/tag/0.70.0
+- Added support for Windows 11 Insider Preview Build 22000.160
+- Fixed critical bug in disabling Widgets feature
+- Added option to system > personalization module to "Hide most used apps in start menu"
+- Updated PumpedApp module
