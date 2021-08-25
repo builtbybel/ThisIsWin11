@@ -3,16 +3,16 @@ using System;
 
 namespace ThisIsWin11.PumpedApp.Assessment.Personalization
 {
-    internal class Widgets : AssessmentBase
+    internal class MostUsedApps : AssessmentBase
     {
         private static readonly ErrorHelper logger = ErrorHelper.Instance;
 
-        private const string keyName = @"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced";
-        private const int desiredValue = 0;
+        private const string keyName = @"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer";
+        private const int desiredValue = 2;
 
         public override string ID()
         {
-            return "Disable Widgets";
+            return "Hide most used apps in start menu";
         }
 
         public override string Info()
@@ -23,7 +23,7 @@ namespace ThisIsWin11.PumpedApp.Assessment.Personalization
         public override bool CheckAssessment()
         {
             return !(
-                 RegistryHelper.IntEquals(keyName, "TaskbarDa", desiredValue)
+                 RegistryHelper.IntEquals(keyName, "ShowOrHideMostUsedApps", desiredValue)
             );
         }
 
@@ -31,14 +31,14 @@ namespace ThisIsWin11.PumpedApp.Assessment.Personalization
         {
             try
             {
-                Registry.SetValue(keyName, "TaskbarDa", desiredValue, RegistryValueKind.DWord);
+                Registry.SetValue(keyName, "ShowOrHideMostUsedApps", desiredValue, RegistryValueKind.DWord);
 
-                logger.Log("- Widgets has been disabled.");
+                logger.Log("- Most Used Apps has been disabled.");
                 logger.Log(keyName);
                 return true;
             }
             catch (Exception ex)
-            { logger.Log("Could not disable Widgets {0}", ex.Message); }
+            { logger.Log("Could not disable Most Used Apps {0}", ex.Message); }
 
             return false;
         }
@@ -47,8 +47,10 @@ namespace ThisIsWin11.PumpedApp.Assessment.Personalization
         {
             try
             {
-                Registry.SetValue(keyName, "TaskbarDa", 1, RegistryValueKind.DWord);
-                logger.Log("- Widgets has been enabled.");
+                var RegKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Policies\Microsoft\Windows\Explorer", true);
+                RegKey.DeleteValue("ShowOrHideMostUsedApps");
+
+                logger.Log("- Most Used Apps has been set to default behavior.");
                 return true;
             }
             catch
