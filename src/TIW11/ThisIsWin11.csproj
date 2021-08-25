@@ -67,6 +67,7 @@
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\AppsTheme.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\FileExplorer.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\HiddenFileExt.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\MostUsedApps.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\SnapAssistFlyout.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarAl.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarChat.cs" />

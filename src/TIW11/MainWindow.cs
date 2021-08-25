@@ -41,7 +41,7 @@ namespace ThisIsWin11
             btnSystem.Text = "\uE770" + "\n\nSystem";
             btnApps.Text = "\uE71D" + "\n\nApps";
             btnPackages.Text = "\uE7B8" + "\n\nPackages";
-            btnAutomate.Text = "\uE771" + "\n\nAutomate";
+            btnAutomate.Text = "\uE943" + "\n\nAutomate";
             btnSettings.Text = "\uE713" + "\n\nSettings";
             btnMore.Text = "\uE10C";
         }
