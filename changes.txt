@@ -1,5 +1,7 @@
 
-- Added support for Windows 11 Insider Preview Build 22000.160
-- Fixed critical bug in disabling Widgets feature
-- Added option to system > personalization module to "Hide most used apps in start menu"
-- Updated PumpedApp module
+- Added support for Windows 11 Insider Preview Build 22000.176
+- Updated automation module and rebranded to TeamTweak (prev. PowerClicks)
+- Added option to system > personalization module (aka PumpedApp) to "Hide Task view button on taskbar"
+- Stability improvements
+- UI Improvements with better Windows 11 styling
+- Numerous minor fixes
