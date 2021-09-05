@@ -56,7 +56,7 @@ namespace ThisIsWin11
             this.lblAppsBinCount.AutoEllipsis = true;
             this.lblAppsBinCount.BackColor = System.Drawing.Color.Transparent;
             this.lblAppsBinCount.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppsBinCount.ForeColor = System.Drawing.Color.DeepPink;
+            this.lblAppsBinCount.ForeColor = System.Drawing.Color.MediumVioletRed;
             this.lblAppsBinCount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblAppsBinCount.Location = new System.Drawing.Point(356, 368);
             this.lblAppsBinCount.Name = "lblAppsBinCount";

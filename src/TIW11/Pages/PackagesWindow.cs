@@ -37,7 +37,7 @@ namespace ThisIsWin11
             btnPackagesMenu.Text = "\uE712";
 
             rtbPS.Text = "Automate your next installation and create your own Windows 11 essentials.\n\n" +
-                         "You will find a list of all supported Windows Package Manager packages here: https://github.com/microsoft/winget-pkgs/tree/master/manifests\n" +
+                         "To find more packages, visit the Microsoft community Windows Package Manager manifest repository: https://github.com/microsoft/winget-pkgs/tree/master/manifests\n" +
                          "Or just get them from here:\nhttps://winstall.app\n\n\n\n" +
                          "How to use:\n" +
                          "1. Select your packages\n" +

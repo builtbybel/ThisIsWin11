@@ -72,6 +72,7 @@
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarAl.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarChat.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarSearch.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskView.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\Transparency.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\Widgets.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\WindowsTheme.cs" />

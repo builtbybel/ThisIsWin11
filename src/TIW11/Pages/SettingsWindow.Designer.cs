@@ -34,6 +34,7 @@ namespace ThisIsWin11
             this.btnCheckForUpdates = new System.Windows.Forms.Button();
             this.lblSettingsUpdates = new System.Windows.Forms.Label();
             this.lblSettingsAbout = new System.Windows.Forms.Label();
+            this.lblInstalledVersion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // rtbAbout
@@ -72,11 +73,10 @@ namespace ThisIsWin11
             // 
             this.btnCheckForUpdates.BackColor = System.Drawing.Color.MediumVioletRed;
             this.btnCheckForUpdates.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCheckForUpdates.FlatAppearance.BorderSize = 0;
             this.btnCheckForUpdates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckForUpdates.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckForUpdates.ForeColor = System.Drawing.Color.White;
-            this.btnCheckForUpdates.Location = new System.Drawing.Point(30, 132);
+            this.btnCheckForUpdates.Location = new System.Drawing.Point(30, 152);
             this.btnCheckForUpdates.Name = "btnCheckForUpdates";
             this.btnCheckForUpdates.Size = new System.Drawing.Size(213, 30);
             this.btnCheckForUpdates.TabIndex = 155;
@@ -116,6 +116,16 @@ namespace ThisIsWin11
             this.lblSettingsAbout.TabIndex = 157;
             this.lblSettingsAbout.Text = "About this app";
             // 
+            // lblInstalledVersion
+            // 
+            this.lblInstalledVersion.AutoSize = true;
+            this.lblInstalledVersion.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstalledVersion.Location = new System.Drawing.Point(27, 125);
+            this.lblInstalledVersion.Name = "lblInstalledVersion";
+            this.lblInstalledVersion.Size = new System.Drawing.Size(101, 17);
+            this.lblInstalledVersion.TabIndex = 158;
+            this.lblInstalledVersion.Text = "Installed Version:";
+            // 
             // SettingsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -123,6 +133,7 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.Controls.Add(this.lblInstalledVersion);
             this.Controls.Add(this.lblSettingsAbout);
             this.Controls.Add(this.lblSettingsUpdates);
             this.Controls.Add(this.btnCheckForUpdates);
@@ -146,5 +157,6 @@ namespace ThisIsWin11
         private System.Windows.Forms.Button btnCheckForUpdates;
         private System.Windows.Forms.Label lblSettingsUpdates;
         private System.Windows.Forms.Label lblSettingsAbout;
+        private System.Windows.Forms.Label lblInstalledVersion;
     }
 }

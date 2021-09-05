@@ -25,11 +25,13 @@ namespace ThisIsWin11
 
         private void UISelection()
         {
-            rtbAbout.Text = mainForm.Text + "\nVersion: " + Program.GetCurrentVersionTostring() +
-                       "\nBuiltbybel" +
+            lblInstalledVersion.Text = "Installed Version: " + Program.GetCurrentVersionTostring();
+
+            rtbAbout.Text = mainForm.Text + "\nBuiltbybel" +
                        "\n\nGitHub: " + Helpers.Strings.Uri.GitRepo +
                        "\nTwitter: " + Helpers.Strings.Uri.Twitter +
-                       "\nDonate: " + Helpers.Strings.Uri.Donate +
+                       "\nDonate: " + Helpers.Strings.Uri.Support +
+                       "\nGive feedback: " + Helpers.Strings.Uri.Feedback +
                        "\n\nMIT License" +
                        "\n\n\nNew in this version:" + changelog;
         }

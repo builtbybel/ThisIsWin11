@@ -38,6 +38,7 @@ namespace ThisIsWin11
             this.btnCustomizer = new System.Windows.Forms.Button();
             this.btnPresenter = new System.Windows.Forms.CheckBox();
             this.pbView = new System.Windows.Forms.PictureBox();
+            this.lnkSystemDomainRename = new System.Windows.Forms.LinkLabel();
             this.lblSubHeader = new System.Windows.Forms.Label();
             this.pnlMiddle = new System.Windows.Forms.Panel();
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
@@ -125,13 +126,13 @@ namespace ThisIsWin11
             this.lblHeader.AutoEllipsis = true;
             this.lblHeader.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.ForeColor = System.Drawing.Color.DeepPink;
+            this.lblHeader.ForeColor = System.Drawing.Color.DimGray;
             this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblHeader.Location = new System.Drawing.Point(24, 25);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(283, 43);
+            this.lblHeader.Size = new System.Drawing.Size(283, 35);
             this.lblHeader.TabIndex = 134;
-            this.lblHeader.Text = "Welcome";
+            this.lblHeader.Text = "Hi";
             // 
             // btnCustomizer
             // 
@@ -189,6 +190,21 @@ namespace ThisIsWin11
             this.pbView.TabStop = false;
             this.pbView.Paint += new System.Windows.Forms.PaintEventHandler(this.pbView_Paint);
             // 
+            // lnkSystemDomainRename
+            // 
+            this.lnkSystemDomainRename.ActiveLinkColor = System.Drawing.Color.HotPink;
+            this.lnkSystemDomainRename.AutoEllipsis = true;
+            this.lnkSystemDomainRename.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkSystemDomainRename.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lnkSystemDomainRename.LinkColor = System.Drawing.Color.MediumVioletRed;
+            this.lnkSystemDomainRename.Location = new System.Drawing.Point(357, 68);
+            this.lnkSystemDomainRename.Name = "lnkSystemDomainRename";
+            this.lnkSystemDomainRename.Size = new System.Drawing.Size(221, 18);
+            this.lnkSystemDomainRename.TabIndex = 140;
+            this.lnkSystemDomainRename.TabStop = true;
+            this.lnkSystemDomainRename.Text = "Join Domain or Rename this PC";
+            this.lnkSystemDomainRename.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSystemDomainRename_LinkClicked);
+            // 
             // lblSubHeader
             // 
             this.lblSubHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -209,6 +225,7 @@ namespace ThisIsWin11
             this.pnlMiddle.AutoScroll = true;
             this.pnlMiddle.AutoSize = true;
             this.pnlMiddle.BackColor = System.Drawing.Color.White;
+            this.pnlMiddle.Controls.Add(this.lnkSystemDomainRename);
             this.pnlMiddle.Controls.Add(this.lnkSubHeader);
             this.pnlMiddle.Controls.Add(this.btnBack);
             this.pnlMiddle.Controls.Add(this.lblSubHeader);
@@ -225,16 +242,15 @@ namespace ThisIsWin11
             // lnkSubHeader
             // 
             this.lnkSubHeader.ActiveLinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lnkSubHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lnkSubHeader.AutoEllipsis = true;
-            this.lnkSubHeader.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkSubHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkSubHeader.ForeColor = System.Drawing.Color.Gray;
             this.lnkSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lnkSubHeader.LinkColor = System.Drawing.Color.Black;
+            this.lnkSubHeader.LinkColor = System.Drawing.Color.MediumVioletRed;
             this.lnkSubHeader.Location = new System.Drawing.Point(24, 68);
             this.lnkSubHeader.Name = "lnkSubHeader";
-            this.lnkSubHeader.Size = new System.Drawing.Size(672, 18);
+            this.lnkSubHeader.Size = new System.Drawing.Size(313, 18);
             this.lnkSubHeader.TabIndex = 24;
             this.lnkSubHeader.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSubHeader_LinkClicked);
             // 
@@ -273,9 +289,8 @@ namespace ThisIsWin11
             // 
             this.btnHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHome.AutoSize = true;
-            this.btnHome.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHome.BackColor = System.Drawing.Color.White;
             this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -379,5 +394,6 @@ namespace ThisIsWin11
         public System.Windows.Forms.RichTextBox rtbDesc;
         private System.Windows.Forms.ContextMenuStrip menuShowcase;
         private System.Windows.Forms.ToolStripMenuItem menuCaptureToShare;
+        private System.Windows.Forms.LinkLabel lnkSystemDomainRename;
     }
 }

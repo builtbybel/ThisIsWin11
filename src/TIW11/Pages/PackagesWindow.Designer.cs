@@ -46,6 +46,8 @@ namespace ThisIsWin11
             this.pnlRight = new System.Windows.Forms.Panel();
             this.lblPreview = new System.Windows.Forms.Label();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPackages.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.SuspendLayout();
@@ -145,36 +147,38 @@ namespace ThisIsWin11
             this.menuPackagesExport,
             this.menuPackagesRefresh,
             this.menuPackagesSelect,
-            this.menuPackagesPopOut});
+            this.menuPackagesPopOut,
+            this.toolStripSeparator1,
+            this.toolStripMenuItem1});
             this.menuPackages.Name = "menuMain";
             this.menuPackages.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuPackages.Size = new System.Drawing.Size(259, 154);
+            this.menuPackages.Size = new System.Drawing.Size(303, 212);
             // 
             // menuPackagesImport
             // 
             this.menuPackagesImport.Name = "menuPackagesImport";
-            this.menuPackagesImport.Size = new System.Drawing.Size(258, 30);
+            this.menuPackagesImport.Size = new System.Drawing.Size(302, 30);
             this.menuPackagesImport.Text = "Import package list";
             this.menuPackagesImport.Click += new System.EventHandler(this.menuPackagesImport_Click);
             // 
             // menuPackagesExport
             // 
             this.menuPackagesExport.Name = "menuPackagesExport";
-            this.menuPackagesExport.Size = new System.Drawing.Size(258, 30);
+            this.menuPackagesExport.Size = new System.Drawing.Size(302, 30);
             this.menuPackagesExport.Text = "Export to PowerShell";
             this.menuPackagesExport.Click += new System.EventHandler(this.menuPackagesExport_Click);
             // 
             // menuPackagesRefresh
             // 
             this.menuPackagesRefresh.Name = "menuPackagesRefresh";
-            this.menuPackagesRefresh.Size = new System.Drawing.Size(258, 30);
+            this.menuPackagesRefresh.Size = new System.Drawing.Size(302, 30);
             this.menuPackagesRefresh.Text = "Refresh";
             this.menuPackagesRefresh.Click += new System.EventHandler(this.menuPackagesRefresh_Click);
             // 
             // menuPackagesSelect
             // 
             this.menuPackagesSelect.Name = "menuPackagesSelect";
-            this.menuPackagesSelect.Size = new System.Drawing.Size(258, 30);
+            this.menuPackagesSelect.Size = new System.Drawing.Size(302, 30);
             this.menuPackagesSelect.Text = "Select all";
             this.menuPackagesSelect.Click += new System.EventHandler(this.menuPackagesSelect_Click);
             // 
@@ -182,7 +186,7 @@ namespace ThisIsWin11
             // 
             this.menuPackagesPopOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuPackagesPopOut.Name = "menuPackagesPopOut";
-            this.menuPackagesPopOut.Size = new System.Drawing.Size(258, 30);
+            this.menuPackagesPopOut.Size = new System.Drawing.Size(302, 30);
             this.menuPackagesPopOut.Text = "Pop-out-App";
             this.menuPackagesPopOut.Click += new System.EventHandler(this.menuPackagesPopOut_Click);
             // 
@@ -257,6 +261,19 @@ namespace ThisIsWin11
             this.rtbPS.Text = "";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(299, 6);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Enabled = false;
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(302, 30);
+            this.toolStripMenuItem1.Text = "Powered by Windows Package Manager";
+            // 
             // PackagesWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -303,5 +320,7 @@ namespace ThisIsWin11
         private System.Windows.Forms.Panel pnlRight;
         private System.Windows.Forms.Label lblPreview;
         public System.Windows.Forms.RichTextBox rtbPS;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

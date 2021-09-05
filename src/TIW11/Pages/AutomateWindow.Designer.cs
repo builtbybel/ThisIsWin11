@@ -174,7 +174,7 @@ namespace ThisIsWin11
             this.lstPS.FormattingEnabled = true;
             this.lstPS.Location = new System.Drawing.Point(24, 94);
             this.lstPS.Name = "lstPS";
-            this.lstPS.Size = new System.Drawing.Size(685, 374);
+            this.lstPS.Size = new System.Drawing.Size(685, 352);
             this.lstPS.Sorted = true;
             this.lstPS.TabIndex = 157;
             this.lstPS.ThreeDCheckBoxes = true;
@@ -317,7 +317,7 @@ namespace ThisIsWin11
             this.Name = "AutomateWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PowerClicks";
+            this.Text = "TeamTweak";
             this.Load += new System.EventHandler(this.AutomateWindow_Load);
             this.menuAutomate.ResumeLayout(false);
             this.pnlRight.ResumeLayout(false);

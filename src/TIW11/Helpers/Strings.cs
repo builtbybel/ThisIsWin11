@@ -25,7 +25,8 @@ namespace ThisIsWin11.Helpers
         {
             public const string GitRepo = "https://github.com/builtbybel/ThisIsWin11";
             public const string Twitter = "https://twitter.com/builtbybel";
-            public const string Donate = "https://www.builtbybel.com/donate";
+            public const string Support= "https://www.builtbybel.com/donate";
+            public const string Feedback = "https://github.com/builtbybel/ThisIsWin11/issues";
             public const string GitUpdateRepo = "https://github.com/builtbybel/thisiswin11/releases/tag/";
             public const string GitVersionCheck = "https://raw.githubusercontent.com/builtbybel/thisiswin11/master/appversion.txt";
             public const string GitVersionHint = "https://raw.githubusercontent.com/builtbybel/thisiswin11/main/changes.txt";

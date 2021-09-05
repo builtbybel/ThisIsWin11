@@ -17,9 +17,9 @@ namespace ThisIsWin11
 
         private Showcase.OS osInfo = new Showcase.OS();
 
-        private static readonly string componentsVersion = "11";
+        private static readonly string componentsVersion = "12";
 
-        private void menuAutomateInfo_Click(object sender, EventArgs e) => MessageBox.Show("PowerClicks\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        private void menuAutomateInfo_Click(object sender, EventArgs e) => MessageBox.Show("TeamTweak\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         public AutomateWindow()
         {

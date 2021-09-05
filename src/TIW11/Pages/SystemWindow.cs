@@ -14,7 +14,7 @@ namespace ThisIsWin11
 {
     public partial class SystemWindow : Form
     {
-        private static readonly string componentsVersion = "52 Preview";
+        private static readonly string componentsVersion = "53 Preview";
 
         private Showcase.OS osInfo = new Showcase.OS();
 
@@ -69,6 +69,7 @@ namespace ThisIsWin11
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarAl()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarSearch()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarChat()),
+                new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskView()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.FileExplorer()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.MostUsedApps()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.HiddenFileFolder()),

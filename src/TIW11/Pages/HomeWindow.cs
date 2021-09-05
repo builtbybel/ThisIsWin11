@@ -118,7 +118,7 @@ namespace ThisIsWin11
                     btnPresenter.Visible = false;
                     btnConfigurator.Visible = false;
                     btnCustomizer.Visible = false;
-                    lblHeader.Text = "Welcome, " + Environment.UserName;
+                    lblHeader.Text = "Hi " + Environment.UserName;
                     rtbDesc.Text = "Lets make sure everything is set up how you want it.\n\nUse the <Next> and <Previous> buttons to run a guided tour of Windows 11.\n\n" +
                                     "Use the <Preview this page> button on the left panel to get the feature presented once (if it is available).\n" +
                                     "Pages marked with <Configure this page> will allow you to change immediately the Windows configuration.\n" +
@@ -695,6 +695,10 @@ namespace ThisIsWin11
             }
         }
 
-        private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("ms-settings:about");
+        private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("ms-settings:windowsupdate-action");
+
+        private void lnkSystemDomainRename_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("sysdm.cpl");
+
+
     }
 }
