@@ -29,7 +29,7 @@ The app currently offers five modules:
 - PumpedApp: This module allows you checking and optimizing Windows 11 configuration among other things (all changes made can also be undone)
 - Kickassbloat will help you removing pre-installed Windows 11 apps
 - Packages is there for you to quickly install one or the other app
-- PowerClicks allows you automating several Windows 11 tasks based on PowerShell and community scripts.
+- TeamTweak allows you automating several Windows 11 tasks based on PowerShell and community scripts.
  
 If you know my previous apps for Windows 10 (Privatezilla, Bloatbox etc.) then you will see that ThisIsWin11 app combines the best of these apps under one interface but on Win11.
   
