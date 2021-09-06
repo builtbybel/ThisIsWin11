@@ -26,9 +26,9 @@ alt="GitHub issues">
 The app currently offers five modules:
 
 - Presenter: The start screen guides you through an pictured introduction to the new operating system Windows 11 and allows you quickly to configure it.
-- PumpedApp integrates an important part of the Windows 11 settings app and allows you to check and enable/disable settings in a bulk and with just a click (all changes made can also be undone)
-- Kickassbloat will help you removing pre-installed Windows 11 apps
-- Packages is there for you to quickly install one or the other app
+- PumpedApp integrates an important part of the Windows 11 settings app and allows you to check and enable/disable settings in a bulk and with just a click.
+- Kickassbloat will help you removing pre-installed Windows 11 apps.
+- Packages is there for you to quickly install one or the other app.
 - TeamTweak allows you automating several Windows 11 tasks based on PowerShell and community scripts.
  
 If you know my previous apps for Windows 10 (Privatezilla, Bloatbox etc.) then you will see that ThisIsWin11 app combines the best of these apps under one interface but on Win11.
