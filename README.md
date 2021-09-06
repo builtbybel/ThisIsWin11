@@ -33,8 +33,6 @@ The app currently offers five modules:
  
 If you know my previous apps for Windows 10 (Privatezilla, Bloatbox etc.) then you will see that ThisIsWin11 app combines the best of these apps under one interface but on Win11.
   
-**An internet connection is required to use the app.**
-  
   
  ## Download
 - (Latest release) [Download](https://github.com/builtbybel/ThisIsWin11/releases)
