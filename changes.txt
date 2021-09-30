@@ -1,7 +1,5 @@
 
-- Added support for Windows 11 Insider Preview Build 22000.176
-- Updated automation module and rebranded to TeamTweak (prev. PowerClicks)
-- Added option to system > personalization module (aka PumpedApp) to "Hide Task view button on taskbar"
-- Stability improvements
-- UI Improvements with better Windows 11 styling
-- Numerous minor fixes
+This update is focused on stability and general bug fixes and the final release before the official rollout of Windows 11 begins.
+- Updated System module aka PumpedApp
+- Updated Apps module aka Kickassbloat
+- Updated Automation module aka TeamTweak
