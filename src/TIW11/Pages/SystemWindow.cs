@@ -14,7 +14,8 @@ namespace ThisIsWin11
 {
     public partial class SystemWindow : Form
     {
-        private static readonly string componentsVersion = "53 Preview";
+        private static readonly string componentsVersion = "70 Preview";
+        private readonly string osWarning = "We could not recognize this system as Windows 11. Some settings are not tested on this operating system and could lead to malfunction.";
 
         private Showcase.OS osInfo = new Showcase.OS();
 
@@ -32,6 +33,11 @@ namespace ThisIsWin11
 
         private void SystemWindow_Shown(object sender, EventArgs e)
         {
+            if (!osInfo.IsWin11())
+            {
+                MessageBox.Show(osWarning.ToString());
+            }
+
             InitializeAssessments();
             UISelection();
         }
@@ -97,7 +103,6 @@ namespace ThisIsWin11
             {
                 Checked = true,
             };
-
 
             TreeNode privacy = new TreeNode("Privacy (to disable)", new TreeNode[] {
                 new AssessmentNode(new PumpedApp.Assessment.Privacy.DiagnosticData()),
@@ -251,7 +256,15 @@ namespace ThisIsWin11
             sum.Append($"{performAssessmentsCount} issues needs to be fixed (just a recommendation).\r\n");
 
             logger.Log(sum.ToString(), "");
-            lnkSubHeader.Text = performAssessmentsCount + " items requires attention.";
+
+            if (!osInfo.IsWin11())
+            {
+                lnkSubHeader.Text = performAssessmentsCount + " items requires attention. " + osWarning.ToString();
+            }
+            else
+            {
+                lnkSubHeader.Text = performAssessmentsCount + " items requires attention.";
+            }
         }
 
         private async void ApplyAssessments(List<AssessmentNode> treeNodes)
@@ -442,5 +455,7 @@ namespace ThisIsWin11
         private void lnkSystemPreset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => menuSystemImportProfile.PerformClick();
 
         private void tvwAssessments_Click(object sender, EventArgs e) => lnkSystemPreset.Visible = false;
+
+        private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => MessageBox.Show(lnkSubHeader.Text);
     }
 }

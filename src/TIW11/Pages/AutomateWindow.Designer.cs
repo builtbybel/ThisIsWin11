@@ -50,6 +50,7 @@ namespace ThisIsWin11
             this.btnAutomateOnTheFly = new System.Windows.Forms.Button();
             this.lblPreview = new System.Windows.Forms.Label();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
+            this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.menuAutomate.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.SuspendLayout();
@@ -184,10 +185,10 @@ namespace ThisIsWin11
             // 
             this.progress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progress.Location = new System.Drawing.Point(24, 78);
+            this.progress.Location = new System.Drawing.Point(30, 78);
             this.progress.MarqueeAnimationSpeed = 30;
             this.progress.Name = "progress";
-            this.progress.Size = new System.Drawing.Size(669, 5);
+            this.progress.Size = new System.Drawing.Size(663, 5);
             this.progress.TabIndex = 156;
             this.progress.Visible = false;
             // 
@@ -297,6 +298,22 @@ namespace ThisIsWin11
             this.rtbPS.Text = "";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
             // 
+            // lnkSubHeader
+            // 
+            this.lnkSubHeader.ActiveLinkColor = System.Drawing.Color.MediumVioletRed;
+            this.lnkSubHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lnkSubHeader.AutoEllipsis = true;
+            this.lnkSubHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkSubHeader.ForeColor = System.Drawing.Color.Black;
+            this.lnkSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lnkSubHeader.LinkColor = System.Drawing.Color.MediumVioletRed;
+            this.lnkSubHeader.Location = new System.Drawing.Point(28, 57);
+            this.lnkSubHeader.Name = "lnkSubHeader";
+            this.lnkSubHeader.Size = new System.Drawing.Size(660, 18);
+            this.lnkSubHeader.TabIndex = 172;
+            // 
             // AutomateWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -304,6 +321,7 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.Controls.Add(this.lnkSubHeader);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.lstPS);
@@ -348,5 +366,6 @@ namespace ThisIsWin11
         private System.Windows.Forms.Label lblPreview;
         public System.Windows.Forms.RichTextBox rtbPS;
         private System.Windows.Forms.Button btnAutomateOnTheFly;
+        private System.Windows.Forms.LinkLabel lnkSubHeader;
     }
 }

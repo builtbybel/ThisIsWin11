@@ -82,7 +82,7 @@ namespace ThisIsWin11
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(669, 32);
             this.lblHeader.TabIndex = 161;
-            this.lblHeader.Text = "Check Windows 11";
+            this.lblHeader.Text = "Control Settings";
             // 
             // btnSystemCheck
             // 
@@ -277,6 +277,7 @@ namespace ThisIsWin11
             this.lnkSubHeader.Name = "lnkSubHeader";
             this.lnkSubHeader.Size = new System.Drawing.Size(660, 18);
             this.lnkSubHeader.TabIndex = 171;
+            this.lnkSubHeader.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSubHeader_LinkClicked);
             // 
             // lnkSystemPreset
             // 

@@ -17,7 +17,7 @@ namespace ThisIsWin11
 
         private readonly PowerShell powerShell = PowerShell.Create();
 
-        private static readonly string componentsVersion = "30";
+        private static readonly string componentsVersion = "40";
 
         private void menuAppsInfo_Click(object sender, EventArgs e) => MessageBox.Show("Kickassbloat\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -138,6 +138,9 @@ namespace ThisIsWin11
 
         private void menuAppsRefresh_Click(object sender, EventArgs e)
         {
+            lstUWP.Items.Clear();
+            lstUWPRemove.Items.Clear();
+
             InitializeUWPSystem();
             InitializeUWP();
         }
@@ -209,10 +212,7 @@ namespace ThisIsWin11
 
                 if (removeUWPList.Count != 0)
                 {
-                    message += "The folowing app(s) have been removed successfully:" + Environment.NewLine + successList;
-                    message += Environment.NewLine + "A Community syncing function is in the works. This will automatically flag and remove the really unnecessary apps for you.\n" +
-                                "This way we make sure you don't uninstall an important app. If you accidentally uninstall an important app, you can always reinstall all the apps pre-installed by Windows 11 in ThisIsWin11 automation module." +
-                                Environment.NewLine + Environment.NewLine + lstUWP.Items.Count + " apps are left.\n";
+                    message += "The folowing app(s) have been removed successfully:" + Environment.NewLine + successList + Environment.NewLine;
                 }
 
                 if (removeUWPFailedList.Count != 0)
@@ -220,12 +220,15 @@ namespace ThisIsWin11
                     message += "The following app(s) could not be removed: " + Environment.NewLine + failedList;
                     message += Environment.NewLine + "Note, however, this app won't allow you to remove a few of the most important built-in apps, like Microsoft Edge, .NET framework, UI.Xaml etc." +
                                                      "as these apps are needed for the Windows 11 Experience and for other programs. If you try, you’ll see an error message saying the removal failed.\n\n" +
-                                                     "Please also check ThisIsWin11 automation module to see if you can find a community debloating task. These are often more aggressive.";
+                                                     "Please check also the automation module to see if you can find a community debloating task. These are often more aggressive.";
                 }
 
                 btnRemoveUWP.Enabled = true;
-                rtbPS.Text = message;
+                rtbPS.Text = message + Environment.NewLine;
+                rtbPS.Text += Environment.NewLine + lstUWP.Items.Count + " apps are left.\n";
             }
+
+            menuAppsRefresh.PerformClick();
         }
 
         private void menuAppsRemoveAll_Click(object sender, EventArgs e)

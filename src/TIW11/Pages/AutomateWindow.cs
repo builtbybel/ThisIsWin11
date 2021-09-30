@@ -17,7 +17,7 @@ namespace ThisIsWin11
 
         private Showcase.OS osInfo = new Showcase.OS();
 
-        private static readonly string componentsVersion = "12";
+        private static readonly string componentsVersion = "15";
 
         private void menuAutomateInfo_Click(object sender, EventArgs e) => MessageBox.Show("TeamTweak\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -104,7 +104,8 @@ namespace ThisIsWin11
                             progress.Style = ProgressBarStyle.Marquee;
                             progress.MarqueeAnimationSpeed = 30;
 
-                            btnApply.Text = "Processing " + lstPS.Text;
+                            btnApply.Enabled = false;
+                            lnkSubHeader.Text = "Processing " + lstPS.Text;
 
                             if (equals.Any(str.Contains))                   //silent
                             {
@@ -129,6 +130,9 @@ namespace ThisIsWin11
 
                                 await Task.Run(() => { Process.Start(startInfo).WaitForExit(); });
                             }
+
+                            btnApply.Enabled = true;
+                            lnkSubHeader.Text = "";
 
                             // Write log
                             CreateLogsDir();

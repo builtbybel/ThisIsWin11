@@ -48,7 +48,6 @@ namespace ThisIsWin11
             this.rtbPS = new System.Windows.Forms.RichTextBox();
             this.PnlMiddle = new System.Windows.Forms.Panel();
             this.lblAppsHeader = new System.Windows.Forms.Label();
-            this.BtnMore = new System.Windows.Forms.Button();
             this.btnAddAll = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
@@ -134,7 +133,7 @@ namespace ThisIsWin11
             this.btnAppsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnAppsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAppsMenu.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAppsMenu.Location = new System.Drawing.Point(291, 0);
+            this.btnAppsMenu.Location = new System.Drawing.Point(293, 0);
             this.btnAppsMenu.Name = "btnAppsMenu";
             this.btnAppsMenu.Size = new System.Drawing.Size(48, 51);
             this.btnAppsMenu.TabIndex = 156;
@@ -265,14 +264,13 @@ namespace ThisIsWin11
             this.PnlMiddle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlMiddle.Controls.Add(this.btnAppsMenu);
             this.PnlMiddle.Controls.Add(this.lblAppsHeader);
-            this.PnlMiddle.Controls.Add(this.BtnMore);
             this.PnlMiddle.Controls.Add(this.btnRemoveUWP);
             this.PnlMiddle.Controls.Add(this.btnAddAll);
             this.PnlMiddle.Controls.Add(this.btnAdd);
             this.PnlMiddle.Controls.Add(this.btnRemove);
             this.PnlMiddle.Controls.Add(this.btnRemoveAll);
+            this.PnlMiddle.Controls.Add(this.btnAppsMenu);
             this.PnlMiddle.Location = new System.Drawing.Point(374, 3);
             this.PnlMiddle.Name = "PnlMiddle";
             this.PnlMiddle.Size = new System.Drawing.Size(342, 767);
@@ -291,24 +289,6 @@ namespace ThisIsWin11
             this.lblAppsHeader.Size = new System.Drawing.Size(273, 32);
             this.lblAppsHeader.TabIndex = 25;
             this.lblAppsHeader.Text = "Apps && Features";
-            // 
-            // BtnMore
-            // 
-            this.BtnMore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnMore.AutoSize = true;
-            this.BtnMore.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.BtnMore.FlatAppearance.BorderSize = 0;
-            this.BtnMore.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.BtnMore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMore.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F);
-            this.BtnMore.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BtnMore.Location = new System.Drawing.Point(298, 2);
-            this.BtnMore.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnMore.Name = "BtnMore";
-            this.BtnMore.Size = new System.Drawing.Size(41, 43);
-            this.BtnMore.TabIndex = 27;
-            this.BtnMore.Text = "...";
-            this.BtnMore.UseVisualStyleBackColor = true;
             // 
             // btnAddAll
             // 
@@ -449,7 +429,6 @@ namespace ThisIsWin11
             this.menuApps.ResumeLayout(false);
             this.pnlRight.ResumeLayout(false);
             this.PnlMiddle.ResumeLayout(false);
-            this.PnlMiddle.PerformLayout();
             this.PnlLeft.ResumeLayout(false);
             this.PnlLeft.PerformLayout();
             this.ResumeLayout(false);
@@ -477,7 +456,6 @@ namespace ThisIsWin11
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnRemoveAll;
-        private System.Windows.Forms.Button BtnMore;
         private System.Windows.Forms.Panel PnlLeft;
         private System.Windows.Forms.Label LblLeftAppName;
         private System.Windows.Forms.ListBox lstUWPRemove;

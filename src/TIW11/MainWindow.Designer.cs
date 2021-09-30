@@ -108,7 +108,7 @@ namespace ThisIsWin11
             this.btnSettings.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.DimGray;
             this.btnSettings.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSettings.Location = new System.Drawing.Point(2, 686);
+            this.btnSettings.Location = new System.Drawing.Point(3, 686);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(72, 72);
