@@ -7,7 +7,6 @@ namespace ThisIsWin11
     public partial class SettingsWindow : Form
     {
         private Helpers.Utils utilInfo = new Helpers.Utils();
-        private string changelog = new WebClient().DownloadString(Helpers.Strings.Uri.GitVersionHint);
 
         private MainWindow mainForm = null;
 
@@ -32,8 +31,14 @@ namespace ThisIsWin11
                        "\nTwitter: " + Helpers.Strings.Uri.Twitter +
                        "\nDonate: " + Helpers.Strings.Uri.Support +
                        "\nGive feedback: " + Helpers.Strings.Uri.Feedback +
-                       "\n\nMIT License" +
-                       "\n\n\nNew in this version:" + changelog;
+                       "\n\nMIT License";
+
+            try
+            {
+                string changelog = new WebClient().DownloadString(Helpers.Strings.Uri.GitVersionHint);
+                rtbAbout.Text += "\n\n\nNew in this version:" + changelog;
+            }
+            catch { };
         }
 
         private void btnCheckForUpdates_Click(object sender, EventArgs e) => utilInfo.CheckForUpdates(true);

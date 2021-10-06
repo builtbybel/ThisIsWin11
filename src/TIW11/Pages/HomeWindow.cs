@@ -23,6 +23,9 @@ namespace ThisIsWin11
             NavigationView();
             EnumTableOfContents();
             UISelection();
+
+            if (!Helpers.Utils.IsInet())
+                MessageBox.Show("We cannot connect to the Internet.\nSome functions of the Windows 11 Presenter module are not available.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         //some UI nicety
@@ -696,7 +699,5 @@ namespace ThisIsWin11
         }
 
         private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("ms-settings:windowsupdate-action");
-
-
     }
 }

@@ -86,22 +86,22 @@ namespace ThisIsWin11.Helpers
                     MessageBox.Show("Checking for App updates failed.\n\nCheck your Internet connection and try again.");
                 }
             }
+        }
 
-            //check Inet
-            bool IsInet()
+        //check Inet
+        public static bool IsInet()
+        {
+            try
             {
-                try
+                using (var CheckInternet = new WebClient())
+                using (CheckInternet.OpenRead("http://clients3.google.com/generate_204"))
                 {
-                    using (var CheckInternet = new WebClient())
-                    using (CheckInternet.OpenRead("http://clients3.google.com/generate_204"))
-                    {
-                        return true;
-                    }
+                    return true;
                 }
-                catch
-                {
-                    return false;
-                }
+            }
+            catch
+            {
+                return false;
             }
         }
 
