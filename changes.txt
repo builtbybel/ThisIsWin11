@@ -1,4 +1,5 @@
 
 - Revised support for the final Windows 11 Build 22000.194
+- TIW11 no longer requires an internet connection to run
 - Revised some methods for retrieving online information for Windows 11 Presenter module from GitHub (the internet connection is assumed exclusively for these purposes)
 - Minor bug fixes
