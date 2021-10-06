@@ -1,5 +1,4 @@
 
-This update is focused on stability and general bug fixes and the final release before the official rollout of Windows 11 begins.
-- Updated System module aka PumpedApp
-- Updated Apps module aka Kickassbloat
-- Updated Automation module aka TeamTweak
+- Revised support for the final Windows 11 Build 22000.194
+- Revised some methods for retrieving online information for Windows 11 Presenter module from GitHub (the internet connection is assumed exclusively for these purposes)
+- Minor bug fixes
