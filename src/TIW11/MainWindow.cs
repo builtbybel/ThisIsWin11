@@ -77,7 +77,7 @@ namespace ThisIsWin11
 
         private void menuMainComponents_Click(object sender, EventArgs e)
         {
-            ComponentsWindow formComponents = new ComponentsWindow();
+            PluginsWindow formComponents = new PluginsWindow();
             formComponents.TopLevel = false;
             formComponents.AutoScroll = true;
             formComponents.FormBorderStyle = FormBorderStyle.None;

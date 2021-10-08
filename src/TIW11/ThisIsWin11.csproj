@@ -61,6 +61,8 @@
     <Compile Include="Helpers\Keystrokes.cs" />
     <Compile Include="Helpers\Strings.cs" />
     <Compile Include="Helpers\Utils.cs" />
+    <Compile Include="Plugins\PluginsBase.cs" />
+    <Compile Include="Plugins\PluginsBindingList.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Gaming\PowerThrottling.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Gaming\GameDVR.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Gaming\VisualFX.cs" />
@@ -84,11 +86,12 @@
     <Compile Include="Modules\PumpedApp\Assessments\System\FaxPrinter.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\System\TeamsAutostart.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\System\XPSWriter.cs" />
-    <Compile Include="Pages\ComponentsWindow.cs">
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarSi.cs" />
+    <Compile Include="Pages\PluginsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\ComponentsWindow.Designer.cs">
-      <DependentUpon>ComponentsWindow.cs</DependentUpon>
+    <Compile Include="Pages\PluginsWindow.Designer.cs">
+      <DependentUpon>PluginsWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\HomeWindow.cs">
       <SubType>Form</SubType>
@@ -179,8 +182,8 @@
     <Compile Include="Modules\PumpedApp\AssessmentBase.cs" />
     <Compile Include="Modules\PumpedApp\RegistryHelper.cs" />
     <Compile Include="Modules\PumpedApp\WindowsHelper.cs" />
-    <EmbeddedResource Include="Pages\ComponentsWindow.resx">
-      <DependentUpon>ComponentsWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\PluginsWindow.resx">
+      <DependentUpon>PluginsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\SettingsWindow.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>

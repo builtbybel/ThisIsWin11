@@ -41,6 +41,7 @@ namespace ThisIsWin11
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.menuMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuMainComponents = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.pnlLeft.SuspendLayout();
             this.menuMain.SuspendLayout();
             this.SuspendLayout();
@@ -200,17 +201,29 @@ namespace ThisIsWin11
             this.menuMain.BackColor = System.Drawing.Color.WhiteSmoke;
             this.menuMain.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuMainComponents});
+            this.menuMainComponents,
+            this.toolStripTextBox1});
             this.menuMain.Name = "menuMain";
             this.menuMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuMain.Size = new System.Drawing.Size(142, 34);
+            this.menuMain.Size = new System.Drawing.Size(321, 80);
             // 
             // menuMainComponents
             // 
             this.menuMainComponents.Name = "menuMainComponents";
-            this.menuMainComponents.Size = new System.Drawing.Size(141, 30);
-            this.menuMainComponents.Text = "More...";
+            this.menuMainComponents.Size = new System.Drawing.Size(320, 30);
+            this.menuMainComponents.Text = "Plugins";
             this.menuMainComponents.Click += new System.EventHandler(this.menuMainComponents_Click);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox1.Margin = new System.Windows.Forms.Padding(5, 1, 1, 1);
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(260, 22);
+            this.toolStripTextBox1.Text = "Extend the capabilities of ThisIsWin11";
             // 
             // MainWindow
             // 
@@ -228,6 +241,7 @@ namespace ThisIsWin11
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.pnlLeft.ResumeLayout(false);
             this.menuMain.ResumeLayout(false);
+            this.menuMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,6 +259,7 @@ namespace ThisIsWin11
         public System.Windows.Forms.Button btnMore;
         private System.Windows.Forms.ContextMenuStrip menuMain;
         private System.Windows.Forms.ToolStripMenuItem menuMainComponents;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
     }
 }
 
