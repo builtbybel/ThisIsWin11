@@ -5,7 +5,6 @@
 - Added option to system > personalization module (aka PumpedApp) to make "Taskbar and icons small"
 - Minor bug fixes
 
-From the blog
-----------
+From the blog:
 There are plans for the rebranding TIW11
 Vote for a new app name here: https://www.builtbybel.com/blog/19-apps/44-thisiswin11-yes-or-no-for-changing-the-appname
