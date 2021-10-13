@@ -1,10 +1,5 @@
 
-- Added auto update feature
-- Fixed bug in apps module, where in some cases the <Empty Recyle Bin> button was not present
-- Presenter module reaches end-of-life in February 2022
-- Updated Extensions module
-- Several UI fixes
-- Numerous minor bug fixes
+- Integrated the ExplorerPatcher (powered by https://github.com/valinet/ExplorerPatcher) hack to system module (aka PumpedApp)
 
 From the blog:
 There are plans for the rebranding TIW11
