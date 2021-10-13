@@ -1,9 +1,10 @@
 
-- Added simple Plugins engine for creating custom tweaks (experimental)
-- Added Plugin to "disable TPM 2.0 check"
-- Added Plugin to "enable classic context menus"
-- Added option to system > personalization module (aka PumpedApp) to make "Taskbar and icons small"
-- Minor bug fixes
+- Added auto update feature
+- Fixed bug in apps module, where in some cases the <Empty Recyle Bin> button was not present
+- Presenter module reaches end-of-life in February 2022
+- Updated Extensions module
+- Several UI fixes
+- Numerous minor bug fixes
 
 From the blog:
 There are plans for the rebranding TIW11
