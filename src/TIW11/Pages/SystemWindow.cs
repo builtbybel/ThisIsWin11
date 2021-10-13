@@ -77,6 +77,7 @@ namespace ThisIsWin11
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarChat()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskView()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.FileExplorer()),
+                new AssessmentNode(new PumpedApp.Assessment.Personalization.ExplorerPatcher()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.MostUsedApps()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.HiddenFileFolder()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.HiddenFileExt()),
