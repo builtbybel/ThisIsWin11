@@ -6,7 +6,7 @@ namespace ThisIsWin11
 {
     public partial class SettingsWindow : Form
     {
-        private Helpers.Utils utilInfo = new Helpers.Utils();
+        private Helpers.Utils updateInfo = new Helpers.Utils();
 
         private MainWindow mainForm = null;
 
@@ -41,7 +41,7 @@ namespace ThisIsWin11
             catch { };
         }
 
-        private void btnCheckForUpdates_Click(object sender, EventArgs e) => utilInfo.CheckForUpdates(true);
+        private void btnCheckForUpdates_Click(object sender, EventArgs e) => updateInfo.CheckForUpdates(true);
 
         private void rtbAbout_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
     }

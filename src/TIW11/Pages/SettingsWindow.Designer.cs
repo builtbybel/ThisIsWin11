@@ -45,10 +45,10 @@ namespace ThisIsWin11
             this.rtbAbout.BackColor = System.Drawing.Color.White;
             this.rtbAbout.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbAbout.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbAbout.Location = new System.Drawing.Point(30, 259);
+            this.rtbAbout.Location = new System.Drawing.Point(30, 277);
             this.rtbAbout.Name = "rtbAbout";
             this.rtbAbout.ReadOnly = true;
-            this.rtbAbout.Size = new System.Drawing.Size(1051, 499);
+            this.rtbAbout.Size = new System.Drawing.Size(1051, 481);
             this.rtbAbout.TabIndex = 0;
             this.rtbAbout.Text = "";
             this.rtbAbout.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbAbout_LinkClicked);
@@ -76,7 +76,7 @@ namespace ThisIsWin11
             this.btnCheckForUpdates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckForUpdates.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckForUpdates.ForeColor = System.Drawing.Color.White;
-            this.btnCheckForUpdates.Location = new System.Drawing.Point(30, 152);
+            this.btnCheckForUpdates.Location = new System.Drawing.Point(30, 156);
             this.btnCheckForUpdates.Name = "btnCheckForUpdates";
             this.btnCheckForUpdates.Size = new System.Drawing.Size(213, 30);
             this.btnCheckForUpdates.TabIndex = 155;
@@ -110,7 +110,7 @@ namespace ThisIsWin11
             this.lblSettingsAbout.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSettingsAbout.ForeColor = System.Drawing.Color.Black;
             this.lblSettingsAbout.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblSettingsAbout.Location = new System.Drawing.Point(24, 204);
+            this.lblSettingsAbout.Location = new System.Drawing.Point(24, 220);
             this.lblSettingsAbout.Name = "lblSettingsAbout";
             this.lblSettingsAbout.Size = new System.Drawing.Size(176, 32);
             this.lblSettingsAbout.TabIndex = 157;
@@ -119,10 +119,10 @@ namespace ThisIsWin11
             // lblInstalledVersion
             // 
             this.lblInstalledVersion.AutoSize = true;
-            this.lblInstalledVersion.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstalledVersion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInstalledVersion.Location = new System.Drawing.Point(27, 125);
             this.lblInstalledVersion.Name = "lblInstalledVersion";
-            this.lblInstalledVersion.Size = new System.Drawing.Size(101, 17);
+            this.lblInstalledVersion.Size = new System.Drawing.Size(106, 17);
             this.lblInstalledVersion.TabIndex = 158;
             this.lblInstalledVersion.Text = "Installed Version:";
             // 
@@ -154,9 +154,9 @@ namespace ThisIsWin11
 
         private System.Windows.Forms.RichTextBox rtbAbout;
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.Button btnCheckForUpdates;
         private System.Windows.Forms.Label lblSettingsUpdates;
         private System.Windows.Forms.Label lblSettingsAbout;
         private System.Windows.Forms.Label lblInstalledVersion;
+        public System.Windows.Forms.Button btnCheckForUpdates;
     }
 }

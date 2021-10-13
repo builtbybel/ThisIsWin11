@@ -31,7 +31,7 @@ namespace ThisIsWin11
         {
             this.components = new System.ComponentModel.Container();
             this.pnlLeft = new System.Windows.Forms.Panel();
-            this.btnMore = new System.Windows.Forms.Button();
+            this.btnExtensions = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnAutomate = new System.Windows.Forms.Button();
@@ -41,7 +41,6 @@ namespace ThisIsWin11
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.menuMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuMainComponents = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.pnlLeft.SuspendLayout();
             this.menuMain.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +49,7 @@ namespace ThisIsWin11
             // 
             this.pnlLeft.AutoScroll = true;
             this.pnlLeft.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlLeft.Controls.Add(this.btnMore);
+            this.pnlLeft.Controls.Add(this.btnExtensions);
             this.pnlLeft.Controls.Add(this.btnHome);
             this.pnlLeft.Controls.Add(this.btnSettings);
             this.pnlLeft.Controls.Add(this.btnAutomate);
@@ -64,23 +63,22 @@ namespace ThisIsWin11
             this.pnlLeft.Size = new System.Drawing.Size(78, 770);
             this.pnlLeft.TabIndex = 130;
             // 
-            // btnMore
+            // btnExtensions
             // 
-            this.btnMore.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnMore.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnMore.FlatAppearance.BorderSize = 0;
-            this.btnMore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMore.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMore.ForeColor = System.Drawing.Color.DimGray;
-            this.btnMore.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnMore.Location = new System.Drawing.Point(3, 370);
-            this.btnMore.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnMore.Name = "btnMore";
-            this.btnMore.Size = new System.Drawing.Size(72, 61);
-            this.btnMore.TabIndex = 145;
-            this.btnMore.Text = "...";
-            this.btnMore.UseVisualStyleBackColor = false;
-            this.btnMore.Click += new System.EventHandler(this.btnMore_Click);
+            this.btnExtensions.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExtensions.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExtensions.FlatAppearance.BorderSize = 0;
+            this.btnExtensions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExtensions.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExtensions.ForeColor = System.Drawing.Color.DimGray;
+            this.btnExtensions.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnExtensions.Location = new System.Drawing.Point(3, 370);
+            this.btnExtensions.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExtensions.Name = "btnExtensions";
+            this.btnExtensions.Size = new System.Drawing.Size(72, 61);
+            this.btnExtensions.TabIndex = 145;
+            this.btnExtensions.Text = "...";
+            this.btnExtensions.UseVisualStyleBackColor = false;
             // 
             // btnHome
             // 
@@ -201,29 +199,16 @@ namespace ThisIsWin11
             this.menuMain.BackColor = System.Drawing.Color.WhiteSmoke;
             this.menuMain.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuMainComponents,
-            this.toolStripTextBox1});
+            this.menuMainComponents});
             this.menuMain.Name = "menuMain";
             this.menuMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuMain.Size = new System.Drawing.Size(321, 80);
+            this.menuMain.Size = new System.Drawing.Size(174, 34);
             // 
             // menuMainComponents
             // 
             this.menuMainComponents.Name = "menuMainComponents";
-            this.menuMainComponents.Size = new System.Drawing.Size(320, 30);
-            this.menuMainComponents.Text = "Plugins";
-            this.menuMainComponents.Click += new System.EventHandler(this.menuMainComponents_Click);
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.toolStripTextBox1.Margin = new System.Windows.Forms.Padding(5, 1, 1, 1);
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(260, 22);
-            this.toolStripTextBox1.Text = "Extend the capabilities of ThisIsWin11";
+            this.menuMainComponents.Size = new System.Drawing.Size(173, 30);
+            this.menuMainComponents.Text = "Extensions";
             // 
             // MainWindow
             // 
@@ -239,9 +224,9 @@ namespace ThisIsWin11
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThisIsWin11";
             this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.Shown += new System.EventHandler(this.MainWindow_Shown);
             this.pnlLeft.ResumeLayout(false);
             this.menuMain.ResumeLayout(false);
-            this.menuMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,10 +241,9 @@ namespace ThisIsWin11
         public System.Windows.Forms.Button btnPackages;
         public System.Windows.Forms.Button btnApps;
         public System.Windows.Forms.Button btnHome;
-        public System.Windows.Forms.Button btnMore;
+        public System.Windows.Forms.Button btnExtensions;
         private System.Windows.Forms.ContextMenuStrip menuMain;
         private System.Windows.Forms.ToolStripMenuItem menuMainComponents;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
     }
 }
 

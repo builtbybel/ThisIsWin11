@@ -11,6 +11,8 @@ namespace ThisIsWin11
         private Dictionary<string, Form> panelForms = new Dictionary<string, Form>();
         private Dictionary<string, Button> panelButtons = new Dictionary<string, Button>();
 
+        private Helpers.Utils updateInfo = new Helpers.Utils();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -21,6 +23,7 @@ namespace ThisIsWin11
             RegisterView(new AppsWindow(), btnApps);                        //apps page
             RegisterView(new PackagesWindow(this), btnPackages);            //packages page
             RegisterView(new AutomateWindow(), btnAutomate);                //automate page
+            RegisterView(new ExtensionsWindow(), btnExtensions);            //extensions page
             RegisterView(new SettingsWindow(this), btnSettings);            //settings page
         }
 
@@ -29,6 +32,11 @@ namespace ThisIsWin11
             string key = panelForms.Keys.FirstOrDefault();
             if (key != null)
                 ActivateView(key);
+        }
+
+        private void MainWindow_Shown(object sender, EventArgs e)
+        {
+            updateInfo.CheckForUpdates(true,true);
         }
 
         //some UI nicety
@@ -42,8 +50,8 @@ namespace ThisIsWin11
             btnApps.Text = "\uE71D" + "\n\nApps";
             btnPackages.Text = "\uE7B8" + "\n\nPackages";
             btnAutomate.Text = "\uE943" + "\n\nAutomate";
+            btnExtensions.Text = "\uE10C";
             btnSettings.Text = "\uE713" + "\n\nSettings";
-            btnMore.Text = "\uE10C";
         }
 
         public void RegisterView(Form form, Button button)
@@ -74,20 +82,5 @@ namespace ThisIsWin11
             this.pnlContainer.Controls.Add(form);
             form.Show();
         }
-
-        private void menuMainComponents_Click(object sender, EventArgs e)
-        {
-            PluginsWindow formComponents = new PluginsWindow();
-            formComponents.TopLevel = false;
-            formComponents.AutoScroll = true;
-            formComponents.FormBorderStyle = FormBorderStyle.None;
-            formComponents.Anchor = (AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom);
-            formComponents.Dock = DockStyle.Fill;
-            this.pnlContainer.Controls.Clear();
-            this.pnlContainer.Controls.Add(formComponents);
-            formComponents.Show();
-        }
-
-        private void btnMore_Click(object sender, EventArgs e) => this.menuMain.Show(Cursor.Position.X, Cursor.Position.Y);
     }
 }

@@ -17,7 +17,7 @@ namespace ThisIsWin11
 
         private readonly PowerShell powerShell = PowerShell.Create();
 
-        private static readonly string componentsVersion = "40";
+        private static readonly string componentsVersion = "41";
 
         private void menuAppsInfo_Click(object sender, EventArgs e) => MessageBox.Show("Kickassbloat\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -73,6 +73,7 @@ namespace ThisIsWin11
 
             try
             {
+                Helpers.Utils.CreateDataDir();
                 Database = File.OpenText(Helpers.Strings.Data.DataRootDir + "systemapps.txt");
             }
             catch (FileNotFoundException) //create file if it doesnt exisits

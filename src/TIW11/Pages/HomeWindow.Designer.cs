@@ -45,9 +45,9 @@ namespace ThisIsWin11
             this.btnNext = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.menuShowcase = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuCaptureToShare = new System.Windows.Forms.ToolStripMenuItem();
             this.lblDesc = new System.Windows.Forms.Label();
+            this.menuShowcase = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuShowcaseInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbView)).BeginInit();
             this.pnlMiddle.SuspendLayout();
@@ -90,7 +90,7 @@ namespace ThisIsWin11
             this.btnShowcaseMenu.FlatAppearance.BorderSize = 0;
             this.btnShowcaseMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.HotPink;
             this.btnShowcaseMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowcaseMenu.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowcaseMenu.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowcaseMenu.Location = new System.Drawing.Point(322, 0);
             this.btnShowcaseMenu.Name = "btnShowcaseMenu";
             this.btnShowcaseMenu.Size = new System.Drawing.Size(48, 51);
@@ -304,23 +304,6 @@ namespace ThisIsWin11
             this.linkLabel1.Size = new System.Drawing.Size(565, 18);
             this.linkLabel1.TabIndex = 24;
             // 
-            // menuShowcase
-            // 
-            this.menuShowcase.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.menuShowcase.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuShowcase.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuCaptureToShare});
-            this.menuShowcase.Name = "menuMain";
-            this.menuShowcase.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuShowcase.Size = new System.Drawing.Size(329, 34);
-            // 
-            // menuCaptureToShare
-            // 
-            this.menuCaptureToShare.Name = "menuCaptureToShare";
-            this.menuCaptureToShare.Size = new System.Drawing.Size(328, 30);
-            this.menuCaptureToShare.Text = "Capture and share on Twitter";
-            this.menuCaptureToShare.Click += new System.EventHandler(this.menuCaptureToShare_Click);
-            // 
             // lblDesc
             // 
             this.lblDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -335,6 +318,23 @@ namespace ThisIsWin11
             this.lblDesc.TabIndex = 137;
             this.lblDesc.Text = "description";
             // 
+            // menuShowcase
+            // 
+            this.menuShowcase.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.menuShowcase.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuShowcase.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuShowcaseInfo});
+            this.menuShowcase.Name = "menuMain";
+            this.menuShowcase.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuShowcase.Size = new System.Drawing.Size(118, 34);
+            // 
+            // menuShowcaseInfo
+            // 
+            this.menuShowcaseInfo.Name = "menuShowcaseInfo";
+            this.menuShowcaseInfo.Size = new System.Drawing.Size(117, 30);
+            this.menuShowcaseInfo.Text = "Info";
+            this.menuShowcaseInfo.Click += new System.EventHandler(this.menuShowcaseInfo_Click);
+            // 
             // HomeWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -347,7 +347,7 @@ namespace ThisIsWin11
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "HomeWindow";
             this.ShowIcon = false;
-            this.Text = "ThisIsWin11";
+            this.Text = "Presenter";
             this.Shown += new System.EventHandler(this.HomeWindow_Shown);
             this.pnlLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbView)).EndInit();
@@ -376,7 +376,7 @@ namespace ThisIsWin11
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.ContextMenuStrip menuShowcase;
-        private System.Windows.Forms.ToolStripMenuItem menuCaptureToShare;
+        private System.Windows.Forms.ToolStripMenuItem menuShowcaseInfo;
         private System.Windows.Forms.Label lblDesc;
     }
 }

@@ -10,6 +10,14 @@ namespace ThisIsWin11
         private Showcase.OS osInfo = new Showcase.OS();
         private PageTitle INavPage = PageTitle.GetStarted;
 
+        private static readonly string componentsVersion = "40";
+
+        private void menuShowcaseInfo_Click(object sender, EventArgs e) => MessageBox.Show("Presenter for Windows 11\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion + " (EOL February 28, 2022)", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        private void btnShowcaseMenu_Click(object sender, EventArgs e) => this.menuShowcase.Show(Cursor.Position.X, Cursor.Position.Y);
+
+        private void pbView_Paint(object sender, PaintEventArgs e) => pbView.Controls.Add(btnPresenter);
+
         private MainWindow mainForm = null;
 
         public HomeWindow(Form frm)
@@ -22,10 +30,8 @@ namespace ThisIsWin11
         {
             NavigationView();
             EnumTableOfContents();
-            UISelection();
 
-            if (!Helpers.Utils.IsInet())
-                MessageBox.Show("We cannot connect to the Internet.\nSome functions of the Windows 11 Presenter module are not available.", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            UISelection();
         }
 
         //some UI nicety
@@ -34,9 +40,12 @@ namespace ThisIsWin11
             //presenter button ONLY on Win11
             if (osInfo.IsWin11())
             {
-                lnkSubHeader.Text = "*Windows 11 aka Sun Valley" + "\x20"
-                                  + osInfo.GetVersion() + "\x20"
-                                  + osInfo.Is64Bit();
+                if (!Helpers.Utils.IsInet())
+                    lnkSubHeader.Text = "We cannot connect to the Internet.\n Some functions of the Windows 11 Presenter module are not available.";
+                else
+                    lnkSubHeader.Text = "*Windows 11 aka Sun Valley" + "\x20"
+                           + osInfo.GetVersion() + "\x20"
+                           + osInfo.Is64Bit();
             }
             else
             {
@@ -45,10 +54,11 @@ namespace ThisIsWin11
             }
 
             //buttons
+            btnShowcaseMenu.Text = "\uE712";
+
             btnHome.Text = "\uE80F";
             btnBack.Text = "\uE72B";
             btnNext.Text = "\uE72A";
-            btnShowcaseMenu.Text = "\uE72D";
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -89,12 +99,6 @@ namespace ThisIsWin11
 
             NavigationView();
         }
-
-        private void pbView_Paint(object sender, PaintEventArgs e) => pbView.Controls.Add(btnPresenter);
-
-        private void btnShowcaseMenu_Click(object sender, EventArgs e) => this.menuShowcase.Show(Cursor.Position.X, Cursor.Position.Y);
-
-        private void menuCaptureToShare_Click(object sender, EventArgs e) => utilInfo.CaptureToShare(this);
 
         //enum breadcrumbs to cb
         private void EnumTableOfContents()
@@ -698,6 +702,10 @@ namespace ThisIsWin11
             }
         }
 
-        private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("ms-settings:windowsupdate-action");
+        private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (Helpers.Utils.IsInet()) Process.Start("ms-settings:windowsupdate-action");
+            else Process.Start("ms-settings:network-status");
+        }
     }
 }

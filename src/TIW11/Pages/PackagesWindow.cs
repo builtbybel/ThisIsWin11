@@ -49,15 +49,22 @@ namespace ThisIsWin11
         {
             lstPackages.Items.Clear();
 
-            using (StreamReader sr = new StreamReader(Helpers.Strings.Data.DataRootDir + "packages-11.txt"))
+            try
             {
-                string line;
-
-                while ((line = sr.ReadLine()) != null)
+                using (StreamReader sr = new StreamReader(Helpers.Strings.Data.DataRootDir + "packages-11.txt"))
                 {
-                    lstPackages.Items.Add(line);
+                    string line;
+
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        lstPackages.Items.Add(line);
+                    }
+                    sr.Close();
                 }
-                sr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

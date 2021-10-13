@@ -55,11 +55,13 @@ namespace ThisIsWin11
             this.PnlLeft = new System.Windows.Forms.Panel();
             this.lstUWP = new System.Windows.Forms.ListBox();
             this.LblLeftAppName = new System.Windows.Forms.Label();
+            this.pnlBottom = new System.Windows.Forms.Panel();
             menuAppsSync = new System.Windows.Forms.ToolStripMenuItem();
             this.menuApps.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.PnlMiddle.SuspendLayout();
             this.PnlLeft.SuspendLayout();
+            this.pnlBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuAppsSync
@@ -100,7 +102,7 @@ namespace ThisIsWin11
             this.btnRemoveUWP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveUWP.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveUWP.ForeColor = System.Drawing.Color.Black;
-            this.btnRemoveUWP.Location = new System.Drawing.Point(18, 721);
+            this.btnRemoveUWP.Location = new System.Drawing.Point(16, 27);
             this.btnRemoveUWP.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveUWP.Name = "btnRemoveUWP";
             this.btnRemoveUWP.Size = new System.Drawing.Size(305, 30);
@@ -234,11 +236,11 @@ namespace ThisIsWin11
             this.lstUWPRemove.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
             this.lstUWPRemove.FormattingEnabled = true;
             this.lstUWPRemove.ItemHeight = 21;
-            this.lstUWPRemove.Location = new System.Drawing.Point(27, 118);
+            this.lstUWPRemove.Location = new System.Drawing.Point(27, 97);
             this.lstUWPRemove.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lstUWPRemove.Name = "lstUWPRemove";
             this.lstUWPRemove.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lstUWPRemove.Size = new System.Drawing.Size(341, 630);
+            this.lstUWPRemove.Size = new System.Drawing.Size(341, 651);
             this.lstUWPRemove.Sorted = true;
             this.lstUWPRemove.TabIndex = 136;
             this.lstUWPRemove.Visible = false;
@@ -265,7 +267,6 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PnlMiddle.Controls.Add(this.lblAppsHeader);
-            this.PnlMiddle.Controls.Add(this.btnRemoveUWP);
             this.PnlMiddle.Controls.Add(this.btnAddAll);
             this.PnlMiddle.Controls.Add(this.btnAdd);
             this.PnlMiddle.Controls.Add(this.btnRemove);
@@ -273,7 +274,7 @@ namespace ThisIsWin11
             this.PnlMiddle.Controls.Add(this.btnAppsMenu);
             this.PnlMiddle.Location = new System.Drawing.Point(374, 3);
             this.PnlMiddle.Name = "PnlMiddle";
-            this.PnlMiddle.Size = new System.Drawing.Size(342, 767);
+            this.PnlMiddle.Size = new System.Drawing.Size(342, 688);
             this.PnlMiddle.TabIndex = 158;
             // 
             // lblAppsHeader
@@ -410,6 +411,15 @@ namespace ThisIsWin11
             this.LblLeftAppName.TabIndex = 26;
             this.LblLeftAppName.Text = "Name";
             // 
+            // pnlBottom
+            // 
+            this.pnlBottom.Controls.Add(this.btnRemoveUWP);
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBottom.Location = new System.Drawing.Point(371, 697);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(345, 73);
+            this.pnlBottom.TabIndex = 160;
+            // 
             // AppsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -417,6 +427,7 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.PnlLeft);
             this.Controls.Add(this.pnlRight);
             this.Controls.Add(this.PnlMiddle);
@@ -431,6 +442,7 @@ namespace ThisIsWin11
             this.PnlMiddle.ResumeLayout(false);
             this.PnlLeft.ResumeLayout(false);
             this.PnlLeft.PerformLayout();
+            this.pnlBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -460,5 +472,6 @@ namespace ThisIsWin11
         private System.Windows.Forms.Label LblLeftAppName;
         private System.Windows.Forms.ListBox lstUWPRemove;
         private System.Windows.Forms.ListBox lstUWP;
+        private System.Windows.Forms.Panel pnlBottom;
     }
 }

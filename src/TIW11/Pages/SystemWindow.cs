@@ -14,7 +14,7 @@ namespace ThisIsWin11
 {
     public partial class SystemWindow : Form
     {
-        private static readonly string componentsVersion = "70 Preview";
+        private static readonly string componentsVersion = "71";
         private readonly string osWarning = "We could not recognize this system as Windows 11. Some settings are not tested on this operating system and could lead to malfunction.";
 
         private Showcase.OS osInfo = new Showcase.OS();
@@ -48,11 +48,10 @@ namespace ThisIsWin11
             logger.SetTarget(rtbPS);        //logs messages to target rtb
             btnSystemMenu.Text = "\uE712";
 
-            rtbPS.Text = "As long as Windows 11 is in development, system and privacy settings will be rolled out cautiously." +
-                         Environment.NewLine + Environment.NewLine +
-                         "If you have tried one or the other fix and tweak, feel free to suggest it here: " + Helpers.Strings.Uri.GitRepo +
-                         "\n\nClick the <Check> button to run a quick check of your Windows 11 configuration." +
-                         "\n\nYou can always restore the default Windows 11 settings. The option for this can be found in the upper right menu.";
+            rtbPS.Text = "Click the <Check> button to run a quick check of your Windows 11 configuration." +
+                         "\n\nYou can always restore the default Windows 11 settings. The option for this can be found in the upper right menu." +
+                          Environment.NewLine + Environment.NewLine +
+                         "If you have tried one or the other fix and tweak, feel free to suggest it here: " + Helpers.Strings.Uri.GitRepo;
         }
 
         public void InitializeAssessments()
@@ -73,6 +72,7 @@ namespace ThisIsWin11
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.SnapAssistFlyout()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.Widgets()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarAl()),
+                new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarSi()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarSearch()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarChat()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskView()),

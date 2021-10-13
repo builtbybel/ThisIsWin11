@@ -93,7 +93,7 @@ namespace ThisIsWin11
             this.btnSystemCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSystemCheck.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSystemCheck.ForeColor = System.Drawing.Color.Black;
-            this.btnSystemCheck.Location = new System.Drawing.Point(24, 715);
+            this.btnSystemCheck.Location = new System.Drawing.Point(24, 714);
             this.btnSystemCheck.Margin = new System.Windows.Forms.Padding(2);
             this.btnSystemCheck.Name = "btnSystemCheck";
             this.btnSystemCheck.Size = new System.Drawing.Size(213, 30);
@@ -211,7 +211,7 @@ namespace ThisIsWin11
             this.btnSystemFix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSystemFix.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSystemFix.ForeColor = System.Drawing.Color.Black;
-            this.btnSystemFix.Location = new System.Drawing.Point(250, 715);
+            this.btnSystemFix.Location = new System.Drawing.Point(251, 714);
             this.btnSystemFix.Margin = new System.Windows.Forms.Padding(2);
             this.btnSystemFix.Name = "btnSystemFix";
             this.btnSystemFix.Size = new System.Drawing.Size(213, 30);
@@ -248,16 +248,13 @@ namespace ThisIsWin11
             // 
             // rtbPS
             // 
-            this.rtbPS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbPS.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rtbPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbPS.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbPS.Location = new System.Drawing.Point(27, 99);
+            this.rtbPS.Location = new System.Drawing.Point(25, 99);
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ReadOnly = true;
-            this.rtbPS.Size = new System.Drawing.Size(343, 668);
+            this.rtbPS.Size = new System.Drawing.Size(343, 654);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = "";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
@@ -303,14 +300,14 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.Controls.Add(this.btnSystemFix);
+            this.Controls.Add(this.btnSystemCheck);
             this.Controls.Add(this.lnkSystemPreset);
             this.Controls.Add(this.lnkSubHeader);
-            this.Controls.Add(this.btnSystemFix);
             this.Controls.Add(this.progress);
             this.Controls.Add(this.tvwAssessments);
             this.Controls.Add(this.btnSystemMenu);
             this.Controls.Add(this.lblHeader);
-            this.Controls.Add(this.btnSystemCheck);
             this.Controls.Add(this.pnlRight);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "SystemWindow";

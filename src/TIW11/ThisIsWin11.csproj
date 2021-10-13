@@ -87,11 +87,11 @@
     <Compile Include="Modules\PumpedApp\Assessments\System\TeamsAutostart.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\System\XPSWriter.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarSi.cs" />
-    <Compile Include="Pages\PluginsWindow.cs">
+    <Compile Include="Pages\ExtensionsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\PluginsWindow.Designer.cs">
-      <DependentUpon>PluginsWindow.cs</DependentUpon>
+    <Compile Include="Pages\ExtensionsWindow.Designer.cs">
+      <DependentUpon>ExtensionsWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\HomeWindow.cs">
       <SubType>Form</SubType>
@@ -182,8 +182,8 @@
     <Compile Include="Modules\PumpedApp\AssessmentBase.cs" />
     <Compile Include="Modules\PumpedApp\RegistryHelper.cs" />
     <Compile Include="Modules\PumpedApp\WindowsHelper.cs" />
-    <EmbeddedResource Include="Pages\PluginsWindow.resx">
-      <DependentUpon>PluginsWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\ExtensionsWindow.resx">
+      <DependentUpon>ExtensionsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\SettingsWindow.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>

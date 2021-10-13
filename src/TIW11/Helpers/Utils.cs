@@ -1,50 +1,25 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Net;
+using System.Reflection;
+using System.Text;
 using System.Windows.Forms;
 
 namespace ThisIsWin11.Helpers
 {
     internal class Utils
     {
-        private readonly Showcase.OS osInfo = new Showcase.OS();
-
         public static Version CurrentVersion = new Version(Application.ProductVersion);
         public static Version LatestVersion;
 
-        private HomeWindow showcaseForm = null;
-
-        //capture screen and post web intent to twitter
-        public void CaptureToShare(Form frm)
+        public void CheckForUpdates(bool InetStatusMessage, bool silentCheck = false)
         {
-            showcaseForm = frm as HomeWindow;
-
-            Form f = showcaseForm;
-            Bitmap bmp = new Bitmap(f.Width, f.Height);
-            f.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
-
-            SaveFileDialog dialog = new SaveFileDialog
+            WebClient client = new WebClient
             {
-                InitialDirectory = Application.StartupPath,
-                Filter = "PNG Images|*.png",
-                FileName = "ThisIsWin11-" + showcaseForm.lblHeader.Text + "\x20" + osInfo.ComputerName
+                Encoding = Encoding.UTF8
             };
 
-            DialogResult result = dialog.ShowDialog(showcaseForm);
-
-            if (result == DialogResult.OK)
-            {
-                bmp.Save(dialog.FileName);
-
-                MessageBox.Show("Click <OK> to prepare the Twitter status. After that you just need to upload the result image you just created." + dialog.FileName);
-                Process.Start(Strings.TweetIntent); //tweet Web Intent
-            }
-        }
-
-        public void CheckForUpdates(bool InetStatusMessage)
-        {
             if (IsInet() == true)
             {
                 string versionContent = new WebClient().DownloadString(Strings.Uri.GitVersionHint);
@@ -65,17 +40,59 @@ namespace ThisIsWin11.Helpers
 
                 if (equals == 0) //up-to-date
                 {
+                    //update check on app launch
+                    if (silentCheck)
+                    {
+                        return;
+                    }
+
                     MessageBox.Show("No new release found.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else if (equals < 0) //um, unofficial!
+                else if (equals < 0) //unofficial!
                 {
-                    MessageBox.Show("Looks like an unoffical release.\nTry again later...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
                 else //update available
                 {
-                    if (MessageBox.Show("A new app version " + LatestVersion + " is available.\nDo you want to goto the Github update page?" + Environment.NewLine + versionContent, "App update available", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("A new app version " + LatestVersion + " is available.\nDo you want to update?" + Environment.NewLine + versionContent, "App update available", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        Process.Start(Strings.Uri.GitUpdateRepo + LatestVersion);
+                        try
+                        {
+                            Assembly currentAssembly = Assembly.GetEntryAssembly();
+
+                            if (currentAssembly == null)
+                            {
+                                currentAssembly = Assembly.GetCallingAssembly();
+                            }
+
+                            string appName = Path.GetFileNameWithoutExtension(currentAssembly.Location);
+                            string appDir = Path.GetDirectoryName(currentAssembly.Location);
+                            string appExtension = Path.GetExtension(currentAssembly.Location);
+
+                            string archiveFile = Path.Combine(appDir, "TIW11_old" + appExtension);
+                            string appFile = Path.Combine(appDir, appName + appExtension);
+                            string tempFile = Path.Combine(appDir, "TIW11_tmp" + appExtension);
+
+                            client.DownloadFile(string.Format("https://github.com/builtbybel/ThisIsWin11/releases/download/{0}/TIW11_updateonly.exe", LatestVersion), tempFile);
+
+                            //delete previous version
+                            if (File.Exists(archiveFile))
+                            {
+                                File.Delete(archiveFile);
+                            }
+
+                            //backup
+                            File.Move(appFile, archiveFile);
+
+                            //update
+                            File.Move(tempFile, appFile);
+
+                            Application.Restart();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
                 }
             }
@@ -103,6 +120,14 @@ namespace ThisIsWin11.Helpers
             {
                 return false;
             }
+        }
+
+        //create data directory if non present
+        public static void CreateDataDir()
+        {
+            bool dirExists = Directory.Exists(@"data");
+            if (!dirExists)
+                Directory.CreateDirectory(@"data");
         }
 
         //launch Urls in rtb control
