@@ -14,7 +14,7 @@ namespace ThisIsWin11
 {
     public partial class SystemWindow : Form
     {
-        private static readonly string componentsVersion = "71";
+        private static readonly string componentsVersion = "73";
         private readonly string osWarning = "We could not recognize this system as Windows 11. Some settings are not tested on this operating system and could lead to malfunction.";
 
         private Showcase.OS osInfo = new Showcase.OS();
@@ -77,10 +77,16 @@ namespace ThisIsWin11
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarChat()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskView()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.FileExplorer()),
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.ExplorerPatcher()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.MostUsedApps()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.HiddenFileFolder()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.HiddenFileExt()),
+            })
+            {
+                Checked = true,
+            };
+
+            TreeNode thirdparty = new TreeNode("Third-party", new TreeNode[] {
+                new AssessmentNode(new PumpedApp.Assessment.ThirdParty.ExplorerPatcher()),
             })
             {
                 Checked = true,
@@ -155,6 +161,7 @@ namespace ThisIsWin11
             root.Nodes.AddRange(new TreeNode[]
             {
                 appearance,
+                thirdparty,
                 system,
                 gaming,
                 privacy,

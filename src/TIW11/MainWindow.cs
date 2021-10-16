@@ -27,16 +27,13 @@ namespace ThisIsWin11
             RegisterView(new SettingsWindow(this), btnSettings);            //settings page
         }
 
-        private void MainWindow_Load(object sender, EventArgs e)
+        private void MainWindow_Shown(object sender, EventArgs e)
         {
             string key = panelForms.Keys.FirstOrDefault();
             if (key != null)
                 ActivateView(key);
-        }
 
-        private void MainWindow_Shown(object sender, EventArgs e)
-        {
-            updateInfo.CheckForUpdates(true,true);
+            updateInfo.CheckForUpdates(true, true);
         }
 
         //some UI nicety
@@ -81,6 +78,55 @@ namespace ThisIsWin11
             this.pnlContainer.Controls.Clear();
             this.pnlContainer.Controls.Add(form);
             form.Show();
+        }
+
+        private void btnHome_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnHome.ForeColor =
+                Color.MediumVioletRed; btnSystem.ForeColor = btnApps.ForeColor = btnPackages.ForeColor = btnAutomate.ForeColor = btnExtensions.ForeColor = btnSettings.ForeColor =
+                Color.DimGray;
+        }
+
+        private void btnSystem_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnSystem.ForeColor =
+                Color.MediumVioletRed; btnHome.ForeColor = btnApps.ForeColor = btnPackages.ForeColor = btnAutomate.ForeColor = btnExtensions.ForeColor = btnSettings.ForeColor =
+                Color.DimGray;
+        }
+
+        private void btnApps_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnApps.ForeColor =
+                Color.MediumVioletRed; btnSystem.ForeColor = btnHome.ForeColor = btnPackages.ForeColor = btnAutomate.ForeColor = btnExtensions.ForeColor = btnSettings.ForeColor =
+                Color.DimGray;
+        }
+
+        private void btnPackages_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnPackages.ForeColor =
+                Color.MediumVioletRed; btnApps.ForeColor = btnSystem.ForeColor = btnHome.ForeColor = btnAutomate.ForeColor = btnExtensions.ForeColor = btnSettings.ForeColor =
+                Color.DimGray;
+        }
+
+        private void btnAutomate_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnAutomate.ForeColor =
+                Color.MediumVioletRed; btnPackages.ForeColor = btnApps.ForeColor = btnSystem.ForeColor = btnHome.ForeColor = btnExtensions.ForeColor = btnSettings.ForeColor =
+                Color.DimGray;
+        }
+
+        private void btnExtensions_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnExtensions.ForeColor =
+                Color.MediumVioletRed; btnAutomate.ForeColor = btnPackages.ForeColor = btnApps.ForeColor = btnSystem.ForeColor = btnHome.ForeColor = btnSettings.ForeColor =
+                Color.DimGray;
+        }
+
+        private void btnSettings_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnSettings.ForeColor =
+                Color.MediumVioletRed; btnExtensions.ForeColor = btnAutomate.ForeColor = btnPackages.ForeColor = btnApps.ForeColor = btnSystem.ForeColor = btnHome.ForeColor =
+                Color.DimGray;
         }
     }
 }

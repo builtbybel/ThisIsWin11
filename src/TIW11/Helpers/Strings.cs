@@ -34,6 +34,9 @@ namespace ThisIsWin11.Helpers
 
         public static class Paths
         {
+            public static string WinDir = Environment.GetFolderPath(Environment.SpecialFolder.Windows);
+            public static string AppDataDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
             public static string SysDir = Path.GetPathRoot(Environment.SystemDirectory);
 
             public static string ShellCommandPrompt = File.Exists(SysDir + @"Windows\Sysnative\cmd.exe") ?

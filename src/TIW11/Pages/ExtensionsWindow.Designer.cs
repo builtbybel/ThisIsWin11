@@ -36,10 +36,6 @@ namespace ThisIsWin11
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DataGridViewPlugs = new System.Windows.Forms.DataGridView();
-            this.ColumnState = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textPlugsSearch = new System.Windows.Forms.TextBox();
             this.btnPluginsMenu = new System.Windows.Forms.Button();
             this.pnlTop = new System.Windows.Forms.Panel();
@@ -50,10 +46,14 @@ namespace ThisIsWin11
             this.lnkPlugsAttribution = new System.Windows.Forms.LinkLabel();
             this.lblPlugsAttribution = new System.Windows.Forms.Label();
             this.menuPlugins = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuPlugsRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPlugsPopOut = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuPlugsInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuPlugsRefresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.ColumnAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnState = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewPlugs)).BeginInit();
             this.pnlTop.SuspendLayout();
             this.menuPlugins.SuspendLayout();
@@ -126,49 +126,6 @@ namespace ThisIsWin11
             this.DataGridViewPlugs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewPlugs_CellContentClick);
             this.DataGridViewPlugs.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DataGridViewPlugins_RowPrePaint);
             this.DataGridViewPlugs.SelectionChanged += new System.EventHandler(this.DataGridViewPlugs_SelectionChanged);
-            // 
-            // ColumnState
-            // 
-            this.ColumnState.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnState.DataPropertyName = "State";
-            this.ColumnState.FalseValue = "0";
-            this.ColumnState.Frozen = true;
-            this.ColumnState.HeaderText = "Status";
-            this.ColumnState.IndeterminateValue = "2";
-            this.ColumnState.MinimumWidth = 10;
-            this.ColumnState.Name = "ColumnState";
-            this.ColumnState.ReadOnly = true;
-            this.ColumnState.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnState.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ColumnState.ThreeState = true;
-            this.ColumnState.TrueValue = "1";
-            this.ColumnState.Width = 71;
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnName.DataPropertyName = "Name";
-            this.ColumnName.HeaderText = "Name";
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.ReadOnly = true;
-            this.ColumnName.Width = 68;
-            // 
-            // ColumnDescription
-            // 
-            this.ColumnDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnDescription.DataPropertyName = "Description";
-            this.ColumnDescription.HeaderText = "Description";
-            this.ColumnDescription.Name = "ColumnDescription";
-            this.ColumnDescription.ReadOnly = true;
-            // 
-            // ColumnAuthor
-            // 
-            this.ColumnAuthor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnAuthor.DataPropertyName = "Author";
-            this.ColumnAuthor.HeaderText = "Author";
-            this.ColumnAuthor.Name = "ColumnAuthor";
-            this.ColumnAuthor.ReadOnly = true;
-            this.ColumnAuthor.Width = 75;
             // 
             // textPlugsSearch
             // 
@@ -309,6 +266,13 @@ namespace ThisIsWin11
             this.menuPlugins.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuPlugins.Size = new System.Drawing.Size(195, 100);
             // 
+            // menuPlugsRefresh
+            // 
+            this.menuPlugsRefresh.Name = "menuPlugsRefresh";
+            this.menuPlugsRefresh.Size = new System.Drawing.Size(194, 30);
+            this.menuPlugsRefresh.Text = "Refresh";
+            this.menuPlugsRefresh.Click += new System.EventHandler(this.menuPlugsRefresh_Click);
+            // 
             // menuPlugsPopOut
             // 
             this.menuPlugsPopOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -329,12 +293,48 @@ namespace ThisIsWin11
             this.menuPlugsInfo.Text = "Info";
             this.menuPlugsInfo.Click += new System.EventHandler(this.menuPluginsInfo_Click);
             // 
-            // menuPlugsRefresh
+            // ColumnAuthor
             // 
-            this.menuPlugsRefresh.Name = "menuPlugsRefresh";
-            this.menuPlugsRefresh.Size = new System.Drawing.Size(194, 30);
-            this.menuPlugsRefresh.Text = "Refresh";
-            this.menuPlugsRefresh.Click += new System.EventHandler(this.menuPlugsRefresh_Click);
+            this.ColumnAuthor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnAuthor.DataPropertyName = "Author";
+            this.ColumnAuthor.HeaderText = "Author";
+            this.ColumnAuthor.Name = "ColumnAuthor";
+            this.ColumnAuthor.ReadOnly = true;
+            this.ColumnAuthor.Width = 75;
+            // 
+            // ColumnDescription
+            // 
+            this.ColumnDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnDescription.DataPropertyName = "Description";
+            this.ColumnDescription.HeaderText = "Description";
+            this.ColumnDescription.Name = "ColumnDescription";
+            this.ColumnDescription.ReadOnly = true;
+            // 
+            // ColumnName
+            // 
+            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnName.DataPropertyName = "Name";
+            this.ColumnName.HeaderText = "Name";
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            this.ColumnName.Width = 68;
+            // 
+            // ColumnState
+            // 
+            this.ColumnState.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnState.DataPropertyName = "State";
+            this.ColumnState.FalseValue = "0";
+            this.ColumnState.Frozen = true;
+            this.ColumnState.HeaderText = "Status";
+            this.ColumnState.IndeterminateValue = "2";
+            this.ColumnState.MinimumWidth = 10;
+            this.ColumnState.Name = "ColumnState";
+            this.ColumnState.ReadOnly = true;
+            this.ColumnState.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnState.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColumnState.ThreeState = true;
+            this.ColumnState.TrueValue = "1";
+            this.ColumnState.Width = 71;
             // 
             // ExtensionsWindow
             // 
@@ -368,10 +368,6 @@ namespace ThisIsWin11
         private System.Windows.Forms.Button btnPluginsMenu;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnState;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAuthor;
         private System.Windows.Forms.Label lblSubHeader;
         private System.Windows.Forms.LinkLabel lnkSubHeader;
         private System.Windows.Forms.LinkLabel lnkPlugsAttribution;
@@ -382,5 +378,9 @@ namespace ThisIsWin11
         private System.Windows.Forms.ToolStripMenuItem menuPlugsInfo;
         private System.Windows.Forms.LinkLabel lnkPlugsDir;
         private System.Windows.Forms.ToolStripMenuItem menuPlugsRefresh;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnState;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAuthor;
     }
 }

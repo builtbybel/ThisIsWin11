@@ -102,10 +102,10 @@ namespace ThisIsWin11
             this.btnRemoveUWP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveUWP.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveUWP.ForeColor = System.Drawing.Color.Black;
-            this.btnRemoveUWP.Location = new System.Drawing.Point(16, 27);
+            this.btnRemoveUWP.Location = new System.Drawing.Point(18, 27);
             this.btnRemoveUWP.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveUWP.Name = "btnRemoveUWP";
-            this.btnRemoveUWP.Size = new System.Drawing.Size(305, 30);
+            this.btnRemoveUWP.Size = new System.Drawing.Size(307, 32);
             this.btnRemoveUWP.TabIndex = 104;
             this.btnRemoveUWP.Text = "Empty Recycle Bin";
             this.btnRemoveUWP.UseVisualStyleBackColor = false;

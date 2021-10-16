@@ -193,6 +193,7 @@ namespace ThisIsWin11
             this.tvwAssessments.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tvwAssessments.CheckBoxes = true;
             this.tvwAssessments.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tvwAssessments.HotTracking = true;
             this.tvwAssessments.Location = new System.Drawing.Point(24, 99);
             this.tvwAssessments.Name = "tvwAssessments";
             this.tvwAssessments.ShowLines = false;
@@ -248,6 +249,8 @@ namespace ThisIsWin11
             // 
             // rtbPS
             // 
+            this.rtbPS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.rtbPS.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rtbPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbPS.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

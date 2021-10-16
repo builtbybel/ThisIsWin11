@@ -26,8 +26,9 @@ namespace ThisIsWin11
         private void PackagesWindow_Load(object sender, EventArgs e)
         {
             IntializePackages();
-            IsWingetInstalled();
             UISelection();
+
+            IsWingetInstalled();
         }
 
         //some UI nicety
@@ -159,6 +160,7 @@ namespace ThisIsWin11
             string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Packages\\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe");
             if (!Directory.Exists(path))
             {
+                rtbPS.Text += "\n\n\nWe could not locate winget on your System.\nPlease install it by clicking on the button below";
                 btnInstallWinget.Visible = true;
             }
             else btnInstallWinget.Visible = false;
