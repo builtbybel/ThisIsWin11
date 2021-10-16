@@ -1,5 +1,5 @@
 
-- Integrated the ExplorerPatcher (powered by https://github.com/valinet/ExplorerPatcher) hack to system module (aka PumpedApp)
+Overall, version 0.87 of ThisIsWin11 brings UI and quality improvements to provide automatic update functionality to ThisIsWin11.
 
 From the blog:
 There are plans for the rebranding TIW11
