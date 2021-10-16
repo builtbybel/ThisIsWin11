@@ -33,7 +33,7 @@ namespace ThisIsWin11.PumpedApp.Assessment.Personalization
             {
                 Registry.SetValue(keyName, "EnableSnapAssistFlyout", desiredValue, RegistryValueKind.DWord);
 
-                logger.Log("- Snap Assist Layout has been disabled.");
+                logger.Log("- Snap Assist Layout has been disabled.\nPlease restart your PC for the changes to take effect.");
                 logger.Log(keyName);
                 return true;
             }
@@ -48,7 +48,7 @@ namespace ThisIsWin11.PumpedApp.Assessment.Personalization
             try
             {
                 Registry.SetValue(keyName, "EnableSnapAssistFlyout", 1, RegistryValueKind.DWord);
-                logger.Log("- Snap Assist has been enabled.");
+                logger.Log("- Snap Assist has been enabled.\nPlease restart your PC for the changes to take effect.");
                 return true;
             }
             catch

@@ -11,7 +11,7 @@ namespace ThisIsWin11.PumpedApp.Assessment.Personalization
 
         public override string ID()
         {
-            return "Use Window dark theme";
+            return "Use Windows dark theme";
         }
 
         public override string Info()
