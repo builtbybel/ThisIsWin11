@@ -1,7 +1,7 @@
 
 - Improved app initialization
-- Fixed critical bug in packages module (in winget no paramater was specified to accept the source license agreement, and avoid prompting) https://github.com/builtbybel/ThisIsWin11/issues/30
-- Added option to system > personalization module (aka PumpedApp) to  "Uninstall Widgets" https://github.com/builtbybel/ThisIsWin11/issues/17
+- Fixed critical bug in packages module (in winget no paramater was specified to accept the source license agreement, and avoid prompting)
+- Added option to system > personalization module (aka PumpedApp) to  "Uninstall Widgets"
 - Updated some third party packages, e.g. Windows Package Manager, ExplorerPatcher
 - Minor UI and bug fixes
 
