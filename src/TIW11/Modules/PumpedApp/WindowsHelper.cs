@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Text;
 using ThisIsWin11.PumpedApp;
 
@@ -46,8 +47,8 @@ namespace ThisIsWin11
                         Arguments = args,
                         UseShellExecute = false,
                         RedirectStandardOutput = true,
-                        CreateNoWindow = true,
-                        StandardOutputEncoding = Encoding.GetEncoding(850) //standard cmd-page
+                        StandardOutputEncoding = Encoding.GetEncoding(CultureInfo.CurrentCulture.TextInfo.OEMCodePage),
+                        CreateNoWindow = true
                     }
                 };
                 proc.Start();
