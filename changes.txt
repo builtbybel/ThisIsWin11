@@ -1,5 +1,9 @@
 
-Overall, version 0.87 of ThisIsWin11 brings UI and quality improvements to provide automatic update functionality to ThisIsWin11.
+- Improved app initialization
+- Fixed critical bug in packages module (in winget no paramater was specified to accept the source license agreement, and avoid prompting) https://github.com/builtbybel/ThisIsWin11/issues/30
+- Added option to system > personalization module (aka PumpedApp) to  "Uninstall Widgets" https://github.com/builtbybel/ThisIsWin11/issues/17
+- Updated some third party packages, e.g. Windows Package Manager, ExplorerPatcher
+- Minor UI and bug fixes
 
 From the blog:
 There are plans for the rebranding TIW11
