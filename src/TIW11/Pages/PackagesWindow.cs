@@ -108,23 +108,27 @@ namespace ThisIsWin11
 
             foreach (string package in lstPackages.CheckedItems)
             {
+                btnRunPackage.Enabled = false;
+                btnCreatePackage.Enabled = false;
+                lstPackages.Enabled = false;
                 progress.Visible = true;
                 progress.Style = ProgressBarStyle.Marquee;
                 progress.MarqueeAnimationSpeed = 30;
-                btnRunPackage.Enabled = false;
                 rtbPS.Clear();
                 message.AppendLine("- " + package);
 
                 rtbPS.Text += Environment.NewLine + "Installing " + Environment.NewLine + message.ToString() +
                              Environment.NewLine + "You can continue working while we install...";
 
-                await Task.Run(() => InstallPackages("winget install --id=" + package + " -e"));
+                await Task.Run(() => InstallPackages("winget install --id=" + package + " -e --accept-package-agreements --accept-source-agreements"));
             }
 
             rtbPS.Text += Environment.NewLine + Environment.NewLine + "I'm done.\nI'm open.\nFollow me on " + Helpers.Strings.Uri.GitRepo;
 
             progress.Visible = false;
             btnRunPackage.Enabled = true;
+            btnCreatePackage.Enabled = true;
+            lstPackages.Enabled = true;
         }
 
         private void InstallPackages(string package)
@@ -168,7 +172,7 @@ namespace ThisIsWin11
 
         private void btnInstallWinget_Click(object sender, EventArgs e)
         {
-            String url = "https://github.com/microsoft/winget-cli/releases/download/v1.0.11692/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle";
+            String url = "https://github.com/microsoft/winget-cli/releases/download/v1.1.12653/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle";
 
             progress.Visible = true;
             try

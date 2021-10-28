@@ -16,7 +16,6 @@ namespace ThisIsWin11
         public MainWindow()
         {
             InitializeComponent();
-            UISelection();
 
             RegisterView(new HomeWindow(this), btnHome);                    //home page
             RegisterView(new SystemWindow(), btnSystem);                    //system page
@@ -29,10 +28,15 @@ namespace ThisIsWin11
 
         private void MainWindow_Shown(object sender, EventArgs e)
         {
+            //load home page
             string key = panelForms.Keys.FirstOrDefault();
             if (key != null)
                 ActivateView(key);
 
+            //load ui
+            UISelection();
+
+            //check for updates
             updateInfo.CheckForUpdates(true, true);
         }
 
@@ -49,6 +53,15 @@ namespace ThisIsWin11
             btnAutomate.Text = "\uE943" + "\n\nAutomate";
             btnExtensions.Text = "\uE10C";
             btnSettings.Text = "\uE713" + "\n\nSettings";
+
+            btnHome.Visible =
+            btnSystem.Visible =
+            btnApps.Visible =
+            btnPackages.Visible =
+            btnAutomate.Visible =
+            btnExtensions.Visible =
+            btnSettings.Visible
+            = true;
         }
 
         public void RegisterView(Form form, Button button)
@@ -118,7 +131,7 @@ namespace ThisIsWin11
         private void btnExtensions_MouseDown(object sender, MouseEventArgs e)
         {
             btnExtensions.ForeColor =
-                Color.MediumVioletRed; btnAutomate.ForeColor = btnPackages.ForeColor = btnApps.ForeColor = btnSystem.ForeColor = btnHome.ForeColor = btnSettings.ForeColor =
+                Color.Black; btnAutomate.ForeColor = btnPackages.ForeColor = btnApps.ForeColor = btnSystem.ForeColor = btnHome.ForeColor = btnSettings.ForeColor =
                 Color.DimGray;
         }
 

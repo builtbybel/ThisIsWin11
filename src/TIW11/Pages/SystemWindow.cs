@@ -71,6 +71,7 @@ namespace ThisIsWin11
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.Transparency()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.SnapAssistFlyout()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.Widgets()),
+                new AssessmentNode(new PumpedApp.Assessment.Personalization.WidgetsClean()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarAl()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarSi()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarSearch()),

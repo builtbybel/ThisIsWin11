@@ -79,6 +79,7 @@ namespace ThisIsWin11
             this.btnExtensions.TabIndex = 145;
             this.btnExtensions.Text = "...";
             this.btnExtensions.UseVisualStyleBackColor = false;
+            this.btnExtensions.Visible = false;
             this.btnExtensions.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnExtensions_MouseDown);
             // 
             // btnHome
@@ -97,6 +98,7 @@ namespace ThisIsWin11
             this.btnHome.TabIndex = 144;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Visible = false;
             this.btnHome.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnHome_MouseDown);
             // 
             // btnSettings
@@ -116,6 +118,7 @@ namespace ThisIsWin11
             this.btnSettings.TabIndex = 143;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Visible = false;
             this.btnSettings.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnSettings_MouseDown);
             // 
             // btnAutomate
@@ -134,6 +137,7 @@ namespace ThisIsWin11
             this.btnAutomate.TabIndex = 142;
             this.btnAutomate.Text = "Automate";
             this.btnAutomate.UseVisualStyleBackColor = false;
+            this.btnAutomate.Visible = false;
             this.btnAutomate.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnAutomate_MouseDown);
             // 
             // btnPackages
@@ -152,6 +156,7 @@ namespace ThisIsWin11
             this.btnPackages.TabIndex = 141;
             this.btnPackages.Text = "Packages";
             this.btnPackages.UseVisualStyleBackColor = false;
+            this.btnPackages.Visible = false;
             this.btnPackages.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnPackages_MouseDown);
             // 
             // btnApps
@@ -170,6 +175,7 @@ namespace ThisIsWin11
             this.btnApps.TabIndex = 140;
             this.btnApps.Text = "Apps";
             this.btnApps.UseVisualStyleBackColor = false;
+            this.btnApps.Visible = false;
             this.btnApps.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnApps_MouseDown);
             // 
             // btnSystem
@@ -188,6 +194,7 @@ namespace ThisIsWin11
             this.btnSystem.TabIndex = 139;
             this.btnSystem.Text = "System";
             this.btnSystem.UseVisualStyleBackColor = false;
+            this.btnSystem.Visible = false;
             this.btnSystem.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnSystem_MouseDown);
             // 
             // pnlContainer

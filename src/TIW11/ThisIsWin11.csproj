@@ -61,6 +61,7 @@
     <Compile Include="Helpers\Keystrokes.cs" />
     <Compile Include="Helpers\Strings.cs" />
     <Compile Include="Helpers\Utils.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\WidgetsClean.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\ThirdParty\ExplorerPatcher.cs" />
     <Compile Include="Plugins\PluginsBase.cs" />
     <Compile Include="Plugins\PluginsBindingList.cs" />

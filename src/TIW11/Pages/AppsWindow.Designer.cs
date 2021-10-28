@@ -83,7 +83,7 @@ namespace ThisIsWin11
             this.checkAppsSystem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkAppsSystem.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkAppsSystem.ForeColor = System.Drawing.Color.Black;
-            this.checkAppsSystem.Location = new System.Drawing.Point(17, 728);
+            this.checkAppsSystem.Location = new System.Drawing.Point(11, 728);
             this.checkAppsSystem.Margin = new System.Windows.Forms.Padding(2);
             this.checkAppsSystem.Name = "checkAppsSystem";
             this.checkAppsSystem.Size = new System.Drawing.Size(145, 31);
