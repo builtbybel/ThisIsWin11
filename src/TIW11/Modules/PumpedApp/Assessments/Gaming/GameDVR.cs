@@ -43,7 +43,7 @@ namespace ThisIsWin11.PumpedApp.Assessment.Gaming
                 Registry.SetValue(keyName, "GameDVR_FSEBehaviorMode", desiredValue2, RegistryValueKind.DWord);
                 Registry.SetValue(keyName2, "value", desiredValue3, RegistryValueKind.DWord);
 
-                logger.Log("- Game DVR feature has been successfully enabled.");
+                logger.Log("- Game DVR feature has been successfully disabled.");
                 logger.Log(keyName + Environment.NewLine + keyName2);
                 return true;
             }
