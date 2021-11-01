@@ -7,7 +7,7 @@ namespace ThisIsWin11.PumpedApp
     {
         private static RichTextBox target = null;
 
-        //errorlogger to target rtbPS
+        // Errorlogger to target rtbPS
         public void SetTarget(RichTextBox richText)
         {
             target = richText;

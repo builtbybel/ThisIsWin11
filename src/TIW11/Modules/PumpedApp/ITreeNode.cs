@@ -6,7 +6,6 @@ namespace ThisIsWin11.PumpedApp.ITreeNode
 {
     public static class ITreeNode
     {
-        //retrieving TreeView nodes as IEnumerable
         public static IEnumerable<TreeNode> All(this TreeNodeCollection nodes)
         {
             if (nodes == null) throw new ArgumentNullException(nameof(nodes));

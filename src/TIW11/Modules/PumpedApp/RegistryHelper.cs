@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace ThisIsWin11.PumpedApp.Assessment
 {
-    ///check whether registry values equal
+    // Check whether registry values equal
     internal class RegistryHelper
     {
         public AssessmentBase Assessment { get; }
@@ -24,7 +24,7 @@ namespace ThisIsWin11.PumpedApp.Assessment
             }
         }
 
-        ///check whether registry strings equal
+        // Check whether registry strings equal
         public static bool StringEquals(string keyName, string valueName, string expectedValue)
         {
             try
