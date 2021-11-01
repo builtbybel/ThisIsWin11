@@ -1,9 +1,9 @@
 
-- Improved app initialization
-- Fixed critical bug in packages module (in winget no paramater was specified to accept the source license agreement, and avoid prompting)
-- Added option to system > personalization module (aka PumpedApp) to  "Uninstall Widgets"
-- Updated some third party packages, e.g. Windows Package Manager, ExplorerPatcher
-- Minor UI and bug fixes
+- Code Refactoring
+- Refactored update process (split into app and data/package updates. both are now installed automatically, when checking for updates)
+- Updated apps module aka "Kickassbloat" and added option to Export apps in recycle bin (helpful when importing on other systems). Sync function has been improved too.
+- Minor spelling fixes
+- Minor bug fixes
 
 From the blog:
 There are plans for the rebranding TIW11
