@@ -11,7 +11,7 @@ namespace ThisIsWin11.PumpedApp.Assessment.Gaming
 
         public override string ID()
         {
-            return "Adjust visual effecs for best performance";
+            return "Adjust visual effects for best performance";
         }
 
         public override string Info()
