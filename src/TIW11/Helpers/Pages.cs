@@ -1,4 +1,4 @@
-﻿namespace ThisIsWin11
+﻿namespace ThisIsWin11.Presenter
 {
     public enum PageTitle
     {

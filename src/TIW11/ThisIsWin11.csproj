@@ -42,6 +42,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.IO.Compression.FileSystem.dll</HintPath>
+    </Reference>
     <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Management.Automation\v4.0_3.0.0.0__31bf3856ad364e35\System.Management.Automation.dll</HintPath>
@@ -61,10 +64,10 @@
     <Compile Include="Helpers\Keystrokes.cs" />
     <Compile Include="Helpers\Strings.cs" />
     <Compile Include="Helpers\Utils.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Personalization\WidgetsClean.cs" />
+    <Compile Include="Modules\PumpedApp\Assessments\Personalization\WidgetsRemove.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\ThirdParty\ExplorerPatcher.cs" />
-    <Compile Include="Plugins\PluginsBase.cs" />
-    <Compile Include="Plugins\PluginsBindingList.cs" />
+    <Compile Include="Modules\Extensions\PluginsBase.cs" />
+    <Compile Include="Modules\Extensions\PluginsBindingList.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Gaming\PowerThrottling.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Gaming\GameDVR.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Gaming\VisualFX.cs" />
@@ -177,8 +180,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Showcase\LockScreen.cs" />
-    <Compile Include="Showcase\OS.cs" />
+    <Compile Include="Modules\Presenter\LockScreen.cs" />
+    <Compile Include="Modules\Presenter\OS.cs" />
     <Compile Include="Modules\PumpedApp\AssessmentNode.cs" />
     <Compile Include="Modules\PumpedApp\ITreeNode.cs" />
     <Compile Include="Modules\PumpedApp\AssessmentBase.cs" />
@@ -206,6 +209,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\HomeWindow.resx">
       <DependentUpon>HomeWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -243,6 +247,10 @@
     <Content Include="AppIcon.ico" />
     <None Include="Resources\systemapps.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="System.IO.Compression.ZipFile">
+      <Version>4.3.0</Version>
+    </PackageReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

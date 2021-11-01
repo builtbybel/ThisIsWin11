@@ -35,6 +35,7 @@ namespace ThisIsWin11
             this.lblSettingsUpdates = new System.Windows.Forms.Label();
             this.lblSettingsAbout = new System.Windows.Forms.Label();
             this.lblInstalledVersion = new System.Windows.Forms.Label();
+            this.progress = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // rtbAbout
@@ -126,6 +127,17 @@ namespace ThisIsWin11
             this.lblInstalledVersion.TabIndex = 158;
             this.lblInstalledVersion.Text = "Installed Version:";
             // 
+            // progress
+            // 
+            this.progress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progress.Location = new System.Drawing.Point(30, 192);
+            this.progress.MarqueeAnimationSpeed = 30;
+            this.progress.Name = "progress";
+            this.progress.Size = new System.Drawing.Size(213, 5);
+            this.progress.TabIndex = 163;
+            this.progress.Visible = false;
+            // 
             // SettingsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -133,6 +145,7 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.Controls.Add(this.progress);
             this.Controls.Add(this.lblInstalledVersion);
             this.Controls.Add(this.lblSettingsAbout);
             this.Controls.Add(this.lblSettingsUpdates);
@@ -158,5 +171,6 @@ namespace ThisIsWin11
         private System.Windows.Forms.Label lblSettingsAbout;
         private System.Windows.Forms.Label lblInstalledVersion;
         public System.Windows.Forms.Button btnCheckForUpdates;
+        public System.Windows.Forms.ProgressBar progress;
     }
 }

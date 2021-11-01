@@ -17,7 +17,7 @@ namespace ThisIsWin11
         private static readonly string componentsVersion = "73";
         private readonly string osWarning = "We could not recognize this system as Windows 11. Some settings are not tested on this operating system and could lead to malfunction.";
 
-        private Showcase.OS osInfo = new Showcase.OS();
+        private Presenter.OS osInfo = new Presenter.OS();
 
         private int progression = 0;
         private int progressionIncrease = 0;
@@ -42,10 +42,10 @@ namespace ThisIsWin11
             UISelection();
         }
 
-        //some UI nicety
+        // Some UI nicety
         private void UISelection()
         {
-            logger.SetTarget(rtbPS);        //logs messages to target rtb
+            logger.SetTarget(rtbPS);        // Logs messages to target rtb
             btnSystemMenu.Text = "\uE712";
 
             rtbPS.Text = "Click the <Check> button to run a quick check of your Windows 11 configuration." +
@@ -59,7 +59,7 @@ namespace ThisIsWin11
             tvwAssessments.Nodes.Clear();
             tvwAssessments.BeginUpdate();
 
-            // root node
+            // Root node
             TreeNode root = new TreeNode("Windows 11" + "\x20" + osInfo.GetVersion())
             {
                 Checked = true,
@@ -71,7 +71,7 @@ namespace ThisIsWin11
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.Transparency()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.SnapAssistFlyout()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.Widgets()),
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.WidgetsClean()),
+                new AssessmentNode(new PumpedApp.Assessment.Personalization.WidgetsRemove()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarAl()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarSi()),
                 new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarSearch()),
@@ -171,7 +171,7 @@ namespace ThisIsWin11
 
             tvwAssessments.Nodes.Add(root);
 
-            //some tvw nicety
+            // Some tvw nicety
             tvwAssessments.Nodes[0].ForeColor = Color.DeepPink;
             tvwAssessments.Nodes[0].NodeFont = new Font(tvwAssessments.Font, FontStyle.Bold);
             tvwAssessments.EndUpdate();
@@ -255,7 +255,7 @@ namespace ThisIsWin11
 
             DoProgress(100);
 
-            //add some sum
+            // Add summary
             StringBuilder sum = new StringBuilder();
             sum.Append(Environment.NewLine);
             sum.Append("======= Results =======\n");

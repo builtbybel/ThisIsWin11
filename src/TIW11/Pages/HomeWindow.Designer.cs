@@ -32,7 +32,7 @@ namespace ThisIsWin11
             this.components = new System.ComponentModel.Container();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.cbTable = new System.Windows.Forms.ComboBox();
-            this.btnShowcaseMenu = new System.Windows.Forms.Button();
+            this.btnPresenterMenu = new System.Windows.Forms.Button();
             this.btnConfigurator = new System.Windows.Forms.Button();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnCustomizer = new System.Windows.Forms.Button();
@@ -46,19 +46,19 @@ namespace ThisIsWin11
             this.btnHome = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblDesc = new System.Windows.Forms.Label();
-            this.menuShowcase = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuShowcaseInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPresenter = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuPresenterInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbView)).BeginInit();
             this.pnlMiddle.SuspendLayout();
-            this.menuShowcase.SuspendLayout();
+            this.menuPresenter.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlLeft.Controls.Add(this.cbTable);
-            this.pnlLeft.Controls.Add(this.btnShowcaseMenu);
+            this.pnlLeft.Controls.Add(this.btnPresenterMenu);
             this.pnlLeft.Controls.Add(this.btnConfigurator);
             this.pnlLeft.Controls.Add(this.lblHeader);
             this.pnlLeft.Controls.Add(this.btnCustomizer);
@@ -84,19 +84,19 @@ namespace ThisIsWin11
             this.cbTable.TabIndex = 135;
             this.cbTable.SelectedIndexChanged += new System.EventHandler(this.cbTable_SelectedIndexChanged);
             // 
-            // btnShowcaseMenu
+            // btnPresenterMenu
             // 
-            this.btnShowcaseMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowcaseMenu.FlatAppearance.BorderSize = 0;
-            this.btnShowcaseMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.HotPink;
-            this.btnShowcaseMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowcaseMenu.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowcaseMenu.Location = new System.Drawing.Point(322, 0);
-            this.btnShowcaseMenu.Name = "btnShowcaseMenu";
-            this.btnShowcaseMenu.Size = new System.Drawing.Size(48, 51);
-            this.btnShowcaseMenu.TabIndex = 136;
-            this.btnShowcaseMenu.UseVisualStyleBackColor = true;
-            this.btnShowcaseMenu.Click += new System.EventHandler(this.btnShowcaseMenu_Click);
+            this.btnPresenterMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPresenterMenu.FlatAppearance.BorderSize = 0;
+            this.btnPresenterMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.HotPink;
+            this.btnPresenterMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPresenterMenu.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPresenterMenu.Location = new System.Drawing.Point(322, 0);
+            this.btnPresenterMenu.Name = "btnPresenterMenu";
+            this.btnPresenterMenu.Size = new System.Drawing.Size(48, 51);
+            this.btnPresenterMenu.TabIndex = 136;
+            this.btnPresenterMenu.UseVisualStyleBackColor = true;
+            this.btnPresenterMenu.Click += new System.EventHandler(this.btnPresenterMenu_Click);
             // 
             // btnConfigurator
             // 
@@ -318,22 +318,22 @@ namespace ThisIsWin11
             this.lblDesc.TabIndex = 137;
             this.lblDesc.Text = "description";
             // 
-            // menuShowcase
+            // menuPresenter
             // 
-            this.menuShowcase.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.menuShowcase.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuShowcase.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuShowcaseInfo});
-            this.menuShowcase.Name = "menuMain";
-            this.menuShowcase.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuShowcase.Size = new System.Drawing.Size(118, 34);
+            this.menuPresenter.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.menuPresenter.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuPresenter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuPresenterInfo});
+            this.menuPresenter.Name = "menuMain";
+            this.menuPresenter.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuPresenter.Size = new System.Drawing.Size(118, 34);
             // 
-            // menuShowcaseInfo
+            // menuPresenterInfo
             // 
-            this.menuShowcaseInfo.Name = "menuShowcaseInfo";
-            this.menuShowcaseInfo.Size = new System.Drawing.Size(117, 30);
-            this.menuShowcaseInfo.Text = "Info";
-            this.menuShowcaseInfo.Click += new System.EventHandler(this.menuShowcaseInfo_Click);
+            this.menuPresenterInfo.Name = "menuPresenterInfo";
+            this.menuPresenterInfo.Size = new System.Drawing.Size(117, 30);
+            this.menuPresenterInfo.Text = "Info";
+            this.menuPresenterInfo.Click += new System.EventHandler(this.menuPresenterInfo_Click);
             // 
             // HomeWindow
             // 
@@ -353,7 +353,7 @@ namespace ThisIsWin11
             ((System.ComponentModel.ISupportInitialize)(this.pbView)).EndInit();
             this.pnlMiddle.ResumeLayout(false);
             this.pnlMiddle.PerformLayout();
-            this.menuShowcase.ResumeLayout(false);
+            this.menuPresenter.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,7 +362,7 @@ namespace ThisIsWin11
         #endregion
         private System.Windows.Forms.Panel pnlLeft;
         private System.Windows.Forms.ComboBox cbTable;
-        private System.Windows.Forms.Button btnShowcaseMenu;
+        private System.Windows.Forms.Button btnPresenterMenu;
         private System.Windows.Forms.Label lblSubHeader;
         private System.Windows.Forms.CheckBox btnPresenter;
         public System.Windows.Forms.PictureBox pbView;
@@ -375,8 +375,8 @@ namespace ThisIsWin11
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.ContextMenuStrip menuShowcase;
-        private System.Windows.Forms.ToolStripMenuItem menuShowcaseInfo;
+        private System.Windows.Forms.ContextMenuStrip menuPresenter;
+        private System.Windows.Forms.ToolStripMenuItem menuPresenterInfo;
         private System.Windows.Forms.Label lblDesc;
     }
 }

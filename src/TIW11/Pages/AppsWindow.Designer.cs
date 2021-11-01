@@ -30,7 +30,7 @@ namespace ThisIsWin11
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ToolStripMenuItem menuAppsSync;
+            System.Windows.Forms.ToolStripMenuItem menuAppsExport;
             this.checkAppsSystem = new System.Windows.Forms.CheckBox();
             this.btnRemoveUWP = new System.Windows.Forms.Button();
             this.lblAppsInstalledCount = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@ namespace ThisIsWin11
             this.lstUWP = new System.Windows.Forms.ListBox();
             this.LblLeftAppName = new System.Windows.Forms.Label();
             this.pnlBottom = new System.Windows.Forms.Panel();
-            menuAppsSync = new System.Windows.Forms.ToolStripMenuItem();
+            menuAppsExport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuApps.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.PnlMiddle.SuspendLayout();
@@ -64,12 +64,12 @@ namespace ThisIsWin11
             this.pnlBottom.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuAppsSync
+            // menuAppsExport
             // 
-            menuAppsSync.Name = "menuAppsSync";
-            menuAppsSync.Size = new System.Drawing.Size(285, 30);
-            menuAppsSync.Text = "Run community syncing";
-            menuAppsSync.Click += new System.EventHandler(this.menuAppsSync_Click);
+            menuAppsExport.Name = "menuAppsExport";
+            menuAppsExport.Size = new System.Drawing.Size(347, 30);
+            menuAppsExport.Text = "Export bloatware in Recycle Bin";
+            menuAppsExport.Click += new System.EventHandler(this.menuAppsExport_Click);
             // 
             // checkAppsSystem
             // 
@@ -148,7 +148,7 @@ namespace ThisIsWin11
             this.menuApps.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuApps.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAppsImport,
-            menuAppsSync,
+            menuAppsExport,
             this.menuAppsRefresh,
             this.menuAppsRemoveAll,
             this.menuAppsPopOut,
@@ -156,27 +156,27 @@ namespace ThisIsWin11
             this.menuAppsInfo});
             this.menuApps.Name = "menuMain";
             this.menuApps.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuApps.Size = new System.Drawing.Size(286, 190);
+            this.menuApps.Size = new System.Drawing.Size(348, 190);
             this.menuApps.Text = "Info";
             // 
             // menuAppsImport
             // 
             this.menuAppsImport.Name = "menuAppsImport";
-            this.menuAppsImport.Size = new System.Drawing.Size(285, 30);
+            this.menuAppsImport.Size = new System.Drawing.Size(347, 30);
             this.menuAppsImport.Text = "Import bloatware list";
             this.menuAppsImport.Click += new System.EventHandler(this.menuAppsImport_Click);
             // 
             // menuAppsRefresh
             // 
             this.menuAppsRefresh.Name = "menuAppsRefresh";
-            this.menuAppsRefresh.Size = new System.Drawing.Size(285, 30);
+            this.menuAppsRefresh.Size = new System.Drawing.Size(347, 30);
             this.menuAppsRefresh.Text = "Refresh";
             this.menuAppsRefresh.Click += new System.EventHandler(this.menuAppsRefresh_Click);
             // 
             // menuAppsRemoveAll
             // 
             this.menuAppsRemoveAll.Name = "menuAppsRemoveAll";
-            this.menuAppsRemoveAll.Size = new System.Drawing.Size(285, 30);
+            this.menuAppsRemoveAll.Size = new System.Drawing.Size(347, 30);
             this.menuAppsRemoveAll.Text = "Uninstall all apps";
             this.menuAppsRemoveAll.Click += new System.EventHandler(this.menuAppsRemoveAll_Click);
             // 
@@ -184,19 +184,19 @@ namespace ThisIsWin11
             // 
             this.menuAppsPopOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuAppsPopOut.Name = "menuAppsPopOut";
-            this.menuAppsPopOut.Size = new System.Drawing.Size(285, 30);
+            this.menuAppsPopOut.Size = new System.Drawing.Size(347, 30);
             this.menuAppsPopOut.Text = "Pop-out-App";
             this.menuAppsPopOut.Click += new System.EventHandler(this.menuAppsPopOut_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(282, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(344, 6);
             // 
             // menuAppsInfo
             // 
             this.menuAppsInfo.Name = "menuAppsInfo";
-            this.menuAppsInfo.Size = new System.Drawing.Size(285, 30);
+            this.menuAppsInfo.Size = new System.Drawing.Size(347, 30);
             this.menuAppsInfo.Text = "Info";
             this.menuAppsInfo.Click += new System.EventHandler(this.menuAppsInfo_Click);
             // 

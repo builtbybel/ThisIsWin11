@@ -14,8 +14,7 @@ namespace ThisIsWin11
     public partial class AutomateWindow : Form
     {
         public static string mAppLogsDir = Helpers.Strings.Data.PackagesLogsDir;
-
-        private Showcase.OS osInfo = new Showcase.OS();
+        private Presenter.OS osInfo = new Presenter.OS();
 
         private static readonly string componentsVersion = "15";
 
@@ -32,7 +31,7 @@ namespace ThisIsWin11
             UISelection();
         }
 
-        //some UI nicety
+        // Some UI nicety
         private void UISelection()
         {
             btnAutomateMenu.Text = "\uE712";
@@ -107,7 +106,7 @@ namespace ThisIsWin11
                             btnApply.Enabled = false;
                             lnkSubHeader.Text = "Processing " + lstPS.Text;
 
-                            if (equals.Any(str.Contains))                   //silent
+                            if (equals.Any(str.Contains))                   // Silent
                             {
                                 var startInfo = new ProcessStartInfo()
                                 {
@@ -119,7 +118,7 @@ namespace ThisIsWin11
 
                                 await Task.Run(() => { Process.Start(startInfo).WaitForExit(); });
                             }
-                            else                                            //create ConsoleWindow
+                            else                                            // Create ConsoleWindow
                             {
                                 var startInfo = new ProcessStartInfo()
                                 {
@@ -232,7 +231,6 @@ namespace ThisIsWin11
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     File.WriteAllText(dlg.FileName, rtbPS.Text, Encoding.UTF8);
-                    //Refresh
                     PopulatePS();
                 }
             }

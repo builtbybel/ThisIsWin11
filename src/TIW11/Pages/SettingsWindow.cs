@@ -41,7 +41,7 @@ namespace ThisIsWin11
             catch { };
         }
 
-        private void btnCheckForUpdates_Click(object sender, EventArgs e) => updateInfo.CheckForUpdates(true);
+        private void btnCheckForUpdates_Click(object sender, EventArgs e) => updateInfo.CheckForUpdates(this, true);
 
         private void rtbAbout_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
     }

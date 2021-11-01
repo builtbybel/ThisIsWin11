@@ -1,22 +1,19 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using ThisIsWin11.Presenter;
 
 namespace ThisIsWin11
 {
     public partial class HomeWindow : Form
     {
         private Helpers.Utils utilInfo = new Helpers.Utils();
-        private Showcase.OS osInfo = new Showcase.OS();
+        private Presenter.OS osInfo = new Presenter.OS();
         private PageTitle INavPage = PageTitle.GetStarted;
 
         private static readonly string componentsVersion = "40";
 
-        private void menuShowcaseInfo_Click(object sender, EventArgs e) => MessageBox.Show("Presenter for Windows 11\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion + " (EOL February 28, 2022)", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        private void btnShowcaseMenu_Click(object sender, EventArgs e) => this.menuShowcase.Show(Cursor.Position.X, Cursor.Position.Y);
-
-        private void pbView_Paint(object sender, PaintEventArgs e) => pbView.Controls.Add(btnPresenter);
+        private void menuPresenterInfo_Click(object sender, EventArgs e) => MessageBox.Show("Presenter for Windows 11\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion + " (EOL February 28, 2022)", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         private MainWindow mainForm = null;
 
@@ -34,10 +31,10 @@ namespace ThisIsWin11
             UISelection();
         }
 
-        //some UI nicety
+        // Some UI nicety
         private void UISelection()
         {
-            //presenter button ONLY on Win11
+            // Presenter button ONLY on Win11
             if (osInfo.IsWin11())
             {
                 if (!Helpers.Utils.IsInet())
@@ -53,9 +50,7 @@ namespace ThisIsWin11
                 lnkSubHeader.Text = "*This is not Windows 11 (some features are not available)";
             }
 
-            //buttons
-            btnShowcaseMenu.Text = "\uE712";
-
+            btnPresenterMenu.Text = "\uE712";
             btnHome.Text = "\uE80F";
             btnBack.Text = "\uE72B";
             btnNext.Text = "\uE72A";
@@ -100,7 +95,7 @@ namespace ThisIsWin11
             NavigationView();
         }
 
-        //enum breadcrumbs to cb
+        // Enum breadcrumbs to cb
         private void EnumTableOfContents()
         {
             cbTable.DataSource = Enum.GetValues(typeof(PageTitle));
@@ -523,7 +518,7 @@ namespace ThisIsWin11
 
                     try
                     {
-                        Showcase.LockScreen.LockWorkStation();
+                        Presenter.LockScreen.LockWorkStation();
                     }
                     catch (Exception ex)
                     {
@@ -541,7 +536,7 @@ namespace ThisIsWin11
 
                     try
                     {
-                        Process.Start("https://www.theverge.com/2021/6/24/22548428/microsoft-windows-11-android-apps-support-amazon-store");
+                        Process.Start("https://blogs.windows.com/windows-insider/2021/10/20/announcing-android-apps-on-windows-11-preview-for-windows-insiders-in-the-beta-channel/");
                     }
                     catch (Exception ex)
                     {
@@ -707,5 +702,9 @@ namespace ThisIsWin11
             if (Helpers.Utils.IsInet()) Process.Start("ms-settings:windowsupdate-action");
             else Process.Start("ms-settings:network-status");
         }
+
+        private void btnPresenterMenu_Click(object sender, EventArgs e) => this.menuPresenter.Show(Cursor.Position.X, Cursor.Position.Y);
+
+        private void pbView_Paint(object sender, PaintEventArgs e) => pbView.Controls.Add(btnPresenter);
     }
 }

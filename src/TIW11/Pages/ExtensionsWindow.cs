@@ -27,7 +27,7 @@ namespace ThisIsWin11
             IntializePlugs();
         }
 
-        //some UI nicety
+        // Some UI nicety
         private void UISelection()
         {
             btnPluginsMenu.Text = "\uE712";
@@ -39,7 +39,7 @@ namespace ThisIsWin11
 
             try
             {
-                //populate list from data\plugins folder
+                // Populate list from data\plugins folder
                 foreach (var path in Directory.EnumerateFiles(@"data\plugins", "*.ini", SearchOption.AllDirectories)) if (path.Split('\\').Length > 2)
                     {
                         var tweak = new Plugin(path);

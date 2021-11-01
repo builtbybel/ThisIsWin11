@@ -31,7 +31,7 @@ namespace ThisIsWin11
             IsWingetInstalled();
         }
 
-        //some UI nicety
+        // Some UI nicety
         private void UISelection()
         {
             this.Text = mainForm.Text;
@@ -138,7 +138,7 @@ namespace ThisIsWin11
                 powerShell.AddScript(package);
 
                 try
-                {   //invoke execution on pipeline
+                {   // Invoke execution on pipeline
                     Collection<PSObject> PSOutput = powerShell.Invoke();
 
                     foreach (PSObject outputItem in PSOutput)
@@ -152,7 +152,7 @@ namespace ThisIsWin11
                 catch
                 { }
 
-                //check the other output, error streams etc.
+                // Check the other output, error streams etc.
                 if (powerShell.Streams.Error.Count > 0)
                 {
                 }
@@ -172,7 +172,7 @@ namespace ThisIsWin11
 
         private void btnInstallWinget_Click(object sender, EventArgs e)
         {
-            String url = "https://github.com/microsoft/winget-cli/releases/download/v1.1.12653/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle";
+            string url = "https://github.com/microsoft/winget-cli/releases/download/v1.1.12653/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle";
 
             progress.Visible = true;
             try

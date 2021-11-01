@@ -1,6 +1,8 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 using System.Net;
 using System.Reflection;
 using System.Text;
@@ -13,8 +15,12 @@ namespace ThisIsWin11.Helpers
         public static Version CurrentVersion = new Version(Application.ProductVersion);
         public static Version LatestVersion;
 
-        public void CheckForUpdates(bool InetStatusMessage, bool silentCheck = false)
+        private SettingsWindow settingsForm = null;
+
+        public void CheckForUpdates(Form frm, bool InetStatusMessage, bool silentCheck = false)
         {
+            settingsForm = frm as SettingsWindow;
+
             WebClient client = new WebClient
             {
                 Encoding = Encoding.UTF8
@@ -38,9 +44,9 @@ namespace ThisIsWin11.Helpers
 
                 var equals = LatestVersion.CompareTo(CurrentVersion);
 
-                if (equals == 0) //up-to-date
+                if (equals == 0)          // Up-to-date
                 {
-                    //update check on app launch
+                    // Update check on app launch
                     if (silentCheck)
                     {
                         return;
@@ -48,13 +54,13 @@ namespace ThisIsWin11.Helpers
 
                     MessageBox.Show("No new release found.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else if (equals < 0) //unofficial!
+                else if (equals < 0)     // Unofficial!
                 {
                     return;
                 }
-                else //update available
+                else                    // Update available
                 {
-                    if (MessageBox.Show("A new app version " + LatestVersion + " is available.\nDo you want to update?" + Environment.NewLine + versionContent, "App update available", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("A new app version " + LatestVersion + " is available.\nDo you want to install the update?" + Environment.NewLine + versionContent, "App update available", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         try
                         {
@@ -75,24 +81,16 @@ namespace ThisIsWin11.Helpers
 
                             client.DownloadFile(string.Format("https://github.com/builtbybel/ThisIsWin11/releases/download/{0}/TIW11_updateonly.exe", LatestVersion), tempFile);
 
-                            //delete previous version
-                            if (File.Exists(archiveFile))
-                            {
-                                File.Delete(archiveFile);
-                            }
+                            if (File.Exists(archiveFile)) { File.Delete(archiveFile); }              // Delete previous version
 
-                            //backup
-                            File.Move(appFile, archiveFile);
+                            File.Move(appFile, archiveFile);                                         // Backup
 
-                            //update
-                            File.Move(tempFile, appFile);
+                            File.Move(tempFile, appFile);                                            // Update app!
 
-                            Application.Restart();
+                            UpdateDataPackage();                                                     // Update data package!
                         }
                         catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
+                        { MessageBox.Show(ex.Message); }
                     }
                 }
             }
@@ -100,12 +98,18 @@ namespace ThisIsWin11.Helpers
             {
                 if (InetStatusMessage == true)
                 {
+                    // Update check on app launch
+                    if (silentCheck)
+                    {
+                        return;
+                    }
+
                     MessageBox.Show("Checking for App updates failed.\n\nCheck your Internet connection and try again.");
                 }
             }
         }
 
-        //check Inet
+        // Check Inet
         public static bool IsInet()
         {
             try
@@ -122,7 +126,59 @@ namespace ThisIsWin11.Helpers
             }
         }
 
-        //create data directory if non present
+        /// <summary>
+        ///  Update data package
+        /// </summary>
+        private void UpdateDataPackage()
+        {
+            string dataZip = string.Format("https://github.com/builtbybel/ThisIsWin11/releases/download/{0}/data_updateonly.zip", LatestVersion);
+
+            if (URLExists(dataZip))
+
+            {
+                try
+                {
+                    using (WebClient client = new WebClient())
+                    {
+                        client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadProgressChanged);
+                        client.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadCompleted);
+
+                        client.DownloadFileAsync(new Uri(dataZip.Trim()), Application.StartupPath + "\\data_updateonly" + Path.GetExtension(dataZip.ToString()));
+                    }
+                }
+                catch (Exception ex)
+                { MessageBox.Show(ex.Message, settingsForm.Text); }
+            }
+            else
+                Application.Restart();
+        }
+
+        private void DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            settingsForm.progress.Visible = true;
+            settingsForm.progress.Value = e.ProgressPercentage;
+            settingsForm.btnCheckForUpdates.Invoke((MethodInvoker)(() => settingsForm.btnCheckForUpdates.Text = "Updating " + $"{e.ProgressPercentage}%"));
+        }
+
+        private void DownloadCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            string dataZip = Application.StartupPath + "\\data";
+
+            try
+            {
+                if (Directory.Exists(dataZip)) Directory.Delete(dataZip, true);     // Delete old data dir
+
+                ZipFile.ExtractToDirectory(Application.StartupPath + "\\data_updateonly.zip", Application.StartupPath);
+                File.Delete(Application.StartupPath + "\\data_updateonly.zip");
+
+                MessageBox.Show("Update completed.\nA restart is required for the changes to take effect.", settingsForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, settingsForm.Text); }
+
+            Application.Restart();
+        }
+
+        // Create data directory if non present
         public static void CreateDataDir()
         {
             bool dirExists = Directory.Exists(@"data");
@@ -130,13 +186,34 @@ namespace ThisIsWin11.Helpers
                 Directory.CreateDirectory(@"data");
         }
 
-        //launch Urls in rtb control
+        // Verify existence of web resource
+        public bool URLExists(string url)
+        {
+            bool result = true;
+
+            WebRequest webRequest = WebRequest.Create(url);
+            webRequest.Timeout = 1200;
+            webRequest.Method = "HEAD";
+
+            try
+            {
+                webRequest.GetResponse();
+            }
+            catch
+            {
+                result = false;
+            }
+
+            return result;
+        }
+
+        // Launch Urls in rtb control
         public static void LaunchUri(string url)
         {
             if (IsHttpURL(url)) Process.Start(url);
         }
 
-        //check Urls in in rtb control
+        // Check Urls in in rtb control
         public static bool IsHttpURL(string url)
         {
             return

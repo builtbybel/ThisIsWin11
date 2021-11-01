@@ -17,7 +17,7 @@ namespace ThisIsWin11
 
         private readonly PowerShell powerShell = PowerShell.Create();
 
-        private static readonly string componentsVersion = "41";
+        private static readonly string componentsVersion = "50";
 
         private void menuAppsInfo_Click(object sender, EventArgs e) => MessageBox.Show("Kickassbloat\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -28,12 +28,12 @@ namespace ThisIsWin11
 
         private void AppsWindow_Shown(object sender, EventArgs e)
         {
-            InitializeUWPSystem();   //systemapps from resource file
-            InitializeUWP();         //now the normal apps
+            InitializeUWPSystem();   // Systemapps from resource file
+            InitializeUWP();         // Now the normal apps
             UISelection();
         }
 
-        //some UI nicety
+        // Some UI nicety
         private void UISelection()
         {
             btnAppsMenu.Text = "\uE712";
@@ -60,7 +60,7 @@ namespace ThisIsWin11
                 lstUWP.Items.Add(Regex.Replace(current, "(@{Name=)|(})", ""));
             }
 
-            //compare left and rights apps list and remove differences
+            // Compare left and rights apps list and remove differences
             string compare = lstUWP.Items.ToString();
             foreach (string item in lstUWPRemove.Items) if (item.Any(compare.Contains)) lstUWP.Items.Remove(item);
 
@@ -76,17 +76,17 @@ namespace ThisIsWin11
                 Helpers.Utils.CreateDataDir();
                 Database = File.OpenText(Helpers.Strings.Data.DataRootDir + "systemapps.txt");
             }
-            catch (FileNotFoundException) //create file if it doesnt exisits
+            catch (FileNotFoundException) // Create file if it doesnt exisits
             {
                 StreamWriter sw = File.CreateText(Helpers.Strings.Data.DataRootDir + "systemapps.txt");
-                sw.Write(Resources.systemapps);    //populate it with built in preset
+                sw.Write(Resources.systemapps);    // Populate it with built in preset
                 sw.Close();
 
                 Database = File.OpenText(Helpers.Strings.Data.DataRootDir + "systemapps.txt");
             }
             finally
             {
-                if (Database.Peek() > 0) //exists and not empty
+                if (Database.Peek() > 0) // Exists and not empty
                 {
                     string buff;
                     while ((buff = Database.ReadLine()) != null)
@@ -196,8 +196,6 @@ namespace ThisIsWin11
                     await Task.Run(() => RemoveUWP(app));
                 }
 
-                //RefreshUWP();
-
                 foreach (var str in removeUWPList)
                 {
                     successList += "-" + str + Environment.NewLine;
@@ -207,7 +205,7 @@ namespace ThisIsWin11
                     failedList += "-" + str + Environment.NewLine;
                 }
 
-                //summary removal process
+                // Summary removal process
                 string message = string.Format("Summary:\n{0} app(s) has been selected for removal.\n{1} app(s) has been removed.",
                     removeUWPList.Count + removeUWPFailedList.Count, removeUWPList.Count) + Environment.NewLine + Environment.NewLine;
 
@@ -224,12 +222,12 @@ namespace ThisIsWin11
                                                      "Please check also the automation module to see if you can find a community debloating task. These are often more aggressive.";
                 }
 
+                menuAppsRefresh.PerformClick();
+
                 btnRemoveUWP.Enabled = true;
                 rtbPS.Text = message + Environment.NewLine;
                 rtbPS.Text += Environment.NewLine + lstUWP.Items.Count + " apps are left.\n";
             }
-
-            menuAppsRefresh.PerformClick();
         }
 
         private void menuAppsRemoveAll_Click(object sender, EventArgs e)
@@ -256,7 +254,11 @@ namespace ThisIsWin11
 
         private void checkAppsSystem_CheckedChanged(object sender, EventArgs e)
         {
-            lstUWP.Items.Clear();
+            if (checkAppsSystem.Checked) MessageBox.Show("Be picky about which System applications to uninstall.\n\n" +
+                "You can uninstall most of the built-in apps, even ones that don't normally offer an \"Uninstall\" option.\n\n" +
+                "Note, however, this app won't allow you to remove a few of the most important built-in apps, like Microsoft Edge, .NET framework, UI.Xaml etc." +
+                "as these apps are needed for the Windows 11 \"Experience\" and for other programs. If you try, you’ll see an error message saying the removal failed.", this.Text, MessageBoxButtons.OK);
+
             InitializeUWPSystem();
             InitializeUWP();
         }
@@ -331,13 +333,41 @@ namespace ThisIsWin11
                         lstUWPRemove.Items.Add(line);
                         RefreshUWP();
 
-                        //compare imported list with installed apps and add differences ONLY
+                        // Compare imported list with installed apps and add differences ONLY
                         string compare = lstUWP.Items.ToString();
-                        foreach (string item in lstUWP.Items) if (item.Any(compare.Contains)) lstUWPRemove.Items.Remove(item);
+                        foreach (string item in lstUWPRemove.Items) if (item.Any(compare.Contains)) lstUWP.Items.Remove(item);
                     }
-                    MessageBox.Show("We've compared your import list and added ONLY differences to Recycle bin.\n" +
-                                    "Please note that these apps are NOT installed on your system.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    RefreshUWP();
+
+                    MessageBox.Show("We've snyced your import list with the apps in Recycle Bin.\n" +
+                        "Please note, that some of these apps may not be installed on your system.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+        }
+
+        private void menuAppsExport_Click(object sender, EventArgs e)
+        {
+            if (lstUWPRemove.Items.Count == 0)
+            {
+                MessageBox.Show("No apps in Recycle Bin found.");
+                return;
+            }
+
+            SaveFileDialog s = new SaveFileDialog();
+            s.FileName = "my-bloatware-list";
+            s.Filter = "Text File | *.txt";
+
+            if (s.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter writer = new StreamWriter(s.OpenFile());
+                for (int i = 0; i < lstUWPRemove.Items.Count; i++)
+                {
+                    writer.WriteLine(lstUWPRemove.Items[i].ToString());
+                }
+
+                writer.Dispose();
+                writer.Close();
             }
         }
 
@@ -347,10 +377,5 @@ namespace ThisIsWin11
         }
 
         private void btnAppsMenu_Click(object sender, EventArgs e) => this.menuApps.Show(Cursor.Position.X, Cursor.Position.Y);
-
-        private void menuAppsSync_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Not available in this release.");
-        }
     }
 }

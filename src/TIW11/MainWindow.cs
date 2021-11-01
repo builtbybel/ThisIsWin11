@@ -11,41 +11,36 @@ namespace ThisIsWin11
         private Dictionary<string, Form> panelForms = new Dictionary<string, Form>();
         private Dictionary<string, Button> panelButtons = new Dictionary<string, Button>();
 
-        private Helpers.Utils updateInfo = new Helpers.Utils();
-
         public MainWindow()
         {
             InitializeComponent();
 
-            RegisterView(new HomeWindow(this), btnHome);                    //home page
-            RegisterView(new SystemWindow(), btnSystem);                    //system page
-            RegisterView(new AppsWindow(), btnApps);                        //apps page
-            RegisterView(new PackagesWindow(this), btnPackages);            //packages page
-            RegisterView(new AutomateWindow(), btnAutomate);                //automate page
-            RegisterView(new ExtensionsWindow(), btnExtensions);            //extensions page
-            RegisterView(new SettingsWindow(this), btnSettings);            //settings page
+            RegisterView(new HomeWindow(this), btnHome);                    // Home page
+            RegisterView(new SystemWindow(), btnSystem);                    // System page
+            RegisterView(new AppsWindow(), btnApps);                        // Apps page
+            RegisterView(new PackagesWindow(this), btnPackages);            // Packages page
+            RegisterView(new AutomateWindow(), btnAutomate);                // Automate page
+            RegisterView(new ExtensionsWindow(), btnExtensions);            // Extensions page
+            RegisterView(new SettingsWindow(this), btnSettings);            // Settings page
         }
 
         private void MainWindow_Shown(object sender, EventArgs e)
         {
-            //load home page
+            // Load Home page
             string key = panelForms.Keys.FirstOrDefault();
             if (key != null)
                 ActivateView(key);
 
-            //load ui
+            // Load UI
             UISelection();
-
-            //check for updates
-            updateInfo.CheckForUpdates(true, true);
         }
 
-        //some UI nicety
+        // Some UI nicety
         private void UISelection()
         {
             this.MinimumSize = new Size(810, 755);
 
-            //nav icons
+            // Nav icons
             btnHome.Text = "\uEA8A" + "\n\nHome";
             btnSystem.Text = "\uE770" + "\n\nSystem";
             btnApps.Text = "\uE71D" + "\n\nApps";
