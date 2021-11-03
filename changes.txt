@@ -1,6 +1,7 @@
 
 0.90.10
-- Updated app data/packages with new winget apps and improved script files for automation section
+- Updated app data/packages with new winget apps and improved script files for automation section. 
+(NOTICE: This update is only rolled out to build 0.90.0 and higher)
 
 0.90.0
 - Code Refactoring
