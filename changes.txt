@@ -1,5 +1,4 @@
 
-0.90.20
 - Dropped support for ExplorerPatcher (to many issues in last builds https://github.com/builtbybel/ThisIsWin11/issues/45 https://github.com/builtbybel/ThisIsWin11/issues/44)
 - Added a more prominent placement of the "Restore default Windows 11 settings" button in system module aka "PumpedApp" 
 
