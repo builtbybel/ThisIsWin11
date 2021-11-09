@@ -1,15 +1,7 @@
 
-0.90.10
-- Updated app data/packages with new winget apps and improved script files for automation section. 
-(NOTICE: This update is only rolled out to build 0.90.0 and higher)
-
-0.90.0
-- Code Refactoring
-- Improved update process (split into app and data/package updates. both are now installed automatically, when checking for updates)
-- Updated apps module aka "Kickassbloat" and added option to Export apps in recycle bin (helpful when importing on other systems). Sync function has been improved too.
-- Minor spelling fixes
-- Minor bug fixes
-
+0.90.20
+- Dropped support for ExplorerPatcher (to many issues in last builds https://github.com/builtbybel/ThisIsWin11/issues/45 https://github.com/builtbybel/ThisIsWin11/issues/44)
+- Added a more prominent placement of the "Restore default Windows 11 settings" button in system module aka "PumpedApp" 
 
 From the blog:
 There are plans for the rebranding TIW11
