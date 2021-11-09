@@ -65,7 +65,6 @@
     <Compile Include="Helpers\Strings.cs" />
     <Compile Include="Helpers\Utils.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Personalization\WidgetsRemove.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\ThirdParty\ExplorerPatcher.cs" />
     <Compile Include="Modules\Extensions\PluginsBase.cs" />
     <Compile Include="Modules\Extensions\PluginsBindingList.cs" />
     <Compile Include="Modules\PumpedApp\Assessments\Gaming\PowerThrottling.cs" />
