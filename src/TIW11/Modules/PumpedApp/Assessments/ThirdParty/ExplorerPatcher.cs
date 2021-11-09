@@ -32,7 +32,7 @@ namespace ThisIsWin11.PumpedApp.Assessment.ThirdParty
                 {
                     //download ExplorerPatcher
                     logger.Log("- Downloading ExplorerPatcher from https://github.com/valinet/ExplorerPatcher");
-                    client.DownloadFile("https://github.com/valinet/ExplorerPatcher/releases/download/22000.258.31.0/dxgi.dll", "data\\dxgi.dll");
+                    client.DownloadFile("https://github.com/builtbybel/ThisIsWin11/blob/main/collections/third-party/dxgi.dll", "data\\dxgi.dll");
 
                     //patching
                     logger.Log("- Patching Explorer");
