@@ -86,13 +86,6 @@ namespace ThisIsWin11
                 Checked = true,
             };
 
-            TreeNode thirdparty = new TreeNode("Third-party", new TreeNode[] {
-                new AssessmentNode(new PumpedApp.Assessment.ThirdParty.ExplorerPatcher()),
-            })
-            {
-                Checked = true,
-            };
-
             TreeNode system = new TreeNode("System", new TreeNode[] {
                 new AssessmentNode(new PumpedApp.Assessment.System.Fax()),
                 new AssessmentNode(new PumpedApp.Assessment.System.XPSWriter()),
@@ -162,7 +155,6 @@ namespace ThisIsWin11
             root.Nodes.AddRange(new TreeNode[]
             {
                 appearance,
-                thirdparty,
                 system,
                 gaming,
                 privacy,
@@ -318,7 +310,7 @@ namespace ThisIsWin11
             ApplyAssessments(performNodes);
         }
 
-        private void menuSystemUndo_Click(object sender, EventArgs e)
+        private void LnkSystemUndo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (MessageBox.Show("Do you really want to revert all selected settings to Windows 11 default state?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
@@ -466,5 +458,7 @@ namespace ThisIsWin11
         private void tvwAssessments_Click(object sender, EventArgs e) => lnkSystemPreset.Visible = false;
 
         private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => MessageBox.Show(lnkSubHeader.Text);
+
+   
     }
 }

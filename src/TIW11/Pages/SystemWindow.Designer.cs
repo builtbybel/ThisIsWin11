@@ -34,7 +34,6 @@ namespace ThisIsWin11
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnSystemCheck = new System.Windows.Forms.Button();
             this.menuSystem = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuSystemUndo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSystemImportProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSystemExportProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSystemExportLog = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +49,7 @@ namespace ThisIsWin11
             this.rtbPS = new System.Windows.Forms.RichTextBox();
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.lnkSystemPreset = new System.Windows.Forms.LinkLabel();
+            this.LnkSystemUndo = new System.Windows.Forms.LinkLabel();
             this.menuSystem.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.SuspendLayout();
@@ -107,7 +107,6 @@ namespace ThisIsWin11
             this.menuSystem.BackColor = System.Drawing.Color.WhiteSmoke;
             this.menuSystem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuSystem.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuSystemUndo,
             this.menuSystemImportProfile,
             this.menuSystemExportProfile,
             this.menuSystemExportLog,
@@ -117,14 +116,7 @@ namespace ThisIsWin11
             this.menuSystemVersioning});
             this.menuSystem.Name = "menuMain";
             this.menuSystem.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuSystem.Size = new System.Drawing.Size(389, 220);
-            // 
-            // menuSystemUndo
-            // 
-            this.menuSystemUndo.Name = "menuSystemUndo";
-            this.menuSystemUndo.Size = new System.Drawing.Size(388, 30);
-            this.menuSystemUndo.Text = "Restore default Windows 11 settings";
-            this.menuSystemUndo.Click += new System.EventHandler(this.menuSystemUndo_Click);
+            this.menuSystem.Size = new System.Drawing.Size(201, 212);
             // 
             // menuSystemImportProfile
             // 
@@ -273,9 +265,9 @@ namespace ThisIsWin11
             this.lnkSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkSubHeader.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lnkSubHeader.Location = new System.Drawing.Point(28, 57);
+            this.lnkSubHeader.Location = new System.Drawing.Point(206, 57);
             this.lnkSubHeader.Name = "lnkSubHeader";
-            this.lnkSubHeader.Size = new System.Drawing.Size(660, 18);
+            this.lnkSubHeader.Size = new System.Drawing.Size(487, 18);
             this.lnkSubHeader.TabIndex = 171;
             this.lnkSubHeader.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSubHeader_LinkClicked);
             // 
@@ -296,6 +288,23 @@ namespace ThisIsWin11
             this.lnkSystemPreset.Text = "Click here to load a preset and let Windows 11 look and feel like Windows 10";
             this.lnkSystemPreset.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSystemPreset_LinkClicked);
             // 
+            // LnkSystemUndo
+            // 
+            this.LnkSystemUndo.ActiveLinkColor = System.Drawing.Color.MediumVioletRed;
+            this.LnkSystemUndo.AutoEllipsis = true;
+            this.LnkSystemUndo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LnkSystemUndo.ForeColor = System.Drawing.Color.Gray;
+            this.LnkSystemUndo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LnkSystemUndo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.LnkSystemUndo.LinkColor = System.Drawing.Color.MediumVioletRed;
+            this.LnkSystemUndo.Location = new System.Drawing.Point(28, 57);
+            this.LnkSystemUndo.Name = "LnkSystemUndo";
+            this.LnkSystemUndo.Size = new System.Drawing.Size(152, 18);
+            this.LnkSystemUndo.TabIndex = 173;
+            this.LnkSystemUndo.TabStop = true;
+            this.LnkSystemUndo.Text = "Restore default settings";
+            this.LnkSystemUndo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkSystemUndo_LinkClicked);
+            // 
             // SystemWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -303,6 +312,7 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.Controls.Add(this.LnkSystemUndo);
             this.Controls.Add(this.btnSystemFix);
             this.Controls.Add(this.btnSystemCheck);
             this.Controls.Add(this.lnkSystemPreset);
@@ -341,10 +351,10 @@ namespace ThisIsWin11
         private System.Windows.Forms.Panel pnlRight;
         private System.Windows.Forms.Label lblPreview;
         public System.Windows.Forms.RichTextBox rtbPS;
-        private System.Windows.Forms.ToolStripMenuItem menuSystemUndo;
         private System.Windows.Forms.LinkLabel lnkSubHeader;
         private System.Windows.Forms.ToolStripMenuItem menuSystemExportProfile;
         private System.Windows.Forms.ToolStripMenuItem menuSystemImportProfile;
         private System.Windows.Forms.LinkLabel lnkSystemPreset;
+        private System.Windows.Forms.LinkLabel LnkSystemUndo;
     }
 }
