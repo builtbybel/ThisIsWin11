@@ -29,11 +29,11 @@ The app currently offers six modules:
 - **Presenter** ThisIsWin11 is starting off with a helpful introduction to what you can find in Windows 11
 - **PumpedApp** integrates an important part of the Windows 11 settings app and allows you to check and enable/disable settings in a bulk and with just a click.
 - **Kickassbloat** makes it possible to remove unwanted features and apps from Windows 11 such as the Camera and Alarm apps, and other preinstalled bloat that you can live without.
-- **Packages** powered by Windows Package Manager allows you to create your own custom install packages.
+- **Packages** powered by [Windows Package Manager](https://github.com/microsoft/winget-cli) allows you to create your own custom install packages.
 - **TeamTweak** allows you automating several Windows 11 tasks based on PowerShell and community scripts, e.g. It is possible to boost privacy by disabling various telemetry-related components of Windows 11
  - **Extensions** allows you creating custom tweaks based on simple .INI-files
  
-If you know my previous apps (Privatezilla, Bloatbox etc.) for Windows 10 then you will see that **ThisIsWin11** app combines the best of these apps under one interface but on Win11.
+If you know my previous apps ([Privatezilla](https://github.com/builtbybel/privatezilla), [Bloatbox](https://github.com/builtbybel/bloatbox) etc.) for Windows 10 then you will see that **ThisIsWin11** app combines the best of these apps under one interface but on Win11.
   
   
  ## Download
