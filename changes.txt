@@ -4,6 +4,7 @@
 - Updated system module aka "OpenTweaks" and fixed several minor code and GUI issues
 - Automation module also got its new name "PowerUI"
 - Updated Packages
+- Minor fixes
 
 
 From the blog:
