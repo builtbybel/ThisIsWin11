@@ -10,7 +10,7 @@ alt="GitHub issues">
   
 
 <a href="https://github.com/builtbybel/ThisIsWin11/releases" target="_blank">
-<img alt="Downloads on GitHub" src="https://img.shields.io/github/downloads/builtbybel/thisiswin11/total.svg?style=flat-square" />
+<img alt="Downloads on GitHub" src="https://img.shields.io/github/downloads/builtbybel/ThisIsWin11/total.svg?style=flat-square" />
 </a>
 
 # ThisIsWin11 
