@@ -1,15 +1,15 @@
-<a href="https://github.com/builtbybel/ReadySunValley/releases/latest" target="_blank">
+<a href="https://github.com/builtbybel/ThisIsWin11/releases/latest" target="_blank">
 <img alt="Latest GitHub release" src="https://img.shields.io/github/release/builtbybel/thisiswin11.svg?style=flat-square" />
 
- <a href="https://github.com/builtbybel/ReadySunValley/commits/master">
+ <a href="https://github.com/builtbybel/ThisIsWin11/commits/master">
 <img src="https://img.shields.io/github/last-commit/builtbybel/thisiswin11.svg?style=flat-square&logo=github&logoColor=white"
 alt="GitHub last commit">
-<a href="https://github.com/builtbybel/ReadySunValley/issues">
+<a href="https://github.com/builtbybel/ThisIsWin11/issues">
 <img src="https://img.shields.io/github/issues-raw/builtbybel/thisiswin11.svg?style=flat-square&logo=github&logoColor=white"
 alt="GitHub issues">
   
 
-<a href="https://github.com/builtbybel/ReadySunValley/releases" target="_blank">
+<a href="https://github.com/builtbybel/ThisIsWin11/releases" target="_blank">
 <img alt="Downloads on GitHub" src="https://img.shields.io/github/downloads/builtbybel/thisiswin11/total.svg?style=flat-square" />
 </a>
 
