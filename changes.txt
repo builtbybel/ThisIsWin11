@@ -2,6 +2,7 @@
 - System module aka "PumpedApp" has been rebranded to "OpenTweaks" (great proposal from the votings)
 - Apps module aka "Kickassbloat" is now the new "PumpedApp"
 - Updated system module aka "OpenTweaks" and fixed several minor code and GUI issues
+- Automation module also got its new name "PowerUI"
 - Updated Packages
 
 
