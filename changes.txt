@@ -1,6 +1,9 @@
 
-- Dropped support for ExplorerPatcher (to many issues in last builds https://github.com/builtbybel/ThisIsWin11/issues/45 https://github.com/builtbybel/ThisIsWin11/issues/44)
-- Added a more prominent placement of the "Restore default Windows 11 settings" button in system module aka "PumpedApp" 
+- System module aka "PumpedApp" has been rebranded to "OpenTweaks" (great proposal from the votings)
+- Apps module aka "Kickassbloat" is now the new "PumpedApp"
+- Updated system module aka "OpenTweaks" and fixed several minor code and GUI issues
+- Updated Packages
+
 
 From the blog:
 There are plans for the rebranding TIW11
