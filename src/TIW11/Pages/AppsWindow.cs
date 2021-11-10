@@ -19,7 +19,7 @@ namespace ThisIsWin11
 
         private static readonly string componentsVersion = "50";
 
-        private void menuAppsInfo_Click(object sender, EventArgs e) => MessageBox.Show("Kickassbloat\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        private void menuAppsInfo_Click(object sender, EventArgs e) => MessageBox.Show("PumpedApp\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         public AppsWindow()
         {

@@ -435,7 +435,7 @@ namespace ThisIsWin11
             this.Name = "AppsWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kickassbloat";
+            this.Text = "PumpedApp";
             this.Shown += new System.EventHandler(this.AppsWindow_Shown);
             this.menuApps.ResumeLayout(false);
             this.pnlRight.ResumeLayout(false);

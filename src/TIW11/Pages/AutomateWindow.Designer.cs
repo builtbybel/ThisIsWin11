@@ -335,7 +335,7 @@ namespace ThisIsWin11
             this.Name = "AutomateWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TeamTweak";
+            this.Text = "PowerUI";
             this.Load += new System.EventHandler(this.AutomateWindow_Load);
             this.menuAutomate.ResumeLayout(false);
             this.pnlRight.ResumeLayout(false);

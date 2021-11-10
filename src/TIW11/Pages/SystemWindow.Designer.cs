@@ -49,7 +49,8 @@ namespace ThisIsWin11
             this.rtbPS = new System.Windows.Forms.RichTextBox();
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.lnkSystemPreset = new System.Windows.Forms.LinkLabel();
-            this.LnkSystemUndo = new System.Windows.Forms.LinkLabel();
+            this.btnSystemUndo = new System.Windows.Forms.Button();
+            this.tt = new System.Windows.Forms.ToolTip(this.components);
             this.menuSystem.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.SuspendLayout();
@@ -116,33 +117,33 @@ namespace ThisIsWin11
             this.menuSystemVersioning});
             this.menuSystem.Name = "menuMain";
             this.menuSystem.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuSystem.Size = new System.Drawing.Size(201, 212);
+            this.menuSystem.Size = new System.Drawing.Size(201, 190);
             // 
             // menuSystemImportProfile
             // 
             this.menuSystemImportProfile.Name = "menuSystemImportProfile";
-            this.menuSystemImportProfile.Size = new System.Drawing.Size(388, 30);
+            this.menuSystemImportProfile.Size = new System.Drawing.Size(200, 30);
             this.menuSystemImportProfile.Text = "Import profile";
             this.menuSystemImportProfile.Click += new System.EventHandler(this.menuSystemImportProfile_Click);
             // 
             // menuSystemExportProfile
             // 
             this.menuSystemExportProfile.Name = "menuSystemExportProfile";
-            this.menuSystemExportProfile.Size = new System.Drawing.Size(388, 30);
+            this.menuSystemExportProfile.Size = new System.Drawing.Size(200, 30);
             this.menuSystemExportProfile.Text = "Export profile";
             this.menuSystemExportProfile.Click += new System.EventHandler(this.menuSystemExportProfile_Click);
             // 
             // menuSystemExportLog
             // 
             this.menuSystemExportLog.Name = "menuSystemExportLog";
-            this.menuSystemExportLog.Size = new System.Drawing.Size(388, 30);
+            this.menuSystemExportLog.Size = new System.Drawing.Size(200, 30);
             this.menuSystemExportLog.Text = "Export log";
             this.menuSystemExportLog.Click += new System.EventHandler(this.menuSystemExportLog_Click);
             // 
             // menuSystemSelect
             // 
             this.menuSystemSelect.Name = "menuSystemSelect";
-            this.menuSystemSelect.Size = new System.Drawing.Size(388, 30);
+            this.menuSystemSelect.Size = new System.Drawing.Size(200, 30);
             this.menuSystemSelect.Text = "Select all";
             this.menuSystemSelect.Click += new System.EventHandler(this.menuSystemSelect_Click);
             // 
@@ -150,19 +151,19 @@ namespace ThisIsWin11
             // 
             this.menuSystemPopOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuSystemPopOut.Name = "menuSystemPopOut";
-            this.menuSystemPopOut.Size = new System.Drawing.Size(388, 30);
+            this.menuSystemPopOut.Size = new System.Drawing.Size(200, 30);
             this.menuSystemPopOut.Text = "Pop-out-App";
             this.menuSystemPopOut.Click += new System.EventHandler(this.menuSystemPopOut_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(385, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(197, 6);
             // 
             // menuSystemVersioning
             // 
             this.menuSystemVersioning.Name = "menuSystemVersioning";
-            this.menuSystemVersioning.Size = new System.Drawing.Size(388, 30);
+            this.menuSystemVersioning.Size = new System.Drawing.Size(200, 30);
             this.menuSystemVersioning.Text = "Info";
             this.menuSystemVersioning.Click += new System.EventHandler(this.menuSystemInfo_Click);
             // 
@@ -265,9 +266,9 @@ namespace ThisIsWin11
             this.lnkSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkSubHeader.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lnkSubHeader.Location = new System.Drawing.Point(206, 57);
+            this.lnkSubHeader.Location = new System.Drawing.Point(28, 57);
             this.lnkSubHeader.Name = "lnkSubHeader";
-            this.lnkSubHeader.Size = new System.Drawing.Size(487, 18);
+            this.lnkSubHeader.Size = new System.Drawing.Size(665, 18);
             this.lnkSubHeader.TabIndex = 171;
             this.lnkSubHeader.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSubHeader_LinkClicked);
             // 
@@ -288,22 +289,31 @@ namespace ThisIsWin11
             this.lnkSystemPreset.Text = "Click here to load a preset and let Windows 11 look and feel like Windows 10";
             this.lnkSystemPreset.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSystemPreset_LinkClicked);
             // 
-            // LnkSystemUndo
+            // btnSystemUndo
             // 
-            this.LnkSystemUndo.ActiveLinkColor = System.Drawing.Color.MediumVioletRed;
-            this.LnkSystemUndo.AutoEllipsis = true;
-            this.LnkSystemUndo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LnkSystemUndo.ForeColor = System.Drawing.Color.Gray;
-            this.LnkSystemUndo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LnkSystemUndo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.LnkSystemUndo.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.LnkSystemUndo.Location = new System.Drawing.Point(28, 57);
-            this.LnkSystemUndo.Name = "LnkSystemUndo";
-            this.LnkSystemUndo.Size = new System.Drawing.Size(152, 18);
-            this.LnkSystemUndo.TabIndex = 173;
-            this.LnkSystemUndo.TabStop = true;
-            this.LnkSystemUndo.Text = "Restore default settings";
-            this.LnkSystemUndo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkSystemUndo_LinkClicked);
+            this.btnSystemUndo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSystemUndo.BackColor = System.Drawing.Color.White;
+            this.btnSystemUndo.FlatAppearance.BorderSize = 0;
+            this.btnSystemUndo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.HotPink;
+            this.btnSystemUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSystemUndo.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSystemUndo.Location = new System.Drawing.Point(604, 0);
+            this.btnSystemUndo.Name = "btnSystemUndo";
+            this.btnSystemUndo.Size = new System.Drawing.Size(48, 51);
+            this.btnSystemUndo.TabIndex = 174;
+            this.btnSystemUndo.Text = "U";
+            this.tt.SetToolTip(this.btnSystemUndo, "Restore default Windows 11 settings");
+            this.btnSystemUndo.UseVisualStyleBackColor = false;
+            this.btnSystemUndo.Click += new System.EventHandler(this.btnSystemUndo_Click);
+            // 
+            // tt
+            // 
+            this.tt.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.tt.ForeColor = System.Drawing.Color.White;
+            this.tt.IsBalloon = true;
+            this.tt.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning;
+            this.tt.ToolTipTitle = "OpenTweaks";
+            this.tt.UseAnimation = false;
             // 
             // SystemWindow
             // 
@@ -312,7 +322,7 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1087, 770);
-            this.Controls.Add(this.LnkSystemUndo);
+            this.Controls.Add(this.btnSystemUndo);
             this.Controls.Add(this.btnSystemFix);
             this.Controls.Add(this.btnSystemCheck);
             this.Controls.Add(this.lnkSystemPreset);
@@ -326,7 +336,7 @@ namespace ThisIsWin11
             this.Name = "SystemWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PumpedApp";
+            this.Text = "OpenTweaks";
             this.Shown += new System.EventHandler(this.SystemWindow_Shown);
             this.menuSystem.ResumeLayout(false);
             this.pnlRight.ResumeLayout(false);
@@ -355,6 +365,7 @@ namespace ThisIsWin11
         private System.Windows.Forms.ToolStripMenuItem menuSystemExportProfile;
         private System.Windows.Forms.ToolStripMenuItem menuSystemImportProfile;
         private System.Windows.Forms.LinkLabel lnkSystemPreset;
-        private System.Windows.Forms.LinkLabel LnkSystemUndo;
+        private System.Windows.Forms.Button btnSystemUndo;
+        private System.Windows.Forms.ToolTip tt;
     }
 }

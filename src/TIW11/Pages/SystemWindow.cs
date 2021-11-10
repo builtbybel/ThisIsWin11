@@ -7,14 +7,14 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ThisIsWin11.PumpedApp;
-using ThisIsWin11.PumpedApp.ITreeNode;
+using ThisIsWin11.OpenTweaks;
+using ThisIsWin11.OpenTweaks.ITreeNode;
 
 namespace ThisIsWin11
 {
     public partial class SystemWindow : Form
     {
-        private static readonly string componentsVersion = "73";
+        private static readonly string componentsVersion = "80";
         private readonly string osWarning = "We could not recognize this system as Windows 11. Some settings are not tested on this operating system and could lead to malfunction.";
 
         private Presenter.OS osInfo = new Presenter.OS();
@@ -24,7 +24,7 @@ namespace ThisIsWin11
 
         private static readonly ErrorHelper logger = ErrorHelper.Instance;
 
-        private void menuSystemInfo_Click(object sender, EventArgs e) => MessageBox.Show("PumpedApp\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        private void menuSystemInfo_Click(object sender, EventArgs e) => MessageBox.Show("OpenTweaks\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         public SystemWindow()
         {
@@ -47,9 +47,10 @@ namespace ThisIsWin11
         {
             logger.SetTarget(rtbPS);        // Logs messages to target rtb
             btnSystemMenu.Text = "\uE712";
+            btnSystemUndo.Text = "\uE777";
 
             rtbPS.Text = "Click the <Check> button to run a quick check of your Windows 11 configuration." +
-                         "\n\nYou can always restore the default Windows 11 settings. The option for this can be found in the upper right menu." +
+                         "\n\nYou can always restore the default Windows 11 settings. The option for this can be found in the upper right corner." +
                           Environment.NewLine + Environment.NewLine +
                          "If you have tried one or the other fix and tweak, feel free to suggest it here: " + Helpers.Strings.Uri.GitRepo;
         }
@@ -66,87 +67,87 @@ namespace ThisIsWin11
             };
 
             TreeNode appearance = new TreeNode("Personalization", new TreeNode[] {
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.AppsTheme()),
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.WindowsTheme()),
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.Transparency()),
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.SnapAssistFlyout()),
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.Widgets()),
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.WidgetsRemove()),
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarAl()),
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarSi()),
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarSearch()),
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskbarChat()),
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.TaskView()),
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.FileExplorer()),
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.MostUsedApps()),
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.HiddenFileFolder()),
-                new AssessmentNode(new PumpedApp.Assessment.Personalization.HiddenFileExt()),
+                new AssessmentNode(new OpenTweaks.Assessment.Personalization.AppsTheme()),
+                new AssessmentNode(new OpenTweaks.Assessment.Personalization.WindowsTheme()),
+                new AssessmentNode(new OpenTweaks.Assessment.Personalization.Transparency()),
+                new AssessmentNode(new OpenTweaks.Assessment.Personalization.SnapAssistFlyout()),
+                new AssessmentNode(new OpenTweaks.Assessment.Personalization.Widgets()),
+                new AssessmentNode(new OpenTweaks.Assessment.Personalization.WidgetsRemove()),
+                new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskbarAl()),
+                new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskbarSi()),
+                new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskbarSearch()),
+                new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskbarChat()),
+                new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskView()),
+                new AssessmentNode(new OpenTweaks.Assessment.Personalization.FileExplorer()),
+                new AssessmentNode(new OpenTweaks.Assessment.Personalization.MostUsedApps()),
+                new AssessmentNode(new OpenTweaks.Assessment.Personalization.HiddenFileFolder()),
+                new AssessmentNode(new OpenTweaks.Assessment.Personalization.HiddenFileExt()),
             })
             {
                 Checked = true,
             };
 
             TreeNode system = new TreeNode("System", new TreeNode[] {
-                new AssessmentNode(new PumpedApp.Assessment.System.Fax()),
-                new AssessmentNode(new PumpedApp.Assessment.System.XPSWriter()),
-                new AssessmentNode(new PumpedApp.Assessment.System.EnableWSL()),
-                new AssessmentNode(new PumpedApp.Assessment.System.TeamsAutostart()),
+                new AssessmentNode(new OpenTweaks.Assessment.System.Fax()),
+                new AssessmentNode(new OpenTweaks.Assessment.System.XPSWriter()),
+                new AssessmentNode(new OpenTweaks.Assessment.System.EnableWSL()),
+                new AssessmentNode(new OpenTweaks.Assessment.System.TeamsAutostart()),
             })
             {
                 Checked = true,
             };
 
             TreeNode gaming = new TreeNode("Gaming", new TreeNode[] {
-                new AssessmentNode(new PumpedApp.Assessment.Gaming.GameDVR()),
-                new AssessmentNode(new PumpedApp.Assessment.Gaming.PowerThrottling()),
-                new AssessmentNode(new PumpedApp.Assessment.Gaming.VisualFX()),
+                new AssessmentNode(new OpenTweaks.Assessment.Gaming.GameDVR()),
+                new AssessmentNode(new OpenTweaks.Assessment.Gaming.PowerThrottling()),
+                new AssessmentNode(new OpenTweaks.Assessment.Gaming.VisualFX()),
             })
             {
                 Checked = true,
             };
 
             TreeNode privacy = new TreeNode("Privacy (to disable)", new TreeNode[] {
-                new AssessmentNode(new PumpedApp.Assessment.Privacy.DiagnosticData()),
-                new AssessmentNode(new PumpedApp.Assessment.Privacy.Telemetry()),
-                new AssessmentNode(new PumpedApp.Assessment.Privacy.CompatibilityTelemetry()),
-                new AssessmentNode(new PumpedApp.Assessment.Privacy.LocationTracking()),
-                new AssessmentNode(new PumpedApp.Assessment.Privacy.Advertising()),
-                new AssessmentNode(new PumpedApp.Assessment.Privacy.Feedback()),
-                new AssessmentNode(new PumpedApp.Assessment.Privacy.SuggestedContent()),
-                new AssessmentNode(new PumpedApp.Assessment.Privacy.Biometrics()),
-                new AssessmentNode(new PumpedApp.Assessment.Privacy.AppsAutoInstall()),
-                new AssessmentNode(new PumpedApp.Assessment.Privacy.WindowsTips()),
-                new AssessmentNode(new PumpedApp.Assessment.Privacy.TailoredExperiences()),
+                new AssessmentNode(new OpenTweaks.Assessment.Privacy.DiagnosticData()),
+                new AssessmentNode(new OpenTweaks.Assessment.Privacy.Telemetry()),
+                new AssessmentNode(new OpenTweaks.Assessment.Privacy.CompatibilityTelemetry()),
+                new AssessmentNode(new OpenTweaks.Assessment.Privacy.LocationTracking()),
+                new AssessmentNode(new OpenTweaks.Assessment.Privacy.Advertising()),
+                new AssessmentNode(new OpenTweaks.Assessment.Privacy.Feedback()),
+                new AssessmentNode(new OpenTweaks.Assessment.Privacy.SuggestedContent()),
+                new AssessmentNode(new OpenTweaks.Assessment.Privacy.Biometrics()),
+                new AssessmentNode(new OpenTweaks.Assessment.Privacy.AppsAutoInstall()),
+                new AssessmentNode(new OpenTweaks.Assessment.Privacy.WindowsTips()),
+                new AssessmentNode(new OpenTweaks.Assessment.Privacy.TailoredExperiences()),
             })
             {
                 Checked = true
             };
 
             TreeNode apps = new TreeNode("Apps permissions (to disable)", new TreeNode[] {
-                new AssessmentNode(new PumpedApp.Assessment.Apps.AppNotifications()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.Camera()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.Microphone()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.Call()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.Notifications()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.AccountInfo()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.Contacts()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.Calendar()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.CallHistory()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.Email()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.Tasks()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.Messaging()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.Motion()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.OtherDevices()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.BackgroundApps()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.TrackingApps()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.DiagnosticInformation()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.Documents()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.Pictures()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.Videos()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.Radios()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.FileSystem()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.EyeGaze()),
-                new AssessmentNode(new PumpedApp.Assessment.Apps.CellularData()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.AppNotifications()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.Camera()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.Microphone()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.Call()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.Notifications()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.AccountInfo()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.Contacts()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.Calendar()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.CallHistory()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.Email()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.Tasks()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.Messaging()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.Motion()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.OtherDevices()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.BackgroundApps()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.TrackingApps()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.DiagnosticInformation()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.Documents()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.Pictures()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.Videos()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.Radios()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.FileSystem()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.EyeGaze()),
+                new AssessmentNode(new OpenTweaks.Assessment.Apps.CellularData()),
             })
             {
                 Checked = true
@@ -270,6 +271,10 @@ namespace ThisIsWin11
 
         private async void ApplyAssessments(List<AssessmentNode> treeNodes)
         {
+            btnSystemFix.Enabled = false;
+            btnSystemUndo.Enabled = false;
+            tvwAssessments.Enabled = false;
+
             foreach (AssessmentNode node in treeNodes)
             {
                 var treatment = node.Assessment;
@@ -283,10 +288,18 @@ namespace ThisIsWin11
 
             DoProgress(100);
             lnkSubHeader.Text = "";
+
+            btnSystemFix.Enabled = true;
+            btnSystemUndo.Enabled = true;
+            tvwAssessments.Enabled = true;
         }
 
         private async void UndoAssessments(List<AssessmentNode> treeNodes)
         {
+            btnSystemUndo.Enabled = false;
+            btnSystemFix.Enabled = false;
+            tvwAssessments.Enabled = false;
+
             foreach (AssessmentNode node in treeNodes)
             {
                 var treatment = node.Assessment;
@@ -300,6 +313,11 @@ namespace ThisIsWin11
 
             DoProgress(100);
             lnkSubHeader.Text = "";
+
+            btnSystemUndo.Enabled = true;
+            btnSystemFix.Enabled = true;
+            tvwAssessments.Enabled = true;
+
         }
 
         private void btnSystemFix_Click(object sender, EventArgs e)
@@ -310,7 +328,7 @@ namespace ThisIsWin11
             ApplyAssessments(performNodes);
         }
 
-        private void LnkSystemUndo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnSystemUndo_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Do you really want to revert all selected settings to Windows 11 default state?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
@@ -458,7 +476,5 @@ namespace ThisIsWin11
         private void tvwAssessments_Click(object sender, EventArgs e) => lnkSystemPreset.Visible = false;
 
         private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => MessageBox.Show(lnkSubHeader.Text);
-
-   
     }
 }

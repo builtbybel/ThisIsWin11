@@ -18,7 +18,7 @@ namespace ThisIsWin11
 
         private static readonly string componentsVersion = "15";
 
-        private void menuAutomateInfo_Click(object sender, EventArgs e) => MessageBox.Show("TeamTweak\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        private void menuAutomateInfo_Click(object sender, EventArgs e) => MessageBox.Show("PowerUI\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         public AutomateWindow()
         {
