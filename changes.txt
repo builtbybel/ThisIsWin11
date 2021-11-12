@@ -1,11 +1,10 @@
 
-- System module aka "PumpedApp" has been rebranded to "OpenTweaks" (great proposal from the votings)
-- Apps module aka "Kickassbloat" is now the new "PumpedApp"
-- Updated system module aka "OpenTweaks" and fixed several minor code and GUI issues
-- Automation module also got its new name "PowerUI"
-- Updated Packages
+- Tested on build 22000.318
+- Added option to system module aka OpenTweaks to "Hide Taskbar on multiple monitors"
+- Minor improvements on OpenTweaks module
+- Updated UI of all modules an assigned its names
+- Updated custom bloatware-11.txt list https://github.com/builtbybel/ThisIsWin11/pull/48
 - Minor fixes
-
 
 From the blog:
 There are plans for the rebranding TIW11
