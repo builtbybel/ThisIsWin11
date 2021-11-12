@@ -47,6 +47,7 @@ namespace ThisIsWin11
             this.lstUWPRemove = new System.Windows.Forms.ListBox();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
             this.PnlMiddle = new System.Windows.Forms.Panel();
+            this.lblModuleInfo = new System.Windows.Forms.LinkLabel();
             this.lblAppsHeader = new System.Windows.Forms.Label();
             this.btnAddAll = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -236,11 +237,11 @@ namespace ThisIsWin11
             this.lstUWPRemove.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
             this.lstUWPRemove.FormattingEnabled = true;
             this.lstUWPRemove.ItemHeight = 21;
-            this.lstUWPRemove.Location = new System.Drawing.Point(27, 97);
+            this.lstUWPRemove.Location = new System.Drawing.Point(27, 110);
             this.lstUWPRemove.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lstUWPRemove.Name = "lstUWPRemove";
             this.lstUWPRemove.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lstUWPRemove.Size = new System.Drawing.Size(341, 651);
+            this.lstUWPRemove.Size = new System.Drawing.Size(343, 630);
             this.lstUWPRemove.Sorted = true;
             this.lstUWPRemove.TabIndex = 136;
             this.lstUWPRemove.Visible = false;
@@ -253,7 +254,7 @@ namespace ThisIsWin11
             this.rtbPS.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rtbPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbPS.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbPS.Location = new System.Drawing.Point(27, 118);
+            this.rtbPS.Location = new System.Drawing.Point(27, 110);
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ReadOnly = true;
             this.rtbPS.Size = new System.Drawing.Size(341, 636);
@@ -266,6 +267,7 @@ namespace ThisIsWin11
             this.PnlMiddle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.PnlMiddle.Controls.Add(this.lblModuleInfo);
             this.PnlMiddle.Controls.Add(this.lblAppsHeader);
             this.PnlMiddle.Controls.Add(this.btnAddAll);
             this.PnlMiddle.Controls.Add(this.btnAdd);
@@ -277,6 +279,22 @@ namespace ThisIsWin11
             this.PnlMiddle.Size = new System.Drawing.Size(342, 688);
             this.PnlMiddle.TabIndex = 158;
             // 
+            // lblModuleInfo
+            // 
+            this.lblModuleInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblModuleInfo.AutoEllipsis = true;
+            this.lblModuleInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModuleInfo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lblModuleInfo.LinkColor = System.Drawing.Color.MediumVioletRed;
+            this.lblModuleInfo.Location = new System.Drawing.Point(15, 63);
+            this.lblModuleInfo.Name = "lblModuleInfo";
+            this.lblModuleInfo.Size = new System.Drawing.Size(307, 17);
+            this.lblModuleInfo.TabIndex = 163;
+            this.lblModuleInfo.TabStop = true;
+            this.lblModuleInfo.Text = "Learn more about PumpedApp";
+            this.lblModuleInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblModuleInfo_LinkClicked);
+            // 
             // lblAppsHeader
             // 
             this.lblAppsHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -287,9 +305,9 @@ namespace ThisIsWin11
             this.lblAppsHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblAppsHeader.Location = new System.Drawing.Point(12, 21);
             this.lblAppsHeader.Name = "lblAppsHeader";
-            this.lblAppsHeader.Size = new System.Drawing.Size(273, 32);
+            this.lblAppsHeader.Size = new System.Drawing.Size(275, 32);
             this.lblAppsHeader.TabIndex = 25;
-            this.lblAppsHeader.Text = "Apps && Features";
+            this.lblAppsHeader.Text = "PumpedApp";
             // 
             // btnAddAll
             // 
@@ -301,7 +319,7 @@ namespace ThisIsWin11
             this.btnAddAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddAll.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F);
             this.btnAddAll.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAddAll.Location = new System.Drawing.Point(18, 105);
+            this.btnAddAll.Location = new System.Drawing.Point(18, 115);
             this.btnAddAll.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddAll.Name = "btnAddAll";
             this.btnAddAll.Size = new System.Drawing.Size(307, 32);
@@ -320,7 +338,7 @@ namespace ThisIsWin11
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F);
             this.btnAdd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAdd.Location = new System.Drawing.Point(18, 145);
+            this.btnAdd.Location = new System.Drawing.Point(18, 155);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(307, 32);
@@ -339,7 +357,7 @@ namespace ThisIsWin11
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F);
             this.btnRemove.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRemove.Location = new System.Drawing.Point(18, 243);
+            this.btnRemove.Location = new System.Drawing.Point(18, 253);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(307, 32);
@@ -358,7 +376,7 @@ namespace ThisIsWin11
             this.btnRemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveAll.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F);
             this.btnRemoveAll.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRemoveAll.Location = new System.Drawing.Point(18, 203);
+            this.btnRemoveAll.Location = new System.Drawing.Point(18, 213);
             this.btnRemoveAll.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRemoveAll.Name = "btnRemoveAll";
             this.btnRemoveAll.Size = new System.Drawing.Size(307, 32);
@@ -473,5 +491,6 @@ namespace ThisIsWin11
         private System.Windows.Forms.ListBox lstUWPRemove;
         private System.Windows.Forms.ListBox lstUWP;
         private System.Windows.Forms.Panel pnlBottom;
+        private System.Windows.Forms.LinkLabel lblModuleInfo;
     }
 }

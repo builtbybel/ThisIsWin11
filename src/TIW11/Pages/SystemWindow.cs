@@ -52,7 +52,7 @@ namespace ThisIsWin11
             rtbPS.Text = "Click the <Check> button to run a quick check of your Windows 11 configuration." +
                          "\n\nYou can always restore the default Windows 11 settings. The option for this can be found in the upper right corner." +
                           Environment.NewLine + Environment.NewLine +
-                         "If you have tried one or the other fix and tweak, feel free to suggest it here: " + Helpers.Strings.Uri.GitRepo;
+                         "If you have tried one or the other fix and tweak, feel free to suggest it here:\n\n" + Helpers.Strings.Uri.GitRepo;
         }
 
         public void InitializeAssessments()
@@ -75,6 +75,7 @@ namespace ThisIsWin11
                 new AssessmentNode(new OpenTweaks.Assessment.Personalization.WidgetsRemove()),
                 new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskbarAl()),
                 new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskbarSi()),
+                new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskbarMM()),
                 new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskbarSearch()),
                 new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskbarChat()),
                 new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskView()),
@@ -265,7 +266,7 @@ namespace ThisIsWin11
             }
             else
             {
-                lnkSubHeader.Text = performAssessmentsCount + " items requires attention.";
+                lnkSubHeader.Text = performAssessmentsCount + " of " + selectedAssessments.Count + " checked items requires attention.";
             }
         }
 
@@ -317,7 +318,6 @@ namespace ThisIsWin11
             btnSystemUndo.Enabled = true;
             btnSystemFix.Enabled = true;
             tvwAssessments.Enabled = true;
-
         }
 
         private void btnSystemFix_Click(object sender, EventArgs e)
@@ -476,5 +476,8 @@ namespace ThisIsWin11
         private void tvwAssessments_Click(object sender, EventArgs e) => lnkSystemPreset.Visible = false;
 
         private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => MessageBox.Show(lnkSubHeader.Text);
+
+        private void lblModuleInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+          => MessageBox.Show("Send us your video tutorial on Youtube or your specially created help page on your website about this module and we will give you credits here.", "Coming soon");
     }
 }

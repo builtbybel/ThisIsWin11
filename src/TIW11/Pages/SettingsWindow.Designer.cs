@@ -119,6 +119,7 @@ namespace ThisIsWin11
             // 
             // lblInstalledVersion
             // 
+            this.lblInstalledVersion.AutoEllipsis = true;
             this.lblInstalledVersion.AutoSize = true;
             this.lblInstalledVersion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInstalledVersion.Location = new System.Drawing.Point(27, 125);
@@ -156,7 +157,7 @@ namespace ThisIsWin11
             this.Name = "SettingsWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ThisIsWin11";
+            this.Text = "ThisIsWin11 Settings";
             this.Load += new System.EventHandler(this.SettingsWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

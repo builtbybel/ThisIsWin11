@@ -36,6 +36,10 @@ namespace ThisIsWin11
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DataGridViewPlugs = new System.Windows.Forms.DataGridView();
+            this.ColumnState = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textPlugsSearch = new System.Windows.Forms.TextBox();
             this.btnPluginsMenu = new System.Windows.Forms.Button();
             this.pnlTop = new System.Windows.Forms.Panel();
@@ -50,10 +54,6 @@ namespace ThisIsWin11
             this.menuPlugsPopOut = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuPlugsInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.ColumnAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnState = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewPlugs)).BeginInit();
             this.pnlTop.SuspendLayout();
             this.menuPlugins.SuspendLayout();
@@ -127,6 +127,49 @@ namespace ThisIsWin11
             this.DataGridViewPlugs.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DataGridViewPlugins_RowPrePaint);
             this.DataGridViewPlugs.SelectionChanged += new System.EventHandler(this.DataGridViewPlugs_SelectionChanged);
             // 
+            // ColumnState
+            // 
+            this.ColumnState.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnState.DataPropertyName = "State";
+            this.ColumnState.FalseValue = "0";
+            this.ColumnState.Frozen = true;
+            this.ColumnState.HeaderText = "Status";
+            this.ColumnState.IndeterminateValue = "2";
+            this.ColumnState.MinimumWidth = 10;
+            this.ColumnState.Name = "ColumnState";
+            this.ColumnState.ReadOnly = true;
+            this.ColumnState.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnState.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColumnState.ThreeState = true;
+            this.ColumnState.TrueValue = "1";
+            this.ColumnState.Width = 71;
+            // 
+            // ColumnName
+            // 
+            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnName.DataPropertyName = "Name";
+            this.ColumnName.HeaderText = "Name";
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            this.ColumnName.Width = 68;
+            // 
+            // ColumnDescription
+            // 
+            this.ColumnDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnDescription.DataPropertyName = "Description";
+            this.ColumnDescription.HeaderText = "Description";
+            this.ColumnDescription.Name = "ColumnDescription";
+            this.ColumnDescription.ReadOnly = true;
+            // 
+            // ColumnAuthor
+            // 
+            this.ColumnAuthor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnAuthor.DataPropertyName = "Author";
+            this.ColumnAuthor.HeaderText = "Author";
+            this.ColumnAuthor.Name = "ColumnAuthor";
+            this.ColumnAuthor.ReadOnly = true;
+            this.ColumnAuthor.Width = 75;
+            // 
             // textPlugsSearch
             // 
             this.textPlugsSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -172,12 +215,12 @@ namespace ThisIsWin11
             // lnkPlugsDir
             // 
             this.lnkPlugsDir.AutoSize = true;
-            this.lnkPlugsDir.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkPlugsDir.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkPlugsDir.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkPlugsDir.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lnkPlugsDir.Location = new System.Drawing.Point(283, 94);
+            this.lnkPlugsDir.Location = new System.Drawing.Point(319, 94);
             this.lnkPlugsDir.Name = "lnkPlugsDir";
-            this.lnkPlugsDir.Size = new System.Drawing.Size(112, 15);
+            this.lnkPlugsDir.Size = new System.Drawing.Size(128, 17);
             this.lnkPlugsDir.TabIndex = 160;
             this.lnkPlugsDir.TabStop = true;
             this.lnkPlugsDir.Text = "Open Plugins folder";
@@ -186,12 +229,12 @@ namespace ThisIsWin11
             // lnkSubHeader
             // 
             this.lnkSubHeader.AutoSize = true;
-            this.lnkSubHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkSubHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkSubHeader.LinkColor = System.Drawing.Color.MediumVioletRed;
             this.lnkSubHeader.Location = new System.Drawing.Point(27, 94);
             this.lnkSubHeader.Name = "lnkSubHeader";
-            this.lnkSubHeader.Size = new System.Drawing.Size(236, 15);
+            this.lnkSubHeader.Size = new System.Drawing.Size(272, 17);
             this.lnkSubHeader.TabIndex = 159;
             this.lnkSubHeader.TabStop = true;
             this.lnkSubHeader.Text = "More information about the Plugins engine";
@@ -200,11 +243,11 @@ namespace ThisIsWin11
             // lblSubHeader
             // 
             this.lblSubHeader.AutoSize = true;
-            this.lblSubHeader.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubHeader.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblSubHeader.Location = new System.Drawing.Point(27, 61);
             this.lblSubHeader.Name = "lblSubHeader";
-            this.lblSubHeader.Size = new System.Drawing.Size(550, 17);
+            this.lblSubHeader.Size = new System.Drawing.Size(606, 20);
             this.lblSubHeader.TabIndex = 158;
             this.lblSubHeader.Text = "Create your own tweaks based on simple .INI-files and extend the capabilities of " +
     "ThisIsWin11.";
@@ -228,12 +271,12 @@ namespace ThisIsWin11
             // 
             this.lnkPlugsAttribution.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lnkPlugsAttribution.AutoSize = true;
-            this.lnkPlugsAttribution.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkPlugsAttribution.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkPlugsAttribution.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkPlugsAttribution.LinkColor = System.Drawing.Color.MediumVioletRed;
             this.lnkPlugsAttribution.Location = new System.Drawing.Point(26, 702);
             this.lnkPlugsAttribution.Name = "lnkPlugsAttribution";
-            this.lnkPlugsAttribution.Size = new System.Drawing.Size(153, 15);
+            this.lnkPlugsAttribution.Size = new System.Drawing.Size(175, 17);
             this.lnkPlugsAttribution.TabIndex = 165;
             this.lnkPlugsAttribution.TabStop = true;
             this.lnkPlugsAttribution.Text = "Karlkoorna\'s Tweaky engine";
@@ -293,49 +336,6 @@ namespace ThisIsWin11
             this.menuPlugsInfo.Text = "Info";
             this.menuPlugsInfo.Click += new System.EventHandler(this.menuPluginsInfo_Click);
             // 
-            // ColumnAuthor
-            // 
-            this.ColumnAuthor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnAuthor.DataPropertyName = "Author";
-            this.ColumnAuthor.HeaderText = "Author";
-            this.ColumnAuthor.Name = "ColumnAuthor";
-            this.ColumnAuthor.ReadOnly = true;
-            this.ColumnAuthor.Width = 75;
-            // 
-            // ColumnDescription
-            // 
-            this.ColumnDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnDescription.DataPropertyName = "Description";
-            this.ColumnDescription.HeaderText = "Description";
-            this.ColumnDescription.Name = "ColumnDescription";
-            this.ColumnDescription.ReadOnly = true;
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnName.DataPropertyName = "Name";
-            this.ColumnName.HeaderText = "Name";
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.ReadOnly = true;
-            this.ColumnName.Width = 68;
-            // 
-            // ColumnState
-            // 
-            this.ColumnState.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnState.DataPropertyName = "State";
-            this.ColumnState.FalseValue = "0";
-            this.ColumnState.Frozen = true;
-            this.ColumnState.HeaderText = "Status";
-            this.ColumnState.IndeterminateValue = "2";
-            this.ColumnState.MinimumWidth = 10;
-            this.ColumnState.Name = "ColumnState";
-            this.ColumnState.ReadOnly = true;
-            this.ColumnState.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnState.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ColumnState.ThreeState = true;
-            this.ColumnState.TrueValue = "1";
-            this.ColumnState.Width = 71;
-            // 
             // ExtensionsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,7 +351,7 @@ namespace ThisIsWin11
             this.Location = new System.Drawing.Point(24, 19);
             this.Name = "ExtensionsWindow";
             this.ShowIcon = false;
-            this.Text = "ThisIsWin11";
+            this.Text = "ThisIsWin11 Extensions";
             this.Shown += new System.EventHandler(this.ExtensionsWindow_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewPlugs)).EndInit();
             this.pnlTop.ResumeLayout(false);

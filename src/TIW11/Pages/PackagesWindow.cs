@@ -34,9 +34,7 @@ namespace ThisIsWin11
         // Some UI nicety
         private void UISelection()
         {
-            this.Text = mainForm.Text;
             btnPackagesMenu.Text = "\uE712";
-
             rtbPS.Text = "Automate your next installation and create your own Windows 11 essentials.\n\n" +
                          "To find more packages, visit the Microsoft community Windows Package Manager manifest repository: https://github.com/microsoft/winget-pkgs/tree/master/manifests\n" +
                          "Or just get them from here:\nhttps://winstall.app\n\n\n\n" +
@@ -292,5 +290,8 @@ namespace ThisIsWin11
         }
 
         private void rtbPS_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
+
+        private void lblModuleInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+         => MessageBox.Show("Send us your video tutorial on Youtube or your specially created help page on your website about this module and we will give you credits here.", "Coming soon");
     }
 }

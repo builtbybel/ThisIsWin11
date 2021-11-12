@@ -47,8 +47,9 @@ namespace ThisIsWin11
             this.btnApply = new System.Windows.Forms.Button();
             this.rtbDesc = new System.Windows.Forms.RichTextBox();
             this.pnlRight = new System.Windows.Forms.Panel();
+            this.lblModuleInfo = new System.Windows.Forms.LinkLabel();
             this.btnAutomateOnTheFly = new System.Windows.Forms.Button();
-            this.lblPreview = new System.Windows.Forms.Label();
+            this.lblModuleName = new System.Windows.Forms.Label();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.menuAutomate.SuspendLayout();
@@ -241,14 +242,29 @@ namespace ThisIsWin11
             // pnlRight
             // 
             this.pnlRight.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlRight.Controls.Add(this.lblModuleInfo);
             this.pnlRight.Controls.Add(this.btnAutomateOnTheFly);
-            this.pnlRight.Controls.Add(this.lblPreview);
+            this.pnlRight.Controls.Add(this.lblModuleName);
             this.pnlRight.Controls.Add(this.rtbPS);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlRight.Location = new System.Drawing.Point(716, 0);
             this.pnlRight.Name = "pnlRight";
             this.pnlRight.Size = new System.Drawing.Size(371, 770);
             this.pnlRight.TabIndex = 161;
+            // 
+            // lblModuleInfo
+            // 
+            this.lblModuleInfo.AutoEllipsis = true;
+            this.lblModuleInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModuleInfo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lblModuleInfo.LinkColor = System.Drawing.Color.MediumVioletRed;
+            this.lblModuleInfo.Location = new System.Drawing.Point(24, 59);
+            this.lblModuleInfo.Name = "lblModuleInfo";
+            this.lblModuleInfo.Size = new System.Drawing.Size(320, 17);
+            this.lblModuleInfo.TabIndex = 160;
+            this.lblModuleInfo.TabStop = true;
+            this.lblModuleInfo.Text = "Learn more about PowerUI";
+            this.lblModuleInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblModuleInfo_LinkClicked_1);
             // 
             // btnAutomateOnTheFly
             // 
@@ -268,20 +284,20 @@ namespace ThisIsWin11
             this.btnAutomateOnTheFly.Visible = false;
             this.btnAutomateOnTheFly.Click += new System.EventHandler(this.btnAutomateOnTheFly_Click);
             // 
-            // lblPreview
+            // lblModuleName
             // 
-            this.lblPreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblModuleName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPreview.AutoEllipsis = true;
-            this.lblPreview.BackColor = System.Drawing.Color.Transparent;
-            this.lblPreview.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPreview.ForeColor = System.Drawing.Color.Black;
-            this.lblPreview.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblPreview.Location = new System.Drawing.Point(21, 21);
-            this.lblPreview.Name = "lblPreview";
-            this.lblPreview.Size = new System.Drawing.Size(131, 32);
-            this.lblPreview.TabIndex = 135;
-            this.lblPreview.Text = "Preview";
+            this.lblModuleName.AutoEllipsis = true;
+            this.lblModuleName.BackColor = System.Drawing.Color.Transparent;
+            this.lblModuleName.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModuleName.ForeColor = System.Drawing.Color.Black;
+            this.lblModuleName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblModuleName.Location = new System.Drawing.Point(21, 21);
+            this.lblModuleName.Name = "lblModuleName";
+            this.lblModuleName.Size = new System.Drawing.Size(323, 32);
+            this.lblModuleName.TabIndex = 135;
+            this.lblModuleName.Text = "PowerUI";
             // 
             // rtbPS
             // 
@@ -291,9 +307,9 @@ namespace ThisIsWin11
             this.rtbPS.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rtbPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbPS.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbPS.Location = new System.Drawing.Point(27, 94);
+            this.rtbPS.Location = new System.Drawing.Point(27, 110);
             this.rtbPS.Name = "rtbPS";
-            this.rtbPS.Size = new System.Drawing.Size(343, 596);
+            this.rtbPS.Size = new System.Drawing.Size(343, 580);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = "";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
@@ -363,9 +379,10 @@ namespace ThisIsWin11
         private System.Windows.Forms.ToolStripMenuItem menuAutomateInfo;
         private System.Windows.Forms.ToolStripSeparator menuAutomateSeparator;
         private System.Windows.Forms.Panel pnlRight;
-        private System.Windows.Forms.Label lblPreview;
+        private System.Windows.Forms.Label lblModuleName;
         public System.Windows.Forms.RichTextBox rtbPS;
         private System.Windows.Forms.Button btnAutomateOnTheFly;
         private System.Windows.Forms.LinkLabel lnkSubHeader;
+        private System.Windows.Forms.LinkLabel lblModuleInfo;
     }
 }

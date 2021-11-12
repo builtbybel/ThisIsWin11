@@ -37,7 +37,7 @@ namespace ThisIsWin11
             btnAutomateMenu.Text = "\uE712";
 
             rtbPS.Text = "You will find here custom tasks and script files to customize Windows 11 according to your wishes.\n\n" +
-                          "To obtain new collections (tweaks, scripts, templates etc.) visit the GitHub repository of the app: https://github.com/builtbybel/ThisIsWin11/tree/main/collections";
+                          "To obtain new collections visit the GitHub repository of the app:\n\nhttps://github.com/builtbybel/ThisIsWin11/tree/main/collections";
         }
 
         private void InitializeCustomizationPkg()
@@ -319,5 +319,9 @@ namespace ThisIsWin11
         {
             AutomateWindow automate = new AutomateWindow(); automate.Show();
         }
+
+        private void lblModuleInfo_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+
+            => MessageBox.Show("Send us your video tutorial on Youtube or your specially created help page on your website about this module and we will give you credits here.", "Coming soon");
     }
 }

@@ -377,5 +377,9 @@ namespace ThisIsWin11
         }
 
         private void btnAppsMenu_Click(object sender, EventArgs e) => this.menuApps.Show(Cursor.Position.X, Cursor.Position.Y);
+
+        private void lblModuleInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+         => MessageBox.Show("Send us your video tutorial on Youtube or your specially created help page on your website about this module and we will give you credits here.", "Coming soon");
+        
     }
 }

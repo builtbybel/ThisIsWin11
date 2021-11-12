@@ -24,14 +24,16 @@ namespace ThisIsWin11
 
         private void UISelection()
         {
+            var buildDateTime = Properties.Resources.BuildDate;
             lblInstalledVersion.Text = "Installed Version: " + Program.GetCurrentVersionTostring();
 
-            rtbAbout.Text = mainForm.Text + "\nBuiltbybel" +
-                       "\n\nGitHub: " + Helpers.Strings.Uri.GitRepo +
-                       "\nTwitter: " + Helpers.Strings.Uri.Twitter +
-                       "\nDonate: " + Helpers.Strings.Uri.Support +
-                       "\nGive feedback: " + Helpers.Strings.Uri.Feedback +
-                       "\n\nMIT License";
+            rtbAbout.Text = mainForm.Text +
+                           "\nBuild on " + buildDateTime + "Builtbybel" +
+                           "\n\nGitHub: " + Helpers.Strings.Uri.GitRepo +
+                           "\nTwitter: " + Helpers.Strings.Uri.Twitter +
+                           "\nDonate: " + Helpers.Strings.Uri.Support +
+                           "\nGive feedback: " + Helpers.Strings.Uri.Feedback +
+                           "\n\nMIT License";
 
             try
             {
