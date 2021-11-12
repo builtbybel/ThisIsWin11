@@ -64,33 +64,34 @@
     <Compile Include="Helpers\Keystrokes.cs" />
     <Compile Include="Helpers\Strings.cs" />
     <Compile Include="Helpers\Utils.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Personalization\WidgetsRemove.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskbarMM.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\WidgetsR.cs" />
     <Compile Include="Modules\Extensions\PluginsBase.cs" />
     <Compile Include="Modules\Extensions\PluginsBindingList.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Gaming\PowerThrottling.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Gaming\GameDVR.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Gaming\VisualFX.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Personalization\AppsTheme.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Personalization\FileExplorer.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Personalization\HiddenFileExt.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Personalization\MostUsedApps.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Personalization\SnapAssistFlyout.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarAl.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarChat.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarSearch.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskView.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Personalization\Transparency.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Personalization\Widgets.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Personalization\WindowsTheme.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Privacy\AppsAutoInstall.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Privacy\TailoredExperiences.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Privacy\WindowsTips.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Personalization\HiddenFileFolder.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\System\EnableWSL.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\System\FaxPrinter.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\System\TeamsAutostart.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\System\XPSWriter.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Personalization\TaskbarSi.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Gaming\PowerThrottling.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Gaming\GameDVR.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Gaming\VisualFX.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\AppsTheme.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\FileExplorer.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\HiddenFileExt.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\MostUsedApps.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\SnapAssistFlyout.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskbarAl.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskbarChat.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskbarSearch.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskView.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\Transparency.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\Widgets.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\WindowsTheme.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\AppsAutoInstall.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\TailoredExperiences.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\WindowsTips.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\HiddenFileFolder.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\System\EnableWSL.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\System\FaxPrinter.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\System\TeamsAutostart.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\System\XPSWriter.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskbarSi.cs" />
     <Compile Include="Pages\ExtensionsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,39 +104,39 @@
     <Compile Include="Pages\HomeWindow.Designer.cs">
       <DependentUpon>HomeWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\AccountInfo.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\AppNotifications.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\BackgroundApps.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\Calendar.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\Call.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\CallHistory.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\Camera.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\CellularData.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\Contacts.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\DiagnosticInformation.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\Documents.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\Email.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\EyeGaze.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\FileSystem.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\Messaging.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\Microphone.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\Motion.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\Notifications.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\OtherDevices.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\Pictures.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\Radios.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\Tasks.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\TrackingApps.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Apps\Videos.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Privacy\Biometrics.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Privacy\Advertising.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Privacy\Feedback.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Privacy\LocationTracking.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Privacy\SuggestedContent.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Privacy\DiagnosticData.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Privacy\CompatibilityTelemetry.cs" />
-    <Compile Include="Modules\PumpedApp\Assessments\Privacy\Telemetry.cs" />
-    <Compile Include="Modules\PumpedApp\ErrorHelper.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\AccountInfo.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\AppNotifications.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\BackgroundApps.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Calendar.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Call.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\CallHistory.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Camera.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\CellularData.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Contacts.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\DiagnosticInformation.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Documents.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Email.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\EyeGaze.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\FileSystem.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Messaging.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Microphone.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Motion.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Notifications.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\OtherDevices.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Pictures.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Radios.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Tasks.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\TrackingApps.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Videos.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\Biometrics.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\Advertising.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\Feedback.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\LocationTracking.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\SuggestedContent.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\DiagnosticData.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\CompatibilityTelemetry.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\Telemetry.cs" />
+    <Compile Include="Modules\OpenTweaks\ErrorHelper.cs" />
     <Compile Include="Pages\SettingsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,11 +182,11 @@
     </Compile>
     <Compile Include="Modules\Presenter\LockScreen.cs" />
     <Compile Include="Modules\Presenter\OS.cs" />
-    <Compile Include="Modules\PumpedApp\AssessmentNode.cs" />
-    <Compile Include="Modules\PumpedApp\ITreeNode.cs" />
-    <Compile Include="Modules\PumpedApp\AssessmentBase.cs" />
-    <Compile Include="Modules\PumpedApp\RegistryHelper.cs" />
-    <Compile Include="Modules\PumpedApp\WindowsHelper.cs" />
+    <Compile Include="Modules\OpenTweaks\AssessmentNode.cs" />
+    <Compile Include="Modules\OpenTweaks\ITreeNode.cs" />
+    <Compile Include="Modules\OpenTweaks\AssessmentBase.cs" />
+    <Compile Include="Modules\OpenTweaks\RegistryHelper.cs" />
+    <Compile Include="Modules\OpenTweaks\WindowsHelper.cs" />
     <EmbeddedResource Include="Pages\ExtensionsWindow.resx">
       <DependentUpon>ExtensionsWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +245,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppIcon.ico" />
+    <Content Include="Resources\BuildDate.txt" />
     <None Include="Resources\systemapps.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -252,4 +254,7 @@
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>echo %25date%25 %25time%25 &gt; "$(ProjectDir)\Resources\BuildDate.txt"</PreBuildEvent>
+  </PropertyGroup>
 </Project>
