@@ -1,10 +1,8 @@
 
-- Tested on build 22000.318
-- Added option to system module aka OpenTweaks to "Hide Taskbar on multiple monitors"
-- Minor improvements on OpenTweaks module
-- Updated UI of all modules an assigned its names
-- Updated custom bloatware-11.txt list https://github.com/builtbybel/ThisIsWin11/pull/48
-- Minor fixes
+- Fixed critical scaling issues in System, Packages and Automation module where the main panes and buttons in the bottom area did not show . This bug has only affected individual Windows 11 installations with custom scaling level from 125% to 200% https://github.com/builtbybel/ThisIsWin11/issues/52 https://github.com/builtbybel/ThisIsWin11/issues/26
+- Added codename "Spartan" to release
+- Minor UI fixes
+
 
 From the blog:
 There are plans for the rebranding TIW11
