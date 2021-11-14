@@ -1,5 +1,5 @@
 
-- Fixed critical scaling issues in System, Packages and Automation module where the main panes and buttons in the bottom area did not show . This bug has only affected individual Windows 11 installations with custom scaling level from 125% to 200% https://github.com/builtbybel/ThisIsWin11/issues/52 https://github.com/builtbybel/ThisIsWin11/issues/26
+- Fixed critical scaling issues in System, Packages and Automation module where the main panes and buttons in the bottom area did not show . This bug has only affected individual Windows 11 installations with custom scaling level from 125% to 200%
 - Added codename "Spartan" to release
 - Minor UI fixes
 
