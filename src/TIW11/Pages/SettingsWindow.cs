@@ -27,7 +27,7 @@ namespace ThisIsWin11
             var buildDateTime = Properties.Resources.BuildDate;
             lblInstalledVersion.Text = "Installed Version: " + Program.GetCurrentVersionTostring();
 
-            rtbAbout.Text = mainForm.Text +
+            rtbAbout.Text = mainForm.Text + " (Spartan)" +
                            "\nBuild on " + buildDateTime + "Builtbybel" +
                            "\n\nGitHub: " + Helpers.Strings.Uri.GitRepo +
                            "\nTwitter: " + Helpers.Strings.Uri.Twitter +
@@ -38,7 +38,7 @@ namespace ThisIsWin11
             try
             {
                 string changelog = new WebClient().DownloadString(Helpers.Strings.Uri.GitVersionHint);
-                rtbAbout.Text += "\n\n\nNew in this version:" + changelog;
+                rtbAbout.Text += "\n\n\nLatest changes:" + changelog;
             }
             catch { };
         }

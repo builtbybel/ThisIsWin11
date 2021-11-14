@@ -52,8 +52,10 @@ namespace ThisIsWin11
             this.lblModuleName = new System.Windows.Forms.Label();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
+            this.pnlBottom = new System.Windows.Forms.Panel();
             this.menuAutomate.SuspendLayout();
             this.pnlRight.SuspendLayout();
+            this.pnlBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuAutomateImport
@@ -139,7 +141,7 @@ namespace ThisIsWin11
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(252, 712);
+            this.btnCancel.Location = new System.Drawing.Point(251, 24);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(213, 30);
             this.btnCancel.TabIndex = 160;
@@ -216,7 +218,7 @@ namespace ThisIsWin11
             this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApply.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApply.ForeColor = System.Drawing.Color.Black;
-            this.btnApply.Location = new System.Drawing.Point(24, 712);
+            this.btnApply.Location = new System.Drawing.Point(24, 24);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(213, 30);
             this.btnApply.TabIndex = 154;
@@ -275,7 +277,7 @@ namespace ThisIsWin11
             this.btnAutomateOnTheFly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAutomateOnTheFly.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAutomateOnTheFly.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAutomateOnTheFly.Location = new System.Drawing.Point(27, 712);
+            this.btnAutomateOnTheFly.Location = new System.Drawing.Point(27, 721);
             this.btnAutomateOnTheFly.Name = "btnAutomateOnTheFly";
             this.btnAutomateOnTheFly.Size = new System.Drawing.Size(213, 30);
             this.btnAutomateOnTheFly.TabIndex = 155;
@@ -330,6 +332,17 @@ namespace ThisIsWin11
             this.lnkSubHeader.Size = new System.Drawing.Size(660, 18);
             this.lnkSubHeader.TabIndex = 172;
             // 
+            // pnlBottom
+            // 
+            this.pnlBottom.AutoScroll = true;
+            this.pnlBottom.Controls.Add(this.btnCancel);
+            this.pnlBottom.Controls.Add(this.btnApply);
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBottom.Location = new System.Drawing.Point(0, 697);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(716, 73);
+            this.pnlBottom.TabIndex = 173;
+            // 
             // AutomateWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -337,13 +350,12 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.lnkSubHeader);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.lstPS);
             this.Controls.Add(this.progress);
             this.Controls.Add(this.btnAutomateMenu);
-            this.Controls.Add(this.btnApply);
             this.Controls.Add(this.rtbDesc);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlRight);
@@ -355,6 +367,7 @@ namespace ThisIsWin11
             this.Load += new System.EventHandler(this.AutomateWindow_Load);
             this.menuAutomate.ResumeLayout(false);
             this.pnlRight.ResumeLayout(false);
+            this.pnlBottom.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,5 +397,6 @@ namespace ThisIsWin11
         private System.Windows.Forms.Button btnAutomateOnTheFly;
         private System.Windows.Forms.LinkLabel lnkSubHeader;
         private System.Windows.Forms.LinkLabel lblModuleInfo;
+        private System.Windows.Forms.Panel pnlBottom;
     }
 }

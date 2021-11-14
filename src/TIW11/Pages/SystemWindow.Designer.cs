@@ -52,8 +52,10 @@ namespace ThisIsWin11
             this.lnkSystemPreset = new System.Windows.Forms.LinkLabel();
             this.btnSystemUndo = new System.Windows.Forms.Button();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
+            this.pnlBottom = new System.Windows.Forms.Panel();
             this.menuSystem.SuspendLayout();
             this.pnlRight.SuspendLayout();
+            this.pnlBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSystemMenu
@@ -84,18 +86,17 @@ namespace ThisIsWin11
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(669, 32);
             this.lblHeader.TabIndex = 161;
-            this.lblHeader.Text = "Control Settings";
+            this.lblHeader.Text = "Change settings";
             // 
             // btnSystemCheck
             // 
-            this.btnSystemCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSystemCheck.BackColor = System.Drawing.Color.Gainsboro;
             this.btnSystemCheck.FlatAppearance.BorderColor = System.Drawing.Color.Orchid;
             this.btnSystemCheck.FlatAppearance.BorderSize = 0;
             this.btnSystemCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSystemCheck.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSystemCheck.ForeColor = System.Drawing.Color.Black;
-            this.btnSystemCheck.Location = new System.Drawing.Point(24, 714);
+            this.btnSystemCheck.Location = new System.Drawing.Point(24, 24);
             this.btnSystemCheck.Margin = new System.Windows.Forms.Padding(2);
             this.btnSystemCheck.Name = "btnSystemCheck";
             this.btnSystemCheck.Size = new System.Drawing.Size(213, 30);
@@ -192,21 +193,20 @@ namespace ThisIsWin11
             this.tvwAssessments.Name = "tvwAssessments";
             this.tvwAssessments.ShowLines = false;
             this.tvwAssessments.ShowNodeToolTips = true;
-            this.tvwAssessments.Size = new System.Drawing.Size(691, 576);
+            this.tvwAssessments.Size = new System.Drawing.Size(691, 589);
             this.tvwAssessments.TabIndex = 168;
             this.tvwAssessments.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvwAssessments_AfterCheck);
             this.tvwAssessments.Click += new System.EventHandler(this.tvwAssessments_Click);
             // 
             // btnSystemFix
             // 
-            this.btnSystemFix.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSystemFix.BackColor = System.Drawing.Color.Gainsboro;
             this.btnSystemFix.FlatAppearance.BorderColor = System.Drawing.Color.Orchid;
             this.btnSystemFix.FlatAppearance.BorderSize = 0;
             this.btnSystemFix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSystemFix.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSystemFix.ForeColor = System.Drawing.Color.Black;
-            this.btnSystemFix.Location = new System.Drawing.Point(251, 714);
+            this.btnSystemFix.Location = new System.Drawing.Point(251, 24);
             this.btnSystemFix.Margin = new System.Windows.Forms.Padding(2);
             this.btnSystemFix.Name = "btnSystemFix";
             this.btnSystemFix.Size = new System.Drawing.Size(213, 30);
@@ -331,6 +331,17 @@ namespace ThisIsWin11
             this.tt.ToolTipTitle = "OpenTweaks";
             this.tt.UseAnimation = false;
             // 
+            // pnlBottom
+            // 
+            this.pnlBottom.AutoScroll = true;
+            this.pnlBottom.Controls.Add(this.btnSystemFix);
+            this.pnlBottom.Controls.Add(this.btnSystemCheck);
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBottom.Location = new System.Drawing.Point(0, 694);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(716, 76);
+            this.pnlBottom.TabIndex = 175;
+            // 
             // SystemWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -338,9 +349,8 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.btnSystemUndo);
-            this.Controls.Add(this.btnSystemFix);
-            this.Controls.Add(this.btnSystemCheck);
             this.Controls.Add(this.lnkSystemPreset);
             this.Controls.Add(this.lnkSubHeader);
             this.Controls.Add(this.progress);
@@ -356,6 +366,7 @@ namespace ThisIsWin11
             this.Shown += new System.EventHandler(this.SystemWindow_Shown);
             this.menuSystem.ResumeLayout(false);
             this.pnlRight.ResumeLayout(false);
+            this.pnlBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -384,5 +395,6 @@ namespace ThisIsWin11
         private System.Windows.Forms.Button btnSystemUndo;
         private System.Windows.Forms.ToolTip tt;
         private System.Windows.Forms.LinkLabel lblModuleInfo;
+        private System.Windows.Forms.Panel pnlBottom;
     }
 }

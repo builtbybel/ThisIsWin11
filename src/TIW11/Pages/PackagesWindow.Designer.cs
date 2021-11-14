@@ -49,8 +49,10 @@ namespace ThisIsWin11
             this.lblModuleInfo = new System.Windows.Forms.LinkLabel();
             this.lblModuleName = new System.Windows.Forms.Label();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
+            this.pnlBottom = new System.Windows.Forms.Panel();
             this.menuPackages.SuspendLayout();
             this.pnlRight.SuspendLayout();
+            this.pnlBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -90,14 +92,13 @@ namespace ThisIsWin11
             // 
             // btnCreatePackage
             // 
-            this.btnCreatePackage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCreatePackage.BackColor = System.Drawing.Color.Gainsboro;
             this.btnCreatePackage.FlatAppearance.BorderColor = System.Drawing.Color.Orchid;
             this.btnCreatePackage.FlatAppearance.BorderSize = 0;
             this.btnCreatePackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreatePackage.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreatePackage.ForeColor = System.Drawing.Color.Black;
-            this.btnCreatePackage.Location = new System.Drawing.Point(24, 716);
+            this.btnCreatePackage.Location = new System.Drawing.Point(24, 24);
             this.btnCreatePackage.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreatePackage.Name = "btnCreatePackage";
             this.btnCreatePackage.Size = new System.Drawing.Size(213, 30);
@@ -108,14 +109,13 @@ namespace ThisIsWin11
             // 
             // btnRunPackage
             // 
-            this.btnRunPackage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnRunPackage.BackColor = System.Drawing.Color.Gainsboro;
             this.btnRunPackage.FlatAppearance.BorderColor = System.Drawing.Color.Orchid;
             this.btnRunPackage.FlatAppearance.BorderSize = 0;
             this.btnRunPackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRunPackage.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRunPackage.ForeColor = System.Drawing.Color.Black;
-            this.btnRunPackage.Location = new System.Drawing.Point(251, 716);
+            this.btnRunPackage.Location = new System.Drawing.Point(251, 24);
             this.btnRunPackage.Margin = new System.Windows.Forms.Padding(2);
             this.btnRunPackage.Name = "btnRunPackage";
             this.btnRunPackage.Size = new System.Drawing.Size(213, 30);
@@ -290,6 +290,17 @@ namespace ThisIsWin11
             this.rtbPS.Text = "";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
             // 
+            // pnlBottom
+            // 
+            this.pnlBottom.AutoScroll = true;
+            this.pnlBottom.Controls.Add(this.btnCreatePackage);
+            this.pnlBottom.Controls.Add(this.btnRunPackage);
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBottom.Location = new System.Drawing.Point(0, 697);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(716, 73);
+            this.pnlBottom.TabIndex = 164;
+            // 
             // PackagesWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -297,10 +308,9 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.progress);
             this.Controls.Add(this.btnPackagesMenu);
-            this.Controls.Add(this.btnRunPackage);
-            this.Controls.Add(this.btnCreatePackage);
             this.Controls.Add(this.lstPackages);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.pnlRight);
@@ -312,6 +322,7 @@ namespace ThisIsWin11
             this.Load += new System.EventHandler(this.PackagesWindow_Load);
             this.menuPackages.ResumeLayout(false);
             this.pnlRight.ResumeLayout(false);
+            this.pnlBottom.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,5 +349,6 @@ namespace ThisIsWin11
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.LinkLabel lblModuleInfo;
+        private System.Windows.Forms.Panel pnlBottom;
     }
 }

@@ -225,9 +225,9 @@ namespace ThisIsWin11
 
             foreach (AssessmentNode node in selectedAssessments)
             {
-                var treatment = node.Assessment;
-                ListViewItem detail = new ListViewItem(treatment.ID());
-                ConfiguredTaskAwaitable<bool> analyzeTask = Task<bool>.Factory.StartNew(() => treatment.CheckAssessment()).ConfigureAwait(true);
+                var assessment = node.Assessment;
+                ListViewItem detail = new ListViewItem(assessment.ID());
+                ConfiguredTaskAwaitable<bool> analyzeTask = Task<bool>.Factory.StartNew(() => assessment.CheckAssessment()).ConfigureAwait(true);
                 // logger.Log("Check {0}", node.Text);
 
                 bool shouldPerform = await analyzeTask;
@@ -262,11 +262,11 @@ namespace ThisIsWin11
 
             if (!osInfo.IsWin11())
             {
-                lnkSubHeader.Text = performAssessmentsCount + " items requires attention. " + osWarning.ToString();
+                lnkSubHeader.Text = performAssessmentsCount + " settings requires attention. " + osWarning.ToString();
             }
             else
             {
-                lnkSubHeader.Text = performAssessmentsCount + " of " + selectedAssessments.Count + " checked items requires attention.";
+                lnkSubHeader.Text = performAssessmentsCount + " of " + selectedAssessments.Count + " settings requires attention.";
             }
         }
 
@@ -278,8 +278,8 @@ namespace ThisIsWin11
 
             foreach (AssessmentNode node in treeNodes)
             {
-                var treatment = node.Assessment;
-                ConfiguredTaskAwaitable<bool> performTask = Task<bool>.Factory.StartNew(() => treatment.DoAssessment()).ConfigureAwait(true);
+                var assessment = node.Assessment;
+                ConfiguredTaskAwaitable<bool> performTask = Task<bool>.Factory.StartNew(() => assessment.DoAssessment()).ConfigureAwait(true);
 
                 lnkSubHeader.Text = node.Text;
 
@@ -303,8 +303,8 @@ namespace ThisIsWin11
 
             foreach (AssessmentNode node in treeNodes)
             {
-                var treatment = node.Assessment;
-                ConfiguredTaskAwaitable<bool> performTask = Task<bool>.Factory.StartNew(() => treatment.UndoAssessment()).ConfigureAwait(true);
+                var assessment = node.Assessment;
+                ConfiguredTaskAwaitable<bool> performTask = Task<bool>.Factory.StartNew(() => assessment.UndoAssessment()).ConfigureAwait(true);
 
                 lnkSubHeader.Text = "Undo: " + node.Text;
 
