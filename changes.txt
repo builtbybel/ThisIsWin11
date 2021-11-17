@@ -1,7 +1,7 @@
 
 - Fixed critical scaling issues in System, Packages and Automation module where the main panes and buttons in the bottom area did not show . This bug has only affected individual Windows 11 installations with custom scaling level from 125% to 200%
 - Added codename "Spartan" to release
-- Updates automation packages
+- Updated automation packages
 - Minor UI fixes
 
 
