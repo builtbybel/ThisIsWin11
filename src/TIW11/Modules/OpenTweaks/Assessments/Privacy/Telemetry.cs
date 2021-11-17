@@ -19,7 +19,7 @@ namespace ThisIsWin11.OpenTweaks.Assessment.Privacy
 
         public override string Info()
         {
-            return "This will prevent Windows from collecting usage information and setting diagnostic data to Basic, which is the lowest level available for all consumer versions of Windows 1.\n" +
+            return "This will prevent Windows from collecting usage information and setting diagnostic data to Basic, which is the lowest level available for all consumer versions of Windows 10.\n" +
                    "The services diagtrack & dmwappushservice will also be disabled.\nNOTE: Diagnostic Data must be set to Full to get preview builds from Windows-Insider-Program!";
         }
 
