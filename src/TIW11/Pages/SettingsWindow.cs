@@ -18,9 +18,12 @@ namespace ThisIsWin11
         }
 
         private void SettingsWindow_Load(object sender, EventArgs e)
-        {
-            UISelection();
-        }
+
+            => UISelection();
+
+        private void SettingsWindow_Shown(object sender, EventArgs e)
+
+           => updateInfo.CheckForUpdates(this, true, true);
 
         private void UISelection()
         {

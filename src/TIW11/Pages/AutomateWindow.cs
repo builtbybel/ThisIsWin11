@@ -13,7 +13,7 @@ namespace ThisIsWin11
 {
     public partial class AutomateWindow : Form
     {
-        public static string mAppLogsDir = Helpers.Strings.Data.PackagesLogsDir;
+        public static string mAppLogsDir = Helpers.Strings.Data.ScriptsLogsDir;
         private Presenter.OS osInfo = new Presenter.OS();
 
         private static readonly string componentsVersion = "15";
@@ -42,7 +42,7 @@ namespace ThisIsWin11
 
         private void InitializeCustomizationPkg()
         {
-            string path = Helpers.Strings.Data.PackagesRootDir;
+            string path = Helpers.Strings.Data.ScriptsRootDir;
             if (Directory.Exists(path))
             {
                 PopulatePS();
@@ -53,7 +53,7 @@ namespace ThisIsWin11
         {
             lstPS.Items.Clear();
 
-            DirectoryInfo dirs = new DirectoryInfo(Helpers.Strings.Data.PackagesRootDir);
+            DirectoryInfo dirs = new DirectoryInfo(Helpers.Strings.Data.ScriptsRootDir);
             FileInfo[] listSettings = dirs.GetFiles("*.ps1");
             foreach (FileInfo fi in listSettings)
             {
@@ -92,7 +92,7 @@ namespace ThisIsWin11
                         if (lstPS.GetItemChecked(i))
                         {
                             lstPS.SelectedIndex = i;
-                            string psdir = Helpers.Strings.Data.PackagesRootDir + lstPS.SelectedItem.ToString() + ".ps1";
+                            string psdir = Helpers.Strings.Data.ScriptsRootDir + lstPS.SelectedItem.ToString() + ".ps1";
                             var ps1File = psdir;
 
                             var equals = new[] { "Requires -RunSilent" };
@@ -135,7 +135,7 @@ namespace ThisIsWin11
 
                             // Write log
                             CreateLogsDir();
-                            File.WriteAllText(Helpers.Strings.Data.PackagesLogsDir + lstPS.Text + ".txt", "last applied: " + DateTime.Now.ToString() + Environment.NewLine + rtbPS.Text);
+                            File.WriteAllText(Helpers.Strings.Data.ScriptsLogsDir + lstPS.Text + ".txt", "last applied: " + DateTime.Now.ToString() + Environment.NewLine + rtbPS.Text);
                         }
                     }
 
@@ -150,7 +150,7 @@ namespace ThisIsWin11
 
         private void lstPS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string psdir = Helpers.Strings.Data.PackagesRootDir + lstPS.Text + ".ps1";
+            string psdir = Helpers.Strings.Data.ScriptsRootDir + lstPS.Text + ".ps1";
             rtbPS.Visible = true;
             btnAutomateOnTheFly.Visible = true;
 
@@ -204,7 +204,7 @@ namespace ThisIsWin11
             {
                 Process process = new Process();
                 process.StartInfo.FileName = "powershell_ise.exe";
-                process.StartInfo.Arguments = "\"" + Helpers.Strings.Data.PackagesRootDir + "\\" + lstPS.SelectedItem.ToString() + ".ps1" + "\"";
+                process.StartInfo.Arguments = "\"" + Helpers.Strings.Data.ScriptsRootDir + "\\" + lstPS.SelectedItem.ToString() + ".ps1" + "\"";
                 process.Start();
             }
             catch { }
@@ -223,7 +223,7 @@ namespace ThisIsWin11
             dlg.FileName = lstPS.Text + "-Copy";
             dlg.DefaultExt = ".ps1";
             dlg.RestoreDirectory = true;
-            dlg.InitialDirectory = Helpers.Strings.Data.PackagesRootDir;
+            dlg.InitialDirectory = Helpers.Strings.Data.ScriptsRootDir;
             dlg.FilterIndex = 2;
 
             try
@@ -269,7 +269,7 @@ namespace ThisIsWin11
             ofd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             ofd.FilterIndex = 2;
 
-            string strDestPath = Helpers.Strings.Data.PackagesRootDir;
+            string strDestPath = Helpers.Strings.Data.ScriptsRootDir;
             ofd.Multiselect = true;
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -292,7 +292,7 @@ namespace ThisIsWin11
         {
             try
             {
-                DirectoryInfo dirs = new DirectoryInfo(Helpers.Strings.Data.PackagesLogsDir);
+                DirectoryInfo dirs = new DirectoryInfo(Helpers.Strings.Data.ScriptsLogsDir);
                 FileInfo[] listApplied = dirs.GetFiles("*.txt");
 
                 StringBuilder message = new StringBuilder();

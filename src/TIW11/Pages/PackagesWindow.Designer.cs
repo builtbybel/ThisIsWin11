@@ -31,15 +31,14 @@ namespace ThisIsWin11
         {
             this.components = new System.ComponentModel.Container();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.lstPackages = new System.Windows.Forms.CheckedListBox();
             this.btnCreatePackage = new System.Windows.Forms.Button();
             this.btnRunPackage = new System.Windows.Forms.Button();
             this.btnPackagesMenu = new System.Windows.Forms.Button();
             this.menuPackages = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuPackagesImport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPackagesExport = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPackagesExpand = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPackagesRefresh = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuPackagesSelect = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPackagesPopOut = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +49,7 @@ namespace ThisIsWin11
             this.lblModuleName = new System.Windows.Forms.Label();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
             this.pnlBottom = new System.Windows.Forms.Panel();
+            this.tvwPackages = new System.Windows.Forms.TreeView();
             this.menuPackages.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.pnlBottom.SuspendLayout();
@@ -70,25 +70,6 @@ namespace ThisIsWin11
             this.lblHeader.Size = new System.Drawing.Size(188, 32);
             this.lblHeader.TabIndex = 139;
             this.lblHeader.Text = "Install packages";
-            // 
-            // lstPackages
-            // 
-            this.lstPackages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lstPackages.BackColor = System.Drawing.Color.White;
-            this.lstPackages.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstPackages.CheckOnClick = true;
-            this.lstPackages.ColumnWidth = 300;
-            this.lstPackages.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstPackages.FormattingEnabled = true;
-            this.lstPackages.Location = new System.Drawing.Point(24, 99);
-            this.lstPackages.MultiColumn = true;
-            this.lstPackages.Name = "lstPackages";
-            this.lstPackages.Size = new System.Drawing.Size(691, 600);
-            this.lstPackages.Sorted = true;
-            this.lstPackages.TabIndex = 140;
-            this.lstPackages.ThreeDCheckBoxes = true;
             // 
             // btnCreatePackage
             // 
@@ -146,14 +127,14 @@ namespace ThisIsWin11
             this.menuPackages.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuPackagesImport,
             this.menuPackagesExport,
+            this.menuPackagesExpand,
             this.menuPackagesRefresh,
-            this.menuPackagesSelect,
             this.menuPackagesPopOut,
             this.toolStripSeparator1,
             this.toolStripMenuItem1});
             this.menuPackages.Name = "menuMain";
             this.menuPackages.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuPackages.Size = new System.Drawing.Size(303, 190);
+            this.menuPackages.Size = new System.Drawing.Size(303, 212);
             // 
             // menuPackagesImport
             // 
@@ -169,19 +150,19 @@ namespace ThisIsWin11
             this.menuPackagesExport.Text = "Export to PowerShell";
             this.menuPackagesExport.Click += new System.EventHandler(this.menuPackagesExport_Click);
             // 
+            // menuPackagesExpand
+            // 
+            this.menuPackagesExpand.Name = "menuPackagesExpand";
+            this.menuPackagesExpand.Size = new System.Drawing.Size(302, 30);
+            this.menuPackagesExpand.Text = "Expand all";
+            this.menuPackagesExpand.Click += new System.EventHandler(this.menuPackagesExpand_Click);
+            // 
             // menuPackagesRefresh
             // 
             this.menuPackagesRefresh.Name = "menuPackagesRefresh";
             this.menuPackagesRefresh.Size = new System.Drawing.Size(302, 30);
             this.menuPackagesRefresh.Text = "Refresh";
             this.menuPackagesRefresh.Click += new System.EventHandler(this.menuPackagesRefresh_Click);
-            // 
-            // menuPackagesSelect
-            // 
-            this.menuPackagesSelect.Name = "menuPackagesSelect";
-            this.menuPackagesSelect.Size = new System.Drawing.Size(302, 30);
-            this.menuPackagesSelect.Text = "Select all";
-            this.menuPackagesSelect.Click += new System.EventHandler(this.menuPackagesSelect_Click);
             // 
             // menuPackagesPopOut
             // 
@@ -301,6 +282,21 @@ namespace ThisIsWin11
             this.pnlBottom.Size = new System.Drawing.Size(716, 73);
             this.pnlBottom.TabIndex = 164;
             // 
+            // tvwPackages
+            // 
+            this.tvwPackages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tvwPackages.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tvwPackages.CheckBoxes = true;
+            this.tvwPackages.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tvwPackages.HotTracking = true;
+            this.tvwPackages.Location = new System.Drawing.Point(24, 97);
+            this.tvwPackages.Name = "tvwPackages";
+            this.tvwPackages.ShowLines = false;
+            this.tvwPackages.Size = new System.Drawing.Size(692, 600);
+            this.tvwPackages.TabIndex = 165;
+            // 
             // PackagesWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -308,10 +304,10 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.Controls.Add(this.tvwPackages);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.progress);
             this.Controls.Add(this.btnPackagesMenu);
-            this.Controls.Add(this.lstPackages);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.pnlRight);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -319,7 +315,7 @@ namespace ThisIsWin11
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Packages";
-            this.Load += new System.EventHandler(this.PackagesWindow_Load);
+            this.Shown += new System.EventHandler(this.PackagesWindow_Shown);
             this.menuPackages.ResumeLayout(false);
             this.pnlRight.ResumeLayout(false);
             this.pnlBottom.ResumeLayout(false);
@@ -331,7 +327,6 @@ namespace ThisIsWin11
         #endregion
 
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.CheckedListBox lstPackages;
         private System.Windows.Forms.Button btnCreatePackage;
         private System.Windows.Forms.Button btnRunPackage;
         private System.Windows.Forms.Button btnPackagesMenu;
@@ -339,7 +334,6 @@ namespace ThisIsWin11
         private System.Windows.Forms.ToolStripMenuItem menuPackagesImport;
         private System.Windows.Forms.ToolStripMenuItem menuPackagesPopOut;
         private System.Windows.Forms.ToolStripMenuItem menuPackagesExport;
-        private System.Windows.Forms.ToolStripMenuItem menuPackagesSelect;
         private System.Windows.Forms.ToolStripMenuItem menuPackagesRefresh;
         private System.Windows.Forms.Button btnInstallWinget;
         private System.Windows.Forms.ProgressBar progress;
@@ -350,5 +344,7 @@ namespace ThisIsWin11
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.LinkLabel lblModuleInfo;
         private System.Windows.Forms.Panel pnlBottom;
+        private System.Windows.Forms.TreeView tvwPackages;
+        private System.Windows.Forms.ToolStripMenuItem menuPackagesExpand;
     }
 }

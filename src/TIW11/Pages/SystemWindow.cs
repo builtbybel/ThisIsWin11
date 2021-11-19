@@ -439,7 +439,7 @@ namespace ThisIsWin11
 
             OpenFileDialog f = new OpenFileDialog();
             f.InitialDirectory = Helpers.Strings.Data.DataRootDir;
-            f.FileName = "windows10-profile";
+            f.FileName = "opentweaks_windows10Profile";
             f.Filter = "ThisIsWin11 files *.tiw1|*.tiw1";
 
             if (f.ShowDialog() == DialogResult.OK)

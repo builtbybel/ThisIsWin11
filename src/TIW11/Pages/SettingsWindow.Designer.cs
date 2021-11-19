@@ -113,9 +113,9 @@ namespace ThisIsWin11
             this.lblSettingsAbout.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblSettingsAbout.Location = new System.Drawing.Point(24, 220);
             this.lblSettingsAbout.Name = "lblSettingsAbout";
-            this.lblSettingsAbout.Size = new System.Drawing.Size(176, 32);
+            this.lblSettingsAbout.Size = new System.Drawing.Size(68, 32);
             this.lblSettingsAbout.TabIndex = 157;
-            this.lblSettingsAbout.Text = "About this app";
+            this.lblSettingsAbout.Text = "Infos";
             // 
             // lblInstalledVersion
             // 
@@ -159,6 +159,7 @@ namespace ThisIsWin11
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ThisIsWin11 Settings";
             this.Load += new System.EventHandler(this.SettingsWindow_Load);
+            this.Shown += new System.EventHandler(this.SettingsWindow_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

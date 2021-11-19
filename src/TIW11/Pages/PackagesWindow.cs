@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Management.Automation;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ThisIsWin11
 {
@@ -23,11 +26,10 @@ namespace ThisIsWin11
             InitializeComponent();
         }
 
-        private void PackagesWindow_Load(object sender, EventArgs e)
+        private void PackagesWindow_Shown(object sender, EventArgs e)
         {
-            IntializePackages();
             UISelection();
-
+            IntializePackages(tvwPackages);
             IsWingetInstalled();
         }
 
@@ -44,26 +46,54 @@ namespace ThisIsWin11
                          "3. Install your packages with Button <Run Installer>";
         }
 
-        private void IntializePackages()
+        private void IntializePackages(TreeView treeview)
         {
-            lstPackages.Items.Clear();
+            treeview.Nodes.Clear();
+            treeview.BeginUpdate();
 
             try
             {
-                using (StreamReader sr = new StreamReader(Helpers.Strings.Data.DataRootDir + "packages-11.txt"))
-                {
-                    string line;
+                string fileName = new DirectoryInfo(@"data\")
+             .EnumerateFiles("packages*.xml").FirstOrDefault()?.FullName;
 
-                    while ((line = sr.ReadLine()) != null)
+                XElement doc = XElement.Load(fileName);
+
+                TreeNode moduleNode;
+                TreeNode categoriesNode;
+                foreach (XElement module in doc.Descendants("Module"))
+                {
+                    moduleNode = tvwPackages.Nodes.Add(module.Attribute("name").Value + " (v1.1.12653)");
+                    foreach (XElement categories in module.Descendants("Category"))
                     {
-                        lstPackages.Items.Add(line);
+                        categoriesNode =
+                            moduleNode.Nodes.Add(categories.Attribute("name").Value);
+                        foreach (XElement category in categories.Descendants("App"))
+                        {
+                            categoriesNode.Nodes.Add(category.Attribute("name").Value);
+                        }
                     }
-                    sr.Close();
                 }
+
+                // Some tvw nicety
+                treeview.Nodes[0].Expand();
+                treeview.Nodes[0].EnsureVisible();
+                treeview.Nodes[0].ForeColor = Color.DeepPink;
+                treeview.Nodes[0].NodeFont = new Font(treeview.Font, FontStyle.Bold);
+
+                treeview.EndUpdate();
             }
-            catch (Exception ex)
+            catch
+            { MessageBox.Show("Packages database could not be found.\nPlease make sure that a \"packages*.xml\" file is available in the data directory of this app.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+        }
+
+        private IEnumerable<TreeNode> CollectPackages(TreeNodeCollection nodes)
+        {
+            foreach (TreeNode node in nodes)
             {
-                MessageBox.Show(ex.Message);
+                yield return node;
+
+                foreach (var child in CollectPackages(node.Nodes))
+                    yield return child;
             }
         }
 
@@ -71,7 +101,7 @@ namespace ThisIsWin11
         {
             rtbPS.Clear();
 
-            if (lstPackages.CheckedItems.Count == 0)
+            if (tvwPackages.Nodes.Count == 0)
             {
                 MessageBox.Show("Nothing selected.");
             }
@@ -80,14 +110,18 @@ namespace ThisIsWin11
                 StringBuilder message = new StringBuilder();
 
                 var selectedItems = new List<string>();
-                for (var i = 0; i < lstPackages.Items.Count; i++)
+
+                foreach (var node in CollectPackages(tvwPackages.Nodes))
+
                 {
-                    if (lstPackages.GetItemChecked(i))
+                    if (node.Checked)
+
                     {
-                        selectedItems.Add("winget install --id=" + lstPackages.Items[i].ToString() + " -e");
-                        message.AppendLine("- " + lstPackages.Items[i].ToString());
+                        selectedItems.Add("winget install --id=" + node.Text + " -e");
+                        message.AppendLine("- " + node.Text);
                     }
                 }
+
                 rtbPS.Text = string.Join(@" ; ", selectedItems);
 
                 MessageBox.Show("The following packages has been created:\n\n" + message.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -104,21 +138,27 @@ namespace ThisIsWin11
 
             StringBuilder message = new StringBuilder();
 
-            foreach (string package in lstPackages.CheckedItems)
+            foreach (var node in CollectPackages(tvwPackages.Nodes))
             {
-                btnRunPackage.Enabled = false;
-                btnCreatePackage.Enabled = false;
-                lstPackages.Enabled = false;
-                progress.Visible = true;
-                progress.Style = ProgressBarStyle.Marquee;
-                progress.MarqueeAnimationSpeed = 30;
-                rtbPS.Clear();
-                message.AppendLine("- " + package);
+                if (node.Checked)
+                {
+                    btnRunPackage.Enabled = false;
+                    btnCreatePackage.Enabled = false;
+                    tvwPackages.Enabled = false;
+                    progress.Visible = true;
+                    progress.Style = ProgressBarStyle.Marquee;
+                    progress.MarqueeAnimationSpeed = 30;
+                    rtbPS.Clear();
+                    message.AppendLine("- " + node.Text);
 
-                rtbPS.Text += Environment.NewLine + "Installing " + Environment.NewLine + message.ToString() +
-                             Environment.NewLine + "You can continue working while we install...";
+                    rtbPS.Text += Environment.NewLine + "Installing " + Environment.NewLine + message.ToString() +
+                                 Environment.NewLine + "You can continue working while we install.\n\n" +
+                                                       "Have you experienced that Windows 11 blocks Edge browser competitors from opening links.\n" +
+                                                       "https://www.theverge.com/2021/11/15/22782802/microsoft-block-edgedeflector-windows-11\n" +
+                                                       "We have prepared a script for bypassing this in the ThisIsWin11 automation module.";
 
-                await Task.Run(() => InstallPackages("winget install --id=" + package + " -e --accept-package-agreements --accept-source-agreements"));
+                    await Task.Run(() => InstallPackages("winget install --id=" + node.Text + " -e --accept-package-agreements --accept-source-agreements"));
+                }
             }
 
             rtbPS.Text += Environment.NewLine + Environment.NewLine + "I'm done.\nI'm open.\nFollow me on " + Helpers.Strings.Uri.GitRepo;
@@ -126,7 +166,7 @@ namespace ThisIsWin11
             progress.Visible = false;
             btnRunPackage.Enabled = true;
             btnCreatePackage.Enabled = true;
-            lstPackages.Enabled = true;
+            tvwPackages.Enabled = true;
         }
 
         private void InstallPackages(string package)
@@ -220,21 +260,22 @@ namespace ThisIsWin11
         private void menuPackagesImport_Click(object sender, EventArgs e)
         {
             OpenFileDialog f = new OpenFileDialog();
-            f.InitialDirectory = Helpers.Strings.Data.DataRootDir;
 
             if (f.ShowDialog() == DialogResult.OK)
 
             {
-                lstPackages.Items.Clear();
+                tvwPackages.Nodes.Clear();
 
-                List<string> lines = new List<string>();
                 using (StreamReader r = new StreamReader(f.OpenFile()))
                 {
-                    string line;
-                    while ((line = r.ReadLine()) != null)
+                    try
                     {
-                        lstPackages.Items.Add(line);
+                        File.Copy(f.FileName, Helpers.Strings.Data.DataRootDir + @"\" + Path.GetFileName(f.FileName));
+                        MessageBox.Show("A restart is required for the changes to take effect.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Application.Restart();
                     }
+                    catch (Exception ex)
+                    { MessageBox.Show(ex.Message, this.Text); }
                 }
             }
         }
@@ -272,26 +313,30 @@ namespace ThisIsWin11
             }
         }
 
-        private void menuPackagesSelect_Click(object sender, EventArgs e)
-        {
-            menuPackagesSelect.Checked = !(menuPackagesSelect.Checked);
-            for (int i = 0; i < lstPackages.Items.Count; i++)
-            {
-                if (menuPackagesSelect.Checked == true)
-                    lstPackages.SetItemChecked(i, menuPackagesSelect.Checked = true);
-                else if (menuPackagesSelect.Checked == false)
-                    lstPackages.SetItemChecked(i, menuPackagesSelect.Checked = false);
-            }
-        }
-
         private void menuPackagesRefresh_Click(object sender, EventArgs e)
         {
-            IntializePackages();
+            IntializePackages(tvwPackages);
         }
 
         private void rtbPS_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
 
         private void lblModuleInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
          => MessageBox.Show("Send us your video tutorial on Youtube or your specially created help page on your website about this module and we will give you credits here.", "Coming soon");
+
+        private void menuPackagesExpand_Click(object sender, EventArgs e)
+        {
+            menuPackagesExpand.Checked = !(menuPackagesExpand.Checked);
+
+            tvwPackages.BeginUpdate();
+            if (menuPackagesExpand.Checked == true)
+            {
+                tvwPackages.Nodes[0].ExpandAll();
+                tvwPackages.Nodes[0].EnsureVisible();
+            }
+            else if (menuPackagesExpand.Checked == false)
+                tvwPackages.Nodes[0].Collapse();
+
+            tvwPackages.EndUpdate();
+        }
     }
 }

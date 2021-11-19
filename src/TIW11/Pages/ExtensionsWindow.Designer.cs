@@ -247,10 +247,9 @@ namespace ThisIsWin11
             this.lblSubHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblSubHeader.Location = new System.Drawing.Point(27, 61);
             this.lblSubHeader.Name = "lblSubHeader";
-            this.lblSubHeader.Size = new System.Drawing.Size(606, 20);
+            this.lblSubHeader.Size = new System.Drawing.Size(439, 20);
             this.lblSubHeader.TabIndex = 158;
-            this.lblSubHeader.Text = "Create your own tweaks based on simple .INI-files and extend the capabilities of " +
-    "ThisIsWin11.";
+            this.lblSubHeader.Text = "Create your own tweaks and extend the capabilities of ThisIsWin11.";
             // 
             // lblHeader
             // 

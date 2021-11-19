@@ -40,7 +40,7 @@ namespace ThisIsWin11
             rtbPS.Text = "I am just a Recycle Bin.\n\n" +
                          "Throw everything you don't need into the bin and press <Empty Recycle Bin> button to remove it permanently.\n\n" +
                          "You can also import a custom bloatware list, e.g. you can find a list of pre-installed Windows 11 apps in the data root of this app.\n\n" +
-                         "Use the import function in the upper left menu and select file \"bloatwareapps-11\".";
+                         "Use the import function in the upper left menu and select file \"apps11\".";
         }
 
         private void InitializeUWP()
@@ -74,15 +74,15 @@ namespace ThisIsWin11
             try
             {
                 Helpers.Utils.CreateDataDir();
-                Database = File.OpenText(Helpers.Strings.Data.DataRootDir + "systemapps.txt");
+                Database = File.OpenText(Helpers.Strings.Data.DataRootDir + "systemapps11.txt");
             }
             catch (FileNotFoundException) // Create file if it doesnt exisits
             {
-                StreamWriter sw = File.CreateText(Helpers.Strings.Data.DataRootDir + "systemapps.txt");
+                StreamWriter sw = File.CreateText(Helpers.Strings.Data.DataRootDir + "systemapps11.txt");
                 sw.Write(Resources.systemapps);    // Populate it with built in preset
                 sw.Close();
 
-                Database = File.OpenText(Helpers.Strings.Data.DataRootDir + "systemapps.txt");
+                Database = File.OpenText(Helpers.Strings.Data.DataRootDir + "systemapps11.txt");
             }
             finally
             {
@@ -180,7 +180,7 @@ namespace ThisIsWin11
             {
                 selectedApps += app + Environment.NewLine;
             }
-            if (MessageBox.Show("Do you want to empty the Recylce Bin and delete all the apps in it?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Do you want to empty the Recycle Bin and delete all the apps in it?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 removeUWPList.Clear();
                 removeUWPFailedList.Clear();
