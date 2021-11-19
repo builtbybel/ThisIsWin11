@@ -1,9 +1,8 @@
 
-- Fixed critical scaling issues in System, Packages and Automation module where the main panes and buttons in the bottom area did not show . This bug has only affected individual Windows 11 installations with custom scaling level from 125% to 200%
-- Added codename "Spartan" to release
-- Updated automation packages
-- Minor UI fixes
-
+- Redesigned Packages module completely featuring a new category-based UI and several new apps
+- Improved storing application data (data directory renaming took place. Do NOT use application data folders from releases other than this release)
+- Add in stability and quality fixes
+- Numeorous minor UI fixes and improvements
 
 From the blog:
 There are plans for the rebranding TIW11
