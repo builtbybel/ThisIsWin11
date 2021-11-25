@@ -40,7 +40,7 @@ If you know my previous apps ([Privatezilla](https://github.com/builtbybel/priva
 - (Latest release) [Download](https://github.com/builtbybel/ThisIsWin11/releases)
  
  ## Disclaimer
- This is not a product made by Microsoft and its in no way related to them
+ This is not a product made by Microsoft and it's in no way related to them.
  
  ---
 
