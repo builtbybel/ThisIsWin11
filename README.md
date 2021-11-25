@@ -41,3 +41,9 @@ If you know my previous apps ([Privatezilla](https://github.com/builtbybel/priva
  
  ## Disclaimer
  This is not a product made by Microsoft and its in no way related to them
+ 
+ ---
+
+> [builtbybel](https://www.builtbybel.com) &nbsp;&middot;&nbsp;
+> GitHub [@builtbybel](https://github.com/builtbybel) &nbsp;&middot;&nbsp;
+> Twitter [@builtbybel](https://twitter.com/builtbybel)
