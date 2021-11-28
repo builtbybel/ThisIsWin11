@@ -1,9 +1,11 @@
 
-- Redesigned Packages module completely featuring a new category-based UI and several new apps
-- Improved storing application data (data directory renaming took place. Do NOT use application data folders from releases other than this release)
-- Add in stability and quality fixes
-- Numeorous minor UI fixes and improvements
+- Built-in support for build 22000.348
+- Added option to system module aka OpenTweaks to "Create Restore Points"
+- Revised Update check function (version infos are matched with [AssemblyInfo.cs](https://github.com/builtbybel/ThisIsWin11/blob/main/src/TIW11/Properties/AssemblyInfo.cs))
+- Added AutoScroll to Preview/logger panels
+- Updated Packages module with several new apps
+- Minor fixes
 
 From the blog:
-There are plans for the rebranding TIW11
-Vote for a new app name here: https://www.builtbybel.com/blog/19-apps/44-thisiswin11-yes-or-no-for-changing-the-appname
+Voting for a appname change is closed.
+https://www.builtbybel.com/blog/19-apps/44-thisiswin11-yes-or-no-for-changing-the-appname
