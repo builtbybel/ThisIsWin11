@@ -38,7 +38,7 @@ namespace ThisIsWin11.OpenTweaks.Assessment.Privacy
                 return true;
             }
             catch (Exception ex)
-            { logger.Log("Could not disable Windows Hello Biometrics { 0}", ex.Message); }
+            { logger.Log("Could not disable Windows Hello Biometrics {0}", ex.Message); }
 
             return false;
         }
