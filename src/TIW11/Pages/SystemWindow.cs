@@ -66,7 +66,14 @@ namespace ThisIsWin11
                 Checked = true,
             };
 
-            TreeNode appearance = new TreeNode("Personalization", new TreeNode[] {
+            TreeNode settings = new TreeNode("Settings", new TreeNode[] {
+                new AssessmentNode(new OpenTweaks.Assessment.Settings.RestorePoint()),
+            })
+            {
+                Checked = true,
+            };
+
+            TreeNode personalization = new TreeNode("Personalization", new TreeNode[] {
                 new AssessmentNode(new OpenTweaks.Assessment.Personalization.AppsTheme()),
                 new AssessmentNode(new OpenTweaks.Assessment.Personalization.WindowsTheme()),
                 new AssessmentNode(new OpenTweaks.Assessment.Personalization.Transparency()),
@@ -107,7 +114,7 @@ namespace ThisIsWin11
                 Checked = true,
             };
 
-            TreeNode privacy = new TreeNode("Privacy (to disable)", new TreeNode[] {
+            TreeNode privacy = new TreeNode("Privacy (disable)", new TreeNode[] {
                 new AssessmentNode(new OpenTweaks.Assessment.Privacy.DiagnosticData()),
                 new AssessmentNode(new OpenTweaks.Assessment.Privacy.Telemetry()),
                 new AssessmentNode(new OpenTweaks.Assessment.Privacy.CompatibilityTelemetry()),
@@ -124,7 +131,7 @@ namespace ThisIsWin11
                 Checked = true
             };
 
-            TreeNode apps = new TreeNode("Apps permissions (to disable)", new TreeNode[] {
+            TreeNode apps = new TreeNode("Apps permissions (disable)", new TreeNode[] {
                 new AssessmentNode(new OpenTweaks.Assessment.Apps.AppNotifications()),
                 new AssessmentNode(new OpenTweaks.Assessment.Apps.Camera()),
                 new AssessmentNode(new OpenTweaks.Assessment.Apps.Microphone()),
@@ -156,7 +163,8 @@ namespace ThisIsWin11
 
             root.Nodes.AddRange(new TreeNode[]
             {
-                appearance,
+                settings,
+                personalization,
                 system,
                 gaming,
                 privacy,
@@ -166,6 +174,7 @@ namespace ThisIsWin11
             tvwAssessments.Nodes.Add(root);
 
             // Some tvw nicety
+            // foreach (TreeNode tn in tvwAssessments.Nodes) { tn.Expand(); }
             tvwAssessments.Nodes[0].ForeColor = Color.DeepPink;
             tvwAssessments.Nodes[0].NodeFont = new Font(tvwAssessments.Font, FontStyle.Bold);
             tvwAssessments.EndUpdate();
@@ -190,6 +199,7 @@ namespace ThisIsWin11
 
         private void Reset()
         {
+            tvwAssessments.Nodes[0].EnsureVisible();
             lnkSystemPreset.Visible = false;
 
             progression = 0;

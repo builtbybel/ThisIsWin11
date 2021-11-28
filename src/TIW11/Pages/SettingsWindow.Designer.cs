@@ -34,8 +34,9 @@ namespace ThisIsWin11
             this.btnCheckForUpdates = new System.Windows.Forms.Button();
             this.lblSettingsUpdates = new System.Windows.Forms.Label();
             this.lblSettingsAbout = new System.Windows.Forms.Label();
-            this.lblInstalledVersion = new System.Windows.Forms.Label();
+            this.lblVersionInfo = new System.Windows.Forms.Label();
             this.progress = new System.Windows.Forms.ProgressBar();
+            this.lblVersionInstalled = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // rtbAbout
@@ -117,16 +118,16 @@ namespace ThisIsWin11
             this.lblSettingsAbout.TabIndex = 157;
             this.lblSettingsAbout.Text = "Infos";
             // 
-            // lblInstalledVersion
+            // lblVersionInfo
             // 
-            this.lblInstalledVersion.AutoEllipsis = true;
-            this.lblInstalledVersion.AutoSize = true;
-            this.lblInstalledVersion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInstalledVersion.Location = new System.Drawing.Point(27, 125);
-            this.lblInstalledVersion.Name = "lblInstalledVersion";
-            this.lblInstalledVersion.Size = new System.Drawing.Size(106, 17);
-            this.lblInstalledVersion.TabIndex = 158;
-            this.lblInstalledVersion.Text = "Installed Version:";
+            this.lblVersionInfo.AutoEllipsis = true;
+            this.lblVersionInfo.AutoSize = true;
+            this.lblVersionInfo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVersionInfo.Location = new System.Drawing.Point(27, 125);
+            this.lblVersionInfo.Name = "lblVersionInfo";
+            this.lblVersionInfo.Size = new System.Drawing.Size(106, 17);
+            this.lblVersionInfo.TabIndex = 158;
+            this.lblVersionInfo.Text = "Installed Version:";
             // 
             // progress
             // 
@@ -139,6 +140,21 @@ namespace ThisIsWin11
             this.progress.TabIndex = 163;
             this.progress.Visible = false;
             // 
+            // lblVersionInstalled
+            // 
+            this.lblVersionInstalled.AutoSize = true;
+            this.lblVersionInstalled.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVersionInstalled.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lblVersionInstalled.LinkColor = System.Drawing.Color.DimGray;
+            this.lblVersionInstalled.Location = new System.Drawing.Point(130, 125);
+            this.lblVersionInstalled.Name = "lblVersionInstalled";
+            this.lblVersionInstalled.Size = new System.Drawing.Size(66, 17);
+            this.lblVersionInstalled.TabIndex = 165;
+            this.lblVersionInstalled.TabStop = true;
+            this.lblVersionInstalled.Text = "Assembly";
+            this.lblVersionInstalled.VisitedLinkColor = System.Drawing.Color.MediumVioletRed;
+            this.lblVersionInstalled.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblVersionInstalled_LinkClicked);
+            // 
             // SettingsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -146,8 +162,9 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.Controls.Add(this.lblVersionInstalled);
             this.Controls.Add(this.progress);
-            this.Controls.Add(this.lblInstalledVersion);
+            this.Controls.Add(this.lblVersionInfo);
             this.Controls.Add(this.lblSettingsAbout);
             this.Controls.Add(this.lblSettingsUpdates);
             this.Controls.Add(this.btnCheckForUpdates);
@@ -171,8 +188,9 @@ namespace ThisIsWin11
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label lblSettingsUpdates;
         private System.Windows.Forms.Label lblSettingsAbout;
-        private System.Windows.Forms.Label lblInstalledVersion;
+        private System.Windows.Forms.Label lblVersionInfo;
         public System.Windows.Forms.Button btnCheckForUpdates;
         public System.Windows.Forms.ProgressBar progress;
+        private System.Windows.Forms.LinkLabel lblVersionInstalled;
     }
 }

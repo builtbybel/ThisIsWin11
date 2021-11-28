@@ -205,8 +205,8 @@ namespace ThisIsWin11
             // 
             this.pnlRight.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlRight.Controls.Add(this.lblAppsBinCount);
-            this.pnlRight.Controls.Add(this.lstUWPRemove);
             this.pnlRight.Controls.Add(this.rtbPS);
+            this.pnlRight.Controls.Add(this.lstUWPRemove);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlRight.Location = new System.Drawing.Point(716, 0);
             this.pnlRight.Name = "pnlRight";
@@ -254,6 +254,7 @@ namespace ThisIsWin11
             this.rtbPS.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rtbPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbPS.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbPS.HideSelection = false;
             this.rtbPS.Location = new System.Drawing.Point(27, 110);
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ReadOnly = true;

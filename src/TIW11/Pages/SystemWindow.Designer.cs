@@ -263,6 +263,7 @@ namespace ThisIsWin11
             this.rtbPS.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rtbPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbPS.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbPS.HideSelection = false;
             this.rtbPS.Location = new System.Drawing.Point(27, 110);
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ReadOnly = true;
@@ -317,7 +318,6 @@ namespace ThisIsWin11
             this.btnSystemUndo.Name = "btnSystemUndo";
             this.btnSystemUndo.Size = new System.Drawing.Size(48, 51);
             this.btnSystemUndo.TabIndex = 174;
-            this.btnSystemUndo.Text = "U";
             this.tt.SetToolTip(this.btnSystemUndo, "Restore default Windows 11 settings");
             this.btnSystemUndo.UseVisualStyleBackColor = false;
             this.btnSystemUndo.Click += new System.EventHandler(this.btnSystemUndo_Click);

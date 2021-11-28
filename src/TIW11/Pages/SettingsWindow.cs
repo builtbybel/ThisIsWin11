@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Net;
 using System.Windows.Forms;
 
@@ -23,20 +24,21 @@ namespace ThisIsWin11
 
         private void SettingsWindow_Shown(object sender, EventArgs e)
 
-           => updateInfo.CheckForUpdates(this, true, true);
+           => updateInfo.CheckForUpdates(this, true);
 
         private void UISelection()
         {
             var buildDateTime = Properties.Resources.BuildDate;
-            lblInstalledVersion.Text = "Installed Version: " + Program.GetCurrentVersionTostring();
+            lblVersionInstalled.Text = Program.GetCurrentVersionTostring();
 
             rtbAbout.Text = mainForm.Text + " (Spartan)" +
                            "\nBuild on " + buildDateTime + "Builtbybel" +
-                           "\n\nGitHub: " + Helpers.Strings.Uri.GitRepo +
+                           "\n\nGitHub (1.1k Stars): " + Helpers.Strings.Uri.GitRepo +
                            "\nTwitter: " + Helpers.Strings.Uri.Twitter +
                            "\nDonate: " + Helpers.Strings.Uri.Support +
                            "\nGive feedback: " + Helpers.Strings.Uri.Feedback +
-                           "\n\nMIT License";
+                           "\n\nMIT License"+
+                           "\n\nThis is not a product made by Microsoft and it's in no way related to them.";
 
             try
             {
@@ -46,8 +48,10 @@ namespace ThisIsWin11
             catch { };
         }
 
-        private void btnCheckForUpdates_Click(object sender, EventArgs e) => updateInfo.CheckForUpdates(this, true);
+        private void btnCheckForUpdates_Click(object sender, EventArgs e) => updateInfo.CheckForUpdates(this, false);
 
         private void rtbAbout_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
+
+        private void lblVersionInstalled_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start(Helpers.Strings.Uri.GitLatest);
     }
 }

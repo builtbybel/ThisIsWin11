@@ -38,8 +38,8 @@ namespace ThisIsWin11
         {
             btnPackagesMenu.Text = "\uE712";
             rtbPS.Text = "Automate your next installation and create your own Windows 11 essentials.\n\n" +
-                         "To find more packages, visit the Microsoft community Windows Package Manager manifest repository: https://github.com/microsoft/winget-pkgs/tree/master/manifests\n" +
-                         "Or just get them from here:\nhttps://winstall.app\n\n\n\n" +
+                         "You will find more packages in the Windows Package Manager manifest repository:\nhttps://github.com/microsoft/winget-pkgs/tree/master/manifests" +
+                         "\n\nOr just get them with this Web-GUI for Windows Package Manager:\nhttps://winstall.app\n\n\n\n" +
                          "How to use:\n" +
                          "1. Select your packages\n" +
                          "2. Create your packages by clicking on <Create Package> button\n" +
@@ -79,6 +79,7 @@ namespace ThisIsWin11
                 treeview.Nodes[0].EnsureVisible();
                 treeview.Nodes[0].ForeColor = Color.DeepPink;
                 treeview.Nodes[0].NodeFont = new Font(treeview.Font, FontStyle.Bold);
+                treeview.Sort();
 
                 treeview.EndUpdate();
             }
@@ -255,8 +256,6 @@ namespace ThisIsWin11
             }
         }
 
-        private void btnPackagesMenu_Click(object sender, EventArgs e) => this.menuPackages.Show(Cursor.Position.X, Cursor.Position.Y);
-
         private void menuPackagesImport_Click(object sender, EventArgs e)
         {
             OpenFileDialog f = new OpenFileDialog();
@@ -270,19 +269,14 @@ namespace ThisIsWin11
                 {
                     try
                     {
-                        File.Copy(f.FileName, Helpers.Strings.Data.DataRootDir + @"\" + Path.GetFileName(f.FileName));
-                        MessageBox.Show("A restart is required for the changes to take effect.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        File.Copy(f.FileName, Helpers.Strings.Data.DataRootDir + Path.GetFileName(f.FileName));
+                        MessageBox.Show("Imported successfully.\nA restart is required for the changes to take effect.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Application.Restart();
                     }
                     catch (Exception ex)
                     { MessageBox.Show(ex.Message, this.Text); }
                 }
             }
-        }
-
-        private void menuPackagesPopOut_Click(object sender, EventArgs e)
-        {
-            PackagesWindow package = new PackagesWindow(mainForm); package.Show();
         }
 
         private void menuPackagesExport_Click(object sender, EventArgs e)
@@ -313,13 +307,6 @@ namespace ThisIsWin11
             }
         }
 
-        private void menuPackagesRefresh_Click(object sender, EventArgs e)
-        {
-            IntializePackages(tvwPackages);
-        }
-
-        private void rtbPS_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
-
         private void lblModuleInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
          => MessageBox.Show("Send us your video tutorial on Youtube or your specially created help page on your website about this module and we will give you credits here.", "Coming soon");
 
@@ -338,5 +325,18 @@ namespace ThisIsWin11
 
             tvwPackages.EndUpdate();
         }
+
+        private void rtbPS_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
+
+        private void menuPackagesRefresh_Click(object sender, EventArgs e) => IntializePackages(tvwPackages);
+
+        private void btnPackagesMenu_Click(object sender, EventArgs e) => this.menuPackages.Show(Cursor.Position.X, Cursor.Position.Y);
+
+
+        private void menuPackagesPopOut_Click(object sender, EventArgs e)
+        {
+            PackagesWindow package = new PackagesWindow(mainForm); package.Show();
+        }
+
     }
 }
