@@ -7,6 +7,7 @@
 <br>
 <a href="https://www.youtube.com/watch?v=8ReoMuCUdKE" target="_blank">
 <img alt="Youtube Tutorial, thanks to @CraftComputing" src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
+</a>
 
 # ThisIsWin11 
 
