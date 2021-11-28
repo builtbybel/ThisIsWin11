@@ -1,7 +1,7 @@
 
 - Built-in support for build 22000.348
 - Added option to system module aka OpenTweaks to "Create Restore Points"
-- Revised Update check function (version infos are matched with [AssemblyInfo.cs](https://github.com/builtbybel/ThisIsWin11/blob/main/src/TIW11/Properties/AssemblyInfo.cs))
+- Revised Update check function
 - Added AutoScroll to Preview/logger panels
 - Updated Packages module with several new apps
 - Minor fixes
