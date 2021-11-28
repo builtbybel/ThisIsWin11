@@ -45,6 +45,7 @@
     <Reference Include="System.IO.Compression.FileSystem">
       <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.IO.Compression.FileSystem.dll</HintPath>
     </Reference>
+    <Reference Include="System.Management" />
     <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Management.Automation\v4.0_3.0.0.0__31bf3856ad364e35\System.Management.Automation.dll</HintPath>
@@ -87,6 +88,7 @@
     <Compile Include="Modules\OpenTweaks\Assessments\Privacy\TailoredExperiences.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Privacy\WindowsTips.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Personalization\HiddenFileFolder.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Settings\RestorePoint.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\System\EnableWSL.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\System\FaxPrinter.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\System\TeamsAutostart.cs" />
