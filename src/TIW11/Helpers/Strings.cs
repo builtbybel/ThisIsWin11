@@ -19,11 +19,18 @@ namespace ThisIsWin11.Helpers
 
             public static string PackagesLogsDir = Application.StartupPath +
                                                 @"\data\packages\logs\";
+
+            public static string ScriptsRootDir = Application.StartupPath +
+                                                @"\data\scripts\";
+
+            public static string ScriptsLogsDir = Application.StartupPath +
+                                                @"\data\scripts\logs\";
         }
 
         public static class Uri
         {
             public const string GitRepo = "https://github.com/builtbybel/ThisIsWin11";
+            public const string GitLatest = "https://github.com/builtbybel/ThisIsWin11/releases/latest";
             public const string Twitter = "https://twitter.com/builtbybel";
             public const string Support= "https://www.builtbybel.com/donate";
             public const string Feedback = "https://github.com/builtbybel/ThisIsWin11/issues";
