@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Project artifacts
+src/TIW11/Resources/BuildDate.txt
+
 # User-specific files
 *.rsuser
 *.suo
