@@ -85,6 +85,8 @@
     <Compile Include="Modules\OpenTweaks\Assessments\Personalization\Widgets.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Personalization\WindowsTheme.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Privacy\AppsAutoInstall.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Third-Party\ShutUp11.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Third-Party\WindowsSpyBlocker.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Privacy\TailoredExperiences.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Privacy\WindowsTips.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Personalization\HiddenFileFolder.cs" />
@@ -255,6 +257,7 @@
       <Version>4.3.0</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>echo %25date%25 %25time%25 &gt; "$(ProjectDir)\Resources\BuildDate.txt"</PreBuildEvent>
