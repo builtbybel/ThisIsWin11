@@ -1,9 +1,10 @@
 
-Added option to system module aka OpenTweaks to Block Windows telemetry (Powerd by crazy-max/WindowsSpyBlocker)
-Added option to system module aka OpenTweaks to Automate O&O ShutUp10++ (Run a Check for more information on usage of this feature)
-Minor code refactoring #69 #67
-Minor improvements of OpenTweaks module
+- Added option to system module aka OpenTweaks to Block Windows telemetry (Powerd by crazy-max/WindowsSpyBlocker)
+- Added option to system module aka OpenTweaks to Automate O&O ShutUp10++ (Run a Check for more information on usage of this feature)
+- Minor code refactoring #69 #67
+- Minor improvements of OpenTweaks module
 
 From the blog:
-Voting for a appname change is closed.
+Voting for a appname change is closed. 
+ThisIsWin11 remains ThisIsWin11!
 https://www.builtbybel.com/blog/19-apps/44-thisiswin11-yes-or-no-for-changing-the-appname
