@@ -1,10 +1,8 @@
 
-- Built-in support for build 22000.348
-- Added option to system module aka OpenTweaks to "Create Restore Points"
-- Revised Update check function
-- Added AutoScroll to Preview/logger panels
-- Updated Packages module with several new apps
-- Minor fixes
+Added option to system module aka OpenTweaks to Block Windows telemetry (Powerd by crazy-max/WindowsSpyBlocker)
+Added option to system module aka OpenTweaks to Automate O&O ShutUp10++ (Run a Check for more information on usage of this feature)
+Minor code refactoring #69 #67
+Minor improvements of OpenTweaks module
 
 From the blog:
 Voting for a appname change is closed.
