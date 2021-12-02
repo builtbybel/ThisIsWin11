@@ -19,14 +19,14 @@ namespace ThisIsWin11
         public static void DisableService(string service)
         {
             RunCmd($"/c net stop {service}");
-            ProcStart("powershell", $"-command \"Set-Service -Name {service} -StartupType disabled\"");
+            ProcStart(Helpers.Strings.Paths.ShellPS, $"-command \"Set-Service -Name {service} -StartupType disabled\"");
             logger.Log($"Disable {service} service");
         }
 
         public static void EnableService(string service)
         {
             RunCmd($"/c net start {service}");
-            ProcStart("powershell", $"-command \"Set-Service -Name {service} -StartupType auto\"");
+            ProcStart(Helpers.Strings.Paths.ShellPS, $"-command \"Set-Service -Name {service} -StartupType auto\"");
             logger.Log($"Enable {service} service");
         }
 
@@ -49,6 +49,7 @@ namespace ThisIsWin11
                         RedirectStandardOutput = true,
                         StandardOutputEncoding = Encoding.GetEncoding(CultureInfo.CurrentCulture.TextInfo.OEMCodePage),
                         CreateNoWindow = true
+                        
                     }
                 };
                 proc.Start();
@@ -60,9 +61,9 @@ namespace ThisIsWin11
                 proc.WaitForExit();
                 logger.Log($"{name} {args} {line}");
             }
-            catch (Exception ex)
+            catch 
             {
-                logger.Log($"Could not start {name} {args}. Exception: {ex}");
+                logger.Log($"Could not start {name} {args}.");
             }
         }
     }
