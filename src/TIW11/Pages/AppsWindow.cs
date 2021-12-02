@@ -73,7 +73,7 @@ namespace ThisIsWin11
 
             try
             {
-                Helpers.Utils.CreateDataDir();
+                Helpers.Strings.CreateDataDir();
                 Database = File.OpenText(Helpers.Strings.Data.DataRootDir + "systemapps11.txt");
             }
             catch (FileNotFoundException) // Create file if it doesnt exisits

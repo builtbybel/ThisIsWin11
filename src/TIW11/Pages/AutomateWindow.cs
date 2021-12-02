@@ -13,7 +13,6 @@ namespace ThisIsWin11
 {
     public partial class AutomateWindow : Form
     {
-        public static string mAppLogsDir = Helpers.Strings.Data.ScriptsLogsDir;
         private Presenter.OS osInfo = new Presenter.OS();
 
         private static readonly string componentsVersion = "15";
@@ -66,8 +65,8 @@ namespace ThisIsWin11
         {
             try
             {
-                if (!Directory.Exists(mAppLogsDir))
-                    Directory.CreateDirectory(mAppLogsDir);
+                if (!Directory.Exists(Helpers.Strings.Data.ScriptsLogsDir))
+                    Directory.CreateDirectory(Helpers.Strings.Data.ScriptsLogsDir);
             }
             catch { }
         }

@@ -33,7 +33,7 @@ namespace ThisIsWin11
 
             rtbAbout.Text = mainForm.Text + " (Spartan)" +
                            "\nBuild on " + buildDateTime + "Builtbybel" +
-                           "\n\nGitHub (1.1k Stars): " + Helpers.Strings.Uri.GitRepo +
+                           "\n\nGitHub (1.2k Stars): " + Helpers.Strings.Uri.GitRepo +
                            "\nTwitter: " + Helpers.Strings.Uri.Twitter +
                            "\nDonate: " + Helpers.Strings.Uri.Support +
                            "\nGive feedback: " + Helpers.Strings.Uri.Feedback +
@@ -42,7 +42,7 @@ namespace ThisIsWin11
 
             try
             {
-                string changelog = new WebClient().DownloadString(Helpers.Strings.Uri.GitVersionHint);
+                string changelog = new WebClient().DownloadString(Helpers.Strings.Uri.GitChanges);
                 rtbAbout.Text += "\n\n\nLatest changes:" + changelog;
             }
             catch { };

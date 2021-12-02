@@ -188,6 +188,7 @@ namespace ThisIsWin11
             this.tvwAssessments.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tvwAssessments.CheckBoxes = true;
             this.tvwAssessments.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tvwAssessments.HideSelection = false;
             this.tvwAssessments.HotTracking = true;
             this.tvwAssessments.Location = new System.Drawing.Point(24, 99);
             this.tvwAssessments.Name = "tvwAssessments";

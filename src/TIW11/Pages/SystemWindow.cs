@@ -14,7 +14,7 @@ namespace ThisIsWin11
 {
     public partial class SystemWindow : Form
     {
-        private static readonly string componentsVersion = "80";
+        private static readonly string componentsVersion = "90";
         private readonly string osWarning = "We could not recognize this system as Windows 11. Some settings are not tested on this operating system and could lead to malfunction.";
 
         private Presenter.OS osInfo = new Presenter.OS();
@@ -49,7 +49,7 @@ namespace ThisIsWin11
             btnSystemMenu.Text = "\uE712";
             btnSystemUndo.Text = "\uE777";
 
-            rtbPS.Text = "Click the <Check> button to run a quick check of your Windows 11 configuration." +
+            rtbPS.Text = "Click the <Check> button to run a quick check of your Windows 11 configuration and to get a preview of the changes that could be applied." +
                          "\n\nYou can always restore the default Windows 11 settings. The option for this can be found in the upper right corner." +
                           Environment.NewLine + Environment.NewLine +
                          "If you have tried one or the other fix and tweak, feel free to suggest it here:\n\n" + Helpers.Strings.Uri.GitRepo;
@@ -90,6 +90,14 @@ namespace ThisIsWin11
                 new AssessmentNode(new OpenTweaks.Assessment.Personalization.MostUsedApps()),
                 new AssessmentNode(new OpenTweaks.Assessment.Personalization.HiddenFileFolder()),
                 new AssessmentNode(new OpenTweaks.Assessment.Personalization.HiddenFileExt()),
+            })
+            {
+                Checked = true,
+            };
+
+            TreeNode thirdparty = new TreeNode("Third-Party", new TreeNode[] {
+                new AssessmentNode(new OpenTweaks.Assessment.ThirdParty.WindowsSpyBlocker()),
+                new AssessmentNode(new OpenTweaks.Assessment.ThirdParty.ShutUp11()),
             })
             {
                 Checked = true,
@@ -165,6 +173,7 @@ namespace ThisIsWin11
             {
                 settings,
                 personalization,
+                thirdparty,
                 system,
                 gaming,
                 privacy,
@@ -199,7 +208,6 @@ namespace ThisIsWin11
 
         private void Reset()
         {
-            tvwAssessments.Nodes[0].EnsureVisible();
             lnkSystemPreset.Visible = false;
 
             progression = 0;
@@ -225,9 +233,6 @@ namespace ThisIsWin11
         private async void btnSystemCheck_Click(object sender, EventArgs e)
         {
             Reset();
-
-            tvwAssessments.ExpandAll();
-            tvwAssessments.Nodes[0].EnsureVisible();
 
             int performAssessmentsCount = 0;
 
@@ -257,6 +262,7 @@ namespace ThisIsWin11
                 }
             }
 
+            tvwAssessments.ExpandAll();
             DoProgress(100);
 
             // Add summary
