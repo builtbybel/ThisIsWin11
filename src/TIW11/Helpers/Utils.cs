@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Text;
@@ -12,100 +13,109 @@ namespace ThisIsWin11.Helpers
 {
     internal class Utils
     {
-        public static Version CurrentVersion = new Version(Application.ProductVersion);
-        public static Version LatestVersion;
-
         private SettingsWindow settingsForm = null;
 
-        public void CheckForUpdates(Form frm, bool InetStatusMessage, bool silentCheck = false)
+        public void CheckForUpdates(Form frm, bool silentCheck = false)
         {
             settingsForm = frm as SettingsWindow;
 
-            WebClient client = new WebClient
-            {
-                Encoding = Encoding.UTF8
-            };
-
             if (IsInet() == true)
             {
-                string versionContent = new WebClient().DownloadString(Strings.Uri.GitVersionHint);
+                string versionContent = new WebClient().DownloadString(Strings.Uri.GitChanges);
+                string assemblyInfo = new WebClient().DownloadString(Strings.Uri.AssemblyInfo);
 
-                WebRequest hreq = WebRequest.Create(Strings.Uri.GitVersionCheck);
-                hreq.Timeout = 10000;
-                hreq.Headers.Set("Cache-Control", "no-cache, no-store, must-revalidate");
-
-                WebResponse hres = hreq.GetResponse();
-                StreamReader sr = new StreamReader(hres.GetResponseStream());
-
-                LatestVersion = new Version(sr.ReadToEnd().Trim());
-
-                sr.Dispose();
-                hres.Dispose();
-
-                var equals = LatestVersion.CompareTo(CurrentVersion);
-
-                if (equals == 0)          // Up-to-date
+                try
                 {
-                    // Update check on app launch
-                    if (silentCheck)
+                    var readVersion = assemblyInfo.Split('\n');
+                    var infoVersion = readVersion.Where(t => t.Contains("[assembly: AssemblyFileVersion"));
+                    var latestVersion = "";
+                    foreach (var item in infoVersion)
                     {
-                        return;
+                        latestVersion = item.Substring(item.IndexOf('(') + 2, item.LastIndexOf(')') - item.IndexOf('(') - 3);
                     }
 
-                    MessageBox.Show("No new release found.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else if (equals < 0)     // Unofficial!
-                {
-                    return;
-                }
-                else                    // Update available
-                {
-                    if (MessageBox.Show("A new app version " + LatestVersion + " is available.\nDo you want to install the update?" + Environment.NewLine + versionContent, "App update available", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (latestVersion ==
+                        FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location)                 // Up-to-date
+                        .FileVersion)
+
                     {
-                        try
+                        if (silentCheck)                                                                         // Check on opening form
                         {
-                            Assembly currentAssembly = Assembly.GetEntryAssembly();
-
-                            if (currentAssembly == null)
-                            {
-                                currentAssembly = Assembly.GetCallingAssembly();
-                            }
-
-                            string appName = Path.GetFileNameWithoutExtension(currentAssembly.Location);
-                            string appDir = Path.GetDirectoryName(currentAssembly.Location);
-                            string appExtension = Path.GetExtension(currentAssembly.Location);
-
-                            string archiveFile = Path.Combine(appDir, "TIW11_old" + appExtension);
-                            string appFile = Path.Combine(appDir, appName + appExtension);
-                            string tempFile = Path.Combine(appDir, "TIW11_tmp" + appExtension);
-
-                            client.DownloadFile(string.Format("https://github.com/builtbybel/ThisIsWin11/releases/download/{0}/TIW11_updateonly.exe", LatestVersion), tempFile);
-
-                            if (File.Exists(archiveFile)) { File.Delete(archiveFile); }              // Delete previous version
-
-                            File.Move(appFile, archiveFile);                                         // Backup
-
-                            File.Move(tempFile, appFile);                                            // Update app!
-
-                            UpdateDataPackage();                                                     // Update data package!
+                            return;
                         }
-                        catch (Exception ex)
-                        { MessageBox.Show(ex.Message); }
+                        MessageBox.Show("No new release found.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+
+                    if (latestVersion !=                                                                        // Update available
+                        FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location)
+                        .FileVersion)
+
+                    {
+                        if (MessageBox.Show($"A new app version {latestVersion} is available.\nDo you want to install the update?" + Environment.NewLine + versionContent, @"App update available",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            try
+                            {
+                                WebClient client = new WebClient
+                                {
+                                    Encoding = Encoding.UTF8
+                                };
+
+                                Assembly currentAssembly = Assembly.GetEntryAssembly();
+
+                                if (currentAssembly == null)
+                                {
+                                    currentAssembly = Assembly.GetCallingAssembly();
+                                }
+
+                                string appName = Path.GetFileNameWithoutExtension(currentAssembly.Location);
+                                string appDir = Path.GetDirectoryName(currentAssembly.Location);
+                                string appExtension = Path.GetExtension(currentAssembly.Location);
+
+                                string archiveFile = Path.Combine(appDir, "TIW11_old" + appExtension);
+                                string appFile = Path.Combine(appDir, appName + appExtension);
+                                string tempFile = Path.Combine(appDir, "TIW11_tmp" + appExtension);
+
+                                client.DownloadFile(string.Format("https://github.com/builtbybel/ThisIsWin11/releases/download/{0}/TIW11_updateonly.exe", latestVersion), tempFile);
+
+                                if (File.Exists(archiveFile)) { File.Delete(archiveFile); }              // Delete previous version
+
+                                File.Move(appFile, archiveFile);                                         // Backup
+
+                                File.Move(tempFile, appFile);                                            // Update app!
+
+                                var dataPackage =                                                        // Update data package!
+                                     string.Format("https://github.com/builtbybel/ThisIsWin11/releases/download/{0}/data_updateonly.zip", latestVersion);
+
+                                if (URLExists(dataPackage))
+
+                                {
+                                    try
+                                    {
+                                        client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadProgressChanged);
+                                        client.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadCompleted);
+
+                                        client.DownloadFileAsync(new Uri(dataPackage.Trim()), Application.StartupPath + "\\data_updateonly" + Path.GetExtension(dataPackage.ToString()));
+                                    }
+                                    catch (Exception ex)
+                                    { MessageBox.Show(ex.Message, settingsForm.Text); }
+                                }
+                                else
+                                    Application.Restart();
+                            }
+                            catch (Exception ex)
+                            { MessageBox.Show(ex.Message); }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Checking for App updates failed.\n{ex.Message}", settingsForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (IsInet() == false)
             {
-                if (InetStatusMessage == true)
-                {
-                    // Update check on app launch
-                    if (silentCheck)
-                    {
-                        return;
-                    }
-
-                    MessageBox.Show("Checking for App updates failed.\n\nCheck your Internet connection and try again.");
-                }
+                MessageBox.Show("Checking for App updates failed.\n\nCheck your Internet connection and try again.");
             }
         }
 
@@ -124,33 +134,6 @@ namespace ThisIsWin11.Helpers
             {
                 return false;
             }
-        }
-
-        /// <summary>
-        ///  Update data package
-        /// </summary>
-        private void UpdateDataPackage()
-        {
-            string dataZip = string.Format("https://github.com/builtbybel/ThisIsWin11/releases/download/{0}/data_updateonly.zip", LatestVersion);
-
-            if (URLExists(dataZip))
-
-            {
-                try
-                {
-                    using (WebClient client = new WebClient())
-                    {
-                        client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadProgressChanged);
-                        client.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadCompleted);
-
-                        client.DownloadFileAsync(new Uri(dataZip.Trim()), Application.StartupPath + "\\data_updateonly" + Path.GetExtension(dataZip.ToString()));
-                    }
-                }
-                catch (Exception ex)
-                { MessageBox.Show(ex.Message, settingsForm.Text); }
-            }
-            else
-                Application.Restart();
         }
 
         private void DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
@@ -178,13 +161,6 @@ namespace ThisIsWin11.Helpers
             Application.Restart();
         }
 
-        // Create data directory if non present
-        public static void CreateDataDir()
-        {
-            bool dirExists = Directory.Exists(@"data");
-            if (!dirExists)
-                Directory.CreateDirectory(@"data");
-        }
 
         // Verify existence of web resource
         public bool URLExists(string url)
