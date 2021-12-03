@@ -21,8 +21,8 @@
 </h4>
   
 <p align="center">
-  <a href="#features">Features</a> •
-  <a href="#systemrequirements">System Requirements</a> •
+  <a href="#features🎨">Features</a> •
+  <a href="#system-requirements">System Requirements</a> •
   <a href="#download">Download</a> •
   <a href="#support">Support</a>•
   <a href="#thanks">Thanks</a> •
