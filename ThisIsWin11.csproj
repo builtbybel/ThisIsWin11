@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{787B5529-1330-474B-8F5D-8A7CE2521DFD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ThisIsWin11</RootNamespace>
+    <AssemblyName>ThisIsWin11</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.IO.Compression.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Management.Automation\v4.0_3.0.0.0__31bf3856ad364e35\System.Management.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\Pages.cs" />
+    <Compile Include="Helpers\Keystrokes.cs" />
+    <Compile Include="Helpers\Strings.cs" />
+    <Compile Include="Helpers\Utils.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskbarMM.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\WidgetsR.cs" />
+    <Compile Include="Modules\Extensions\PluginsBase.cs" />
+    <Compile Include="Modules\Extensions\PluginsBindingList.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Gaming\PowerThrottling.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Gaming\GameDVR.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Gaming\VisualFX.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\AppsTheme.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\FileExplorer.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\HiddenFileExt.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\MostUsedApps.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\SnapAssistFlyout.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskbarAl.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskbarChat.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskbarSearch.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskView.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\Transparency.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\Widgets.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\WindowsTheme.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\AppsAutoInstall.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\System\Wusa.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Third-Party\ShutUp11.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Third-Party\WindowsSpyBlocker.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\TailoredExperiences.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\WindowsTips.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\HiddenFileFolder.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Settings\RestorePoint.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\System\EnableWSL.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\System\FaxPrinter.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\System\TeamsAutostart.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\System\XPSWriter.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskbarSi.cs" />
+    <Compile Include="Pages\ExtensionsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ExtensionsWindow.Designer.cs">
+      <DependentUpon>ExtensionsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HomeWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\HomeWindow.Designer.cs">
+      <DependentUpon>HomeWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\AccountInfo.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\AppNotifications.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\BackgroundApps.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Calendar.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Call.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\CallHistory.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Camera.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\CellularData.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Contacts.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\DiagnosticInformation.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Documents.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Email.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\EyeGaze.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\FileSystem.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Messaging.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Microphone.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Motion.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Notifications.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\OtherDevices.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Pictures.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Radios.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Tasks.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\TrackingApps.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Apps\Videos.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\Biometrics.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\Advertising.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\Feedback.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\LocationTracking.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\SuggestedContent.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\DiagnosticData.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\CompatibilityTelemetry.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Privacy\Telemetry.cs" />
+    <Compile Include="Modules\OpenTweaks\ErrorHelper.cs" />
+    <Compile Include="Pages\SettingsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\SettingsWindow.Designer.cs">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AppsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AppsWindow.Designer.cs">
+      <DependentUpon>AppsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PackagesWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\PackagesWindow.Designer.cs">
+      <DependentUpon>PackagesWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SystemWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\SystemWindow.Designer.cs">
+      <DependentUpon>SystemWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pages\AutomateWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AutomateWindow.Designer.cs">
+      <DependentUpon>AutomateWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Presenter\LockScreen.cs" />
+    <Compile Include="Modules\Presenter\OS.cs" />
+    <Compile Include="Modules\OpenTweaks\AssessmentNode.cs" />
+    <Compile Include="Modules\OpenTweaks\ITreeNode.cs" />
+    <Compile Include="Modules\OpenTweaks\AssessmentBase.cs" />
+    <Compile Include="Modules\OpenTweaks\RegistryHelper.cs" />
+    <Compile Include="Modules\OpenTweaks\WindowsHelper.cs" />
+    <EmbeddedResource Include="Pages\ExtensionsWindow.resx">
+      <DependentUpon>ExtensionsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\SettingsWindow.resx">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\AppsWindow.resx">
+      <DependentUpon>AppsWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PackagesWindow.resx">
+      <DependentUpon>PackagesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\SystemWindow.resx">
+      <DependentUpon>SystemWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\HomeWindow.resx">
+      <DependentUpon>HomeWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Pages\AutomateWindow.resx">
+      <DependentUpon>AutomateWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppIcon.ico" />
+    <Content Include="Resources\BuildDate.txt" />
+    <None Include="Resources\systemapps.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.IO.Compression.ZipFile">
+      <Version>4.3.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>echo %25date%25 %25time%25 &gt; "$(ProjectDir)\Resources\BuildDate.txt"</PreBuildEvent>
+  </PropertyGroup>
+</Project>
