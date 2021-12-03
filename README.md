@@ -9,13 +9,30 @@
 <img alt="Youtube Tutorial, thanks to @CraftComputing" src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
 </a>
 
-# ThisIsWin11 
 
-### ThisIsWin11 helps you know, set up and customize Windows 11
-
-![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11.png)
+<h1 align="center">
+  <br>
+  <a href="http://www.builtbybel.com"><img src="https://github.com/builtbybel/ThisIsWin11/blob/main/src/TIW11/AppIcon.ico" alt="ThisIsWin11" width="200"></a>
+  <br>
+  ThisIsWin11
+  <br>
+</h1>
+<h3 align="center"> ThisIsWin11 helps you know, set up and customize Windows 11.
+</h4>
+  
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#systemrequirements">System Requirements</a> •
+  <a href="#download">Download</a> •
+  <a href="#support">Support</a>•
+  <a href="#thanks">Thanks</a> •
+  <a href="#disclaimer">Disclaimer</a>
+</p>
 
   
+![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11.png)
+
+
 ## 🎨 Features
  
  ThisIsWin11 lets you customize Windows 11 all in one place. It is slowly expanded as a practical all-rounder for Windows 11, similar to Microsoft PowerToys.
@@ -43,7 +60,7 @@ If you like the tool please consider supporting me via PayPal.
 
 You can [buy me a coffee or donut, some banana, a shirt, Taycan or Tesla, the stars or whatever you want here](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donate@builtbybel.com&lc=US&item_name=%20Builtbybel&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
 
-## 🚀 Some acknowledgments
+## 🚀 Thanks
 - The Best Windows 11 Utilities to Install Now: https://gizmodo.com/the-best-windows-11-utilities-to-install-now-1848013350
 - Tweaking tool ThisIsWin11 is 'the real PowerToys for Windows 11': https://betanews.com/2021/08/13/tweaking-tool-thisiswin11-is-the-real-powertoys-for-windows-11/
 - Customize the Windows 11 experience with these free apps: https://www.bleepingcomputer.com/news/microsoft/customize-the-windows-11-experience-with-these-free-apps/
