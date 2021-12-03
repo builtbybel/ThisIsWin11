@@ -52,7 +52,7 @@ You can [buy me a coffee or donut, some banana, a shirt, Taycan or Tesla, the st
 - 4 customization tips to give Windows 11 a makeover: https://www.popsci.com/diy/customize-windows-11/
 - Disable Windows 11 Bloatware With This New System Tool: https://www.tomshardware.com/news/this-is-windows-11-system-tool
 - How to make Windows 11 look like Windows 10: https://www.pcworld.com/article/541452/how-to-make-windows-11-look-like-windows-10.html
-- 
+
 
  ## ❤︎ Disclaimer
  This is not a product made by Microsoft and it's in no way related to them.
