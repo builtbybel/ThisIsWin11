@@ -10,26 +10,9 @@
 </a>
 
 
-<h1 align="center">
-  <br>
-  <a href="http://www.builtbybel.com"><img src="https://github.com/builtbybel/ThisIsWin11/blob/main/src/TIW11/AppIcon.ico" alt="ThisIsWin11" width="200"></a>
-  <br>
-  ThisIsWin11
-  <br>
-</h1>
-<h3 align="center"> ThisIsWin11 helps you know, set up and customize Windows 11.
-</h4>
-  
-<p align="center">
-  <a href="#features🎨">Features</a> •
-  <a href="#system-requirements">System Requirements</a> •
-  <a href="#download">Download</a> •
-  <a href="#support">Support</a>•
-  <a href="#thanks">Thanks</a> •
-  <a href="#disclaimer">Disclaimer</a>
-</p>
+# ThisIsWin11
+### ThisIsWin11 helps you know, set up and customize Windows 11.
 
-  
 ![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11.png)
 
 
