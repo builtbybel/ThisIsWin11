@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -51,7 +52,12 @@ namespace ThisIsWin11.Helpers
                         .FileVersion)
 
                     {
-                        if (MessageBox.Show($"A new app version {latestVersion} is available.\nDo you want to install the update?" + Environment.NewLine + versionContent, @"App update available",
+                        settingsForm.btnCheckForUpdates.BackColor = Color.FromArgb(223, 246, 221);
+                        settingsForm.btnCheckForUpdates.FlatAppearance.BorderSize = 0;
+                        settingsForm.btnCheckForUpdates.ForeColor = Color.Black;
+                        settingsForm.btnCheckForUpdates.Text = "Download and install v" + latestVersion;
+
+                        if (settingsForm.buttonInstallUpdate && MessageBox.Show($"Do you want to install the update: {latestVersion}?" + Environment.NewLine + versionContent, @"App update available",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             try
@@ -160,7 +166,6 @@ namespace ThisIsWin11.Helpers
 
             Application.Restart();
         }
-
 
         // Verify existence of web resource
         public bool URLExists(string url)
