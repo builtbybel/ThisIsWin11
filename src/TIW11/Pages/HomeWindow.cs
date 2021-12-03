@@ -11,7 +11,7 @@ namespace ThisIsWin11
         private Presenter.OS osInfo = new Presenter.OS();
         private PageTitle INavPage = PageTitle.GetStarted;
 
-        private static readonly string componentsVersion = "40";
+        private static readonly string componentsVersion = "42";
 
         private void menuPresenterInfo_Click(object sender, EventArgs e) => MessageBox.Show("Presenter for Windows 11\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion + " (EOL February 28, 2022)", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -349,7 +349,7 @@ namespace ThisIsWin11
                     btnPresenter.Visible = false;
                     btnConfigurator.Visible = true;
                     btnCustomizer.Visible = false;
-                    lblHeader.Text = "That's it";
+                    lblHeader.Text = "See you in a bit";
                     lblDesc.Text = "We're finish setting up your device.";
                     pbView.Visible = true;
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/endpage.png?raw=true";

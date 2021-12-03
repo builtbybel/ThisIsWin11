@@ -202,7 +202,7 @@ namespace ThisIsWin11
             this.lblSubHeader.Name = "lblSubHeader";
             this.lblSubHeader.Size = new System.Drawing.Size(672, 32);
             this.lblSubHeader.TabIndex = 135;
-            this.lblSubHeader.Text = "Get Started with Windows 11";
+            this.lblSubHeader.Text = "Meet Windows 11";
             // 
             // pnlMiddle
             // 
