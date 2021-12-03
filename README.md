@@ -43,6 +43,17 @@ If you like the tool please consider supporting me via PayPal.
 
 You can [buy me a coffee or donut, some banana, a shirt, Taycan or Tesla, the stars or whatever you want here](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donate@builtbybel.com&lc=US&item_name=%20Builtbybel&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
 
+## 🚀 Some acknowledgments
+- The Best Windows 11 Utilities to Install Now: https://gizmodo.com/the-best-windows-11-utilities-to-install-now-1848013350
+- Tweaking tool ThisIsWin11 is 'the real PowerToys for Windows 11': https://betanews.com/2021/08/13/tweaking-tool-thisiswin11-is-the-real-powertoys-for-windows-11/
+- Customize the Windows 11 experience with these free apps: https://www.bleepingcomputer.com/news/microsoft/customize-the-windows-11-experience-with-these-free-apps/
+- Unofficial tool says it lets you customize Windows 11 all in one place: https://www.neowin.net/news/unofficial-tool-says-it-lets-you-customize-windows-11-all-in-one-place/
+- How to Customize Windows 11 with ThisIsWin11: https://www.makeuseof.com/how-to-customize-windows-11-with-thisiswin11/
+- 4 customization tips to give Windows 11 a makeover: https://www.popsci.com/diy/customize-windows-11/
+- Disable Windows 11 Bloatware With This New System Tool: https://www.tomshardware.com/news/this-is-windows-11-system-tool
+- How to make Windows 11 look like Windows 10: https://www.pcworld.com/article/541452/how-to-make-windows-11-look-like-windows-10.html
+- 
+
  ## ❤︎ Disclaimer
  This is not a product made by Microsoft and it's in no way related to them.
  
