@@ -76,7 +76,7 @@ namespace ThisIsWin11
             this.btnCheckForUpdates.BackColor = System.Drawing.Color.MediumVioletRed;
             this.btnCheckForUpdates.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnCheckForUpdates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckForUpdates.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckForUpdates.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckForUpdates.ForeColor = System.Drawing.Color.White;
             this.btnCheckForUpdates.Location = new System.Drawing.Point(30, 156);
             this.btnCheckForUpdates.Name = "btnCheckForUpdates";

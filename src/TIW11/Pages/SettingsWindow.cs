@@ -8,6 +8,7 @@ namespace ThisIsWin11
     public partial class SettingsWindow : Form
     {
         private Helpers.Utils updateInfo = new Helpers.Utils();
+        public bool buttonInstallUpdate = false;
 
         private MainWindow mainForm = null;
 
@@ -43,12 +44,17 @@ namespace ThisIsWin11
             try
             {
                 string changelog = new WebClient().DownloadString(Helpers.Strings.Uri.GitChanges);
-                rtbAbout.Text += "\n\n\nLatest changes:" + changelog;
+                rtbAbout.Text += "\n\n\nSee what's new:" + changelog;
             }
             catch { };
         }
 
-        private void btnCheckForUpdates_Click(object sender, EventArgs e) => updateInfo.CheckForUpdates(this, false);
+        private void btnCheckForUpdates_Click(object sender, EventArgs e)
+        {
+            buttonInstallUpdate = true;
+            updateInfo.CheckForUpdates(this, false);
+
+        }
 
         private void rtbAbout_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
 
