@@ -16,7 +16,7 @@
 ![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11.png)
 
   
-## Features
+## 🎨 Features
  
  ThisIsWin11 lets you customize Windows 11 all in one place. It is slowly expanded as a practical all-rounder for Windows 11, similar to Microsoft PowerToys.
  
@@ -32,18 +32,18 @@ The app currently offers six modules:
 If you know my previous apps ([Privatezilla](https://github.com/builtbybel/privatezilla), [Bloatbox](https://github.com/builtbybel/bloatbox) etc.) for Windows 10 then you will see that the **ThisIsWin11** app combines the best of these apps under one GUI but on Windows 11.
   
  
-## System Requirements
+## 🔨 System Requirements
 - Windows 11 ONLY (do NOT use this app on Win10!)
   
- ## Download
+ ## 💾 Download
 - (Latest release) [Download](https://github.com/builtbybel/ThisIsWin11/releases)
  
- ## Support
+## 🐾 Support
 If you like the tool please consider supporting me via PayPal.
 
 You can [buy me a coffee or donut, some banana, a shirt, Taycan or Tesla, the stars or whatever you want here](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donate@builtbybel.com&lc=US&item_name=%20Builtbybel&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
 
- ## Disclaimer
+ ## ❤︎ Disclaimer
  This is not a product made by Microsoft and it's in no way related to them.
  
  ---
