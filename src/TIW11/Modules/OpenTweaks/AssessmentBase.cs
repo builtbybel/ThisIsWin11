@@ -21,13 +21,13 @@
         public abstract bool CheckAssessment();
 
         /// <summary>
-        /// Applies the Assessment
+        /// Do the Assessment
         /// </summary>
         /// <returns>Returns true if the asssessment was successfull, false otherwise.</returns>
         public abstract bool DoAssessment();
 
         /// <summary>
-        /// Revert the Assessment
+        /// Undo the Assessment
         /// </summary>
         /// <returns>Returns true if the asssessment was successfull, false otherwise.</returns>
         public abstract bool UndoAssessment();
