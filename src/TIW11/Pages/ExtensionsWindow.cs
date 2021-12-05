@@ -12,7 +12,7 @@ namespace ThisIsWin11
     {
         private readonly PluginsBindingList<Plugin> tweaks = new PluginsBindingList<Plugin>();
 
-        private static readonly string componentsVersion = "14 (experimental)";
+        private static readonly string componentsVersion = "15 (experimental)";
 
         private void menuPluginsInfo_Click(object sender, EventArgs e) => MessageBox.Show("Extensions for TIW11\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 

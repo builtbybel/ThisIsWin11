@@ -62,12 +62,12 @@ namespace ThisIsWin11
             this.lblHeader.AutoEllipsis = true;
             this.lblHeader.AutoSize = true;
             this.lblHeader.BackColor = System.Drawing.Color.White;
-            this.lblHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.DimGray;
             this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblHeader.Location = new System.Drawing.Point(24, 19);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(188, 32);
+            this.lblHeader.Size = new System.Drawing.Size(195, 32);
             this.lblHeader.TabIndex = 139;
             this.lblHeader.Text = "Install packages";
             // 
@@ -77,7 +77,7 @@ namespace ThisIsWin11
             this.btnCreatePackage.FlatAppearance.BorderColor = System.Drawing.Color.Orchid;
             this.btnCreatePackage.FlatAppearance.BorderSize = 0;
             this.btnCreatePackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreatePackage.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreatePackage.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreatePackage.ForeColor = System.Drawing.Color.Black;
             this.btnCreatePackage.Location = new System.Drawing.Point(24, 24);
             this.btnCreatePackage.Margin = new System.Windows.Forms.Padding(2);
@@ -94,7 +94,7 @@ namespace ThisIsWin11
             this.btnRunPackage.FlatAppearance.BorderColor = System.Drawing.Color.Orchid;
             this.btnRunPackage.FlatAppearance.BorderSize = 0;
             this.btnRunPackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRunPackage.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRunPackage.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRunPackage.ForeColor = System.Drawing.Color.Black;
             this.btnRunPackage.Location = new System.Drawing.Point(251, 24);
             this.btnRunPackage.Margin = new System.Windows.Forms.Padding(2);
@@ -112,7 +112,7 @@ namespace ThisIsWin11
             this.btnPackagesMenu.FlatAppearance.BorderSize = 0;
             this.btnPackagesMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnPackagesMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPackagesMenu.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPackagesMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPackagesMenu.Location = new System.Drawing.Point(667, 0);
             this.btnPackagesMenu.Name = "btnPackagesMenu";
             this.btnPackagesMenu.Size = new System.Drawing.Size(48, 51);
@@ -123,7 +123,7 @@ namespace ThisIsWin11
             // menuPackages
             // 
             this.menuPackages.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.menuPackages.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuPackages.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuPackages.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuPackagesImport,
             this.menuPackagesExport,
@@ -134,7 +134,7 @@ namespace ThisIsWin11
             this.toolStripMenuItem1});
             this.menuPackages.Name = "menuMain";
             this.menuPackages.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuPackages.Size = new System.Drawing.Size(303, 190);
+            this.menuPackages.Size = new System.Drawing.Size(303, 212);
             // 
             // menuPackagesImport
             // 
@@ -166,7 +166,7 @@ namespace ThisIsWin11
             // 
             // menuPackagesPopOut
             // 
-            this.menuPackagesPopOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuPackagesPopOut.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuPackagesPopOut.Name = "menuPackagesPopOut";
             this.menuPackagesPopOut.Size = new System.Drawing.Size(302, 30);
             this.menuPackagesPopOut.Text = "Pop-out-App";
@@ -192,7 +192,7 @@ namespace ThisIsWin11
             this.btnInstallWinget.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnInstallWinget.FlatAppearance.BorderSize = 0;
             this.btnInstallWinget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInstallWinget.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInstallWinget.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInstallWinget.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnInstallWinget.Location = new System.Drawing.Point(27, 538);
             this.btnInstallWinget.Name = "btnInstallWinget";
@@ -229,7 +229,7 @@ namespace ThisIsWin11
             // lblModuleInfo
             // 
             this.lblModuleInfo.AutoEllipsis = true;
-            this.lblModuleInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModuleInfo.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModuleInfo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lblModuleInfo.LinkColor = System.Drawing.Color.MediumVioletRed;
             this.lblModuleInfo.Location = new System.Drawing.Point(24, 59);
@@ -246,7 +246,7 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblModuleName.AutoEllipsis = true;
             this.lblModuleName.BackColor = System.Drawing.Color.Transparent;
-            this.lblModuleName.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModuleName.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModuleName.ForeColor = System.Drawing.Color.Black;
             this.lblModuleName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblModuleName.Location = new System.Drawing.Point(21, 21);
@@ -262,7 +262,7 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbPS.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rtbPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbPS.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbPS.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbPS.HideSelection = false;
             this.rtbPS.Location = new System.Drawing.Point(27, 110);
             this.rtbPS.Name = "rtbPS";
@@ -290,7 +290,7 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tvwPackages.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tvwPackages.CheckBoxes = true;
-            this.tvwPackages.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tvwPackages.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tvwPackages.HotTracking = true;
             this.tvwPackages.Location = new System.Drawing.Point(24, 97);
             this.tvwPackages.Name = "tvwPackages";
@@ -311,7 +311,7 @@ namespace ThisIsWin11
             this.Controls.Add(this.btnPackagesMenu);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.pnlRight);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "PackagesWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -153,10 +153,7 @@ namespace ThisIsWin11
                     message.AppendLine("- " + node.Text);
 
                     rtbPS.Text += Environment.NewLine + "Installing " + Environment.NewLine + message.ToString() +
-                                 Environment.NewLine + "You can continue working while we install.\n\n" +
-                                                       "Have you experienced that Windows 11 blocks Edge browser competitors from opening links.\n" +
-                                                       "https://www.theverge.com/2021/11/15/22782802/microsoft-block-edgedeflector-windows-11\n" +
-                                                       "We have prepared a script for bypassing this in the ThisIsWin11 automation module.";
+                                 Environment.NewLine + "You can continue working while we install.";
 
                     await Task.Run(() => InstallPackages("winget install --id=" + node.Text + " -e --accept-package-agreements --accept-source-agreements"));
                 }

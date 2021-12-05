@@ -40,7 +40,7 @@ namespace ThisIsWin11
                 if (!Helpers.Utils.IsInet())
                     lnkSubHeader.Text = "We cannot connect to the Internet.\n Some functions of the Windows 11 Presenter module are not available.";
                 else
-                    lnkSubHeader.Text = "*Windows 11 aka Sun Valley" + "\x20"
+                    lnkSubHeader.Text = "*Windows 11" + "\x20"
                            + osInfo.GetVersion() + "\x20"
                            + osInfo.Is64Bit();
             }
@@ -122,9 +122,9 @@ namespace ThisIsWin11
                     btnCustomizer.Visible = false;
                     lblHeader.Text = "Hi " + Environment.UserName;
                     lblDesc.Text = "Lets make sure everything is set up how you want it.\n\nUse the <Next> and <Previous> buttons to run a guided tour of Windows 11.\n\n" +
-                                    "Use the <Preview this page> button on the left panel to get the feature presented once (if it is available).\n" +
-                                    "Pages marked with <Configure this page> will allow you to change immediately the Windows configuration.\n" +
-                                    "Pages marked with <Customize this page> will allow you to apply custom tasks from the community.";
+                                    "1. Use the <Preview this page> button on the left panel to get the feature presented once (if it is available).\n\n" +
+                                    "2. Pages marked with <Configure this page> will allow you to change immediately the Windows configuration.\n\n" +
+                                    "3. Pages marked with <Customize this page> will allow you to apply custom tasks from the community.";
                     pbView.Visible = true;
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/startpage.png?raw=true";
 

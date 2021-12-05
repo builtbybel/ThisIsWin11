@@ -14,7 +14,7 @@ namespace ThisIsWin11
 {
     public partial class SystemWindow : Form
     {
-        private static readonly string componentsVersion = "90";
+        private static readonly string componentsVersion = "100";
         private readonly string osWarning = "We could not recognize this system as Windows 11. Some settings are not tested on this operating system and could lead to malfunction.";
 
         private Presenter.OS osInfo = new Presenter.OS();
@@ -113,6 +113,13 @@ namespace ThisIsWin11
                 Checked = true,
             };
 
+            TreeNode update= new TreeNode("Windows Update", new TreeNode[] {
+                new AssessmentNode(new OpenTweaks.Assessment.Update.Wusa()),
+            })
+            {
+                Checked = true,
+            };
+
             TreeNode gaming = new TreeNode("Gaming", new TreeNode[] {
                 new AssessmentNode(new OpenTweaks.Assessment.Gaming.GameDVR()),
                 new AssessmentNode(new OpenTweaks.Assessment.Gaming.PowerThrottling()),
@@ -175,6 +182,7 @@ namespace ThisIsWin11
                 personalization,
                 thirdparty,
                 system,
+                update,
                 gaming,
                 privacy,
                 apps,
@@ -263,6 +271,7 @@ namespace ThisIsWin11
             }
 
             tvwAssessments.ExpandAll();
+            tvwAssessments.SelectedNode = tvwAssessments.Nodes[0];
             DoProgress(100);
 
             // Add summary

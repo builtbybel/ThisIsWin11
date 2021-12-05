@@ -36,7 +36,7 @@ namespace ThisIsWin11
                            "\nBuild on " + buildDateTime + "Builtbybel" +
                            "\n\nGitHub (1.2k Stars): " + Helpers.Strings.Uri.GitRepo +
                            "\nTwitter: " + Helpers.Strings.Uri.Twitter +
-                           "\nDonate: " + Helpers.Strings.Uri.Support +
+                           "\nDonate: " + Helpers.Strings.Uri.Donate +
                            "\nGive feedback: " + Helpers.Strings.Uri.Feedback +
                            "\n\nMIT License"+
                            "\n\nThis is not a product made by Microsoft and it's in no way related to them.";

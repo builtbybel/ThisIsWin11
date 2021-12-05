@@ -46,7 +46,7 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbAbout.BackColor = System.Drawing.Color.White;
             this.rtbAbout.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbAbout.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbAbout.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbAbout.Location = new System.Drawing.Point(30, 277);
             this.rtbAbout.Name = "rtbAbout";
             this.rtbAbout.ReadOnly = true;
@@ -62,12 +62,12 @@ namespace ThisIsWin11
             this.lblHeader.AutoEllipsis = true;
             this.lblHeader.AutoSize = true;
             this.lblHeader.BackColor = System.Drawing.Color.White;
-            this.lblHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.DimGray;
             this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblHeader.Location = new System.Drawing.Point(24, 19);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(103, 32);
+            this.lblHeader.Size = new System.Drawing.Size(106, 32);
             this.lblHeader.TabIndex = 135;
             this.lblHeader.Text = "Settings";
             // 
@@ -76,7 +76,7 @@ namespace ThisIsWin11
             this.btnCheckForUpdates.BackColor = System.Drawing.Color.MediumVioletRed;
             this.btnCheckForUpdates.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnCheckForUpdates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckForUpdates.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckForUpdates.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckForUpdates.ForeColor = System.Drawing.Color.White;
             this.btnCheckForUpdates.Location = new System.Drawing.Point(30, 156);
             this.btnCheckForUpdates.Name = "btnCheckForUpdates";
@@ -93,12 +93,12 @@ namespace ThisIsWin11
             this.lblSettingsUpdates.AutoEllipsis = true;
             this.lblSettingsUpdates.AutoSize = true;
             this.lblSettingsUpdates.BackColor = System.Drawing.Color.White;
-            this.lblSettingsUpdates.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettingsUpdates.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSettingsUpdates.ForeColor = System.Drawing.Color.Black;
             this.lblSettingsUpdates.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblSettingsUpdates.Location = new System.Drawing.Point(24, 76);
             this.lblSettingsUpdates.Name = "lblSettingsUpdates";
-            this.lblSettingsUpdates.Size = new System.Drawing.Size(105, 32);
+            this.lblSettingsUpdates.Size = new System.Drawing.Size(108, 32);
             this.lblSettingsUpdates.TabIndex = 156;
             this.lblSettingsUpdates.Text = "Updates";
             // 
@@ -109,12 +109,12 @@ namespace ThisIsWin11
             this.lblSettingsAbout.AutoEllipsis = true;
             this.lblSettingsAbout.AutoSize = true;
             this.lblSettingsAbout.BackColor = System.Drawing.Color.White;
-            this.lblSettingsAbout.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettingsAbout.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSettingsAbout.ForeColor = System.Drawing.Color.Black;
             this.lblSettingsAbout.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblSettingsAbout.Location = new System.Drawing.Point(24, 220);
             this.lblSettingsAbout.Name = "lblSettingsAbout";
-            this.lblSettingsAbout.Size = new System.Drawing.Size(68, 32);
+            this.lblSettingsAbout.Size = new System.Drawing.Size(71, 32);
             this.lblSettingsAbout.TabIndex = 157;
             this.lblSettingsAbout.Text = "Infos";
             // 
@@ -122,10 +122,11 @@ namespace ThisIsWin11
             // 
             this.lblVersionInfo.AutoEllipsis = true;
             this.lblVersionInfo.AutoSize = true;
-            this.lblVersionInfo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVersionInfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblVersionInfo.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVersionInfo.Location = new System.Drawing.Point(27, 125);
             this.lblVersionInfo.Name = "lblVersionInfo";
-            this.lblVersionInfo.Size = new System.Drawing.Size(106, 17);
+            this.lblVersionInfo.Size = new System.Drawing.Size(105, 17);
             this.lblVersionInfo.TabIndex = 158;
             this.lblVersionInfo.Text = "Installed Version:";
             // 
@@ -143,7 +144,8 @@ namespace ThisIsWin11
             // lblVersionInstalled
             // 
             this.lblVersionInstalled.AutoSize = true;
-            this.lblVersionInstalled.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVersionInstalled.BackColor = System.Drawing.Color.Transparent;
+            this.lblVersionInstalled.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVersionInstalled.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lblVersionInstalled.LinkColor = System.Drawing.Color.DimGray;
             this.lblVersionInstalled.Location = new System.Drawing.Point(130, 125);
@@ -170,7 +172,7 @@ namespace ThisIsWin11
             this.Controls.Add(this.btnCheckForUpdates);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.rtbAbout);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "SettingsWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -188,9 +190,9 @@ namespace ThisIsWin11
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label lblSettingsUpdates;
         private System.Windows.Forms.Label lblSettingsAbout;
-        private System.Windows.Forms.Label lblVersionInfo;
         public System.Windows.Forms.Button btnCheckForUpdates;
         public System.Windows.Forms.ProgressBar progress;
+        private System.Windows.Forms.Label lblVersionInfo;
         private System.Windows.Forms.LinkLabel lblVersionInstalled;
     }
 }

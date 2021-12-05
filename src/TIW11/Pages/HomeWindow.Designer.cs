@@ -76,11 +76,11 @@ namespace ThisIsWin11
             this.cbTable.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbTable.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTable.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTable.FormattingEnabled = true;
             this.cbTable.Location = new System.Drawing.Point(238, 735);
             this.cbTable.Name = "cbTable";
-            this.cbTable.Size = new System.Drawing.Size(121, 23);
+            this.cbTable.Size = new System.Drawing.Size(121, 24);
             this.cbTable.TabIndex = 135;
             this.cbTable.SelectedIndexChanged += new System.EventHandler(this.cbTable_SelectedIndexChanged);
             // 
@@ -90,7 +90,7 @@ namespace ThisIsWin11
             this.btnPresenterMenu.FlatAppearance.BorderSize = 0;
             this.btnPresenterMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.HotPink;
             this.btnPresenterMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPresenterMenu.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPresenterMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPresenterMenu.Location = new System.Drawing.Point(322, 0);
             this.btnPresenterMenu.Name = "btnPresenterMenu";
             this.btnPresenterMenu.Size = new System.Drawing.Size(48, 51);
@@ -105,7 +105,7 @@ namespace ThisIsWin11
             this.btnConfigurator.FlatAppearance.BorderColor = System.Drawing.Color.Orchid;
             this.btnConfigurator.FlatAppearance.BorderSize = 0;
             this.btnConfigurator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfigurator.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfigurator.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfigurator.ForeColor = System.Drawing.Color.Black;
             this.btnConfigurator.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnConfigurator.Location = new System.Drawing.Point(83, 206);
@@ -124,7 +124,7 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHeader.AutoEllipsis = true;
             this.lblHeader.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.DimGray;
             this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblHeader.Location = new System.Drawing.Point(24, 25);
@@ -140,7 +140,7 @@ namespace ThisIsWin11
             this.btnCustomizer.FlatAppearance.BorderColor = System.Drawing.Color.Orchid;
             this.btnCustomizer.FlatAppearance.BorderSize = 0;
             this.btnCustomizer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomizer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomizer.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomizer.ForeColor = System.Drawing.Color.White;
             this.btnCustomizer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnCustomizer.Location = new System.Drawing.Point(83, 166);
@@ -163,7 +163,7 @@ namespace ThisIsWin11
             this.btnPresenter.FlatAppearance.BorderSize = 0;
             this.btnPresenter.FlatAppearance.CheckedBackColor = System.Drawing.Color.DeepPink;
             this.btnPresenter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPresenter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPresenter.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPresenter.ForeColor = System.Drawing.Color.White;
             this.btnPresenter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnPresenter.Location = new System.Drawing.Point(0, 250);
@@ -195,7 +195,7 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSubHeader.AutoEllipsis = true;
             this.lblSubHeader.BackColor = System.Drawing.Color.Transparent;
-            this.lblSubHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubHeader.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubHeader.ForeColor = System.Drawing.Color.Black;
             this.lblSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblSubHeader.Location = new System.Drawing.Point(24, 19);
@@ -226,7 +226,7 @@ namespace ThisIsWin11
             // 
             this.lnkSubHeader.ActiveLinkColor = System.Drawing.Color.MediumVioletRed;
             this.lnkSubHeader.AutoEllipsis = true;
-            this.lnkSubHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkSubHeader.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkSubHeader.ForeColor = System.Drawing.Color.Gray;
             this.lnkSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
@@ -245,7 +245,7 @@ namespace ThisIsWin11
             this.btnBack.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(590, 726);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(50, 32);
@@ -260,7 +260,7 @@ namespace ThisIsWin11
             this.btnNext.BackColor = System.Drawing.Color.MediumVioletRed;
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
             this.btnNext.Location = new System.Drawing.Point(646, 726);
             this.btnNext.Name = "btnNext";
@@ -278,7 +278,7 @@ namespace ThisIsWin11
             this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.Black;
             this.btnHome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnHome.Location = new System.Drawing.Point(534, 726);
@@ -310,7 +310,7 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDesc.AutoEllipsis = true;
-            this.lblDesc.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesc.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblDesc.Location = new System.Drawing.Point(24, 172);
             this.lblDesc.Name = "lblDesc";
@@ -321,17 +321,17 @@ namespace ThisIsWin11
             // menuPresenter
             // 
             this.menuPresenter.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.menuPresenter.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuPresenter.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuPresenter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuPresenterInfo});
             this.menuPresenter.Name = "menuMain";
             this.menuPresenter.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuPresenter.Size = new System.Drawing.Size(118, 34);
+            this.menuPresenter.Size = new System.Drawing.Size(117, 34);
             // 
             // menuPresenterInfo
             // 
             this.menuPresenterInfo.Name = "menuPresenterInfo";
-            this.menuPresenterInfo.Size = new System.Drawing.Size(117, 30);
+            this.menuPresenterInfo.Size = new System.Drawing.Size(116, 30);
             this.menuPresenterInfo.Text = "Info";
             this.menuPresenterInfo.Click += new System.EventHandler(this.menuPresenterInfo_Click);
             // 

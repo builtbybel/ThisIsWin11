@@ -15,7 +15,7 @@ namespace ThisIsWin11
     {
         private Presenter.OS osInfo = new Presenter.OS();
 
-        private static readonly string componentsVersion = "15";
+        private static readonly string componentsVersion = "20";
 
         private void menuAutomateInfo_Click(object sender, EventArgs e) => MessageBox.Show("PowerUI\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -36,7 +36,7 @@ namespace ThisIsWin11
             btnAutomateMenu.Text = "\uE712";
 
             rtbPS.Text = "You will find here custom tasks and script files to customize Windows 11 according to your wishes.\n\n" +
-                          "To obtain new collections visit the GitHub repository of the app:\n\nhttps://github.com/builtbybel/ThisIsWin11/tree/main/collections";
+                          "To obtain new collections visit the GitHub repository of the app:\n\n" + Helpers.Strings.Uri.GitRepo;
         }
 
         private void InitializeCustomizationPkg()

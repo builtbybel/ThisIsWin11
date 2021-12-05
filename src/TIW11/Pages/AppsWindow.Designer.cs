@@ -44,8 +44,8 @@ namespace ThisIsWin11
             this.menuAppsInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.lblAppsBinCount = new System.Windows.Forms.Label();
-            this.lstUWPRemove = new System.Windows.Forms.ListBox();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
+            this.lstUWPRemove = new System.Windows.Forms.ListBox();
             this.PnlMiddle = new System.Windows.Forms.Panel();
             this.lblModuleInfo = new System.Windows.Forms.LinkLabel();
             this.lblAppsHeader = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@ namespace ThisIsWin11
             // menuAppsExport
             // 
             menuAppsExport.Name = "menuAppsExport";
-            menuAppsExport.Size = new System.Drawing.Size(347, 30);
+            menuAppsExport.Size = new System.Drawing.Size(338, 30);
             menuAppsExport.Text = "Export bloatware in Recycle Bin";
             menuAppsExport.Click += new System.EventHandler(this.menuAppsExport_Click);
             // 
@@ -82,12 +82,12 @@ namespace ThisIsWin11
             this.checkAppsSystem.FlatAppearance.BorderSize = 0;
             this.checkAppsSystem.FlatAppearance.CheckedBackColor = System.Drawing.Color.HotPink;
             this.checkAppsSystem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkAppsSystem.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkAppsSystem.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkAppsSystem.ForeColor = System.Drawing.Color.Black;
             this.checkAppsSystem.Location = new System.Drawing.Point(11, 728);
             this.checkAppsSystem.Margin = new System.Windows.Forms.Padding(2);
             this.checkAppsSystem.Name = "checkAppsSystem";
-            this.checkAppsSystem.Size = new System.Drawing.Size(145, 31);
+            this.checkAppsSystem.Size = new System.Drawing.Size(149, 31);
             this.checkAppsSystem.TabIndex = 103;
             this.checkAppsSystem.Text = "Show system apps";
             this.checkAppsSystem.UseVisualStyleBackColor = false;
@@ -101,7 +101,7 @@ namespace ThisIsWin11
             this.btnRemoveUWP.FlatAppearance.BorderColor = System.Drawing.Color.Orchid;
             this.btnRemoveUWP.FlatAppearance.BorderSize = 0;
             this.btnRemoveUWP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveUWP.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveUWP.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveUWP.ForeColor = System.Drawing.Color.Black;
             this.btnRemoveUWP.Location = new System.Drawing.Point(18, 24);
             this.btnRemoveUWP.Margin = new System.Windows.Forms.Padding(2);
@@ -119,12 +119,12 @@ namespace ThisIsWin11
             this.lblAppsInstalledCount.AutoEllipsis = true;
             this.lblAppsInstalledCount.AutoSize = true;
             this.lblAppsInstalledCount.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblAppsInstalledCount.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppsInstalledCount.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppsInstalledCount.ForeColor = System.Drawing.Color.DimGray;
             this.lblAppsInstalledCount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblAppsInstalledCount.Location = new System.Drawing.Point(13, 21);
             this.lblAppsInstalledCount.Name = "lblAppsInstalledCount";
-            this.lblAppsInstalledCount.Size = new System.Drawing.Size(69, 32);
+            this.lblAppsInstalledCount.Size = new System.Drawing.Size(72, 32);
             this.lblAppsInstalledCount.TabIndex = 137;
             this.lblAppsInstalledCount.Text = "Apps";
             // 
@@ -135,7 +135,7 @@ namespace ThisIsWin11
             this.btnAppsMenu.FlatAppearance.BorderSize = 0;
             this.btnAppsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnAppsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAppsMenu.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAppsMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAppsMenu.Location = new System.Drawing.Point(293, 0);
             this.btnAppsMenu.Name = "btnAppsMenu";
             this.btnAppsMenu.Size = new System.Drawing.Size(48, 51);
@@ -146,7 +146,7 @@ namespace ThisIsWin11
             // menuApps
             // 
             this.menuApps.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.menuApps.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuApps.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuApps.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAppsImport,
             menuAppsExport,
@@ -157,47 +157,47 @@ namespace ThisIsWin11
             this.menuAppsInfo});
             this.menuApps.Name = "menuMain";
             this.menuApps.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuApps.Size = new System.Drawing.Size(348, 190);
+            this.menuApps.Size = new System.Drawing.Size(339, 212);
             this.menuApps.Text = "Info";
             // 
             // menuAppsImport
             // 
             this.menuAppsImport.Name = "menuAppsImport";
-            this.menuAppsImport.Size = new System.Drawing.Size(347, 30);
+            this.menuAppsImport.Size = new System.Drawing.Size(338, 30);
             this.menuAppsImport.Text = "Import bloatware list";
             this.menuAppsImport.Click += new System.EventHandler(this.menuAppsImport_Click);
             // 
             // menuAppsRefresh
             // 
             this.menuAppsRefresh.Name = "menuAppsRefresh";
-            this.menuAppsRefresh.Size = new System.Drawing.Size(347, 30);
+            this.menuAppsRefresh.Size = new System.Drawing.Size(338, 30);
             this.menuAppsRefresh.Text = "Refresh";
             this.menuAppsRefresh.Click += new System.EventHandler(this.menuAppsRefresh_Click);
             // 
             // menuAppsRemoveAll
             // 
             this.menuAppsRemoveAll.Name = "menuAppsRemoveAll";
-            this.menuAppsRemoveAll.Size = new System.Drawing.Size(347, 30);
+            this.menuAppsRemoveAll.Size = new System.Drawing.Size(338, 30);
             this.menuAppsRemoveAll.Text = "Uninstall all apps";
             this.menuAppsRemoveAll.Click += new System.EventHandler(this.menuAppsRemoveAll_Click);
             // 
             // menuAppsPopOut
             // 
-            this.menuAppsPopOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuAppsPopOut.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuAppsPopOut.Name = "menuAppsPopOut";
-            this.menuAppsPopOut.Size = new System.Drawing.Size(347, 30);
+            this.menuAppsPopOut.Size = new System.Drawing.Size(338, 30);
             this.menuAppsPopOut.Text = "Pop-out-App";
             this.menuAppsPopOut.Click += new System.EventHandler(this.menuAppsPopOut_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(344, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(335, 6);
             // 
             // menuAppsInfo
             // 
             this.menuAppsInfo.Name = "menuAppsInfo";
-            this.menuAppsInfo.Size = new System.Drawing.Size(347, 30);
+            this.menuAppsInfo.Size = new System.Drawing.Size(338, 30);
             this.menuAppsInfo.Text = "Info";
             this.menuAppsInfo.Click += new System.EventHandler(this.menuAppsInfo_Click);
             // 
@@ -219,7 +219,7 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAppsBinCount.AutoEllipsis = true;
             this.lblAppsBinCount.BackColor = System.Drawing.Color.Transparent;
-            this.lblAppsBinCount.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppsBinCount.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppsBinCount.ForeColor = System.Drawing.Color.MediumVioletRed;
             this.lblAppsBinCount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblAppsBinCount.Location = new System.Drawing.Point(21, 21);
@@ -228,13 +228,30 @@ namespace ThisIsWin11
             this.lblAppsBinCount.TabIndex = 135;
             this.lblAppsBinCount.Text = "Recycle Bin";
             // 
+            // rtbPS
+            // 
+            this.rtbPS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbPS.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.rtbPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbPS.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbPS.HideSelection = false;
+            this.rtbPS.Location = new System.Drawing.Point(27, 110);
+            this.rtbPS.Name = "rtbPS";
+            this.rtbPS.ReadOnly = true;
+            this.rtbPS.Size = new System.Drawing.Size(341, 636);
+            this.rtbPS.TabIndex = 138;
+            this.rtbPS.Text = "";
+            this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
+            // 
             // lstUWPRemove
             // 
             this.lstUWPRemove.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstUWPRemove.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lstUWPRemove.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstUWPRemove.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
+            this.lstUWPRemove.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstUWPRemove.FormattingEnabled = true;
             this.lstUWPRemove.ItemHeight = 21;
             this.lstUWPRemove.Location = new System.Drawing.Point(27, 110);
@@ -245,23 +262,6 @@ namespace ThisIsWin11
             this.lstUWPRemove.Sorted = true;
             this.lstUWPRemove.TabIndex = 136;
             this.lstUWPRemove.Visible = false;
-            // 
-            // rtbPS
-            // 
-            this.rtbPS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbPS.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.rtbPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbPS.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbPS.HideSelection = false;
-            this.rtbPS.Location = new System.Drawing.Point(27, 110);
-            this.rtbPS.Name = "rtbPS";
-            this.rtbPS.ReadOnly = true;
-            this.rtbPS.Size = new System.Drawing.Size(341, 636);
-            this.rtbPS.TabIndex = 138;
-            this.rtbPS.Text = "";
-            this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
             // 
             // PnlMiddle
             // 
@@ -285,7 +285,7 @@ namespace ThisIsWin11
             this.lblModuleInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblModuleInfo.AutoEllipsis = true;
-            this.lblModuleInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModuleInfo.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModuleInfo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lblModuleInfo.LinkColor = System.Drawing.Color.MediumVioletRed;
             this.lblModuleInfo.Location = new System.Drawing.Point(15, 63);
@@ -301,7 +301,7 @@ namespace ThisIsWin11
             this.lblAppsHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAppsHeader.AutoEllipsis = true;
-            this.lblAppsHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppsHeader.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppsHeader.ForeColor = System.Drawing.Color.Black;
             this.lblAppsHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblAppsHeader.Location = new System.Drawing.Point(12, 21);
@@ -318,7 +318,7 @@ namespace ThisIsWin11
             this.btnAddAll.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnAddAll.FlatAppearance.BorderSize = 0;
             this.btnAddAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddAll.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F);
+            this.btnAddAll.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddAll.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnAddAll.Location = new System.Drawing.Point(18, 115);
             this.btnAddAll.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -337,7 +337,7 @@ namespace ThisIsWin11
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F);
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnAdd.Location = new System.Drawing.Point(18, 155);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -356,7 +356,7 @@ namespace ThisIsWin11
             this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnRemove.FlatAppearance.BorderSize = 0;
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F);
+            this.btnRemove.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnRemove.Location = new System.Drawing.Point(18, 253);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -375,7 +375,7 @@ namespace ThisIsWin11
             this.btnRemoveAll.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnRemoveAll.FlatAppearance.BorderSize = 0;
             this.btnRemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveAll.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F);
+            this.btnRemoveAll.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveAll.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnRemoveAll.Location = new System.Drawing.Point(18, 213);
             this.btnRemoveAll.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -405,7 +405,7 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstUWP.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lstUWP.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstUWP.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
+            this.lstUWP.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstUWP.FormattingEnabled = true;
             this.lstUWP.ItemHeight = 21;
             this.lstUWP.Location = new System.Drawing.Point(17, 118);
@@ -422,11 +422,11 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LblLeftAppName.AutoEllipsis = true;
             this.LblLeftAppName.AutoSize = true;
-            this.LblLeftAppName.Font = new System.Drawing.Font("Segoe UI Semilight", 8.25F);
+            this.LblLeftAppName.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblLeftAppName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LblLeftAppName.Location = new System.Drawing.Point(16, 101);
             this.LblLeftAppName.Name = "LblLeftAppName";
-            this.LblLeftAppName.Size = new System.Drawing.Size(36, 13);
+            this.LblLeftAppName.Size = new System.Drawing.Size(35, 15);
             this.LblLeftAppName.TabIndex = 26;
             this.LblLeftAppName.Text = "Name";
             // 
@@ -451,7 +451,7 @@ namespace ThisIsWin11
             this.Controls.Add(this.PnlLeft);
             this.Controls.Add(this.pnlRight);
             this.Controls.Add(this.PnlMiddle);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "AppsWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
