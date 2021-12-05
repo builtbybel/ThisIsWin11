@@ -69,7 +69,7 @@ namespace ThisIsWin11
             this.btnExtensions.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnExtensions.FlatAppearance.BorderSize = 0;
             this.btnExtensions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExtensions.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExtensions.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExtensions.ForeColor = System.Drawing.Color.DimGray;
             this.btnExtensions.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnExtensions.Location = new System.Drawing.Point(3, 370);
@@ -88,7 +88,7 @@ namespace ThisIsWin11
             this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Font = new System.Drawing.Font("Segoe Fluent Icons", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.MediumVioletRed;
             this.btnHome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnHome.Location = new System.Drawing.Point(3, 25);
@@ -108,7 +108,7 @@ namespace ThisIsWin11
             this.btnSettings.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnSettings.FlatAppearance.BorderSize = 0;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.Font = new System.Drawing.Font("Segoe Fluent Icons", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.DimGray;
             this.btnSettings.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnSettings.Location = new System.Drawing.Point(3, 686);
@@ -127,7 +127,7 @@ namespace ThisIsWin11
             this.btnAutomate.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnAutomate.FlatAppearance.BorderSize = 0;
             this.btnAutomate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAutomate.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutomate.Font = new System.Drawing.Font("Segoe Fluent Icons", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAutomate.ForeColor = System.Drawing.Color.DimGray;
             this.btnAutomate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnAutomate.Location = new System.Drawing.Point(3, 301);
@@ -146,7 +146,7 @@ namespace ThisIsWin11
             this.btnPackages.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnPackages.FlatAppearance.BorderSize = 0;
             this.btnPackages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPackages.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPackages.Font = new System.Drawing.Font("Segoe Fluent Icons", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPackages.ForeColor = System.Drawing.Color.DimGray;
             this.btnPackages.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnPackages.Location = new System.Drawing.Point(3, 232);
@@ -165,7 +165,7 @@ namespace ThisIsWin11
             this.btnApps.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnApps.FlatAppearance.BorderSize = 0;
             this.btnApps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApps.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApps.Font = new System.Drawing.Font("Segoe Fluent Icons", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApps.ForeColor = System.Drawing.Color.DimGray;
             this.btnApps.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnApps.Location = new System.Drawing.Point(3, 163);
@@ -184,7 +184,7 @@ namespace ThisIsWin11
             this.btnSystem.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnSystem.FlatAppearance.BorderSize = 0;
             this.btnSystem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSystem.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSystem.Font = new System.Drawing.Font("Segoe Fluent Icons", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSystem.ForeColor = System.Drawing.Color.DimGray;
             this.btnSystem.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnSystem.Location = new System.Drawing.Point(3, 94);

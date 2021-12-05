@@ -85,6 +85,7 @@
     <Compile Include="Modules\OpenTweaks\Assessments\Personalization\Widgets.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Personalization\WindowsTheme.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Privacy\AppsAutoInstall.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Update\Wusa.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Third-Party\ShutUp11.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Third-Party\WindowsSpyBlocker.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Privacy\TailoredExperiences.cs" />
