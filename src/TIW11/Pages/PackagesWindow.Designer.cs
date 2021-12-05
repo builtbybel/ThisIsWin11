@@ -65,9 +65,10 @@ namespace ThisIsWin11
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.DimGray;
             this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeader.Location = new System.Drawing.Point(24, 19);
+            this.lblHeader.Location = new System.Drawing.Point(30, 24);
+            this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(188, 32);
+            this.lblHeader.Size = new System.Drawing.Size(236, 41);
             this.lblHeader.TabIndex = 139;
             this.lblHeader.Text = "Install packages";
             // 
@@ -79,10 +80,10 @@ namespace ThisIsWin11
             this.btnCreatePackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreatePackage.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreatePackage.ForeColor = System.Drawing.Color.Black;
-            this.btnCreatePackage.Location = new System.Drawing.Point(24, 24);
+            this.btnCreatePackage.Location = new System.Drawing.Point(30, 30);
             this.btnCreatePackage.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreatePackage.Name = "btnCreatePackage";
-            this.btnCreatePackage.Size = new System.Drawing.Size(213, 30);
+            this.btnCreatePackage.Size = new System.Drawing.Size(266, 38);
             this.btnCreatePackage.TabIndex = 141;
             this.btnCreatePackage.Text = "1. Create Package";
             this.btnCreatePackage.UseVisualStyleBackColor = false;
@@ -96,10 +97,10 @@ namespace ThisIsWin11
             this.btnRunPackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRunPackage.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRunPackage.ForeColor = System.Drawing.Color.Black;
-            this.btnRunPackage.Location = new System.Drawing.Point(251, 24);
+            this.btnRunPackage.Location = new System.Drawing.Point(314, 30);
             this.btnRunPackage.Margin = new System.Windows.Forms.Padding(2);
             this.btnRunPackage.Name = "btnRunPackage";
-            this.btnRunPackage.Size = new System.Drawing.Size(213, 30);
+            this.btnRunPackage.Size = new System.Drawing.Size(266, 38);
             this.btnRunPackage.TabIndex = 142;
             this.btnRunPackage.Text = "2. Run Installer";
             this.btnRunPackage.UseVisualStyleBackColor = false;
@@ -112,10 +113,11 @@ namespace ThisIsWin11
             this.btnPackagesMenu.FlatAppearance.BorderSize = 0;
             this.btnPackagesMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnPackagesMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPackagesMenu.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPackagesMenu.Location = new System.Drawing.Point(667, 0);
+            this.btnPackagesMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F);
+            this.btnPackagesMenu.Location = new System.Drawing.Point(834, 0);
+            this.btnPackagesMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPackagesMenu.Name = "btnPackagesMenu";
-            this.btnPackagesMenu.Size = new System.Drawing.Size(48, 51);
+            this.btnPackagesMenu.Size = new System.Drawing.Size(60, 64);
             this.btnPackagesMenu.TabIndex = 157;
             this.btnPackagesMenu.UseVisualStyleBackColor = false;
             this.btnPackagesMenu.Click += new System.EventHandler(this.btnPackagesMenu_Click);
@@ -124,6 +126,7 @@ namespace ThisIsWin11
             // 
             this.menuPackages.BackColor = System.Drawing.Color.WhiteSmoke;
             this.menuPackages.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuPackages.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuPackages.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuPackagesImport,
             this.menuPackagesExport,
@@ -134,33 +137,33 @@ namespace ThisIsWin11
             this.toolStripMenuItem1});
             this.menuPackages.Name = "menuMain";
             this.menuPackages.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuPackages.Size = new System.Drawing.Size(303, 190);
+            this.menuPackages.Size = new System.Drawing.Size(376, 226);
             // 
             // menuPackagesImport
             // 
             this.menuPackagesImport.Name = "menuPackagesImport";
-            this.menuPackagesImport.Size = new System.Drawing.Size(302, 30);
+            this.menuPackagesImport.Size = new System.Drawing.Size(375, 36);
             this.menuPackagesImport.Text = "Import package list";
             this.menuPackagesImport.Click += new System.EventHandler(this.menuPackagesImport_Click);
             // 
             // menuPackagesExport
             // 
             this.menuPackagesExport.Name = "menuPackagesExport";
-            this.menuPackagesExport.Size = new System.Drawing.Size(302, 30);
+            this.menuPackagesExport.Size = new System.Drawing.Size(375, 36);
             this.menuPackagesExport.Text = "Export to PowerShell";
             this.menuPackagesExport.Click += new System.EventHandler(this.menuPackagesExport_Click);
             // 
             // menuPackagesExpand
             // 
             this.menuPackagesExpand.Name = "menuPackagesExpand";
-            this.menuPackagesExpand.Size = new System.Drawing.Size(302, 30);
+            this.menuPackagesExpand.Size = new System.Drawing.Size(375, 36);
             this.menuPackagesExpand.Text = "Expand all";
             this.menuPackagesExpand.Click += new System.EventHandler(this.menuPackagesExpand_Click);
             // 
             // menuPackagesRefresh
             // 
             this.menuPackagesRefresh.Name = "menuPackagesRefresh";
-            this.menuPackagesRefresh.Size = new System.Drawing.Size(302, 30);
+            this.menuPackagesRefresh.Size = new System.Drawing.Size(375, 36);
             this.menuPackagesRefresh.Text = "Refresh";
             this.menuPackagesRefresh.Click += new System.EventHandler(this.menuPackagesRefresh_Click);
             // 
@@ -168,21 +171,21 @@ namespace ThisIsWin11
             // 
             this.menuPackagesPopOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuPackagesPopOut.Name = "menuPackagesPopOut";
-            this.menuPackagesPopOut.Size = new System.Drawing.Size(302, 30);
+            this.menuPackagesPopOut.Size = new System.Drawing.Size(375, 36);
             this.menuPackagesPopOut.Text = "Pop-out-App";
             this.menuPackagesPopOut.Click += new System.EventHandler(this.menuPackagesPopOut_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(299, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(372, 6);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Enabled = false;
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(302, 30);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(375, 36);
             this.toolStripMenuItem1.Text = "Powered by Windows Package Manager";
             // 
             // btnInstallWinget
@@ -194,9 +197,10 @@ namespace ThisIsWin11
             this.btnInstallWinget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInstallWinget.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInstallWinget.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnInstallWinget.Location = new System.Drawing.Point(27, 538);
+            this.btnInstallWinget.Location = new System.Drawing.Point(34, 672);
+            this.btnInstallWinget.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnInstallWinget.Name = "btnInstallWinget";
-            this.btnInstallWinget.Size = new System.Drawing.Size(225, 30);
+            this.btnInstallWinget.Size = new System.Drawing.Size(281, 38);
             this.btnInstallWinget.TabIndex = 161;
             this.btnInstallWinget.Text = "Install Windows Package Manager";
             this.btnInstallWinget.UseVisualStyleBackColor = false;
@@ -206,10 +210,11 @@ namespace ThisIsWin11
             // 
             this.progress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progress.Location = new System.Drawing.Point(24, 78);
+            this.progress.Location = new System.Drawing.Point(30, 98);
+            this.progress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.progress.MarqueeAnimationSpeed = 30;
             this.progress.Name = "progress";
-            this.progress.Size = new System.Drawing.Size(669, 5);
+            this.progress.Size = new System.Drawing.Size(836, 6);
             this.progress.TabIndex = 162;
             this.progress.Visible = false;
             // 
@@ -221,9 +226,10 @@ namespace ThisIsWin11
             this.pnlRight.Controls.Add(this.btnInstallWinget);
             this.pnlRight.Controls.Add(this.rtbPS);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlRight.Location = new System.Drawing.Point(716, 0);
+            this.pnlRight.Location = new System.Drawing.Point(895, 0);
+            this.pnlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(371, 770);
+            this.pnlRight.Size = new System.Drawing.Size(464, 962);
             this.pnlRight.TabIndex = 163;
             // 
             // lblModuleInfo
@@ -232,9 +238,10 @@ namespace ThisIsWin11
             this.lblModuleInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModuleInfo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lblModuleInfo.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lblModuleInfo.Location = new System.Drawing.Point(24, 59);
+            this.lblModuleInfo.Location = new System.Drawing.Point(30, 74);
+            this.lblModuleInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblModuleInfo.Name = "lblModuleInfo";
-            this.lblModuleInfo.Size = new System.Drawing.Size(320, 17);
+            this.lblModuleInfo.Size = new System.Drawing.Size(400, 21);
             this.lblModuleInfo.TabIndex = 162;
             this.lblModuleInfo.TabStop = true;
             this.lblModuleInfo.Text = "Learn more about Packages";
@@ -249,9 +256,10 @@ namespace ThisIsWin11
             this.lblModuleName.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModuleName.ForeColor = System.Drawing.Color.Black;
             this.lblModuleName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblModuleName.Location = new System.Drawing.Point(21, 21);
+            this.lblModuleName.Location = new System.Drawing.Point(26, 26);
+            this.lblModuleName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblModuleName.Name = "lblModuleName";
-            this.lblModuleName.Size = new System.Drawing.Size(323, 32);
+            this.lblModuleName.Size = new System.Drawing.Size(404, 40);
             this.lblModuleName.TabIndex = 135;
             this.lblModuleName.Text = "Packages";
             // 
@@ -264,10 +272,11 @@ namespace ThisIsWin11
             this.rtbPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbPS.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbPS.HideSelection = false;
-            this.rtbPS.Location = new System.Drawing.Point(27, 110);
+            this.rtbPS.Location = new System.Drawing.Point(34, 138);
+            this.rtbPS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ReadOnly = true;
-            this.rtbPS.Size = new System.Drawing.Size(343, 644);
+            this.rtbPS.Size = new System.Drawing.Size(429, 805);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = "";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
@@ -278,9 +287,10 @@ namespace ThisIsWin11
             this.pnlBottom.Controls.Add(this.btnCreatePackage);
             this.pnlBottom.Controls.Add(this.btnRunPackage);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 697);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 871);
+            this.pnlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(716, 73);
+            this.pnlBottom.Size = new System.Drawing.Size(895, 91);
             this.pnlBottom.TabIndex = 164;
             // 
             // tvwPackages
@@ -292,19 +302,20 @@ namespace ThisIsWin11
             this.tvwPackages.CheckBoxes = true;
             this.tvwPackages.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tvwPackages.HotTracking = true;
-            this.tvwPackages.Location = new System.Drawing.Point(24, 97);
+            this.tvwPackages.Location = new System.Drawing.Point(30, 121);
+            this.tvwPackages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tvwPackages.Name = "tvwPackages";
             this.tvwPackages.ShowLines = false;
-            this.tvwPackages.Size = new System.Drawing.Size(692, 600);
+            this.tvwPackages.Size = new System.Drawing.Size(865, 750);
             this.tvwPackages.TabIndex = 165;
             // 
             // PackagesWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.ClientSize = new System.Drawing.Size(1359, 962);
             this.Controls.Add(this.tvwPackages);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.progress);
@@ -312,6 +323,7 @@ namespace ThisIsWin11
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.pnlRight);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PackagesWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

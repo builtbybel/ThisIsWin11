@@ -65,10 +65,11 @@ namespace ThisIsWin11
             this.btnSystemMenu.FlatAppearance.BorderSize = 0;
             this.btnSystemMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnSystemMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSystemMenu.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSystemMenu.Location = new System.Drawing.Point(667, 0);
+            this.btnSystemMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F);
+            this.btnSystemMenu.Location = new System.Drawing.Point(834, 0);
+            this.btnSystemMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSystemMenu.Name = "btnSystemMenu";
-            this.btnSystemMenu.Size = new System.Drawing.Size(48, 51);
+            this.btnSystemMenu.Size = new System.Drawing.Size(60, 64);
             this.btnSystemMenu.TabIndex = 162;
             this.btnSystemMenu.UseVisualStyleBackColor = false;
             this.btnSystemMenu.Click += new System.EventHandler(this.btnSystemMenu_Click);
@@ -82,9 +83,10 @@ namespace ThisIsWin11
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.DimGray;
             this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeader.Location = new System.Drawing.Point(24, 19);
+            this.lblHeader.Location = new System.Drawing.Point(30, 24);
+            this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(669, 32);
+            this.lblHeader.Size = new System.Drawing.Size(836, 40);
             this.lblHeader.TabIndex = 161;
             this.lblHeader.Text = "Change settings";
             // 
@@ -96,10 +98,10 @@ namespace ThisIsWin11
             this.btnSystemCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSystemCheck.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSystemCheck.ForeColor = System.Drawing.Color.Black;
-            this.btnSystemCheck.Location = new System.Drawing.Point(24, 24);
+            this.btnSystemCheck.Location = new System.Drawing.Point(30, 30);
             this.btnSystemCheck.Margin = new System.Windows.Forms.Padding(2);
             this.btnSystemCheck.Name = "btnSystemCheck";
-            this.btnSystemCheck.Size = new System.Drawing.Size(213, 30);
+            this.btnSystemCheck.Size = new System.Drawing.Size(266, 38);
             this.btnSystemCheck.TabIndex = 159;
             this.btnSystemCheck.Text = "Check";
             this.btnSystemCheck.UseVisualStyleBackColor = false;
@@ -109,6 +111,7 @@ namespace ThisIsWin11
             // 
             this.menuSystem.BackColor = System.Drawing.Color.WhiteSmoke;
             this.menuSystem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuSystem.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuSystem.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuSystemImportProfile,
             this.menuSystemExportProfile,
@@ -119,33 +122,33 @@ namespace ThisIsWin11
             this.menuSystemVersioning});
             this.menuSystem.Name = "menuMain";
             this.menuSystem.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuSystem.Size = new System.Drawing.Size(201, 190);
+            this.menuSystem.Size = new System.Drawing.Size(236, 226);
             // 
             // menuSystemImportProfile
             // 
             this.menuSystemImportProfile.Name = "menuSystemImportProfile";
-            this.menuSystemImportProfile.Size = new System.Drawing.Size(200, 30);
+            this.menuSystemImportProfile.Size = new System.Drawing.Size(235, 36);
             this.menuSystemImportProfile.Text = "Import profile";
             this.menuSystemImportProfile.Click += new System.EventHandler(this.menuSystemImportProfile_Click);
             // 
             // menuSystemExportProfile
             // 
             this.menuSystemExportProfile.Name = "menuSystemExportProfile";
-            this.menuSystemExportProfile.Size = new System.Drawing.Size(200, 30);
+            this.menuSystemExportProfile.Size = new System.Drawing.Size(235, 36);
             this.menuSystemExportProfile.Text = "Export profile";
             this.menuSystemExportProfile.Click += new System.EventHandler(this.menuSystemExportProfile_Click);
             // 
             // menuSystemExportLog
             // 
             this.menuSystemExportLog.Name = "menuSystemExportLog";
-            this.menuSystemExportLog.Size = new System.Drawing.Size(200, 30);
+            this.menuSystemExportLog.Size = new System.Drawing.Size(235, 36);
             this.menuSystemExportLog.Text = "Export log";
             this.menuSystemExportLog.Click += new System.EventHandler(this.menuSystemExportLog_Click);
             // 
             // menuSystemSelect
             // 
             this.menuSystemSelect.Name = "menuSystemSelect";
-            this.menuSystemSelect.Size = new System.Drawing.Size(200, 30);
+            this.menuSystemSelect.Size = new System.Drawing.Size(235, 36);
             this.menuSystemSelect.Text = "Select all";
             this.menuSystemSelect.Click += new System.EventHandler(this.menuSystemSelect_Click);
             // 
@@ -153,19 +156,19 @@ namespace ThisIsWin11
             // 
             this.menuSystemPopOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuSystemPopOut.Name = "menuSystemPopOut";
-            this.menuSystemPopOut.Size = new System.Drawing.Size(200, 30);
+            this.menuSystemPopOut.Size = new System.Drawing.Size(235, 36);
             this.menuSystemPopOut.Text = "Pop-out-App";
             this.menuSystemPopOut.Click += new System.EventHandler(this.menuSystemPopOut_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(197, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(232, 6);
             // 
             // menuSystemVersioning
             // 
             this.menuSystemVersioning.Name = "menuSystemVersioning";
-            this.menuSystemVersioning.Size = new System.Drawing.Size(200, 30);
+            this.menuSystemVersioning.Size = new System.Drawing.Size(235, 36);
             this.menuSystemVersioning.Text = "Info";
             this.menuSystemVersioning.Click += new System.EventHandler(this.menuSystemInfo_Click);
             // 
@@ -173,9 +176,10 @@ namespace ThisIsWin11
             // 
             this.progress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progress.Location = new System.Drawing.Point(30, 78);
+            this.progress.Location = new System.Drawing.Point(38, 98);
+            this.progress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.progress.Name = "progress";
-            this.progress.Size = new System.Drawing.Size(663, 5);
+            this.progress.Size = new System.Drawing.Size(829, 6);
             this.progress.TabIndex = 166;
             this.progress.Visible = false;
             // 
@@ -190,11 +194,12 @@ namespace ThisIsWin11
             this.tvwAssessments.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tvwAssessments.HideSelection = false;
             this.tvwAssessments.HotTracking = true;
-            this.tvwAssessments.Location = new System.Drawing.Point(24, 99);
+            this.tvwAssessments.Location = new System.Drawing.Point(30, 124);
+            this.tvwAssessments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tvwAssessments.Name = "tvwAssessments";
             this.tvwAssessments.ShowLines = false;
             this.tvwAssessments.ShowNodeToolTips = true;
-            this.tvwAssessments.Size = new System.Drawing.Size(691, 589);
+            this.tvwAssessments.Size = new System.Drawing.Size(864, 736);
             this.tvwAssessments.TabIndex = 168;
             this.tvwAssessments.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvwAssessments_AfterCheck);
             this.tvwAssessments.Click += new System.EventHandler(this.tvwAssessments_Click);
@@ -207,10 +212,10 @@ namespace ThisIsWin11
             this.btnSystemFix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSystemFix.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSystemFix.ForeColor = System.Drawing.Color.Black;
-            this.btnSystemFix.Location = new System.Drawing.Point(251, 24);
+            this.btnSystemFix.Location = new System.Drawing.Point(314, 30);
             this.btnSystemFix.Margin = new System.Windows.Forms.Padding(2);
             this.btnSystemFix.Name = "btnSystemFix";
-            this.btnSystemFix.Size = new System.Drawing.Size(213, 30);
+            this.btnSystemFix.Size = new System.Drawing.Size(266, 38);
             this.btnSystemFix.TabIndex = 167;
             this.btnSystemFix.Text = "Fix issues";
             this.btnSystemFix.UseVisualStyleBackColor = false;
@@ -223,9 +228,10 @@ namespace ThisIsWin11
             this.pnlRight.Controls.Add(this.lblModuleName);
             this.pnlRight.Controls.Add(this.rtbPS);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlRight.Location = new System.Drawing.Point(716, 0);
+            this.pnlRight.Location = new System.Drawing.Point(895, 0);
+            this.pnlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(371, 770);
+            this.pnlRight.Size = new System.Drawing.Size(464, 962);
             this.pnlRight.TabIndex = 170;
             // 
             // lblModuleInfo
@@ -234,9 +240,10 @@ namespace ThisIsWin11
             this.lblModuleInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModuleInfo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lblModuleInfo.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lblModuleInfo.Location = new System.Drawing.Point(24, 59);
+            this.lblModuleInfo.Location = new System.Drawing.Point(30, 74);
+            this.lblModuleInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblModuleInfo.Name = "lblModuleInfo";
-            this.lblModuleInfo.Size = new System.Drawing.Size(320, 17);
+            this.lblModuleInfo.Size = new System.Drawing.Size(400, 21);
             this.lblModuleInfo.TabIndex = 161;
             this.lblModuleInfo.TabStop = true;
             this.lblModuleInfo.Text = "Learn more about OpenTweaks";
@@ -251,9 +258,10 @@ namespace ThisIsWin11
             this.lblModuleName.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModuleName.ForeColor = System.Drawing.Color.Black;
             this.lblModuleName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblModuleName.Location = new System.Drawing.Point(21, 21);
+            this.lblModuleName.Location = new System.Drawing.Point(26, 26);
+            this.lblModuleName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblModuleName.Name = "lblModuleName";
-            this.lblModuleName.Size = new System.Drawing.Size(323, 32);
+            this.lblModuleName.Size = new System.Drawing.Size(404, 40);
             this.lblModuleName.TabIndex = 135;
             this.lblModuleName.Text = "OpenTweaks";
             // 
@@ -265,10 +273,11 @@ namespace ThisIsWin11
             this.rtbPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbPS.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbPS.HideSelection = false;
-            this.rtbPS.Location = new System.Drawing.Point(27, 110);
+            this.rtbPS.Location = new System.Drawing.Point(34, 138);
+            this.rtbPS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ReadOnly = true;
-            this.rtbPS.Size = new System.Drawing.Size(343, 644);
+            this.rtbPS.Size = new System.Drawing.Size(429, 805);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = "";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
@@ -284,9 +293,10 @@ namespace ThisIsWin11
             this.lnkSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkSubHeader.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lnkSubHeader.Location = new System.Drawing.Point(28, 57);
+            this.lnkSubHeader.Location = new System.Drawing.Point(35, 71);
+            this.lnkSubHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkSubHeader.Name = "lnkSubHeader";
-            this.lnkSubHeader.Size = new System.Drawing.Size(665, 18);
+            this.lnkSubHeader.Size = new System.Drawing.Size(831, 22);
             this.lnkSubHeader.TabIndex = 171;
             this.lnkSubHeader.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSubHeader_LinkClicked);
             // 
@@ -299,9 +309,10 @@ namespace ThisIsWin11
             this.lnkSystemPreset.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkSystemPreset.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkSystemPreset.LinkColor = System.Drawing.Color.DimGray;
-            this.lnkSystemPreset.Location = new System.Drawing.Point(92, 364);
+            this.lnkSystemPreset.Location = new System.Drawing.Point(115, 455);
+            this.lnkSystemPreset.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkSystemPreset.Name = "lnkSystemPreset";
-            this.lnkSystemPreset.Size = new System.Drawing.Size(580, 30);
+            this.lnkSystemPreset.Size = new System.Drawing.Size(725, 38);
             this.lnkSystemPreset.TabIndex = 172;
             this.lnkSystemPreset.TabStop = true;
             this.lnkSystemPreset.Text = "Click here to load a preset and let Windows 11 look and feel like Windows 10";
@@ -314,10 +325,11 @@ namespace ThisIsWin11
             this.btnSystemUndo.FlatAppearance.BorderSize = 0;
             this.btnSystemUndo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.HotPink;
             this.btnSystemUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSystemUndo.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSystemUndo.Location = new System.Drawing.Point(604, 0);
+            this.btnSystemUndo.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F);
+            this.btnSystemUndo.Location = new System.Drawing.Point(755, 0);
+            this.btnSystemUndo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSystemUndo.Name = "btnSystemUndo";
-            this.btnSystemUndo.Size = new System.Drawing.Size(48, 51);
+            this.btnSystemUndo.Size = new System.Drawing.Size(60, 64);
             this.btnSystemUndo.TabIndex = 174;
             this.tt.SetToolTip(this.btnSystemUndo, "Restore default Windows 11 settings");
             this.btnSystemUndo.UseVisualStyleBackColor = false;
@@ -338,18 +350,19 @@ namespace ThisIsWin11
             this.pnlBottom.Controls.Add(this.btnSystemFix);
             this.pnlBottom.Controls.Add(this.btnSystemCheck);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 694);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 867);
+            this.pnlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(716, 76);
+            this.pnlBottom.Size = new System.Drawing.Size(895, 95);
             this.pnlBottom.TabIndex = 175;
             // 
             // SystemWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.ClientSize = new System.Drawing.Size(1359, 962);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.btnSystemUndo);
             this.Controls.Add(this.lnkSystemPreset);
@@ -360,6 +373,7 @@ namespace ThisIsWin11
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.pnlRight);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SystemWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

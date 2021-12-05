@@ -58,9 +58,10 @@ namespace ThisIsWin11
             this.pnlLeft.Controls.Add(this.btnSystem);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLeft.Location = new System.Drawing.Point(0, 0);
+            this.pnlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.pnlLeft.Size = new System.Drawing.Size(78, 770);
+            this.pnlLeft.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
+            this.pnlLeft.Size = new System.Drawing.Size(98, 962);
             this.pnlLeft.TabIndex = 130;
             // 
             // btnExtensions
@@ -69,13 +70,13 @@ namespace ThisIsWin11
             this.btnExtensions.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnExtensions.FlatAppearance.BorderSize = 0;
             this.btnExtensions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExtensions.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExtensions.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F);
             this.btnExtensions.ForeColor = System.Drawing.Color.DimGray;
             this.btnExtensions.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnExtensions.Location = new System.Drawing.Point(3, 370);
-            this.btnExtensions.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExtensions.Location = new System.Drawing.Point(4, 462);
+            this.btnExtensions.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnExtensions.Name = "btnExtensions";
-            this.btnExtensions.Size = new System.Drawing.Size(72, 61);
+            this.btnExtensions.Size = new System.Drawing.Size(90, 76);
             this.btnExtensions.TabIndex = 145;
             this.btnExtensions.Text = "...";
             this.btnExtensions.UseVisualStyleBackColor = false;
@@ -88,13 +89,13 @@ namespace ThisIsWin11
             this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Font = new System.Drawing.Font("Segoe Fluent Icons", 11.25F);
             this.btnHome.ForeColor = System.Drawing.Color.MediumVioletRed;
             this.btnHome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnHome.Location = new System.Drawing.Point(3, 25);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnHome.Location = new System.Drawing.Point(4, 31);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(72, 61);
+            this.btnHome.Size = new System.Drawing.Size(90, 76);
             this.btnHome.TabIndex = 144;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
@@ -108,13 +109,13 @@ namespace ThisIsWin11
             this.btnSettings.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnSettings.FlatAppearance.BorderSize = 0;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F);
             this.btnSettings.ForeColor = System.Drawing.Color.DimGray;
             this.btnSettings.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSettings.Location = new System.Drawing.Point(3, 686);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSettings.Location = new System.Drawing.Point(4, 858);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(72, 72);
+            this.btnSettings.Size = new System.Drawing.Size(90, 90);
             this.btnSettings.TabIndex = 143;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = false;
@@ -127,13 +128,13 @@ namespace ThisIsWin11
             this.btnAutomate.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnAutomate.FlatAppearance.BorderSize = 0;
             this.btnAutomate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAutomate.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutomate.Font = new System.Drawing.Font("Segoe Fluent Icons", 11.25F);
             this.btnAutomate.ForeColor = System.Drawing.Color.DimGray;
             this.btnAutomate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAutomate.Location = new System.Drawing.Point(3, 301);
-            this.btnAutomate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAutomate.Location = new System.Drawing.Point(4, 376);
+            this.btnAutomate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAutomate.Name = "btnAutomate";
-            this.btnAutomate.Size = new System.Drawing.Size(72, 61);
+            this.btnAutomate.Size = new System.Drawing.Size(90, 76);
             this.btnAutomate.TabIndex = 142;
             this.btnAutomate.Text = "Automate";
             this.btnAutomate.UseVisualStyleBackColor = false;
@@ -146,13 +147,13 @@ namespace ThisIsWin11
             this.btnPackages.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnPackages.FlatAppearance.BorderSize = 0;
             this.btnPackages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPackages.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPackages.Font = new System.Drawing.Font("Segoe Fluent Icons", 11.25F);
             this.btnPackages.ForeColor = System.Drawing.Color.DimGray;
             this.btnPackages.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnPackages.Location = new System.Drawing.Point(3, 232);
-            this.btnPackages.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPackages.Location = new System.Drawing.Point(4, 290);
+            this.btnPackages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPackages.Name = "btnPackages";
-            this.btnPackages.Size = new System.Drawing.Size(72, 61);
+            this.btnPackages.Size = new System.Drawing.Size(90, 76);
             this.btnPackages.TabIndex = 141;
             this.btnPackages.Text = "Packages";
             this.btnPackages.UseVisualStyleBackColor = false;
@@ -165,13 +166,13 @@ namespace ThisIsWin11
             this.btnApps.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnApps.FlatAppearance.BorderSize = 0;
             this.btnApps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApps.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApps.Font = new System.Drawing.Font("Segoe Fluent Icons", 11.25F);
             this.btnApps.ForeColor = System.Drawing.Color.DimGray;
             this.btnApps.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnApps.Location = new System.Drawing.Point(3, 163);
-            this.btnApps.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnApps.Location = new System.Drawing.Point(4, 204);
+            this.btnApps.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnApps.Name = "btnApps";
-            this.btnApps.Size = new System.Drawing.Size(72, 61);
+            this.btnApps.Size = new System.Drawing.Size(90, 76);
             this.btnApps.TabIndex = 140;
             this.btnApps.Text = "Apps";
             this.btnApps.UseVisualStyleBackColor = false;
@@ -184,13 +185,13 @@ namespace ThisIsWin11
             this.btnSystem.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnSystem.FlatAppearance.BorderSize = 0;
             this.btnSystem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSystem.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSystem.Font = new System.Drawing.Font("Segoe Fluent Icons", 11.25F);
             this.btnSystem.ForeColor = System.Drawing.Color.DimGray;
             this.btnSystem.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSystem.Location = new System.Drawing.Point(3, 94);
-            this.btnSystem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSystem.Location = new System.Drawing.Point(4, 118);
+            this.btnSystem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSystem.Name = "btnSystem";
-            this.btnSystem.Size = new System.Drawing.Size(72, 61);
+            this.btnSystem.Size = new System.Drawing.Size(90, 76);
             this.btnSystem.TabIndex = 139;
             this.btnSystem.Text = "System";
             this.btnSystem.UseVisualStyleBackColor = false;
@@ -203,36 +204,39 @@ namespace ThisIsWin11
             this.pnlContainer.AutoSize = true;
             this.pnlContainer.BackColor = System.Drawing.Color.White;
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContainer.Location = new System.Drawing.Point(78, 0);
+            this.pnlContainer.Location = new System.Drawing.Point(98, 0);
+            this.pnlContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(1088, 770);
+            this.pnlContainer.Size = new System.Drawing.Size(1360, 962);
             this.pnlContainer.TabIndex = 136;
             // 
             // menuMain
             // 
             this.menuMain.BackColor = System.Drawing.Color.WhiteSmoke;
             this.menuMain.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuMainComponents});
             this.menuMain.Name = "menuMain";
             this.menuMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuMain.Size = new System.Drawing.Size(174, 34);
+            this.menuMain.Size = new System.Drawing.Size(201, 40);
             // 
             // menuMainComponents
             // 
             this.menuMainComponents.Name = "menuMainComponents";
-            this.menuMainComponents.Size = new System.Drawing.Size(173, 30);
+            this.menuMainComponents.Size = new System.Drawing.Size(200, 36);
             this.menuMainComponents.Text = "Extensions";
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1166, 770);
+            this.ClientSize = new System.Drawing.Size(1458, 962);
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.pnlLeft);
-            this.MinimumSize = new System.Drawing.Size(1182, 809);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1473, 999);
             this.Name = "MainWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

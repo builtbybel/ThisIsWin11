@@ -99,7 +99,8 @@ namespace ThisIsWin11
             this.DataGridViewPlugs.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DataGridViewPlugs.EnableHeadersVisualStyles = false;
             this.DataGridViewPlugs.GridColor = System.Drawing.Color.WhiteSmoke;
-            this.DataGridViewPlugs.Location = new System.Drawing.Point(24, 166);
+            this.DataGridViewPlugs.Location = new System.Drawing.Point(30, 208);
+            this.DataGridViewPlugs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DataGridViewPlugs.MultiSelect = false;
             this.DataGridViewPlugs.Name = "DataGridViewPlugs";
             this.DataGridViewPlugs.ReadOnly = true;
@@ -120,7 +121,7 @@ namespace ThisIsWin11
             this.DataGridViewPlugs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DataGridViewPlugs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.DataGridViewPlugs.ShowEditingIcon = false;
-            this.DataGridViewPlugs.Size = new System.Drawing.Size(1051, 502);
+            this.DataGridViewPlugs.Size = new System.Drawing.Size(1314, 628);
             this.DataGridViewPlugs.TabIndex = 141;
             this.DataGridViewPlugs.TabStop = false;
             this.DataGridViewPlugs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewPlugs_CellContentClick);
@@ -142,22 +143,24 @@ namespace ThisIsWin11
             this.ColumnState.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColumnState.ThreeState = true;
             this.ColumnState.TrueValue = "1";
-            this.ColumnState.Width = 71;
+            this.ColumnState.Width = 83;
             // 
             // ColumnName
             // 
             this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ColumnName.DataPropertyName = "Name";
             this.ColumnName.HeaderText = "Name";
+            this.ColumnName.MinimumWidth = 6;
             this.ColumnName.Name = "ColumnName";
             this.ColumnName.ReadOnly = true;
-            this.ColumnName.Width = 68;
+            this.ColumnName.Width = 81;
             // 
             // ColumnDescription
             // 
             this.ColumnDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ColumnDescription.DataPropertyName = "Description";
             this.ColumnDescription.HeaderText = "Description";
+            this.ColumnDescription.MinimumWidth = 6;
             this.ColumnDescription.Name = "ColumnDescription";
             this.ColumnDescription.ReadOnly = true;
             // 
@@ -166,17 +169,19 @@ namespace ThisIsWin11
             this.ColumnAuthor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ColumnAuthor.DataPropertyName = "Author";
             this.ColumnAuthor.HeaderText = "Author";
+            this.ColumnAuthor.MinimumWidth = 6;
             this.ColumnAuthor.Name = "ColumnAuthor";
             this.ColumnAuthor.ReadOnly = true;
-            this.ColumnAuthor.Width = 75;
+            this.ColumnAuthor.Width = 88;
             // 
             // textPlugsSearch
             // 
             this.textPlugsSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textPlugsSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPlugsSearch.Location = new System.Drawing.Point(864, 125);
+            this.textPlugsSearch.Location = new System.Drawing.Point(1080, 156);
+            this.textPlugsSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textPlugsSearch.Name = "textPlugsSearch";
-            this.textPlugsSearch.Size = new System.Drawing.Size(211, 23);
+            this.textPlugsSearch.Size = new System.Drawing.Size(263, 27);
             this.textPlugsSearch.TabIndex = 142;
             this.textPlugsSearch.Text = "Search...";
             this.textPlugsSearch.Click += new System.EventHandler(this.textSearch_Click);
@@ -189,10 +194,11 @@ namespace ThisIsWin11
             this.btnPluginsMenu.FlatAppearance.BorderSize = 0;
             this.btnPluginsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnPluginsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPluginsMenu.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPluginsMenu.Location = new System.Drawing.Point(1037, 0);
+            this.btnPluginsMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F);
+            this.btnPluginsMenu.Location = new System.Drawing.Point(1296, 0);
+            this.btnPluginsMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPluginsMenu.Name = "btnPluginsMenu";
-            this.btnPluginsMenu.Size = new System.Drawing.Size(48, 51);
+            this.btnPluginsMenu.Size = new System.Drawing.Size(60, 64);
             this.btnPluginsMenu.TabIndex = 157;
             this.btnPluginsMenu.UseVisualStyleBackColor = false;
             this.btnPluginsMenu.Click += new System.EventHandler(this.btnPlugsMenu_Click);
@@ -208,8 +214,9 @@ namespace ThisIsWin11
             this.pnlTop.Controls.Add(this.btnPluginsMenu);
             this.pnlTop.Controls.Add(this.lblHeader);
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1088, 119);
+            this.pnlTop.Size = new System.Drawing.Size(1360, 149);
             this.pnlTop.TabIndex = 164;
             // 
             // lnkPlugsDir
@@ -218,9 +225,10 @@ namespace ThisIsWin11
             this.lnkPlugsDir.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkPlugsDir.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkPlugsDir.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lnkPlugsDir.Location = new System.Drawing.Point(319, 94);
+            this.lnkPlugsDir.Location = new System.Drawing.Point(399, 118);
+            this.lnkPlugsDir.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkPlugsDir.Name = "lnkPlugsDir";
-            this.lnkPlugsDir.Size = new System.Drawing.Size(128, 17);
+            this.lnkPlugsDir.Size = new System.Drawing.Size(162, 23);
             this.lnkPlugsDir.TabIndex = 160;
             this.lnkPlugsDir.TabStop = true;
             this.lnkPlugsDir.Text = "Open Plugins folder";
@@ -232,9 +240,10 @@ namespace ThisIsWin11
             this.lnkSubHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkSubHeader.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lnkSubHeader.Location = new System.Drawing.Point(27, 94);
+            this.lnkSubHeader.Location = new System.Drawing.Point(34, 118);
+            this.lnkSubHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkSubHeader.Name = "lnkSubHeader";
-            this.lnkSubHeader.Size = new System.Drawing.Size(272, 17);
+            this.lnkSubHeader.Size = new System.Drawing.Size(343, 23);
             this.lnkSubHeader.TabIndex = 159;
             this.lnkSubHeader.TabStop = true;
             this.lnkSubHeader.Text = "More information about the Plugins engine";
@@ -245,9 +254,10 @@ namespace ThisIsWin11
             this.lblSubHeader.AutoSize = true;
             this.lblSubHeader.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblSubHeader.Location = new System.Drawing.Point(27, 61);
+            this.lblSubHeader.Location = new System.Drawing.Point(34, 76);
+            this.lblSubHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubHeader.Name = "lblSubHeader";
-            this.lblSubHeader.Size = new System.Drawing.Size(439, 20);
+            this.lblSubHeader.Size = new System.Drawing.Size(551, 25);
             this.lblSubHeader.TabIndex = 158;
             this.lblSubHeader.Text = "Create your own tweaks and extend the capabilities of ThisIsWin11.";
             // 
@@ -260,9 +270,10 @@ namespace ThisIsWin11
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.Black;
             this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeader.Location = new System.Drawing.Point(24, 19);
+            this.lblHeader.Location = new System.Drawing.Point(30, 24);
+            this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(129, 32);
+            this.lblHeader.Size = new System.Drawing.Size(164, 41);
             this.lblHeader.TabIndex = 135;
             this.lblHeader.Text = "Extensions";
             // 
@@ -273,9 +284,10 @@ namespace ThisIsWin11
             this.lnkPlugsAttribution.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkPlugsAttribution.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkPlugsAttribution.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lnkPlugsAttribution.Location = new System.Drawing.Point(26, 702);
+            this.lnkPlugsAttribution.Location = new System.Drawing.Point(32, 878);
+            this.lnkPlugsAttribution.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkPlugsAttribution.Name = "lnkPlugsAttribution";
-            this.lnkPlugsAttribution.Size = new System.Drawing.Size(175, 17);
+            this.lnkPlugsAttribution.Size = new System.Drawing.Size(222, 23);
             this.lnkPlugsAttribution.TabIndex = 165;
             this.lnkPlugsAttribution.TabStop = true;
             this.lnkPlugsAttribution.Text = "Karlkoorna\'s Tweaky engine";
@@ -289,9 +301,10 @@ namespace ThisIsWin11
             this.lblPlugsAttribution.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlugsAttribution.ForeColor = System.Drawing.Color.Black;
             this.lblPlugsAttribution.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblPlugsAttribution.Location = new System.Drawing.Point(26, 671);
+            this.lblPlugsAttribution.Location = new System.Drawing.Point(32, 839);
+            this.lblPlugsAttribution.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlugsAttribution.Name = "lblPlugsAttribution";
-            this.lblPlugsAttribution.Size = new System.Drawing.Size(91, 21);
+            this.lblPlugsAttribution.Size = new System.Drawing.Size(114, 26);
             this.lblPlugsAttribution.TabIndex = 166;
             this.lblPlugsAttribution.Text = "Attribution";
             // 
@@ -299,6 +312,7 @@ namespace ThisIsWin11
             // 
             this.menuPlugins.BackColor = System.Drawing.Color.WhiteSmoke;
             this.menuPlugins.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuPlugins.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuPlugins.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuPlugsRefresh,
             this.menuPlugsPopOut,
@@ -306,12 +320,12 @@ namespace ThisIsWin11
             this.menuPlugsInfo});
             this.menuPlugins.Name = "menuMain";
             this.menuPlugins.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuPlugins.Size = new System.Drawing.Size(195, 100);
+            this.menuPlugins.Size = new System.Drawing.Size(228, 118);
             // 
             // menuPlugsRefresh
             // 
             this.menuPlugsRefresh.Name = "menuPlugsRefresh";
-            this.menuPlugsRefresh.Size = new System.Drawing.Size(194, 30);
+            this.menuPlugsRefresh.Size = new System.Drawing.Size(227, 36);
             this.menuPlugsRefresh.Text = "Refresh";
             this.menuPlugsRefresh.Click += new System.EventHandler(this.menuPlugsRefresh_Click);
             // 
@@ -319,28 +333,28 @@ namespace ThisIsWin11
             // 
             this.menuPlugsPopOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuPlugsPopOut.Name = "menuPlugsPopOut";
-            this.menuPlugsPopOut.Size = new System.Drawing.Size(194, 30);
+            this.menuPlugsPopOut.Size = new System.Drawing.Size(227, 36);
             this.menuPlugsPopOut.Text = "Pop-out-App";
             this.menuPlugsPopOut.Click += new System.EventHandler(this.menuPlugsPopOut_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(191, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(224, 6);
             // 
             // menuPlugsInfo
             // 
             this.menuPlugsInfo.Name = "menuPlugsInfo";
-            this.menuPlugsInfo.Size = new System.Drawing.Size(194, 30);
+            this.menuPlugsInfo.Size = new System.Drawing.Size(227, 36);
             this.menuPlugsInfo.Text = "Info";
             this.menuPlugsInfo.Click += new System.EventHandler(this.menuPluginsInfo_Click);
             // 
             // ExtensionsWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.ClientSize = new System.Drawing.Size(1359, 962);
             this.Controls.Add(this.lblPlugsAttribution);
             this.Controls.Add(this.lnkPlugsAttribution);
             this.Controls.Add(this.textPlugsSearch);
@@ -348,6 +362,7 @@ namespace ThisIsWin11
             this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Location = new System.Drawing.Point(24, 19);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ExtensionsWindow";
             this.ShowIcon = false;
             this.Text = "ThisIsWin11 Extensions";
