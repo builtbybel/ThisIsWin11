@@ -16,7 +16,7 @@ namespace ThisIsWin11.OpenTweaks.Assessment.ThirdParty
 
         public override string Info()
         {
-            return "This app provide only the GUI for a third-party application.";
+            return "This app provide only the GUI for a third-party configuration file.";
         }
 
         public override bool CheckAssessment()
@@ -24,7 +24,7 @@ namespace ThisIsWin11.OpenTweaks.Assessment.ThirdParty
             logger.Log("Usage of " + ID() +
                        "\n1. Download the application at https://www.oo-software.com/shutup10" +
                        "\n2. Export your configuration as ooshutup10.cfg" +
-                       "\n3. Put both (app + configuration file to \"Data\" folder of TIW11)."
+                       "\n3. Put both (app + configuration file) to \"Data\" folder of TIW11."
                        );
             return (File.Exists(OOSU10) && File.Exists(OOSU10CFG)
                );

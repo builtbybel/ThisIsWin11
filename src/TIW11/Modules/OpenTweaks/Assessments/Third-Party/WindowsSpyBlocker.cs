@@ -10,12 +10,12 @@ namespace ThisIsWin11.OpenTweaks.Assessment.ThirdParty
 
         public override string ID()
         {
-            return "Block Windows telemetry with https://github.com/crazy-max/WindowsSpyBlocker";
+            return "Block Windows 11 telemetry with WindowsSpyBlocker";
         }
 
         public override string Info()
         {
-            return "This app provide only the GUI for a third-party IP list.";
+            return "This app provide only the GUI for a third-party IP list.\nPowered by https://github.com/crazy-max/WindowsSpyBlocker";
         }
 
         internal static string CleanIp(string line)
