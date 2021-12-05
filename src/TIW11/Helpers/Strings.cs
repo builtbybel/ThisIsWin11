@@ -22,7 +22,7 @@ namespace ThisIsWin11.Helpers
         {
             public const string AssemblyInfo = "https://raw.githubusercontent.com/builtbybel/ThisIsWin11/main/src/TIW11/Properties/AssemblyInfo.cs";
             public const string Twitter = "https://twitter.com/builtbybel";
-            public const string Support = "https://www.builtbybel.com/donate";
+            public const string Donate = "https://www.builtbybel.com/donate";
             public const string Feedback = "https://github.com/builtbybel/ThisIsWin11/issues";
             public const string GitRepo = "https://github.com/builtbybel/ThisIsWin11";
             public const string GitLatest = "https://github.com/builtbybel/ThisIsWin11/releases/latest";

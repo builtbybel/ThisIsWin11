@@ -44,6 +44,7 @@ namespace ThisIsWin11.Helpers
                         {
                             return;
                         }
+
                         MessageBox.Show("No new release found.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
@@ -52,10 +53,14 @@ namespace ThisIsWin11.Helpers
                         .FileVersion)
 
                     {
-                        settingsForm.btnCheckForUpdates.BackColor = Color.FromArgb(223, 246, 221);
-                        settingsForm.btnCheckForUpdates.FlatAppearance.BorderSize = 0;
-                        settingsForm.btnCheckForUpdates.ForeColor = Color.Black;
-                        settingsForm.btnCheckForUpdates.Text = "Download and install v" + latestVersion;
+                        settingsForm.btnCheckForUpdates.BackColor
+                            = Color.FromArgb(223, 246, 221);
+                        settingsForm.btnCheckForUpdates.FlatAppearance.BorderSize
+                            = 0;
+                        settingsForm.btnCheckForUpdates.ForeColor
+                            = Color.Black;
+                        settingsForm.btnCheckForUpdates.Text
+                            = "Download and install v" + latestVersion;
 
                         if (settingsForm.buttonInstallUpdate && MessageBox.Show($"Do you want to install the update: {latestVersion}?" + Environment.NewLine + versionContent, @"App update available",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
