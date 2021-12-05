@@ -1,8 +1,13 @@
 
-- Added option to system module aka OpenTweaks to Block Windows telemetry (Powerd by crazy-max/WindowsSpyBlocker)
-- Added option to system module aka OpenTweaks to Automate O&O ShutUp10++ (Run a Check for more information on usage of this feature)
-- Minor code refactoring #69 #67
-- Minor improvements of OpenTweaks module
+Version 0.94.0 is a patch release to fix several UI issues.
+Besides, this build introduces a new Windows Update section in OpenTweaks with a new tweak to "Uninstall broken Windows 11 updates".
+
+- Replaced Segoe MDL2 Assets font with Segoe Fluent Icons
+- Replaced Segoe UI with Segoe UI Variable system font
+- Added option to system module aka OpenTweaks to Uninstall broken updates
+- Fixed some UI bugs in OpenTweaks
+- Revised Update function
+- Several minor fixes
 
 From the blog:
 Voting for a appname change is closed. 
