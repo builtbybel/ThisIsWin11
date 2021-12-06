@@ -1,0 +1,125 @@
+<Apps>
+  <Module name="Windows Package Manager">
+    <Categories>
+        <Category name="*Essentials">
+            <App name="7zip.7zip"/>
+            <App name="BleachBit.BleachBit"/>
+            <App name="Discord.Discord"/>
+            <App name="IrfanSkiljan.IrfanView"/>
+            <App name="Mozilla.Firefox"/>
+            <App name="Notepad++.Notepad++"/>
+            <App name="ShareX.ShareX" />
+            <App name="SumatraPDF.SumatraPDF"/>
+            <App name="VideoLAN.VLC"/>
+        </Category>
+
+        <Category name="Browsers">
+            <App name="BraveSoftware.BraveBrowser"/>
+            <App name="Mozilla.Firefox"/>
+            <App name="Google.Chrome"/>
+            <App name="Opera.Opera"/>
+            <App name="VivaldiTechnologies.Vivaldi"/>
+        </Category>
+
+        <Category name="Communication">
+            <App name="Microsoft.Skype"/>
+            <App name="Microsoft.Teams"/>
+            <App name="SlackTechnologies.Slack"/>
+        </Category>
+        
+        <Category name="Developers">
+            <App name="Git.Git"/>
+            <App name="Notepad++.Notepad++"/>
+            <App name="Microsoft.VisualStudioCode"/>
+            <App name="Microsoft.WindowsTerminal"/>
+        </Category>
+        
+        <Category name="Entertainment">
+            <App name="Audacity.Audacity"/>
+            <App name="XBMCFoundation.Kodi"/>
+            <App name="VideoLAN.VLC"/>
+        </Category>
+
+        <Category name="File Archivers">
+            <App name="7zip.7zip"/>
+            <App name="Bandisoft.Bandizip"/>
+            <App name="RARLab.WinRAR"/>
+        </Category>
+        
+        <Category name="Frameworks">
+            <App name="Microsoft.dotNetFramework"/>
+            <App name="Oracle.JavaRuntimeEnvironment"/>
+        </Category>
+        
+        <Category name="Gaming">
+            <App name="TeamSpeakSystems.TeamSpeakClient"/>
+            <App name="Valve.Steam"/>
+        </Category>
+        
+        <Category name="Mail Clients">
+            <App name="Mozilla.Thunderbird"/>
+        </Category>
+        
+        <Category name="Network">
+            <App name="qBittorrent.qBittorrent"/>
+            <App name="TimKosse.FileZillaClient"/>
+            <App name="Tonec.InternetDownloadManager"/>
+            <App name="WinSCP.WinSCP"/>
+            <App name="WiresharkFoundation.Wiresharkt"/>
+        </Category>
+            
+        <Category name="PDF reader">
+            <App name="Adobe.AdobeAcrobatReaderDC"/>
+            <App name="SumatraPDF.SumatraPDF"/>
+        </Category>
+        
+        <Category name="Photo">
+            <App name="IrfanSkiljan.IrfanView"/>
+            <App name="GIMP.GIMP"/>
+            <App name="picpick.picpick"/>
+            <App name="ShareX.ShareX"/>
+        </Category>
+
+        <Category name="Productivity">
+            <App name="calibre.calibre"/>
+            <App name="flux.flux"/>
+            <App name="Oracle.VirtualBox"/>
+            <App name="voidtools.EverythingLite"/>
+            <App name="PuTTY.PuTTY"/>
+        </Category>
+        
+        <Category name="Remote Desktop">
+            <App name="AnyDeskSoftwareGmbH.AnyDesk"/>
+            <App name="TeamViewer.TeamViewer"/>
+        </Category>
+        
+        <Category name="Social Media">
+            <App name="Discord.Discord"/>
+            <App name="MehediHassan.Tweeten"/>
+            <App name="Twitch.Twitch"/>
+            <App name="Telegram.TelegramDesktop"/>
+        </Category>
+
+        <Category name="School">
+            <App name="LibreOffice.LibreOffice"/>
+            <App name="Zoom.Zoom"/>
+        </Category>
+
+        <Category name="Security">
+            <App name="DominikReichl.KeePass"/>
+            <App name="Malwarebytes.Malwarebytes"/>
+        </Category>
+
+        <Category name="System">
+            <App name="BleachBit.BleachBit"/>
+            <App name="Microsoft.PowerToys"/>
+            <App name="PDFsam.PDFsam"/>
+            <App name="Piriform.CCleaner"/>
+            <App name="Piriform.Defraggler"/>
+            <App name="Piriform.Recuva"/>
+            <App name="Rufus.Rufus"/>
+            <App name="StartIsBack.StartAllBack"/>
+        </Category>
+    </Categories>
+  </Module>
+</Apps>
