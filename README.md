@@ -31,14 +31,14 @@ The app currently offers six modules:
  
 If you know my previous apps ([Privatezilla](https://github.com/builtbybel/privatezilla), [Bloatbox](https://github.com/builtbybel/bloatbox) etc.) for Windows 10 then you will see that the **ThisIsWin11** app combines the best of these apps under one GUI but on Windows 11.
   
-  
+ ## System Requirements
+- Windows 11 ONLY (do NOT use this app on Windows 10)
+
  ## Download and installing
  
  ### Download directly from GitHub
 - [Click here to download the latest version of ThisIsWin11](https://github.com/builtbybel/ThisIsWin11/releases)
 
- #### System Requirements
-- Windows 11 ONLY (do NOT use this app on Win10!)
 
 ### Installation
 A classic installation is not necessary at all, because TIW11 is 100% portable. All you have to do is to extract the `TIW11.zip` archive and run the file provided as .exe
