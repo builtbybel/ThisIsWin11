@@ -16,7 +16,7 @@
 </a>
 
  
- ThisIsWin11 lets you customize Windows 11 all in one place. It is slowly expanded as a practical all-rounder for Windows 11, similar to Microsoft PowerToys.
+ThisIsWin11 lets you customize Windows 11 all in one place. It is slowly expanded as a practical all-rounder for Windows 11, similar to Microsoft PowerToys.
  
 The app currently offers six modules:
 
@@ -46,9 +46,9 @@ If you like the tool please consider supporting me via PayPal.
 
 You can [buy me a coffee or donut, some banana, a shirt, Taycan or Tesla, the stars or whatever you want here](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donate@builtbybel.com&lc=US&item_name=%20Builtbybel&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
 
+ ---
 
- ## Disclaimer
- This is not a product made by Microsoft and it's in no way related to them.
+ **This is not a product made by Microsoft and it's in no way related to them.**
  
  ---
 
