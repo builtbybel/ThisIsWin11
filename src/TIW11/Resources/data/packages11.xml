@@ -29,6 +29,8 @@
         
         <Category name="Developers">
             <App name="Git.Git"/>
+            <App name="GitHub.cli"/>
+            <App name="GitHub.GitHubDesktop"/>
             <App name="Notepad++.Notepad++"/>
             <App name="Microsoft.VisualStudioCode"/>
             <App name="Microsoft.WindowsTerminal"/>
