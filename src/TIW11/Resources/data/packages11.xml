@@ -40,6 +40,7 @@
             <App name="Audacity.Audacity"/>
             <App name="XBMCFoundation.Kodi"/>
             <App name="VideoLAN.VLC"/>
+            <App name="yt-dlg.yt-dlg"/>
         </Category>
 
         <Category name="File Archivers">
