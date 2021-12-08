@@ -10,7 +10,8 @@
 ### which helps you know, set up and customize Windows 11.
 
 ![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11.png)
-
+ _This is not a product made by Microsoft and it's in no way related to them._
+ 
 
 ## Features <a href="https://www.youtube.com/watch?v=8ReoMuCUdKE" target="_blank">
 <img alt="Youtube Tutorial, thanks to @CraftComputing" src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
@@ -47,12 +48,17 @@ If you like the tool please consider supporting me via PayPal.
 
 You can [buy me a coffee or donut, some banana, a shirt, Taycan or Tesla, the stars or whatever you want here](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donate@builtbybel.com&lc=US&item_name=%20Builtbybel&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
 
- ---
 
- **This is not a product made by Microsoft and it's in no way related to them.**
- 
- ---
+ ## Here some recommendations 
+ #### according to Gizmodo, PopSci, KimKomando, BleepingComputer, Neowin etc.
+- The Best Windows 11 Utilities to Install Now: https://gizmodo.com/the-best-windows-11-utilities-to-install-now-1848013350
+- 4 customization tips to give Windows 11 a makeover: https://www.popsci.com/diy/customize-windows-11/
+- 5 best Windows 11 utilities to get more out of your PC: https://www.komando.com/technology/5-best-windows-11-utilities/818403/
+- Tweaking tool ThisIsWin11 is 'the real PowerToys for Windows 11': https://betanews.com/2021/08/13/tweaking-tool-thisiswin11-is-the-real-powertoys-for-windows-11/
+- Customize the Windows 11 experience with these free apps: https://www.bleepingcomputer.com/news/microsoft/customize-the-windows-11-experience-with-these-free-apps/
+- Unofficial tool says it lets you customize Windows 11 all in one place: https://www.neowin.net/news/unofficial-tool-says-it-lets-you-customize-windows-11-all-in-one-place/
 
+ ---
 > [builtbybel](https://www.builtbybel.com) &nbsp;&middot;&nbsp;
 > GitHub [@builtbybel](https://github.com/builtbybel) &nbsp;&middot;&nbsp;
 > Twitter [@builtbybel](https://twitter.com/builtbybel)
