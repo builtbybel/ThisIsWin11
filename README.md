@@ -28,8 +28,6 @@ The app currently offers six modules:
 - **Packages** powered by [Windows Package Manager](https://github.com/microsoft/winget-cli) allows you to create your own custom install packages.
 - **PowerUI** allows you automating several Windows 11 tasks based on PowerShell and community scripts, e.g. It is possible to boost privacy by disabling various telemetry-related components of Windows 11
  - **Extensions** allows you creating custom tweaks
- 
-If you know my previous apps ([Privatezilla](https://github.com/builtbybel/privatezilla), [Bloatbox](https://github.com/builtbybel/bloatbox) etc.) for Windows 10 then you will see that the **ThisIsWin11** app combines the best of these apps under one GUI but on Windows 11.
   
  ## System Requirements
 - Windows 11 ONLY (do NOT use this app on Windows 10)
