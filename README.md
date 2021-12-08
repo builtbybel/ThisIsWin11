@@ -5,7 +5,7 @@
 
 <br>
 
-## .. well
+## ... well
 # ThisIsWin11
 ### which helps you know, set up and customize Windows 11.
 
@@ -44,7 +44,7 @@ A classic installation is not necessary at all, because TIW11 is 100% portable. 
 ## Support
 If you like the tool please consider supporting me via PayPal.
 
-You can [buy me a coffee or donut, some banana, a shirt, Taycan or Tesla, the stars or whatever you want here](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donate@builtbybel.com&lc=US&item_name=%20Builtbybel&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
+- You can [buy me a coffee or donut, some banana, a shirt, Taycan or Tesla, the stars or whatever you want here](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donate@builtbybel.com&lc=US&item_name=%20Builtbybel&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
 
  ---
 > [builtbybel](https://www.builtbybel.com) &nbsp;&middot;&nbsp;
