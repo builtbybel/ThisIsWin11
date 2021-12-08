@@ -5,8 +5,9 @@
 
 <br>
 
+## Yes! 
 # ThisIsWin11
-### ThisIsWin11 helps you know, set up and customize Windows 11.
+### which helps you know, set up and customize Windows 11.
 
 ![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11.png)
 
