@@ -29,6 +29,8 @@
         
         <Category name="Developers">
             <App name="Git.Git"/>
+            <App name="GitHub.cli"/>
+            <App name="GitHub.GitHubDesktop"/>
             <App name="Notepad++.Notepad++"/>
             <App name="Microsoft.VisualStudioCode"/>
             <App name="Microsoft.WindowsTerminal"/>
@@ -38,6 +40,7 @@
             <App name="Audacity.Audacity"/>
             <App name="XBMCFoundation.Kodi"/>
             <App name="VideoLAN.VLC"/>
+            <App name="yt-dlg.yt-dlg"/>
         </Category>
 
         <Category name="File Archivers">
