@@ -48,16 +48,6 @@ If you like the tool please consider supporting me via PayPal.
 
 You can [buy me a coffee or donut, some banana, a shirt, Taycan or Tesla, the stars or whatever you want here](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donate@builtbybel.com&lc=US&item_name=%20Builtbybel&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
 
-
- ## Here some recommendations 
- #### according to Gizmodo, PopSci, KimKomando, BleepingComputer, Neowin etc.
-- The Best Windows 11 Utilities to Install Now: https://gizmodo.com/the-best-windows-11-utilities-to-install-now-1848013350
-- 4 customization tips to give Windows 11 a makeover: https://www.popsci.com/diy/customize-windows-11/
-- 5 best Windows 11 utilities to get more out of your PC: https://www.komando.com/technology/5-best-windows-11-utilities/818403/
-- Tweaking tool ThisIsWin11 is 'the real PowerToys for Windows 11': https://betanews.com/2021/08/13/tweaking-tool-thisiswin11-is-the-real-powertoys-for-windows-11/
-- Customize the Windows 11 experience with these free apps: https://www.bleepingcomputer.com/news/microsoft/customize-the-windows-11-experience-with-these-free-apps/
-- Unofficial tool says it lets you customize Windows 11 all in one place: https://www.neowin.net/news/unofficial-tool-says-it-lets-you-customize-windows-11-all-in-one-place/
-
  ---
 > [builtbybel](https://www.builtbybel.com) &nbsp;&middot;&nbsp;
 > GitHub [@builtbybel](https://github.com/builtbybel) &nbsp;&middot;&nbsp;
