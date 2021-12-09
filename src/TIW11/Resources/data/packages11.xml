@@ -12,7 +12,11 @@
 				<App name="SumatraPDF.SumatraPDF"/>
 			    <App name="VideoLAN.VLC"/>
 			</Category>
-			
+		<Category name="Best apps for Windows 11">	
+				<App name="Microsoft.PowerToys"/>
+				<App name="StartIsBack.StartAllBack"/>
+			</Category>
+	
 		 <Category name="Browsers">
 				<App name="BraveSoftware.BraveBrowser"/>
 				<App name="Mozilla.Firefox"/>
@@ -40,6 +44,7 @@
 				<App name="Audacity.Audacity"/>
 				<App name="XBMCFoundation.Kodi"/>
 				<App name="VideoLAN.VLC"/>
+ 				<App name="yt-dlg.yt-dlg"/>
 			</Category>
 
 			<Category name="File Archivers">
