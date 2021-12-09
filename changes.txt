@@ -1,5 +1,5 @@
 
-Hotfix 0.94.1 for Windows 11 Presenter/Getting started module and the TIW11 self-updater
+Hotfix 0.94.1 for Windows 11 Presenter/Getting started module and the TIW11 self-updater.
 
 From the blog:
 Voting for a appname change is closed. 
