@@ -108,7 +108,7 @@ namespace ThisIsWin11.Helpers
                                         client.DownloadFileAsync(new Uri(dataPackage.Trim()), Application.StartupPath + "\\data_updateonly" + Path.GetExtension(dataPackage.ToString()));
                                     }
                                     catch (Exception ex)
-                                    { MessageBox.Show(ex.Message, settingsForm.Text); }
+                                    { MessageBox.Show(ex.Message, ""); }
                                 }
                                 else
                                     Application.Restart();
