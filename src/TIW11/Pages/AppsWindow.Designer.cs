@@ -82,12 +82,12 @@ namespace ThisIsWin11
             this.checkAppsSystem.FlatAppearance.BorderSize = 0;
             this.checkAppsSystem.FlatAppearance.CheckedBackColor = System.Drawing.Color.HotPink;
             this.checkAppsSystem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkAppsSystem.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkAppsSystem.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkAppsSystem.ForeColor = System.Drawing.Color.Black;
             this.checkAppsSystem.Location = new System.Drawing.Point(11, 728);
             this.checkAppsSystem.Margin = new System.Windows.Forms.Padding(2);
             this.checkAppsSystem.Name = "checkAppsSystem";
-            this.checkAppsSystem.Size = new System.Drawing.Size(149, 31);
+            this.checkAppsSystem.Size = new System.Drawing.Size(154, 31);
             this.checkAppsSystem.TabIndex = 103;
             this.checkAppsSystem.Text = "Show system apps";
             this.checkAppsSystem.UseVisualStyleBackColor = false;
@@ -157,7 +157,7 @@ namespace ThisIsWin11
             this.menuAppsInfo});
             this.menuApps.Name = "menuMain";
             this.menuApps.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuApps.Size = new System.Drawing.Size(339, 212);
+            this.menuApps.Size = new System.Drawing.Size(339, 190);
             this.menuApps.Text = "Info";
             // 
             // menuAppsImport
@@ -422,11 +422,11 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LblLeftAppName.AutoEllipsis = true;
             this.LblLeftAppName.AutoSize = true;
-            this.LblLeftAppName.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblLeftAppName.Font = new System.Drawing.Font("Segoe UI Variable Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblLeftAppName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LblLeftAppName.Location = new System.Drawing.Point(16, 101);
             this.LblLeftAppName.Name = "LblLeftAppName";
-            this.LblLeftAppName.Size = new System.Drawing.Size(35, 15);
+            this.LblLeftAppName.Size = new System.Drawing.Size(36, 15);
             this.LblLeftAppName.TabIndex = 26;
             this.LblLeftAppName.Text = "Name";
             // 

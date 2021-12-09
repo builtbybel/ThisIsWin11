@@ -254,7 +254,7 @@ namespace ThisIsWin11
                 // logger.Log("Check {0}", node.Text);
 
                 bool shouldPerform = await analyzeTask;
-                lnkSubHeader.Text = node.Text;
+                lnkSubHeader.Text ="Check " + node.Text;
 
                 if (shouldPerform)
                 {

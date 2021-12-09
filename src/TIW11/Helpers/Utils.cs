@@ -36,8 +36,7 @@ namespace ThisIsWin11.Helpers
                     }
 
                     if (latestVersion ==
-                        FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location)                 // Up-to-date
-                        .FileVersion)
+                        Program.GetCurrentVersionTostring())                                                     // Up-to-date
 
                     {
                         if (silentCheck)                                                                         // Check on opening form
@@ -49,10 +48,10 @@ namespace ThisIsWin11.Helpers
                     }
 
                     if (latestVersion !=                                                                        // Update available
-                        FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location)
-                        .FileVersion)
+                       Program.GetCurrentVersionTostring())
 
                     {
+                        settingsForm.lblVersionInstalled.Text = Program.GetCurrentVersionTostring() + " Dev";
                         settingsForm.btnCheckForUpdates.BackColor
                             = Color.FromArgb(223, 246, 221);
                         settingsForm.btnCheckForUpdates.FlatAppearance.BorderSize

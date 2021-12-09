@@ -193,6 +193,6 @@ namespace ThisIsWin11
         public System.Windows.Forms.Button btnCheckForUpdates;
         public System.Windows.Forms.ProgressBar progress;
         private System.Windows.Forms.Label lblVersionInfo;
-        private System.Windows.Forms.LinkLabel lblVersionInstalled;
+        public System.Windows.Forms.LinkLabel lblVersionInstalled;
     }
 }

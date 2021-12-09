@@ -88,7 +88,7 @@ namespace ThisIsWin11
             this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Segoe Fluent Icons", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Font = new System.Drawing.Font("Segoe Fluent Icons", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.MediumVioletRed;
             this.btnHome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnHome.Location = new System.Drawing.Point(3, 25);
@@ -96,7 +96,6 @@ namespace ThisIsWin11
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(72, 61);
             this.btnHome.TabIndex = 144;
-            this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Visible = false;
             this.btnHome.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnHome_MouseDown);

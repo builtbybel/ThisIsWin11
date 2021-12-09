@@ -12,21 +12,6 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -266,27 +251,6 @@
   <ItemGroup>
     <Content Include="AppIcon.ico" />
     <Content Include="Resources\BuildDate.txt" />
-    <Content Include="Resources\data\apps11.txt" />
-    <Content Include="Resources\data\packages11.xml" />
-    <Content Include="Resources\data\spy.txt" />
-    <None Include="Resources\data\opentweaks_gamingProfile.tiw1" />
-    <None Include="Resources\data\opentweaks_windows10Profile.tiw1" />
-    <None Include="Resources\data\plugins\Disable TPM 2.0 Check.ini" />
-    <None Include="Resources\data\plugins\Enable Classic Context menus.ini" />
-    <None Include="Resources\data\plugins\Join Domain.ini" />
-    <None Include="Resources\data\plugins\tpm_off.bat" />
-    <None Include="Resources\data\plugins\tpm_on.bat" />
-    <None Include="Resources\data\scripts\%28Apps%29 Install apps.ps1" />
-    <None Include="Resources\data\scripts\%28Apps%29 Reinstall all built-in apps.ps1" />
-    <None Include="Resources\data\scripts\%28Apps%29 Remove default apps %28Provisioned%29.ps1" />
-    <None Include="Resources\data\scripts\%28Apps%29 Remove default apps %28Recommended%29.ps1" />
-    <None Include="Resources\data\scripts\%28Apps%29 Remove OneDrive.ps1" />
-    <None Include="Resources\data\scripts\%28Apps%29 Update Store apps.ps1" />
-    <None Include="Resources\data\scripts\%28Energy%29 Ultimate Performance mode.ps1" />
-    <None Include="Resources\data\scripts\%28Other%29 Bypass Edge as default handler for web searches.ps1" />
-    <None Include="Resources\data\scripts\%28Privacy%29 Disable Services.ps1" />
-    <None Include="Resources\data\scripts\%28Privacy%29 Remove telemetry of third-party apps.ps1" />
-    <None Include="Resources\data\scripts\%28Storage%29 Clean up Windows.ps1" />
     <None Include="Resources\systemapps.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -294,18 +258,7 @@
       <Version>4.3.0</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>echo %25date%25 %25time%25 &gt; "$(ProjectDir)\Resources\BuildDate.txt"</PreBuildEvent>

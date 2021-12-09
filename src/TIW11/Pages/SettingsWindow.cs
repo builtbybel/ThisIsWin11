@@ -34,7 +34,7 @@ namespace ThisIsWin11
 
             rtbAbout.Text = mainForm.Text + " (Spartan)" +
                            "\nBuild on " + buildDateTime + "Builtbybel" +
-                           "\n\nGitHub (1.2k Stars): " + Helpers.Strings.Uri.GitRepo +
+                           "\n\nGitHub (1.3k Stars): " + Helpers.Strings.Uri.GitRepo +
                            "\nTwitter: " + Helpers.Strings.Uri.Twitter +
                            "\nDonate: " + Helpers.Strings.Uri.Donate +
                            "\nGive feedback: " + Helpers.Strings.Uri.Feedback +
