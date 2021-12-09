@@ -41,7 +41,7 @@ namespace ThisIsWin11
             this.MinimumSize = new Size(810, 755);
 
             // Nav icons
-            btnHome.Text = "\uEA8A" ;
+            btnHome.Text = "\uEA8A";
             btnSystem.Text = "\uE770" + "\n\nSystem";
             btnApps.Text = "\uE71D" + "\n\nApps";
             btnPackages.Text = "\uE7B8" + "\n\nPackages";
