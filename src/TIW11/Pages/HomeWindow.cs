@@ -11,7 +11,7 @@ namespace ThisIsWin11
         private Presenter.OS osInfo = new Presenter.OS();
         private PageTitle INavPage = PageTitle.GetStarted;
 
-        private static readonly string componentsVersion = "42";
+        private static readonly string componentsVersion = "50";
 
         private void menuPresenterInfo_Click(object sender, EventArgs e) => MessageBox.Show("Presenter for Windows 11\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion + " (EOL February 28, 2022)", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -52,8 +52,8 @@ namespace ThisIsWin11
 
             btnPresenterMenu.Text = "\uE712";
             btnHome.Text = "\uE80F";
-            btnBack.Text = "\uE72B";
-            btnNext.Text = "\uE72A";
+            btnBack.Text = "\uE76B";
+            btnNext.Text = "\uE76C";
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -122,9 +122,9 @@ namespace ThisIsWin11
                     btnCustomizer.Visible = false;
                     lblHeader.Text = "Hi " + Environment.UserName;
                     lblDesc.Text = "Lets make sure everything is set up how you want it.\n\nUse the <Next> and <Previous> buttons to run a guided tour of Windows 11.\n\n" +
-                                    "1. Use the <Preview this page> button on the left panel to get the feature presented once (if it is available).\n\n" +
-                                    "2. Pages marked with <Configure this page> will allow you to change immediately the Windows configuration.\n\n" +
-                                    "3. Pages marked with <Customize this page> will allow you to apply custom tasks from the community.";
+                                    "\u2022 Use the <Preview this page> button on the left panel to get the feature presented once (if it is available).\n\n" +
+                                    "\u2022 Pages marked with <Configure this page> will allow you to jump to the appropriate page in the Settings app.\n\n" +
+                                    "\u2022 Pages marked with <Customize this page> will allow you to complete actions in one click.";
                     pbView.Visible = true;
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/startpage.png?raw=true";
 
@@ -294,9 +294,9 @@ namespace ThisIsWin11
                     btnConfigurator.Visible = false;
                     btnCustomizer.Visible = false;
                     lblHeader.Text = "Android Apps Support";
-                    lblDesc.Text = "Android apps will be coming to Windows 11 and installable from within the new Microsoft Store via the Amazon Appstore.\n\n" +
-                                    "However, Android app support has not been added in the current 22000.51 preview build. Microsoft has confirmed that the option to install Android apps will arrive in the upcoming builds.\n\n" +
-                                    "The best part is that you can even sideload APKs on your Windows 11 PC.";
+                    lblDesc.Text = "Microsoft has released the first preview version of its Android apps support in Windows 11.\n\n" +
+                                    "The experience of installing apps is very simple. Microsoft has partnered with Amazon, so the Microsoft Store will list apps but send you over to Amazon’s Appstore app to get them installed or updated.\n\n" +
+                                    "The best part is that you can even sideload APKs on your Windows 11 PC and pin them to the Start menu or taskbar and use all of the windowing and multitasking features of Windows 11 just like a regular desktop app.";
                     pbView.Visible = true;
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-androidapps.png?raw=true";
 
@@ -336,8 +336,7 @@ namespace ThisIsWin11
                     btnConfigurator.Visible = true;
                     btnCustomizer.Visible = true;
                     lblHeader.Text = "Apps";
-                    lblDesc.Text = "First Windows 11 preview still insists with bloatware.\n\n" +
-                                     "Apparently Windows 11 is also lighter than Windows 10 as for the preinstalled apps.\n\n" +
+                    lblDesc.Text = "Apparently Windows 11 is also lighter than Windows 10 as for the preinstalled apps.\n\n" +
                                     "The good thing is that at least some of the Windows 10 apps aren’t installed. However, you will still have installed all the hoard of apps that belong to Microsoft, such as Mail and Calendar, Your Phone, Mixed Reality Portal, Solitaire Collection, Get Help, Paint 3D, XBox Game Bar, etc.\n\n" +
                                     "To uninstall pre-installed apps press <Customize this page> button.";
                     pbView.Visible = true;
@@ -536,7 +535,7 @@ namespace ThisIsWin11
 
                     try
                     {
-                        Process.Start("https://blogs.windows.com/windows-insider/2021/10/20/announcing-android-apps-on-windows-11-preview-for-windows-insiders-in-the-beta-channel/");
+                        Process.Start("https://blogs.windows.com/windows-insider/2021/10/20/introducing-android-apps-on-windows-11-to-windows-insiders/");
                     }
                     catch (Exception ex)
                     {

@@ -108,7 +108,7 @@ namespace ThisIsWin11
             this.btnConfigurator.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfigurator.ForeColor = System.Drawing.Color.Black;
             this.btnConfigurator.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnConfigurator.Location = new System.Drawing.Point(83, 206);
+            this.btnConfigurator.Location = new System.Drawing.Point(83, 174);
             this.btnConfigurator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConfigurator.Name = "btnConfigurator";
             this.btnConfigurator.Size = new System.Drawing.Size(181, 32);
@@ -143,7 +143,7 @@ namespace ThisIsWin11
             this.btnCustomizer.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomizer.ForeColor = System.Drawing.Color.White;
             this.btnCustomizer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCustomizer.Location = new System.Drawing.Point(83, 166);
+            this.btnCustomizer.Location = new System.Drawing.Point(83, 134);
             this.btnCustomizer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCustomizer.Name = "btnCustomizer";
             this.btnCustomizer.Size = new System.Drawing.Size(181, 32);
@@ -166,7 +166,7 @@ namespace ThisIsWin11
             this.btnPresenter.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPresenter.ForeColor = System.Drawing.Color.White;
             this.btnPresenter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnPresenter.Location = new System.Drawing.Point(0, 250);
+            this.btnPresenter.Location = new System.Drawing.Point(0, 213);
             this.btnPresenter.Name = "btnPresenter";
             this.btnPresenter.Size = new System.Drawing.Size(371, 32);
             this.btnPresenter.TabIndex = 139;
@@ -184,7 +184,7 @@ namespace ThisIsWin11
             this.pbView.Location = new System.Drawing.Point(0, 209);
             this.pbView.Name = "pbView";
             this.pbView.Size = new System.Drawing.Size(371, 561);
-            this.pbView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbView.TabIndex = 127;
             this.pbView.TabStop = false;
             this.pbView.Paint += new System.Windows.Forms.PaintEventHandler(this.pbView_Paint);
@@ -236,7 +236,7 @@ namespace ThisIsWin11
             this.lnkSubHeader.Size = new System.Drawing.Size(313, 18);
             this.lnkSubHeader.TabIndex = 24;
             this.lnkSubHeader.TabStop = true;
-            this.lnkSubHeader.Text = "Os";
+            this.lnkSubHeader.Text = "OS";
             this.lnkSubHeader.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSubHeader_LinkClicked);
             // 
             // btnBack
@@ -316,7 +316,7 @@ namespace ThisIsWin11
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(672, 454);
             this.lblDesc.TabIndex = 137;
-            this.lblDesc.Text = "description";
+            this.lblDesc.Text = "cheat sheet";
             // 
             // menuPresenter
             // 
@@ -350,6 +350,7 @@ namespace ThisIsWin11
             this.Text = "Presenter";
             this.Shown += new System.EventHandler(this.HomeWindow_Shown);
             this.pnlLeft.ResumeLayout(false);
+            this.pnlLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbView)).EndInit();
             this.pnlMiddle.ResumeLayout(false);
             this.pnlMiddle.PerformLayout();
