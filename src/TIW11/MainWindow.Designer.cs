@@ -234,7 +234,6 @@ namespace ThisIsWin11
             this.MinimumSize = new System.Drawing.Size(1182, 809);
             this.Name = "MainWindow";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThisIsWin11";
             this.Shown += new System.EventHandler(this.MainWindow_Shown);
             this.pnlLeft.ResumeLayout(false);

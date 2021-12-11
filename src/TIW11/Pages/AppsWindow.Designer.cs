@@ -68,7 +68,7 @@ namespace ThisIsWin11
             // menuAppsExport
             // 
             menuAppsExport.Name = "menuAppsExport";
-            menuAppsExport.Size = new System.Drawing.Size(338, 30);
+            menuAppsExport.Size = new System.Drawing.Size(347, 30);
             menuAppsExport.Text = "Export bloatware in Recycle Bin";
             menuAppsExport.Click += new System.EventHandler(this.menuAppsExport_Click);
             // 
@@ -146,7 +146,7 @@ namespace ThisIsWin11
             // menuApps
             // 
             this.menuApps.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.menuApps.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuApps.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuApps.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAppsImport,
             menuAppsExport,
@@ -157,47 +157,47 @@ namespace ThisIsWin11
             this.menuAppsInfo});
             this.menuApps.Name = "menuMain";
             this.menuApps.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuApps.Size = new System.Drawing.Size(339, 190);
+            this.menuApps.Size = new System.Drawing.Size(348, 212);
             this.menuApps.Text = "Info";
             // 
             // menuAppsImport
             // 
             this.menuAppsImport.Name = "menuAppsImport";
-            this.menuAppsImport.Size = new System.Drawing.Size(338, 30);
+            this.menuAppsImport.Size = new System.Drawing.Size(347, 30);
             this.menuAppsImport.Text = "Import bloatware list";
             this.menuAppsImport.Click += new System.EventHandler(this.menuAppsImport_Click);
             // 
             // menuAppsRefresh
             // 
             this.menuAppsRefresh.Name = "menuAppsRefresh";
-            this.menuAppsRefresh.Size = new System.Drawing.Size(338, 30);
+            this.menuAppsRefresh.Size = new System.Drawing.Size(347, 30);
             this.menuAppsRefresh.Text = "Refresh";
             this.menuAppsRefresh.Click += new System.EventHandler(this.menuAppsRefresh_Click);
             // 
             // menuAppsRemoveAll
             // 
             this.menuAppsRemoveAll.Name = "menuAppsRemoveAll";
-            this.menuAppsRemoveAll.Size = new System.Drawing.Size(338, 30);
+            this.menuAppsRemoveAll.Size = new System.Drawing.Size(347, 30);
             this.menuAppsRemoveAll.Text = "Uninstall all apps";
             this.menuAppsRemoveAll.Click += new System.EventHandler(this.menuAppsRemoveAll_Click);
             // 
             // menuAppsPopOut
             // 
-            this.menuAppsPopOut.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuAppsPopOut.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuAppsPopOut.Name = "menuAppsPopOut";
-            this.menuAppsPopOut.Size = new System.Drawing.Size(338, 30);
+            this.menuAppsPopOut.Size = new System.Drawing.Size(347, 30);
             this.menuAppsPopOut.Text = "Pop-out-App";
             this.menuAppsPopOut.Click += new System.EventHandler(this.menuAppsPopOut_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(335, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(344, 6);
             // 
             // menuAppsInfo
             // 
             this.menuAppsInfo.Name = "menuAppsInfo";
-            this.menuAppsInfo.Size = new System.Drawing.Size(338, 30);
+            this.menuAppsInfo.Size = new System.Drawing.Size(347, 30);
             this.menuAppsInfo.Text = "Info";
             this.menuAppsInfo.Click += new System.EventHandler(this.menuAppsInfo_Click);
             // 

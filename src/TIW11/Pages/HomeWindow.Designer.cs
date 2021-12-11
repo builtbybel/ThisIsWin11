@@ -321,17 +321,17 @@ namespace ThisIsWin11
             // menuPresenter
             // 
             this.menuPresenter.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.menuPresenter.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuPresenter.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuPresenter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuPresenterInfo});
             this.menuPresenter.Name = "menuMain";
             this.menuPresenter.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuPresenter.Size = new System.Drawing.Size(117, 34);
+            this.menuPresenter.Size = new System.Drawing.Size(181, 56);
             // 
             // menuPresenterInfo
             // 
             this.menuPresenterInfo.Name = "menuPresenterInfo";
-            this.menuPresenterInfo.Size = new System.Drawing.Size(116, 30);
+            this.menuPresenterInfo.Size = new System.Drawing.Size(180, 30);
             this.menuPresenterInfo.Text = "Info";
             this.menuPresenterInfo.Click += new System.EventHandler(this.menuPresenterInfo_Click);
             // 

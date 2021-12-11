@@ -123,7 +123,7 @@ namespace ThisIsWin11
             // menuPackages
             // 
             this.menuPackages.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.menuPackages.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuPackages.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuPackages.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuPackagesImport,
             this.menuPackagesExport,
@@ -134,7 +134,7 @@ namespace ThisIsWin11
             this.toolStripMenuItem1});
             this.menuPackages.Name = "menuMain";
             this.menuPackages.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuPackages.Size = new System.Drawing.Size(303, 212);
+            this.menuPackages.Size = new System.Drawing.Size(305, 212);
             // 
             // menuPackagesImport
             // 
@@ -166,7 +166,7 @@ namespace ThisIsWin11
             // 
             // menuPackagesPopOut
             // 
-            this.menuPackagesPopOut.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuPackagesPopOut.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuPackagesPopOut.Name = "menuPackagesPopOut";
             this.menuPackagesPopOut.Size = new System.Drawing.Size(302, 30);
             this.menuPackagesPopOut.Text = "Pop-out-App";
@@ -180,9 +180,9 @@ namespace ThisIsWin11
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Enabled = false;
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(302, 30);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(304, 30);
             this.toolStripMenuItem1.Text = "Powered by Windows Package Manager";
             // 
             // btnInstallWinget

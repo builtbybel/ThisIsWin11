@@ -298,7 +298,7 @@ namespace ThisIsWin11
             // menuPlugins
             // 
             this.menuPlugins.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.menuPlugins.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuPlugins.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuPlugins.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuPlugsRefresh,
             this.menuPlugsPopOut,
@@ -306,32 +306,32 @@ namespace ThisIsWin11
             this.menuPlugsInfo});
             this.menuPlugins.Name = "menuMain";
             this.menuPlugins.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuPlugins.Size = new System.Drawing.Size(192, 100);
+            this.menuPlugins.Size = new System.Drawing.Size(195, 122);
             // 
             // menuPlugsRefresh
             // 
             this.menuPlugsRefresh.Name = "menuPlugsRefresh";
-            this.menuPlugsRefresh.Size = new System.Drawing.Size(191, 30);
+            this.menuPlugsRefresh.Size = new System.Drawing.Size(194, 30);
             this.menuPlugsRefresh.Text = "Refresh";
             this.menuPlugsRefresh.Click += new System.EventHandler(this.menuPlugsRefresh_Click);
             // 
             // menuPlugsPopOut
             // 
-            this.menuPlugsPopOut.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuPlugsPopOut.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuPlugsPopOut.Name = "menuPlugsPopOut";
-            this.menuPlugsPopOut.Size = new System.Drawing.Size(191, 30);
+            this.menuPlugsPopOut.Size = new System.Drawing.Size(194, 30);
             this.menuPlugsPopOut.Text = "Pop-out-App";
             this.menuPlugsPopOut.Click += new System.EventHandler(this.menuPlugsPopOut_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(188, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(191, 6);
             // 
             // menuPlugsInfo
             // 
             this.menuPlugsInfo.Name = "menuPlugsInfo";
-            this.menuPlugsInfo.Size = new System.Drawing.Size(191, 30);
+            this.menuPlugsInfo.Size = new System.Drawing.Size(194, 30);
             this.menuPlugsInfo.Text = "Info";
             this.menuPlugsInfo.Click += new System.EventHandler(this.menuPluginsInfo_Click);
             // 

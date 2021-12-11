@@ -108,7 +108,7 @@ namespace ThisIsWin11
             // menuSystem
             // 
             this.menuSystem.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.menuSystem.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuSystem.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuSystem.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuSystemImportProfile,
             this.menuSystemExportProfile,
@@ -119,53 +119,53 @@ namespace ThisIsWin11
             this.menuSystemVersioning});
             this.menuSystem.Name = "menuMain";
             this.menuSystem.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuSystem.Size = new System.Drawing.Size(198, 190);
+            this.menuSystem.Size = new System.Drawing.Size(201, 212);
             // 
             // menuSystemImportProfile
             // 
             this.menuSystemImportProfile.Name = "menuSystemImportProfile";
-            this.menuSystemImportProfile.Size = new System.Drawing.Size(197, 30);
+            this.menuSystemImportProfile.Size = new System.Drawing.Size(200, 30);
             this.menuSystemImportProfile.Text = "Import profile";
             this.menuSystemImportProfile.Click += new System.EventHandler(this.menuSystemImportProfile_Click);
             // 
             // menuSystemExportProfile
             // 
             this.menuSystemExportProfile.Name = "menuSystemExportProfile";
-            this.menuSystemExportProfile.Size = new System.Drawing.Size(197, 30);
+            this.menuSystemExportProfile.Size = new System.Drawing.Size(200, 30);
             this.menuSystemExportProfile.Text = "Export profile";
             this.menuSystemExportProfile.Click += new System.EventHandler(this.menuSystemExportProfile_Click);
             // 
             // menuSystemExportLog
             // 
             this.menuSystemExportLog.Name = "menuSystemExportLog";
-            this.menuSystemExportLog.Size = new System.Drawing.Size(197, 30);
+            this.menuSystemExportLog.Size = new System.Drawing.Size(200, 30);
             this.menuSystemExportLog.Text = "Export log";
             this.menuSystemExportLog.Click += new System.EventHandler(this.menuSystemExportLog_Click);
             // 
             // menuSystemSelect
             // 
             this.menuSystemSelect.Name = "menuSystemSelect";
-            this.menuSystemSelect.Size = new System.Drawing.Size(197, 30);
+            this.menuSystemSelect.Size = new System.Drawing.Size(200, 30);
             this.menuSystemSelect.Text = "Select all";
             this.menuSystemSelect.Click += new System.EventHandler(this.menuSystemSelect_Click);
             // 
             // menuSystemPopOut
             // 
-            this.menuSystemPopOut.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuSystemPopOut.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuSystemPopOut.Name = "menuSystemPopOut";
-            this.menuSystemPopOut.Size = new System.Drawing.Size(197, 30);
+            this.menuSystemPopOut.Size = new System.Drawing.Size(200, 30);
             this.menuSystemPopOut.Text = "Pop-out-App";
             this.menuSystemPopOut.Click += new System.EventHandler(this.menuSystemPopOut_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(194, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(197, 6);
             // 
             // menuSystemVersioning
             // 
             this.menuSystemVersioning.Name = "menuSystemVersioning";
-            this.menuSystemVersioning.Size = new System.Drawing.Size(197, 30);
+            this.menuSystemVersioning.Size = new System.Drawing.Size(200, 30);
             this.menuSystemVersioning.Text = "Info";
             this.menuSystemVersioning.Click += new System.EventHandler(this.menuSystemInfo_Click);
             // 

@@ -61,28 +61,28 @@ namespace ThisIsWin11
             // menuAutomateImport
             // 
             this.menuAutomateImport.Name = "menuAutomateImport";
-            this.menuAutomateImport.Size = new System.Drawing.Size(400, 30);
+            this.menuAutomateImport.Size = new System.Drawing.Size(411, 30);
             this.menuAutomateImport.Text = "Import";
             this.menuAutomateImport.Click += new System.EventHandler(this.menuAutomateImport_Click);
             // 
             // menuAutomateEdit
             // 
             this.menuAutomateEdit.Name = "menuAutomateEdit";
-            this.menuAutomateEdit.Size = new System.Drawing.Size(400, 30);
+            this.menuAutomateEdit.Size = new System.Drawing.Size(411, 30);
             this.menuAutomateEdit.Text = "Edit ";
             this.menuAutomateEdit.Click += new System.EventHandler(this.menuAutomateEdit_Click);
             // 
             // menuAutomateSave
             // 
             this.menuAutomateSave.Name = "menuAutomateSave";
-            this.menuAutomateSave.Size = new System.Drawing.Size(400, 30);
+            this.menuAutomateSave.Size = new System.Drawing.Size(411, 30);
             this.menuAutomateSave.Text = "Save current script as new preset script";
             this.menuAutomateSave.Click += new System.EventHandler(this.menuAutomateSave_Click);
             // 
             // menuAutomate
             // 
             this.menuAutomate.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.menuAutomate.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuAutomate.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuAutomate.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAutomateImport,
             this.menuAutomateEdit,
@@ -93,32 +93,32 @@ namespace ThisIsWin11
             this.menuAutomateInfo});
             this.menuAutomate.Name = "menuMain";
             this.menuAutomate.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuAutomate.Size = new System.Drawing.Size(401, 212);
+            this.menuAutomate.Size = new System.Drawing.Size(412, 212);
             // 
             // menuAutomateApplied
             // 
             this.menuAutomateApplied.Name = "menuAutomateApplied";
-            this.menuAutomateApplied.Size = new System.Drawing.Size(400, 30);
+            this.menuAutomateApplied.Size = new System.Drawing.Size(411, 30);
             this.menuAutomateApplied.Text = "Show applied";
             this.menuAutomateApplied.Click += new System.EventHandler(this.menuAutomateApplied_Click);
             // 
             // menuAutomatePopOut
             // 
-            this.menuAutomatePopOut.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuAutomatePopOut.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuAutomatePopOut.Name = "menuAutomatePopOut";
-            this.menuAutomatePopOut.Size = new System.Drawing.Size(400, 30);
+            this.menuAutomatePopOut.Size = new System.Drawing.Size(411, 30);
             this.menuAutomatePopOut.Text = "Pop-out-App";
             this.menuAutomatePopOut.Click += new System.EventHandler(this.menuAutomatePopOut_Click);
             // 
             // menuAutomateSeparator
             // 
             this.menuAutomateSeparator.Name = "menuAutomateSeparator";
-            this.menuAutomateSeparator.Size = new System.Drawing.Size(397, 6);
+            this.menuAutomateSeparator.Size = new System.Drawing.Size(408, 6);
             // 
             // menuAutomateInfo
             // 
             this.menuAutomateInfo.Name = "menuAutomateInfo";
-            this.menuAutomateInfo.Size = new System.Drawing.Size(400, 30);
+            this.menuAutomateInfo.Size = new System.Drawing.Size(411, 30);
             this.menuAutomateInfo.Text = "Info";
             this.menuAutomateInfo.Click += new System.EventHandler(this.menuAutomateInfo_Click);
             // 
