@@ -1,5 +1,5 @@
 
-Hotfix 0.94.1 for Windows 11 Presenter/Getting started module and the TIW11 self-updater.
+- Maintenance update which comes with a few bugfixes and support for Build 22000.376
 
 From the blog:
 Try the first Preview version 1.0 of TIW11 with a complete UI overhaul
