@@ -36,7 +36,6 @@ The app currently offers six modules:
  
  ### Download directly from GitHub
 - [Click here to download the latest stable version of ThisIsWin11](https://github.com/builtbybel/ThisIsWin11/releases)
-- [Click here to download the latest PREVIEW version of ThisIsWin11](https://github.com/builtbybel/ThisIsWin11/releases/tag/1.0.0)
 
 
 ### Installation
