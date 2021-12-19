@@ -4,4 +4,4 @@ The update can be rolled out to your system.
 
 From the blog:
 Try the first Preview version 1.0 of TIW11 with a complete UI overhaul
-https://github.com/builtbybel/ThisIsWin11/releases/tag/1.0.0
+https://github.com/builtbybel/ThisIsWin11/releases/tag/1.0.0.101
