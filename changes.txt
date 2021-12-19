@@ -1,5 +1,6 @@
 
-- Maintenance update which comes with a few bugfixes and support for Build 22000.376
+- We want to test the update to the upcoming version 1.0 on more devices. 
+The update can be rolled out to your system.
 
 From the blog:
 Try the first Preview version 1.0 of TIW11 with a complete UI overhaul
