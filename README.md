@@ -7,7 +7,7 @@
 
 ## ... well
 # ThisIsWin11
-### which helps you know, set up and customize Windows 11.
+### which helps you know, set up and customize Windows 11 in 5 steps.
 
 ![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11.png)
  _This is not a product made by Microsoft and it's in no way related to them._
@@ -35,7 +35,7 @@ The app currently offers six modules:
  ## Download and installing
  
  ### Download directly from GitHub
-- [Click here to download the latest stable version of ThisIsWin11](https://github.com/builtbybel/ThisIsWin11/releases)
+- [Click here to download the latest version of ThisIsWin11](https://github.com/builtbybel/ThisIsWin11/releases)
 
 
 ### Installation
