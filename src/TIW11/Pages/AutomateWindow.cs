@@ -26,7 +26,7 @@ namespace ThisIsWin11
 
         private void AutomateWindow_Load(object sender, EventArgs e)
         {
-            InitializeCustomizationPkg();
+            InitializeAutomationPackage();
             UISelection();
         }
 
@@ -34,12 +34,11 @@ namespace ThisIsWin11
         private void UISelection()
         {
             btnAutomateMenu.Text = "\uE712";
-
-            rtbPS.Text = "You will find here custom tasks and script files to customize Windows 11 according to your wishes.\n\n" +
+            rtbDesc.Text = "You will find here custom tasks and script files to customize Windows 11 according to your wishes.\n\n" +
                           "To obtain new collections visit the GitHub repository of the app:\n\n" + Helpers.Strings.Uri.GitRepo;
         }
 
-        private void InitializeCustomizationPkg()
+        private void InitializeAutomationPackage()
         {
             string path = Helpers.Strings.Data.ScriptsRootDir;
             if (Directory.Exists(path))
@@ -318,9 +317,5 @@ namespace ThisIsWin11
         {
             AutomateWindow automate = new AutomateWindow(); automate.Show();
         }
-
-        private void lblModuleInfo_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-
-            => MessageBox.Show("Send us your video tutorial on Youtube or your specially created help page on your website about this module and we will give you credits here.", "Coming soon");
     }
 }

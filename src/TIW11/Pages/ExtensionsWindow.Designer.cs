@@ -42,20 +42,19 @@ namespace ThisIsWin11
             this.ColumnAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textPlugsSearch = new System.Windows.Forms.TextBox();
             this.btnPluginsMenu = new System.Windows.Forms.Button();
-            this.pnlTop = new System.Windows.Forms.Panel();
+            this.pnlLeft = new System.Windows.Forms.Panel();
             this.lnkPlugsDir = new System.Windows.Forms.LinkLabel();
-            this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
-            this.lblSubHeader = new System.Windows.Forms.Label();
-            this.lblHeader = new System.Windows.Forms.Label();
-            this.lnkPlugsAttribution = new System.Windows.Forms.LinkLabel();
             this.lblPlugsAttribution = new System.Windows.Forms.Label();
+            this.lnkPlugsAttribution = new System.Windows.Forms.LinkLabel();
+            this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
+            this.lblHeader = new System.Windows.Forms.Label();
             this.menuPlugins = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuPlugsRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPlugsPopOut = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuPlugsInfo = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewPlugs)).BeginInit();
-            this.pnlTop.SuspendLayout();
+            this.pnlLeft.SuspendLayout();
             this.menuPlugins.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,12 +72,12 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DataGridViewPlugs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DataGridViewPlugs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DataGridViewPlugs.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.DataGridViewPlugs.BackgroundColor = System.Drawing.Color.White;
             this.DataGridViewPlugs.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridViewPlugs.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DataGridViewPlugs.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.DataGridViewPlugs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(4);
             this.DataGridViewPlugs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -89,7 +88,7 @@ namespace ThisIsWin11
             this.ColumnDescription,
             this.ColumnAuthor});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -98,13 +97,13 @@ namespace ThisIsWin11
             this.DataGridViewPlugs.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridViewPlugs.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DataGridViewPlugs.EnableHeadersVisualStyles = false;
-            this.DataGridViewPlugs.GridColor = System.Drawing.Color.WhiteSmoke;
-            this.DataGridViewPlugs.Location = new System.Drawing.Point(24, 166);
+            this.DataGridViewPlugs.GridColor = System.Drawing.Color.White;
+            this.DataGridViewPlugs.Location = new System.Drawing.Point(484, 113);
             this.DataGridViewPlugs.MultiSelect = false;
             this.DataGridViewPlugs.Name = "DataGridViewPlugs";
             this.DataGridViewPlugs.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -113,14 +112,14 @@ namespace ThisIsWin11
             this.DataGridViewPlugs.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridViewPlugs.RowHeadersVisible = false;
             this.DataGridViewPlugs.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DataGridViewPlugs.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DataGridViewPlugs.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DataGridViewPlugs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DataGridViewPlugs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.DataGridViewPlugs.ShowEditingIcon = false;
-            this.DataGridViewPlugs.Size = new System.Drawing.Size(1051, 502);
+            this.DataGridViewPlugs.Size = new System.Drawing.Size(714, 583);
             this.DataGridViewPlugs.TabIndex = 141;
             this.DataGridViewPlugs.TabStop = false;
             this.DataGridViewPlugs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewPlugs_CellContentClick);
@@ -172,11 +171,13 @@ namespace ThisIsWin11
             // 
             // textPlugsSearch
             // 
-            this.textPlugsSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textPlugsSearch.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPlugsSearch.Location = new System.Drawing.Point(864, 125);
+            this.textPlugsSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textPlugsSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textPlugsSearch.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPlugsSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textPlugsSearch.Location = new System.Drawing.Point(551, 15);
             this.textPlugsSearch.Name = "textPlugsSearch";
-            this.textPlugsSearch.Size = new System.Drawing.Size(211, 23);
+            this.textPlugsSearch.Size = new System.Drawing.Size(211, 25);
             this.textPlugsSearch.TabIndex = 142;
             this.textPlugsSearch.Text = "Search...";
             this.textPlugsSearch.Click += new System.EventHandler(this.textSearch_Click);
@@ -185,32 +186,32 @@ namespace ThisIsWin11
             // btnPluginsMenu
             // 
             this.btnPluginsMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPluginsMenu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPluginsMenu.BackColor = System.Drawing.Color.White;
+            this.btnPluginsMenu.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnPluginsMenu.FlatAppearance.BorderSize = 0;
             this.btnPluginsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnPluginsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPluginsMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPluginsMenu.Location = new System.Drawing.Point(1037, 0);
+            this.btnPluginsMenu.Location = new System.Drawing.Point(1160, 0);
             this.btnPluginsMenu.Name = "btnPluginsMenu";
             this.btnPluginsMenu.Size = new System.Drawing.Size(48, 51);
             this.btnPluginsMenu.TabIndex = 157;
             this.btnPluginsMenu.UseVisualStyleBackColor = false;
             this.btnPluginsMenu.Click += new System.EventHandler(this.btnPlugsMenu_Click);
             // 
-            // pnlTop
+            // pnlLeft
             // 
-            this.pnlTop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlTop.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlTop.Controls.Add(this.lnkPlugsDir);
-            this.pnlTop.Controls.Add(this.lnkSubHeader);
-            this.pnlTop.Controls.Add(this.lblSubHeader);
-            this.pnlTop.Controls.Add(this.btnPluginsMenu);
-            this.pnlTop.Controls.Add(this.lblHeader);
-            this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1088, 119);
-            this.pnlTop.TabIndex = 164;
+            this.pnlLeft.BackColor = System.Drawing.Color.White;
+            this.pnlLeft.Controls.Add(this.lnkPlugsDir);
+            this.pnlLeft.Controls.Add(this.lblPlugsAttribution);
+            this.pnlLeft.Controls.Add(this.lnkPlugsAttribution);
+            this.pnlLeft.Controls.Add(this.lnkSubHeader);
+            this.pnlLeft.Controls.Add(this.lblHeader);
+            this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLeft.Location = new System.Drawing.Point(0, 0);
+            this.pnlLeft.Name = "pnlLeft";
+            this.pnlLeft.Size = new System.Drawing.Size(450, 862);
+            this.pnlLeft.TabIndex = 164;
             // 
             // lnkPlugsDir
             // 
@@ -218,7 +219,7 @@ namespace ThisIsWin11
             this.lnkPlugsDir.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkPlugsDir.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkPlugsDir.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lnkPlugsDir.Location = new System.Drawing.Point(319, 94);
+            this.lnkPlugsDir.Location = new System.Drawing.Point(65, 213);
             this.lnkPlugsDir.Name = "lnkPlugsDir";
             this.lnkPlugsDir.Size = new System.Drawing.Size(132, 17);
             this.lnkPlugsDir.TabIndex = 160;
@@ -226,54 +227,26 @@ namespace ThisIsWin11
             this.lnkPlugsDir.Text = "Open Plugins folder";
             this.lnkPlugsDir.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkPlugsDir_LinkClicked);
             // 
-            // lnkSubHeader
+            // lblPlugsAttribution
             // 
-            this.lnkSubHeader.AutoSize = true;
-            this.lnkSubHeader.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lnkSubHeader.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lnkSubHeader.Location = new System.Drawing.Point(27, 94);
-            this.lnkSubHeader.Name = "lnkSubHeader";
-            this.lnkSubHeader.Size = new System.Drawing.Size(278, 17);
-            this.lnkSubHeader.TabIndex = 159;
-            this.lnkSubHeader.TabStop = true;
-            this.lnkSubHeader.Text = "More information about the Plugins engine";
-            this.lnkSubHeader.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSubHeader_LinkClicked);
-            // 
-            // lblSubHeader
-            // 
-            this.lblSubHeader.AutoSize = true;
-            this.lblSubHeader.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblSubHeader.Location = new System.Drawing.Point(27, 61);
-            this.lblSubHeader.Name = "lblSubHeader";
-            this.lblSubHeader.Size = new System.Drawing.Size(439, 20);
-            this.lblSubHeader.TabIndex = 158;
-            this.lblSubHeader.Text = "Create your own tweaks and extend the capabilities of ThisIsWin11.";
-            // 
-            // lblHeader
-            // 
-            this.lblHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.BackColor = System.Drawing.Color.Transparent;
-            this.lblHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.ForeColor = System.Drawing.Color.Black;
-            this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeader.Location = new System.Drawing.Point(24, 19);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(129, 32);
-            this.lblHeader.TabIndex = 135;
-            this.lblHeader.Text = "Extensions";
+            this.lblPlugsAttribution.AutoEllipsis = true;
+            this.lblPlugsAttribution.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlugsAttribution.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlugsAttribution.ForeColor = System.Drawing.Color.Black;
+            this.lblPlugsAttribution.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblPlugsAttribution.Location = new System.Drawing.Point(64, 276);
+            this.lblPlugsAttribution.Name = "lblPlugsAttribution";
+            this.lblPlugsAttribution.Size = new System.Drawing.Size(175, 21);
+            this.lblPlugsAttribution.TabIndex = 166;
+            this.lblPlugsAttribution.Text = "Attribution";
             // 
             // lnkPlugsAttribution
             // 
-            this.lnkPlugsAttribution.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lnkPlugsAttribution.AutoSize = true;
             this.lnkPlugsAttribution.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkPlugsAttribution.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkPlugsAttribution.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lnkPlugsAttribution.Location = new System.Drawing.Point(26, 702);
+            this.lnkPlugsAttribution.Location = new System.Drawing.Point(64, 307);
             this.lnkPlugsAttribution.Name = "lnkPlugsAttribution";
             this.lnkPlugsAttribution.Size = new System.Drawing.Size(178, 17);
             this.lnkPlugsAttribution.TabIndex = 165;
@@ -281,23 +254,38 @@ namespace ThisIsWin11
             this.lnkPlugsAttribution.Text = "Karlkoorna\'s Tweaky engine";
             this.lnkPlugsAttribution.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkPlugsAttribution_LinkClicked);
             // 
-            // lblPlugsAttribution
+            // lnkSubHeader
             // 
-            this.lblPlugsAttribution.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblPlugsAttribution.AutoEllipsis = true;
-            this.lblPlugsAttribution.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlugsAttribution.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlugsAttribution.ForeColor = System.Drawing.Color.Black;
-            this.lblPlugsAttribution.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblPlugsAttribution.Location = new System.Drawing.Point(26, 671);
-            this.lblPlugsAttribution.Name = "lblPlugsAttribution";
-            this.lblPlugsAttribution.Size = new System.Drawing.Size(175, 21);
-            this.lblPlugsAttribution.TabIndex = 166;
-            this.lblPlugsAttribution.Text = "Attribution";
+            this.lnkSubHeader.AutoSize = true;
+            this.lnkSubHeader.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lnkSubHeader.LinkColor = System.Drawing.Color.MediumVioletRed;
+            this.lnkSubHeader.Location = new System.Drawing.Point(64, 181);
+            this.lnkSubHeader.Name = "lnkSubHeader";
+            this.lnkSubHeader.Size = new System.Drawing.Size(278, 17);
+            this.lnkSubHeader.TabIndex = 159;
+            this.lnkSubHeader.TabStop = true;
+            this.lnkSubHeader.Text = "More information about the Plugins engine";
+            this.lnkSubHeader.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSubHeader_LinkClicked);
+            // 
+            // lblHeader
+            // 
+            this.lblHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeader.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.ForeColor = System.Drawing.Color.Black;
+            this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblHeader.Location = new System.Drawing.Point(60, 50);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(412, 94);
+            this.lblHeader.TabIndex = 135;
+            this.lblHeader.Text = "Create your own tweaks \r\nwith Extensions\r\n";
             // 
             // menuPlugins
             // 
-            this.menuPlugins.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.menuPlugins.BackColor = System.Drawing.Color.White;
             this.menuPlugins.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuPlugins.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuPlugsRefresh,
@@ -306,7 +294,7 @@ namespace ThisIsWin11
             this.menuPlugsInfo});
             this.menuPlugins.Name = "menuMain";
             this.menuPlugins.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuPlugins.Size = new System.Drawing.Size(195, 122);
+            this.menuPlugins.Size = new System.Drawing.Size(195, 100);
             // 
             // menuPlugsRefresh
             // 
@@ -339,13 +327,12 @@ namespace ThisIsWin11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1087, 770);
-            this.Controls.Add(this.lblPlugsAttribution);
-            this.Controls.Add(this.lnkPlugsAttribution);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1210, 862);
             this.Controls.Add(this.textPlugsSearch);
             this.Controls.Add(this.DataGridViewPlugs);
-            this.Controls.Add(this.pnlTop);
+            this.Controls.Add(this.pnlLeft);
+            this.Controls.Add(this.btnPluginsMenu);
             this.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Location = new System.Drawing.Point(24, 19);
             this.Name = "ExtensionsWindow";
@@ -353,8 +340,8 @@ namespace ThisIsWin11
             this.Text = "ThisIsWin11 Extensions";
             this.Shown += new System.EventHandler(this.ExtensionsWindow_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewPlugs)).EndInit();
-            this.pnlTop.ResumeLayout(false);
-            this.pnlTop.PerformLayout();
+            this.pnlLeft.ResumeLayout(false);
+            this.pnlLeft.PerformLayout();
             this.menuPlugins.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -365,9 +352,8 @@ namespace ThisIsWin11
         private System.Windows.Forms.DataGridView DataGridViewPlugs;
         private System.Windows.Forms.TextBox textPlugsSearch;
         private System.Windows.Forms.Button btnPluginsMenu;
-        private System.Windows.Forms.Panel pnlTop;
+        private System.Windows.Forms.Panel pnlLeft;
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.Label lblSubHeader;
         private System.Windows.Forms.LinkLabel lnkSubHeader;
         private System.Windows.Forms.LinkLabel lnkPlugsAttribution;
         private System.Windows.Forms.Label lblPlugsAttribution;

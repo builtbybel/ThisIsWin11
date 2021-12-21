@@ -51,7 +51,7 @@ namespace ThisIsWin11.Helpers
                        Program.GetCurrentVersionTostring())
 
                     {
-                        settingsForm.lblVersionInstalled.Text = Program.GetCurrentVersionTostring() + " Dev";
+                        settingsForm.lblAssembly.Text = Program.GetCurrentVersionTostring() + " Dev";
                         settingsForm.btnCheckForUpdates.BackColor
                             = Color.FromArgb(223, 246, 221);
                         settingsForm.btnCheckForUpdates.FlatAppearance.BorderSize
@@ -59,7 +59,7 @@ namespace ThisIsWin11.Helpers
                         settingsForm.btnCheckForUpdates.ForeColor
                             = Color.Black;
                         settingsForm.btnCheckForUpdates.Text
-                            = "Download and install v" + latestVersion;
+                            = "Update ready to install v" + latestVersion;
 
                         if (settingsForm.buttonInstallUpdate && MessageBox.Show($"Do you want to install the update: {latestVersion}?" + Environment.NewLine + versionContent, @"App update available",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -113,8 +113,8 @@ namespace ThisIsWin11.Helpers
                                 else
                                     Application.Restart();
                             }
-                            catch (Exception ex)
-                            { MessageBox.Show(ex.Message); }
+                            catch // Catch error 404 if no tag for new version available
+                            { MessageBox.Show("The update is not yet available.\nPlease try again soon."); }
                         }
                     }
                 }

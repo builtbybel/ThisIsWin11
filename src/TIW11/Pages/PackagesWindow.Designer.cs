@@ -44,15 +44,12 @@ namespace ThisIsWin11
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnInstallWinget = new System.Windows.Forms.Button();
             this.progress = new System.Windows.Forms.ProgressBar();
-            this.pnlRight = new System.Windows.Forms.Panel();
-            this.lblModuleInfo = new System.Windows.Forms.LinkLabel();
-            this.lblModuleName = new System.Windows.Forms.Label();
+            this.pnlLeft = new System.Windows.Forms.Panel();
+            this.lblHeaderEmoji = new System.Windows.Forms.Label();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
-            this.pnlBottom = new System.Windows.Forms.Panel();
             this.tvwPackages = new System.Windows.Forms.TreeView();
             this.menuPackages.SuspendLayout();
-            this.pnlRight.SuspendLayout();
-            this.pnlBottom.SuspendLayout();
+            this.pnlLeft.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -62,27 +59,28 @@ namespace ThisIsWin11
             this.lblHeader.AutoEllipsis = true;
             this.lblHeader.AutoSize = true;
             this.lblHeader.BackColor = System.Drawing.Color.White;
-            this.lblHeader.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.ForeColor = System.Drawing.Color.DimGray;
+            this.lblHeader.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.ForeColor = System.Drawing.Color.Black;
             this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeader.Location = new System.Drawing.Point(24, 19);
+            this.lblHeader.Location = new System.Drawing.Point(60, 50);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(195, 32);
+            this.lblHeader.Size = new System.Drawing.Size(354, 94);
             this.lblHeader.TabIndex = 139;
-            this.lblHeader.Text = "Install packages";
+            this.lblHeader.Text = "Install apps we think \r\nyou\'ll love ";
             // 
             // btnCreatePackage
             // 
-            this.btnCreatePackage.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnCreatePackage.FlatAppearance.BorderColor = System.Drawing.Color.Orchid;
-            this.btnCreatePackage.FlatAppearance.BorderSize = 0;
+            this.btnCreatePackage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCreatePackage.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCreatePackage.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCreatePackage.FlatAppearance.BorderSize = 2;
             this.btnCreatePackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreatePackage.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreatePackage.ForeColor = System.Drawing.Color.Black;
-            this.btnCreatePackage.Location = new System.Drawing.Point(24, 24);
+            this.btnCreatePackage.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreatePackage.ForeColor = System.Drawing.Color.White;
+            this.btnCreatePackage.Location = new System.Drawing.Point(70, 735);
             this.btnCreatePackage.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreatePackage.Name = "btnCreatePackage";
-            this.btnCreatePackage.Size = new System.Drawing.Size(213, 30);
+            this.btnCreatePackage.Size = new System.Drawing.Size(213, 32);
             this.btnCreatePackage.TabIndex = 141;
             this.btnCreatePackage.Text = "1. Create Package";
             this.btnCreatePackage.UseVisualStyleBackColor = false;
@@ -90,16 +88,17 @@ namespace ThisIsWin11
             // 
             // btnRunPackage
             // 
-            this.btnRunPackage.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnRunPackage.FlatAppearance.BorderColor = System.Drawing.Color.Orchid;
-            this.btnRunPackage.FlatAppearance.BorderSize = 0;
+            this.btnRunPackage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRunPackage.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnRunPackage.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnRunPackage.FlatAppearance.BorderSize = 2;
             this.btnRunPackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRunPackage.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRunPackage.ForeColor = System.Drawing.Color.Black;
-            this.btnRunPackage.Location = new System.Drawing.Point(251, 24);
+            this.btnRunPackage.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRunPackage.ForeColor = System.Drawing.Color.White;
+            this.btnRunPackage.Location = new System.Drawing.Point(305, 735);
             this.btnRunPackage.Margin = new System.Windows.Forms.Padding(2);
             this.btnRunPackage.Name = "btnRunPackage";
-            this.btnRunPackage.Size = new System.Drawing.Size(213, 30);
+            this.btnRunPackage.Size = new System.Drawing.Size(213, 32);
             this.btnRunPackage.TabIndex = 142;
             this.btnRunPackage.Text = "2. Run Installer";
             this.btnRunPackage.UseVisualStyleBackColor = false;
@@ -109,11 +108,12 @@ namespace ThisIsWin11
             // 
             this.btnPackagesMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPackagesMenu.BackColor = System.Drawing.Color.White;
+            this.btnPackagesMenu.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnPackagesMenu.FlatAppearance.BorderSize = 0;
             this.btnPackagesMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnPackagesMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPackagesMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPackagesMenu.Location = new System.Drawing.Point(667, 0);
+            this.btnPackagesMenu.Location = new System.Drawing.Point(1160, 0);
             this.btnPackagesMenu.Name = "btnPackagesMenu";
             this.btnPackagesMenu.Size = new System.Drawing.Size(48, 51);
             this.btnPackagesMenu.TabIndex = 157;
@@ -134,33 +134,33 @@ namespace ThisIsWin11
             this.toolStripMenuItem1});
             this.menuPackages.Name = "menuMain";
             this.menuPackages.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuPackages.Size = new System.Drawing.Size(305, 212);
+            this.menuPackages.Size = new System.Drawing.Size(305, 190);
             // 
             // menuPackagesImport
             // 
             this.menuPackagesImport.Name = "menuPackagesImport";
-            this.menuPackagesImport.Size = new System.Drawing.Size(302, 30);
+            this.menuPackagesImport.Size = new System.Drawing.Size(304, 30);
             this.menuPackagesImport.Text = "Import package list";
             this.menuPackagesImport.Click += new System.EventHandler(this.menuPackagesImport_Click);
             // 
             // menuPackagesExport
             // 
             this.menuPackagesExport.Name = "menuPackagesExport";
-            this.menuPackagesExport.Size = new System.Drawing.Size(302, 30);
+            this.menuPackagesExport.Size = new System.Drawing.Size(304, 30);
             this.menuPackagesExport.Text = "Export to PowerShell";
             this.menuPackagesExport.Click += new System.EventHandler(this.menuPackagesExport_Click);
             // 
             // menuPackagesExpand
             // 
             this.menuPackagesExpand.Name = "menuPackagesExpand";
-            this.menuPackagesExpand.Size = new System.Drawing.Size(302, 30);
+            this.menuPackagesExpand.Size = new System.Drawing.Size(304, 30);
             this.menuPackagesExpand.Text = "Expand all";
             this.menuPackagesExpand.Click += new System.EventHandler(this.menuPackagesExpand_Click);
             // 
             // menuPackagesRefresh
             // 
             this.menuPackagesRefresh.Name = "menuPackagesRefresh";
-            this.menuPackagesRefresh.Size = new System.Drawing.Size(302, 30);
+            this.menuPackagesRefresh.Size = new System.Drawing.Size(304, 30);
             this.menuPackagesRefresh.Text = "Refresh";
             this.menuPackagesRefresh.Click += new System.EventHandler(this.menuPackagesRefresh_Click);
             // 
@@ -168,14 +168,14 @@ namespace ThisIsWin11
             // 
             this.menuPackagesPopOut.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuPackagesPopOut.Name = "menuPackagesPopOut";
-            this.menuPackagesPopOut.Size = new System.Drawing.Size(302, 30);
+            this.menuPackagesPopOut.Size = new System.Drawing.Size(304, 30);
             this.menuPackagesPopOut.Text = "Pop-out-App";
             this.menuPackagesPopOut.Click += new System.EventHandler(this.menuPackagesPopOut_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(299, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(301, 6);
             // 
             // toolStripMenuItem1
             // 
@@ -190,13 +190,13 @@ namespace ThisIsWin11
             this.btnInstallWinget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInstallWinget.BackColor = System.Drawing.Color.MediumVioletRed;
             this.btnInstallWinget.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnInstallWinget.FlatAppearance.BorderSize = 0;
+            this.btnInstallWinget.FlatAppearance.BorderSize = 2;
             this.btnInstallWinget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInstallWinget.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInstallWinget.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInstallWinget.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnInstallWinget.Location = new System.Drawing.Point(27, 538);
+            this.btnInstallWinget.Location = new System.Drawing.Point(305, 105);
             this.btnInstallWinget.Name = "btnInstallWinget";
-            this.btnInstallWinget.Size = new System.Drawing.Size(225, 30);
+            this.btnInstallWinget.Size = new System.Drawing.Size(213, 32);
             this.btnInstallWinget.TabIndex = 161;
             this.btnInstallWinget.Text = "Install Windows Package Manager";
             this.btnInstallWinget.UseVisualStyleBackColor = false;
@@ -206,82 +206,59 @@ namespace ThisIsWin11
             // 
             this.progress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progress.Location = new System.Drawing.Point(24, 78);
+            this.progress.Location = new System.Drawing.Point(538, 61);
             this.progress.MarqueeAnimationSpeed = 30;
             this.progress.Name = "progress";
-            this.progress.Size = new System.Drawing.Size(669, 5);
+            this.progress.Size = new System.Drawing.Size(663, 5);
             this.progress.TabIndex = 162;
             this.progress.Visible = false;
             // 
-            // pnlRight
+            // pnlLeft
             // 
-            this.pnlRight.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlRight.Controls.Add(this.lblModuleInfo);
-            this.pnlRight.Controls.Add(this.lblModuleName);
-            this.pnlRight.Controls.Add(this.btnInstallWinget);
-            this.pnlRight.Controls.Add(this.rtbPS);
-            this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlRight.Location = new System.Drawing.Point(716, 0);
-            this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(371, 770);
-            this.pnlRight.TabIndex = 163;
+            this.pnlLeft.BackColor = System.Drawing.Color.White;
+            this.pnlLeft.Controls.Add(this.lblHeaderEmoji);
+            this.pnlLeft.Controls.Add(this.btnRunPackage);
+            this.pnlLeft.Controls.Add(this.btnCreatePackage);
+            this.pnlLeft.Controls.Add(this.btnInstallWinget);
+            this.pnlLeft.Controls.Add(this.rtbPS);
+            this.pnlLeft.Controls.Add(this.lblHeader);
+            this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLeft.Location = new System.Drawing.Point(0, 0);
+            this.pnlLeft.Name = "pnlLeft";
+            this.pnlLeft.Size = new System.Drawing.Size(532, 862);
+            this.pnlLeft.TabIndex = 163;
             // 
-            // lblModuleInfo
+            // lblHeaderEmoji
             // 
-            this.lblModuleInfo.AutoEllipsis = true;
-            this.lblModuleInfo.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModuleInfo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lblModuleInfo.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lblModuleInfo.Location = new System.Drawing.Point(24, 59);
-            this.lblModuleInfo.Name = "lblModuleInfo";
-            this.lblModuleInfo.Size = new System.Drawing.Size(320, 17);
-            this.lblModuleInfo.TabIndex = 162;
-            this.lblModuleInfo.TabStop = true;
-            this.lblModuleInfo.Text = "Learn more about Packages";
-            this.lblModuleInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblModuleInfo_LinkClicked);
-            // 
-            // lblModuleName
-            // 
-            this.lblModuleName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblHeaderEmoji.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblModuleName.AutoEllipsis = true;
-            this.lblModuleName.BackColor = System.Drawing.Color.Transparent;
-            this.lblModuleName.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModuleName.ForeColor = System.Drawing.Color.Black;
-            this.lblModuleName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblModuleName.Location = new System.Drawing.Point(21, 21);
-            this.lblModuleName.Name = "lblModuleName";
-            this.lblModuleName.Size = new System.Drawing.Size(323, 32);
-            this.lblModuleName.TabIndex = 135;
-            this.lblModuleName.Text = "Packages";
+            this.lblHeaderEmoji.BackColor = System.Drawing.Color.White;
+            this.lblHeaderEmoji.Font = new System.Drawing.Font("Segoe Fluent Icons", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeaderEmoji.ForeColor = System.Drawing.Color.DeepPink;
+            this.lblHeaderEmoji.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblHeaderEmoji.Location = new System.Drawing.Point(240, 105);
+            this.lblHeaderEmoji.Name = "lblHeaderEmoji";
+            this.lblHeaderEmoji.Size = new System.Drawing.Size(42, 35);
+            this.lblHeaderEmoji.TabIndex = 162;
             // 
             // rtbPS
             // 
             this.rtbPS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbPS.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.rtbPS.BackColor = System.Drawing.Color.White;
             this.rtbPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbPS.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbPS.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbPS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rtbPS.HideSelection = false;
-            this.rtbPS.Location = new System.Drawing.Point(27, 110);
+            this.rtbPS.Location = new System.Drawing.Point(68, 175);
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ReadOnly = true;
-            this.rtbPS.Size = new System.Drawing.Size(343, 644);
+            this.rtbPS.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbPS.Size = new System.Drawing.Size(450, 546);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = "";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
-            // 
-            // pnlBottom
-            // 
-            this.pnlBottom.AutoScroll = true;
-            this.pnlBottom.Controls.Add(this.btnCreatePackage);
-            this.pnlBottom.Controls.Add(this.btnRunPackage);
-            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 697);
-            this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(716, 73);
-            this.pnlBottom.TabIndex = 164;
             // 
             // tvwPackages
             // 
@@ -290,12 +267,14 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tvwPackages.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tvwPackages.CheckBoxes = true;
-            this.tvwPackages.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tvwPackages.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tvwPackages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tvwPackages.HotTracking = true;
-            this.tvwPackages.Location = new System.Drawing.Point(24, 97);
+            this.tvwPackages.ItemHeight = 30;
+            this.tvwPackages.Location = new System.Drawing.Point(544, 82);
             this.tvwPackages.Name = "tvwPackages";
             this.tvwPackages.ShowLines = false;
-            this.tvwPackages.Size = new System.Drawing.Size(692, 600);
+            this.tvwPackages.Size = new System.Drawing.Size(664, 736);
             this.tvwPackages.TabIndex = 165;
             // 
             // PackagesWindow
@@ -304,13 +283,11 @@ namespace ThisIsWin11
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1087, 770);
+            this.ClientSize = new System.Drawing.Size(1210, 862);
             this.Controls.Add(this.tvwPackages);
-            this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.progress);
             this.Controls.Add(this.btnPackagesMenu);
-            this.Controls.Add(this.lblHeader);
-            this.Controls.Add(this.pnlRight);
+            this.Controls.Add(this.pnlLeft);
             this.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "PackagesWindow";
             this.ShowIcon = false;
@@ -318,10 +295,9 @@ namespace ThisIsWin11
             this.Text = "Packages";
             this.Shown += new System.EventHandler(this.PackagesWindow_Shown);
             this.menuPackages.ResumeLayout(false);
-            this.pnlRight.ResumeLayout(false);
-            this.pnlBottom.ResumeLayout(false);
+            this.pnlLeft.ResumeLayout(false);
+            this.pnlLeft.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -338,14 +314,12 @@ namespace ThisIsWin11
         private System.Windows.Forms.ToolStripMenuItem menuPackagesRefresh;
         private System.Windows.Forms.Button btnInstallWinget;
         private System.Windows.Forms.ProgressBar progress;
-        private System.Windows.Forms.Panel pnlRight;
-        private System.Windows.Forms.Label lblModuleName;
+        private System.Windows.Forms.Panel pnlLeft;
         public System.Windows.Forms.RichTextBox rtbPS;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.LinkLabel lblModuleInfo;
-        private System.Windows.Forms.Panel pnlBottom;
         private System.Windows.Forms.TreeView tvwPackages;
         private System.Windows.Forms.ToolStripMenuItem menuPackagesExpand;
+        private System.Windows.Forms.Label lblHeaderEmoji;
     }
 }

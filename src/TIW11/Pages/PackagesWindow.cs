@@ -37,6 +37,7 @@ namespace ThisIsWin11
         private void UISelection()
         {
             btnPackagesMenu.Text = "\uE712";
+            lblHeaderEmoji.Text = "\uEB52";
             rtbPS.Text = "Automate your next installation and create your own Windows 11 essentials.\n\n" +
                          "You will find more packages in the Windows Package Manager manifest repository:\nhttps://github.com/microsoft/winget-pkgs/tree/master/manifests" +
                          "\n\nOr just get them with this Web-GUI for Windows Package Manager:\nhttps://winstall.app\n\n\n\n" +
@@ -77,7 +78,7 @@ namespace ThisIsWin11
                 // Some tvw nicety
                 treeview.Nodes[0].Expand();
                 treeview.Nodes[0].EnsureVisible();
-                treeview.Nodes[0].ForeColor = Color.DeepPink;
+                treeview.Nodes[0].ForeColor = Color.MediumVioletRed;
                 treeview.Nodes[0].NodeFont = new Font(treeview.Font, FontStyle.Bold);
                 treeview.Sort();
 
@@ -304,8 +305,6 @@ namespace ThisIsWin11
             }
         }
 
-        private void lblModuleInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-         => MessageBox.Show("Send us your video tutorial on Youtube or your specially created help page on your website about this module and we will give you credits here.", "Coming soon");
 
         private void menuPackagesExpand_Click(object sender, EventArgs e)
         {

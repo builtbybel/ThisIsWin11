@@ -1,21 +1,18 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Windows.Forms;
 
 namespace ThisIsWin11.Presenter
 {
     public class OS
     {
-        public string ComputerName { get; set; }
-
         public bool IsWin11()
         {
-            ComputerName = Environment.MachineName;
-
             try
             {
                 RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
                 int osbuild = Convert.ToInt32(key.GetValue("CurrentBuildNumber"));
-                if (osbuild >= 22000)
+                if (osbuild >= 21996)
                 {
                     return true;
                 }
@@ -50,6 +47,19 @@ namespace ThisIsWin11.Presenter
             }
 
             return bitness;
+        }
+
+        // Ref. https://docs.microsoft.com/en-us/previous-versions/system-center/configuration-manager-2003/cc180825(v=technet.10)?redirectedfrom=MSDN
+        public string GetChassisType()
+        {
+            if (SystemInformation.PowerStatus.BatteryChargeStatus == BatteryChargeStatus.NoSystemBattery)
+            {
+                return "Desktop";
+            }
+            else
+            {
+                return "Laptop";
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Management.Automation;
@@ -11,9 +12,9 @@ namespace ThisIsWin11
 {
     public partial class AppsWindow : Form
     {
-        private List<string> removeUWPList = new List<string>();
-        private List<string> removeUWPFailedList = new List<string>();
-        private List<string> removeUWPSystem = new List<string>();
+        private List<string> removeAppsList = new List<string>();
+        private List<string> removeAppsFailedList = new List<string>();
+        private List<string> removeAppsSystem = new List<string>();
 
         private readonly PowerShell powerShell = PowerShell.Create();
 
@@ -28,24 +29,23 @@ namespace ThisIsWin11
 
         private void AppsWindow_Shown(object sender, EventArgs e)
         {
-            InitializeUWPSystem();   // Systemapps from resource file
-            InitializeUWP();         // Now the normal apps
             UISelection();
+
+            InitializeAppsSystem();   // Systemapps from resource file
+            InitializeApps();         // Now the normal apps
+         
         }
 
         // Some UI nicety
         private void UISelection()
         {
             btnAppsMenu.Text = "\uE712";
-            rtbPS.Text = "I am just a Recycle Bin.\n\n" +
-                         "Throw everything you don't need into the bin and press <Empty Recycle Bin> button to remove it permanently.\n\n" +
-                         "You can also import a custom bloatware list, e.g. you can find a list of pre-installed Windows 11 apps in the data root of this app.\n\n" +
-                         "Use the import function in the upper left menu and select file \"apps11\".";
+            btnAppsRefresh.Text = "\uE777";
         }
 
-        private void InitializeUWP()
+        private void InitializeApps()
         {
-            lstUWP.Items.Clear();
+            lstApps.Items.Clear();
             powerShell.Commands.Clear();
             powerShell.AddCommand("get-appxpackage");
             powerShell.AddCommand("Select").AddParameter("property", "name");
@@ -54,20 +54,20 @@ namespace ThisIsWin11
             {
                 string current = result.ToString();
                 // Show ONLY NON-SYSTEM apps by comparing found apps with systemapps.txt
-                if (removeUWPSystem != null) if ((removeUWPSystem.Any(current.Contains)) && !checkAppsSystem.Checked) continue;
+                if (removeAppsSystem != null) if ((removeAppsSystem.Any(current.Contains)) && !checkAppsSystem.Checked) continue;
 
-                if (lstUWP.Items.Contains(Regex.Replace(current, "(@{Name=)|(})", ""))) continue;
-                lstUWP.Items.Add(Regex.Replace(current, "(@{Name=)|(})", ""));
+                if (lstApps.Items.Contains(Regex.Replace(current, "(@{Name=)|(})", ""))) continue;
+                lstApps.Items.Add(Regex.Replace(current, "(@{Name=)|(})", ""));
             }
 
             // Compare left and rights apps list and remove differences
-            string compare = lstUWP.Items.ToString();
-            foreach (string item in lstUWPRemove.Items) if (item.Any(compare.Contains)) lstUWP.Items.Remove(item);
+            string compare = lstApps.Items.ToString();
+            foreach (string item in lstAppsRemove.Items) if (item.Any(compare.Contains)) lstApps.Items.Remove(item);
 
-            RefreshUWP();
+            RefreshApps();
         }
 
-        private void InitializeUWPSystem()
+        private void InitializeAppsSystem()
         {
             StreamReader Database = null;
 
@@ -91,29 +91,40 @@ namespace ThisIsWin11
                     string buff;
                     while ((buff = Database.ReadLine()) != null)
                     {
-                        removeUWPSystem.Add(buff);
+                        removeAppsSystem.Add(buff);
                     }
                 };
                 Database.Close();
             }
         }
 
-        private void RefreshUWP()
+        private void btnAppsRefresh_Click(object sender, EventArgs e)
         {
-            int installed = lstUWP.Items.Count;
-            int remove = lstUWPRemove.Items.Count;
-            lblAppsInstalledCount.Text = "Apps" + " (" + installed.ToString() + ")";
-            lblAppsBinCount.Text = "Recycle Bin" + " (" + remove.ToString() + ")";
+            lstApps.Items.Clear();
+            lstAppsRemove.Items.Clear();
 
-            if (lstUWPRemove.Items.Count == 0)
+            InitializeAppsSystem();
+            InitializeApps();
+        }
+
+        private void RefreshApps()
+        {
+            int installed = lstApps.Items.Count;
+            int remove = lstAppsRemove.Items.Count;
+            lblAppsInstalledCount.Text = installed.ToString() + " apps";
+            lblAppsBinCount.Text = "Recycle bin" + " (" + remove.ToString() + ")";
+
+            if (lstAppsRemove.Items.Count == 0)
             {
                 rtbPS.Visible = true;
-                lstUWPRemove.Visible = false;
+                lblAppsBinOptions.Visible = true;
+                lstAppsRemove.Visible = false;
             }
             else
             {
-                lstUWPRemove.Visible = true;
+                lstAppsRemove.Visible = true;
                 rtbPS.Visible = false;
+                lblAppsBinOptions.Visible = false;
             }
 
             if (installed == 0)
@@ -128,25 +139,16 @@ namespace ThisIsWin11
             if (remove == 0)
                 btnRemoveAll.Enabled =
                 btnRemove.Enabled =
-                btnRemoveUWP.Enabled =
+                btnRemoveApps.Enabled =
                 false;
             else
                 btnRemoveAll.Enabled =
                 btnRemove.Enabled =
-                btnRemoveUWP.Enabled =
+                btnRemoveApps.Enabled =
                 true;
         }
 
-        private void menuAppsRefresh_Click(object sender, EventArgs e)
-        {
-            lstUWP.Items.Clear();
-            lstUWPRemove.Items.Clear();
-
-            InitializeUWPSystem();
-            InitializeUWP();
-        }
-
-        private void RemoveUWP(string app)
+        private void RemoveApps(string app)
         {
             bool error = false;
 
@@ -160,73 +162,73 @@ namespace ThisIsWin11
 
             if (error)
             {
-                removeUWPFailedList.Add(app);
+                removeAppsFailedList.Add(app);
             }
             else
             {
-                removeUWPList.Add(app);
+                removeAppsList.Add(app);
             }
 
             return;
         }
 
-        private async void btnRemoveUWP_Click(object sender, EventArgs e)
+        private async void btnRemoveApps_Click(object sender, EventArgs e)
         {
             string selectedApps = string.Empty;
             string successList = string.Empty;
             string failedList = string.Empty;
 
-            foreach (string app in lstUWPRemove.Items)
+            foreach (string app in lstAppsRemove.Items)
             {
                 selectedApps += app + Environment.NewLine;
             }
-            if (MessageBox.Show("Do you want to empty the Recycle Bin and delete all the apps in it?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Do you want to empty the Recycle bin and delete all apps in it?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                removeUWPList.Clear();
-                removeUWPFailedList.Clear();
+                removeAppsList.Clear();
+                removeAppsFailedList.Clear();
                 rtbPS.Visible = true;
                 rtbPS.Clear();
-                lstUWPRemove.Visible = false;
-                btnRemoveUWP.Enabled = false;
+                lstAppsRemove.Visible = false;
+                btnRemoveApps.Enabled = false;
 
-                foreach (string app in lstUWPRemove.Items)
+                foreach (string app in lstAppsRemove.Items)
                 {
                     rtbPS.Text += Environment.NewLine + "Uninstalling " + app.ToString();
 
-                    await Task.Run(() => RemoveUWP(app));
+                    await Task.Run(() => RemoveApps(app));
                 }
 
-                foreach (var str in removeUWPList)
+                foreach (var str in removeAppsList)
                 {
                     successList += "-" + str + Environment.NewLine;
                 }
-                foreach (var str in removeUWPFailedList)
+                foreach (var str in removeAppsFailedList)
                 {
                     failedList += "-" + str + Environment.NewLine;
                 }
 
                 // Summary removal process
                 string message = string.Format("Summary:\n{0} app(s) has been selected for removal.\n{1} app(s) has been removed.",
-                    removeUWPList.Count + removeUWPFailedList.Count, removeUWPList.Count) + Environment.NewLine + Environment.NewLine;
+                    removeAppsList.Count + removeAppsFailedList.Count, removeAppsList.Count) + Environment.NewLine + Environment.NewLine;
 
-                if (removeUWPList.Count != 0)
+                if (removeAppsList.Count != 0)
                 {
                     message += "The folowing app(s) have been removed successfully:" + Environment.NewLine + successList + Environment.NewLine;
                 }
 
-                if (removeUWPFailedList.Count != 0)
+                if (removeAppsFailedList.Count != 0)
                 {
                     message += "The following app(s) could not be removed: " + Environment.NewLine + failedList;
-                    message += Environment.NewLine + "Note, however, this app won't allow you to remove a few of the most important built-in apps, like Microsoft Edge, .NET framework, UI.Xaml etc." +
-                                                     "as these apps are needed for the Windows 11 Experience and for other programs. If you try, you’ll see an error message saying the removal failed.\n\n" +
-                                                     "Please check also the automation module to see if you can find a community debloating task. These are often more aggressive.";
+                    message += Environment.NewLine + "Note, however, this app won't allow you to remove a few of the most important built-in apps, like Microsoft Edge, .NET framework, UI.Xaml etc. " +
+                                                     "as these apps are needed for the Windows 11 Experience and for other programs. If you try, you’ll see an error message saying the removal failed." +
+                                                     "\n\nPlease check also the automation module to see if you can find a community debloating task. These are often more aggressive.";
                 }
 
-                menuAppsRefresh.PerformClick();
+                btnAppsRefresh.PerformClick();
 
-                btnRemoveUWP.Enabled = true;
+                btnRemoveApps.Enabled = true;
                 rtbPS.Text = message + Environment.NewLine;
-                rtbPS.Text += Environment.NewLine + lstUWP.Items.Count + " apps are left.\n";
+                rtbPS.Text += Environment.NewLine + lstApps.Items.Count + " apps are left.\n";
             }
         }
 
@@ -244,7 +246,7 @@ namespace ThisIsWin11
                     {
                         script.Invoke();
                         this.Enabled = true;
-                        RefreshUWP();
+                        RefreshApps();
                     }
                     catch (Exception ex)
                     { MessageBox.Show(ex.Message); }
@@ -254,63 +256,63 @@ namespace ThisIsWin11
 
         private void checkAppsSystem_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkAppsSystem.Checked) MessageBox.Show("Be picky about which System applications to uninstall.\n\n" +
-                "You can uninstall most of the built-in apps, even ones that don't normally offer an \"Uninstall\" option.\n\n" +
-                "Note, however, this app won't allow you to remove a few of the most important built-in apps, like Microsoft Edge, .NET framework, UI.Xaml etc." +
+            if (checkAppsSystem.Checked) MessageBox.Show("Be picky about which System applications to uninstall." +
+                "\n\nYou can uninstall most of the built-in apps, even ones that don't normally offer an \"Uninstall\" option." +
+                "\n\nNote, however, this app won't allow you to remove a few of the most important built-in apps, like Microsoft Edge, .NET framework, UI.Xaml etc. " +
                 "as these apps are needed for the Windows 11 \"Experience\" and for other programs. If you try, you’ll see an error message saying the removal failed.", this.Text, MessageBoxButtons.OK);
 
-            InitializeUWPSystem();
-            InitializeUWP();
+            InitializeAppsSystem();
+            InitializeApps();
         }
 
         private void rtbPS_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
 
         private void btnAddAll_Click(object sender, EventArgs e)
         {
-            foreach (var item in lstUWP.Items)
+            foreach (var item in lstApps.Items)
             {
-                lstUWPRemove.Items.Add(item);
+                lstAppsRemove.Items.Add(item);
             }
-            lstUWP.Items.Clear();
-            RefreshUWP();
+            lstApps.Items.Clear();
+            RefreshApps();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (lstUWP.Items.Count != 0)
+            if (lstApps.Items.Count != 0)
             {
-                if (lstUWP.SelectedItem == null) lstUWP.SelectedIndex = 0;
-                while (lstUWP.SelectedItem != null)
+                if (lstApps.SelectedItem == null) lstApps.SelectedIndex = 0;
+                while (lstApps.SelectedItem != null)
                 {
-                    lstUWPRemove.Items.Add(lstUWP.SelectedItem);
-                    lstUWP.Items.Remove(lstUWP.SelectedItem);
+                    lstAppsRemove.Items.Add(lstApps.SelectedItem);
+                    lstApps.Items.Remove(lstApps.SelectedItem);
                 }
-                RefreshUWP();
+                RefreshApps();
             }
         }
 
         private void btnRemoveAll_Click(object sender, EventArgs e)
         {
-            foreach (var item in lstUWPRemove.Items)
+            foreach (var item in lstAppsRemove.Items)
             {
-                lstUWP.Items.Add(item);
-                // lstUWP.Items.Remove(item);
+                lstApps.Items.Add(item);
+                // lstApps.Items.Remove(item);
             }
-            lstUWPRemove.Items.Clear();
-            RefreshUWP();
+            lstAppsRemove.Items.Clear();
+            RefreshApps();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            if (lstUWPRemove.Items.Count != 0)
+            if (lstAppsRemove.Items.Count != 0)
             {
-                if (lstUWPRemove.SelectedItem == null) lstUWPRemove.SelectedIndex = 0;
-                while (lstUWPRemove.SelectedItem != null)
+                if (lstAppsRemove.SelectedItem == null) lstAppsRemove.SelectedIndex = 0;
+                while (lstAppsRemove.SelectedItem != null)
                 {
-                    lstUWP.Items.Add(lstUWPRemove.SelectedItem);
-                    lstUWPRemove.Items.Remove(lstUWPRemove.SelectedItem);
+                    lstApps.Items.Add(lstAppsRemove.SelectedItem);
+                    lstAppsRemove.Items.Remove(lstAppsRemove.SelectedItem);
                 }
-                RefreshUWP();
+                RefreshApps();
             }
         }
 
@@ -325,22 +327,22 @@ namespace ThisIsWin11
                 List<string> lines = new List<string>();
                 using (StreamReader r = new StreamReader(f.OpenFile()))
                 {
-                    lstUWPRemove.Items.Clear();
+                    lstAppsRemove.Items.Clear();
 
                     string line;
                     while ((line = r.ReadLine()) != null)
                     {
-                        lstUWPRemove.Items.Add(line);
-                        RefreshUWP();
+                        lstAppsRemove.Items.Add(line);
+                        RefreshApps();
 
                         // Compare imported list with installed apps and add differences ONLY
-                        string compare = lstUWP.Items.ToString();
-                        foreach (string item in lstUWPRemove.Items) if (item.Any(compare.Contains)) lstUWP.Items.Remove(item);
+                        string compare = lstApps.Items.ToString();
+                        foreach (string item in lstAppsRemove.Items) if (item.Any(compare.Contains)) lstApps.Items.Remove(item);
                     }
 
-                    RefreshUWP();
+                    RefreshApps();
 
-                    MessageBox.Show("We've snyced your import list with the apps in Recycle Bin.\n" +
+                    MessageBox.Show("We've snyced your import list with the apps in Recycle bin.\n" +
                         "Please note, that some of these apps may not be installed on your system.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -348,9 +350,9 @@ namespace ThisIsWin11
 
         private void menuAppsExport_Click(object sender, EventArgs e)
         {
-            if (lstUWPRemove.Items.Count == 0)
+            if (lstAppsRemove.Items.Count == 0)
             {
-                MessageBox.Show("No apps in Recycle Bin found.");
+                MessageBox.Show("No apps in Recycle bin found.");
                 return;
             }
 
@@ -361,9 +363,9 @@ namespace ThisIsWin11
             if (s.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter writer = new StreamWriter(s.OpenFile());
-                for (int i = 0; i < lstUWPRemove.Items.Count; i++)
+                for (int i = 0; i < lstAppsRemove.Items.Count; i++)
                 {
-                    writer.WriteLine(lstUWPRemove.Items[i].ToString());
+                    writer.WriteLine(lstAppsRemove.Items[i].ToString());
                 }
 
                 writer.Dispose();
@@ -378,7 +380,7 @@ namespace ThisIsWin11
 
         private void btnAppsMenu_Click(object sender, EventArgs e) => this.menuApps.Show(Cursor.Position.X, Cursor.Position.Y);
 
-        private void lblModuleInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-         => MessageBox.Show("Send us your video tutorial on Youtube or your specially created help page on your website about this module and we will give you credits here.", "Coming soon");
+        private void lblAppsBinOptions_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => menuAppsImport.PerformClick();
+
     }
 }

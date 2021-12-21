@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\Pages.cs" />
-    <Compile Include="Helpers\Keystrokes.cs" />
     <Compile Include="Helpers\Strings.cs" />
     <Compile Include="Helpers\Utils.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskbarMM.cs" />
@@ -166,11 +165,11 @@
     <Compile Include="Pages\PackagesWindow.Designer.cs">
       <DependentUpon>PackagesWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SystemWindow.cs">
+    <Compile Include="Pages\CustomizeWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\SystemWindow.Designer.cs">
-      <DependentUpon>SystemWindow.cs</DependentUpon>
+    <Compile Include="Pages\CustomizeWindow.Designer.cs">
+      <DependentUpon>CustomizeWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -185,7 +184,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Presenter\LockScreen.cs" />
     <Compile Include="Modules\Presenter\OS.cs" />
     <Compile Include="Modules\OpenTweaks\AssessmentNode.cs" />
     <Compile Include="Modules\OpenTweaks\ITreeNode.cs" />
@@ -209,8 +207,8 @@
     <EmbeddedResource Include="Pages\PackagesWindow.resx">
       <DependentUpon>PackagesWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\SystemWindow.resx">
-      <DependentUpon>SystemWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\CustomizeWindow.resx">
+      <DependentUpon>CustomizeWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\HomeWindow.resx">
       <DependentUpon>HomeWindow.cs</DependentUpon>

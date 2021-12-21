@@ -5,9 +5,11 @@
         GetStarted = 0,
         NewLook,
         StartMenu,
+        Apps,
+        Privacy,
+        MicrosoftStore,
         ActionCenter,
         FileExplorer,
-        MicrosoftStore,
         SettingsApp,
         WindowsUpdates,
         SnapLayouts,
@@ -18,8 +20,6 @@
         TouchKeyboard,
         AndroidApps,
         Gaming,
-        Privacy,
-        Apps,
         Finish,
         Custom
     }

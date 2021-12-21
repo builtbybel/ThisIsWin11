@@ -62,11 +62,11 @@ namespace ThisIsWin11
         {
             foreach (DataGridViewRow row in DataGridViewPlugs.Rows) if (((Plugin)row.DataBoundItem).Status == Plugin.PlugStatus.Enabled)
                 {
-                    row.DefaultCellStyle.BackColor = Color.LightBlue;
+                    row.DefaultCellStyle.BackColor = Color.LavenderBlush;
                 }
                 else
                 {
-                    row.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+                    row.DefaultCellStyle.BackColor = Color.White;
                 }
         }
 
@@ -100,5 +100,7 @@ namespace ThisIsWin11
 
             IntializePlugs();
         }
+
+      
     }
 }
