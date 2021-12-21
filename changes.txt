@@ -1,7 +1,7 @@
 
-Hotfix 0.94.1 for Windows 11 Presenter/Getting started module and the TIW11 self-updater.
+- We want to test the update to the upcoming version 1.0 on more devices. 
+The update can be rolled out to your system.
 
 From the blog:
-Voting for a appname change is closed. 
-ThisIsWin11 remains ThisIsWin11!
-https://www.builtbybel.com/blog/19-apps/44-thisiswin11-yes-or-no-for-changing-the-appname
+Try the first Preview version 1.0 of TIW11 with a complete UI overhaul
+https://github.com/builtbybel/ThisIsWin11/releases/tag/1.0.0.101
