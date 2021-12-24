@@ -11,9 +11,12 @@ namespace ThisIsWin11
         private Dictionary<string, Form> panelForms = new Dictionary<string, Form>();
         private Dictionary<string, Button> panelButtons = new Dictionary<string, Button>();
 
+        private bool isGlobalNavOpen = false;
+
         public MainWindow()
         {
             InitializeComponent();
+            this.MinimumSize = new Size(810, 755);
 
             RegisterView(new HomeWindow(this), btnHome);                    // Home page
             RegisterView(new CustomizeWindow(), btnCustomize);              // Customize page
@@ -22,35 +25,61 @@ namespace ThisIsWin11
             RegisterView(new AutomateWindow(), btnAutomate);                // Automate page
             RegisterView(new ExtensionsWindow(), btnExtensions);            // Extensions page
             RegisterView(new SettingsWindow(this), btnSettings);            // Settings page
-        }
-
-        private void MainWindow_Shown(object sender, EventArgs e)
-        {
-            // Load Home page
-            string key = panelForms.Keys.FirstOrDefault();
-            if (key != null)
-                ActivateView(key);
 
             UISelection();
         }
 
+        // Load Home page
+        private void MainWindow_Shown(object sender, EventArgs e)
+        {
+            string key = panelForms.Keys.FirstOrDefault();
+            if (key != null)
+                ActivateView(panelForms.Keys.FirstOrDefault());
+        }
+
         // Some UI nicety
+        // Segoe Fluent Icons font along with its Unicode values, Ref. https://docs.microsoft.com/windows/apps/design/style/segoe-fluent-icons-font
         private void UISelection()
         {
-            this.MinimumSize = new Size(810, 755);
+            int newPnlContainerLocation = 90;
 
-            // Nav icons
-            btnHome.Text = "\uE80F";
-            btnSettings.Text = "\uE713";
+            var space = "\u0020";
 
-            btnHome.Visible =
-            btnCustomize.Visible =
-            btnApps.Visible =
-            btnPackages.Visible =
-            btnAutomate.Visible =
-            btnExtensions.Visible =
-            btnSettings.Visible
-            = true;
+            btnMenu.Text = "\uE700";
+            btnHome.Text = "\uE10F";
+            btnCustomize.Text = "\uE771";
+            btnApps.Text = "\uE71D";
+            btnPackages.Text = "\uE7B8";
+            btnAutomate.Text = "\uE943";
+            btnExtensions.Text = "\uE10C";
+            btnSettings.Text = "\uE115";
+
+            if (!isGlobalNavOpen)
+            {
+                pnlNav.AutoSize = false;
+                pnlContainer.SendToBack();
+                pnlContainer.Location = new Point(60, 0);
+                tt.SetToolTip(btnMenu, "Open Navigation");
+
+                isGlobalNavOpen = true;
+            }
+            else
+            {
+                btnHome.Text += space + space + "Home";
+                btnCustomize.Text += space + space + "Customize";
+                btnApps.Text += space + space + "Apps";
+                btnPackages.Text += space + space + "Packages";
+                btnAutomate.Text += space + space + "Automate";
+                btnExtensions.Text += space + space + "Extensions";
+                btnSettings.Text += space + space + "Settings";
+
+                pnlNav.AutoSize = true;
+                pnlContainer.BringToFront();
+                pnlContainer.Location = new Point(newPnlContainerLocation, 0);
+                tt.SetToolTip(btnMenu, "Close Navigation");
+
+                isGlobalNavOpen = false;
+            }
         }
 
         public void RegisterView(Form form, Button button)
@@ -80,6 +109,18 @@ namespace ThisIsWin11
             this.pnlContainer.Controls.Clear();
             this.pnlContainer.Controls.Add(form);
             form.Show();
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            UISelection();
+        }
+
+        private void btnHome_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnHome.ForeColor =
+               Color.MediumVioletRed; btnCustomize.ForeColor = btnApps.ForeColor = btnPackages.ForeColor = btnAutomate.ForeColor = btnExtensions.ForeColor = btnSettings.ForeColor =
+               Color.DimGray;
         }
 
         private void btnCustomize_MouseDown(object sender, MouseEventArgs e)

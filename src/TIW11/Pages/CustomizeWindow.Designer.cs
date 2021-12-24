@@ -49,20 +49,22 @@ namespace ThisIsWin11
             this.btnSystemUndo = new System.Windows.Forms.Button();
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
+            this.pnlRight = new System.Windows.Forms.Panel();
             this.menuSystem.SuspendLayout();
             this.pnlLeft.SuspendLayout();
+            this.pnlRight.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSystemMenu
             // 
             this.btnSystemMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSystemMenu.BackColor = System.Drawing.Color.White;
-            this.btnSystemMenu.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnSystemMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSystemMenu.FlatAppearance.BorderSize = 0;
             this.btnSystemMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnSystemMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSystemMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSystemMenu.Location = new System.Drawing.Point(1160, 0);
+            this.btnSystemMenu.Location = new System.Drawing.Point(627, -1);
             this.btnSystemMenu.Name = "btnSystemMenu";
             this.btnSystemMenu.Size = new System.Drawing.Size(48, 51);
             this.btnSystemMenu.TabIndex = 162;
@@ -94,7 +96,7 @@ namespace ThisIsWin11
             this.btnSystemCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSystemCheck.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSystemCheck.ForeColor = System.Drawing.Color.White;
-            this.btnSystemCheck.Location = new System.Drawing.Point(70, 735);
+            this.btnSystemCheck.Location = new System.Drawing.Point(68, 788);
             this.btnSystemCheck.Margin = new System.Windows.Forms.Padding(2);
             this.btnSystemCheck.Name = "btnSystemCheck";
             this.btnSystemCheck.Size = new System.Drawing.Size(213, 32);
@@ -171,9 +173,9 @@ namespace ThisIsWin11
             // 
             this.progress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progress.Location = new System.Drawing.Point(538, 61);
+            this.progress.Location = new System.Drawing.Point(0, 56);
             this.progress.Name = "progress";
-            this.progress.Size = new System.Drawing.Size(663, 5);
+            this.progress.Size = new System.Drawing.Size(666, 5);
             this.progress.TabIndex = 166;
             this.progress.Visible = false;
             // 
@@ -190,11 +192,11 @@ namespace ThisIsWin11
             this.tvwAssessments.HideSelection = false;
             this.tvwAssessments.HotTracking = true;
             this.tvwAssessments.ItemHeight = 30;
-            this.tvwAssessments.Location = new System.Drawing.Point(544, 82);
+            this.tvwAssessments.Location = new System.Drawing.Point(3, 82);
             this.tvwAssessments.Name = "tvwAssessments";
             this.tvwAssessments.ShowLines = false;
             this.tvwAssessments.ShowNodeToolTips = true;
-            this.tvwAssessments.Size = new System.Drawing.Size(664, 720);
+            this.tvwAssessments.Size = new System.Drawing.Size(672, 768);
             this.tvwAssessments.TabIndex = 168;
             this.tvwAssessments.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvwAssessments_AfterCheck);
             // 
@@ -207,7 +209,7 @@ namespace ThisIsWin11
             this.btnSystemFix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSystemFix.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSystemFix.ForeColor = System.Drawing.Color.White;
-            this.btnSystemFix.Location = new System.Drawing.Point(305, 735);
+            this.btnSystemFix.Location = new System.Drawing.Point(305, 788);
             this.btnSystemFix.Margin = new System.Windows.Forms.Padding(2);
             this.btnSystemFix.Name = "btnSystemFix";
             this.btnSystemFix.Size = new System.Drawing.Size(213, 32);
@@ -218,6 +220,7 @@ namespace ThisIsWin11
             // 
             // pnlLeft
             // 
+            this.pnlLeft.AutoScroll = true;
             this.pnlLeft.BackColor = System.Drawing.Color.White;
             this.pnlLeft.Controls.Add(this.rtbPS);
             this.pnlLeft.Controls.Add(this.btnSystemUndo);
@@ -242,7 +245,7 @@ namespace ThisIsWin11
             this.rtbPS.Location = new System.Drawing.Point(68, 175);
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ReadOnly = true;
-            this.rtbPS.Size = new System.Drawing.Size(450, 543);
+            this.rtbPS.Size = new System.Drawing.Size(454, 594);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = "";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
@@ -251,12 +254,13 @@ namespace ThisIsWin11
             // 
             this.btnSystemUndo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSystemUndo.BackColor = System.Drawing.Color.White;
-            this.btnSystemUndo.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnSystemUndo.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSystemUndo.FlatAppearance.BorderSize = 0;
             this.btnSystemUndo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.HotPink;
             this.btnSystemUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSystemUndo.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSystemUndo.Location = new System.Drawing.Point(481, 3);
+            this.btnSystemUndo.ForeColor = System.Drawing.Color.Black;
+            this.btnSystemUndo.Location = new System.Drawing.Point(481, 0);
             this.btnSystemUndo.Name = "btnSystemUndo";
             this.btnSystemUndo.Size = new System.Drawing.Size(48, 51);
             this.btnSystemUndo.TabIndex = 174;
@@ -275,9 +279,9 @@ namespace ThisIsWin11
             this.lnkSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkSubHeader.LinkColor = System.Drawing.Color.Black;
-            this.lnkSubHeader.Location = new System.Drawing.Point(538, 33);
+            this.lnkSubHeader.Location = new System.Drawing.Point(0, 34);
             this.lnkSubHeader.Name = "lnkSubHeader";
-            this.lnkSubHeader.Size = new System.Drawing.Size(525, 20);
+            this.lnkSubHeader.Size = new System.Drawing.Size(587, 20);
             this.lnkSubHeader.TabIndex = 171;
             this.lnkSubHeader.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSubHeader_LinkClicked);
             // 
@@ -290,6 +294,20 @@ namespace ThisIsWin11
             this.tt.ToolTipTitle = "OpenTweaks";
             this.tt.UseAnimation = false;
             // 
+            // pnlRight
+            // 
+            this.pnlRight.AutoScroll = true;
+            this.pnlRight.BackColor = System.Drawing.Color.White;
+            this.pnlRight.Controls.Add(this.btnSystemMenu);
+            this.pnlRight.Controls.Add(this.progress);
+            this.pnlRight.Controls.Add(this.lnkSubHeader);
+            this.pnlRight.Controls.Add(this.tvwAssessments);
+            this.pnlRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRight.Location = new System.Drawing.Point(532, 0);
+            this.pnlRight.Name = "pnlRight";
+            this.pnlRight.Size = new System.Drawing.Size(678, 862);
+            this.pnlRight.TabIndex = 172;
+            // 
             // CustomizeWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -297,10 +315,7 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1210, 862);
-            this.Controls.Add(this.lnkSubHeader);
-            this.Controls.Add(this.progress);
-            this.Controls.Add(this.tvwAssessments);
-            this.Controls.Add(this.btnSystemMenu);
+            this.Controls.Add(this.pnlRight);
             this.Controls.Add(this.pnlLeft);
             this.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CustomizeWindow";
@@ -311,6 +326,7 @@ namespace ThisIsWin11
             this.menuSystem.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
             this.pnlLeft.PerformLayout();
+            this.pnlRight.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -336,5 +352,6 @@ namespace ThisIsWin11
         private System.Windows.Forms.Button btnSystemUndo;
         private System.Windows.Forms.ToolTip tt;
         public System.Windows.Forms.TreeView tvwAssessments;
+        private System.Windows.Forms.Panel pnlRight;
     }
 }

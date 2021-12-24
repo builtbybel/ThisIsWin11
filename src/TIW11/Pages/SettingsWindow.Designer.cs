@@ -42,7 +42,6 @@ namespace ThisIsWin11
             this.lblAppMediaTwitter = new System.Windows.Forms.LinkLabel();
             this.lblAppMediaPayPal = new System.Windows.Forms.LinkLabel();
             this.btnAppMediaGitHubIssues = new System.Windows.Forms.Button();
-            this.btnGoBackToPast = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rtbAbout
@@ -57,7 +56,7 @@ namespace ThisIsWin11
             this.rtbAbout.Location = new System.Drawing.Point(507, 383);
             this.rtbAbout.Name = "rtbAbout";
             this.rtbAbout.ReadOnly = true;
-            this.rtbAbout.Size = new System.Drawing.Size(691, 432);
+            this.rtbAbout.Size = new System.Drawing.Size(697, 467);
             this.rtbAbout.TabIndex = 0;
             this.rtbAbout.Text = "";
             this.rtbAbout.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbAbout_LinkClicked);
@@ -72,7 +71,7 @@ namespace ThisIsWin11
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.Black;
             this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeader.Location = new System.Drawing.Point(62, 30);
+            this.lblHeader.Location = new System.Drawing.Point(58, 30);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(137, 43);
             this.lblHeader.TabIndex = 135;
@@ -87,7 +86,7 @@ namespace ThisIsWin11
             this.btnCheckForUpdates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckForUpdates.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckForUpdates.ForeColor = System.Drawing.Color.White;
-            this.btnCheckForUpdates.Location = new System.Drawing.Point(70, 186);
+            this.btnCheckForUpdates.Location = new System.Drawing.Point(65, 186);
             this.btnCheckForUpdates.Name = "btnCheckForUpdates";
             this.btnCheckForUpdates.Size = new System.Drawing.Size(213, 34);
             this.btnCheckForUpdates.TabIndex = 155;
@@ -105,7 +104,7 @@ namespace ThisIsWin11
             this.lblSettingsUpdates.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSettingsUpdates.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblSettingsUpdates.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblSettingsUpdates.Location = new System.Drawing.Point(64, 100);
+            this.lblSettingsUpdates.Location = new System.Drawing.Point(60, 100);
             this.lblSettingsUpdates.Name = "lblSettingsUpdates";
             this.lblSettingsUpdates.Size = new System.Drawing.Size(116, 36);
             this.lblSettingsUpdates.TabIndex = 156;
@@ -133,7 +132,7 @@ namespace ThisIsWin11
             this.lblAssemblyInfo.AutoSize = true;
             this.lblAssemblyInfo.BackColor = System.Drawing.Color.Transparent;
             this.lblAssemblyInfo.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAssemblyInfo.Location = new System.Drawing.Point(67, 151);
+            this.lblAssemblyInfo.Location = new System.Drawing.Point(65, 151);
             this.lblAssemblyInfo.Name = "lblAssemblyInfo";
             this.lblAssemblyInfo.Size = new System.Drawing.Size(77, 17);
             this.lblAssemblyInfo.TabIndex = 158;
@@ -143,7 +142,7 @@ namespace ThisIsWin11
             // 
             this.progress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progress.Location = new System.Drawing.Point(70, 228);
+            this.progress.Location = new System.Drawing.Point(65, 228);
             this.progress.MarqueeAnimationSpeed = 30;
             this.progress.Name = "progress";
             this.progress.Size = new System.Drawing.Size(213, 5);
@@ -157,7 +156,7 @@ namespace ThisIsWin11
             this.lblAssembly.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAssembly.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lblAssembly.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblAssembly.Location = new System.Drawing.Point(150, 151);
+            this.lblAssembly.Location = new System.Drawing.Point(148, 151);
             this.lblAssembly.Name = "lblAssembly";
             this.lblAssembly.Size = new System.Drawing.Size(66, 17);
             this.lblAssembly.TabIndex = 165;
@@ -242,18 +241,6 @@ namespace ThisIsWin11
             this.btnAppMediaGitHubIssues.UseVisualStyleBackColor = true;
             this.btnAppMediaGitHubIssues.Click += new System.EventHandler(this.btnAppMediaGitHubIssues_Click);
             // 
-            // btnGoBackToPast
-            // 
-            this.btnGoBackToPast.AutoSize = true;
-            this.btnGoBackToPast.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGoBackToPast.Location = new System.Drawing.Point(70, 249);
-            this.btnGoBackToPast.Name = "btnGoBackToPast";
-            this.btnGoBackToPast.Size = new System.Drawing.Size(143, 32);
-            this.btnGoBackToPast.TabIndex = 173;
-            this.btnGoBackToPast.Text = "Roll back to old UI";
-            this.btnGoBackToPast.UseVisualStyleBackColor = true;
-            this.btnGoBackToPast.Click += new System.EventHandler(this.btnGoBackToPast_Click);
-            // 
             // SettingsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -261,7 +248,6 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1210, 862);
-            this.Controls.Add(this.btnGoBackToPast);
             this.Controls.Add(this.btnAppMediaGitHubIssues);
             this.Controls.Add(this.lblAppMediaPayPal);
             this.Controls.Add(this.lblAppMediaTwitter);
@@ -302,6 +288,5 @@ namespace ThisIsWin11
         private System.Windows.Forms.LinkLabel lblAppMediaTwitter;
         private System.Windows.Forms.LinkLabel lblAppMediaPayPal;
         private System.Windows.Forms.Button btnAppMediaGitHubIssues;
-        private System.Windows.Forms.Button btnGoBackToPast;
     }
 }

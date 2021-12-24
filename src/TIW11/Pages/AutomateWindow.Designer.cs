@@ -44,7 +44,7 @@ namespace ThisIsWin11
             this.lstPS = new System.Windows.Forms.CheckedListBox();
             this.progress = new System.Windows.Forms.ProgressBar();
             this.btnAutomateMenu = new System.Windows.Forms.Button();
-            this.btnApply = new System.Windows.Forms.Button();
+            this.btnAutomate = new System.Windows.Forms.Button();
             this.rtbDesc = new System.Windows.Forms.RichTextBox();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.btnAutomateOnTheFly = new System.Windows.Forms.Button();
@@ -130,7 +130,7 @@ namespace ThisIsWin11
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(532, 0);
+            this.panel1.Location = new System.Drawing.Point(470, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(0, 862);
             this.panel1.TabIndex = 146;
@@ -146,9 +146,9 @@ namespace ThisIsWin11
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(291, 30);
+            this.btnCancel.Location = new System.Drawing.Point(304, 19);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(130, 32);
+            this.btnCancel.Size = new System.Drawing.Size(178, 32);
             this.btnCancel.TabIndex = 160;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -183,7 +183,7 @@ namespace ThisIsWin11
             this.lstPS.FormattingEnabled = true;
             this.lstPS.Location = new System.Drawing.Point(15, 134);
             this.lstPS.Name = "lstPS";
-            this.lstPS.Size = new System.Drawing.Size(405, 672);
+            this.lstPS.Size = new System.Drawing.Size(470, 672);
             this.lstPS.Sorted = true;
             this.lstPS.TabIndex = 157;
             this.lstPS.SelectedIndexChanged += new System.EventHandler(this.lstPS_SelectedIndexChanged);
@@ -192,10 +192,10 @@ namespace ThisIsWin11
             // 
             this.progress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progress.Location = new System.Drawing.Point(15, 65);
+            this.progress.Location = new System.Drawing.Point(7, 56);
             this.progress.MarqueeAnimationSpeed = 30;
             this.progress.Name = "progress";
-            this.progress.Size = new System.Drawing.Size(406, 5);
+            this.progress.Size = new System.Drawing.Size(475, 5);
             this.progress.TabIndex = 156;
             this.progress.Visible = false;
             // 
@@ -203,33 +203,33 @@ namespace ThisIsWin11
             // 
             this.btnAutomateMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAutomateMenu.BackColor = System.Drawing.Color.White;
-            this.btnAutomateMenu.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnAutomateMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnAutomateMenu.FlatAppearance.BorderSize = 0;
             this.btnAutomateMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAutomateMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAutomateMenu.Location = new System.Drawing.Point(178, 0);
+            this.btnAutomateMenu.Location = new System.Drawing.Point(190, 0);
             this.btnAutomateMenu.Name = "btnAutomateMenu";
             this.btnAutomateMenu.Size = new System.Drawing.Size(48, 51);
             this.btnAutomateMenu.TabIndex = 155;
             this.btnAutomateMenu.UseVisualStyleBackColor = false;
             this.btnAutomateMenu.Click += new System.EventHandler(this.btnAutomateMenu_Click);
             // 
-            // btnApply
+            // btnAutomate
             // 
-            this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnApply.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnApply.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnApply.FlatAppearance.BorderSize = 2;
-            this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApply.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApply.ForeColor = System.Drawing.Color.White;
-            this.btnApply.Location = new System.Drawing.Point(68, 776);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(213, 32);
-            this.btnApply.TabIndex = 154;
-            this.btnApply.Text = "Apply selected";
-            this.btnApply.UseVisualStyleBackColor = false;
-            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            this.btnAutomate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAutomate.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAutomate.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAutomate.FlatAppearance.BorderSize = 2;
+            this.btnAutomate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAutomate.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutomate.ForeColor = System.Drawing.Color.White;
+            this.btnAutomate.Location = new System.Drawing.Point(68, 788);
+            this.btnAutomate.Name = "btnAutomate";
+            this.btnAutomate.Size = new System.Drawing.Size(192, 32);
+            this.btnAutomate.TabIndex = 154;
+            this.btnAutomate.Text = "Run selected";
+            this.btnAutomate.UseVisualStyleBackColor = false;
+            this.btnAutomate.Click += new System.EventHandler(this.btnAutomate_Click);
             // 
             // rtbDesc
             // 
@@ -242,8 +242,7 @@ namespace ThisIsWin11
             this.rtbDesc.Location = new System.Drawing.Point(68, 175);
             this.rtbDesc.Name = "rtbDesc";
             this.rtbDesc.ReadOnly = true;
-            this.rtbDesc.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.rtbDesc.Size = new System.Drawing.Size(458, 545);
+            this.rtbDesc.Size = new System.Drawing.Size(396, 592);
             this.rtbDesc.TabIndex = 153;
             this.rtbDesc.Text = "";
             this.rtbDesc.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbDesc_LinkClicked);
@@ -251,13 +250,13 @@ namespace ThisIsWin11
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.White;
-            this.pnlLeft.Controls.Add(this.btnApply);
+            this.pnlLeft.Controls.Add(this.btnAutomate);
             this.pnlLeft.Controls.Add(this.btnAutomateOnTheFly);
             this.pnlLeft.Controls.Add(this.rtbDesc);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLeft.Location = new System.Drawing.Point(0, 0);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(532, 862);
+            this.pnlLeft.Size = new System.Drawing.Size(470, 862);
             this.pnlLeft.TabIndex = 161;
             // 
             // btnAutomateOnTheFly
@@ -265,13 +264,13 @@ namespace ThisIsWin11
             this.btnAutomateOnTheFly.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAutomateOnTheFly.BackColor = System.Drawing.Color.MediumVioletRed;
             this.btnAutomateOnTheFly.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAutomateOnTheFly.FlatAppearance.BorderSize = 0;
+            this.btnAutomateOnTheFly.FlatAppearance.BorderSize = 2;
             this.btnAutomateOnTheFly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAutomateOnTheFly.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAutomateOnTheFly.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAutomateOnTheFly.Location = new System.Drawing.Point(300, 776);
+            this.btnAutomateOnTheFly.Location = new System.Drawing.Point(276, 788);
             this.btnAutomateOnTheFly.Name = "btnAutomateOnTheFly";
-            this.btnAutomateOnTheFly.Size = new System.Drawing.Size(213, 32);
+            this.btnAutomateOnTheFly.Size = new System.Drawing.Size(192, 32);
             this.btnAutomateOnTheFly.TabIndex = 155;
             this.btnAutomateOnTheFly.Text = "Run this code on-the-fly";
             this.btnAutomateOnTheFly.UseVisualStyleBackColor = false;
@@ -291,7 +290,7 @@ namespace ThisIsWin11
             this.rtbPS.Location = new System.Drawing.Point(7, 134);
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbPS.Size = new System.Drawing.Size(213, 671);
+            this.rtbPS.Size = new System.Drawing.Size(225, 686);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = "{Select a script}";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
@@ -307,9 +306,9 @@ namespace ThisIsWin11
             this.lnkSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkSubHeader.LinkColor = System.Drawing.Color.Black;
-            this.lnkSubHeader.Location = new System.Drawing.Point(11, 36);
+            this.lnkSubHeader.Location = new System.Drawing.Point(7, 34);
             this.lnkSubHeader.Name = "lnkSubHeader";
-            this.lnkSubHeader.Size = new System.Drawing.Size(272, 18);
+            this.lnkSubHeader.Size = new System.Drawing.Size(280, 20);
             this.lnkSubHeader.TabIndex = 172;
             // 
             // lblScriptsInstalledCount
@@ -330,16 +329,14 @@ namespace ThisIsWin11
             // 
             // pnlMiddle
             // 
-            this.pnlMiddle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlMiddle.BackColor = System.Drawing.Color.White;
             this.pnlMiddle.Controls.Add(this.label1);
             this.pnlMiddle.Controls.Add(this.rtbPS);
             this.pnlMiddle.Controls.Add(this.btnAutomateMenu);
-            this.pnlMiddle.Location = new System.Drawing.Point(538, 3);
+            this.pnlMiddle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMiddle.Location = new System.Drawing.Point(470, 0);
             this.pnlMiddle.Name = "pnlMiddle";
-            this.pnlMiddle.Size = new System.Drawing.Size(229, 862);
+            this.pnlMiddle.Size = new System.Drawing.Size(241, 862);
             this.pnlMiddle.TabIndex = 174;
             // 
             // label1
@@ -363,13 +360,13 @@ namespace ThisIsWin11
             this.pnlRight.BackColor = System.Drawing.Color.White;
             this.pnlRight.Controls.Add(this.btnCancel);
             this.pnlRight.Controls.Add(this.lblScriptsInstalledCount);
-            this.pnlRight.Controls.Add(this.lstPS);
             this.pnlRight.Controls.Add(this.lnkSubHeader);
             this.pnlRight.Controls.Add(this.progress);
+            this.pnlRight.Controls.Add(this.lstPS);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlRight.Location = new System.Drawing.Point(776, 0);
+            this.pnlRight.Location = new System.Drawing.Point(711, 0);
             this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(434, 862);
+            this.pnlRight.Size = new System.Drawing.Size(499, 862);
             this.pnlRight.TabIndex = 174;
             // 
             // AutomateWindow
@@ -412,7 +409,7 @@ namespace ThisIsWin11
         private System.Windows.Forms.CheckedListBox lstPS;
         private System.Windows.Forms.ProgressBar progress;
         private System.Windows.Forms.Button btnAutomateMenu;
-        private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.Button btnAutomate;
         public System.Windows.Forms.RichTextBox rtbDesc;
         private System.Windows.Forms.ToolStripMenuItem menuAutomateApplied;
         private System.Windows.Forms.ToolStripMenuItem menuAutomatePopOut;

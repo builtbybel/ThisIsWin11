@@ -37,7 +37,7 @@ namespace ThisIsWin11
         private void UISelection()
         {
             btnPackagesMenu.Text = "\uE712";
-            lblHeaderEmoji.Text = "\uEB52";
+            lblHeartFillEmoji.Text = "\uEB52";
             rtbPS.Text = "Automate your next installation and create your own Windows 11 essentials.\n\n" +
                          "You will find more packages in the Windows Package Manager manifest repository:\nhttps://github.com/microsoft/winget-pkgs/tree/master/manifests" +
                          "\n\nOr just get them with this Web-GUI for Windows Package Manager:\nhttps://winstall.app\n\n\n\n" +
@@ -186,13 +186,13 @@ namespace ThisIsWin11
                         }
                     }
                 }
-                catch
-                { }
+                catch (Exception ex)
+                { MessageBox.Show(ex.Message); }
 
                 // Check the other output, error streams etc.
-                if (powerShell.Streams.Error.Count > 0)
-                {
-                }
+                //if (powerShell.Streams.Error.Count > 0)
+                //{
+                //}
             }
         }
 
@@ -201,7 +201,7 @@ namespace ThisIsWin11
             string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Packages\\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe");
             if (!Directory.Exists(path))
             {
-                rtbPS.Text += "\n\n\nWe could not locate winget on your System.\nPlease install it by clicking on the button below";
+                rtbPS.Text += "\n\n\nWe could not locate winget on your System.\nPlease install it by clicking on the button above.";
                 btnInstallWinget.Visible = true;
             }
             else btnInstallWinget.Visible = false;
@@ -305,7 +305,6 @@ namespace ThisIsWin11
             }
         }
 
-
         private void menuPackagesExpand_Click(object sender, EventArgs e)
         {
             menuPackagesExpand.Checked = !(menuPackagesExpand.Checked);
@@ -328,11 +327,9 @@ namespace ThisIsWin11
 
         private void btnPackagesMenu_Click(object sender, EventArgs e) => this.menuPackages.Show(Cursor.Position.X, Cursor.Position.Y);
 
-
         private void menuPackagesPopOut_Click(object sender, EventArgs e)
         {
             PackagesWindow package = new PackagesWindow(mainForm); package.Show();
         }
-
     }
 }

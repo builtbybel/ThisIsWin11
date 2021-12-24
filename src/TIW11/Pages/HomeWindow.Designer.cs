@@ -30,149 +30,43 @@ namespace ThisIsWin11
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pnlRight = new System.Windows.Forms.Panel();
-            this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
-            this.cbTable = new System.Windows.Forms.ComboBox();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.pbView = new System.Windows.Forms.PictureBox();
             this.btnConfigurator = new System.Windows.Forms.Button();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnCustomizer = new System.Windows.Forms.Button();
             this.pnlLeft = new System.Windows.Forms.Panel();
-            this.btnCustomButton = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblDesc = new System.Windows.Forms.Label();
+            this.btnCustomButton = new System.Windows.Forms.Button();
             this.menuPresenter = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuPresenterInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
-            this.pnlRight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbView)).BeginInit();
+            this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.cbTable = new System.Windows.Forms.ComboBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.pnlRight = new System.Windows.Forms.Panel();
+            this.pbView = new System.Windows.Forms.PictureBox();
             this.pnlLeft.SuspendLayout();
             this.menuPresenter.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.pnlRight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pnlRight
-            // 
-            this.pnlRight.BackColor = System.Drawing.Color.White;
-            this.pnlRight.Controls.Add(this.lnkSubHeader);
-            this.pnlRight.Controls.Add(this.cbTable);
-            this.pnlRight.Controls.Add(this.btnNext);
-            this.pnlRight.Controls.Add(this.btnRefresh);
-            this.pnlRight.Controls.Add(this.btnBack);
-            this.pnlRight.Controls.Add(this.pbView);
-            this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlRight.Location = new System.Drawing.Point(670, 0);
-            this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(540, 862);
-            this.pnlRight.TabIndex = 163;
-            // 
-            // lnkSubHeader
-            // 
-            this.lnkSubHeader.ActiveLinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lnkSubHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lnkSubHeader.AutoEllipsis = true;
-            this.lnkSubHeader.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkSubHeader.ForeColor = System.Drawing.Color.Gray;
-            this.lnkSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lnkSubHeader.LinkColor = System.Drawing.Color.DimGray;
-            this.lnkSubHeader.Location = new System.Drawing.Point(227, 0);
-            this.lnkSubHeader.Name = "lnkSubHeader";
-            this.lnkSubHeader.Size = new System.Drawing.Size(313, 18);
-            this.lnkSubHeader.TabIndex = 24;
-            this.lnkSubHeader.TabStop = true;
-            this.lnkSubHeader.Text = "OS";
-            this.lnkSubHeader.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lnkSubHeader.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSubHeader_LinkClicked);
-            // 
-            // cbTable
-            // 
-            this.cbTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbTable.BackColor = System.Drawing.Color.White;
-            this.cbTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbTable.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTable.FormattingEnabled = true;
-            this.cbTable.Location = new System.Drawing.Point(284, 826);
-            this.cbTable.Name = "cbTable";
-            this.cbTable.Size = new System.Drawing.Size(121, 24);
-            this.cbTable.TabIndex = 135;
-            this.cbTable.Visible = false;
-            this.cbTable.SelectedIndexChanged += new System.EventHandler(this.cbTable_SelectedIndexChanged);
-            // 
-            // btnNext
-            // 
-            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNext.BackColor = System.Drawing.Color.White;
-            this.btnNext.FlatAppearance.BorderSize = 0;
-            this.btnNext.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.Color.Black;
-            this.btnNext.Location = new System.Drawing.Point(499, 818);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(29, 32);
-            this.btnNext.TabIndex = 135;
-            this.btnNext.Text = ">";
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.BackColor = System.Drawing.Color.White;
-            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnRefresh.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.Black;
-            this.btnRefresh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRefresh.Location = new System.Drawing.Point(429, 818);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(29, 32);
-            this.btnRefresh.TabIndex = 128;
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBack.BackColor = System.Drawing.Color.White;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(464, 818);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(29, 32);
-            this.btnBack.TabIndex = 136;
-            this.btnBack.Text = "<";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // pbView
-            // 
-            this.pbView.BackColor = System.Drawing.Color.Transparent;
-            this.pbView.ErrorImage = null;
-            this.pbView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pbView.InitialImage = null;
-            this.pbView.Location = new System.Drawing.Point(0, 110);
-            this.pbView.Name = "pbView";
-            this.pbView.Size = new System.Drawing.Size(540, 683);
-            this.pbView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbView.TabIndex = 127;
-            this.pbView.TabStop = false;
             // 
             // btnConfigurator
             // 
             this.btnConfigurator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnConfigurator.AutoEllipsis = true;
             this.btnConfigurator.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnConfigurator.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnConfigurator.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnConfigurator.FlatAppearance.BorderSize = 0;
             this.btnConfigurator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfigurator.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfigurator.ForeColor = System.Drawing.Color.Black;
             this.btnConfigurator.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnConfigurator.Location = new System.Drawing.Point(293, 562);
+            this.btnConfigurator.Location = new System.Drawing.Point(292, 562);
             this.btnConfigurator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConfigurator.Name = "btnConfigurator";
             this.btnConfigurator.Size = new System.Drawing.Size(207, 32);
@@ -191,7 +85,7 @@ namespace ThisIsWin11
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.Black;
             this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeader.Location = new System.Drawing.Point(64, 128);
+            this.lblHeader.Location = new System.Drawing.Point(60, 126);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(577, 47);
             this.lblHeader.TabIndex = 134;
@@ -208,7 +102,7 @@ namespace ThisIsWin11
             this.btnCustomizer.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomizer.ForeColor = System.Drawing.Color.White;
             this.btnCustomizer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCustomizer.Location = new System.Drawing.Point(63, 562);
+            this.btnCustomizer.Location = new System.Drawing.Point(68, 562);
             this.btnCustomizer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCustomizer.Name = "btnCustomizer";
             this.btnCustomizer.Size = new System.Drawing.Size(207, 32);
@@ -221,34 +115,17 @@ namespace ThisIsWin11
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.White;
-            this.pnlLeft.Controls.Add(this.btnCustomButton);
             this.pnlLeft.Controls.Add(this.btnConfigurator);
-            this.pnlLeft.Controls.Add(this.btnCustomizer);
             this.pnlLeft.Controls.Add(this.lblHeader);
             this.pnlLeft.Controls.Add(this.linkLabel1);
             this.pnlLeft.Controls.Add(this.lblDesc);
+            this.pnlLeft.Controls.Add(this.btnCustomButton);
+            this.pnlLeft.Controls.Add(this.btnCustomizer);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLeft.Location = new System.Drawing.Point(0, 0);
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(670, 862);
             this.pnlLeft.TabIndex = 164;
-            // 
-            // btnCustomButton
-            // 
-            this.btnCustomButton.AutoEllipsis = true;
-            this.btnCustomButton.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.btnCustomButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCustomButton.FlatAppearance.BorderSize = 2;
-            this.btnCustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomButton.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCustomButton.Location = new System.Drawing.Point(63, 522);
-            this.btnCustomButton.Name = "btnCustomButton";
-            this.btnCustomButton.Size = new System.Drawing.Size(181, 32);
-            this.btnCustomButton.TabIndex = 156;
-            this.btnCustomButton.Text = "Vote for this new UI";
-            this.btnCustomButton.UseVisualStyleBackColor = false;
-            this.btnCustomButton.Click += new System.EventHandler(this.btnCustomButton_Click);
             // 
             // linkLabel1
             // 
@@ -273,11 +150,29 @@ namespace ThisIsWin11
             this.lblDesc.AutoEllipsis = true;
             this.lblDesc.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblDesc.Location = new System.Drawing.Point(66, 206);
+            this.lblDesc.Location = new System.Drawing.Point(68, 206);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(575, 326);
             this.lblDesc.TabIndex = 137;
             this.lblDesc.Text = "cheat sheet";
+            // 
+            // btnCustomButton
+            // 
+            this.btnCustomButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCustomButton.AutoEllipsis = true;
+            this.btnCustomButton.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnCustomButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCustomButton.FlatAppearance.BorderSize = 2;
+            this.btnCustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomButton.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomButton.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCustomButton.Location = new System.Drawing.Point(66, 562);
+            this.btnCustomButton.Name = "btnCustomButton";
+            this.btnCustomButton.Size = new System.Drawing.Size(231, 32);
+            this.btnCustomButton.TabIndex = 156;
+            this.btnCustomButton.Text = "Vote for this new UI";
+            this.btnCustomButton.UseVisualStyleBackColor = false;
+            this.btnCustomButton.Click += new System.EventHandler(this.btnCustomButton_Click);
             // 
             // menuPresenter
             // 
@@ -304,6 +199,123 @@ namespace ThisIsWin11
             this.tt.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.tt.ToolTipTitle = "Get started with Tips in Windows 11";
             // 
+            // lnkSubHeader
+            // 
+            this.lnkSubHeader.ActiveLinkColor = System.Drawing.Color.MediumVioletRed;
+            this.lnkSubHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lnkSubHeader.AutoEllipsis = true;
+            this.lnkSubHeader.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkSubHeader.ForeColor = System.Drawing.Color.Gray;
+            this.lnkSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lnkSubHeader.LinkColor = System.Drawing.Color.DimGray;
+            this.lnkSubHeader.Location = new System.Drawing.Point(6, 0);
+            this.lnkSubHeader.Name = "lnkSubHeader";
+            this.lnkSubHeader.Size = new System.Drawing.Size(531, 18);
+            this.lnkSubHeader.TabIndex = 24;
+            this.lnkSubHeader.TabStop = true;
+            this.lnkSubHeader.Text = "OS";
+            this.lnkSubHeader.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lnkSubHeader.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSubHeader_LinkClicked);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnNext);
+            this.panel1.Controls.Add(this.btnBack);
+            this.panel1.Controls.Add(this.cbTable);
+            this.panel1.Controls.Add(this.btnRefresh);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 799);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(540, 63);
+            this.panel1.TabIndex = 157;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNext.BackColor = System.Drawing.Color.White;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.Black;
+            this.btnNext.Location = new System.Drawing.Point(499, 19);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(29, 32);
+            this.btnNext.TabIndex = 135;
+            this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBack.BackColor = System.Drawing.Color.White;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(464, 19);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(29, 32);
+            this.btnBack.TabIndex = 136;
+            this.btnBack.Text = "<";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // cbTable
+            // 
+            this.cbTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbTable.BackColor = System.Drawing.Color.White;
+            this.cbTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTable.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTable.FormattingEnabled = true;
+            this.cbTable.Location = new System.Drawing.Point(248, 27);
+            this.cbTable.Name = "cbTable";
+            this.cbTable.Size = new System.Drawing.Size(121, 24);
+            this.cbTable.TabIndex = 135;
+            this.cbTable.Visible = false;
+            this.cbTable.SelectedIndexChanged += new System.EventHandler(this.cbTable_SelectedIndexChanged);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.BackColor = System.Drawing.Color.White;
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.Black;
+            this.btnRefresh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRefresh.Location = new System.Drawing.Point(429, 19);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(29, 32);
+            this.btnRefresh.TabIndex = 128;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // pnlRight
+            // 
+            this.pnlRight.BackColor = System.Drawing.Color.White;
+            this.pnlRight.Controls.Add(this.panel1);
+            this.pnlRight.Controls.Add(this.lnkSubHeader);
+            this.pnlRight.Controls.Add(this.pbView);
+            this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlRight.Location = new System.Drawing.Point(670, 0);
+            this.pnlRight.Name = "pnlRight";
+            this.pnlRight.Size = new System.Drawing.Size(540, 862);
+            this.pnlRight.TabIndex = 163;
+            // 
+            // pbView
+            // 
+            this.pbView.BackColor = System.Drawing.Color.Transparent;
+            this.pbView.ErrorImage = null;
+            this.pbView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pbView.InitialImage = null;
+            this.pbView.Location = new System.Drawing.Point(0, 110);
+            this.pbView.Name = "pbView";
+            this.pbView.Size = new System.Drawing.Size(540, 683);
+            this.pbView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbView.TabIndex = 127;
+            this.pbView.TabStop = false;
+            // 
             // HomeWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -317,31 +329,33 @@ namespace ThisIsWin11
             this.ShowIcon = false;
             this.Text = "Presenter";
             this.Shown += new System.EventHandler(this.HomeWindow_Shown);
-            this.pnlRight.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbView)).EndInit();
             this.pnlLeft.ResumeLayout(false);
             this.menuPresenter.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.pnlRight.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel pnlRight;
-        private System.Windows.Forms.ComboBox cbTable;
-        public System.Windows.Forms.PictureBox pbView;
         private System.Windows.Forms.Panel pnlLeft;
-        private System.Windows.Forms.Button btnBack;
         public System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Button btnConfigurator;
         private System.Windows.Forms.Button btnCustomizer;
-        private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.ContextMenuStrip menuPresenter;
         private System.Windows.Forms.ToolStripMenuItem menuPresenterInfo;
         private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.ToolTip tt;
-        private System.Windows.Forms.LinkLabel lnkSubHeader;
         private System.Windows.Forms.Button btnCustomButton;
+        private System.Windows.Forms.LinkLabel lnkSubHeader;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.ComboBox cbTable;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Panel pnlRight;
+        public System.Windows.Forms.PictureBox pbView;
     }
 }

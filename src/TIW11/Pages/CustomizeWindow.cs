@@ -47,7 +47,7 @@ namespace ThisIsWin11
         {
             logger.SetTarget(rtbPS);        // Logs messages to target rtb
             btnSystemMenu.Text = "\uE712";
-            btnSystemUndo.Text = "\uE777";
+            btnSystemUndo.Text = "\uE777" ;
 
             rtbPS.Text = "Click the <Check> button to run a quick check of your Windows 11 configuration and to get a preview of the changes that could be applied." +
                          "\n\nYou can always restore the default Windows 11 settings. The option for this can be found in the upper right corner." +

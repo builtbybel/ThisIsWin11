@@ -83,7 +83,7 @@ namespace ThisIsWin11
                     MessageBox.Show("We could not recognize this system as Windows 11. Some scripts are not tested on this operating system and could lead to malfunction.");
                 }
 
-                if (MessageBox.Show("Do you want to apply selected tasks?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Do you want to run selected tasks?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     for (int i = 0; i < lstPS.Items.Count; i++)
                     {
@@ -101,7 +101,7 @@ namespace ThisIsWin11
                             progress.Style = ProgressBarStyle.Marquee;
                             progress.MarqueeAnimationSpeed = 30;
 
-                            btnApply.Enabled = false;
+                            btnAutomate.Enabled = false;
                             lnkSubHeader.Text = "Processing " + lstPS.Text;
 
                             if (equals.Any(str.Contains))                   // Silent
@@ -128,7 +128,7 @@ namespace ThisIsWin11
                                 await Task.Run(() => { Process.Start(startInfo).WaitForExit(); });
                             }
 
-                            btnApply.Enabled = true;
+                            btnAutomate.Enabled = true;
                             lnkSubHeader.Text = "";
 
                             // Write log
@@ -137,7 +137,7 @@ namespace ThisIsWin11
                         }
                     }
 
-                    btnApply.Text = "Apply selected";
+                    btnAutomate.Text = " selected";
                     progress.Visible = false;
                     btnCancel.Visible = false;
 
@@ -309,7 +309,7 @@ namespace ThisIsWin11
 
         private void rtbDesc_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
 
-        private void btnApply_Click(object sender, EventArgs e) => DoAutomate();
+        private void btnAutomate_Click(object sender, EventArgs e) => DoAutomate();
 
         private void btnAutomateMenu_Click(object sender, EventArgs e) => this.menuAutomate.Show(Cursor.Position.X, Cursor.Position.Y);
 

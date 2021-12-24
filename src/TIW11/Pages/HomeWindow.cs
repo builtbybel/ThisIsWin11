@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 using ThisIsWin11.Presenter;
 
@@ -120,8 +121,8 @@ namespace ThisIsWin11
                     lblHeader.Text = "Hi " + Environment.UserName;
                     lblDesc.Text = "Lets make sure everything is set up how you want it." +
                                    "\n\nYou have two options:" +
-                                   "\n\n1. Use the <Next> and <Previous> buttons to run a guided tour of Windows 11 and to configure the system step by step." +
-                                   "\n\n2. Use the buttons [ 1 ] - [ 5 ] to quickly set up Windows 11.";
+                                   "\n\n1. Use the <Next> and <Previous> buttons to run a guided tour to Windows 11 and to configure the system step by step." +
+                                   "\n\n2. Use the modules in the left navigation panel to quickly set up\nWindows 11.";
 
                     pbView.Visible = true;
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/startpage.png?raw=true";
@@ -340,7 +341,7 @@ namespace ThisIsWin11
                     btnConfigurator.Visible = false;
                     btnCustomizer.Visible = true;
                     lblHeader.Text = "See you in a bit";
-                    btnCustomizer.Text = "Check for app updates";
+                    btnCustomizer.Text = "We have some tips for you!";
                     lblDesc.Text = "We're finish setting up your device.";
                     pbView.Visible = true;
                     pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/endpage.png?raw=true";
@@ -481,9 +482,18 @@ namespace ThisIsWin11
                     mainForm.btnAutomate.PerformClick();
                     break;
 
-                case PageTitle.Finish:
+                case PageTitle.Finish:  // Open Microsoft Tips app
 
-                    mainForm.btnSettings.PerformClick();
+                    bool tipsApp = Directory.Exists(Path.Combine
+                                    (Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                                    "Packages\\Microsoft.Getstarted_8wekyb3d8bbwe"));
+
+                    if (!tipsApp) MessageBox.Show("Microsoft Tips app is not installed on this system :(\nYou can get it on the Microsoft Store.","We are sorry...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                    {
+                        Process.Start(@"shell:appsfolder\Microsoft.Getstarted_8wekyb3d8bbwe!App");
+                    }
+
                     break;
 
                 default:
@@ -500,7 +510,6 @@ namespace ThisIsWin11
         }
 
         private void btnCustomButton_Click(object sender, EventArgs e)
-            => Process.Start("https://www.builtbybel.com/blog/19-apps/45-restyling-thisiswin11");
-
+            => Process.Start("https://www.builtbybel.com/blog/19-apps/46-the-thisiswin11-navigation-bar-sucks");
     }
 }
