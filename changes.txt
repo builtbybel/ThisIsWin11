@@ -1,6 +1,6 @@
 
-- Major update to v1.0 with a big visual overhaul is out of Preview
-Get it here: https://github.com/builtbybel/ThisIsWin11/releases
+- Major update to v1.0 with a big visual overhaul
+All changes can be viewed here: https://github.com/builtbybel/ThisIsWin11/releases/latest
 
 From the blog:
 You can still vote for the new design here
