@@ -1,7 +1,7 @@
 
-- We want to test the update to the upcoming version 1.0 on more devices. 
-The update can be rolled out to your system.
+- Major update to v1.0 with a big visual overhaul is out of Preview
+Get it here: https://github.com/builtbybel/ThisIsWin11/releases
 
 From the blog:
-Try the first Preview version 1.0 of TIW11 with a complete UI overhaul
-https://github.com/builtbybel/ThisIsWin11/releases/tag/1.0.0.101
+You can still vote for the new design here
+https://www.builtbybel.com/blog/19-apps/45-restyling-thisiswin11
