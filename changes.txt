@@ -10,4 +10,4 @@ All changes can be viewed here: https://github.com/builtbybel/ThisIsWin11/releas
 
 From the blog:
 You can still vote for the new design here
-https://www.builtbybel.com/blog/19-apps/45-restyling-thisiswin11
+https://www.builtbybel.com/blog/19-apps/46-the-thisiswin11-navigation-bar-sucks
