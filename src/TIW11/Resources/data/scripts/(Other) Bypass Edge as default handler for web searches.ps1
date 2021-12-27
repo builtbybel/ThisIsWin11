@@ -1,3 +1,7 @@
+###Certain elements of Windows 11, such as the News and interests widget, open links in Edge regardless of which browser is set as default. This is done through the use of edge:// protocol links. ###
+###This script intercepts URIs that force-open web links in Microsoft Edge and redirects it to the system's default web browser ###
+###To revert to Edge as the default handler for web searches, all you have to do is run the script again. ###
+###Projects page: https://github.com/AveYo/fox/blob/main/ChrEdgeFkOff.cmd
 @(set "0=%~f0"^)#) & powershell -nop -c iex([io.file]::ReadAllText($env:0)) & exit/b
 #:: double-click to run or just copy-paste into powershell - it's a standalone hybrid script
 #::

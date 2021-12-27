@@ -30,46 +30,47 @@ namespace ThisIsWin11
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnSystemMenu = new System.Windows.Forms.Button();
+            this.btnCustomizeMenu = new System.Windows.Forms.Button();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.btnSystemCheck = new System.Windows.Forms.Button();
-            this.menuSystem = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuSystemImportProfile = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuSystemExportProfile = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuSystemExportLog = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuSystemSelect = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuSystemPopOut = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCustomizeCheck = new System.Windows.Forms.Button();
+            this.menuCustomize = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuCustomizeImportProfile = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCustomizeExportProfile = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCustomizeExportLog = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCustomizeSelect = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCustomizePopOut = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.menuSystemVersioning = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCustomizeVersioning = new System.Windows.Forms.ToolStripMenuItem();
             this.progress = new System.Windows.Forms.ProgressBar();
             this.tvwAssessments = new System.Windows.Forms.TreeView();
-            this.btnSystemFix = new System.Windows.Forms.Button();
+            this.btnCustomizeFix = new System.Windows.Forms.Button();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
-            this.btnSystemUndo = new System.Windows.Forms.Button();
+            this.btnCustomizeUndo = new System.Windows.Forms.Button();
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
+            this.btnCustomizeImport = new System.Windows.Forms.Button();
             this.pnlRight = new System.Windows.Forms.Panel();
-            this.menuSystem.SuspendLayout();
+            this.menuCustomize.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnSystemMenu
+            // btnCustomizeMenu
             // 
-            this.btnSystemMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSystemMenu.BackColor = System.Drawing.Color.White;
-            this.btnSystemMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSystemMenu.FlatAppearance.BorderSize = 0;
-            this.btnSystemMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnSystemMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSystemMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSystemMenu.Location = new System.Drawing.Point(627, -1);
-            this.btnSystemMenu.Name = "btnSystemMenu";
-            this.btnSystemMenu.Size = new System.Drawing.Size(48, 51);
-            this.btnSystemMenu.TabIndex = 162;
-            this.btnSystemMenu.UseVisualStyleBackColor = false;
-            this.btnSystemMenu.Click += new System.EventHandler(this.btnSystemMenu_Click);
+            this.btnCustomizeMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCustomizeMenu.BackColor = System.Drawing.Color.White;
+            this.btnCustomizeMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCustomizeMenu.FlatAppearance.BorderSize = 0;
+            this.btnCustomizeMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnCustomizeMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomizeMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomizeMenu.Location = new System.Drawing.Point(627, -1);
+            this.btnCustomizeMenu.Name = "btnCustomizeMenu";
+            this.btnCustomizeMenu.Size = new System.Drawing.Size(48, 51);
+            this.btnCustomizeMenu.TabIndex = 162;
+            this.btnCustomizeMenu.UseVisualStyleBackColor = false;
+            this.btnCustomizeMenu.Click += new System.EventHandler(this.btnCustomizeMenu_Click);
             // 
             // lblHeader
             // 
@@ -87,87 +88,88 @@ namespace ThisIsWin11
             this.lblHeader.TabIndex = 161;
             this.lblHeader.Text = "Customize Windows 11 \r\nwith OpenTweaks";
             // 
-            // btnSystemCheck
+            // btnCustomizeCheck
             // 
-            this.btnSystemCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSystemCheck.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnSystemCheck.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSystemCheck.FlatAppearance.BorderSize = 2;
-            this.btnSystemCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSystemCheck.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSystemCheck.ForeColor = System.Drawing.Color.White;
-            this.btnSystemCheck.Location = new System.Drawing.Point(68, 788);
-            this.btnSystemCheck.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSystemCheck.Name = "btnSystemCheck";
-            this.btnSystemCheck.Size = new System.Drawing.Size(213, 32);
-            this.btnSystemCheck.TabIndex = 159;
-            this.btnSystemCheck.Text = "Check";
-            this.btnSystemCheck.UseVisualStyleBackColor = false;
-            this.btnSystemCheck.Click += new System.EventHandler(this.btnSystemCheck_Click);
+            this.btnCustomizeCheck.AutoEllipsis = true;
+            this.btnCustomizeCheck.BackColor = System.Drawing.Color.Magenta;
+            this.btnCustomizeCheck.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnCustomizeCheck.FlatAppearance.BorderColor = System.Drawing.Color.Magenta;
+            this.btnCustomizeCheck.FlatAppearance.BorderSize = 0;
+            this.btnCustomizeCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomizeCheck.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomizeCheck.ForeColor = System.Drawing.Color.White;
+            this.btnCustomizeCheck.Location = new System.Drawing.Point(0, 823);
+            this.btnCustomizeCheck.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCustomizeCheck.Name = "btnCustomizeCheck";
+            this.btnCustomizeCheck.Size = new System.Drawing.Size(532, 39);
+            this.btnCustomizeCheck.TabIndex = 159;
+            this.btnCustomizeCheck.Text = "CHECK";
+            this.btnCustomizeCheck.UseVisualStyleBackColor = false;
+            this.btnCustomizeCheck.Click += new System.EventHandler(this.btnCustomizeCheck_Click);
             // 
-            // menuSystem
+            // menuCustomize
             // 
-            this.menuSystem.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.menuSystem.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuSystem.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuSystemImportProfile,
-            this.menuSystemExportProfile,
-            this.menuSystemExportLog,
-            this.menuSystemSelect,
-            this.menuSystemPopOut,
+            this.menuCustomize.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.menuCustomize.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuCustomize.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuCustomizeImportProfile,
+            this.menuCustomizeExportProfile,
+            this.menuCustomizeExportLog,
+            this.menuCustomizeSelect,
+            this.menuCustomizePopOut,
             this.toolStripSeparator1,
-            this.menuSystemVersioning});
-            this.menuSystem.Name = "menuMain";
-            this.menuSystem.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuSystem.Size = new System.Drawing.Size(201, 190);
+            this.menuCustomizeVersioning});
+            this.menuCustomize.Name = "menuMain";
+            this.menuCustomize.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuCustomize.Size = new System.Drawing.Size(201, 190);
             // 
-            // menuSystemImportProfile
+            // menuCustomizeImportProfile
             // 
-            this.menuSystemImportProfile.Name = "menuSystemImportProfile";
-            this.menuSystemImportProfile.Size = new System.Drawing.Size(200, 30);
-            this.menuSystemImportProfile.Text = "Import profile";
-            this.menuSystemImportProfile.Click += new System.EventHandler(this.menuSystemImportProfile_Click);
+            this.menuCustomizeImportProfile.Name = "menuCustomizeImportProfile";
+            this.menuCustomizeImportProfile.Size = new System.Drawing.Size(200, 30);
+            this.menuCustomizeImportProfile.Text = "Import profile";
+            this.menuCustomizeImportProfile.Click += new System.EventHandler(this.menuCustomizeImportProfile_Click);
             // 
-            // menuSystemExportProfile
+            // menuCustomizeExportProfile
             // 
-            this.menuSystemExportProfile.Name = "menuSystemExportProfile";
-            this.menuSystemExportProfile.Size = new System.Drawing.Size(200, 30);
-            this.menuSystemExportProfile.Text = "Export profile";
-            this.menuSystemExportProfile.Click += new System.EventHandler(this.menuSystemExportProfile_Click);
+            this.menuCustomizeExportProfile.Name = "menuCustomizeExportProfile";
+            this.menuCustomizeExportProfile.Size = new System.Drawing.Size(200, 30);
+            this.menuCustomizeExportProfile.Text = "Export profile";
+            this.menuCustomizeExportProfile.Click += new System.EventHandler(this.menuCustomizeExportProfile_Click);
             // 
-            // menuSystemExportLog
+            // menuCustomizeExportLog
             // 
-            this.menuSystemExportLog.Name = "menuSystemExportLog";
-            this.menuSystemExportLog.Size = new System.Drawing.Size(200, 30);
-            this.menuSystemExportLog.Text = "Export log";
-            this.menuSystemExportLog.Click += new System.EventHandler(this.menuSystemExportLog_Click);
+            this.menuCustomizeExportLog.Name = "menuCustomizeExportLog";
+            this.menuCustomizeExportLog.Size = new System.Drawing.Size(200, 30);
+            this.menuCustomizeExportLog.Text = "Export log";
+            this.menuCustomizeExportLog.Click += new System.EventHandler(this.menuCustomizeExportLog_Click);
             // 
-            // menuSystemSelect
+            // menuCustomizeSelect
             // 
-            this.menuSystemSelect.Name = "menuSystemSelect";
-            this.menuSystemSelect.Size = new System.Drawing.Size(200, 30);
-            this.menuSystemSelect.Text = "Select all";
-            this.menuSystemSelect.Click += new System.EventHandler(this.menuSystemSelect_Click);
+            this.menuCustomizeSelect.Name = "menuCustomizeSelect";
+            this.menuCustomizeSelect.Size = new System.Drawing.Size(200, 30);
+            this.menuCustomizeSelect.Text = "Select all";
+            this.menuCustomizeSelect.Click += new System.EventHandler(this.menuCustomizeSelect_Click);
             // 
-            // menuSystemPopOut
+            // menuCustomizePopOut
             // 
-            this.menuSystemPopOut.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuSystemPopOut.Name = "menuSystemPopOut";
-            this.menuSystemPopOut.Size = new System.Drawing.Size(200, 30);
-            this.menuSystemPopOut.Text = "Pop-out-App";
-            this.menuSystemPopOut.Click += new System.EventHandler(this.menuSystemPopOut_Click);
+            this.menuCustomizePopOut.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuCustomizePopOut.Name = "menuCustomizePopOut";
+            this.menuCustomizePopOut.Size = new System.Drawing.Size(200, 30);
+            this.menuCustomizePopOut.Text = "Pop-out-App";
+            this.menuCustomizePopOut.Click += new System.EventHandler(this.menuCustomizePopOut_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(197, 6);
             // 
-            // menuSystemVersioning
+            // menuCustomizeVersioning
             // 
-            this.menuSystemVersioning.Name = "menuSystemVersioning";
-            this.menuSystemVersioning.Size = new System.Drawing.Size(200, 30);
-            this.menuSystemVersioning.Text = "Info";
-            this.menuSystemVersioning.Click += new System.EventHandler(this.menuSystemInfo_Click);
+            this.menuCustomizeVersioning.Name = "menuCustomizeVersioning";
+            this.menuCustomizeVersioning.Size = new System.Drawing.Size(200, 30);
+            this.menuCustomizeVersioning.Text = "Info";
+            this.menuCustomizeVersioning.Click += new System.EventHandler(this.menuCustomizeInfo_Click);
             // 
             // progress
             // 
@@ -196,37 +198,37 @@ namespace ThisIsWin11
             this.tvwAssessments.Name = "tvwAssessments";
             this.tvwAssessments.ShowLines = false;
             this.tvwAssessments.ShowNodeToolTips = true;
-            this.tvwAssessments.Size = new System.Drawing.Size(672, 768);
+            this.tvwAssessments.Size = new System.Drawing.Size(672, 736);
             this.tvwAssessments.TabIndex = 168;
             this.tvwAssessments.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvwAssessments_AfterCheck);
             // 
-            // btnSystemFix
+            // btnCustomizeFix
             // 
-            this.btnSystemFix.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSystemFix.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnSystemFix.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSystemFix.FlatAppearance.BorderSize = 2;
-            this.btnSystemFix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSystemFix.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSystemFix.ForeColor = System.Drawing.Color.White;
-            this.btnSystemFix.Location = new System.Drawing.Point(305, 788);
-            this.btnSystemFix.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSystemFix.Name = "btnSystemFix";
-            this.btnSystemFix.Size = new System.Drawing.Size(213, 32);
-            this.btnSystemFix.TabIndex = 167;
-            this.btnSystemFix.Text = "Fix issues";
-            this.btnSystemFix.UseVisualStyleBackColor = false;
-            this.btnSystemFix.Click += new System.EventHandler(this.btnSystemFix_Click);
+            this.btnCustomizeFix.AutoEllipsis = true;
+            this.btnCustomizeFix.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCustomizeFix.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnCustomizeFix.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnCustomizeFix.FlatAppearance.BorderSize = 0;
+            this.btnCustomizeFix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomizeFix.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomizeFix.ForeColor = System.Drawing.Color.White;
+            this.btnCustomizeFix.Location = new System.Drawing.Point(0, 823);
+            this.btnCustomizeFix.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCustomizeFix.Name = "btnCustomizeFix";
+            this.btnCustomizeFix.Size = new System.Drawing.Size(678, 39);
+            this.btnCustomizeFix.TabIndex = 167;
+            this.btnCustomizeFix.Text = "FIX ISSUES";
+            this.btnCustomizeFix.UseVisualStyleBackColor = false;
+            this.btnCustomizeFix.Click += new System.EventHandler(this.btnCustomizeFix_Click);
             // 
             // pnlLeft
             // 
             this.pnlLeft.AutoScroll = true;
             this.pnlLeft.BackColor = System.Drawing.Color.White;
             this.pnlLeft.Controls.Add(this.rtbPS);
-            this.pnlLeft.Controls.Add(this.btnSystemUndo);
+            this.pnlLeft.Controls.Add(this.btnCustomizeUndo);
             this.pnlLeft.Controls.Add(this.lblHeader);
-            this.pnlLeft.Controls.Add(this.btnSystemCheck);
-            this.pnlLeft.Controls.Add(this.btnSystemFix);
+            this.pnlLeft.Controls.Add(this.btnCustomizeCheck);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLeft.Location = new System.Drawing.Point(0, 0);
             this.pnlLeft.Name = "pnlLeft";
@@ -245,28 +247,28 @@ namespace ThisIsWin11
             this.rtbPS.Location = new System.Drawing.Point(68, 175);
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ReadOnly = true;
-            this.rtbPS.Size = new System.Drawing.Size(454, 594);
+            this.rtbPS.Size = new System.Drawing.Size(464, 635);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = "";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
             // 
-            // btnSystemUndo
+            // btnCustomizeUndo
             // 
-            this.btnSystemUndo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSystemUndo.BackColor = System.Drawing.Color.White;
-            this.btnSystemUndo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSystemUndo.FlatAppearance.BorderSize = 0;
-            this.btnSystemUndo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.HotPink;
-            this.btnSystemUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSystemUndo.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSystemUndo.ForeColor = System.Drawing.Color.Black;
-            this.btnSystemUndo.Location = new System.Drawing.Point(481, 0);
-            this.btnSystemUndo.Name = "btnSystemUndo";
-            this.btnSystemUndo.Size = new System.Drawing.Size(48, 51);
-            this.btnSystemUndo.TabIndex = 174;
-            this.tt.SetToolTip(this.btnSystemUndo, "Restore default Windows 11 settings");
-            this.btnSystemUndo.UseVisualStyleBackColor = false;
-            this.btnSystemUndo.Click += new System.EventHandler(this.btnSystemUndo_Click);
+            this.btnCustomizeUndo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCustomizeUndo.BackColor = System.Drawing.Color.White;
+            this.btnCustomizeUndo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCustomizeUndo.FlatAppearance.BorderSize = 0;
+            this.btnCustomizeUndo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.HotPink;
+            this.btnCustomizeUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomizeUndo.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomizeUndo.ForeColor = System.Drawing.Color.Black;
+            this.btnCustomizeUndo.Location = new System.Drawing.Point(481, 0);
+            this.btnCustomizeUndo.Name = "btnCustomizeUndo";
+            this.btnCustomizeUndo.Size = new System.Drawing.Size(48, 51);
+            this.btnCustomizeUndo.TabIndex = 174;
+            this.tt.SetToolTip(this.btnCustomizeUndo, "Restore default Windows 11 settings");
+            this.btnCustomizeUndo.UseVisualStyleBackColor = false;
+            this.btnCustomizeUndo.Click += new System.EventHandler(this.btnCustomizeUndo_Click);
             // 
             // lnkSubHeader
             // 
@@ -290,17 +292,36 @@ namespace ThisIsWin11
             this.tt.BackColor = System.Drawing.Color.MediumVioletRed;
             this.tt.ForeColor = System.Drawing.Color.White;
             this.tt.IsBalloon = true;
-            this.tt.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning;
+            this.tt.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.tt.ToolTipTitle = "OpenTweaks";
             this.tt.UseAnimation = false;
+            // 
+            // btnCustomizeImport
+            // 
+            this.btnCustomizeImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCustomizeImport.BackColor = System.Drawing.Color.White;
+            this.btnCustomizeImport.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCustomizeImport.FlatAppearance.BorderSize = 0;
+            this.btnCustomizeImport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnCustomizeImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomizeImport.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomizeImport.Location = new System.Drawing.Point(573, -1);
+            this.btnCustomizeImport.Name = "btnCustomizeImport";
+            this.btnCustomizeImport.Size = new System.Drawing.Size(48, 51);
+            this.btnCustomizeImport.TabIndex = 172;
+            this.tt.SetToolTip(this.btnCustomizeImport, "Import profile");
+            this.btnCustomizeImport.UseVisualStyleBackColor = false;
+            this.btnCustomizeImport.Click += new System.EventHandler(this.btnCustomizeImport_Click);
             // 
             // pnlRight
             // 
             this.pnlRight.AutoScroll = true;
             this.pnlRight.BackColor = System.Drawing.Color.White;
-            this.pnlRight.Controls.Add(this.btnSystemMenu);
+            this.pnlRight.Controls.Add(this.btnCustomizeImport);
+            this.pnlRight.Controls.Add(this.btnCustomizeMenu);
             this.pnlRight.Controls.Add(this.progress);
             this.pnlRight.Controls.Add(this.lnkSubHeader);
+            this.pnlRight.Controls.Add(this.btnCustomizeFix);
             this.pnlRight.Controls.Add(this.tvwAssessments);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRight.Location = new System.Drawing.Point(532, 0);
@@ -323,7 +344,7 @@ namespace ThisIsWin11
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OpenTweaks";
             this.Shown += new System.EventHandler(this.CustomizeWindow_Shown);
-            this.menuSystem.ResumeLayout(false);
+            this.menuCustomize.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
             this.pnlLeft.PerformLayout();
             this.pnlRight.ResumeLayout(false);
@@ -333,25 +354,26 @@ namespace ThisIsWin11
 
         #endregion
 
-        private System.Windows.Forms.Button btnSystemMenu;
+        private System.Windows.Forms.Button btnCustomizeMenu;
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.Button btnSystemCheck;
-        private System.Windows.Forms.ContextMenuStrip menuSystem;
-        private System.Windows.Forms.ToolStripMenuItem menuSystemPopOut;
+        private System.Windows.Forms.Button btnCustomizeCheck;
+        private System.Windows.Forms.ContextMenuStrip menuCustomize;
+        private System.Windows.Forms.ToolStripMenuItem menuCustomizePopOut;
         private System.Windows.Forms.ProgressBar progress;
-        private System.Windows.Forms.Button btnSystemFix;
-        private System.Windows.Forms.ToolStripMenuItem menuSystemExportLog;
-        private System.Windows.Forms.ToolStripMenuItem menuSystemSelect;
-        private System.Windows.Forms.ToolStripMenuItem menuSystemVersioning;
+        private System.Windows.Forms.Button btnCustomizeFix;
+        private System.Windows.Forms.ToolStripMenuItem menuCustomizeExportLog;
+        private System.Windows.Forms.ToolStripMenuItem menuCustomizeSelect;
+        private System.Windows.Forms.ToolStripMenuItem menuCustomizeVersioning;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Panel pnlLeft;
         public System.Windows.Forms.RichTextBox rtbPS;
         private System.Windows.Forms.LinkLabel lnkSubHeader;
-        private System.Windows.Forms.ToolStripMenuItem menuSystemExportProfile;
-        private System.Windows.Forms.ToolStripMenuItem menuSystemImportProfile;
-        private System.Windows.Forms.Button btnSystemUndo;
+        private System.Windows.Forms.ToolStripMenuItem menuCustomizeExportProfile;
+        private System.Windows.Forms.ToolStripMenuItem menuCustomizeImportProfile;
+        private System.Windows.Forms.Button btnCustomizeUndo;
         private System.Windows.Forms.ToolTip tt;
         public System.Windows.Forms.TreeView tvwAssessments;
         private System.Windows.Forms.Panel pnlRight;
+        private System.Windows.Forms.Button btnCustomizeImport;
     }
 }

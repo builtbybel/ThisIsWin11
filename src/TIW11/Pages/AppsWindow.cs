@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Management.Automation;
@@ -33,7 +32,6 @@ namespace ThisIsWin11
 
             InitializeAppsSystem();   // Systemapps from resource file
             InitializeApps();         // Now the normal apps
-         
         }
 
         // Some UI nicety
@@ -381,6 +379,5 @@ namespace ThisIsWin11
         private void btnAppsMenu_Click(object sender, EventArgs e) => this.menuApps.Show(Cursor.Position.X, Cursor.Position.Y);
 
         private void lblAppsBinOptions_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => menuAppsImport.PerformClick();
-
     }
 }

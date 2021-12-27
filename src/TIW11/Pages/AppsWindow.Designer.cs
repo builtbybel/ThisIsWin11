@@ -43,8 +43,8 @@ namespace ThisIsWin11
             this.pnlRight = new System.Windows.Forms.Panel();
             this.lblAppsBinOptions = new System.Windows.Forms.LinkLabel();
             this.lblAppsBinCount = new System.Windows.Forms.Label();
-            this.rtbPS = new System.Windows.Forms.RichTextBox();
             this.lstAppsRemove = new System.Windows.Forms.ListBox();
+            this.rtbPS = new System.Windows.Forms.RichTextBox();
             this.pnlMiddle = new System.Windows.Forms.Panel();
             this.lblSubHeader = new System.Windows.Forms.Label();
             this.btnAddAll = new System.Windows.Forms.Button();
@@ -72,17 +72,16 @@ namespace ThisIsWin11
             // 
             // checkAppsSystem
             // 
-            this.checkAppsSystem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkAppsSystem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkAppsSystem.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkAppsSystem.BackColor = System.Drawing.Color.Black;
             this.checkAppsSystem.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.checkAppsSystem.FlatAppearance.BorderSize = 2;
             this.checkAppsSystem.FlatAppearance.CheckedBackColor = System.Drawing.Color.MediumVioletRed;
             this.checkAppsSystem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkAppsSystem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkAppsSystem.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkAppsSystem.ForeColor = System.Drawing.Color.White;
-            this.checkAppsSystem.Location = new System.Drawing.Point(68, 788);
+            this.checkAppsSystem.Location = new System.Drawing.Point(68, 803);
             this.checkAppsSystem.Margin = new System.Windows.Forms.Padding(2);
             this.checkAppsSystem.Name = "checkAppsSystem";
             this.checkAppsSystem.Size = new System.Drawing.Size(184, 32);
@@ -101,7 +100,7 @@ namespace ThisIsWin11
             this.btnRemoveApps.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRemoveApps.FlatAppearance.BorderSize = 2;
             this.btnRemoveApps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveApps.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveApps.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveApps.ForeColor = System.Drawing.Color.White;
             this.btnRemoveApps.Location = new System.Drawing.Point(19, 388);
             this.btnRemoveApps.Margin = new System.Windows.Forms.Padding(2);
@@ -183,8 +182,8 @@ namespace ThisIsWin11
             this.pnlRight.BackColor = System.Drawing.Color.White;
             this.pnlRight.Controls.Add(this.lblAppsBinOptions);
             this.pnlRight.Controls.Add(this.lblAppsBinCount);
-            this.pnlRight.Controls.Add(this.rtbPS);
             this.pnlRight.Controls.Add(this.lstAppsRemove);
+            this.pnlRight.Controls.Add(this.rtbPS);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlRight.Font = new System.Drawing.Font("Segoe UI Variable Small Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlRight.Location = new System.Drawing.Point(781, 0);
@@ -222,6 +221,23 @@ namespace ThisIsWin11
             this.lblAppsBinCount.TabIndex = 135;
             this.lblAppsBinCount.Text = "Recycle bin";
             // 
+            // lstAppsRemove
+            // 
+            this.lstAppsRemove.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lstAppsRemove.BackColor = System.Drawing.Color.White;
+            this.lstAppsRemove.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstAppsRemove.Font = new System.Drawing.Font("Segoe UI Variable Small Light", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstAppsRemove.FormattingEnabled = true;
+            this.lstAppsRemove.ItemHeight = 22;
+            this.lstAppsRemove.Location = new System.Drawing.Point(27, 175);
+            this.lstAppsRemove.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lstAppsRemove.Name = "lstAppsRemove";
+            this.lstAppsRemove.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.lstAppsRemove.Size = new System.Drawing.Size(399, 682);
+            this.lstAppsRemove.Sorted = true;
+            this.lstAppsRemove.TabIndex = 136;
+            // 
             // rtbPS
             // 
             this.rtbPS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -236,28 +252,11 @@ namespace ThisIsWin11
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ReadOnly = true;
             this.rtbPS.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbPS.Size = new System.Drawing.Size(399, 673);
+            this.rtbPS.Size = new System.Drawing.Size(399, 684);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = "";
             this.rtbPS.Visible = false;
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
-            // 
-            // lstAppsRemove
-            // 
-            this.lstAppsRemove.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lstAppsRemove.BackColor = System.Drawing.Color.White;
-            this.lstAppsRemove.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstAppsRemove.Font = new System.Drawing.Font("Segoe UI Variable Small Light", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstAppsRemove.FormattingEnabled = true;
-            this.lstAppsRemove.ItemHeight = 22;
-            this.lstAppsRemove.Location = new System.Drawing.Point(27, 175);
-            this.lstAppsRemove.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lstAppsRemove.Name = "lstAppsRemove";
-            this.lstAppsRemove.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lstAppsRemove.Size = new System.Drawing.Size(399, 660);
-            this.lstAppsRemove.Sorted = true;
-            this.lstAppsRemove.TabIndex = 136;
             // 
             // pnlMiddle
             // 
@@ -389,15 +388,15 @@ namespace ThisIsWin11
             // btnAppsRefresh
             // 
             this.btnAppsRefresh.BackColor = System.Drawing.Color.White;
-            this.btnAppsRefresh.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAppsRefresh.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnAppsRefresh.FlatAppearance.BorderSize = 0;
             this.btnAppsRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnAppsRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAppsRefresh.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAppsRefresh.Location = new System.Drawing.Point(481, 3);
+            this.btnAppsRefresh.Location = new System.Drawing.Point(422, 0);
             this.btnAppsRefresh.Name = "btnAppsRefresh";
             this.btnAppsRefresh.Size = new System.Drawing.Size(48, 51);
-            this.btnAppsRefresh.TabIndex = 163;
+            this.btnAppsRefresh.TabIndex = 164;
             this.btnAppsRefresh.UseVisualStyleBackColor = false;
             this.btnAppsRefresh.Click += new System.EventHandler(this.btnAppsRefresh_Click);
             // 
@@ -415,7 +414,7 @@ namespace ThisIsWin11
             this.lstApps.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lstApps.Name = "lstApps";
             this.lstApps.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lstApps.Size = new System.Drawing.Size(398, 594);
+            this.lstApps.Size = new System.Drawing.Size(398, 616);
             this.lstApps.Sorted = true;
             this.lstApps.TabIndex = 138;
             // 
@@ -498,7 +497,7 @@ namespace ThisIsWin11
         private System.Windows.Forms.ListBox lstApps;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label lblSubHeader;
-        private System.Windows.Forms.Button btnAppsRefresh;
         private System.Windows.Forms.LinkLabel lblAppsBinOptions;
+        private System.Windows.Forms.Button btnAppsRefresh;
     }
 }

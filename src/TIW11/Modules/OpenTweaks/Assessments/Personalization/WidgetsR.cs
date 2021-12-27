@@ -38,8 +38,8 @@ namespace ThisIsWin11.OpenTweaks.Assessment.Personalization
                 using (var client = new WebClient())
                 {
                     logger.Log("- Uninstalling Widgets app");
-                    WindowsHelper.RunCmd("/c winget uninstall \"windows web experience pack\" --accept-source-agreements");
-
+                    WindowsHelper.RunWT("winget uninstall \"windows web experience pack\" --accept-source-agreements");
+                    logger.Log("Done.");
                     return true;
                 }
             }

@@ -73,11 +73,11 @@ namespace ThisIsWin11
             // btnCreatePackage
             // 
             this.btnCreatePackage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCreatePackage.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCreatePackage.BackColor = System.Drawing.Color.MediumVioletRed;
             this.btnCreatePackage.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnCreatePackage.FlatAppearance.BorderSize = 2;
             this.btnCreatePackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreatePackage.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreatePackage.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreatePackage.ForeColor = System.Drawing.Color.White;
             this.btnCreatePackage.Location = new System.Drawing.Point(68, 788);
             this.btnCreatePackage.Margin = new System.Windows.Forms.Padding(2);
@@ -95,7 +95,7 @@ namespace ThisIsWin11
             this.btnRunPackage.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnRunPackage.FlatAppearance.BorderSize = 2;
             this.btnRunPackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRunPackage.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRunPackage.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRunPackage.ForeColor = System.Drawing.Color.White;
             this.btnRunPackage.Location = new System.Drawing.Point(305, 788);
             this.btnRunPackage.Margin = new System.Windows.Forms.Padding(2);
@@ -194,7 +194,7 @@ namespace ThisIsWin11
             this.btnInstallWinget.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnInstallWinget.FlatAppearance.BorderSize = 2;
             this.btnInstallWinget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInstallWinget.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInstallWinget.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInstallWinget.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnInstallWinget.Location = new System.Drawing.Point(305, 105);
             this.btnInstallWinget.Name = "btnInstallWinget";

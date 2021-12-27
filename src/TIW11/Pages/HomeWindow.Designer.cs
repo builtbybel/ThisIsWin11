@@ -34,9 +34,9 @@ namespace ThisIsWin11
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnCustomizer = new System.Windows.Forms.Button();
             this.pnlLeft = new System.Windows.Forms.Panel();
+            this.btnCustomButton = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblDesc = new System.Windows.Forms.Label();
-            this.btnCustomButton = new System.Windows.Forms.Button();
             this.menuPresenter = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuPresenterInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
@@ -66,10 +66,10 @@ namespace ThisIsWin11
             this.btnConfigurator.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfigurator.ForeColor = System.Drawing.Color.Black;
             this.btnConfigurator.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnConfigurator.Location = new System.Drawing.Point(292, 562);
+            this.btnConfigurator.Location = new System.Drawing.Point(292, 554);
             this.btnConfigurator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConfigurator.Name = "btnConfigurator";
-            this.btnConfigurator.Size = new System.Drawing.Size(207, 32);
+            this.btnConfigurator.Size = new System.Drawing.Size(207, 40);
             this.btnConfigurator.TabIndex = 137;
             this.btnConfigurator.Text = "Configure settings";
             this.btnConfigurator.UseVisualStyleBackColor = false;
@@ -96,16 +96,16 @@ namespace ThisIsWin11
             this.btnCustomizer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCustomizer.AutoEllipsis = true;
             this.btnCustomizer.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnCustomizer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCustomizer.FlatAppearance.BorderSize = 2;
+            this.btnCustomizer.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
+            this.btnCustomizer.FlatAppearance.BorderSize = 3;
             this.btnCustomizer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomizer.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomizer.ForeColor = System.Drawing.Color.White;
             this.btnCustomizer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCustomizer.Location = new System.Drawing.Point(68, 562);
+            this.btnCustomizer.Location = new System.Drawing.Point(68, 554);
             this.btnCustomizer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCustomizer.Name = "btnCustomizer";
-            this.btnCustomizer.Size = new System.Drawing.Size(207, 32);
+            this.btnCustomizer.Size = new System.Drawing.Size(207, 40);
             this.btnCustomizer.TabIndex = 138;
             this.btnCustomizer.Text = "Customizations available";
             this.btnCustomizer.UseVisualStyleBackColor = false;
@@ -115,17 +115,35 @@ namespace ThisIsWin11
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.White;
+            this.pnlLeft.Controls.Add(this.btnCustomButton);
             this.pnlLeft.Controls.Add(this.btnConfigurator);
             this.pnlLeft.Controls.Add(this.lblHeader);
             this.pnlLeft.Controls.Add(this.linkLabel1);
             this.pnlLeft.Controls.Add(this.lblDesc);
-            this.pnlLeft.Controls.Add(this.btnCustomButton);
             this.pnlLeft.Controls.Add(this.btnCustomizer);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLeft.Location = new System.Drawing.Point(0, 0);
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(670, 862);
             this.pnlLeft.TabIndex = 164;
+            // 
+            // btnCustomButton
+            // 
+            this.btnCustomButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCustomButton.AutoEllipsis = true;
+            this.btnCustomButton.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnCustomButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCustomButton.FlatAppearance.BorderSize = 2;
+            this.btnCustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomButton.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomButton.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCustomButton.Location = new System.Drawing.Point(68, 562);
+            this.btnCustomButton.Name = "btnCustomButton";
+            this.btnCustomButton.Size = new System.Drawing.Size(207, 32);
+            this.btnCustomButton.TabIndex = 156;
+            this.btnCustomButton.Text = "Vote for this new UI";
+            this.btnCustomButton.UseVisualStyleBackColor = false;
+            this.btnCustomButton.Click += new System.EventHandler(this.btnCustomButton_Click);
             // 
             // linkLabel1
             // 
@@ -155,24 +173,6 @@ namespace ThisIsWin11
             this.lblDesc.Size = new System.Drawing.Size(575, 326);
             this.lblDesc.TabIndex = 137;
             this.lblDesc.Text = "cheat sheet";
-            // 
-            // btnCustomButton
-            // 
-            this.btnCustomButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCustomButton.AutoEllipsis = true;
-            this.btnCustomButton.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.btnCustomButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCustomButton.FlatAppearance.BorderSize = 2;
-            this.btnCustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomButton.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCustomButton.Location = new System.Drawing.Point(66, 562);
-            this.btnCustomButton.Name = "btnCustomButton";
-            this.btnCustomButton.Size = new System.Drawing.Size(231, 32);
-            this.btnCustomButton.TabIndex = 156;
-            this.btnCustomButton.Text = "Vote for this new UI";
-            this.btnCustomButton.UseVisualStyleBackColor = false;
-            this.btnCustomButton.Click += new System.EventHandler(this.btnCustomButton_Click);
             // 
             // menuPresenter
             // 

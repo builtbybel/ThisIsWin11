@@ -14,7 +14,7 @@ namespace ThisIsWin11
 {
     public partial class CustomizeWindow : Form
     {
-        private static readonly string componentsVersion = "100";
+        private static readonly string componentsVersion = "110";
         private readonly string osWarning = "We could not recognize this system as Windows 11. Some settings are not tested on this operating system and could lead to malfunction.";
 
         private Presenter.OS osInfo = new Presenter.OS();
@@ -24,7 +24,7 @@ namespace ThisIsWin11
 
         private static readonly ErrorHelper logger = ErrorHelper.Instance;
 
-        private void menuSystemInfo_Click(object sender, EventArgs e) => MessageBox.Show("OpenTweaks\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        private void menuCustomizeInfo_Click(object sender, EventArgs e) => MessageBox.Show("OpenTweaks\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         public CustomizeWindow()
         {
@@ -46,16 +46,18 @@ namespace ThisIsWin11
         private void UISelection()
         {
             logger.SetTarget(rtbPS);        // Logs messages to target rtb
-            btnSystemMenu.Text = "\uE712";
-            btnSystemUndo.Text = "\uE777" ;
+            btnCustomizeMenu.Text = "\uE712";
+            btnCustomizeUndo.Text = "\uE777";
+            btnCustomizeImport.Text = "\uECC8";
 
             rtbPS.Text = "Click the <Check> button to run a quick check of your Windows 11 configuration and to get a preview of the changes that could be applied." +
                          "\n\nYou can always restore the default Windows 11 settings. The option for this can be found in the upper right corner." +
                           Environment.NewLine + Environment.NewLine +
-                         "If you have tried one or the other fix and tweak, feel free to suggest it here:\n\n" + Helpers.Strings.Uri.GitRepo;
+                         "\n\nTip:\nIf you have just switched to Windows 11, we recommend you importing the predefined Out-of-box experience \"OOBE Profile\" " +
+                         "by clicking on the import button in the upper right corner.";
         }
 
-        #region 62 available customizations in OpenTweaks (last update 12/18/2021)
+        #region 63 available customizations in OpenTweaks (last update 12/27/2021)
 
         public void InitializeAssessments()
         {
@@ -109,6 +111,7 @@ namespace ThisIsWin11
                 new AssessmentNode(new OpenTweaks.Assessment.System.Fax()),
                 new AssessmentNode(new OpenTweaks.Assessment.System.XPSWriter()),
                 new AssessmentNode(new OpenTweaks.Assessment.System.EnableWSL()),
+                new AssessmentNode(new OpenTweaks.Assessment.System.HyperV()),
                 new AssessmentNode(new OpenTweaks.Assessment.System.TeamsAutostart()),
             })
             {
@@ -240,7 +243,7 @@ namespace ThisIsWin11
             progress.Value = progression;
         }
 
-        private async void btnSystemCheck_Click(object sender, EventArgs e)
+        private async void btnCustomizeCheck_Click(object sender, EventArgs e)
         {
             Reset();
 
@@ -299,8 +302,8 @@ namespace ThisIsWin11
 
         private async void ApplyAssessments(List<AssessmentNode> treeNodes)
         {
-            btnSystemFix.Enabled = false;
-            btnSystemUndo.Enabled = false;
+            btnCustomizeFix.Enabled = false;
+            btnCustomizeUndo.Enabled = false;
             tvwAssessments.Enabled = false;
 
             foreach (AssessmentNode node in treeNodes)
@@ -317,15 +320,15 @@ namespace ThisIsWin11
             DoProgress(100);
             lnkSubHeader.Text = "";
 
-            btnSystemFix.Enabled = true;
-            btnSystemUndo.Enabled = true;
+            btnCustomizeFix.Enabled = true;
+            btnCustomizeUndo.Enabled = true;
             tvwAssessments.Enabled = true;
         }
 
         private async void UndoAssessments(List<AssessmentNode> treeNodes)
         {
-            btnSystemUndo.Enabled = false;
-            btnSystemFix.Enabled = false;
+            btnCustomizeUndo.Enabled = false;
+            btnCustomizeFix.Enabled = false;
             tvwAssessments.Enabled = false;
 
             foreach (AssessmentNode node in treeNodes)
@@ -342,12 +345,12 @@ namespace ThisIsWin11
             DoProgress(100);
             lnkSubHeader.Text = "";
 
-            btnSystemUndo.Enabled = true;
-            btnSystemFix.Enabled = true;
+            btnCustomizeUndo.Enabled = true;
+            btnCustomizeFix.Enabled = true;
             tvwAssessments.Enabled = true;
         }
 
-        private void btnSystemFix_Click(object sender, EventArgs e)
+        private void btnCustomizeFix_Click(object sender, EventArgs e)
         {
             Reset();
 
@@ -355,7 +358,7 @@ namespace ThisIsWin11
             ApplyAssessments(performNodes);
         }
 
-        private void btnSystemUndo_Click(object sender, EventArgs e)
+        private void btnCustomizeUndo_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Do you really want to revert all selected settings to Windows 11 default state?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
@@ -388,12 +391,12 @@ namespace ThisIsWin11
             tvwAssessments.EndUpdate();
         }
 
-        private void menuSystemPopOut_Click(object sender, EventArgs e)
+        private void menuCustomizePopOut_Click(object sender, EventArgs e)
         {
-            CustomizeWindow system = new CustomizeWindow(); system.Show();
+            CustomizeWindow customize = new CustomizeWindow(); customize.Show();
         }
 
-        private void menuSystemExportLog_Click(object sender, EventArgs e)
+        private void menuCustomizeExportLog_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(rtbPS.Text))
             {
@@ -422,17 +425,17 @@ namespace ThisIsWin11
             }
         }
 
-        private void menuSystemSelect_Click(object sender, EventArgs e)
+        private void menuCustomizeSelect_Click(object sender, EventArgs e)
         {
-            menuSystemSelect.Checked = !(menuSystemSelect.Checked);
+            menuCustomizeSelect.Checked = !(menuCustomizeSelect.Checked);
 
-            if (menuSystemSelect.Checked == true)
+            if (menuCustomizeSelect.Checked == true)
                 SelectAssessmentNodes(tvwAssessments.Nodes, true);
             else
                 SelectAssessmentNodes(tvwAssessments.Nodes, false);
         }
 
-        private void menuSystemExportProfile_Click(object sender, EventArgs e)
+        private void menuCustomizeExportProfile_Click(object sender, EventArgs e)
         {
             SaveFileDialog f = new SaveFileDialog();
             f.InitialDirectory = Helpers.Strings.Data.DataRootDir;
@@ -456,11 +459,11 @@ namespace ThisIsWin11
             }
         }
 
-        private void menuSystemImportProfile_Click(object sender, EventArgs e)
+        private void menuCustomizeImportProfile_Click(object sender, EventArgs e)
         {
             OpenFileDialog f = new OpenFileDialog();
             f.InitialDirectory = Helpers.Strings.Data.DataRootDir;
-            f.FileName = "opentweaks_windows10Profile";
+            f.FileName = "opentweaks_oobeProfile";
             f.Filter = "ThisIsWin11 files *.tiw1|*.tiw1";
 
             if (f.ShowDialog() == DialogResult.OK)
@@ -490,7 +493,9 @@ namespace ThisIsWin11
 
         private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => MessageBox.Show(lnkSubHeader.Text);
 
-        private void btnSystemMenu_Click(object sender, EventArgs e) => this.menuSystem.Show(Cursor.Position.X, Cursor.Position.Y);
+        private void btnCustomizeMenu_Click(object sender, EventArgs e) => this.menuCustomize.Show(Cursor.Position.X, Cursor.Position.Y);
+
+        private void btnCustomizeImport_Click(object sender, EventArgs e) => menuCustomizeImportProfile.PerformClick();
 
         private void rtbPS_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
     }

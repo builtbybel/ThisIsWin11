@@ -137,7 +137,7 @@ namespace ThisIsWin11
                         }
                     }
 
-                    btnAutomate.Text = " selected";
+                    btnAutomate.Text = "Run selected";
                     progress.Visible = false;
                     btnCancel.Visible = false;
 

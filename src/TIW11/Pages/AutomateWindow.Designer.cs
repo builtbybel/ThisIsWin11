@@ -144,7 +144,7 @@ namespace ThisIsWin11
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnCancel.FlatAppearance.BorderSize = 2;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(304, 19);
             this.btnCancel.Name = "btnCancel";
@@ -216,18 +216,19 @@ namespace ThisIsWin11
             // 
             // btnAutomate
             // 
-            this.btnAutomate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAutomate.AutoEllipsis = true;
             this.btnAutomate.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAutomate.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAutomate.FlatAppearance.BorderSize = 2;
+            this.btnAutomate.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAutomate.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnAutomate.FlatAppearance.BorderSize = 0;
             this.btnAutomate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAutomate.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutomate.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAutomate.ForeColor = System.Drawing.Color.White;
-            this.btnAutomate.Location = new System.Drawing.Point(68, 788);
+            this.btnAutomate.Location = new System.Drawing.Point(0, 823);
             this.btnAutomate.Name = "btnAutomate";
-            this.btnAutomate.Size = new System.Drawing.Size(192, 32);
+            this.btnAutomate.Size = new System.Drawing.Size(499, 39);
             this.btnAutomate.TabIndex = 154;
-            this.btnAutomate.Text = "Run selected";
+            this.btnAutomate.Text = "RUN SELECTED\r\n";
             this.btnAutomate.UseVisualStyleBackColor = false;
             this.btnAutomate.Click += new System.EventHandler(this.btnAutomate_Click);
             // 
@@ -250,8 +251,6 @@ namespace ThisIsWin11
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.White;
-            this.pnlLeft.Controls.Add(this.btnAutomate);
-            this.pnlLeft.Controls.Add(this.btnAutomateOnTheFly);
             this.pnlLeft.Controls.Add(this.rtbDesc);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLeft.Location = new System.Drawing.Point(0, 0);
@@ -261,18 +260,19 @@ namespace ThisIsWin11
             // 
             // btnAutomateOnTheFly
             // 
-            this.btnAutomateOnTheFly.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAutomateOnTheFly.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.btnAutomateOnTheFly.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAutomateOnTheFly.FlatAppearance.BorderSize = 2;
+            this.btnAutomateOnTheFly.AutoEllipsis = true;
+            this.btnAutomateOnTheFly.BackColor = System.Drawing.Color.Magenta;
+            this.btnAutomateOnTheFly.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAutomateOnTheFly.FlatAppearance.BorderColor = System.Drawing.Color.Magenta;
+            this.btnAutomateOnTheFly.FlatAppearance.BorderSize = 0;
             this.btnAutomateOnTheFly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAutomateOnTheFly.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutomateOnTheFly.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAutomateOnTheFly.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAutomateOnTheFly.Location = new System.Drawing.Point(276, 788);
+            this.btnAutomateOnTheFly.Location = new System.Drawing.Point(0, 823);
             this.btnAutomateOnTheFly.Name = "btnAutomateOnTheFly";
-            this.btnAutomateOnTheFly.Size = new System.Drawing.Size(192, 32);
+            this.btnAutomateOnTheFly.Size = new System.Drawing.Size(241, 39);
             this.btnAutomateOnTheFly.TabIndex = 155;
-            this.btnAutomateOnTheFly.Text = "Run this code on-the-fly";
+            this.btnAutomateOnTheFly.Text = "RUN CODE ON-THE-FLY\r\n";
             this.btnAutomateOnTheFly.UseVisualStyleBackColor = false;
             this.btnAutomateOnTheFly.Visible = false;
             this.btnAutomateOnTheFly.Click += new System.EventHandler(this.btnAutomateOnTheFly_Click);
@@ -287,10 +287,10 @@ namespace ThisIsWin11
             this.rtbPS.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbPS.ForeColor = System.Drawing.Color.Black;
             this.rtbPS.HideSelection = false;
-            this.rtbPS.Location = new System.Drawing.Point(7, 134);
+            this.rtbPS.Location = new System.Drawing.Point(0, 134);
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbPS.Size = new System.Drawing.Size(225, 686);
+            this.rtbPS.Size = new System.Drawing.Size(241, 686);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = "{Select a script}";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
@@ -331,6 +331,7 @@ namespace ThisIsWin11
             // 
             this.pnlMiddle.BackColor = System.Drawing.Color.White;
             this.pnlMiddle.Controls.Add(this.label1);
+            this.pnlMiddle.Controls.Add(this.btnAutomateOnTheFly);
             this.pnlMiddle.Controls.Add(this.rtbPS);
             this.pnlMiddle.Controls.Add(this.btnAutomateMenu);
             this.pnlMiddle.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -358,6 +359,7 @@ namespace ThisIsWin11
             // pnlRight
             // 
             this.pnlRight.BackColor = System.Drawing.Color.White;
+            this.pnlRight.Controls.Add(this.btnAutomate);
             this.pnlRight.Controls.Add(this.btnCancel);
             this.pnlRight.Controls.Add(this.lblScriptsInstalledCount);
             this.pnlRight.Controls.Add(this.lnkSubHeader);

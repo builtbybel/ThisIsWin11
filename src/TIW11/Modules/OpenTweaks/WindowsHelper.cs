@@ -30,9 +30,16 @@ namespace ThisIsWin11
             logger.Log($"Enable {service} service");
         }
 
+        // Command Prompt (to be replaced with wt.exe)
         public static void RunCmd(string args)
         {
             ProcStart(Helpers.Strings.Paths.ShellCommandPrompt, args);
+        }
+
+        //  Windows Terminal will be the default command line experience in TIW11 in 2022
+        public static void RunWT(string args)
+        {
+            ProcStart(Helpers.Strings.Paths.ShellWT, args);
         }
 
         public static void ProcStart(string name, string args)
@@ -49,7 +56,6 @@ namespace ThisIsWin11
                         RedirectStandardOutput = true,
                         StandardOutputEncoding = Encoding.GetEncoding(CultureInfo.CurrentCulture.TextInfo.OEMCodePage),
                         CreateNoWindow = true
-                        
                     }
                 };
                 proc.Start();
@@ -61,7 +67,7 @@ namespace ThisIsWin11
                 proc.WaitForExit();
                 logger.Log($"{name} {args} {line}");
             }
-            catch 
+            catch
             {
                 logger.Log($"Could not start {name} {args}.");
             }
