@@ -30,11 +30,11 @@ namespace ThisIsWin11
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnPluginsMenu = new System.Windows.Forms.Button();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.lnkPlugsDir = new System.Windows.Forms.LinkLabel();
@@ -48,11 +48,11 @@ namespace ThisIsWin11
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuPlugsInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.textPlugsSearch = new System.Windows.Forms.TextBox();
-            this.ColumnAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnState = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.DataGridViewPlugs = new System.Windows.Forms.DataGridView();
+            this.ColumnState = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlLeft.SuspendLayout();
             this.menuPlugins.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewPlugs)).BeginInit();
@@ -67,6 +67,7 @@ namespace ThisIsWin11
             this.btnPluginsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnPluginsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPluginsMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPluginsMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnPluginsMenu.Location = new System.Drawing.Point(1161, 0);
             this.btnPluginsMenu.Name = "btnPluginsMenu";
             this.btnPluginsMenu.Size = new System.Drawing.Size(48, 51);
@@ -212,31 +213,72 @@ namespace ThisIsWin11
             this.textPlugsSearch.Click += new System.EventHandler(this.textSearch_Click);
             this.textPlugsSearch.TextChanged += new System.EventHandler(this.textPlugsSearch_TextChanged);
             // 
-            // ColumnAuthor
+            // DataGridViewPlugs
             // 
-            this.ColumnAuthor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnAuthor.DataPropertyName = "Author";
-            this.ColumnAuthor.HeaderText = "Author";
-            this.ColumnAuthor.Name = "ColumnAuthor";
-            this.ColumnAuthor.ReadOnly = true;
-            this.ColumnAuthor.Width = 72;
-            // 
-            // ColumnDescription
-            // 
-            this.ColumnDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnDescription.DataPropertyName = "Description";
-            this.ColumnDescription.HeaderText = "Description";
-            this.ColumnDescription.Name = "ColumnDescription";
-            this.ColumnDescription.ReadOnly = true;
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnName.DataPropertyName = "Name";
-            this.ColumnName.HeaderText = "Name";
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.ReadOnly = true;
-            this.ColumnName.Width = 67;
+            this.DataGridViewPlugs.AllowUserToAddRows = false;
+            this.DataGridViewPlugs.AllowUserToDeleteRows = false;
+            this.DataGridViewPlugs.AllowUserToOrderColumns = true;
+            this.DataGridViewPlugs.AllowUserToResizeColumns = false;
+            this.DataGridViewPlugs.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold);
+            this.DataGridViewPlugs.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGridViewPlugs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DataGridViewPlugs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DataGridViewPlugs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DataGridViewPlugs.BackgroundColor = System.Drawing.Color.White;
+            this.DataGridViewPlugs.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataGridViewPlugs.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.DataGridViewPlugs.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.DataGridViewPlugs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(4);
+            this.DataGridViewPlugs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridViewPlugs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewPlugs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnState,
+            this.ColumnName,
+            this.ColumnDescription,
+            this.ColumnAuthor});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridViewPlugs.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DataGridViewPlugs.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.DataGridViewPlugs.EnableHeadersVisualStyles = false;
+            this.DataGridViewPlugs.GridColor = System.Drawing.Color.White;
+            this.DataGridViewPlugs.Location = new System.Drawing.Point(513, 113);
+            this.DataGridViewPlugs.MultiSelect = false;
+            this.DataGridViewPlugs.Name = "DataGridViewPlugs";
+            this.DataGridViewPlugs.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewPlugs.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.DataGridViewPlugs.RowHeadersVisible = false;
+            this.DataGridViewPlugs.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewPlugs.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.DataGridViewPlugs.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewPlugs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.DataGridViewPlugs.ShowEditingIcon = false;
+            this.DataGridViewPlugs.Size = new System.Drawing.Size(685, 737);
+            this.DataGridViewPlugs.TabIndex = 141;
+            this.DataGridViewPlugs.TabStop = false;
+            this.DataGridViewPlugs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewPlugs_CellContentClick);
+            this.DataGridViewPlugs.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DataGridViewPlugins_RowPrePaint);
+            this.DataGridViewPlugs.SelectionChanged += new System.EventHandler(this.DataGridViewPlugs_SelectionChanged);
             // 
             // ColumnState
             // 
@@ -255,72 +297,31 @@ namespace ThisIsWin11
             this.ColumnState.TrueValue = "1";
             this.ColumnState.Width = 69;
             // 
-            // DataGridViewPlugs
+            // ColumnName
             // 
-            this.DataGridViewPlugs.AllowUserToAddRows = false;
-            this.DataGridViewPlugs.AllowUserToDeleteRows = false;
-            this.DataGridViewPlugs.AllowUserToOrderColumns = true;
-            this.DataGridViewPlugs.AllowUserToResizeColumns = false;
-            this.DataGridViewPlugs.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold);
-            this.DataGridViewPlugs.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.DataGridViewPlugs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DataGridViewPlugs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DataGridViewPlugs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DataGridViewPlugs.BackgroundColor = System.Drawing.Color.White;
-            this.DataGridViewPlugs.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataGridViewPlugs.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.DataGridViewPlugs.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.DataGridViewPlugs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(4);
-            this.DataGridViewPlugs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.DataGridViewPlugs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridViewPlugs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnState,
-            this.ColumnName,
-            this.ColumnDescription,
-            this.ColumnAuthor});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridViewPlugs.DefaultCellStyle = dataGridViewCellStyle8;
-            this.DataGridViewPlugs.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.DataGridViewPlugs.EnableHeadersVisualStyles = false;
-            this.DataGridViewPlugs.GridColor = System.Drawing.Color.White;
-            this.DataGridViewPlugs.Location = new System.Drawing.Point(513, 113);
-            this.DataGridViewPlugs.MultiSelect = false;
-            this.DataGridViewPlugs.Name = "DataGridViewPlugs";
-            this.DataGridViewPlugs.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridViewPlugs.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.DataGridViewPlugs.RowHeadersVisible = false;
-            this.DataGridViewPlugs.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DataGridViewPlugs.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.DataGridViewPlugs.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DataGridViewPlugs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.DataGridViewPlugs.ShowEditingIcon = false;
-            this.DataGridViewPlugs.Size = new System.Drawing.Size(685, 737);
-            this.DataGridViewPlugs.TabIndex = 141;
-            this.DataGridViewPlugs.TabStop = false;
-            this.DataGridViewPlugs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewPlugs_CellContentClick);
-            this.DataGridViewPlugs.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DataGridViewPlugins_RowPrePaint);
-            this.DataGridViewPlugs.SelectionChanged += new System.EventHandler(this.DataGridViewPlugs_SelectionChanged);
+            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnName.DataPropertyName = "Name";
+            this.ColumnName.HeaderText = "Name";
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            this.ColumnName.Width = 67;
+            // 
+            // ColumnDescription
+            // 
+            this.ColumnDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnDescription.DataPropertyName = "Description";
+            this.ColumnDescription.HeaderText = "Description";
+            this.ColumnDescription.Name = "ColumnDescription";
+            this.ColumnDescription.ReadOnly = true;
+            // 
+            // ColumnAuthor
+            // 
+            this.ColumnAuthor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnAuthor.DataPropertyName = "Author";
+            this.ColumnAuthor.HeaderText = "Author";
+            this.ColumnAuthor.Name = "ColumnAuthor";
+            this.ColumnAuthor.ReadOnly = true;
+            this.ColumnAuthor.Width = 72;
             // 
             // ExtensionsWindow
             // 
@@ -361,10 +362,10 @@ namespace ThisIsWin11
         private System.Windows.Forms.LinkLabel lnkPlugsDir;
         private System.Windows.Forms.ToolStripMenuItem menuPlugsRefresh;
         private System.Windows.Forms.TextBox textPlugsSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAuthor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnState;
         private System.Windows.Forms.DataGridView DataGridViewPlugs;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnState;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAuthor;
     }
 }

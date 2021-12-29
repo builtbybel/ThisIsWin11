@@ -17,7 +17,7 @@ namespace ThisIsWin11
         private static readonly string componentsVersion = "110";
         private readonly string osWarning = "We could not recognize this system as Windows 11. Some settings are not tested on this operating system and could lead to malfunction.";
 
-        private Presenter.OS osInfo = new Presenter.OS();
+        private GetStarted.OS osInfo = new GetStarted.OS();
 
         private int progression = 0;
         private int progressionIncrease = 0;
@@ -49,11 +49,12 @@ namespace ThisIsWin11
             btnCustomizeMenu.Text = "\uE712";
             btnCustomizeUndo.Text = "\uE777";
             btnCustomizeImport.Text = "\uECC8";
+            btnCustomizeExportNShare.Text = "\uE72D";
 
             rtbPS.Text = "Click the <Check> button to run a quick check of your Windows 11 configuration and to get a preview of the changes that could be applied." +
                          "\n\nYou can always restore the default Windows 11 settings. The option for this can be found in the upper right corner." +
                           Environment.NewLine + Environment.NewLine +
-                         "\n\nTip:\nIf you have just switched to Windows 11, we recommend you importing the predefined Out-of-box experience \"OOBE Profile\" " +
+                         "\n\nTip:\nIf you have just switched to Windows 11, we recommend you importing the predefined out-of-box experience \"OOBE Profile\" " +
                          "by clicking on the import button in the upper right corner.";
         }
 
@@ -202,7 +203,7 @@ namespace ThisIsWin11
             tvwAssessments.EndUpdate();
         }
 
-        #endregion 62 available customizations in OpenTweaks (last update 12/18/2021)
+        #endregion 63 available customizations in OpenTweaks (last update 12/27/2021)
 
         private List<AssessmentNode> CollectAssessmentNodes()
         {
@@ -491,12 +492,14 @@ namespace ThisIsWin11
             }
         }
 
+        private void rtbPS_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
+
         private void lnkSubHeader_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => MessageBox.Show(lnkSubHeader.Text);
 
         private void btnCustomizeMenu_Click(object sender, EventArgs e) => this.menuCustomize.Show(Cursor.Position.X, Cursor.Position.Y);
 
         private void btnCustomizeImport_Click(object sender, EventArgs e) => menuCustomizeImportProfile.PerformClick();
 
-        private void rtbPS_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);
+        private void btnCustomizeExportNShare_Click(object sender, EventArgs e) => menuCustomizeExportProfile.PerformClick();
     }
 }

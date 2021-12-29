@@ -207,6 +207,7 @@ namespace ThisIsWin11
             this.btnAutomateMenu.FlatAppearance.BorderSize = 0;
             this.btnAutomateMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAutomateMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutomateMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAutomateMenu.Location = new System.Drawing.Point(190, 0);
             this.btnAutomateMenu.Name = "btnAutomateMenu";
             this.btnAutomateMenu.Size = new System.Drawing.Size(48, 51);
@@ -224,9 +225,9 @@ namespace ThisIsWin11
             this.btnAutomate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAutomate.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAutomate.ForeColor = System.Drawing.Color.White;
-            this.btnAutomate.Location = new System.Drawing.Point(0, 823);
+            this.btnAutomate.Location = new System.Drawing.Point(0, 815);
             this.btnAutomate.Name = "btnAutomate";
-            this.btnAutomate.Size = new System.Drawing.Size(499, 39);
+            this.btnAutomate.Size = new System.Drawing.Size(499, 47);
             this.btnAutomate.TabIndex = 154;
             this.btnAutomate.Text = "RUN SELECTED\r\n";
             this.btnAutomate.UseVisualStyleBackColor = false;
@@ -268,9 +269,9 @@ namespace ThisIsWin11
             this.btnAutomateOnTheFly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAutomateOnTheFly.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAutomateOnTheFly.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAutomateOnTheFly.Location = new System.Drawing.Point(0, 823);
+            this.btnAutomateOnTheFly.Location = new System.Drawing.Point(0, 815);
             this.btnAutomateOnTheFly.Name = "btnAutomateOnTheFly";
-            this.btnAutomateOnTheFly.Size = new System.Drawing.Size(241, 39);
+            this.btnAutomateOnTheFly.Size = new System.Drawing.Size(241, 47);
             this.btnAutomateOnTheFly.TabIndex = 155;
             this.btnAutomateOnTheFly.Text = "RUN CODE ON-THE-FLY\r\n";
             this.btnAutomateOnTheFly.UseVisualStyleBackColor = false;
@@ -290,7 +291,7 @@ namespace ThisIsWin11
             this.rtbPS.Location = new System.Drawing.Point(0, 134);
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbPS.Size = new System.Drawing.Size(241, 686);
+            this.rtbPS.Size = new System.Drawing.Size(241, 675);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = "{Select a script}";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);

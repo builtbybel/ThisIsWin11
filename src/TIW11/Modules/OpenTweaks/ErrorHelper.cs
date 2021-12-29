@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ThisIsWin11.OpenTweaks
+namespace ThisIsWin11
 {
     internal class ErrorHelper
     {

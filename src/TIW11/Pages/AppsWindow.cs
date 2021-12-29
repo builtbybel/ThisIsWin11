@@ -340,7 +340,7 @@ namespace ThisIsWin11
 
                     RefreshApps();
 
-                    MessageBox.Show("We've snyced your import list with the apps in Recycle bin.\n" +
+                    MessageBox.Show("We've synced your import list with the apps in Recycle bin.\n" +
                         "Please note, that some of these apps may not be installed on your system.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

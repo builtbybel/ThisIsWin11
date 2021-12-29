@@ -50,6 +50,7 @@ namespace ThisIsWin11
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
             this.btnCustomizeImport = new System.Windows.Forms.Button();
+            this.btnCustomizeExportNShare = new System.Windows.Forms.Button();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.menuCustomize.SuspendLayout();
             this.pnlLeft.SuspendLayout();
@@ -65,7 +66,8 @@ namespace ThisIsWin11
             this.btnCustomizeMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnCustomizeMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomizeMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomizeMenu.Location = new System.Drawing.Point(627, -1);
+            this.btnCustomizeMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCustomizeMenu.Location = new System.Drawing.Point(627, 0);
             this.btnCustomizeMenu.Name = "btnCustomizeMenu";
             this.btnCustomizeMenu.Size = new System.Drawing.Size(48, 51);
             this.btnCustomizeMenu.TabIndex = 162;
@@ -98,10 +100,10 @@ namespace ThisIsWin11
             this.btnCustomizeCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomizeCheck.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomizeCheck.ForeColor = System.Drawing.Color.White;
-            this.btnCustomizeCheck.Location = new System.Drawing.Point(0, 823);
+            this.btnCustomizeCheck.Location = new System.Drawing.Point(0, 815);
             this.btnCustomizeCheck.Margin = new System.Windows.Forms.Padding(2);
             this.btnCustomizeCheck.Name = "btnCustomizeCheck";
-            this.btnCustomizeCheck.Size = new System.Drawing.Size(532, 39);
+            this.btnCustomizeCheck.Size = new System.Drawing.Size(532, 47);
             this.btnCustomizeCheck.TabIndex = 159;
             this.btnCustomizeCheck.Text = "CHECK";
             this.btnCustomizeCheck.UseVisualStyleBackColor = false;
@@ -198,7 +200,7 @@ namespace ThisIsWin11
             this.tvwAssessments.Name = "tvwAssessments";
             this.tvwAssessments.ShowLines = false;
             this.tvwAssessments.ShowNodeToolTips = true;
-            this.tvwAssessments.Size = new System.Drawing.Size(672, 736);
+            this.tvwAssessments.Size = new System.Drawing.Size(672, 728);
             this.tvwAssessments.TabIndex = 168;
             this.tvwAssessments.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvwAssessments_AfterCheck);
             // 
@@ -212,10 +214,10 @@ namespace ThisIsWin11
             this.btnCustomizeFix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomizeFix.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomizeFix.ForeColor = System.Drawing.Color.White;
-            this.btnCustomizeFix.Location = new System.Drawing.Point(0, 823);
+            this.btnCustomizeFix.Location = new System.Drawing.Point(0, 815);
             this.btnCustomizeFix.Margin = new System.Windows.Forms.Padding(2);
             this.btnCustomizeFix.Name = "btnCustomizeFix";
-            this.btnCustomizeFix.Size = new System.Drawing.Size(678, 39);
+            this.btnCustomizeFix.Size = new System.Drawing.Size(678, 47);
             this.btnCustomizeFix.TabIndex = 167;
             this.btnCustomizeFix.Text = "FIX ISSUES";
             this.btnCustomizeFix.UseVisualStyleBackColor = false;
@@ -261,7 +263,7 @@ namespace ThisIsWin11
             this.btnCustomizeUndo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.HotPink;
             this.btnCustomizeUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomizeUndo.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomizeUndo.ForeColor = System.Drawing.Color.Black;
+            this.btnCustomizeUndo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCustomizeUndo.Location = new System.Drawing.Point(481, 0);
             this.btnCustomizeUndo.Name = "btnCustomizeUndo";
             this.btnCustomizeUndo.Size = new System.Drawing.Size(48, 51);
@@ -305,7 +307,8 @@ namespace ThisIsWin11
             this.btnCustomizeImport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnCustomizeImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomizeImport.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomizeImport.Location = new System.Drawing.Point(573, -1);
+            this.btnCustomizeImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCustomizeImport.Location = new System.Drawing.Point(519, 0);
             this.btnCustomizeImport.Name = "btnCustomizeImport";
             this.btnCustomizeImport.Size = new System.Drawing.Size(48, 51);
             this.btnCustomizeImport.TabIndex = 172;
@@ -313,10 +316,29 @@ namespace ThisIsWin11
             this.btnCustomizeImport.UseVisualStyleBackColor = false;
             this.btnCustomizeImport.Click += new System.EventHandler(this.btnCustomizeImport_Click);
             // 
+            // btnCustomizeExportNShare
+            // 
+            this.btnCustomizeExportNShare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCustomizeExportNShare.BackColor = System.Drawing.Color.White;
+            this.btnCustomizeExportNShare.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCustomizeExportNShare.FlatAppearance.BorderSize = 0;
+            this.btnCustomizeExportNShare.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnCustomizeExportNShare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomizeExportNShare.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomizeExportNShare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCustomizeExportNShare.Location = new System.Drawing.Point(573, 0);
+            this.btnCustomizeExportNShare.Name = "btnCustomizeExportNShare";
+            this.btnCustomizeExportNShare.Size = new System.Drawing.Size(48, 51);
+            this.btnCustomizeExportNShare.TabIndex = 173;
+            this.tt.SetToolTip(this.btnCustomizeExportNShare, "Export and share your configuration");
+            this.btnCustomizeExportNShare.UseVisualStyleBackColor = false;
+            this.btnCustomizeExportNShare.Click += new System.EventHandler(this.btnCustomizeExportNShare_Click);
+            // 
             // pnlRight
             // 
             this.pnlRight.AutoScroll = true;
             this.pnlRight.BackColor = System.Drawing.Color.White;
+            this.pnlRight.Controls.Add(this.btnCustomizeExportNShare);
             this.pnlRight.Controls.Add(this.btnCustomizeImport);
             this.pnlRight.Controls.Add(this.btnCustomizeMenu);
             this.pnlRight.Controls.Add(this.progress);
@@ -375,5 +397,6 @@ namespace ThisIsWin11
         public System.Windows.Forms.TreeView tvwAssessments;
         private System.Windows.Forms.Panel pnlRight;
         private System.Windows.Forms.Button btnCustomizeImport;
+        private System.Windows.Forms.Button btnCustomizeExportNShare;
     }
 }

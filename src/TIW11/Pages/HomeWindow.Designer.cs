@@ -37,8 +37,8 @@ namespace ThisIsWin11
             this.btnCustomButton = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblDesc = new System.Windows.Forms.Label();
-            this.menuPresenter = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuPresenterInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuGetStarted = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuGetStartedInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -49,7 +49,7 @@ namespace ThisIsWin11
             this.pnlRight = new System.Windows.Forms.Panel();
             this.pbView = new System.Windows.Forms.PictureBox();
             this.pnlLeft.SuspendLayout();
-            this.menuPresenter.SuspendLayout();
+            this.menuGetStarted.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbView)).BeginInit();
@@ -174,21 +174,21 @@ namespace ThisIsWin11
             this.lblDesc.TabIndex = 137;
             this.lblDesc.Text = "cheat sheet";
             // 
-            // menuPresenter
+            // menuGetStarted
             // 
-            this.menuPresenter.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.menuPresenter.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuPresenter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuPresenterInfo});
-            this.menuPresenter.Name = "menuMain";
-            this.menuPresenter.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuPresenter.Size = new System.Drawing.Size(118, 34);
+            this.menuGetStarted.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.menuGetStarted.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuGetStarted.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuGetStartedInfo});
+            this.menuGetStarted.Name = "menuMain";
+            this.menuGetStarted.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuGetStarted.Size = new System.Drawing.Size(118, 34);
             // 
-            // menuPresenterInfo
+            // menuGetStartedInfo
             // 
-            this.menuPresenterInfo.Name = "menuPresenterInfo";
-            this.menuPresenterInfo.Size = new System.Drawing.Size(117, 30);
-            this.menuPresenterInfo.Text = "Info";
+            this.menuGetStartedInfo.Name = "menuGetStartedInfo";
+            this.menuGetStartedInfo.Size = new System.Drawing.Size(117, 30);
+            this.menuGetStartedInfo.Text = "Info";
             // 
             // tt
             // 
@@ -327,10 +327,10 @@ namespace ThisIsWin11
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "HomeWindow";
             this.ShowIcon = false;
-            this.Text = "Presenter";
+            this.Text = "GetStarted";
             this.Shown += new System.EventHandler(this.HomeWindow_Shown);
             this.pnlLeft.ResumeLayout(false);
-            this.menuPresenter.ResumeLayout(false);
+            this.menuGetStarted.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbView)).EndInit();
@@ -344,8 +344,8 @@ namespace ThisIsWin11
         private System.Windows.Forms.Button btnConfigurator;
         private System.Windows.Forms.Button btnCustomizer;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.ContextMenuStrip menuPresenter;
-        private System.Windows.Forms.ToolStripMenuItem menuPresenterInfo;
+        private System.Windows.Forms.ContextMenuStrip menuGetStarted;
+        private System.Windows.Forms.ToolStripMenuItem menuGetStartedInfo;
         private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.ToolTip tt;
         private System.Windows.Forms.Button btnCustomButton;

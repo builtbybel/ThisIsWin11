@@ -61,7 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\Pages.cs" />
+    <Compile Include="Modules\GetStarted\Pages.cs" />
     <Compile Include="Helpers\Strings.cs" />
     <Compile Include="Helpers\Utils.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskbarMM.cs" />
@@ -97,6 +97,7 @@
     <Compile Include="Modules\OpenTweaks\Assessments\System\TeamsAutostart.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\System\XPSWriter.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskbarSi.cs" />
+    <Compile Include="Helpers\DependenciesChecker.cs" />
     <Compile Include="Pages\ExtensionsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,7 +186,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Presenter\OS.cs" />
+    <Compile Include="Modules\GetStarted\OS.cs" />
     <Compile Include="Modules\OpenTweaks\AssessmentNode.cs" />
     <Compile Include="Modules\OpenTweaks\ITreeNode.cs" />
     <Compile Include="Modules\OpenTweaks\AssessmentBase.cs" />

@@ -115,6 +115,7 @@ namespace ThisIsWin11
             this.btnPackagesMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnPackagesMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPackagesMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPackagesMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnPackagesMenu.Location = new System.Drawing.Point(607, 0);
             this.btnPackagesMenu.Name = "btnPackagesMenu";
             this.btnPackagesMenu.Size = new System.Drawing.Size(48, 51);

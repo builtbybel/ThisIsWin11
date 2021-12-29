@@ -120,6 +120,7 @@ namespace ThisIsWin11
             this.btnAppsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnAppsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAppsMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAppsMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAppsMenu.Location = new System.Drawing.Point(252, 0);
             this.btnAppsMenu.Name = "btnAppsMenu";
             this.btnAppsMenu.Size = new System.Drawing.Size(48, 51);
@@ -393,6 +394,7 @@ namespace ThisIsWin11
             this.btnAppsRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnAppsRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAppsRefresh.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAppsRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAppsRefresh.Location = new System.Drawing.Point(422, 0);
             this.btnAppsRefresh.Name = "btnAppsRefresh";
             this.btnAppsRefresh.Size = new System.Drawing.Size(48, 51);

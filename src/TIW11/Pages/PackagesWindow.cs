@@ -17,12 +17,8 @@ namespace ThisIsWin11
 {
     public partial class PackagesWindow : Form
     {
-        private MainWindow mainForm = null;
-
-        public PackagesWindow(Form frm)
+        public PackagesWindow()
         {
-            mainForm = frm as MainWindow;
-
             InitializeComponent();
         }
 
@@ -198,13 +194,12 @@ namespace ThisIsWin11
 
         private void IsWingetInstalled()
         {
-            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Packages\\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe");
-            if (!Directory.Exists(path))
+            if (DependenciesChecker.IsWingetInstalled())
             {
-                rtbPS.Text += "\n\n\nWe could not locate winget on your System.\nPlease install it by clicking on the button above.";
-                btnInstallWinget.Visible = true;
+                btnInstallWinget.Visible = false;
             }
-            else btnInstallWinget.Visible = false;
+            else
+                btnInstallWinget.Visible = true;
         }
 
         private void btnInstallWinget_Click(object sender, EventArgs e)
@@ -329,7 +324,7 @@ namespace ThisIsWin11
 
         private void menuPackagesPopOut_Click(object sender, EventArgs e)
         {
-            PackagesWindow package = new PackagesWindow(mainForm); package.Show();
+            PackagesWindow package = new PackagesWindow(); package.Show();
         }
     }
 }

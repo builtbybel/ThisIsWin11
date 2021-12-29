@@ -21,7 +21,7 @@ namespace ThisIsWin11
             RegisterView(new HomeWindow(this), btnHome);                    // Home page
             RegisterView(new CustomizeWindow(), btnCustomize);              // Customize page
             RegisterView(new AppsWindow(), btnApps);                        // Apps page
-            RegisterView(new PackagesWindow(this), btnPackages);            // Packages page
+            RegisterView(new PackagesWindow(), btnPackages);                // Packages page
             RegisterView(new AutomateWindow(), btnAutomate);                // Automate page
             RegisterView(new ExtensionsWindow(), btnExtensions);            // Extensions page
             RegisterView(new SettingsWindow(this), btnSettings);            // Settings page
@@ -45,7 +45,7 @@ namespace ThisIsWin11
 
             var space = "\u0020";
 
-            btnMenu.Text = "\uE700";
+            btnGlobalNav.Text = "\uE700";
             btnHome.Text = "\uE10F";
             btnCustomize.Text = "\uE771";
             btnApps.Text = "\uE71D";
@@ -59,7 +59,7 @@ namespace ThisIsWin11
                 pnlNav.AutoSize = false;
                 pnlContainer.SendToBack();
                 pnlContainer.Location = new Point(60, 0);
-                tt.SetToolTip(btnMenu, "Open Navigation");
+                tt.SetToolTip(btnGlobalNav, "Open Navigation");
 
                 isGlobalNavOpen = true;
             }
@@ -76,7 +76,7 @@ namespace ThisIsWin11
                 pnlNav.AutoSize = true;
                 pnlContainer.BringToFront();
                 pnlContainer.Location = new Point(newPnlContainerLocation, 0);
-                tt.SetToolTip(btnMenu, "Close Navigation");
+                tt.SetToolTip(btnGlobalNav, "Close Navigation");
 
                 isGlobalNavOpen = false;
             }

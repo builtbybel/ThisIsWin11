@@ -13,7 +13,7 @@ namespace ThisIsWin11
 {
     public partial class AutomateWindow : Form
     {
-        private Presenter.OS osInfo = new Presenter.OS();
+        private GetStarted.OS osInfo = new GetStarted.OS();
 
         private static readonly string componentsVersion = "20";
 
@@ -137,7 +137,6 @@ namespace ThisIsWin11
                         }
                     }
 
-                    btnAutomate.Text = "Run selected";
                     progress.Visible = false;
                     btnCancel.Visible = false;
 
@@ -241,7 +240,7 @@ namespace ThisIsWin11
         private void btnAutomateOnTheFly_Click(object sender, EventArgs e)
         {
             rtbDesc.Clear();
-            btnAutomateOnTheFly.Text = "Processing";
+            btnAutomateOnTheFly.Text = "Processing".ToUpper();
 
             using (PowerShell powerShell = PowerShell.Create())
             {
@@ -254,7 +253,7 @@ namespace ThisIsWin11
 
                 rtbDesc.Text = stringBuilder.ToString();
             }
-            btnAutomateOnTheFly.Text = "Run this code on-the-fly";
+            btnAutomateOnTheFly.Text = "Run this code on-the-fly".ToUpper();
         }
 
         private void menuAutomateImport_Click(object sender, EventArgs e)

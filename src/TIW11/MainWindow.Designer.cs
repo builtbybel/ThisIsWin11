@@ -31,7 +31,7 @@ namespace ThisIsWin11
         {
             this.components = new System.ComponentModel.Container();
             this.pnlNav = new System.Windows.Forms.Panel();
-            this.btnMenu = new System.Windows.Forms.Button();
+            this.btnGlobalNav = new System.Windows.Forms.Button();
             this.btnExtensions = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@ namespace ThisIsWin11
             // 
             this.pnlNav.AutoSize = true;
             this.pnlNav.BackColor = System.Drawing.Color.White;
-            this.pnlNav.Controls.Add(this.btnMenu);
+            this.pnlNav.Controls.Add(this.btnGlobalNav);
             this.pnlNav.Controls.Add(this.btnExtensions);
             this.pnlNav.Controls.Add(this.btnHome);
             this.pnlNav.Controls.Add(this.btnSettings);
@@ -63,30 +63,30 @@ namespace ThisIsWin11
             this.pnlNav.Location = new System.Drawing.Point(0, 0);
             this.pnlNav.Name = "pnlNav";
             this.pnlNav.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.pnlNav.Size = new System.Drawing.Size(35, 862);
+            this.pnlNav.Size = new System.Drawing.Size(38, 862);
             this.pnlNav.TabIndex = 130;
             // 
-            // btnMenu
+            // btnGlobalNav
             // 
-            this.btnMenu.BackColor = System.Drawing.Color.White;
-            this.btnMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnMenu.FlatAppearance.BorderSize = 0;
-            this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.ForeColor = System.Drawing.Color.DimGray;
-            this.btnMenu.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnMenu.Location = new System.Drawing.Point(8, 6);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(24, 32);
-            this.btnMenu.TabIndex = 146;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Text = "...";
-            this.btnMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tt.SetToolTip(this.btnMenu, "Open Navigation");
-            this.btnMenu.UseVisualStyleBackColor = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.btnGlobalNav.BackColor = System.Drawing.Color.White;
+            this.btnGlobalNav.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGlobalNav.FlatAppearance.BorderSize = 0;
+            this.btnGlobalNav.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnGlobalNav.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGlobalNav.Font = new System.Drawing.Font("Segoe Fluent Icons", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGlobalNav.ForeColor = System.Drawing.Color.DimGray;
+            this.btnGlobalNav.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGlobalNav.Location = new System.Drawing.Point(8, 6);
+            this.btnGlobalNav.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGlobalNav.Name = "btnGlobalNav";
+            this.btnGlobalNav.Size = new System.Drawing.Size(24, 32);
+            this.btnGlobalNav.TabIndex = 146;
+            this.btnGlobalNav.TabStop = false;
+            this.btnGlobalNav.Text = "...";
+            this.btnGlobalNav.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tt.SetToolTip(this.btnGlobalNav, "Open Navigation");
+            this.btnGlobalNav.UseVisualStyleBackColor = false;
+            this.btnGlobalNav.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // btnExtensions
             // 
@@ -125,7 +125,7 @@ namespace ThisIsWin11
             this.btnHome.Location = new System.Drawing.Point(8, 45);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(24, 32);
+            this.btnHome.Size = new System.Drawing.Size(27, 32);
             this.btnHome.TabIndex = 144;
             this.btnHome.Text = "0";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -252,9 +252,9 @@ namespace ThisIsWin11
             this.pnlContainer.AutoScroll = true;
             this.pnlContainer.BackColor = System.Drawing.Color.White;
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContainer.Location = new System.Drawing.Point(35, 0);
+            this.pnlContainer.Location = new System.Drawing.Point(38, 0);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(1203, 862);
+            this.pnlContainer.Size = new System.Drawing.Size(1200, 862);
             this.pnlContainer.TabIndex = 136;
             // 
             // menuMain
@@ -319,7 +319,7 @@ namespace ThisIsWin11
         private System.Windows.Forms.ContextMenuStrip menuMain;
         private System.Windows.Forms.ToolStripMenuItem menuMainComponents;
         private System.Windows.Forms.ToolTip tt;
-        public System.Windows.Forms.Button btnMenu;
+        public System.Windows.Forms.Button btnGlobalNav;
     }
 }
 

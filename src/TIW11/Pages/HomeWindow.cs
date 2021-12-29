@@ -2,14 +2,14 @@
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
-using ThisIsWin11.Presenter;
+using ThisIsWin11.GetStarted;
 
 namespace ThisIsWin11
 {
     public partial class HomeWindow : Form
     {
         private Helpers.Utils utilInfo = new Helpers.Utils();
-        private Presenter.OS osInfo = new Presenter.OS();
+        private GetStarted.OS osInfo = new GetStarted.OS();
         private PageTitle INavPage = PageTitle.GetStarted;
 
         private readonly string defaultCustomizerText = "Customizations available";
@@ -36,7 +36,7 @@ namespace ThisIsWin11
             if (osInfo.IsWin11())
             {
                 if (!Helpers.Utils.IsInet())
-                    lnkSubHeader.Text = "We cannot connect to the Internet.\n Some functions of the Windows 11 Presenter module are not available.";
+                    lnkSubHeader.Text = "We cannot connect to the Internet.\n Some functions of the Windows 11 GetStarted module are not available.";
                 else
                     lnkSubHeader.Text = osInfo.GetChassisType() + "\x20" +
                                         "Windows 11" + "\x20"
@@ -488,7 +488,7 @@ namespace ThisIsWin11
                                     (Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                                     "Packages\\Microsoft.Getstarted_8wekyb3d8bbwe"));
 
-                    if (!tipsApp) MessageBox.Show("Microsoft Tips app is not installed on this system :(\nYou can get it on the Microsoft Store.","We are sorry...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (!tipsApp) MessageBox.Show("Microsoft Tips app is not installed on this system :(\nYou can get it on the Microsoft Store.", "We are sorry...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else
                     {
                         Process.Start(@"shell:appsfolder\Microsoft.Getstarted_8wekyb3d8bbwe!App");
