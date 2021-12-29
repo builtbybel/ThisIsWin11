@@ -1,7 +1,13 @@
 
-- Major update to v1.0 with a big visual overhaul
+- Added out-of-box experience "OOBE" Profile to OpenTweaks module.
+- Added option to OpenTweaks > System category to "Enable Microsoft Hyper-V" virtualization platform
+- Improved uninstall of Widgets app (TIW11 uses the Command Prompt for doing some command line tasks which will be replaced with Windows Terminal in 2022).
+- Fixed bug that caused the Refresh button in the PumpedApp module not to be displayed
+- Updated UI of OpenTweaks and PowerUI module
+- Added Plugin to enable "Windows 10x Boot Animation" to Extensions module
+- Minor fixes
 All changes can be viewed here: https://github.com/builtbybel/ThisIsWin11/releases/latest
 
 From the blog:
 You can still vote for the new design here
-https://www.builtbybel.com/blog/19-apps/45-restyling-thisiswin11
+https://www.builtbybel.com/blog/19-apps/46-the-thisiswin11-navigation-bar-sucks
