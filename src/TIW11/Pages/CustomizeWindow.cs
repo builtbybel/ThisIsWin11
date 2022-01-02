@@ -426,14 +426,20 @@ namespace ThisIsWin11
             }
         }
 
-        private void menuCustomizeSelect_Click(object sender, EventArgs e)
+        private void menuCustomizeExpand_Click(object sender, EventArgs e)
         {
-            menuCustomizeSelect.Checked = !(menuCustomizeSelect.Checked);
+            menuCustomizeExpand.Checked = !(menuCustomizeExpand.Checked);
 
-            if (menuCustomizeSelect.Checked == true)
-                SelectAssessmentNodes(tvwAssessments.Nodes, true);
-            else
-                SelectAssessmentNodes(tvwAssessments.Nodes, false);
+            tvwAssessments.BeginUpdate();
+            if (menuCustomizeExpand.Checked == true)
+            {
+                tvwAssessments.Nodes[0].ExpandAll();
+                tvwAssessments.Nodes[0].EnsureVisible();
+            }
+            else if (menuCustomizeExpand.Checked == false)
+                tvwAssessments.Nodes[0].Collapse();
+
+            tvwAssessments.EndUpdate();
         }
 
         private void menuCustomizeExportProfile_Click(object sender, EventArgs e)
@@ -501,5 +507,7 @@ namespace ThisIsWin11
         private void btnCustomizeImport_Click(object sender, EventArgs e) => menuCustomizeImportProfile.PerformClick();
 
         private void btnCustomizeExportNShare_Click(object sender, EventArgs e) => menuCustomizeExportProfile.PerformClick();
+
+   
     }
 }

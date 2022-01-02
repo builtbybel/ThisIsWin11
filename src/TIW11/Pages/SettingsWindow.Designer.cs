@@ -42,6 +42,11 @@ namespace ThisIsWin11
             this.lblAppMediaTwitter = new System.Windows.Forms.LinkLabel();
             this.lblAppMediaPayPal = new System.Windows.Forms.LinkLabel();
             this.btnAppMediaGitHubIssues = new System.Windows.Forms.Button();
+            this.lblHeartFillEmoji = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnCLISwitch = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // rtbAbout
@@ -53,10 +58,10 @@ namespace ThisIsWin11
             this.rtbAbout.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbAbout.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbAbout.ForeColor = System.Drawing.Color.Black;
-            this.rtbAbout.Location = new System.Drawing.Point(507, 383);
+            this.rtbAbout.Location = new System.Drawing.Point(507, 400);
             this.rtbAbout.Name = "rtbAbout";
             this.rtbAbout.ReadOnly = true;
-            this.rtbAbout.Size = new System.Drawing.Size(697, 467);
+            this.rtbAbout.Size = new System.Drawing.Size(697, 422);
             this.rtbAbout.TabIndex = 0;
             this.rtbAbout.Text = "";
             this.rtbAbout.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbAbout_LinkClicked);
@@ -117,14 +122,14 @@ namespace ThisIsWin11
             this.lblSettingsAbout.AutoEllipsis = true;
             this.lblSettingsAbout.AutoSize = true;
             this.lblSettingsAbout.BackColor = System.Drawing.Color.White;
-            this.lblSettingsAbout.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettingsAbout.Font = new System.Drawing.Font("Segoe UI Variable Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSettingsAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblSettingsAbout.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblSettingsAbout.Location = new System.Drawing.Point(501, 100);
             this.lblSettingsAbout.Name = "lblSettingsAbout";
-            this.lblSettingsAbout.Size = new System.Drawing.Size(196, 36);
+            this.lblSettingsAbout.Size = new System.Drawing.Size(163, 36);
             this.lblSettingsAbout.TabIndex = 157;
-            this.lblSettingsAbout.Text = "About this app";
+            this.lblSettingsAbout.Text = "ThisIsWin11";
             // 
             // lblAssemblyInfo
             // 
@@ -172,12 +177,12 @@ namespace ThisIsWin11
             this.lblAppMediaGitHub.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppMediaGitHub.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lblAppMediaGitHub.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lblAppMediaGitHub.Location = new System.Drawing.Point(503, 228);
+            this.lblAppMediaGitHub.Location = new System.Drawing.Point(505, 248);
             this.lblAppMediaGitHub.Name = "lblAppMediaGitHub";
             this.lblAppMediaGitHub.Size = new System.Drawing.Size(336, 22);
             this.lblAppMediaGitHub.TabIndex = 166;
             this.lblAppMediaGitHub.TabStop = true;
-            this.lblAppMediaGitHub.Text = "GitHub (1.4k Starred)";
+            this.lblAppMediaGitHub.Text = "GitHub (1.5k Starred)";
             this.lblAppMediaGitHub.VisitedLinkColor = System.Drawing.Color.MediumVioletRed;
             this.lblAppMediaGitHub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAppMediaGitHub_LinkClicked);
             // 
@@ -191,7 +196,7 @@ namespace ThisIsWin11
             this.lblAppMain.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppMain.ForeColor = System.Drawing.Color.Black;
             this.lblAppMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblAppMain.Location = new System.Drawing.Point(501, 150);
+            this.lblAppMain.Location = new System.Drawing.Point(503, 186);
             this.lblAppMain.Name = "lblAppMain";
             this.lblAppMain.Size = new System.Drawing.Size(66, 20);
             this.lblAppMain.TabIndex = 167;
@@ -204,7 +209,7 @@ namespace ThisIsWin11
             this.lblAppMediaTwitter.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppMediaTwitter.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lblAppMediaTwitter.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lblAppMediaTwitter.Location = new System.Drawing.Point(503, 259);
+            this.lblAppMediaTwitter.Location = new System.Drawing.Point(505, 279);
             this.lblAppMediaTwitter.Name = "lblAppMediaTwitter";
             this.lblAppMediaTwitter.Size = new System.Drawing.Size(336, 22);
             this.lblAppMediaTwitter.TabIndex = 168;
@@ -220,7 +225,7 @@ namespace ThisIsWin11
             this.lblAppMediaPayPal.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppMediaPayPal.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lblAppMediaPayPal.LinkColor = System.Drawing.Color.MediumVioletRed;
-            this.lblAppMediaPayPal.Location = new System.Drawing.Point(503, 291);
+            this.lblAppMediaPayPal.Location = new System.Drawing.Point(505, 311);
             this.lblAppMediaPayPal.Name = "lblAppMediaPayPal";
             this.lblAppMediaPayPal.Size = new System.Drawing.Size(336, 22);
             this.lblAppMediaPayPal.TabIndex = 169;
@@ -233,13 +238,90 @@ namespace ThisIsWin11
             // 
             this.btnAppMediaGitHubIssues.AutoSize = true;
             this.btnAppMediaGitHubIssues.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAppMediaGitHubIssues.Location = new System.Drawing.Point(503, 330);
+            this.btnAppMediaGitHubIssues.Location = new System.Drawing.Point(505, 350);
             this.btnAppMediaGitHubIssues.Name = "btnAppMediaGitHubIssues";
             this.btnAppMediaGitHubIssues.Size = new System.Drawing.Size(119, 32);
             this.btnAppMediaGitHubIssues.TabIndex = 171;
             this.btnAppMediaGitHubIssues.Text = "Send feedback";
             this.btnAppMediaGitHubIssues.UseVisualStyleBackColor = true;
             this.btnAppMediaGitHubIssues.Click += new System.EventHandler(this.btnAppMediaGitHubIssues_Click);
+            // 
+            // lblHeartFillEmoji
+            // 
+            this.lblHeartFillEmoji.BackColor = System.Drawing.Color.White;
+            this.lblHeartFillEmoji.Font = new System.Drawing.Font("Segoe Fluent Icons", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeartFillEmoji.ForeColor = System.Drawing.Color.HotPink;
+            this.lblHeartFillEmoji.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblHeartFillEmoji.Location = new System.Drawing.Point(539, 157);
+            this.lblHeartFillEmoji.Name = "lblHeartFillEmoji";
+            this.lblHeartFillEmoji.Size = new System.Drawing.Size(32, 25);
+            this.lblHeartFillEmoji.TabIndex = 172;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoEllipsis = true;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(505, 157);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 20);
+            this.label1.TabIndex = 173;
+            this.label1.Text = "with";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoEllipsis = true;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(567, 157);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.TabIndex = 174;
+            this.label2.Text = "Builtbybel";
+            // 
+            // btnCLISwitch
+            // 
+            this.btnCLISwitch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCLISwitch.AutoEllipsis = true;
+            this.btnCLISwitch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCLISwitch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCLISwitch.FlatAppearance.BorderSize = 0;
+            this.btnCLISwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCLISwitch.Font = new System.Drawing.Font("Segoe UI Variable Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCLISwitch.ForeColor = System.Drawing.Color.Black;
+            this.btnCLISwitch.Location = new System.Drawing.Point(505, 823);
+            this.btnCLISwitch.Name = "btnCLISwitch";
+            this.btnCLISwitch.Size = new System.Drawing.Size(140, 27);
+            this.btnCLISwitch.TabIndex = 175;
+            this.btnCLISwitch.Text = "Command-line options";
+            this.btnCLISwitch.UseVisualStyleBackColor = false;
+            this.btnCLISwitch.Click += new System.EventHandler(this.btnCLISwitch_Click);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoEllipsis = true;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gray;
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(505, 136);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(319, 17);
+            this.label3.TabIndex = 176;
+            this.label3.Text = "OS created by Microsoft and fixed by the community.";
             // 
             // SettingsWindow
             // 
@@ -248,6 +330,11 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1210, 862);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnCLISwitch);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblHeartFillEmoji);
             this.Controls.Add(this.btnAppMediaGitHubIssues);
             this.Controls.Add(this.lblAppMediaPayPal);
             this.Controls.Add(this.lblAppMediaTwitter);
@@ -288,5 +375,10 @@ namespace ThisIsWin11
         private System.Windows.Forms.LinkLabel lblAppMediaTwitter;
         private System.Windows.Forms.LinkLabel lblAppMediaPayPal;
         private System.Windows.Forms.Button btnAppMediaGitHubIssues;
+        private System.Windows.Forms.Label lblHeartFillEmoji;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnCLISwitch;
+        private System.Windows.Forms.Label label3;
     }
 }

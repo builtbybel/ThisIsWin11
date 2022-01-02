@@ -35,7 +35,7 @@ namespace ThisIsWin11
         {
             btnAutomateMenu.Text = "\uE712";
             rtbDesc.Text = "You will find here custom tasks and script files to customize Windows 11 according to your wishes.\n\n" +
-                          "To obtain new collections visit the GitHub repository of the app:\n\n" + Helpers.Strings.Uri.GitRepo;
+                          "To obtain new collections visit the GitHub repository of the app:\n\n" + Helpers.Strings.Uri.URL_GITREPO;
         }
 
         private void InitializeAutomationPackage()

@@ -156,7 +156,7 @@ namespace ThisIsWin11
                 }
             }
 
-            rtbPS.Text += Environment.NewLine + Environment.NewLine + "I'm done.\nI'm open.\nFollow me on " + Helpers.Strings.Uri.GitRepo;
+            rtbPS.Text += Environment.NewLine + Environment.NewLine + "I'm done.\nI'm open.\nFollow me on " + Helpers.Strings.Uri.URL_GITREPO;
 
             progress.Visible = false;
             btnRunPackage.Enabled = true;

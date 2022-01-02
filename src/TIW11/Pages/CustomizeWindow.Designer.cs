@@ -37,7 +37,7 @@ namespace ThisIsWin11
             this.menuCustomizeImportProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCustomizeExportProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCustomizeExportLog = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuCustomizeSelect = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCustomizeExpand = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCustomizePopOut = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuCustomizeVersioning = new System.Windows.Forms.ToolStripMenuItem();
@@ -117,13 +117,13 @@ namespace ThisIsWin11
             this.menuCustomizeImportProfile,
             this.menuCustomizeExportProfile,
             this.menuCustomizeExportLog,
-            this.menuCustomizeSelect,
+            this.menuCustomizeExpand,
             this.menuCustomizePopOut,
             this.toolStripSeparator1,
             this.menuCustomizeVersioning});
             this.menuCustomize.Name = "menuMain";
             this.menuCustomize.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuCustomize.Size = new System.Drawing.Size(201, 190);
+            this.menuCustomize.Size = new System.Drawing.Size(201, 212);
             // 
             // menuCustomizeImportProfile
             // 
@@ -146,12 +146,12 @@ namespace ThisIsWin11
             this.menuCustomizeExportLog.Text = "Export log";
             this.menuCustomizeExportLog.Click += new System.EventHandler(this.menuCustomizeExportLog_Click);
             // 
-            // menuCustomizeSelect
+            // menuCustomizeExpand
             // 
-            this.menuCustomizeSelect.Name = "menuCustomizeSelect";
-            this.menuCustomizeSelect.Size = new System.Drawing.Size(200, 30);
-            this.menuCustomizeSelect.Text = "Select all";
-            this.menuCustomizeSelect.Click += new System.EventHandler(this.menuCustomizeSelect_Click);
+            this.menuCustomizeExpand.Name = "menuCustomizeExpand";
+            this.menuCustomizeExpand.Size = new System.Drawing.Size(200, 30);
+            this.menuCustomizeExpand.Text = "Expand all";
+            this.menuCustomizeExpand.Click += new System.EventHandler(this.menuCustomizeExpand_Click);
             // 
             // menuCustomizePopOut
             // 
@@ -384,7 +384,7 @@ namespace ThisIsWin11
         private System.Windows.Forms.ProgressBar progress;
         private System.Windows.Forms.Button btnCustomizeFix;
         private System.Windows.Forms.ToolStripMenuItem menuCustomizeExportLog;
-        private System.Windows.Forms.ToolStripMenuItem menuCustomizeSelect;
+        private System.Windows.Forms.ToolStripMenuItem menuCustomizeExpand;
         private System.Windows.Forms.ToolStripMenuItem menuCustomizeVersioning;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Panel pnlLeft;
