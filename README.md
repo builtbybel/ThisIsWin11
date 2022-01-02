@@ -22,7 +22,7 @@ ThisIsWin11 lets you customize Windows 11 all in one place. It is slowly expande
  
 The app currently offers six modules:
 
-- **Presenter** ThisIsWin11 is starting off with a helpful introduction to what you can find in Windows 11.
+- **GetStarted** ThisIsWin11 is starting off with a helpful introduction to what you can find in Windows 11.
 - **OpenTweaks** integrates an important part of the Windows 11 settings app and allows you to check and enable/disable settings in a bulk and with just a click.
 - **PumpedApp** makes it possible to remove unwanted features and apps from Windows 11 such as the Camera and Alarm apps, and other preinstalled bloat that you can live without.
 - **Packages** powered by [Windows Package Manager](https://github.com/microsoft/winget-cli) allows you to create your own custom install packages.
