@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Net;
 using System.Windows.Forms;
 
@@ -32,6 +33,7 @@ namespace ThisIsWin11
             var buildDateTime = Properties.Resources.BuildDate;
             lblAssembly.Text = Program.GetCurrentVersionTostring();
 
+            btnSettingsMenu.Text = "\uE712";
             lblHeartFillEmoji.Text = "\uEB52";
             lblAppMain.Text = "(Spartan release)" +
                            "\nBuild on " + buildDateTime;
@@ -70,14 +72,30 @@ namespace ThisIsWin11
         private void btnAppMediaGitHubIssues_Click(object sender, EventArgs e)
             => Process.Start(Helpers.Strings.Uri.URL_FEEDBACK);
 
-        private void btnCLISwitch_Click(object sender, EventArgs e)
+        private void btnSettingsMenu_Click(object sender, EventArgs e)
+            => this.menuSettings.Show(Cursor.Position.X, Cursor.Position.Y);
+
+        private void menuCLI_Click(object sender, EventArgs e)
         {
             MessageBox.Show("To run each module in a seperate instance/app use the following arguments:" +
-                             "\n\t/getstarted" +
-                             "\n\t/opentweaks" +
-                             "\n\t/pumpedapp" +
-                             "\n\t/packages" +
-                             "\n\t/powerui", "Command-line switches");
+                 "\n\t/getstarted" +
+                 "\n\t/opentweaks" +
+                 "\n\t/pumpedapp" +
+                 "\n\t/packages" +
+                 "\n\t/powerui", "Command-line switches");
+        }
+
+        private void menuFeedbackHub_Click(object sender, EventArgs e)
+        {
+            bool feedbackHub = Directory.Exists(Path.Combine
+                (Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                "Packages\\Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe"));
+
+            if (!feedbackHub) MessageBox.Show("FeedbackHub is not installed on this system :(\nYou can get it on the Microsoft Store.", "We are sorry...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+            {
+                Process.Start(@"shell:appsfolder\Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe!App");
+            }
         }
     }
 }

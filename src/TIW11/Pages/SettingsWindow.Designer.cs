@@ -29,6 +29,7 @@ namespace ThisIsWin11
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.rtbAbout = new System.Windows.Forms.RichTextBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnCheckForUpdates = new System.Windows.Forms.Button();
@@ -45,8 +46,12 @@ namespace ThisIsWin11
             this.lblHeartFillEmoji = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnCLISwitch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnSettingsMenu = new System.Windows.Forms.Button();
+            this.menuSettings = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuCLI = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuFeedbackHub = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // rtbAbout
@@ -61,7 +66,7 @@ namespace ThisIsWin11
             this.rtbAbout.Location = new System.Drawing.Point(507, 400);
             this.rtbAbout.Name = "rtbAbout";
             this.rtbAbout.ReadOnly = true;
-            this.rtbAbout.Size = new System.Drawing.Size(697, 422);
+            this.rtbAbout.Size = new System.Drawing.Size(697, 450);
             this.rtbAbout.TabIndex = 0;
             this.rtbAbout.Text = "";
             this.rtbAbout.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbAbout_LinkClicked);
@@ -289,24 +294,6 @@ namespace ThisIsWin11
             this.label2.TabIndex = 174;
             this.label2.Text = "Builtbybel";
             // 
-            // btnCLISwitch
-            // 
-            this.btnCLISwitch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCLISwitch.AutoEllipsis = true;
-            this.btnCLISwitch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCLISwitch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCLISwitch.FlatAppearance.BorderSize = 0;
-            this.btnCLISwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCLISwitch.Font = new System.Drawing.Font("Segoe UI Variable Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCLISwitch.ForeColor = System.Drawing.Color.Black;
-            this.btnCLISwitch.Location = new System.Drawing.Point(505, 823);
-            this.btnCLISwitch.Name = "btnCLISwitch";
-            this.btnCLISwitch.Size = new System.Drawing.Size(140, 27);
-            this.btnCLISwitch.TabIndex = 175;
-            this.btnCLISwitch.Text = "Command-line options";
-            this.btnCLISwitch.UseVisualStyleBackColor = false;
-            this.btnCLISwitch.Click += new System.EventHandler(this.btnCLISwitch_Click);
-            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -319,9 +306,52 @@ namespace ThisIsWin11
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label3.Location = new System.Drawing.Point(505, 136);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(319, 17);
+            this.label3.Size = new System.Drawing.Size(306, 17);
             this.label3.TabIndex = 176;
-            this.label3.Text = "OS created by Microsoft and fixed by the community.";
+            this.label3.Text = "OS made by Microsoft and fixed by the community.";
+            // 
+            // btnSettingsMenu
+            // 
+            this.btnSettingsMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSettingsMenu.BackColor = System.Drawing.Color.White;
+            this.btnSettingsMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSettingsMenu.FlatAppearance.BorderSize = 0;
+            this.btnSettingsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnSettingsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettingsMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettingsMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSettingsMenu.Location = new System.Drawing.Point(1161, 0);
+            this.btnSettingsMenu.Name = "btnSettingsMenu";
+            this.btnSettingsMenu.Size = new System.Drawing.Size(48, 51);
+            this.btnSettingsMenu.TabIndex = 178;
+            this.btnSettingsMenu.UseVisualStyleBackColor = false;
+            this.btnSettingsMenu.Click += new System.EventHandler(this.btnSettingsMenu_Click);
+            // 
+            // menuSettings
+            // 
+            this.menuSettings.BackColor = System.Drawing.Color.White;
+            this.menuSettings.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuSettings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuCLI,
+            this.menuFeedbackHub});
+            this.menuSettings.Name = "menuMain";
+            this.menuSettings.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuSettings.Size = new System.Drawing.Size(318, 64);
+            // 
+            // menuCLI
+            // 
+            this.menuCLI.Name = "menuCLI";
+            this.menuCLI.Size = new System.Drawing.Size(317, 30);
+            this.menuCLI.Text = "Command-line switches";
+            this.menuCLI.Click += new System.EventHandler(this.menuCLI_Click);
+            // 
+            // menuFeedbackHub
+            // 
+            this.menuFeedbackHub.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuFeedbackHub.Name = "menuFeedbackHub";
+            this.menuFeedbackHub.Size = new System.Drawing.Size(317, 30);
+            this.menuFeedbackHub.Text = "Send Feedback to Microsoft";
+            this.menuFeedbackHub.Click += new System.EventHandler(this.menuFeedbackHub_Click);
             // 
             // SettingsWindow
             // 
@@ -330,8 +360,8 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1210, 862);
+            this.Controls.Add(this.btnSettingsMenu);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnCLISwitch);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblHeartFillEmoji);
@@ -355,6 +385,7 @@ namespace ThisIsWin11
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.SettingsWindow_Load);
             this.Shown += new System.EventHandler(this.SettingsWindow_Shown);
+            this.menuSettings.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,7 +409,10 @@ namespace ThisIsWin11
         private System.Windows.Forms.Label lblHeartFillEmoji;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnCLISwitch;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnSettingsMenu;
+        private System.Windows.Forms.ContextMenuStrip menuSettings;
+        private System.Windows.Forms.ToolStripMenuItem menuCLI;
+        private System.Windows.Forms.ToolStripMenuItem menuFeedbackHub;
     }
 }

@@ -510,6 +510,6 @@ namespace ThisIsWin11
         }
 
         private void btnCustomButton_Click(object sender, EventArgs e)
-            => Process.Start("https://www.builtbybel.com/blog/19-apps/46-the-thisiswin11-navigation-bar-sucks");
+            => Process.Start(Helpers.Strings.TweetIntent);
     }
 }
