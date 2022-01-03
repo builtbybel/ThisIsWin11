@@ -1,8 +1,6 @@
 
-- Added CLI support and some simple arguments to run each module in a seperate instance/app. (Supported arguments /opentweaks /pumpedapp /packages /powerui /getstarted)
-- Improved dependencies checker (e.g. winget)
-- Added plugin to Extensions to "Enable AutoAdminLogon"
-- Minor UI fixes
+Release 1.0.60 is a Maintenance release.
+- with minor fixes, updated packages, improved settings page and other UI improvements and polish
 
 All changes can be viewed here: https://github.com/builtbybel/ThisIsWin11/releases/latest
 
