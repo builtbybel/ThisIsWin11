@@ -22,8 +22,8 @@ namespace ThisIsWin11.Helpers
 
             if (IsInet() == true)
             {
-                string versionContent = new WebClient().DownloadString(Strings.Uri.GitChanges);
-                string assemblyInfo = new WebClient().DownloadString(Strings.Uri.AssemblyInfo);
+                string versionContent = new WebClient().DownloadString(Strings.Uri.URL_GITCHANGELOG);
+                string assemblyInfo = new WebClient().DownloadString(Strings.Uri.URL_ASSEMBLY);
 
                 try
                 {
@@ -114,7 +114,7 @@ namespace ThisIsWin11.Helpers
                                     Application.Restart();
                             }
                             catch // Catch error 404 if no tag for new version available
-                            { MessageBox.Show("The update is not yet available.\nPlease try again soon."); }
+                            { MessageBox.Show("The update distribution is most likely currently being prepared.\nPlease try again in a few minutes.", "We are not ready yet."); }
                         }
                     }
                 }

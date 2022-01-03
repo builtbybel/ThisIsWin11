@@ -5,7 +5,7 @@ namespace ThisIsWin11
 {
     internal static class Program
     {
-        internal static string GetCurrentVersionTostring() => new Version(Application.ProductVersion).ToString(4);
+        internal static string GetCurrentVersionTostring() => new Version(Application.ProductVersion).ToString(3);
 
         /// <summary>
         /// The main entry point for the application.

@@ -132,8 +132,8 @@ namespace ThisIsWin11
             this.btnCustomButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCustomButton.AutoEllipsis = true;
             this.btnCustomButton.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.btnCustomButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCustomButton.FlatAppearance.BorderSize = 2;
+            this.btnCustomButton.FlatAppearance.BorderColor = System.Drawing.Color.MediumVioletRed;
+            this.btnCustomButton.FlatAppearance.BorderSize = 0;
             this.btnCustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomButton.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomButton.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -141,7 +141,7 @@ namespace ThisIsWin11
             this.btnCustomButton.Name = "btnCustomButton";
             this.btnCustomButton.Size = new System.Drawing.Size(207, 32);
             this.btnCustomButton.TabIndex = 156;
-            this.btnCustomButton.Text = "Vote for this new UI";
+            this.btnCustomButton.Text = "Tweet about this app";
             this.btnCustomButton.UseVisualStyleBackColor = false;
             this.btnCustomButton.Click += new System.EventHandler(this.btnCustomButton_Click);
             // 

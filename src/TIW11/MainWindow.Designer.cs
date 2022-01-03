@@ -79,7 +79,7 @@ namespace ThisIsWin11
             this.btnGlobalNav.Location = new System.Drawing.Point(8, 6);
             this.btnGlobalNav.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGlobalNav.Name = "btnGlobalNav";
-            this.btnGlobalNav.Size = new System.Drawing.Size(24, 32);
+            this.btnGlobalNav.Size = new System.Drawing.Size(27, 32);
             this.btnGlobalNav.TabIndex = 146;
             this.btnGlobalNav.TabStop = false;
             this.btnGlobalNav.Text = "...";
