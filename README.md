@@ -13,9 +13,7 @@
  _This is not a product made by Microsoft and it's in no way related to them._
  
 
-## Features <a href="https://www.youtube.com/watch?v=8ReoMuCUdKE" target="_blank">
-
- 
+## Features 
 ThisIsWin11 lets you customize Windows 11 all in one place. It is slowly expanded as a practical all-rounder for Windows 11, similar to Microsoft PowerToys.
  
 The app currently offers six modules:
