@@ -30,9 +30,9 @@ namespace ThisIsWin11
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnCustomizeMenu = new System.Windows.Forms.Button();
+            this.btnCustomizeMenu = new ThisIsWin11.Controls.RoundedButton();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.btnCustomizeCheck = new System.Windows.Forms.Button();
+            this.btnCustomizeCheck = new ThisIsWin11.Controls.RoundedButton();
             this.menuCustomize = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuCustomizeImportProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCustomizeExportProfile = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,14 +43,14 @@ namespace ThisIsWin11
             this.menuCustomizeVersioning = new System.Windows.Forms.ToolStripMenuItem();
             this.progress = new System.Windows.Forms.ProgressBar();
             this.tvwAssessments = new System.Windows.Forms.TreeView();
-            this.btnCustomizeFix = new System.Windows.Forms.Button();
+            this.btnCustomizeFix = new ThisIsWin11.Controls.RoundedButton();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
-            this.btnCustomizeUndo = new System.Windows.Forms.Button();
+            this.btnCustomizeUndo = new ThisIsWin11.Controls.RoundedButton();
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
-            this.btnCustomizeImport = new System.Windows.Forms.Button();
-            this.btnCustomizeExportNShare = new System.Windows.Forms.Button();
+            this.btnCustomizeImport = new ThisIsWin11.Controls.RoundedButton();
+            this.btnCustomizeExportNShare = new ThisIsWin11.Controls.RoundedButton();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.menuCustomize.SuspendLayout();
             this.pnlLeft.SuspendLayout();

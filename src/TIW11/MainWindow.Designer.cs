@@ -31,14 +31,14 @@ namespace ThisIsWin11
         {
             this.components = new System.ComponentModel.Container();
             this.pnlNav = new System.Windows.Forms.Panel();
-            this.btnGlobalNav = new System.Windows.Forms.Button();
-            this.btnExtensions = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnSettings = new System.Windows.Forms.Button();
-            this.btnAutomate = new System.Windows.Forms.Button();
-            this.btnPackages = new System.Windows.Forms.Button();
-            this.btnApps = new System.Windows.Forms.Button();
-            this.btnCustomize = new System.Windows.Forms.Button();
+            this.btnGlobalNav = new ThisIsWin11.Controls.RoundedButton();
+            this.btnExtensions = new ThisIsWin11.Controls.RoundedButton();
+            this.btnHome = new ThisIsWin11.Controls.RoundedButton();
+            this.btnSettings = new ThisIsWin11.Controls.RoundedButton();
+            this.btnAutomate = new ThisIsWin11.Controls.RoundedButton();
+            this.btnPackages = new ThisIsWin11.Controls.RoundedButton();
+            this.btnApps = new ThisIsWin11.Controls.RoundedButton();
+            this.btnCustomize = new ThisIsWin11.Controls.RoundedButton();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.menuMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuMainComponents = new System.Windows.Forms.ToolStripMenuItem();
