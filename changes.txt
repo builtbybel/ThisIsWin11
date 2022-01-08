@@ -1,6 +1,9 @@
 
-Release 1.0.60 is a Maintenance release.
-- with minor fixes, updated packages, improved settings page and other UI improvements and polish
+- Added globally rounded buttons to UI
+- Added option to OpenTweaks > Install Microsoft Windows Subsystem for Android (ONLY if your Win11 installation meets the official requirements)
+- Improved Dependencies checker
+- Added link to Extensions module to get new plugins
+- Several minor fixes
 
 All changes can be viewed here: https://github.com/builtbybel/ThisIsWin11/releases/latest
 

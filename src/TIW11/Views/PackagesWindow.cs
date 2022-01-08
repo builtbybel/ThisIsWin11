@@ -59,21 +59,20 @@ namespace ThisIsWin11
                 TreeNode categoriesNode;
                 foreach (XElement module in doc.Descendants("Module"))
                 {
-                    moduleNode = tvwPackages.Nodes.Add(module.Attribute("name").Value);
+                    moduleNode = tvwPackages.Nodes.Add(module.Attribute("name").Value + " (v1.1.12653)");
                     foreach (XElement categories in module.Descendants("Category"))
                     {
                         categoriesNode =
                             moduleNode.Nodes.Add(categories.Attribute("name").Value);
                         foreach (XElement category in categories.Descendants("App"))
                         {
-                            if (category.Attribute("id") != null)
-                            {
+                            if (category.Attribute("id") != null) {
                                 categoriesNode.Nodes.Add(category.Attribute("id").Value, category.Attribute("name").Value);
                             }
                             else
                             {
                                 categoriesNode.Nodes.Add(category.Attribute("name").Value);
-                            }
+                            }                          
                         }
                     }
                 }
