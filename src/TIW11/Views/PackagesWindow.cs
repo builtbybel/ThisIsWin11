@@ -59,14 +59,21 @@ namespace ThisIsWin11
                 TreeNode categoriesNode;
                 foreach (XElement module in doc.Descendants("Module"))
                 {
-                    moduleNode = tvwPackages.Nodes.Add(module.Attribute("name").Value + " (v1.1.12653)");
+                    moduleNode = tvwPackages.Nodes.Add(module.Attribute("name").Value);
                     foreach (XElement categories in module.Descendants("Category"))
                     {
                         categoriesNode =
                             moduleNode.Nodes.Add(categories.Attribute("name").Value);
                         foreach (XElement category in categories.Descendants("App"))
                         {
-                            categoriesNode.Nodes.Add(category.Attribute("name").Value);
+                            if (category.Attribute("id") != null)
+                            {
+                                categoriesNode.Nodes.Add(category.Attribute("id").Value, category.Attribute("name").Value);
+                            }
+                            else
+                            {
+                                categoriesNode.Nodes.Add(category.Attribute("name").Value);
+                            }
                         }
                     }
                 }
@@ -82,6 +89,11 @@ namespace ThisIsWin11
             }
             catch
             { MessageBox.Show("Packages database could not be found.\nPlease make sure that a \"packages*.xml\" file is available in the data directory of this app.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+        }
+
+        private string NodeText(TreeNode node)
+        {
+            return node.Name == "" ? node.Text : node.Name;
         }
 
         private IEnumerable<TreeNode> CollectPackages(TreeNodeCollection nodes)
@@ -115,8 +127,8 @@ namespace ThisIsWin11
                     if (node.Checked)
 
                     {
-                        selectedItems.Add("winget install --id=" + node.Text + " -e");
-                        message.AppendLine("- " + node.Text);
+                        selectedItems.Add("winget install --id=" + NodeText(node) + " -e");
+                        message.AppendLine("- " + NodeText(node));
                     }
                 }
 
@@ -147,12 +159,12 @@ namespace ThisIsWin11
                     progress.Style = ProgressBarStyle.Marquee;
                     progress.MarqueeAnimationSpeed = 30;
                     rtbPS.Clear();
-                    message.AppendLine("- " + node.Text);
+                    message.AppendLine("- " + NodeText(node));
 
                     rtbPS.Text += Environment.NewLine + "Installing " + Environment.NewLine + message.ToString() +
                                  Environment.NewLine + "You can continue working while we install.";
 
-                    await Task.Run(() => InstallPackages("winget install --id=" + node.Text + " -e --accept-package-agreements --accept-source-agreements"));
+                    await Task.Run(() => InstallPackages("winget install --id=" + NodeText(node) + " -e --accept-package-agreements --accept-source-agreements"));
                 }
             }
 

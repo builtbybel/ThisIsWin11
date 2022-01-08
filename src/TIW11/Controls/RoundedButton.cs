@@ -13,7 +13,7 @@ namespace ThisIsWin11.Controls
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            IntPtr ptr = RoundPanel(2, 2, Width, Height, 2, 2);
+            IntPtr ptr = RoundPanel(0, 0, Width, Height, 2, 2);
             Region = Region.FromHrgn(ptr);
         }
     }

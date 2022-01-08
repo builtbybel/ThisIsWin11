@@ -12,6 +12,7 @@ namespace ThisIsWin11
         private GetStarted.OS osInfo = new GetStarted.OS();
         private PageTitle INavPage = PageTitle.GetStarted;
 
+        private string wallpaperPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData).ToString() + @"\Microsoft\Windows\Themes\TranscodedWallpaper";
         private readonly string defaultCustomizerText = "Customizations available";
 
         private MainWindow mainForm = null;
@@ -234,7 +235,6 @@ namespace ThisIsWin11
                 case PageTitle.WindowsUpdates:
                     btnConfigurator.Visible = true;
                     btnCustomizer.Visible = false;
-
                     lblHeader.Text = "Faster Windows Updates";
                     lblDesc.Text = "Yes, you read that right. With Windows 11, you will have a much faster Windows update process, thanks to the background installation mechanism. Microsoft has promised that Windows updates will now be 40% smaller, making the process even more efficient. ";
                     pbView.Visible = true;
@@ -285,7 +285,7 @@ namespace ThisIsWin11
                                     "Also, the startup and notification sound is really good.\nPress the Magic Button to listen to the startup sound.\n\n" +
                                     "You will find great new wallpapers for Microsoft products also here https://wallpaperhub.app";
                     pbView.Visible = true;
-                    pbView.ImageLocation = "https://github.com/builtbybel/ThisIsWin11/blob/main/assets/pages/page-wallpapers.png?raw=true";
+                    pbView.ImageLocation = wallpaperPath;
 
                     break;
 
