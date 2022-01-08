@@ -44,14 +44,15 @@
 				<App name="Audacity.Audacity"/>
 				<App name="XBMCFoundation.Kodi"/>
 				<App name="VideoLAN.VLC"/>
- 				<App name="yt-dlg.yt-dlg"/>
+ 				<App id="yt-dlg.yt-dlg" name="yt-dlg"/>
 			</Category>
 
 			<Category name="File Archivers">
 				<App name="7zip.7zip"/>
 				<App name="Bandisoft.Bandizip"/>
 				<App name="RARLab.WinRAR"/>
-				<App name="yt-dlg.yt-dlg"/>
+				<App id="yt-dlg.yt-dlg" name="yt-dlg"/>
+				<App id="9N4P75DXL6FG" name="WSATools" />
 			</Category>
 			
 			 <Category name="Frameworks">
