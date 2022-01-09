@@ -85,6 +85,7 @@
     <Compile Include="Modules\OpenTweaks\Assessments\Personalization\WindowsTheme.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Privacy\AppsAutoInstall.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\System\HyperV.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\System\InstallWSA.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Update\Wusa.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Third-Party\ShutUp11.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Third-Party\WindowsSpyBlocker.cs" />
@@ -98,16 +99,19 @@
     <Compile Include="Modules\OpenTweaks\Assessments\System\XPSWriter.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskbarSi.cs" />
     <Compile Include="Helpers\DependenciesChecker.cs" />
-    <Compile Include="Pages\ExtensionsWindow.cs">
+    <Compile Include="Controls\RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\ExtensionsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\ExtensionsWindow.Designer.cs">
+    <Compile Include="Views\ExtensionsWindow.Designer.cs">
       <DependentUpon>ExtensionsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\HomeWindow.cs">
+    <Compile Include="Views\HomeWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\HomeWindow.Designer.cs">
+    <Compile Include="Views\HomeWindow.Designer.cs">
       <DependentUpon>HomeWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\OpenTweaks\Assessments\Apps\AccountInfo.cs" />
@@ -143,10 +147,10 @@
     <Compile Include="Modules\OpenTweaks\Assessments\Privacy\CompatibilityTelemetry.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Privacy\Telemetry.cs" />
     <Compile Include="Modules\OpenTweaks\ErrorHelper.cs" />
-    <Compile Include="Pages\SettingsWindow.cs">
+    <Compile Include="Views\SettingsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\SettingsWindow.Designer.cs">
+    <Compile Include="Views\SettingsWindow.Designer.cs">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.cs">
@@ -155,30 +159,30 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AppsWindow.cs">
+    <Compile Include="Views\AppsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\AppsWindow.Designer.cs">
+    <Compile Include="Views\AppsWindow.Designer.cs">
       <DependentUpon>AppsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PackagesWindow.cs">
+    <Compile Include="Views\PackagesWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\PackagesWindow.Designer.cs">
+    <Compile Include="Views\PackagesWindow.Designer.cs">
       <DependentUpon>PackagesWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CustomizeWindow.cs">
+    <Compile Include="Views\CustomizeWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\CustomizeWindow.Designer.cs">
+    <Compile Include="Views\CustomizeWindow.Designer.cs">
       <DependentUpon>CustomizeWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pages\AutomateWindow.cs">
+    <Compile Include="Views\AutomateWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\AutomateWindow.Designer.cs">
+    <Compile Include="Views\AutomateWindow.Designer.cs">
       <DependentUpon>AutomateWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources.Designer.cs">
@@ -192,27 +196,27 @@
     <Compile Include="Modules\OpenTweaks\AssessmentBase.cs" />
     <Compile Include="Modules\OpenTweaks\RegistryHelper.cs" />
     <Compile Include="Modules\OpenTweaks\WindowsHelper.cs" />
-    <EmbeddedResource Include="Pages\ExtensionsWindow.resx">
+    <EmbeddedResource Include="Views\ExtensionsWindow.resx">
       <DependentUpon>ExtensionsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\SettingsWindow.resx">
+    <EmbeddedResource Include="Views\SettingsWindow.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\AppsWindow.resx">
+    <EmbeddedResource Include="Views\AppsWindow.resx">
       <DependentUpon>AppsWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\PackagesWindow.resx">
+    <EmbeddedResource Include="Views\PackagesWindow.resx">
       <DependentUpon>PackagesWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\CustomizeWindow.resx">
+    <EmbeddedResource Include="Views\CustomizeWindow.resx">
       <DependentUpon>CustomizeWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\HomeWindow.resx">
+    <EmbeddedResource Include="Views\HomeWindow.resx">
       <DependentUpon>HomeWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -226,7 +230,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Pages\AutomateWindow.resx">
+    <EmbeddedResource Include="Views\AutomateWindow.resx">
       <DependentUpon>AutomateWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.resx">

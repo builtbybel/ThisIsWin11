@@ -47,7 +47,7 @@ namespace ThisIsWin11
         {
             logger.SetTarget(rtbPS);        // Logs messages to target rtb
             btnCustomizeMenu.Text = "\uE712";
-            btnCustomizeUndo.Text = "\uE777";
+
             btnCustomizeImport.Text = "\uECC8";
             btnCustomizeExportNShare.Text = "\uE72D";
 
@@ -58,7 +58,7 @@ namespace ThisIsWin11
                          "by clicking on the import button in the upper right corner.";
         }
 
-        #region 63 available customizations in OpenTweaks (last update 12/27/2021)
+        #region 64 available customizations in OpenTweaks (last update 2022/01/07)
 
         public void InitializeAssessments()
         {
@@ -112,6 +112,7 @@ namespace ThisIsWin11
                 new AssessmentNode(new OpenTweaks.Assessment.System.Fax()),
                 new AssessmentNode(new OpenTweaks.Assessment.System.XPSWriter()),
                 new AssessmentNode(new OpenTweaks.Assessment.System.EnableWSL()),
+                new AssessmentNode(new OpenTweaks.Assessment.System.InstallWSA()),
                 new AssessmentNode(new OpenTweaks.Assessment.System.HyperV()),
                 new AssessmentNode(new OpenTweaks.Assessment.System.TeamsAutostart()),
             })
@@ -508,6 +509,6 @@ namespace ThisIsWin11
 
         private void btnCustomizeExportNShare_Click(object sender, EventArgs e) => menuCustomizeExportProfile.PerformClick();
 
-   
+
     }
 }

@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace ThisIsWin11
+namespace ThisIsWin11.Helpers
 {
     internal class DependenciesChecker
     {
@@ -21,5 +22,23 @@ namespace ThisIsWin11
             }
             return ExecutableExists;
         }
+
+        //public static void WingetInstallPackage(string packageid)
+        //{
+        //    var proc = new Process
+        //    {
+        //        StartInfo = new ProcessStartInfo
+        //        {
+        //            FileName = Strings.Paths.ShellWT,
+        //            Arguments = "winget install --id " + packageid + " --accept-source-agreements --accept-package-agreements",
+        //            UseShellExecute = false,
+        //            CreateNoWindow = false,
+        //        }
+        //    };
+
+        //    proc.Start();
+        //    proc.WaitForExit();
+        //}
+
     }
 }

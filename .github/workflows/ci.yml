@@ -1,0 +1,22 @@
+﻿# The name of the work flow. Badges will use this name
+name: 'CI'
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup MSBuild Path
+      uses: microsoft/setup-msbuild@v1.1
+
+    - name: Build ThisIsWin11
+      run: |
+        $env:PLATFORM="Any CPU"
+        msbuild src\TIW11.sln /p:Configuration="Release" /p:Platform="Any CPU" -verbosity:diag

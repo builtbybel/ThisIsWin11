@@ -1,6 +1,14 @@
 
-Release 1.0.60 is a Maintenance release.
-- with minor fixes, updated packages, improved settings page and other UI improvements and polish
+- Improved Packages module and added next to the apps name a new apps ID attribute. This allows names to be assigned regardless of their installation ID in the Windows Package Manager manifest repository or Microsoft Store https://github.com/builtbybel/ThisIsWin11/pull/100 Thanks to https://github.com/oleksis
+- Polished UI of Apps module aka PumpedApp
+- Polished UI of Packages module
+- All modules now share the same UI style
+- Added a more prominent placement of the "Restore default Windows 11 settings" button in system module aka OpenTweaks
+- Updated Automation module
+- Added some new Packages, e.g. NanaZip, ElevenClock, WSATools
+- Minor improvements on Get started module
+- Minor control fixes
+
 
 All changes can be viewed here: https://github.com/builtbybel/ThisIsWin11/releases/latest
 
