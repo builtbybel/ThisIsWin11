@@ -298,7 +298,6 @@ namespace ThisIsWin11
             this.Name = "MainWindow";
             this.ShowIcon = false;
             this.Text = "ThisIsWin11";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.MainWindow_Shown);
             this.pnlNav.ResumeLayout(false);
             this.pnlNav.PerformLayout();
