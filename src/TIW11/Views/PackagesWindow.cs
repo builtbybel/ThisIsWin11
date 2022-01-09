@@ -66,13 +66,19 @@ namespace ThisIsWin11
                             moduleNode.Nodes.Add(categories.Attribute("name").Value);
                         foreach (XElement category in categories.Descendants("App"))
                         {
+                            TreeNode node;
                             if (category.Attribute("id") != null) {
-                                categoriesNode.Nodes.Add(category.Attribute("id").Value, category.Attribute("name").Value);
+                                node = categoriesNode.Nodes.Add(category.Attribute("id").Value, category.Attribute("name").Value);
                             }
                             else
                             {
-                                categoriesNode.Nodes.Add(category.Attribute("name").Value);
-                            }                          
+                                node = categoriesNode.Nodes.Add(category.Attribute("name").Value);
+                            }
+
+                            if (category.Attribute("description") != null)
+                            {
+                                node.ToolTipText = category.Attribute("description").Value;
+                            }
                         }
                     }
                 }

@@ -11,7 +11,11 @@
 				<App id="ShareX.ShareX" name="ShareX"/>
 				<App id="SumatraPDF.SumatraPDF" name="SumatraPDF"/>
 			    	<App id="VideoLAN.VLC" name="VLC MediaPlayer"/>
-				<App id="9N4P75DXL6FG" name="WSATools"/>		
+				<App
+					id="9N4P75DXL6FG"
+					name="WSATools"
+					description="Easy-to-use APK installer and more for Windows Subsystem for Android"
+				/>		
 			</Category>
 		<Category name="Best apps for Windows 11">	
 				<App id="Microsoft.PowerToys" name="PowerToys"/>
@@ -45,7 +49,11 @@
 				<App id="Audacity.Audacity" name="Audacity"/>
 				<App id="XBMCFoundation.Kodi" name="Kodi"/>
 				<App id="VideoLAN.VLC" name="VLC MediaPlayer"/>
- 				<App id="yt-dlg.yt-dlg" name="yt-dlg"/>
+ 				<App
+					id="yt-dlg.yt-dlg"
+					name="yt-dlg"
+					description="A cross platform front-end GUI of the popular youtube-dl written in wxPython."
+				/>
 			</Category>
 
 			<Category name="File Archivers">
