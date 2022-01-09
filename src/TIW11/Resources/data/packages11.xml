@@ -1,133 +1,133 @@
 <Apps>
-  <Module name="Windows Package Manager">
+  <Module name="Windows Package Manager (v1.1.12653)">
     <Categories>	
 		<Category name="*Essentials">	
-				<App name="7zip.7zip"/>
-				<App name="BleachBit.BleachBit"/>
-				<App name="Discord.Discord"/>
-				<App name="IrfanSkiljan.IrfanView"/>
-				<App name="Mozilla.Firefox"/>
-				<App name="Notepad++.Notepad++"/>
-				<App name="ShareX.ShareX" />
-				<App name="SumatraPDF.SumatraPDF"/>
-			    <App name="VideoLAN.VLC"/>
+				<App id="7zip.7zip" name="7-Zip"/>
+				<App id="BleachBit.BleachBit" name="BleachBit"/>
+				<App id="Discord.Discord" name="Discord"/>
+				<App id="IrfanSkiljan.IrfanView" name="IrfanView"/>
+				<App id="Mozilla.Firefox" name="Mozilla Firefox"/>
+				<App id="Notepad++.Notepad++" name="Notepad++"/>
+				<App id="ShareX.ShareX" name="ShareX"/>
+				<App id="SumatraPDF.SumatraPDF" name="SumatraPDF"/>
+			    	<App id="VideoLAN.VLC" name="VLC MediaPlayer"/>
+				<App id="9N4P75DXL6FG" name="WSATools"/>		
 			</Category>
 		<Category name="Best apps for Windows 11">	
-				<App name="Microsoft.PowerToys"/>
-				<App name="StartIsBack.StartAllBack"/>
+				<App id="Microsoft.PowerToys" name="PowerToys"/>
+				<App id="StartIsBack.StartAllBack" name="StartAllBack"/>
 			</Category>
 	
 		 <Category name="Browsers">
-				<App name="BraveSoftware.BraveBrowser"/>
-				<App name="Mozilla.Firefox"/>
-				<App name="Google.Chrome"/>
-				<App name="Opera.Opera"/>
-				<App name="VivaldiTechnologies.Vivaldi"/>
+				<App id="BraveSoftware.BraveBrowser" name="Brave Browser"/>
+				<App id="Mozilla.Firefox" name="Mozilla Firefox"/>
+				<App id="Google.Chrome" name="Google Chrome"/>
+				<App id="Opera.Opera" name="Opera"/>
+				<App id="VivaldiTechnologies.Vivaldi" name="Vivaldi"/>
 			</Category>
 			
 			 <Category name="Communication">
-				<App name="Microsoft.Skype"/>
-				<App name="Microsoft.Teams"/>
-				<App name="SlackTechnologies.Slack"/>
+				<App id="Microsoft.Skype" name="Sykpe"/>
+				<App id="Microsoft.Teams" name="Microsoft Teams"/>
+				<App id="SlackTechnologies.Slack" name="Slack"/>
 			</Category>
 			
 			 <Category name="Developers">
-				<App name="Git.Git"/>
- 				<App name="GitHub.cli"/>
-           		        <App name="GitHub.GitHubDesktop"/>
-				<App name="Notepad++.Notepad++"/>
-				<App name="Microsoft.VisualStudioCode"/>
-				<App name="Microsoft.WindowsTerminal"/>
+				<App id="Git.Git" name="Git"/>
+ 				<App id="GitHub.cli" name="Git CLI"/>
+           		<App id="GitHub.GitHubDesktop" name="GitHub Desktop"/>
+				<App id="Notepad++.Notepad++" name="Notepad++"/>
+				<App id="Microsoft.VisualStudioCode" name="Visual Studio Code"/>
+				<App id="Microsoft.WindowsTerminal" name="Windows Terminal"/>
 			</Category>
 			
 			<Category name="Entertainment">
-				<App name="Audacity.Audacity"/>
-				<App name="XBMCFoundation.Kodi"/>
-				<App name="VideoLAN.VLC"/>
+				<App id="Audacity.Audacity" name="Audacity"/>
+				<App id="XBMCFoundation.Kodi" name="Kodi"/>
+				<App id="VideoLAN.VLC" name="VLC MediaPlayer"/>
  				<App id="yt-dlg.yt-dlg" name="yt-dlg"/>
 			</Category>
 
 			<Category name="File Archivers">
-				<App name="7zip.7zip"/>
-				<App name="Bandisoft.Bandizip"/>
-				<App name="RARLab.WinRAR"/>
-				<App id="yt-dlg.yt-dlg" name="yt-dlg"/>
-				<App id="9N4P75DXL6FG" name="WSATools" />
+				<App id="7zip.7zip" name="7-Zip"/>
+				<App id="Bandisoft.Bandizip" name="Bandizip"/>
+				<App id="M2Team.NanaZip" name="Nanazip"/>
+				<App id="RARLab.WinRAR" name="WinRar"/>
 			</Category>
 			
 			 <Category name="Frameworks">
-				<App name="Microsoft.dotNetFramework"/>
-				<App name="Oracle.JavaRuntimeEnvironment"/>
+				<App id="Microsoft.dotNetFramework" name="Microsoft .NET Framework"/>
+				<App id="Oracle.JavaRuntimeEnvironment" name="Java Runtime Environment"/>
 			</Category>
 			
 			<Category name="Gaming">
-				<App name="TeamSpeakSystems.TeamSpeakClient"/>
-				<App name="Valve.Steam"/>
+				<App id="TeamSpeakSystems.TeamSpeakClient" name="TeamSpeakClient"/>
+				<App id="Valve.Steam" name="Steam"/>
 			</Category>
 			
 			 <Category name="Mail Clients">
-				<App name="Mozilla.Thunderbird"/>
+				<App id="Mozilla.Thunderbird" name="Mozilla Thunderbird"/>
 			</Category>
 			
 			<Category name="Network">
-				<App name="qBittorrent.qBittorrent"/>
-				<App name="TimKosse.FileZillaClient"/>
-				<App name="Tonec.InternetDownloadManager"/>
-				<App name="WinSCP.WinSCP"/>
-				<App name="WiresharkFoundation.Wiresharkt"/>
+				<App id="qBittorrent.qBittorrent" name="qBittorrent"/>
+				<App id="TimKosse.FileZillaClient" name="FileZilla"/>
+				<App id="Tonec.InternetDownloadManager" name="Internet Download Manager"/>
+				<App id="WinSCP.WinSCP" name="WinSCP"/>
+				<App id="WiresharkFoundation.Wireshark" name="Wireshark"/>
 			</Category>
 				
 			<Category name="PDF reader">
-				<App name="Adobe.AdobeAcrobatReaderDC"/>
-				<App name="SumatraPDF.SumatraPDF"/>
+				<App id="Adobe.AdobeAcrobatReaderDC" name="Adobe Acrobat Reader DC"/>
+				<App id="SumatraPDF.SumatraPDF" name="SumataraPDF"/>
 			</Category>
 			
 			<Category name="Photo">
-				<App name="IrfanSkiljan.IrfanView"/>
-				<App name="GIMP.GIMP"/>
-				<App name="picpick.picpick"/>
-				<App name="ShareX.ShareX"/>
+				<App id="IrfanSkiljan.IrfanView" name="IrfanView"/>
+				<App id="GIMP.GIMP" name="GIMP"/>
+				<App id="picpick.picpick" name="PicPick"/>
+				<App id="ShareX.ShareX" name="ShareX"/>
 			</Category>
 
 			<Category name="Productivity">
-				<App name="calibre.calibre"/>
-				<App name="flux.flux"/>
-				<App name="Oracle.VirtualBox"/>
-				<App name="voidtools.EverythingLite"/>
-				<App name="PuTTY.PuTTY"/>
+				<App id="calibre.calibre" name="Calibre"/>
+				<App id="flux.flux" name="flux"/>
+				<App id="Oracle.VirtualBox" name="VirtualBox"/>
+				<App id="voidtools.EverythingLite" name="Everything Lite"/>
+				<App id="PuTTY.PuTTY" name="Putty"/>
 			</Category>
 			
 			<Category name="Remote Desktop">
-				<App name="AnyDeskSoftwareGmbH.AnyDesk"/>
-				<App name="TeamViewer.TeamViewer"/>
+				<App id="AnyDeskSoftwareGmbH.AnyDesk" name="AnyDesk"/>
+				<App id="TeamViewer.TeamViewer" name="TeamViewer"/>
 			</Category>
 			
 			 <Category name="Social Media">
-				<App name="Discord.Discord"/>
-				<App name="MehediHassan.Tweeten"/>
-				<App name="Twitch.Twitch"/>
-				<App name="Telegram.TelegramDesktop"/>
+				<App id="Discord.Discord" name="Discord"/>
+				<App id="MehediHassan.Tweeten" name="Tweeten"/>
+				<App id="Twitch.Twitch" name="Twitch"/>
+				<App id="Telegram.TelegramDesktop" name="Telegram"/>
 			</Category>
 
 			 <Category name="School">
-				<App name="LibreOffice.LibreOffice"/>
-				<App name="Zoom.Zoom"/>
+				<App id="LibreOffice.LibreOffice" name="LibreOffice"/>
+				<App id="Zoom.Zoom" name="Zoom"/>
 			</Category>
 
 			 <Category name="Security">
-				<App name="DominikReichl.KeePass"/>
-				<App name="Malwarebytes.Malwarebytes"/>
+				<App id="DominikReichl.KeePass" name="KeePass"/>
+				<App id="Malwarebytes.Malwarebytes" name="Malwarebytes" />
 			</Category>
 
 			 <Category name="System">
-				<App name="BleachBit.BleachBit"/>
-				<App name="Microsoft.PowerToys"/>
-				<App name="PDFsam.PDFsam"/>
-				<App name="Piriform.CCleaner"/>
-				<App name="Piriform.Defraggler"/>
-				<App name="Piriform.Recuva"/>
-				<App name="Rufus.Rufus"/>
-				<App name="StartIsBack.StartAllBack"/>
+				<App id="BleachBit.BleachBit" name="BleachBit"/>
+				<App id="Microsoft.PowerToys" name="PowerToys"/>
+				<App id="PDFsam.PDFsam" name="PDFsam"/>
+				<App id="Piriform.CCleaner" name="CCleaner"/>
+				<App id="Piriform.Defraggler" name="Defraggler"/>
+				<App id="Piriform.Recuva" name="Recuva"/>
+				<App id="Rufus.Rufus" name="Rufus"/>
+				<App id="StartIsBack.StartAllBack" name="StartAllBack"/>
 			</Category>
 		</Categories>
 	</Module>
