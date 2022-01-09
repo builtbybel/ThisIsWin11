@@ -141,14 +141,14 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.AutoEllipsis = true;
             this.btnCancel.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCancel.FlatAppearance.BorderSize = 2;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(304, 19);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(178, 32);
+            this.btnCancel.Size = new System.Drawing.Size(178, 36);
             this.btnCancel.TabIndex = 160;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -407,12 +407,9 @@ namespace ThisIsWin11
         private System.Windows.Forms.ToolStripMenuItem menuAutomateSave;
         private System.Windows.Forms.ContextMenuStrip menuAutomate;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.CheckedListBox lstPS;
         private System.Windows.Forms.ProgressBar progress;
-        private System.Windows.Forms.Button btnAutomateMenu;
-        private System.Windows.Forms.Button btnAutomate;
         public System.Windows.Forms.RichTextBox rtbDesc;
         private System.Windows.Forms.ToolStripMenuItem menuAutomateApplied;
         private System.Windows.Forms.ToolStripMenuItem menuAutomatePopOut;
@@ -420,11 +417,14 @@ namespace ThisIsWin11
         private System.Windows.Forms.ToolStripSeparator menuAutomateSeparator;
         private System.Windows.Forms.Panel pnlLeft;
         public System.Windows.Forms.RichTextBox rtbPS;
-        private System.Windows.Forms.Button btnAutomateOnTheFly;
         private System.Windows.Forms.LinkLabel lnkSubHeader;
         private System.Windows.Forms.Label lblScriptsInstalledCount;
         private System.Windows.Forms.Panel pnlMiddle;
         private System.Windows.Forms.Panel pnlRight;
         private System.Windows.Forms.Label label1;
+        private Controls.RoundedButton btnCancel;
+        private Controls.RoundedButton btnAutomateMenu;
+        private Controls.RoundedButton btnAutomate;
+        private Controls.RoundedButton btnAutomateOnTheFly;
     }
 }
