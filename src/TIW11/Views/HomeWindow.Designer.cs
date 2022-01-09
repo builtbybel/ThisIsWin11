@@ -42,10 +42,10 @@ namespace ThisIsWin11
             this.tt = new System.Windows.Forms.ToolTip(this.components);
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.cbTable = new System.Windows.Forms.ComboBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.pbView = new System.Windows.Forms.PictureBox();
             this.pnlLeft.SuspendLayout();
@@ -115,11 +115,11 @@ namespace ThisIsWin11
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.White;
-            this.pnlLeft.Controls.Add(this.btnCustomButton);
             this.pnlLeft.Controls.Add(this.btnConfigurator);
             this.pnlLeft.Controls.Add(this.lblHeader);
             this.pnlLeft.Controls.Add(this.linkLabel1);
             this.pnlLeft.Controls.Add(this.lblDesc);
+            this.pnlLeft.Controls.Add(this.btnCustomButton);
             this.pnlLeft.Controls.Add(this.btnCustomizer);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLeft.Location = new System.Drawing.Point(0, 0);

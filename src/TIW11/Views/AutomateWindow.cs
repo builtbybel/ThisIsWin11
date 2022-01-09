@@ -15,7 +15,7 @@ namespace ThisIsWin11
     {
         private GetStarted.OS osInfo = new GetStarted.OS();
 
-        private static readonly string componentsVersion = "20";
+        private static readonly string componentsVersion = "30";
 
         private void menuAutomateInfo_Click(object sender, EventArgs e) => MessageBox.Show("PowerUI\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -148,8 +148,8 @@ namespace ThisIsWin11
         private void lstPS_SelectedIndexChanged(object sender, EventArgs e)
         {
             string psdir = Helpers.Strings.Data.ScriptsRootDir + lstPS.Text + ".ps1";
+            txtScriptName.Text = lstPS.SelectedItem.ToString();
             rtbPS.Visible = true;
-            btnAutomateOnTheFly.Visible = true;
 
             try
             {
@@ -217,7 +217,7 @@ namespace ThisIsWin11
 
             SaveFileDialog dlg = new SaveFileDialog();
             dlg.Filter = "*.txt|*.txt|*.ps1|*.ps1";
-            dlg.FileName = lstPS.Text + "-Copy";
+            dlg.FileName = txtScriptName.Text;
             dlg.DefaultExt = ".ps1";
             dlg.RestoreDirectory = true;
             dlg.InitialDirectory = Helpers.Strings.Data.ScriptsRootDir;
@@ -315,6 +315,12 @@ namespace ThisIsWin11
         private void menuAutomatePopOut_Click(object sender, EventArgs e)
         {
             AutomateWindow automate = new AutomateWindow(); automate.Show();
+        }
+
+        private void txtScriptName_Click(object sender, EventArgs e)
+        {
+            if (txtScriptName.Text == "Script Name")
+                txtScriptName.Clear();
         }
     }
 }

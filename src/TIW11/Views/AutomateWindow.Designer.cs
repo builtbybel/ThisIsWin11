@@ -52,6 +52,7 @@ namespace ThisIsWin11
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.lblScriptsInstalledCount = new System.Windows.Forms.Label();
             this.pnlMiddle = new System.Windows.Forms.Panel();
+            this.txtScriptName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.menuAutomate.SuspendLayout();
@@ -137,20 +138,19 @@ namespace ThisIsWin11
             // 
             // btnCancel
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.AutoEllipsis = true;
-            this.btnCancel.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnCancel.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.MediumVioletRed;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(304, 19);
+            this.btnCancel.Location = new System.Drawing.Point(0, 826);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(178, 36);
+            this.btnCancel.Size = new System.Drawing.Size(499, 36);
             this.btnCancel.TabIndex = 160;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -183,7 +183,7 @@ namespace ThisIsWin11
             this.lstPS.FormattingEnabled = true;
             this.lstPS.Location = new System.Drawing.Point(15, 134);
             this.lstPS.Name = "lstPS";
-            this.lstPS.Size = new System.Drawing.Size(470, 672);
+            this.lstPS.Size = new System.Drawing.Size(470, 624);
             this.lstPS.Sorted = true;
             this.lstPS.TabIndex = 157;
             this.lstPS.SelectedIndexChanged += new System.EventHandler(this.lstPS_SelectedIndexChanged);
@@ -208,7 +208,7 @@ namespace ThisIsWin11
             this.btnAutomateMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAutomateMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAutomateMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAutomateMenu.Location = new System.Drawing.Point(190, 0);
+            this.btnAutomateMenu.Location = new System.Drawing.Point(193, 0);
             this.btnAutomateMenu.Name = "btnAutomateMenu";
             this.btnAutomateMenu.Size = new System.Drawing.Size(48, 51);
             this.btnAutomateMenu.TabIndex = 155;
@@ -225,7 +225,7 @@ namespace ThisIsWin11
             this.btnAutomate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAutomate.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAutomate.ForeColor = System.Drawing.Color.White;
-            this.btnAutomate.Location = new System.Drawing.Point(0, 815);
+            this.btnAutomate.Location = new System.Drawing.Point(0, 779);
             this.btnAutomate.Name = "btnAutomate";
             this.btnAutomate.Size = new System.Drawing.Size(499, 47);
             this.btnAutomate.TabIndex = 154;
@@ -275,7 +275,6 @@ namespace ThisIsWin11
             this.btnAutomateOnTheFly.TabIndex = 155;
             this.btnAutomateOnTheFly.Text = "RUN CODE ON-THE-FLY\r\n";
             this.btnAutomateOnTheFly.UseVisualStyleBackColor = false;
-            this.btnAutomateOnTheFly.Visible = false;
             this.btnAutomateOnTheFly.Click += new System.EventHandler(this.btnAutomateOnTheFly_Click);
             // 
             // rtbPS
@@ -293,7 +292,7 @@ namespace ThisIsWin11
             this.rtbPS.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.rtbPS.Size = new System.Drawing.Size(241, 675);
             this.rtbPS.TabIndex = 138;
-            this.rtbPS.Text = "{Select a script}";
+            this.rtbPS.Text = "{Hello World}";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
             // 
             // lnkSubHeader
@@ -309,7 +308,7 @@ namespace ThisIsWin11
             this.lnkSubHeader.LinkColor = System.Drawing.Color.Black;
             this.lnkSubHeader.Location = new System.Drawing.Point(7, 34);
             this.lnkSubHeader.Name = "lnkSubHeader";
-            this.lnkSubHeader.Size = new System.Drawing.Size(280, 20);
+            this.lnkSubHeader.Size = new System.Drawing.Size(475, 20);
             this.lnkSubHeader.TabIndex = 172;
             // 
             // lblScriptsInstalledCount
@@ -322,7 +321,7 @@ namespace ThisIsWin11
             this.lblScriptsInstalledCount.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScriptsInstalledCount.ForeColor = System.Drawing.Color.Black;
             this.lblScriptsInstalledCount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblScriptsInstalledCount.Location = new System.Drawing.Point(13, 81);
+            this.lblScriptsInstalledCount.Location = new System.Drawing.Point(9, 64);
             this.lblScriptsInstalledCount.Name = "lblScriptsInstalledCount";
             this.lblScriptsInstalledCount.Size = new System.Drawing.Size(173, 32);
             this.lblScriptsInstalledCount.TabIndex = 173;
@@ -331,6 +330,7 @@ namespace ThisIsWin11
             // pnlMiddle
             // 
             this.pnlMiddle.BackColor = System.Drawing.Color.White;
+            this.pnlMiddle.Controls.Add(this.txtScriptName);
             this.pnlMiddle.Controls.Add(this.label1);
             this.pnlMiddle.Controls.Add(this.btnAutomateOnTheFly);
             this.pnlMiddle.Controls.Add(this.rtbPS);
@@ -340,6 +340,21 @@ namespace ThisIsWin11
             this.pnlMiddle.Name = "pnlMiddle";
             this.pnlMiddle.Size = new System.Drawing.Size(241, 862);
             this.pnlMiddle.TabIndex = 174;
+            // 
+            // txtScriptName
+            // 
+            this.txtScriptName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtScriptName.BackColor = System.Drawing.Color.White;
+            this.txtScriptName.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtScriptName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtScriptName.Location = new System.Drawing.Point(1, 101);
+            this.txtScriptName.Multiline = true;
+            this.txtScriptName.Name = "txtScriptName";
+            this.txtScriptName.Size = new System.Drawing.Size(239, 29);
+            this.txtScriptName.TabIndex = 175;
+            this.txtScriptName.Text = "Script Name";
+            this.txtScriptName.Click += new System.EventHandler(this.txtScriptName_Click);
             // 
             // label1
             // 
@@ -351,7 +366,7 @@ namespace ThisIsWin11
             this.label1.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(5, 81);
+            this.label1.Location = new System.Drawing.Point(3, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 32);
             this.label1.TabIndex = 174;
@@ -426,5 +441,6 @@ namespace ThisIsWin11
         private Controls.RoundedButton btnAutomateMenu;
         private Controls.RoundedButton btnAutomate;
         private Controls.RoundedButton btnAutomateOnTheFly;
+        private System.Windows.Forms.TextBox txtScriptName;
     }
 }

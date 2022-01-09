@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace ThisIsWin11.Controls
 {
-    class RoundedButton : Button
+    internal class RoundedButton : Button
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr RoundPanel(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);

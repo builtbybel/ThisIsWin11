@@ -2,33 +2,12 @@
 using System.Diagnostics;
 using System.Globalization;
 using System.Text;
-using ThisIsWin11.OpenTweaks;
 
 namespace ThisIsWin11
 {
     public static class WindowsHelper
     {
         private static readonly ErrorHelper logger = ErrorHelper.Instance;
-
-        public static void IsServiceRunning(string service)
-        {
-            logger.Log($"Check if {service} service is running");
-            RunCmd($"/c sc query {service} | find \"RUNNING\"");
-        }
-
-        public static void DisableService(string service)
-        {
-            RunCmd($"/c net stop {service}");
-            ProcStart(Helpers.Strings.Paths.ShellPS, $"-command \"Set-Service -Name {service} -StartupType disabled\"");
-            logger.Log($"Disable {service} service");
-        }
-
-        public static void EnableService(string service)
-        {
-            RunCmd($"/c net start {service}");
-            ProcStart(Helpers.Strings.Paths.ShellPS, $"-command \"Set-Service -Name {service} -StartupType auto\"");
-            logger.Log($"Enable {service} service");
-        }
 
         // Command Prompt (to be replaced with wt.exe)
         public static void RunCmd(string args)
@@ -71,6 +50,26 @@ namespace ThisIsWin11
             {
                 logger.Log($"Could not start {name} {args}.");
             }
+        }
+
+        public static void IsServiceRunning(string service)
+        {
+            logger.Log($"Check if {service} service is running");
+            RunCmd($"/c sc query {service} | find \"RUNNING\"");
+        }
+
+        public static void DisableService(string service)
+        {
+            RunCmd($"/c net stop {service}");
+            ProcStart(Helpers.Strings.Paths.ShellPS, $"-command \"Set-Service -Name {service} -StartupType disabled\"");
+            logger.Log($"Disable {service} service");
+        }
+
+        public static void EnableService(string service)
+        {
+            RunCmd($"/c net start {service}");
+            ProcStart(Helpers.Strings.Paths.ShellPS, $"-command \"Set-Service -Name {service} -StartupType auto\"");
+            logger.Log($"Enable {service} service");
         }
     }
 }
