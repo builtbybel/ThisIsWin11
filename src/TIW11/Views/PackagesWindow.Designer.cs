@@ -278,6 +278,7 @@ namespace ThisIsWin11
             this.tvwPackages.Location = new System.Drawing.Point(3, 82);
             this.tvwPackages.Name = "tvwPackages";
             this.tvwPackages.ShowLines = false;
+            this.tvwPackages.ShowNodeToolTips = true;
             this.tvwPackages.Size = new System.Drawing.Size(661, 713);
             this.tvwPackages.TabIndex = 165;
             // 
