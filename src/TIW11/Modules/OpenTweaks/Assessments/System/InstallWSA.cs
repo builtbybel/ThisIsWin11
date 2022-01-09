@@ -17,8 +17,7 @@ namespace ThisIsWin11.OpenTweaks.Assessment.System
 
         public override string Info()
         {
-            return "This will install WSA ONLY if your Windows 11 installation meets the official requirements.\n" +
-                    "If you've bypassed the Installation requirements, the installation of WSA will fail.";
+            return "Installation is currently ONLY possible in Windows Insider Dev or Beta channel.";
         }
 
         public override bool CheckAssessment()
@@ -40,7 +39,7 @@ namespace ThisIsWin11.OpenTweaks.Assessment.System
                 using (var client = new WebClient())
                 {
                     logger.Log("- Installing WSA");
-                    Helpers.DependenciesChecker.WingetInstall("9p3395vx91nr");
+                    WindowsHelper.RunWT("winget install \"9p3395vx91nr\" --accept-source-agreements --accept-package-agreements");
                     logger.Log("Done.");
                     return true;
                 }
@@ -58,8 +57,7 @@ namespace ThisIsWin11.OpenTweaks.Assessment.System
                 using (var client = new WebClient())
                 {
                     logger.Log("- Uninstalling WSA...");
-                    Helpers.DependenciesChecker.WingetUninstall("9p3395vx91nr");
-
+                    WindowsHelper.RunWT("winget uninstall \"9p3395vx91nr\"");
                     return true;
                 }
             }

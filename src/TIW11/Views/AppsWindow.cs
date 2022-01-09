@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Management.Automation;
@@ -17,7 +18,8 @@ namespace ThisIsWin11
 
         private readonly PowerShell powerShell = PowerShell.Create();
 
-        private static readonly string componentsVersion = "50";
+        private static readonly string componentsVersion = "60";
+        private bool isAppsSystem = false;
 
         private void menuAppsInfo_Click(object sender, EventArgs e) => MessageBox.Show("PumpedApp\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -52,7 +54,7 @@ namespace ThisIsWin11
             {
                 string current = result.ToString();
                 // Show ONLY NON-SYSTEM apps by comparing found apps with systemapps.txt
-                if (removeAppsSystem != null) if ((removeAppsSystem.Any(current.Contains)) && !checkAppsSystem.Checked) continue;
+                if (removeAppsSystem != null) if ((removeAppsSystem.Any(current.Contains)) && isAppsSystem == false) continue;
 
                 if (lstApps.Items.Contains(Regex.Replace(current, "(@{Name=)|(})", ""))) continue;
                 lstApps.Items.Add(Regex.Replace(current, "(@{Name=)|(})", ""));
@@ -252,15 +254,28 @@ namespace ThisIsWin11
             }
         }
 
-        private void checkAppsSystem_CheckedChanged(object sender, EventArgs e)
+        private void btnAppsSystem_Click(object sender, EventArgs e)
         {
-            if (checkAppsSystem.Checked) MessageBox.Show("Be picky about which System applications to uninstall." +
+            if (!isAppsSystem)
+            {
+                isAppsSystem = true;
+                btnAppsSystem.BackColor = Color.Black;
+
+                MessageBox.Show("Be picky about which System applications to uninstall." +
                 "\n\nYou can uninstall most of the built-in apps, even ones that don't normally offer an \"Uninstall\" option." +
                 "\n\nNote, however, this app won't allow you to remove a few of the most important built-in apps, like Microsoft Edge, .NET framework, UI.Xaml etc. " +
                 "as these apps are needed for the Windows 11 \"Experience\" and for other programs. If you try, you’ll see an error message saying the removal failed.", this.Text, MessageBoxButtons.OK);
 
-            InitializeAppsSystem();
-            InitializeApps();
+                InitializeAppsSystem();
+                InitializeApps();
+            }
+            else
+            {
+                isAppsSystem = false;
+                btnAppsSystem.BackColor = Color.Magenta;
+
+                InitializeApps();
+            }
         }
 
         private void rtbPS_LinkClicked(object sender, LinkClickedEventArgs e) => Helpers.Utils.LaunchUri(e.LinkText);

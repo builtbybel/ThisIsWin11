@@ -47,7 +47,7 @@ namespace ThisIsWin11
         {
             logger.SetTarget(rtbPS);        // Logs messages to target rtb
             btnCustomizeMenu.Text = "\uE712";
-            btnCustomizeUndo.Text = "\uE777";
+
             btnCustomizeImport.Text = "\uECC8";
             btnCustomizeExportNShare.Text = "\uE72D";
 
@@ -509,6 +509,6 @@ namespace ThisIsWin11
 
         private void btnCustomizeExportNShare_Click(object sender, EventArgs e) => menuCustomizeExportProfile.PerformClick();
 
-   
+
     }
 }

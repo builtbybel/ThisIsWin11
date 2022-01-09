@@ -46,12 +46,12 @@ namespace ThisIsWin11
             this.btnCustomizeFix = new ThisIsWin11.Controls.RoundedButton();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
-            this.btnCustomizeUndo = new ThisIsWin11.Controls.RoundedButton();
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
             this.btnCustomizeImport = new ThisIsWin11.Controls.RoundedButton();
             this.btnCustomizeExportNShare = new ThisIsWin11.Controls.RoundedButton();
             this.pnlRight = new System.Windows.Forms.Panel();
+            this.btnCustomizeUndo = new ThisIsWin11.Controls.RoundedButton();
             this.menuCustomize.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.pnlRight.SuspendLayout();
@@ -123,7 +123,7 @@ namespace ThisIsWin11
             this.menuCustomizeVersioning});
             this.menuCustomize.Name = "menuMain";
             this.menuCustomize.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuCustomize.Size = new System.Drawing.Size(201, 212);
+            this.menuCustomize.Size = new System.Drawing.Size(201, 190);
             // 
             // menuCustomizeImportProfile
             // 
@@ -200,7 +200,7 @@ namespace ThisIsWin11
             this.tvwAssessments.Name = "tvwAssessments";
             this.tvwAssessments.ShowLines = false;
             this.tvwAssessments.ShowNodeToolTips = true;
-            this.tvwAssessments.Size = new System.Drawing.Size(672, 728);
+            this.tvwAssessments.Size = new System.Drawing.Size(672, 691);
             this.tvwAssessments.TabIndex = 168;
             this.tvwAssessments.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvwAssessments_AfterCheck);
             // 
@@ -228,7 +228,6 @@ namespace ThisIsWin11
             this.pnlLeft.AutoScroll = true;
             this.pnlLeft.BackColor = System.Drawing.Color.White;
             this.pnlLeft.Controls.Add(this.rtbPS);
-            this.pnlLeft.Controls.Add(this.btnCustomizeUndo);
             this.pnlLeft.Controls.Add(this.lblHeader);
             this.pnlLeft.Controls.Add(this.btnCustomizeCheck);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
@@ -249,28 +248,10 @@ namespace ThisIsWin11
             this.rtbPS.Location = new System.Drawing.Point(68, 175);
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ReadOnly = true;
-            this.rtbPS.Size = new System.Drawing.Size(464, 635);
+            this.rtbPS.Size = new System.Drawing.Size(464, 598);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = "";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
-            // 
-            // btnCustomizeUndo
-            // 
-            this.btnCustomizeUndo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCustomizeUndo.BackColor = System.Drawing.Color.White;
-            this.btnCustomizeUndo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCustomizeUndo.FlatAppearance.BorderSize = 0;
-            this.btnCustomizeUndo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.HotPink;
-            this.btnCustomizeUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomizeUndo.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomizeUndo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCustomizeUndo.Location = new System.Drawing.Point(481, 0);
-            this.btnCustomizeUndo.Name = "btnCustomizeUndo";
-            this.btnCustomizeUndo.Size = new System.Drawing.Size(48, 51);
-            this.btnCustomizeUndo.TabIndex = 174;
-            this.tt.SetToolTip(this.btnCustomizeUndo, "Restore default Windows 11 settings");
-            this.btnCustomizeUndo.UseVisualStyleBackColor = false;
-            this.btnCustomizeUndo.Click += new System.EventHandler(this.btnCustomizeUndo_Click);
             // 
             // lnkSubHeader
             // 
@@ -338,6 +319,7 @@ namespace ThisIsWin11
             // 
             this.pnlRight.AutoScroll = true;
             this.pnlRight.BackColor = System.Drawing.Color.White;
+            this.pnlRight.Controls.Add(this.btnCustomizeUndo);
             this.pnlRight.Controls.Add(this.btnCustomizeExportNShare);
             this.pnlRight.Controls.Add(this.btnCustomizeImport);
             this.pnlRight.Controls.Add(this.btnCustomizeMenu);
@@ -350,6 +332,24 @@ namespace ThisIsWin11
             this.pnlRight.Name = "pnlRight";
             this.pnlRight.Size = new System.Drawing.Size(678, 862);
             this.pnlRight.TabIndex = 172;
+            // 
+            // btnCustomizeUndo
+            // 
+            this.btnCustomizeUndo.AutoEllipsis = true;
+            this.btnCustomizeUndo.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnCustomizeUndo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnCustomizeUndo.FlatAppearance.BorderColor = System.Drawing.Color.MediumVioletRed;
+            this.btnCustomizeUndo.FlatAppearance.BorderSize = 0;
+            this.btnCustomizeUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomizeUndo.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomizeUndo.ForeColor = System.Drawing.Color.White;
+            this.btnCustomizeUndo.Location = new System.Drawing.Point(0, 779);
+            this.btnCustomizeUndo.Name = "btnCustomizeUndo";
+            this.btnCustomizeUndo.Size = new System.Drawing.Size(678, 36);
+            this.btnCustomizeUndo.TabIndex = 174;
+            this.btnCustomizeUndo.Text = "RESTORE DEFAULTS";
+            this.btnCustomizeUndo.UseVisualStyleBackColor = false;
+            this.btnCustomizeUndo.Click += new System.EventHandler(this.btnCustomizeUndo_Click);
             // 
             // CustomizeWindow
             // 
@@ -375,14 +375,10 @@ namespace ThisIsWin11
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCustomizeMenu;
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.Button btnCustomizeCheck;
         private System.Windows.Forms.ContextMenuStrip menuCustomize;
         private System.Windows.Forms.ToolStripMenuItem menuCustomizePopOut;
         private System.Windows.Forms.ProgressBar progress;
-        private System.Windows.Forms.Button btnCustomizeFix;
         private System.Windows.Forms.ToolStripMenuItem menuCustomizeExportLog;
         private System.Windows.Forms.ToolStripMenuItem menuCustomizeExpand;
         private System.Windows.Forms.ToolStripMenuItem menuCustomizeVersioning;
@@ -392,11 +388,14 @@ namespace ThisIsWin11
         private System.Windows.Forms.LinkLabel lnkSubHeader;
         private System.Windows.Forms.ToolStripMenuItem menuCustomizeExportProfile;
         private System.Windows.Forms.ToolStripMenuItem menuCustomizeImportProfile;
-        private System.Windows.Forms.Button btnCustomizeUndo;
         private System.Windows.Forms.ToolTip tt;
         public System.Windows.Forms.TreeView tvwAssessments;
         private System.Windows.Forms.Panel pnlRight;
-        private System.Windows.Forms.Button btnCustomizeImport;
-        private System.Windows.Forms.Button btnCustomizeExportNShare;
+        private Controls.RoundedButton btnCustomizeUndo;
+        private Controls.RoundedButton btnCustomizeMenu;
+        private Controls.RoundedButton btnCustomizeCheck;
+        private Controls.RoundedButton btnCustomizeFix;
+        private Controls.RoundedButton btnCustomizeImport;
+        private Controls.RoundedButton btnCustomizeExportNShare;
     }
 }

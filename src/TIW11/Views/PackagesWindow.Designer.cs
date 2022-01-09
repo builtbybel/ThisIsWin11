@@ -72,37 +72,37 @@ namespace ThisIsWin11
             // 
             // btnCreatePackage
             // 
-            this.btnCreatePackage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCreatePackage.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnCreatePackage.BackColor = System.Drawing.Color.Magenta;
+            this.btnCreatePackage.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnCreatePackage.FlatAppearance.BorderColor = System.Drawing.Color.MediumVioletRed;
             this.btnCreatePackage.FlatAppearance.BorderSize = 0;
             this.btnCreatePackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreatePackage.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreatePackage.ForeColor = System.Drawing.Color.White;
-            this.btnCreatePackage.Location = new System.Drawing.Point(68, 788);
+            this.btnCreatePackage.Location = new System.Drawing.Point(0, 815);
             this.btnCreatePackage.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreatePackage.Name = "btnCreatePackage";
-            this.btnCreatePackage.Size = new System.Drawing.Size(213, 36);
+            this.btnCreatePackage.Size = new System.Drawing.Size(532, 47);
             this.btnCreatePackage.TabIndex = 141;
-            this.btnCreatePackage.Text = "1. Create Package";
+            this.btnCreatePackage.Text = "CREATE PACKAGE";
             this.btnCreatePackage.UseVisualStyleBackColor = false;
             this.btnCreatePackage.Click += new System.EventHandler(this.btnCreatePackage_Click);
             // 
             // btnRunPackage
             // 
-            this.btnRunPackage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnRunPackage.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnRunPackage.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnRunPackage.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
             this.btnRunPackage.FlatAppearance.BorderSize = 0;
             this.btnRunPackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRunPackage.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRunPackage.ForeColor = System.Drawing.Color.White;
-            this.btnRunPackage.Location = new System.Drawing.Point(294, 788);
+            this.btnRunPackage.Location = new System.Drawing.Point(0, 815);
             this.btnRunPackage.Margin = new System.Windows.Forms.Padding(2);
             this.btnRunPackage.Name = "btnRunPackage";
-            this.btnRunPackage.Size = new System.Drawing.Size(213, 36);
+            this.btnRunPackage.Size = new System.Drawing.Size(672, 47);
             this.btnRunPackage.TabIndex = 142;
-            this.btnRunPackage.Text = "2. Run Installer";
+            this.btnRunPackage.Text = "RUN INSTALLER";
             this.btnRunPackage.UseVisualStyleBackColor = false;
             this.btnRunPackage.Click += new System.EventHandler(this.btnRunPackage_Click);
             // 
@@ -222,7 +222,6 @@ namespace ThisIsWin11
             this.pnlLeft.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlLeft.BackColor = System.Drawing.Color.White;
             this.pnlLeft.Controls.Add(this.lblHeartFillEmoji);
-            this.pnlLeft.Controls.Add(this.btnRunPackage);
             this.pnlLeft.Controls.Add(this.btnCreatePackage);
             this.pnlLeft.Controls.Add(this.btnInstallWinget);
             this.pnlLeft.Controls.Add(this.rtbPS);
@@ -260,7 +259,7 @@ namespace ThisIsWin11
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ReadOnly = true;
             this.rtbPS.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbPS.Size = new System.Drawing.Size(454, 594);
+            this.rtbPS.Size = new System.Drawing.Size(454, 620);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = "";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
@@ -279,12 +278,13 @@ namespace ThisIsWin11
             this.tvwPackages.Location = new System.Drawing.Point(3, 82);
             this.tvwPackages.Name = "tvwPackages";
             this.tvwPackages.ShowLines = false;
-            this.tvwPackages.Size = new System.Drawing.Size(661, 768);
+            this.tvwPackages.Size = new System.Drawing.Size(661, 713);
             this.tvwPackages.TabIndex = 165;
             // 
             // pnlRight
             // 
             this.pnlRight.BackColor = System.Drawing.Color.White;
+            this.pnlRight.Controls.Add(this.btnRunPackage);
             this.pnlRight.Controls.Add(this.tvwPackages);
             this.pnlRight.Controls.Add(this.btnPackagesMenu);
             this.pnlRight.Controls.Add(this.progress);

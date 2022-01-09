@@ -112,9 +112,9 @@ namespace ThisIsWin11
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
-        {
-            UISelection();
-        }
+        
+          =>  UISelection();
+        
 
         private void btnHome_MouseDown(object sender, MouseEventArgs e)
         {

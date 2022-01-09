@@ -32,7 +32,7 @@ namespace ThisIsWin11
         // Some UI nicety
         private void UISelection()
         {
-            btnPackagesMenu.Text = "\uE712";
+            btnPackagesMenu.Text = "\uE712"; 
             lblHeartFillEmoji.Text = "\uEB52";
             rtbPS.Text = "Automate your next installation and create your own Windows 11 essentials.\n\n" +
                          "You will find more packages in the Windows Package Manager manifest repository:\nhttps://github.com/microsoft/winget-pkgs/tree/master/manifests" +
@@ -59,7 +59,7 @@ namespace ThisIsWin11
                 TreeNode categoriesNode;
                 foreach (XElement module in doc.Descendants("Module"))
                 {
-                    moduleNode = tvwPackages.Nodes.Add(module.Attribute("name").Value + " (v1.1.12653)");
+                    moduleNode = tvwPackages.Nodes.Add(module.Attribute("name").Value);
                     foreach (XElement categories in module.Descendants("Category"))
                     {
                         categoriesNode =
@@ -105,6 +105,7 @@ namespace ThisIsWin11
                     yield return child;
             }
         }
+
 
         private void btnCreatePackage_Click(object sender, EventArgs e)
         {
@@ -215,7 +216,7 @@ namespace ThisIsWin11
 
         private void btnInstallWinget_Click(object sender, EventArgs e)
         {
-            string url = "https://github.com/microsoft/winget-cli/releases/download/v1.1.12653/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle";
+            string url = "https://github.com/microsoft/winget-cli/releases/download/v1.2.3411-preview/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle";
 
             progress.Visible = true;
             try
@@ -337,5 +338,7 @@ namespace ThisIsWin11
         {
             PackagesWindow package = new PackagesWindow(); package.Show();
         }
+
+
     }
 }
