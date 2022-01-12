@@ -72,7 +72,6 @@ namespace ThisIsWin11
                             }
                             else
                             {
-
                                 node = categoriesNode.Nodes.Add(category.Attribute("name").Value);
                             }
 
