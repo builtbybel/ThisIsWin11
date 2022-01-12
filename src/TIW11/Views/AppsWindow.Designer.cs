@@ -272,7 +272,8 @@ namespace ThisIsWin11
             // 
             // btnAddAll
             // 
-            this.btnAddAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddAll.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddAll.AutoEllipsis = true;
             this.btnAddAll.BackColor = System.Drawing.Color.Gainsboro;
             this.btnAddAll.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
@@ -291,7 +292,8 @@ namespace ThisIsWin11
             // 
             // btnAdd
             // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.AutoEllipsis = true;
             this.btnAdd.BackColor = System.Drawing.Color.Gainsboro;
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
@@ -310,7 +312,8 @@ namespace ThisIsWin11
             // 
             // btnRemove
             // 
-            this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemove.AutoEllipsis = true;
             this.btnRemove.BackColor = System.Drawing.Color.Gainsboro;
             this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
@@ -329,7 +332,8 @@ namespace ThisIsWin11
             // 
             // btnRemoveAll
             // 
-            this.btnRemoveAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRemoveAll.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemoveAll.AutoEllipsis = true;
             this.btnRemoveAll.BackColor = System.Drawing.Color.Gainsboro;
             this.btnRemoveAll.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;

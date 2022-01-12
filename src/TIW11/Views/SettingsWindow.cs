@@ -35,10 +35,10 @@ namespace ThisIsWin11
 
             btnSettingsMenu.Text = "\uE712";
             lblHeartFillEmoji.Text = "\uEB52";
-            lblAppMain.Text = "(Spartan release)" +
+            lblAppMain.Text = "(Ganymede release)" +
                            "\nBuild on " + buildDateTime;
             rtbAbout.Text = "MIT License" +
-                           "\n\nThis is not a product made by Microsoft and it's in no way related to them.";
+                           "\n\nThis is not a app made by Microsoft and it's in no way related to them.";
 
             try
             {
