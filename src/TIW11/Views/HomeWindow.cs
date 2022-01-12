@@ -312,7 +312,8 @@ namespace ThisIsWin11
 
                 case PageTitle.AndroidApps:
                     btnConfigurator.Visible = false;
-                    btnCustomizer.Visible = false;
+                    btnCustomizer.Visible = true;
+                    btnCustomizer.Text = "Install Windows Subsystem for Android";
                     lblHeader.Text = "Android Apps Support";
                     lblDesc.Text = "Microsoft has released Android apps support in the Beta Channel of Windows 11.\n\n" +
                                     "The experience of installing apps is very simple. Microsoft has partnered with Amazon, so the Microsoft Store will list apps but send you over to Amazon’s Appstore app to get them installed or updated.\n\n" +

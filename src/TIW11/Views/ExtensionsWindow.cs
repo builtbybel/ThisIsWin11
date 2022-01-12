@@ -84,7 +84,7 @@ namespace ThisIsWin11
 
         private void lnkPlugsDir_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("explorer.exe", @"data\plugins");
 
-        private void lnkPlugsGet_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start(Helpers.Strings.Uri.URL_POWERUIPLUGS);
+        private void lnkPlugsGet_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start(Helpers.Strings.Uri.URL_POWERUI_PLUGS);
 
         private void btnPlugsMenu_Click(object sender, EventArgs e) => this.menuPlugins.Show(Cursor.Position.X, Cursor.Position.Y);
 

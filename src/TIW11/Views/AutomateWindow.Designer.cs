@@ -55,6 +55,8 @@ namespace ThisIsWin11
             this.txtScriptName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlRight = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lstCategory = new System.Windows.Forms.ListBox();
             this.menuAutomate.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.pnlMiddle.SuspendLayout();
@@ -178,12 +180,12 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstPS.BackColor = System.Drawing.Color.White;
             this.lstPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstPS.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstPS.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstPS.ForeColor = System.Drawing.Color.Black;
             this.lstPS.FormattingEnabled = true;
-            this.lstPS.Location = new System.Drawing.Point(15, 134);
+            this.lstPS.Location = new System.Drawing.Point(15, 110);
             this.lstPS.Name = "lstPS";
-            this.lstPS.Size = new System.Drawing.Size(470, 624);
+            this.lstPS.Size = new System.Drawing.Size(369, 648);
             this.lstPS.Sorted = true;
             this.lstPS.TabIndex = 157;
             this.lstPS.SelectedIndexChanged += new System.EventHandler(this.lstPS_SelectedIndexChanged);
@@ -192,7 +194,7 @@ namespace ThisIsWin11
             // 
             this.progress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progress.Location = new System.Drawing.Point(7, 56);
+            this.progress.Location = new System.Drawing.Point(10, 50);
             this.progress.MarqueeAnimationSpeed = 30;
             this.progress.Name = "progress";
             this.progress.Size = new System.Drawing.Size(475, 5);
@@ -261,9 +263,10 @@ namespace ThisIsWin11
             // 
             // btnAutomateOnTheFly
             // 
+            this.btnAutomateOnTheFly.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAutomateOnTheFly.AutoEllipsis = true;
             this.btnAutomateOnTheFly.BackColor = System.Drawing.Color.Magenta;
-            this.btnAutomateOnTheFly.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnAutomateOnTheFly.FlatAppearance.BorderColor = System.Drawing.Color.Magenta;
             this.btnAutomateOnTheFly.FlatAppearance.BorderSize = 0;
             this.btnAutomateOnTheFly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -284,13 +287,13 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbPS.BackColor = System.Drawing.Color.LavenderBlush;
             this.rtbPS.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbPS.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbPS.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbPS.ForeColor = System.Drawing.Color.Black;
             this.rtbPS.HideSelection = false;
-            this.rtbPS.Location = new System.Drawing.Point(0, 134);
+            this.rtbPS.Location = new System.Drawing.Point(0, 110);
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbPS.Size = new System.Drawing.Size(241, 675);
+            this.rtbPS.Size = new System.Drawing.Size(241, 694);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = "{Hello World}";
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
@@ -306,9 +309,9 @@ namespace ThisIsWin11
             this.lnkSubHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lnkSubHeader.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lnkSubHeader.LinkColor = System.Drawing.Color.Black;
-            this.lnkSubHeader.Location = new System.Drawing.Point(7, 34);
+            this.lnkSubHeader.Location = new System.Drawing.Point(10, 27);
             this.lnkSubHeader.Name = "lnkSubHeader";
-            this.lnkSubHeader.Size = new System.Drawing.Size(475, 20);
+            this.lnkSubHeader.Size = new System.Drawing.Size(471, 20);
             this.lnkSubHeader.TabIndex = 172;
             // 
             // lblScriptsInstalledCount
@@ -317,15 +320,15 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblScriptsInstalledCount.AutoEllipsis = true;
             this.lblScriptsInstalledCount.AutoSize = true;
-            this.lblScriptsInstalledCount.BackColor = System.Drawing.Color.White;
-            this.lblScriptsInstalledCount.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScriptsInstalledCount.BackColor = System.Drawing.Color.MistyRose;
+            this.lblScriptsInstalledCount.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScriptsInstalledCount.ForeColor = System.Drawing.Color.Black;
             this.lblScriptsInstalledCount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblScriptsInstalledCount.Location = new System.Drawing.Point(9, 64);
             this.lblScriptsInstalledCount.Name = "lblScriptsInstalledCount";
-            this.lblScriptsInstalledCount.Size = new System.Drawing.Size(173, 32);
+            this.lblScriptsInstalledCount.Size = new System.Drawing.Size(60, 21);
             this.lblScriptsInstalledCount.TabIndex = 173;
-            this.lblScriptsInstalledCount.Text = "Installed scripts";
+            this.lblScriptsInstalledCount.Text = "Scripts";
             // 
             // pnlMiddle
             // 
@@ -345,13 +348,13 @@ namespace ThisIsWin11
             // 
             this.txtScriptName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtScriptName.BackColor = System.Drawing.Color.White;
-            this.txtScriptName.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScriptName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtScriptName.Location = new System.Drawing.Point(1, 101);
+            this.txtScriptName.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtScriptName.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtScriptName.ForeColor = System.Drawing.Color.Gray;
+            this.txtScriptName.Location = new System.Drawing.Point(3, 8);
             this.txtScriptName.Multiline = true;
             this.txtScriptName.Name = "txtScriptName";
-            this.txtScriptName.Size = new System.Drawing.Size(239, 29);
+            this.txtScriptName.Size = new System.Drawing.Size(184, 23);
             this.txtScriptName.TabIndex = 175;
             this.txtScriptName.Text = "Script Name";
             this.txtScriptName.Click += new System.EventHandler(this.txtScriptName_Click);
@@ -362,19 +365,21 @@ namespace ThisIsWin11
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoEllipsis = true;
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.BackColor = System.Drawing.Color.MistyRose;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(3, 64);
+            this.label1.Location = new System.Drawing.Point(0, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 32);
+            this.label1.Size = new System.Drawing.Size(99, 21);
             this.label1.TabIndex = 174;
-            this.label1.Text = "Code";
+            this.label1.Text = "Check Code";
             // 
             // pnlRight
             // 
             this.pnlRight.BackColor = System.Drawing.Color.White;
+            this.pnlRight.Controls.Add(this.label2);
+            this.pnlRight.Controls.Add(this.lstCategory);
             this.pnlRight.Controls.Add(this.btnAutomate);
             this.pnlRight.Controls.Add(this.btnCancel);
             this.pnlRight.Controls.Add(this.lblScriptsInstalledCount);
@@ -386,6 +391,40 @@ namespace ThisIsWin11
             this.pnlRight.Name = "pnlRight";
             this.pnlRight.Size = new System.Drawing.Size(499, 862);
             this.pnlRight.TabIndex = 174;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoEllipsis = true;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.MistyRose;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(386, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 21);
+            this.label2.TabIndex = 175;
+            this.label2.Text = "Categories";
+            // 
+            // lstCategory
+            // 
+            this.lstCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lstCategory.BackColor = System.Drawing.Color.White;
+            this.lstCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstCategory.ColumnWidth = 50;
+            this.lstCategory.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstCategory.ForeColor = System.Drawing.Color.Black;
+            this.lstCategory.FormattingEnabled = true;
+            this.lstCategory.ItemHeight = 21;
+            this.lstCategory.Location = new System.Drawing.Point(390, 110);
+            this.lstCategory.Name = "lstCategory";
+            this.lstCategory.Size = new System.Drawing.Size(97, 651);
+            this.lstCategory.TabIndex = 174;
+            this.lstCategory.SelectedIndexChanged += new System.EventHandler(this.lstCategory_SelectedIndexChanged);
             // 
             // AutomateWindow
             // 
@@ -442,5 +481,7 @@ namespace ThisIsWin11
         private Controls.RoundedButton btnAutomate;
         private Controls.RoundedButton btnAutomateOnTheFly;
         private System.Windows.Forms.TextBox txtScriptName;
+        private System.Windows.Forms.ListBox lstCategory;
+        private System.Windows.Forms.Label label2;
     }
 }

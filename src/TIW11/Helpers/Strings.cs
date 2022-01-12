@@ -29,7 +29,7 @@ namespace ThisIsWin11.Helpers
             public const string URL_FEEDBACK = URL_GITREPO + "/issues";
             public const string URL_GITLATEST = URL_GITREPO +"/releases/latest";
             public const string URL_GITCHANGELOG = "https://raw.githubusercontent.com/builtbybel/thisiswin11/main/changes.txt";
-            public const string URL_POWERUIPLUGS = "https://github.com/builtbybel/ThisIsWin11/tree/main/src/TIW11/Resources/data/plugins";
+            public const string URL_POWERUI_PLUGS = "https://github.com/builtbybel/ThisIsWin11/tree/main/collections";
         }
 
         public static class Paths

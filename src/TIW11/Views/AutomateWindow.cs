@@ -15,9 +15,9 @@ namespace ThisIsWin11
     {
         private GetStarted.OS osInfo = new GetStarted.OS();
 
-        private static readonly string componentsVersion = "30";
+        private static readonly string componentsVersion = "40";
 
-        private void menuAutomateInfo_Click(object sender, EventArgs e) => MessageBox.Show("PowerUI\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        private void menuAutomateInfo_Click(object sender, EventArgs e) => rtbPS.Text = "PowerUI\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion;
 
         public AutomateWindow()
         {
@@ -36,6 +36,8 @@ namespace ThisIsWin11
             btnAutomateMenu.Text = "\uE712";
             rtbDesc.Text = "You will find here custom tasks and script files to customize Windows 11 according to your wishes.\n\n" +
                           "To obtain new collections visit the GitHub repository of the app:\n\n" + Helpers.Strings.Uri.URL_GITREPO;
+
+            lstCategory.SetSelected(0, true);
         }
 
         private void InitializeAutomationPackage()
@@ -43,22 +45,45 @@ namespace ThisIsWin11
             string path = Helpers.Strings.Data.ScriptsRootDir;
             if (Directory.Exists(path))
             {
+                PopulateCategory();
                 PopulatePS();
             }
         }
 
+        // Populate categories
+        private void PopulateCategory()
+        {
+            lstPS.Items.Clear();
+
+            String[] dirs = System.IO.Directory.GetDirectories(Helpers.Strings.Data.ScriptsRootDir);
+            int i;
+            for (i = 0; i < dirs.Length; i++)
+            {
+                lstCategory.Items.Add(Path.GetFileNameWithoutExtension(dirs[i]));
+            }
+        }
+
+        // Populate PowerShell scripts
         private void PopulatePS()
         {
             lstPS.Items.Clear();
 
-            DirectoryInfo dirs = new DirectoryInfo(Helpers.Strings.Data.ScriptsRootDir);
+            DirectoryInfo dirs = new DirectoryInfo(Helpers.Strings.Data.ScriptsRootDir + lstCategory.Text);
             FileInfo[] listSettings = dirs.GetFiles("*.ps1");
             foreach (FileInfo fi in listSettings)
             {
                 lstPS.Items.Add(Path.GetFileNameWithoutExtension(fi.Name));
                 lstPS.Enabled = true;
             }
+
+            // Hide logs
+            if (lstCategory.Items.Contains("logs"))
+                lstCategory.Items.Remove("logs");
         }
+
+        private void lstCategory_SelectedIndexChanged(object sender, EventArgs e)
+
+             => PopulatePS();
 
         private void CreateLogsDir()
         {
@@ -73,15 +98,11 @@ namespace ThisIsWin11
         public async void DoAutomate()
         {
             if (lstPS.CheckedItems.Count == 0)
-            {
                 MessageBox.Show("No tasks selected.");
-            }
             else
             {
                 if (!osInfo.IsWin11())
-                {
                     MessageBox.Show("We could not recognize this system as Windows 11. Some scripts are not tested on this operating system and could lead to malfunction.");
-                }
 
                 if (MessageBox.Show("Do you want to run selected tasks?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -90,7 +111,7 @@ namespace ThisIsWin11
                         if (lstPS.GetItemChecked(i))
                         {
                             lstPS.SelectedIndex = i;
-                            string psdir = Helpers.Strings.Data.ScriptsRootDir + lstPS.SelectedItem.ToString() + ".ps1";
+                            string psdir = Helpers.Strings.Data.ScriptsRootDir + lstCategory.Text + "\\" + lstPS.SelectedItem.ToString() + ".ps1";
                             var ps1File = psdir;
 
                             var equals = new[] { "Requires -RunSilent" };
@@ -147,8 +168,8 @@ namespace ThisIsWin11
 
         private void lstPS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string psdir = Helpers.Strings.Data.ScriptsRootDir + lstPS.Text + ".ps1";
-            txtScriptName.Text = lstPS.SelectedItem.ToString();
+            string psdir = Helpers.Strings.Data.ScriptsRootDir + lstCategory.Text + "\\" + lstPS.Text + ".ps1";
+            txtScriptName.Text = lstPS.Text;
             rtbPS.Visible = true;
 
             try
@@ -201,7 +222,7 @@ namespace ThisIsWin11
             {
                 Process process = new Process();
                 process.StartInfo.FileName = "powershell_ise.exe";
-                process.StartInfo.Arguments = "\"" + Helpers.Strings.Data.ScriptsRootDir + "\\" + lstPS.SelectedItem.ToString() + ".ps1" + "\"";
+                process.StartInfo.Arguments = "\"" + Helpers.Strings.Data.ScriptsRootDir + lstCategory.Text + "\\" + lstPS.SelectedItem.ToString() + ".ps1" + "\"";
                 process.Start();
             }
             catch { }
@@ -299,7 +320,7 @@ namespace ThisIsWin11
                     message.AppendLine("- " + Path.GetFileNameWithoutExtension(fi.Name));
                 }
 
-                MessageBox.Show("List of applied tasks:" + "\r\n\n" + message.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                rtbPS.Text = "List of applied tasks:" + "\r\n\n" + message.ToString();
             }
             catch { MessageBox.Show("No tasks applied."); }
         }

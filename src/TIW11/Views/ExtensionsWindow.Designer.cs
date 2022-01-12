@@ -205,11 +205,11 @@ namespace ThisIsWin11
             // 
             this.textPlugsSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textPlugsSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textPlugsSearch.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPlugsSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textPlugsSearch.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPlugsSearch.ForeColor = System.Drawing.Color.Gray;
             this.textPlugsSearch.Location = new System.Drawing.Point(14, 18);
             this.textPlugsSearch.Name = "textPlugsSearch";
-            this.textPlugsSearch.Size = new System.Drawing.Size(211, 25);
+            this.textPlugsSearch.Size = new System.Drawing.Size(211, 23);
             this.textPlugsSearch.TabIndex = 142;
             this.textPlugsSearch.Text = "Search...";
             this.textPlugsSearch.Click += new System.EventHandler(this.textSearch_Click);
