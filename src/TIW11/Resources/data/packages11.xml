@@ -61,6 +61,11 @@
 				<App id="Bandisoft.Bandizip" name="Bandizip"/>
 				<App id="M2Team.NanaZip" name="Nanazip"/>
 				<App id="RARLab.WinRAR" name="WinRar"/>
+				<App
+					id="9nghp3dx8hdx"
+					name="Files - File Manager for Windows"
+					description="Files is a file manager with a powerful yet intuitive design. It has features like multiple tabs, panes, columns, shell extensions in the context menu and tags."
+				/>
 			</Category>
 			
 			 <Category name="Frameworks">
