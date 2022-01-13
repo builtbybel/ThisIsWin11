@@ -1,9 +1,12 @@
 
 - Added description attribute to Packages module. Thanks to https://github.com/oleksis
-- Redesigned Automation module aka PowerUI and added categories section
+- Redesigned Automation module aka PowerUI
+- Added categories section to Automation module
 - Fixed a UI bug that could cause the buttons in the Packages and Automation module to be hidden
-- Redirected plugins link to ../ThisIsWin11/collections
+- Redirected plugins to ../ThisIsWin11/collections
 - Added codename Ganymede to release
+- Added Files app to packages
+- Added new script to Automation module to download and run MSEdgeRedirect utility
 - Minor fixes
 
 

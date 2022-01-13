@@ -120,4 +120,15 @@
   <metadata name="menuAutomate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>21, 17</value>
   </metadata>
+  <data name="rtbPS.Text" xml:space="preserve">
+    <value>{Hello World}
+
+###Follow this project on GitHub.
+Start-Process "https://github.com/builtbybel/ThisIsWin11"
+
+[System.Windows.Forms.MessageBox]::Show("Thank you for supporting ThisIsWin11.","Builtbybel",0)
+
+###Requires -RunSilent 
+</value>
+  </data>
 </root>

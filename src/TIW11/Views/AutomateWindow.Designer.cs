@@ -30,6 +30,7 @@ namespace ThisIsWin11
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutomateWindow));
             this.menuAutomateImport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAutomateEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAutomateSave = new System.Windows.Forms.ToolStripMenuItem();
@@ -195,10 +196,10 @@ namespace ThisIsWin11
             // 
             this.progress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progress.Location = new System.Drawing.Point(2, 63);
+            this.progress.Location = new System.Drawing.Point(2, 61);
             this.progress.MarqueeAnimationSpeed = 30;
             this.progress.Name = "progress";
-            this.progress.Size = new System.Drawing.Size(713, 5);
+            this.progress.Size = new System.Drawing.Size(729, 5);
             this.progress.TabIndex = 156;
             this.progress.Visible = false;
             // 
@@ -296,8 +297,7 @@ namespace ThisIsWin11
             this.rtbPS.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.rtbPS.Size = new System.Drawing.Size(738, 207);
             this.rtbPS.TabIndex = 138;
-            this.rtbPS.Text = "{Hello ThisIsWin11}\n\n###Follow this project on GitHub.\nStart-Process \"https://git" +
-    "hub.com/builtbybel/ThisIsWin11\"\n\n###Requires -RunSilent \n";
+            this.rtbPS.Text = resources.GetString("rtbPS.Text");
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
             // 
             // lnkSubHeader
@@ -313,7 +313,7 @@ namespace ThisIsWin11
             this.lnkSubHeader.LinkColor = System.Drawing.Color.Black;
             this.lnkSubHeader.Location = new System.Drawing.Point(2, 40);
             this.lnkSubHeader.Name = "lnkSubHeader";
-            this.lnkSubHeader.Size = new System.Drawing.Size(709, 20);
+            this.lnkSubHeader.Size = new System.Drawing.Size(726, 20);
             this.lnkSubHeader.TabIndex = 172;
             // 
             // lblScriptsInstalledCount
@@ -328,9 +328,9 @@ namespace ThisIsWin11
             this.lblScriptsInstalledCount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblScriptsInstalledCount.Location = new System.Drawing.Point(8, 129);
             this.lblScriptsInstalledCount.Name = "lblScriptsInstalledCount";
-            this.lblScriptsInstalledCount.Size = new System.Drawing.Size(60, 21);
+            this.lblScriptsInstalledCount.Size = new System.Drawing.Size(174, 21);
             this.lblScriptsInstalledCount.TabIndex = 173;
-            this.lblScriptsInstalledCount.Text = "Scripts";
+            this.lblScriptsInstalledCount.Text = "Run PowerShell Script";
             // 
             // pnlMiddle
             // 
