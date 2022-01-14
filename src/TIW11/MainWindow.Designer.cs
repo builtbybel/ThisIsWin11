@@ -110,7 +110,6 @@ namespace ThisIsWin11
             this.btnExtensions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tt.SetToolTip(this.btnExtensions, "Create tweaks");
             this.btnExtensions.UseVisualStyleBackColor = false;
-            this.btnExtensions.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnExtensions_MouseDown);
             // 
             // btnHome
             // 
@@ -132,7 +131,6 @@ namespace ThisIsWin11
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tt.SetToolTip(this.btnHome, "Home");
             this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnHome_MouseDown);
             // 
             // btnSettings
             // 
@@ -154,7 +152,6 @@ namespace ThisIsWin11
             this.btnSettings.Text = "..";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSettings.UseVisualStyleBackColor = false;
-            this.btnSettings.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnSettings_MouseDown);
             // 
             // btnAutomate
             // 
@@ -177,7 +174,6 @@ namespace ThisIsWin11
             this.btnAutomate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tt.SetToolTip(this.btnAutomate, "Automate tasks");
             this.btnAutomate.UseVisualStyleBackColor = false;
-            this.btnAutomate.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnAutomate_MouseDown);
             // 
             // btnPackages
             // 
@@ -200,7 +196,6 @@ namespace ThisIsWin11
             this.btnPackages.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tt.SetToolTip(this.btnPackages, "Install packages");
             this.btnPackages.UseVisualStyleBackColor = false;
-            this.btnPackages.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnPackages_MouseDown);
             // 
             // btnApps
             // 
@@ -223,7 +218,6 @@ namespace ThisIsWin11
             this.btnApps.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tt.SetToolTip(this.btnApps, "Debloat Windows 11");
             this.btnApps.UseVisualStyleBackColor = false;
-            this.btnApps.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnApps_MouseDown);
             // 
             // btnCustomize
             // 
@@ -246,7 +240,6 @@ namespace ThisIsWin11
             this.btnCustomize.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tt.SetToolTip(this.btnCustomize, "Customize Windows 11");
             this.btnCustomize.UseVisualStyleBackColor = false;
-            this.btnCustomize.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCustomize_MouseDown);
             // 
             // pnlContainer
             // 

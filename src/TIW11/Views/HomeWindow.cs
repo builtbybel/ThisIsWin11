@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using ThisIsWin11.GetStarted;
+using ThisIsWin11.Properties;
 
 namespace ThisIsWin11
 {
@@ -21,6 +23,23 @@ namespace ThisIsWin11
         {
             mainForm = frm as MainWindow;
             InitializeComponent();
+
+            RegisterTheme();
+        }
+
+        private void RegisterTheme()
+        {
+            bool darkTheme = Settings.Default.darkTheme;
+
+            Color colorDarkBackground = darkTheme ? Settings.Default.colorDarkBackground : Settings.Default.colorLightBackground;
+            Color colorDarkForeground = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForeground;
+            Color colorDarkForegroundControls = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForegroundControls;
+
+            pnlLeft.BackColor =
+            pnlRight.BackColor =
+            lblHeader.BackColor = colorDarkBackground;
+            lblHeader.ForeColor = colorDarkForeground;
+            lblDesc.ForeColor = colorDarkForegroundControls;
         }
 
         private void HomeWindow_Shown(object sender, EventArgs e)

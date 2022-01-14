@@ -2,12 +2,14 @@
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Management.Automation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ThisIsWin11.Properties;
 
 namespace ThisIsWin11
 {
@@ -22,6 +24,7 @@ namespace ThisIsWin11
         public AutomateWindow()
         {
             InitializeComponent();
+            RegisterTheme();
         }
 
         private void AutomateWindow_Load(object sender, EventArgs e)
@@ -38,6 +41,59 @@ namespace ThisIsWin11
                           "To obtain new collections visit the GitHub repository of the app:\n\n" + Helpers.Strings.Uri.URL_GITREPO;
 
             lstCategory.SetSelected(0, true);
+        }
+
+        private void RegisterTheme()
+        {
+            bool darkTheme = Settings.Default.darkTheme;
+
+            Color colorDarkBackground = darkTheme ? Settings.Default.colorDarkBackground : Settings.Default.colorLightBackground;
+            Color colorDarkForeground = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForeground;
+            Color colorDarkForegroundControls = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForegroundControls;
+        
+            this.BackColor =
+            pnlLeft.BackColor =
+            pnlTop.BackColor =
+            pnlBottom.BackColor =
+            btnAutomateMenu.BackColor =
+            txtScriptName.BackColor =
+            lblHeader.BackColor =
+            lnkSubHeader.BackColor =
+            rtbDesc.BackColor =
+            lstCategory.BackColor =
+            lstPS.BackColor =
+            lblCategories.BackColor =
+            lblScripts.BackColor =
+            colorDarkBackground;
+
+            btnAutomateMenu.ForeColor =
+            lblHeader.ForeColor =
+            lnkSubHeader.LinkColor =
+            rtbDesc.ForeColor =
+            lstPS.ForeColor =
+            lstCategory.ForeColor =
+            lblCode.ForeColor =
+            lblCategories.ForeColor =
+            lblScripts.ForeColor =
+            colorDarkForeground;
+
+            rtbDesc.ForeColor =
+            txtScriptName.ForeColor = colorDarkForegroundControls;
+
+
+            if (darkTheme)
+            {
+                lblCode.BackColor = Color.DeepPink;
+                rtbPS.ForeColor = Color.HotPink;
+                rtbPS.BackColor = colorDarkBackground;
+
+            }
+            else
+            {
+                rtbPS.BackColor = Color.LavenderBlush;
+                rtbPS.ForeColor = Color.Black;
+          
+            }
         }
 
         private void InitializeAutomationPackage()

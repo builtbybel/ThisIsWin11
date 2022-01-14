@@ -63,7 +63,6 @@ namespace ThisIsWin11
             this.btnCustomizeMenu.BackColor = System.Drawing.Color.White;
             this.btnCustomizeMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCustomizeMenu.FlatAppearance.BorderSize = 0;
-            this.btnCustomizeMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnCustomizeMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomizeMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomizeMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -285,7 +284,6 @@ namespace ThisIsWin11
             this.btnCustomizeImport.BackColor = System.Drawing.Color.White;
             this.btnCustomizeImport.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCustomizeImport.FlatAppearance.BorderSize = 0;
-            this.btnCustomizeImport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnCustomizeImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomizeImport.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomizeImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -303,7 +301,6 @@ namespace ThisIsWin11
             this.btnCustomizeExportNShare.BackColor = System.Drawing.Color.White;
             this.btnCustomizeExportNShare.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCustomizeExportNShare.FlatAppearance.BorderSize = 0;
-            this.btnCustomizeExportNShare.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnCustomizeExportNShare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomizeExportNShare.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomizeExportNShare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ThisIsWin11.OpenTweaks;
 using ThisIsWin11.OpenTweaks.ITreeNode;
+using ThisIsWin11.Properties;
 
 namespace ThisIsWin11
 {
@@ -29,6 +30,7 @@ namespace ThisIsWin11
         public CustomizeWindow()
         {
             InitializeComponent();
+            RegisterTheme();
         }
 
         private void CustomizeWindow_Shown(object sender, EventArgs e)
@@ -56,6 +58,37 @@ namespace ThisIsWin11
                           Environment.NewLine + Environment.NewLine +
                          "\n\nTip:\nIf you have just switched to Windows 11, we recommend you importing the predefined out-of-box experience \"OOBE Profile\" " +
                          "by clicking on the import button in the upper right corner.";
+        }
+
+        private void RegisterTheme()
+        {
+            bool darkTheme = Settings.Default.darkTheme;
+
+            Color colorDarkBackground = darkTheme ? Settings.Default.colorDarkBackground : Settings.Default.colorLightBackground;
+            Color colorDarkForeground = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForeground;
+            Color colorDarkForegroundControls = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForegroundControls;
+
+            this.BackColor =
+            pnlLeft.BackColor =
+            pnlRight.BackColor =
+            btnCustomizeMenu.BackColor =
+            btnCustomizeImport.BackColor =
+            btnCustomizeExportNShare.BackColor =
+            lnkSubHeader.BackColor =
+
+            rtbPS.BackColor =
+            tvwAssessments.BackColor =
+            colorDarkBackground;
+
+            btnCustomizeMenu.ForeColor =
+            btnCustomizeImport.ForeColor =
+            btnCustomizeExportNShare.ForeColor =
+            lblHeader.ForeColor =
+            lnkSubHeader.LinkColor =
+            tvwAssessments.ForeColor =
+            colorDarkForeground;
+
+            rtbPS.ForeColor = colorDarkForegroundControls;
         }
 
         #region 64 available customizations in OpenTweaks (last update 2022/01/07)
@@ -204,7 +237,7 @@ namespace ThisIsWin11
             tvwAssessments.EndUpdate();
         }
 
-        #endregion 63 available customizations in OpenTweaks (last update 12/27/2021)
+        #endregion 64 available customizations in OpenTweaks (last update 2022/01/07)
 
         private List<AssessmentNode> CollectAssessmentNodes()
         {
@@ -248,7 +281,6 @@ namespace ThisIsWin11
         private async void btnCustomizeCheck_Click(object sender, EventArgs e)
         {
             Reset();
-
             int performAssessmentsCount = 0;
 
             List<AssessmentNode> selectedAssessments = CollectAssessmentNodes();
@@ -508,7 +540,5 @@ namespace ThisIsWin11
         private void btnCustomizeImport_Click(object sender, EventArgs e) => menuCustomizeImportProfile.PerformClick();
 
         private void btnCustomizeExportNShare_Click(object sender, EventArgs e) => menuCustomizeExportProfile.PerformClick();
-
-
     }
 }

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
+using ThisIsWin11.Properties;
 
 namespace ThisIsWin11
 {
@@ -18,6 +20,45 @@ namespace ThisIsWin11
             mainForm = frm as MainWindow;
 
             InitializeComponent();
+
+            lblTheme.Text = ThemeHelper.GetCurrentTheme();
+            checkDarkTheme.Checked = Settings.Default.darkTheme;
+
+            RegisterTheme();
+        }
+
+        private void RegisterTheme()
+        {
+            bool darkTheme = Settings.Default.darkTheme;
+
+            Color colorDarkBackground = darkTheme ? Settings.Default.colorDarkBackground : Settings.Default.colorLightBackground;
+            Color colorDarkForeground = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForeground;
+
+            this.BackColor =
+            btnSettingsMenu.BackColor =
+            lblHeader.BackColor =
+            lblSettingsUpdates.BackColor =
+            lblAssembly.BackColor =
+            lblSettingsApp.BackColor =
+            lblSettingsAbout.BackColor =
+            lblSettingsSubWith.BackColor =
+            lblHeartFillEmoji.BackColor =
+            lblSettingsSubDev.BackColor =
+            lblSettingsAppMain.BackColor =
+            rtbSettingsAbout.BackColor =
+            btnAppMediaGitHubIssues.BackColor =
+            checkDarkTheme.BackColor =
+            colorDarkBackground;
+
+            this.ForeColor =
+            btnSettingsMenu.ForeColor =
+            lblHeader.ForeColor =
+            lblSettingsUpdates.ForeColor =
+            lblAssembly.LinkColor =
+            lblSettingsApp.ForeColor =
+            lblSettingsAppMain.ForeColor =
+            rtbSettingsAbout.ForeColor =
+            colorDarkForeground;
         }
 
         private void SettingsWindow_Load(object sender, EventArgs e)
@@ -35,15 +76,15 @@ namespace ThisIsWin11
 
             btnSettingsMenu.Text = "\uE712";
             lblHeartFillEmoji.Text = "\uEB52";
-            lblAppMain.Text = "(Ganymede release)" +
+            lblSettingsAppMain.Text = "(Ganymede release)" +
                            "\nBuild on " + buildDateTime;
-            rtbAbout.Text = "MIT License" +
+            rtbSettingsAbout.Text = "MIT License" +
                            "\n\nThis is not a app made by Microsoft and it's in no way related to them.";
 
             try
             {
                 string changelog = new WebClient().DownloadString(Helpers.Strings.Uri.URL_GITCHANGELOG);
-                rtbAbout.Text += "\n\n\nSee what's new:" + changelog;
+                rtbSettingsAbout.Text += "\n\n\nSee what's new:" + changelog;
             }
             catch { };
         }
@@ -97,5 +138,23 @@ namespace ThisIsWin11
                 Process.Start(@"shell:appsfolder\Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe!App");
             }
         }
+
+        private void checkDarkTheme_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.darkTheme = checkDarkTheme.Checked;
+
+            if (checkDarkTheme.Checked == true)
+
+                checkDarkTheme.Text = "Dark mode enabled";
+            else
+                checkDarkTheme.Text = "Dark mode disabled";
+
+            lblSettingsDebug.Text = "Please restart the app for the changes to take effect.";
+            Settings.Default.Save();
+        }
+
+        private void lblTheme_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+            => Process.Start("ms-settings:themes");
     }
 }

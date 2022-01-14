@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using ThisIsWin11.Properties;
 
 namespace ThisIsWin11
 {
@@ -13,9 +14,13 @@ namespace ThisIsWin11
 
         private bool isGlobalNavOpen = false;
 
+        // Read settings
+        private bool darkTheme = Settings.Default.darkTheme;
+
         public MainWindow()
         {
             InitializeComponent();
+
             this.MinimumSize = new Size(810, 755);
 
             RegisterView(new HomeWindow(this), btnHome);                    // Home page
@@ -105,64 +110,42 @@ namespace ThisIsWin11
 
         public void ActivateView(string viewButton)
         {
+            Color colorDarkBackground = darkTheme ? Settings.Default.colorDarkBackground : Settings.Default.colorLightBackground;
+            Color colorDarkForeground = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForeground;
+
             Form form = panelForms[viewButton];
             this.pnlContainer.Controls.Clear();
             this.pnlContainer.Controls.Add(form);
             form.Show();
+
+            foreach (Button btn in panelButtons.Values.Where(b => b.Tag.ToString() != viewButton))
+            {
+                btn.BackColor = colorDarkBackground;
+                btn.ForeColor = colorDarkForeground;
+
+                if (darkTheme)
+                {
+                    btn.FlatAppearance.MouseOverBackColor = Color.HotPink;
+                    btn.FlatAppearance.MouseDownBackColor = colorDarkBackground;
+                }
+                else
+                {
+                    btn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
+                    btn.FlatAppearance.MouseDownBackColor = Color.WhiteSmoke;
+                }
+            }
+
+            Button button = panelButtons[viewButton];
+            button.BackColor = Color.HotPink;
+            button.ForeColor = form.ForeColor;
+
+            btnGlobalNav.BackColor = colorDarkBackground;
+            btnGlobalNav.ForeColor = colorDarkForeground;
+            pnlNav.BackColor = colorDarkBackground;
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
-        
-          =>  UISelection();
-        
 
-        private void btnHome_MouseDown(object sender, MouseEventArgs e)
-        {
-            btnHome.ForeColor =
-               Color.MediumVioletRed; btnCustomize.ForeColor = btnApps.ForeColor = btnPackages.ForeColor = btnAutomate.ForeColor = btnExtensions.ForeColor = btnSettings.ForeColor =
-               Color.DimGray;
-        }
-
-        private void btnCustomize_MouseDown(object sender, MouseEventArgs e)
-        {
-            btnCustomize.ForeColor =
-                Color.MediumVioletRed; btnHome.ForeColor = btnApps.ForeColor = btnPackages.ForeColor = btnAutomate.ForeColor = btnExtensions.ForeColor = btnSettings.ForeColor =
-                Color.DimGray;
-        }
-
-        private void btnApps_MouseDown(object sender, MouseEventArgs e)
-        {
-            btnApps.ForeColor =
-                Color.MediumVioletRed; btnCustomize.ForeColor = btnHome.ForeColor = btnPackages.ForeColor = btnAutomate.ForeColor = btnExtensions.ForeColor = btnSettings.ForeColor =
-                Color.DimGray;
-        }
-
-        private void btnPackages_MouseDown(object sender, MouseEventArgs e)
-        {
-            btnPackages.ForeColor =
-                Color.MediumVioletRed; btnApps.ForeColor = btnCustomize.ForeColor = btnHome.ForeColor = btnAutomate.ForeColor = btnExtensions.ForeColor = btnSettings.ForeColor =
-                Color.DimGray;
-        }
-
-        private void btnAutomate_MouseDown(object sender, MouseEventArgs e)
-        {
-            btnAutomate.ForeColor =
-                Color.MediumVioletRed; btnPackages.ForeColor = btnApps.ForeColor = btnCustomize.ForeColor = btnHome.ForeColor = btnExtensions.ForeColor = btnSettings.ForeColor =
-                Color.DimGray;
-        }
-
-        private void btnExtensions_MouseDown(object sender, MouseEventArgs e)
-        {
-            btnExtensions.ForeColor =
-                Color.Black; btnAutomate.ForeColor = btnPackages.ForeColor = btnApps.ForeColor = btnCustomize.ForeColor = btnHome.ForeColor = btnSettings.ForeColor =
-                Color.DimGray;
-        }
-
-        private void btnSettings_MouseDown(object sender, MouseEventArgs e)
-        {
-            btnSettings.ForeColor =
-                Color.MediumVioletRed; btnExtensions.ForeColor = btnAutomate.ForeColor = btnPackages.ForeColor = btnApps.ForeColor = btnCustomize.ForeColor = btnHome.ForeColor =
-                Color.DimGray;
-        }
+          => UISelection();
     }
 }

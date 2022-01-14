@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using ThisIsWin11.Properties;
 
 namespace ThisIsWin11
 {
@@ -20,6 +21,7 @@ namespace ThisIsWin11
         public PackagesWindow()
         {
             InitializeComponent();
+            RegisterTheme();
         }
 
         private void PackagesWindow_Shown(object sender, EventArgs e)
@@ -32,7 +34,7 @@ namespace ThisIsWin11
         // Some UI nicety
         private void UISelection()
         {
-            btnPackagesMenu.Text = "\uE712"; 
+            btnPackagesMenu.Text = "\uE712";
             lblHeartFillEmoji.Text = "\uEB52";
             rtbPS.Text = "Automate your next installation and create your own Windows 11 essentials.\n\n" +
                          "You will find more packages in the Windows Package Manager manifest repository:\nhttps://github.com/microsoft/winget-pkgs/tree/master/manifests" +
@@ -41,6 +43,33 @@ namespace ThisIsWin11
                          "1. Select your packages\n" +
                          "2. Create your packages by clicking on <Create Package> button\n" +
                          "3. Install your packages with Button <Run Installer>";
+        }
+
+        private void RegisterTheme()
+        {
+            bool darkTheme = Settings.Default.darkTheme;
+
+            Color colorDarkBackground = darkTheme ? Settings.Default.colorDarkBackground : Settings.Default.colorLightBackground;
+            Color colorDarkForeground = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForeground;
+            Color colorDarkForegroundControls = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForegroundControls;
+
+            this.BackColor =
+            pnlLeft.BackColor =
+            pnlRight.BackColor =
+            btnPackagesMenu.BackColor =
+            lblHeader.BackColor =
+            lblHeartFillEmoji.BackColor =
+            rtbPS.BackColor =
+            tvwPackages.BackColor =
+            colorDarkBackground;
+
+            btnPackagesMenu.ForeColor =
+            lblHeader.ForeColor =
+            tvwPackages.ForeColor =
+            lblHeader.ForeColor =
+            colorDarkForeground;
+
+            rtbPS.ForeColor = colorDarkForegroundControls;
         }
 
         private void IntializePackages(TreeView treeview)
@@ -67,7 +96,8 @@ namespace ThisIsWin11
                         foreach (XElement category in categories.Descendants("App"))
                         {
                             TreeNode node;
-                            if (category.Attribute("id") != null) {
+                            if (category.Attribute("id") != null)
+                            {
                                 node = categoriesNode.Nodes.Add(category.Attribute("id").Value, category.Attribute("name").Value);
                             }
                             else
@@ -111,7 +141,6 @@ namespace ThisIsWin11
                     yield return child;
             }
         }
-
 
         private void btnCreatePackage_Click(object sender, EventArgs e)
         {
@@ -344,7 +373,5 @@ namespace ThisIsWin11
         {
             PackagesWindow package = new PackagesWindow(); package.Show();
         }
-
-
     }
 }

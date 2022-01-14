@@ -30,46 +30,51 @@ namespace ThisIsWin11
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.rtbAbout = new System.Windows.Forms.RichTextBox();
+            this.rtbSettingsAbout = new System.Windows.Forms.RichTextBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnCheckForUpdates = new ThisIsWin11.Controls.RoundedButton();
             this.lblSettingsUpdates = new System.Windows.Forms.Label();
-            this.lblSettingsAbout = new System.Windows.Forms.Label();
+            this.lblSettingsApp = new System.Windows.Forms.Label();
             this.lblAssemblyInfo = new System.Windows.Forms.Label();
             this.progress = new System.Windows.Forms.ProgressBar();
             this.lblAssembly = new System.Windows.Forms.LinkLabel();
             this.lblAppMediaGitHub = new System.Windows.Forms.LinkLabel();
-            this.lblAppMain = new System.Windows.Forms.Label();
+            this.lblSettingsAppMain = new System.Windows.Forms.Label();
             this.lblAppMediaTwitter = new System.Windows.Forms.LinkLabel();
             this.lblAppMediaPayPal = new System.Windows.Forms.LinkLabel();
             this.btnAppMediaGitHubIssues = new System.Windows.Forms.Button();
             this.lblHeartFillEmoji = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSettingsSubWith = new System.Windows.Forms.Label();
+            this.lblSettingsSubDev = new System.Windows.Forms.Label();
+            this.lblSettingsAbout = new System.Windows.Forms.Label();
             this.btnSettingsMenu = new ThisIsWin11.Controls.RoundedButton();
             this.menuSettings = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuCLI = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFeedbackHub = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkDarkTheme = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTheme = new System.Windows.Forms.LinkLabel();
+            this.lblSettingsExperimental = new System.Windows.Forms.Label();
+            this.lblSettingsDebug = new System.Windows.Forms.Label();
             this.menuSettings.SuspendLayout();
             this.SuspendLayout();
             // 
-            // rtbAbout
+            // rtbSettingsAbout
             // 
-            this.rtbAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rtbSettingsAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbAbout.BackColor = System.Drawing.Color.White;
-            this.rtbAbout.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbAbout.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbAbout.ForeColor = System.Drawing.Color.Black;
-            this.rtbAbout.Location = new System.Drawing.Point(507, 400);
-            this.rtbAbout.Name = "rtbAbout";
-            this.rtbAbout.ReadOnly = true;
-            this.rtbAbout.Size = new System.Drawing.Size(697, 450);
-            this.rtbAbout.TabIndex = 0;
-            this.rtbAbout.Text = "";
-            this.rtbAbout.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbAbout_LinkClicked);
+            this.rtbSettingsAbout.BackColor = System.Drawing.Color.White;
+            this.rtbSettingsAbout.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbSettingsAbout.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbSettingsAbout.ForeColor = System.Drawing.Color.Black;
+            this.rtbSettingsAbout.Location = new System.Drawing.Point(507, 400);
+            this.rtbSettingsAbout.Name = "rtbSettingsAbout";
+            this.rtbSettingsAbout.ReadOnly = true;
+            this.rtbSettingsAbout.Size = new System.Drawing.Size(697, 450);
+            this.rtbSettingsAbout.TabIndex = 0;
+            this.rtbSettingsAbout.Text = "";
+            this.rtbSettingsAbout.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbAbout_LinkClicked);
             // 
             // lblHeader
             // 
@@ -91,7 +96,6 @@ namespace ThisIsWin11
             // 
             this.btnCheckForUpdates.AutoSize = true;
             this.btnCheckForUpdates.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnCheckForUpdates.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
             this.btnCheckForUpdates.FlatAppearance.BorderSize = 0;
             this.btnCheckForUpdates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckForUpdates.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -120,21 +124,21 @@ namespace ThisIsWin11
             this.lblSettingsUpdates.TabIndex = 156;
             this.lblSettingsUpdates.Text = "Updates";
             // 
-            // lblSettingsAbout
+            // lblSettingsApp
             // 
-            this.lblSettingsAbout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblSettingsApp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSettingsAbout.AutoEllipsis = true;
-            this.lblSettingsAbout.AutoSize = true;
-            this.lblSettingsAbout.BackColor = System.Drawing.Color.White;
-            this.lblSettingsAbout.Font = new System.Drawing.Font("Segoe UI Variable Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSettingsAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblSettingsAbout.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblSettingsAbout.Location = new System.Drawing.Point(501, 100);
-            this.lblSettingsAbout.Name = "lblSettingsAbout";
-            this.lblSettingsAbout.Size = new System.Drawing.Size(163, 36);
-            this.lblSettingsAbout.TabIndex = 157;
-            this.lblSettingsAbout.Text = "ThisIsWin11";
+            this.lblSettingsApp.AutoEllipsis = true;
+            this.lblSettingsApp.AutoSize = true;
+            this.lblSettingsApp.BackColor = System.Drawing.Color.White;
+            this.lblSettingsApp.Font = new System.Drawing.Font("Segoe UI Variable Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettingsApp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblSettingsApp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblSettingsApp.Location = new System.Drawing.Point(501, 100);
+            this.lblSettingsApp.Name = "lblSettingsApp";
+            this.lblSettingsApp.Size = new System.Drawing.Size(163, 36);
+            this.lblSettingsApp.TabIndex = 157;
+            this.lblSettingsApp.Text = "ThisIsWin11";
             // 
             // lblAssemblyInfo
             // 
@@ -191,21 +195,21 @@ namespace ThisIsWin11
             this.lblAppMediaGitHub.VisitedLinkColor = System.Drawing.Color.MediumVioletRed;
             this.lblAppMediaGitHub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAppMediaGitHub_LinkClicked);
             // 
-            // lblAppMain
+            // lblSettingsAppMain
             // 
-            this.lblAppMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblSettingsAppMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAppMain.AutoEllipsis = true;
-            this.lblAppMain.AutoSize = true;
-            this.lblAppMain.BackColor = System.Drawing.Color.White;
-            this.lblAppMain.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppMain.ForeColor = System.Drawing.Color.Black;
-            this.lblAppMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblAppMain.Location = new System.Drawing.Point(503, 186);
-            this.lblAppMain.Name = "lblAppMain";
-            this.lblAppMain.Size = new System.Drawing.Size(66, 20);
-            this.lblAppMain.TabIndex = 167;
-            this.lblAppMain.Text = "App Info";
+            this.lblSettingsAppMain.AutoEllipsis = true;
+            this.lblSettingsAppMain.AutoSize = true;
+            this.lblSettingsAppMain.BackColor = System.Drawing.Color.White;
+            this.lblSettingsAppMain.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettingsAppMain.ForeColor = System.Drawing.Color.Black;
+            this.lblSettingsAppMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblSettingsAppMain.Location = new System.Drawing.Point(503, 186);
+            this.lblSettingsAppMain.Name = "lblSettingsAppMain";
+            this.lblSettingsAppMain.Size = new System.Drawing.Size(66, 20);
+            this.lblSettingsAppMain.TabIndex = 167;
+            this.lblSettingsAppMain.Text = "App Info";
             // 
             // lblAppMediaTwitter
             // 
@@ -262,53 +266,53 @@ namespace ThisIsWin11
             this.lblHeartFillEmoji.Size = new System.Drawing.Size(32, 25);
             this.lblHeartFillEmoji.TabIndex = 172;
             // 
-            // label1
+            // lblSettingsSubWith
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblSettingsSubWith.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoEllipsis = true;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(505, 157);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 20);
-            this.label1.TabIndex = 173;
-            this.label1.Text = "with";
+            this.lblSettingsSubWith.AutoEllipsis = true;
+            this.lblSettingsSubWith.AutoSize = true;
+            this.lblSettingsSubWith.BackColor = System.Drawing.Color.White;
+            this.lblSettingsSubWith.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettingsSubWith.ForeColor = System.Drawing.Color.Gray;
+            this.lblSettingsSubWith.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblSettingsSubWith.Location = new System.Drawing.Point(505, 157);
+            this.lblSettingsSubWith.Name = "lblSettingsSubWith";
+            this.lblSettingsSubWith.Size = new System.Drawing.Size(38, 20);
+            this.lblSettingsSubWith.TabIndex = 173;
+            this.lblSettingsSubWith.Text = "with";
             // 
-            // label2
+            // lblSettingsSubDev
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblSettingsSubDev.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoEllipsis = true;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(567, 157);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
-            this.label2.TabIndex = 174;
-            this.label2.Text = "Builtbybel";
+            this.lblSettingsSubDev.AutoEllipsis = true;
+            this.lblSettingsSubDev.AutoSize = true;
+            this.lblSettingsSubDev.BackColor = System.Drawing.Color.White;
+            this.lblSettingsSubDev.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettingsSubDev.ForeColor = System.Drawing.Color.Gray;
+            this.lblSettingsSubDev.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblSettingsSubDev.Location = new System.Drawing.Point(567, 157);
+            this.lblSettingsSubDev.Name = "lblSettingsSubDev";
+            this.lblSettingsSubDev.Size = new System.Drawing.Size(78, 20);
+            this.lblSettingsSubDev.TabIndex = 174;
+            this.lblSettingsSubDev.Text = "Builtbybel";
             // 
-            // label3
+            // lblSettingsAbout
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblSettingsAbout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoEllipsis = true;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(505, 136);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(306, 17);
-            this.label3.TabIndex = 176;
-            this.label3.Text = "OS made by Microsoft and fixed by the community.";
+            this.lblSettingsAbout.AutoEllipsis = true;
+            this.lblSettingsAbout.AutoSize = true;
+            this.lblSettingsAbout.BackColor = System.Drawing.Color.White;
+            this.lblSettingsAbout.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettingsAbout.ForeColor = System.Drawing.Color.Gray;
+            this.lblSettingsAbout.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblSettingsAbout.Location = new System.Drawing.Point(505, 136);
+            this.lblSettingsAbout.Name = "lblSettingsAbout";
+            this.lblSettingsAbout.Size = new System.Drawing.Size(306, 17);
+            this.lblSettingsAbout.TabIndex = 176;
+            this.lblSettingsAbout.Text = "OS made by Microsoft and fixed by the community.";
             // 
             // btnSettingsMenu
             // 
@@ -316,7 +320,6 @@ namespace ThisIsWin11
             this.btnSettingsMenu.BackColor = System.Drawing.Color.White;
             this.btnSettingsMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSettingsMenu.FlatAppearance.BorderSize = 0;
-            this.btnSettingsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.btnSettingsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettingsMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettingsMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -353,6 +356,72 @@ namespace ThisIsWin11
             this.menuFeedbackHub.Text = "Send Feedback to Microsoft";
             this.menuFeedbackHub.Click += new System.EventHandler(this.menuFeedbackHub_Click);
             // 
+            // checkDarkTheme
+            // 
+            this.checkDarkTheme.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkDarkTheme.AutoSize = true;
+            this.checkDarkTheme.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkDarkTheme.Location = new System.Drawing.Point(66, 350);
+            this.checkDarkTheme.Name = "checkDarkTheme";
+            this.checkDarkTheme.Size = new System.Drawing.Size(154, 31);
+            this.checkDarkTheme.TabIndex = 179;
+            this.checkDarkTheme.Text = "Enable Dark Theme";
+            this.checkDarkTheme.UseVisualStyleBackColor = true;
+            this.checkDarkTheme.CheckedChanged += new System.EventHandler(this.checkDarkTheme_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoEllipsis = true;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(65, 311);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 17);
+            this.label1.TabIndex = 180;
+            this.label1.Text = " AppsUseLightTheme ";
+            // 
+            // lblTheme
+            // 
+            this.lblTheme.ActiveLinkColor = System.Drawing.Color.MediumVioletRed;
+            this.lblTheme.AutoSize = true;
+            this.lblTheme.BackColor = System.Drawing.Color.Transparent;
+            this.lblTheme.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTheme.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lblTheme.LinkColor = System.Drawing.Color.HotPink;
+            this.lblTheme.Location = new System.Drawing.Point(201, 311);
+            this.lblTheme.Name = "lblTheme";
+            this.lblTheme.Size = new System.Drawing.Size(16, 17);
+            this.lblTheme.TabIndex = 181;
+            this.lblTheme.TabStop = true;
+            this.lblTheme.Text = "#";
+            this.lblTheme.VisitedLinkColor = System.Drawing.Color.MediumVioletRed;
+            this.lblTheme.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblTheme_LinkClicked);
+            // 
+            // lblSettingsExperimental
+            // 
+            this.lblSettingsExperimental.BackColor = System.Drawing.Color.Transparent;
+            this.lblSettingsExperimental.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettingsExperimental.ForeColor = System.Drawing.Color.MediumVioletRed;
+            this.lblSettingsExperimental.Location = new System.Drawing.Point(62, 265);
+            this.lblSettingsExperimental.Name = "lblSettingsExperimental";
+            this.lblSettingsExperimental.Size = new System.Drawing.Size(175, 36);
+            this.lblSettingsExperimental.TabIndex = 182;
+            this.lblSettingsExperimental.Text = "Experimental";
+            // 
+            // lblSettingsDebug
+            // 
+            this.lblSettingsDebug.AutoEllipsis = true;
+            this.lblSettingsDebug.AutoSize = true;
+            this.lblSettingsDebug.BackColor = System.Drawing.Color.Transparent;
+            this.lblSettingsDebug.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettingsDebug.ForeColor = System.Drawing.Color.MediumVioletRed;
+            this.lblSettingsDebug.Location = new System.Drawing.Point(65, 400);
+            this.lblSettingsDebug.Name = "lblSettingsDebug";
+            this.lblSettingsDebug.Size = new System.Drawing.Size(45, 17);
+            this.lblSettingsDebug.TabIndex = 183;
+            this.lblSettingsDebug.Text = "Debug";
+            // 
             // SettingsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -360,24 +429,29 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1210, 862);
-            this.Controls.Add(this.btnSettingsMenu);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblSettingsDebug);
+            this.Controls.Add(this.lblSettingsExperimental);
+            this.Controls.Add(this.lblTheme);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.checkDarkTheme);
+            this.Controls.Add(this.btnSettingsMenu);
+            this.Controls.Add(this.lblSettingsAbout);
+            this.Controls.Add(this.lblSettingsSubDev);
+            this.Controls.Add(this.lblSettingsSubWith);
             this.Controls.Add(this.lblHeartFillEmoji);
             this.Controls.Add(this.btnAppMediaGitHubIssues);
             this.Controls.Add(this.lblAppMediaPayPal);
             this.Controls.Add(this.lblAppMediaTwitter);
-            this.Controls.Add(this.lblAppMain);
+            this.Controls.Add(this.lblSettingsAppMain);
             this.Controls.Add(this.lblAppMediaGitHub);
             this.Controls.Add(this.lblAssembly);
             this.Controls.Add(this.progress);
             this.Controls.Add(this.lblAssemblyInfo);
-            this.Controls.Add(this.lblSettingsAbout);
+            this.Controls.Add(this.lblSettingsApp);
             this.Controls.Add(this.lblSettingsUpdates);
             this.Controls.Add(this.btnCheckForUpdates);
             this.Controls.Add(this.lblHeader);
-            this.Controls.Add(this.rtbAbout);
+            this.Controls.Add(this.rtbSettingsAbout);
             this.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "SettingsWindow";
             this.ShowIcon = false;
@@ -393,26 +467,31 @@ namespace ThisIsWin11
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox rtbAbout;
+        private System.Windows.Forms.RichTextBox rtbSettingsAbout;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label lblSettingsUpdates;
-        private System.Windows.Forms.Label lblSettingsAbout;
-        public System.Windows.Forms.Button btnCheckForUpdates;
+        private System.Windows.Forms.Label lblSettingsApp;
         public System.Windows.Forms.ProgressBar progress;
         private System.Windows.Forms.Label lblAssemblyInfo;
         public System.Windows.Forms.LinkLabel lblAssembly;
         private System.Windows.Forms.LinkLabel lblAppMediaGitHub;
-        private System.Windows.Forms.Label lblAppMain;
+        private System.Windows.Forms.Label lblSettingsAppMain;
         private System.Windows.Forms.LinkLabel lblAppMediaTwitter;
         private System.Windows.Forms.LinkLabel lblAppMediaPayPal;
         private System.Windows.Forms.Button btnAppMediaGitHubIssues;
         private System.Windows.Forms.Label lblHeartFillEmoji;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSettingsSubWith;
+        private System.Windows.Forms.Label lblSettingsSubDev;
+        private System.Windows.Forms.Label lblSettingsAbout;
         private System.Windows.Forms.ContextMenuStrip menuSettings;
         private System.Windows.Forms.ToolStripMenuItem menuCLI;
         private System.Windows.Forms.ToolStripMenuItem menuFeedbackHub;
         private Controls.RoundedButton btnSettingsMenu;
+        public System.Windows.Forms.CheckBox checkDarkTheme;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.LinkLabel lblTheme;
+        private System.Windows.Forms.Label lblSettingsExperimental;
+        private System.Windows.Forms.Label lblSettingsDebug;
+        public System.Windows.Forms.Button btnCheckForUpdates;
     }
 }

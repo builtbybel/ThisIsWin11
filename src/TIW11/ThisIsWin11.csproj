@@ -102,6 +102,7 @@
     <Compile Include="Controls\RoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Helpers\ThemeHelper.cs" />
     <Compile Include="Views\ExtensionsWindow.cs">
       <SubType>Form</SubType>
     </Compile>

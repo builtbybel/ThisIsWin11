@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using ThisIsWin11.Properties;
 
 namespace ThisIsWin11
 {
@@ -14,11 +15,14 @@ namespace ThisIsWin11
 
         private static readonly string componentsVersion = "17 (experimental)";
 
+        private bool darkTheme = Settings.Default.darkTheme;
+
         private void menuPluginsInfo_Click(object sender, EventArgs e) => MessageBox.Show("Extensions for TIW11\nComponents Version: " + Program.GetCurrentVersionTostring() + "." + componentsVersion, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         public ExtensionsWindow()
         {
             InitializeComponent();
+            RegisterTheme();
         }
 
         private void ExtensionsWindow_Shown(object sender, EventArgs e)
@@ -31,6 +35,32 @@ namespace ThisIsWin11
         private void UISelection()
         {
             btnPluginsMenu.Text = "\uE712";
+        }
+
+        private void RegisterTheme()
+        {
+            Color colorDarkBackground = darkTheme ? Settings.Default.colorDarkBackground : Settings.Default.colorLightBackground;
+            Color colorDarkForeground = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForeground;
+
+            this.BackColor =
+            pnlLeft.BackColor =
+            pnlRight.BackColor =
+            btnPluginsMenu.BackColor =
+            lblHeader.BackColor =
+            lblPlugsAttribution.BackColor =
+            textPlugsSearch.BackColor =
+            DataGridViewPlugs.ColumnHeadersDefaultCellStyle.BackColor =
+            DataGridViewPlugs.BackgroundColor =
+            DataGridViewPlugs.RowsDefaultCellStyle.BackColor =
+            DataGridViewPlugs.GridColor =
+            colorDarkBackground;
+
+            btnPluginsMenu.ForeColor =
+            lblHeader.ForeColor =
+            lblPlugsAttribution.ForeColor =
+            textPlugsSearch.ForeColor =
+            DataGridViewPlugs.ForeColor =
+            colorDarkForeground;
         }
 
         private void IntializePlugs()
@@ -62,11 +92,15 @@ namespace ThisIsWin11
         {
             foreach (DataGridViewRow row in DataGridViewPlugs.Rows) if (((Plugin)row.DataBoundItem).Status == Plugin.PlugStatus.Enabled)
                 {
-                    row.DefaultCellStyle.BackColor = Color.LavenderBlush;
+                    if (darkTheme)
+                        row.DefaultCellStyle.BackColor = Color.MediumVioletRed;
+                    else row.DefaultCellStyle.BackColor = Color.LavenderBlush;
                 }
                 else
                 {
-                    row.DefaultCellStyle.BackColor = Color.White;
+                    if (darkTheme)
+                        row.DefaultCellStyle.BackColor = Color.FromArgb(32, 33, 36);
+                    else row.DefaultCellStyle.BackColor = Color.White;
                 }
         }
 

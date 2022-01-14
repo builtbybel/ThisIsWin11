@@ -22,5 +22,89 @@ namespace ThisIsWin11.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("32, 33, 36")]
+        public global::System.Drawing.Color colorDarkBackground {
+            get {
+                return ((global::System.Drawing.Color)(this["colorDarkBackground"]));
+            }
+            set {
+                this["colorDarkBackground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("204, 204, 204")]
+        public global::System.Drawing.Color colorDarkForeground {
+            get {
+                return ((global::System.Drawing.Color)(this["colorDarkForeground"]));
+            }
+            set {
+                this["colorDarkForeground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool darkTheme {
+            get {
+                return ((bool)(this["darkTheme"]));
+            }
+            set {
+                this["darkTheme"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color colorLightBackground {
+            get {
+                return ((global::System.Drawing.Color)(this["colorLightBackground"]));
+            }
+            set {
+                this["colorLightBackground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color colorLightForeground {
+            get {
+                return ((global::System.Drawing.Color)(this["colorLightForeground"]));
+            }
+            set {
+                this["colorLightForeground"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("64, 64, 64")]
+        public global::System.Drawing.Color colorLightForegroundControls {
+            get {
+                return ((global::System.Drawing.Color)(this["colorLightForegroundControls"]));
+            }
+            set {
+                this["colorLightForegroundControls"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool updateNeeded {
+            get {
+                return ((bool)(this["updateNeeded"]));
+            }
+            set {
+                this["updateNeeded"] = value;
+            }
+        }
     }
 }

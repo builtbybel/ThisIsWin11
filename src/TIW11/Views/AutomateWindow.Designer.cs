@@ -51,17 +51,17 @@ namespace ThisIsWin11
             this.btnAutomateOnTheFly = new ThisIsWin11.Controls.RoundedButton();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
-            this.lblScriptsInstalledCount = new System.Windows.Forms.Label();
-            this.pnlMiddle = new System.Windows.Forms.Panel();
+            this.lblScripts = new System.Windows.Forms.Label();
+            this.pnlTop = new System.Windows.Forms.Panel();
             this.txtScriptName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pnlRight = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblCode = new System.Windows.Forms.Label();
+            this.pnlBottom = new System.Windows.Forms.Panel();
+            this.lblCategories = new System.Windows.Forms.Label();
             this.lstCategory = new System.Windows.Forms.ListBox();
             this.menuAutomate.SuspendLayout();
             this.pnlLeft.SuspendLayout();
-            this.pnlMiddle.SuspendLayout();
-            this.pnlRight.SuspendLayout();
+            this.pnlTop.SuspendLayout();
+            this.pnlBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuAutomateImport
@@ -212,7 +212,7 @@ namespace ThisIsWin11
             this.btnAutomateMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAutomateMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAutomateMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAutomateMenu.Location = new System.Drawing.Point(692, 0);
+            this.btnAutomateMenu.Location = new System.Drawing.Point(690, 0);
             this.btnAutomateMenu.Name = "btnAutomateMenu";
             this.btnAutomateMenu.Size = new System.Drawing.Size(48, 51);
             this.btnAutomateMenu.TabIndex = 155;
@@ -316,37 +316,37 @@ namespace ThisIsWin11
             this.lnkSubHeader.Size = new System.Drawing.Size(726, 20);
             this.lnkSubHeader.TabIndex = 172;
             // 
-            // lblScriptsInstalledCount
+            // lblScripts
             // 
-            this.lblScriptsInstalledCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblScripts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblScriptsInstalledCount.AutoEllipsis = true;
-            this.lblScriptsInstalledCount.AutoSize = true;
-            this.lblScriptsInstalledCount.BackColor = System.Drawing.Color.White;
-            this.lblScriptsInstalledCount.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScriptsInstalledCount.ForeColor = System.Drawing.Color.Black;
-            this.lblScriptsInstalledCount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblScriptsInstalledCount.Location = new System.Drawing.Point(8, 129);
-            this.lblScriptsInstalledCount.Name = "lblScriptsInstalledCount";
-            this.lblScriptsInstalledCount.Size = new System.Drawing.Size(174, 21);
-            this.lblScriptsInstalledCount.TabIndex = 173;
-            this.lblScriptsInstalledCount.Text = "Run PowerShell Script";
+            this.lblScripts.AutoEllipsis = true;
+            this.lblScripts.AutoSize = true;
+            this.lblScripts.BackColor = System.Drawing.Color.White;
+            this.lblScripts.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScripts.ForeColor = System.Drawing.Color.Black;
+            this.lblScripts.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblScripts.Location = new System.Drawing.Point(8, 129);
+            this.lblScripts.Name = "lblScripts";
+            this.lblScripts.Size = new System.Drawing.Size(174, 21);
+            this.lblScripts.TabIndex = 173;
+            this.lblScripts.Text = "Run PowerShell Script";
             // 
-            // pnlMiddle
+            // pnlTop
             // 
-            this.pnlMiddle.BackColor = System.Drawing.Color.White;
-            this.pnlMiddle.Controls.Add(this.txtScriptName);
-            this.pnlMiddle.Controls.Add(this.label1);
-            this.pnlMiddle.Controls.Add(this.btnAutomateOnTheFly);
-            this.pnlMiddle.Controls.Add(this.rtbPS);
-            this.pnlMiddle.Controls.Add(this.btnAutomateMenu);
-            this.pnlMiddle.Controls.Add(this.lnkSubHeader);
-            this.pnlMiddle.Controls.Add(this.progress);
-            this.pnlMiddle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMiddle.Location = new System.Drawing.Point(470, 0);
-            this.pnlMiddle.Name = "pnlMiddle";
-            this.pnlMiddle.Size = new System.Drawing.Size(740, 380);
-            this.pnlMiddle.TabIndex = 174;
+            this.pnlTop.BackColor = System.Drawing.Color.White;
+            this.pnlTop.Controls.Add(this.txtScriptName);
+            this.pnlTop.Controls.Add(this.lblCode);
+            this.pnlTop.Controls.Add(this.btnAutomateOnTheFly);
+            this.pnlTop.Controls.Add(this.rtbPS);
+            this.pnlTop.Controls.Add(this.btnAutomateMenu);
+            this.pnlTop.Controls.Add(this.lnkSubHeader);
+            this.pnlTop.Controls.Add(this.progress);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTop.Location = new System.Drawing.Point(470, 0);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(740, 380);
+            this.pnlTop.TabIndex = 174;
             // 
             // txtScriptName
             // 
@@ -363,52 +363,52 @@ namespace ThisIsWin11
             this.txtScriptName.Text = "Script Name";
             this.txtScriptName.Click += new System.EventHandler(this.txtScriptName_Click);
             // 
-            // label1
+            // lblCode
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoEllipsis = true;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.MistyRose;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(0, 82);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 21);
-            this.label1.TabIndex = 174;
-            this.label1.Text = "Check Code";
+            this.lblCode.AutoEllipsis = true;
+            this.lblCode.AutoSize = true;
+            this.lblCode.BackColor = System.Drawing.Color.MistyRose;
+            this.lblCode.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCode.ForeColor = System.Drawing.Color.Black;
+            this.lblCode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblCode.Location = new System.Drawing.Point(0, 82);
+            this.lblCode.Name = "lblCode";
+            this.lblCode.Size = new System.Drawing.Size(97, 21);
+            this.lblCode.TabIndex = 174;
+            this.lblCode.Text = "Check Code";
             // 
-            // pnlRight
+            // pnlBottom
             // 
-            this.pnlRight.BackColor = System.Drawing.Color.White;
-            this.pnlRight.Controls.Add(this.label2);
-            this.pnlRight.Controls.Add(this.lstCategory);
-            this.pnlRight.Controls.Add(this.btnAutomate);
-            this.pnlRight.Controls.Add(this.btnCancel);
-            this.pnlRight.Controls.Add(this.lblScriptsInstalledCount);
-            this.pnlRight.Controls.Add(this.lstPS);
-            this.pnlRight.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlRight.Location = new System.Drawing.Point(470, 380);
-            this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(740, 482);
-            this.pnlRight.TabIndex = 174;
+            this.pnlBottom.BackColor = System.Drawing.Color.White;
+            this.pnlBottom.Controls.Add(this.lblCategories);
+            this.pnlBottom.Controls.Add(this.lstCategory);
+            this.pnlBottom.Controls.Add(this.btnAutomate);
+            this.pnlBottom.Controls.Add(this.btnCancel);
+            this.pnlBottom.Controls.Add(this.lblScripts);
+            this.pnlBottom.Controls.Add(this.lstPS);
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBottom.Location = new System.Drawing.Point(470, 380);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(740, 482);
+            this.pnlBottom.TabIndex = 174;
             // 
-            // label2
+            // lblCategories
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblCategories.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoEllipsis = true;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(22, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 21);
-            this.label2.TabIndex = 175;
-            this.label2.Text = "Categories /";
+            this.lblCategories.AutoEllipsis = true;
+            this.lblCategories.AutoSize = true;
+            this.lblCategories.BackColor = System.Drawing.Color.White;
+            this.lblCategories.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategories.ForeColor = System.Drawing.Color.Black;
+            this.lblCategories.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblCategories.Location = new System.Drawing.Point(22, 12);
+            this.lblCategories.Name = "lblCategories";
+            this.lblCategories.Size = new System.Drawing.Size(101, 21);
+            this.lblCategories.TabIndex = 175;
+            this.lblCategories.Text = "Categories /";
             // 
             // lstCategory
             // 
@@ -435,8 +435,8 @@ namespace ThisIsWin11
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1210, 862);
-            this.Controls.Add(this.pnlMiddle);
-            this.Controls.Add(this.pnlRight);
+            this.Controls.Add(this.pnlTop);
+            this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.pnlLeft);
@@ -448,10 +448,10 @@ namespace ThisIsWin11
             this.Load += new System.EventHandler(this.AutomateWindow_Load);
             this.menuAutomate.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
-            this.pnlMiddle.ResumeLayout(false);
-            this.pnlMiddle.PerformLayout();
-            this.pnlRight.ResumeLayout(false);
-            this.pnlRight.PerformLayout();
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
+            this.pnlBottom.ResumeLayout(false);
+            this.pnlBottom.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,16 +475,16 @@ namespace ThisIsWin11
         private System.Windows.Forms.Panel pnlLeft;
         public System.Windows.Forms.RichTextBox rtbPS;
         private System.Windows.Forms.LinkLabel lnkSubHeader;
-        private System.Windows.Forms.Label lblScriptsInstalledCount;
-        private System.Windows.Forms.Panel pnlMiddle;
-        private System.Windows.Forms.Panel pnlRight;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblScripts;
+        private System.Windows.Forms.Panel pnlTop;
+        private System.Windows.Forms.Panel pnlBottom;
+        private System.Windows.Forms.Label lblCode;
         private Controls.RoundedButton btnCancel;
         private Controls.RoundedButton btnAutomateMenu;
         private Controls.RoundedButton btnAutomate;
         private Controls.RoundedButton btnAutomateOnTheFly;
         private System.Windows.Forms.TextBox txtScriptName;
         private System.Windows.Forms.ListBox lstCategory;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCategories;
     }
 }

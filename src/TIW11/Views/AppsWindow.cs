@@ -7,6 +7,7 @@ using System.Management.Automation;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ThisIsWin11.Properties;
 
 namespace ThisIsWin11
 {
@@ -26,6 +27,7 @@ namespace ThisIsWin11
         public AppsWindow()
         {
             InitializeComponent();
+            RegisterTheme();
         }
 
         private void AppsWindow_Shown(object sender, EventArgs e)
@@ -41,6 +43,42 @@ namespace ThisIsWin11
         {
             btnAppsMenu.Text = "\uE712";
             btnAppsRefresh.Text = "\uE777";
+        }
+
+        private void RegisterTheme()
+        {
+            bool darkTheme = Settings.Default.darkTheme;
+
+            Color colorDarkBackground = darkTheme ? Settings.Default.colorDarkBackground : Settings.Default.colorLightBackground;
+            Color colorDarkForeground = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForeground;
+            Color colorDarkForegroundControls = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForegroundControls;
+
+            this.BackColor =
+            pnlLeft.BackColor =
+            pnlMiddle.BackColor =
+            pnlRight.BackColor =
+            lblHeader.BackColor =
+            btnAppsMenu.BackColor =
+            btnAppsRefresh.BackColor =
+            lblSubHeader.BackColor =
+            lstApps.BackColor =
+            lstAppsRemove.BackColor =
+            lblAppsBinCount.BackColor =
+            lblAppsBinOptions.BackColor =
+            rtbPS.BackColor =
+            colorDarkBackground;
+
+            lblHeader.ForeColor =
+            btnAppsMenu.ForeColor =
+            btnAppsRefresh.ForeColor =
+            lblAppsBinCount.ForeColor =
+            lblAppsBinOptions.LinkColor =
+            lblSubHeader.ForeColor =
+            lstAppsRemove.ForeColor =
+            rtbPS.ForeColor =
+            colorDarkForeground;
+
+            lstApps.ForeColor = colorDarkForegroundControls;
         }
 
         private void InitializeApps()
