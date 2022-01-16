@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using ThisIsWin11.Properties;
 
 namespace ThisIsWin11
 {
@@ -13,9 +12,6 @@ namespace ThisIsWin11
         private Dictionary<string, Button> panelButtons = new Dictionary<string, Button>();
 
         private bool isGlobalNavOpen = false;
-
-        // Read settings
-        private bool darkTheme = Settings.Default.darkTheme;
 
         public MainWindow()
         {
@@ -99,6 +95,8 @@ namespace ThisIsWin11
             button.Tag = form.Name;
             button.Click += SwitchView;
             panelButtons.Add(form.Name, button);
+
+ 
         }
 
         private void SwitchView(object sender, EventArgs e)
@@ -110,8 +108,9 @@ namespace ThisIsWin11
 
         public void ActivateView(string viewButton)
         {
-            Color colorDarkBackground = darkTheme ? Settings.Default.colorDarkBackground : Settings.Default.colorLightBackground;
-            Color colorDarkForeground = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForeground;
+         
+            Color colorDarkBackground = !ThemeHelper.AppsUseLightTheme() ? Color.FromArgb(32, 32, 32) : Color.White;
+            Color colorDarkForeground = !ThemeHelper.AppsUseLightTheme() ? Color.FromArgb(204, 204, 204) : Color.Black;
 
             Form form = panelForms[viewButton];
             this.pnlContainer.Controls.Clear();
@@ -123,21 +122,21 @@ namespace ThisIsWin11
                 btn.BackColor = colorDarkBackground;
                 btn.ForeColor = colorDarkForeground;
 
-                if (darkTheme)
+                if (!ThemeHelper.AppsUseLightTheme())
                 {
-                    btn.FlatAppearance.MouseOverBackColor = Color.HotPink;
+                    btn.FlatAppearance.MouseOverBackColor = ThemeHelper.DarkMouseOverBackColor;
                     btn.FlatAppearance.MouseDownBackColor = colorDarkBackground;
                 }
                 else
                 {
-                    btn.FlatAppearance.MouseOverBackColor = Color.WhiteSmoke;
-                    btn.FlatAppearance.MouseDownBackColor = Color.WhiteSmoke;
+                    btn.FlatAppearance.MouseOverBackColor = 
+                    btn.FlatAppearance.MouseDownBackColor = ThemeHelper.LightkMouseOverBackColor;
                 }
             }
 
             Button button = panelButtons[viewButton];
-            button.BackColor = Color.HotPink;
-            button.ForeColor = form.ForeColor;
+            button.BackColor = colorDarkBackground;
+            button.ForeColor = Color.MediumVioletRed;
 
             btnGlobalNav.BackColor = colorDarkBackground;
             btnGlobalNav.ForeColor = colorDarkForeground;

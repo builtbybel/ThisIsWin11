@@ -4,7 +4,6 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using ThisIsWin11.GetStarted;
-using ThisIsWin11.Properties;
 
 namespace ThisIsWin11
 {
@@ -29,17 +28,30 @@ namespace ThisIsWin11
 
         private void RegisterTheme()
         {
-            bool darkTheme = Settings.Default.darkTheme;
-
-            Color colorDarkBackground = darkTheme ? Settings.Default.colorDarkBackground : Settings.Default.colorLightBackground;
-            Color colorDarkForeground = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForeground;
-            Color colorDarkForegroundControls = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForegroundControls;
+            Color colorBackground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkBackgroundColor : ThemeHelper.LightBackgroundColor;
+            Color colorForeground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForgroundColor;
+            Color colorForegroundControl = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForegroundControl;
+            Color colorForegroundColorful = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColorful : ThemeHelper.LightForgroundColorful;
 
             pnlLeft.BackColor =
             pnlRight.BackColor =
-            lblHeader.BackColor = colorDarkBackground;
-            lblHeader.ForeColor = colorDarkForeground;
-            lblDesc.ForeColor = colorDarkForegroundControls;
+            btnRefresh.BackColor =
+            btnBack.BackColor =
+            btnNext.BackColor =
+            lblHeader.BackColor =
+             colorBackground;
+
+            lblHeader.ForeColor =
+            btnRefresh.ForeColor =
+            btnBack.ForeColor =
+            btnNext.ForeColor =
+                colorForeground;
+
+            lblDesc.ForeColor =
+                colorForegroundControl;
+
+            lnkSubHeader.LinkColor =
+                colorForegroundColorful;
         }
 
         private void HomeWindow_Shown(object sender, EventArgs e)

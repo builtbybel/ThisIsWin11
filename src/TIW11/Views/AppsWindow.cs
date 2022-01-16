@@ -7,7 +7,6 @@ using System.Management.Automation;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ThisIsWin11.Properties;
 
 namespace ThisIsWin11
 {
@@ -47,11 +46,9 @@ namespace ThisIsWin11
 
         private void RegisterTheme()
         {
-            bool darkTheme = Settings.Default.darkTheme;
-
-            Color colorDarkBackground = darkTheme ? Settings.Default.colorDarkBackground : Settings.Default.colorLightBackground;
-            Color colorDarkForeground = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForeground;
-            Color colorDarkForegroundControls = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForegroundControls;
+            Color colorBackground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkBackgroundColor : ThemeHelper.LightBackgroundColor;
+            Color colorForeground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForgroundColor;
+            Color colorForegroundControl = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForegroundControl;
 
             this.BackColor =
             pnlLeft.BackColor =
@@ -66,7 +63,7 @@ namespace ThisIsWin11
             lblAppsBinCount.BackColor =
             lblAppsBinOptions.BackColor =
             rtbPS.BackColor =
-            colorDarkBackground;
+                colorBackground;
 
             lblHeader.ForeColor =
             btnAppsMenu.ForeColor =
@@ -76,9 +73,10 @@ namespace ThisIsWin11
             lblSubHeader.ForeColor =
             lstAppsRemove.ForeColor =
             rtbPS.ForeColor =
-            colorDarkForeground;
+                colorForeground;
 
-            lstApps.ForeColor = colorDarkForegroundControls;
+            lstApps.ForeColor =
+                colorForegroundControl;
         }
 
         private void InitializeApps()

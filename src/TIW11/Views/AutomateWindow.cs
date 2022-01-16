@@ -9,7 +9,6 @@ using System.Management.Automation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ThisIsWin11.Properties;
 
 namespace ThisIsWin11
 {
@@ -45,18 +44,16 @@ namespace ThisIsWin11
 
         private void RegisterTheme()
         {
-            bool darkTheme = Settings.Default.darkTheme;
+            BorderStyle textStyle = !ThemeHelper.AppsUseLightTheme() ? BorderStyle.None : BorderStyle.Fixed3D;
+            Color colorBackground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkBackgroundColor : ThemeHelper.LightBackgroundColor;
+            Color colorForeground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForgroundColor;
+            Color colorForegroundControl = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForegroundControl;
 
-            Color colorDarkBackground = darkTheme ? Settings.Default.colorDarkBackground : Settings.Default.colorLightBackground;
-            Color colorDarkForeground = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForeground;
-            Color colorDarkForegroundControls = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForegroundControls;
-        
             this.BackColor =
             pnlLeft.BackColor =
             pnlTop.BackColor =
             pnlBottom.BackColor =
             btnAutomateMenu.BackColor =
-            txtScriptName.BackColor =
             lblHeader.BackColor =
             lnkSubHeader.BackColor =
             rtbDesc.BackColor =
@@ -64,7 +61,7 @@ namespace ThisIsWin11
             lstPS.BackColor =
             lblCategories.BackColor =
             lblScripts.BackColor =
-            colorDarkBackground;
+                colorBackground;
 
             btnAutomateMenu.ForeColor =
             lblHeader.ForeColor =
@@ -75,24 +72,26 @@ namespace ThisIsWin11
             lblCode.ForeColor =
             lblCategories.ForeColor =
             lblScripts.ForeColor =
-            colorDarkForeground;
+                colorForeground;
 
             rtbDesc.ForeColor =
-            txtScriptName.ForeColor = colorDarkForegroundControls;
+            txtScriptName.ForeColor =
+                colorForegroundControl;
 
+            txtScriptName.BorderStyle = textStyle;
 
-            if (darkTheme)
+            if (!ThemeHelper.AppsUseLightTheme())
             {
-                lblCode.BackColor = Color.DeepPink;
+                txtScriptName.BackColor = Color.Black;
+                lblCode.BackColor = Color.MediumVioletRed;
                 rtbPS.ForeColor = Color.HotPink;
-                rtbPS.BackColor = colorDarkBackground;
-
+                rtbPS.BackColor = Color.FromArgb(36, 36, 36);
             }
             else
             {
+                txtScriptName.BackColor = colorBackground;
                 rtbPS.BackColor = Color.LavenderBlush;
                 rtbPS.ForeColor = Color.Black;
-          
             }
         }
 

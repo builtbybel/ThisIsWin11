@@ -355,7 +355,7 @@ namespace ThisIsWin11
             this.txtScriptName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtScriptName.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtScriptName.ForeColor = System.Drawing.Color.Gray;
-            this.txtScriptName.Location = new System.Drawing.Point(3, 8);
+            this.txtScriptName.Location = new System.Drawing.Point(3, 10);
             this.txtScriptName.Multiline = true;
             this.txtScriptName.Name = "txtScriptName";
             this.txtScriptName.Size = new System.Drawing.Size(683, 23);

@@ -16,7 +16,7 @@ namespace ThisIsWin11.OpenTweaks.Assessment.Personalization
 
         public override string Info()
         {
-            return "";
+            return "This will also enable dark theme for ThisIsWin11.";
         }
 
         public override bool CheckAssessment()
@@ -34,6 +34,9 @@ namespace ThisIsWin11.OpenTweaks.Assessment.Personalization
 
                 logger.Log("- Apps dark theme has been successfully enabled.");
                 logger.Log(keyName);
+
+                logger.Log("\n\nDark theme will also be enabled for ThisIsWin11.\nPlease restart the app for the changes to take effect.");
+
                 return true;
             }
             catch

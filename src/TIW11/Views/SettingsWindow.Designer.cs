@@ -51,11 +51,9 @@ namespace ThisIsWin11
             this.menuSettings = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuCLI = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFeedbackHub = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkDarkTheme = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTheme = new System.Windows.Forms.LinkLabel();
             this.lblSettingsExperimental = new System.Windows.Forms.Label();
-            this.lblSettingsDebug = new System.Windows.Forms.Label();
             this.menuSettings.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,8 +152,6 @@ namespace ThisIsWin11
             // 
             // progress
             // 
-            this.progress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.progress.Location = new System.Drawing.Point(65, 228);
             this.progress.MarqueeAnimationSpeed = 30;
             this.progress.Name = "progress";
@@ -191,7 +187,7 @@ namespace ThisIsWin11
             this.lblAppMediaGitHub.Size = new System.Drawing.Size(336, 22);
             this.lblAppMediaGitHub.TabIndex = 166;
             this.lblAppMediaGitHub.TabStop = true;
-            this.lblAppMediaGitHub.Text = "GitHub (1.6k Starred)";
+            this.lblAppMediaGitHub.Text = "GitHub (1.7k Starred)";
             this.lblAppMediaGitHub.VisitedLinkColor = System.Drawing.Color.MediumVioletRed;
             this.lblAppMediaGitHub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAppMediaGitHub_LinkClicked);
             // 
@@ -356,19 +352,6 @@ namespace ThisIsWin11
             this.menuFeedbackHub.Text = "Send Feedback to Microsoft";
             this.menuFeedbackHub.Click += new System.EventHandler(this.menuFeedbackHub_Click);
             // 
-            // checkDarkTheme
-            // 
-            this.checkDarkTheme.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkDarkTheme.AutoSize = true;
-            this.checkDarkTheme.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkDarkTheme.Location = new System.Drawing.Point(66, 350);
-            this.checkDarkTheme.Name = "checkDarkTheme";
-            this.checkDarkTheme.Size = new System.Drawing.Size(154, 31);
-            this.checkDarkTheme.TabIndex = 179;
-            this.checkDarkTheme.Text = "Enable Dark Theme";
-            this.checkDarkTheme.UseVisualStyleBackColor = true;
-            this.checkDarkTheme.CheckedChanged += new System.EventHandler(this.checkDarkTheme_CheckedChanged);
-            // 
             // label1
             // 
             this.label1.AutoEllipsis = true;
@@ -377,9 +360,9 @@ namespace ThisIsWin11
             this.label1.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(65, 311);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 17);
+            this.label1.Size = new System.Drawing.Size(75, 17);
             this.label1.TabIndex = 180;
-            this.label1.Text = " AppsUseLightTheme ";
+            this.label1.Text = "App Design:";
             // 
             // lblTheme
             // 
@@ -389,7 +372,7 @@ namespace ThisIsWin11
             this.lblTheme.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTheme.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lblTheme.LinkColor = System.Drawing.Color.HotPink;
-            this.lblTheme.Location = new System.Drawing.Point(201, 311);
+            this.lblTheme.Location = new System.Drawing.Point(148, 311);
             this.lblTheme.Name = "lblTheme";
             this.lblTheme.Size = new System.Drawing.Size(16, 17);
             this.lblTheme.TabIndex = 181;
@@ -403,24 +386,11 @@ namespace ThisIsWin11
             this.lblSettingsExperimental.BackColor = System.Drawing.Color.Transparent;
             this.lblSettingsExperimental.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSettingsExperimental.ForeColor = System.Drawing.Color.MediumVioletRed;
-            this.lblSettingsExperimental.Location = new System.Drawing.Point(62, 265);
+            this.lblSettingsExperimental.Location = new System.Drawing.Point(60, 265);
             this.lblSettingsExperimental.Name = "lblSettingsExperimental";
             this.lblSettingsExperimental.Size = new System.Drawing.Size(175, 36);
             this.lblSettingsExperimental.TabIndex = 182;
             this.lblSettingsExperimental.Text = "Experimental";
-            // 
-            // lblSettingsDebug
-            // 
-            this.lblSettingsDebug.AutoEllipsis = true;
-            this.lblSettingsDebug.AutoSize = true;
-            this.lblSettingsDebug.BackColor = System.Drawing.Color.Transparent;
-            this.lblSettingsDebug.Font = new System.Drawing.Font("Segoe UI Variable Text Semiligh", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSettingsDebug.ForeColor = System.Drawing.Color.MediumVioletRed;
-            this.lblSettingsDebug.Location = new System.Drawing.Point(65, 400);
-            this.lblSettingsDebug.Name = "lblSettingsDebug";
-            this.lblSettingsDebug.Size = new System.Drawing.Size(45, 17);
-            this.lblSettingsDebug.TabIndex = 183;
-            this.lblSettingsDebug.Text = "Debug";
             // 
             // SettingsWindow
             // 
@@ -429,11 +399,9 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1210, 862);
-            this.Controls.Add(this.lblSettingsDebug);
             this.Controls.Add(this.lblSettingsExperimental);
             this.Controls.Add(this.lblTheme);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkDarkTheme);
             this.Controls.Add(this.btnSettingsMenu);
             this.Controls.Add(this.lblSettingsAbout);
             this.Controls.Add(this.lblSettingsSubDev);
@@ -487,11 +455,9 @@ namespace ThisIsWin11
         private System.Windows.Forms.ToolStripMenuItem menuCLI;
         private System.Windows.Forms.ToolStripMenuItem menuFeedbackHub;
         private Controls.RoundedButton btnSettingsMenu;
-        public System.Windows.Forms.CheckBox checkDarkTheme;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.LinkLabel lblTheme;
         private System.Windows.Forms.Label lblSettingsExperimental;
-        private System.Windows.Forms.Label lblSettingsDebug;
         public System.Windows.Forms.Button btnCheckForUpdates;
     }
 }

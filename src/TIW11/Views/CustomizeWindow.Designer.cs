@@ -192,7 +192,6 @@ namespace ThisIsWin11
             this.tvwAssessments.CheckBoxes = true;
             this.tvwAssessments.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tvwAssessments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tvwAssessments.HideSelection = false;
             this.tvwAssessments.HotTracking = true;
             this.tvwAssessments.ItemHeight = 30;
             this.tvwAssessments.Location = new System.Drawing.Point(3, 82);

@@ -1,27 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ThisIsWin11.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
   <Profiles />
-  <Settings>
-    <Setting Name="colorDarkBackground" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">32, 33, 36</Value>
-    </Setting>
-    <Setting Name="colorDarkForeground" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">204, 204, 204</Value>
-    </Setting>
-    <Setting Name="darkTheme" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="colorLightBackground" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">White</Value>
-    </Setting>
-    <Setting Name="colorLightForeground" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">Black</Value>
-    </Setting>
-    <Setting Name="colorLightForegroundControls" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">64, 64, 64</Value>
-    </Setting>
-    <Setting Name="updateNeeded" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
-  </Settings>
+  <Settings />
 </SettingsFile>

@@ -62,11 +62,10 @@ namespace ThisIsWin11
 
         private void RegisterTheme()
         {
-            bool darkTheme = Settings.Default.darkTheme;
 
-            Color colorDarkBackground = darkTheme ? Settings.Default.colorDarkBackground : Settings.Default.colorLightBackground;
-            Color colorDarkForeground = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForeground;
-            Color colorDarkForegroundControls = darkTheme ? Settings.Default.colorDarkForeground : Settings.Default.colorLightForegroundControls;
+            Color colorBackground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkBackgroundColor : ThemeHelper.LightBackgroundColor;
+            Color colorForeground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForgroundColor;
+            Color colorForegroundControl = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForegroundControl;
 
             this.BackColor =
             pnlLeft.BackColor =
@@ -75,10 +74,9 @@ namespace ThisIsWin11
             btnCustomizeImport.BackColor =
             btnCustomizeExportNShare.BackColor =
             lnkSubHeader.BackColor =
-
             rtbPS.BackColor =
             tvwAssessments.BackColor =
-            colorDarkBackground;
+                colorBackground;
 
             btnCustomizeMenu.ForeColor =
             btnCustomizeImport.ForeColor =
@@ -86,9 +84,10 @@ namespace ThisIsWin11
             lblHeader.ForeColor =
             lnkSubHeader.LinkColor =
             tvwAssessments.ForeColor =
-            colorDarkForeground;
+                colorForeground;
 
-            rtbPS.ForeColor = colorDarkForegroundControls;
+            rtbPS.ForeColor = 
+                colorForegroundControl;
         }
 
         #region 64 available customizations in OpenTweaks (last update 2022/01/07)

@@ -61,12 +61,40 @@ namespace ThisIsWin11.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 10.11.2021 19:55:43,82 
+        ///   Sucht eine lokalisierte Zeichenfolge, die 14.01.2022 21:30:43,77 
         /// ähnelt.
         /// </summary>
         internal static string BuildDate {
             get {
                 return ResourceManager.GetString("BuildDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die 1527c705-839a-4832-9118-54d4Bd6a0c89
+        ///c5e2524a-ea46-4f67-841f-6a9465d9d515
+        ///E2A4F912-2574-4A75-9BB0-0D023378592B
+        ///F46D4000-FD22-4DB4-AC8E-4E1DDDE828FE
+        ///InputApp
+        ///Microsoft.AAD.BrokerPlugin
+        ///Microsoft.AccountsControl
+        ///Microsoft.Advertising.Xaml
+        ///Microsoft.AsyncTextService
+        ///Microsoft.BioEnrollment
+        ///Microsoft.CredDialogHost
+        ///Microsoft.ECApp
+        ///Microsoft.LockApp
+        ///Microsoft.MicrosoftEdge
+        ///Microsoft.MicrosoftEdgeDevToolsClient
+        ///Microsoft.NET
+        ///Microsoft.PPIProjection
+        ///Microsoft.Services.Store.Engagement
+        ///Microsoft.VCLibs
+        ///Microsoft.Wi [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        internal static string systemapps {
+            get {
+                return ResourceManager.GetString("systemapps", resourceCulture);
             }
         }
     }
