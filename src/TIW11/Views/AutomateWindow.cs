@@ -36,6 +36,7 @@ namespace ThisIsWin11
         private void UISelection()
         {
             btnAutomateMenu.Text = "\uE712";
+            btnEdit.Text = "\uE70B" + " Script Editor";
             rtbDesc.Text = "You will find here custom tasks and script files to customize Windows 11 according to your wishes.\n\n" +
                           "To obtain new collections visit the GitHub repository of the app:\n\n" + Helpers.Strings.Uri.URL_GITREPO;
 
@@ -387,6 +388,8 @@ namespace ThisIsWin11
         private void btnAutomate_Click(object sender, EventArgs e) => DoAutomate();
 
         private void btnAutomateMenu_Click(object sender, EventArgs e) => this.menuAutomate.Show(Cursor.Position.X, Cursor.Position.Y);
+
+        private void btnEdit_Click(object sender, EventArgs e) => menuAutomateEdit.PerformClick();
 
         private void menuAutomatePopOut_Click(object sender, EventArgs e)
         {

@@ -39,14 +39,14 @@ namespace ThisIsWin11.Helpers
             public static string AppDataDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             public static string LocalAppDataDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
-            public static string ShellWT = File.Exists(LocalAppDataDir + @"\Microsoft\WindowsApps\wt.exe") ?
-                                                      LocalAppDataDir + @"\Microsoft\WindowsApps\wt.exe" : LocalAppDataDir + @"\Microsoft\WindowsApps\wt.exe";
+            public static string ShellWT = LocalAppDataDir + 
+                                            @"\Microsoft\WindowsApps\wt.exe";
 
-            public static string ShellCommandPrompt = File.Exists(SysDir + @"Windows\Sysnative\cmd.exe") ?
-                                                      SysDir + @"Windows\Sysnative\cmd.exe" : SysDir + @"Windows\System32\cmd.exe";
+            public static string ShellCommandPrompt = SysDir +
+                                            @"Windows\System32\cmd.exe";
 
-            public static string ShellPS = File.Exists(SysDir + @"Windows\Sysnative\WindowsPowerShell\v1.0\powershell.exe") ?
-                                                       SysDir + @"Windows\Sysnative\WindowsPowerShell\v1.0\powershell.exe" : SysDir + @"Windows\System32\WindowsPowerShell\v1.0\powershell.exe";
+            public static string ShellPS = SysDir +
+                                            @"Windows\System32\WindowsPowerShell\v1.0\powershell.exe"; 
         }
 
         // Create data directory if non present

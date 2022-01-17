@@ -77,6 +77,21 @@ namespace ThisIsWin11
 
             lstApps.ForeColor =
                 colorForegroundControl;
+
+            if (!ThemeHelper.AppsUseLightTheme())
+            {
+                btnAdd.BackColor =
+                btnAddAll.BackColor =
+                btnRemove.BackColor =
+                btnRemoveAll.BackColor =
+                     Color.FromArgb(55,55,55);
+
+                btnAdd.ForeColor =
+                btnAddAll.ForeColor =
+                btnRemove.ForeColor =
+                btnRemoveAll.ForeColor =
+                     colorForeground;
+            }
         }
 
         private void InitializeApps()

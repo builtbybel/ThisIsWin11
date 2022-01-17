@@ -48,11 +48,10 @@ namespace ThisIsWin11
         private void UISelection()
         {
             logger.SetTarget(rtbPS);        // Logs messages to target rtb
-            btnCustomizeMenu.Text = "\uE712";
 
+            btnCustomizeMenu.Text = "\uE712";
             btnCustomizeImport.Text = "\uECC8";
             btnCustomizeExportNShare.Text = "\uE72D";
-
             rtbPS.Text = "Click the <Check> button to run a quick check of your Windows 11 configuration and to get a preview of the changes that could be applied." +
                          "\n\nYou can always restore the default Windows 11 settings. The option for this can be found in the upper right corner." +
                           Environment.NewLine + Environment.NewLine +

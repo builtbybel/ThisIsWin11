@@ -40,15 +40,11 @@ namespace ThisIsWin11
             this.menuAutomateSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.menuAutomateInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCancel = new ThisIsWin11.Controls.RoundedButton();
             this.lblHeader = new System.Windows.Forms.Label();
             this.lstPS = new System.Windows.Forms.CheckedListBox();
             this.progress = new System.Windows.Forms.ProgressBar();
-            this.btnAutomateMenu = new ThisIsWin11.Controls.RoundedButton();
-            this.btnAutomate = new ThisIsWin11.Controls.RoundedButton();
             this.rtbDesc = new System.Windows.Forms.RichTextBox();
             this.pnlLeft = new System.Windows.Forms.Panel();
-            this.btnAutomateOnTheFly = new ThisIsWin11.Controls.RoundedButton();
             this.rtbPS = new System.Windows.Forms.RichTextBox();
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.lblScripts = new System.Windows.Forms.Label();
@@ -58,6 +54,11 @@ namespace ThisIsWin11
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.lblCategories = new System.Windows.Forms.Label();
             this.lstCategory = new System.Windows.Forms.ListBox();
+            this.btnEdit = new ThisIsWin11.Controls.RoundedButton();
+            this.btnAutomateOnTheFly = new ThisIsWin11.Controls.RoundedButton();
+            this.btnAutomate = new ThisIsWin11.Controls.RoundedButton();
+            this.btnCancel = new ThisIsWin11.Controls.RoundedButton();
+            this.btnAutomateMenu = new ThisIsWin11.Controls.RoundedButton();
             this.menuAutomate.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.pnlTop.SuspendLayout();
@@ -139,25 +140,6 @@ namespace ThisIsWin11
             this.panel1.Size = new System.Drawing.Size(0, 862);
             this.panel1.TabIndex = 146;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.AutoEllipsis = true;
-            this.btnCancel.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.MediumVioletRed;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(0, 446);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(740, 36);
-            this.btnCancel.TabIndex = 160;
-            this.btnCancel.Text = "CANCEL";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // lblHeader
             // 
             this.lblHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -187,7 +169,7 @@ namespace ThisIsWin11
             this.lstPS.HorizontalScrollbar = true;
             this.lstPS.Location = new System.Drawing.Point(13, 153);
             this.lstPS.Name = "lstPS";
-            this.lstPS.Size = new System.Drawing.Size(724, 240);
+            this.lstPS.Size = new System.Drawing.Size(476, 240);
             this.lstPS.Sorted = true;
             this.lstPS.TabIndex = 157;
             this.lstPS.SelectedIndexChanged += new System.EventHandler(this.lstPS_SelectedIndexChanged);
@@ -199,43 +181,9 @@ namespace ThisIsWin11
             this.progress.Location = new System.Drawing.Point(2, 61);
             this.progress.MarqueeAnimationSpeed = 30;
             this.progress.Name = "progress";
-            this.progress.Size = new System.Drawing.Size(729, 5);
+            this.progress.Size = new System.Drawing.Size(481, 5);
             this.progress.TabIndex = 156;
             this.progress.Visible = false;
-            // 
-            // btnAutomateMenu
-            // 
-            this.btnAutomateMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAutomateMenu.BackColor = System.Drawing.Color.White;
-            this.btnAutomateMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAutomateMenu.FlatAppearance.BorderSize = 0;
-            this.btnAutomateMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAutomateMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAutomateMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAutomateMenu.Location = new System.Drawing.Point(690, 0);
-            this.btnAutomateMenu.Name = "btnAutomateMenu";
-            this.btnAutomateMenu.Size = new System.Drawing.Size(48, 51);
-            this.btnAutomateMenu.TabIndex = 155;
-            this.btnAutomateMenu.UseVisualStyleBackColor = false;
-            this.btnAutomateMenu.Click += new System.EventHandler(this.btnAutomateMenu_Click);
-            // 
-            // btnAutomate
-            // 
-            this.btnAutomate.AutoEllipsis = true;
-            this.btnAutomate.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAutomate.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnAutomate.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.btnAutomate.FlatAppearance.BorderSize = 0;
-            this.btnAutomate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAutomate.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAutomate.ForeColor = System.Drawing.Color.White;
-            this.btnAutomate.Location = new System.Drawing.Point(0, 399);
-            this.btnAutomate.Name = "btnAutomate";
-            this.btnAutomate.Size = new System.Drawing.Size(740, 47);
-            this.btnAutomate.TabIndex = 154;
-            this.btnAutomate.Text = "RUN SELECTED\r\n";
-            this.btnAutomate.UseVisualStyleBackColor = false;
-            this.btnAutomate.Click += new System.EventHandler(this.btnAutomate_Click);
             // 
             // rtbDesc
             // 
@@ -263,25 +211,6 @@ namespace ThisIsWin11
             this.pnlLeft.Size = new System.Drawing.Size(470, 862);
             this.pnlLeft.TabIndex = 161;
             // 
-            // btnAutomateOnTheFly
-            // 
-            this.btnAutomateOnTheFly.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAutomateOnTheFly.AutoEllipsis = true;
-            this.btnAutomateOnTheFly.BackColor = System.Drawing.Color.Magenta;
-            this.btnAutomateOnTheFly.FlatAppearance.BorderColor = System.Drawing.Color.Magenta;
-            this.btnAutomateOnTheFly.FlatAppearance.BorderSize = 0;
-            this.btnAutomateOnTheFly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAutomateOnTheFly.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAutomateOnTheFly.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAutomateOnTheFly.Location = new System.Drawing.Point(0, 323);
-            this.btnAutomateOnTheFly.Name = "btnAutomateOnTheFly";
-            this.btnAutomateOnTheFly.Size = new System.Drawing.Size(740, 47);
-            this.btnAutomateOnTheFly.TabIndex = 155;
-            this.btnAutomateOnTheFly.Text = "RUN CODE ON-THE-FLY\r\n";
-            this.btnAutomateOnTheFly.UseVisualStyleBackColor = false;
-            this.btnAutomateOnTheFly.Click += new System.EventHandler(this.btnAutomateOnTheFly_Click);
-            // 
             // rtbPS
             // 
             this.rtbPS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -295,7 +224,7 @@ namespace ThisIsWin11
             this.rtbPS.Location = new System.Drawing.Point(2, 110);
             this.rtbPS.Name = "rtbPS";
             this.rtbPS.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbPS.Size = new System.Drawing.Size(738, 207);
+            this.rtbPS.Size = new System.Drawing.Size(490, 207);
             this.rtbPS.TabIndex = 138;
             this.rtbPS.Text = resources.GetString("rtbPS.Text");
             this.rtbPS.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbPS_LinkClicked);
@@ -313,7 +242,7 @@ namespace ThisIsWin11
             this.lnkSubHeader.LinkColor = System.Drawing.Color.Black;
             this.lnkSubHeader.Location = new System.Drawing.Point(2, 40);
             this.lnkSubHeader.Name = "lnkSubHeader";
-            this.lnkSubHeader.Size = new System.Drawing.Size(726, 20);
+            this.lnkSubHeader.Size = new System.Drawing.Size(478, 20);
             this.lnkSubHeader.TabIndex = 172;
             // 
             // lblScripts
@@ -334,18 +263,19 @@ namespace ThisIsWin11
             // 
             // pnlTop
             // 
+            this.pnlTop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlTop.BackColor = System.Drawing.Color.White;
             this.pnlTop.Controls.Add(this.txtScriptName);
             this.pnlTop.Controls.Add(this.lblCode);
             this.pnlTop.Controls.Add(this.btnAutomateOnTheFly);
             this.pnlTop.Controls.Add(this.rtbPS);
-            this.pnlTop.Controls.Add(this.btnAutomateMenu);
             this.pnlTop.Controls.Add(this.lnkSubHeader);
             this.pnlTop.Controls.Add(this.progress);
-            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTop.Location = new System.Drawing.Point(470, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(740, 380);
+            this.pnlTop.Size = new System.Drawing.Size(492, 380);
             this.pnlTop.TabIndex = 174;
             // 
             // txtScriptName
@@ -358,17 +288,14 @@ namespace ThisIsWin11
             this.txtScriptName.Location = new System.Drawing.Point(3, 10);
             this.txtScriptName.Multiline = true;
             this.txtScriptName.Name = "txtScriptName";
-            this.txtScriptName.Size = new System.Drawing.Size(683, 23);
+            this.txtScriptName.Size = new System.Drawing.Size(486, 23);
             this.txtScriptName.TabIndex = 175;
             this.txtScriptName.Text = "Script Name";
             this.txtScriptName.Click += new System.EventHandler(this.txtScriptName_Click);
             // 
             // lblCode
             // 
-            this.lblCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCode.AutoEllipsis = true;
-            this.lblCode.AutoSize = true;
             this.lblCode.BackColor = System.Drawing.Color.MistyRose;
             this.lblCode.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCode.ForeColor = System.Drawing.Color.Black;
@@ -381,6 +308,8 @@ namespace ThisIsWin11
             // 
             // pnlBottom
             // 
+            this.pnlBottom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlBottom.BackColor = System.Drawing.Color.White;
             this.pnlBottom.Controls.Add(this.lblCategories);
             this.pnlBottom.Controls.Add(this.lstCategory);
@@ -388,10 +317,9 @@ namespace ThisIsWin11
             this.pnlBottom.Controls.Add(this.btnCancel);
             this.pnlBottom.Controls.Add(this.lblScripts);
             this.pnlBottom.Controls.Add(this.lstPS);
-            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlBottom.Location = new System.Drawing.Point(470, 380);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(740, 482);
+            this.pnlBottom.Size = new System.Drawing.Size(492, 482);
             this.pnlBottom.TabIndex = 174;
             // 
             // lblCategories
@@ -412,8 +340,7 @@ namespace ThisIsWin11
             // 
             // lstCategory
             // 
-            this.lstCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.lstCategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstCategory.BackColor = System.Drawing.Color.White;
             this.lstCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -425,9 +352,99 @@ namespace ThisIsWin11
             this.lstCategory.Location = new System.Drawing.Point(26, 36);
             this.lstCategory.MultiColumn = true;
             this.lstCategory.Name = "lstCategory";
-            this.lstCategory.Size = new System.Drawing.Size(711, 84);
+            this.lstCategory.Size = new System.Drawing.Size(463, 84);
             this.lstCategory.TabIndex = 174;
             this.lstCategory.SelectedIndexChanged += new System.EventHandler(this.lstCategory_SelectedIndexChanged);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.AutoEllipsis = true;
+            this.btnEdit.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(1020, 104);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(158, 40);
+            this.btnEdit.TabIndex = 175;
+            this.btnEdit.Text = "Script Editor";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAutomateOnTheFly
+            // 
+            this.btnAutomateOnTheFly.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAutomateOnTheFly.AutoEllipsis = true;
+            this.btnAutomateOnTheFly.BackColor = System.Drawing.Color.Magenta;
+            this.btnAutomateOnTheFly.FlatAppearance.BorderColor = System.Drawing.Color.Magenta;
+            this.btnAutomateOnTheFly.FlatAppearance.BorderSize = 0;
+            this.btnAutomateOnTheFly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAutomateOnTheFly.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutomateOnTheFly.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAutomateOnTheFly.Location = new System.Drawing.Point(0, 323);
+            this.btnAutomateOnTheFly.Name = "btnAutomateOnTheFly";
+            this.btnAutomateOnTheFly.Size = new System.Drawing.Size(492, 47);
+            this.btnAutomateOnTheFly.TabIndex = 155;
+            this.btnAutomateOnTheFly.Text = "RUN CODE ON-THE-FLY\r\n";
+            this.btnAutomateOnTheFly.UseVisualStyleBackColor = false;
+            this.btnAutomateOnTheFly.Click += new System.EventHandler(this.btnAutomateOnTheFly_Click);
+            // 
+            // btnAutomate
+            // 
+            this.btnAutomate.AutoEllipsis = true;
+            this.btnAutomate.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAutomate.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAutomate.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnAutomate.FlatAppearance.BorderSize = 0;
+            this.btnAutomate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAutomate.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutomate.ForeColor = System.Drawing.Color.White;
+            this.btnAutomate.Location = new System.Drawing.Point(0, 399);
+            this.btnAutomate.Name = "btnAutomate";
+            this.btnAutomate.Size = new System.Drawing.Size(492, 47);
+            this.btnAutomate.TabIndex = 154;
+            this.btnAutomate.Text = "RUN SELECTED\r\n";
+            this.btnAutomate.UseVisualStyleBackColor = false;
+            this.btnAutomate.Click += new System.EventHandler(this.btnAutomate_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.AutoEllipsis = true;
+            this.btnCancel.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.MediumVioletRed;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(0, 446);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(492, 36);
+            this.btnCancel.TabIndex = 160;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnAutomateMenu
+            // 
+            this.btnAutomateMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAutomateMenu.BackColor = System.Drawing.Color.White;
+            this.btnAutomateMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAutomateMenu.FlatAppearance.BorderSize = 0;
+            this.btnAutomateMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAutomateMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutomateMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAutomateMenu.Location = new System.Drawing.Point(1161, 0);
+            this.btnAutomateMenu.Name = "btnAutomateMenu";
+            this.btnAutomateMenu.Size = new System.Drawing.Size(48, 51);
+            this.btnAutomateMenu.TabIndex = 155;
+            this.btnAutomateMenu.UseVisualStyleBackColor = false;
+            this.btnAutomateMenu.Click += new System.EventHandler(this.btnAutomateMenu_Click);
             // 
             // AutomateWindow
             // 
@@ -435,9 +452,11 @@ namespace ThisIsWin11
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1210, 862);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnAutomateMenu);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.pnlLeft);
             this.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -479,12 +498,13 @@ namespace ThisIsWin11
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel pnlBottom;
         private System.Windows.Forms.Label lblCode;
+        private System.Windows.Forms.TextBox txtScriptName;
+        private System.Windows.Forms.ListBox lstCategory;
+        private System.Windows.Forms.Label lblCategories;
         private Controls.RoundedButton btnCancel;
         private Controls.RoundedButton btnAutomateMenu;
         private Controls.RoundedButton btnAutomate;
         private Controls.RoundedButton btnAutomateOnTheFly;
-        private System.Windows.Forms.TextBox txtScriptName;
-        private System.Windows.Forms.ListBox lstCategory;
-        private System.Windows.Forms.Label lblCategories;
+        private Controls.RoundedButton btnEdit;
     }
 }
