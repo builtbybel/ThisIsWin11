@@ -14,7 +14,7 @@
  
 
 ## Features 
-ThisIsWin11 lets you customize Windows 11 all in one place. It is slowly expanded as a practical all-rounder for Windows 11, similar to Microsoft PowerToys.
+ThisIsWin11 lets you customize Windows 11 all in one place. It is slowly expanded as a practical all-rounder for Windows 11 replacing some discontinued PowerToys components and adding additional ones.
  
 **Included components**
 
