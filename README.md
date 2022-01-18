@@ -22,7 +22,7 @@ The app currently offers six modules:
 - **OpenTweaks** integrates an important part of the Windows 11 settings app and allows you to check and enable/disable settings in a bulk and with just a click.
 - **PumpedApp** makes it possible to remove unwanted features and apps from Windows 11 such as the Camera and Alarm apps, and other preinstalled bloat that you can live without.
 - **Packages** powered by [Windows Package Manager](https://github.com/microsoft/winget-cli) allows you to create your own custom install packages.
-- **PowerUI** allows you automating several Windows 11 tasks based on PowerShell and community scripts, e.g. It is possible to boost privacy by disabling various telemetry-related components of Windows 11
+- **PowerUI** allows you applying automation capabilities based on PowerShell and community scripts.
  - **Extensions** allows you creating custom tweaks
   
  ## System Requirements
