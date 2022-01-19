@@ -64,7 +64,7 @@ namespace ThisIsWin11
         private void UISelection()
         {
             var isDarkTheme = ThemeHelper.AppsUseLightTheme() ? lblTheme.Text = "Light" : lblTheme.Text = "Dark";
-            var buildDateTime = Properties.Resources.BuildDate;
+            var buildDateTime = Properties.Resources.buildDate;
             lblAssembly.Text = Program.GetCurrentVersionTostring();
 
             btnSettingsMenu.Text = "\uE712";

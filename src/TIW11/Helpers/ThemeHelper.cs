@@ -8,8 +8,8 @@ namespace ThisIsWin11
     public class ThemeHelper
     {
         // Dark theme
-        public static Color DarkBackgroundColor = Color.FromArgb(32, 32, 32);
-        public static Color DarkForgroundColor = Color.FromArgb(204, 204, 204);
+        public static Color DarkBackgroundColor = Color.FromArgb(31, 31, 31);
+        public static Color DarkForgroundColor = Color.FromArgb(230, 230, 230);
         public static Color DarkForgroundColorful = Color.FromArgb(255, 148, 238);
 
         public static Color DarkMouseOverBackColor = Color.HotPink;

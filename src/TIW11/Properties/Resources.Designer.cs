@@ -61,12 +61,12 @@ namespace ThisIsWin11.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 14.01.2022 21:30:43,77 
+        ///   Sucht eine lokalisierte Zeichenfolge, die 18.01.2022 11:24:25,76 
         /// ähnelt.
         /// </summary>
-        internal static string BuildDate {
+        internal static string buildDate {
             get {
-                return ResourceManager.GetString("BuildDate", resourceCulture);
+                return ResourceManager.GetString("buildDate", resourceCulture);
             }
         }
         
@@ -92,9 +92,9 @@ namespace ThisIsWin11.Properties {
         ///Microsoft.VCLibs
         ///Microsoft.Wi [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
         /// </summary>
-        internal static string systemapps {
+        internal static string systemApps {
             get {
-                return ResourceManager.GetString("systemapps", resourceCulture);
+                return ResourceManager.GetString("systemApps", resourceCulture);
             }
         }
     }

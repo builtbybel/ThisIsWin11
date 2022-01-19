@@ -332,9 +332,8 @@ namespace ThisIsWin11
             // btnCustomizeUndo
             // 
             this.btnCustomizeUndo.AutoEllipsis = true;
-            this.btnCustomizeUndo.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnCustomizeUndo.BackColor = System.Drawing.Color.Teal;
             this.btnCustomizeUndo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnCustomizeUndo.FlatAppearance.BorderColor = System.Drawing.Color.MediumVioletRed;
             this.btnCustomizeUndo.FlatAppearance.BorderSize = 0;
             this.btnCustomizeUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomizeUndo.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

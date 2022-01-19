@@ -51,13 +51,13 @@ namespace ThisIsWin11
             this.pnlTop = new System.Windows.Forms.Panel();
             this.txtScriptName = new System.Windows.Forms.TextBox();
             this.lblCode = new System.Windows.Forms.Label();
+            this.btnAutomateOnTheFly = new ThisIsWin11.Controls.RoundedButton();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.lblCategories = new System.Windows.Forms.Label();
             this.lstCategory = new System.Windows.Forms.ListBox();
-            this.btnEdit = new ThisIsWin11.Controls.RoundedButton();
-            this.btnAutomateOnTheFly = new ThisIsWin11.Controls.RoundedButton();
             this.btnAutomate = new ThisIsWin11.Controls.RoundedButton();
             this.btnCancel = new ThisIsWin11.Controls.RoundedButton();
+            this.btnEdit = new ThisIsWin11.Controls.RoundedButton();
             this.btnAutomateMenu = new ThisIsWin11.Controls.RoundedButton();
             this.menuAutomate.SuspendLayout();
             this.pnlLeft.SuspendLayout();
@@ -306,6 +306,25 @@ namespace ThisIsWin11
             this.lblCode.TabIndex = 174;
             this.lblCode.Text = "Check Code";
             // 
+            // btnAutomateOnTheFly
+            // 
+            this.btnAutomateOnTheFly.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAutomateOnTheFly.AutoEllipsis = true;
+            this.btnAutomateOnTheFly.BackColor = System.Drawing.Color.Magenta;
+            this.btnAutomateOnTheFly.FlatAppearance.BorderColor = System.Drawing.Color.Magenta;
+            this.btnAutomateOnTheFly.FlatAppearance.BorderSize = 0;
+            this.btnAutomateOnTheFly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAutomateOnTheFly.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutomateOnTheFly.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAutomateOnTheFly.Location = new System.Drawing.Point(0, 323);
+            this.btnAutomateOnTheFly.Name = "btnAutomateOnTheFly";
+            this.btnAutomateOnTheFly.Size = new System.Drawing.Size(492, 47);
+            this.btnAutomateOnTheFly.TabIndex = 155;
+            this.btnAutomateOnTheFly.Text = "RUN CODE ON-THE-FLY\r\n";
+            this.btnAutomateOnTheFly.UseVisualStyleBackColor = false;
+            this.btnAutomateOnTheFly.Click += new System.EventHandler(this.btnAutomateOnTheFly_Click);
+            // 
             // pnlBottom
             // 
             this.pnlBottom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -356,43 +375,6 @@ namespace ThisIsWin11
             this.lstCategory.TabIndex = 174;
             this.lstCategory.SelectedIndexChanged += new System.EventHandler(this.lstCategory_SelectedIndexChanged);
             // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.AutoEllipsis = true;
-            this.btnEdit.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(1020, 104);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(158, 40);
-            this.btnEdit.TabIndex = 175;
-            this.btnEdit.Text = "Script Editor";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnAutomateOnTheFly
-            // 
-            this.btnAutomateOnTheFly.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAutomateOnTheFly.AutoEllipsis = true;
-            this.btnAutomateOnTheFly.BackColor = System.Drawing.Color.Magenta;
-            this.btnAutomateOnTheFly.FlatAppearance.BorderColor = System.Drawing.Color.Magenta;
-            this.btnAutomateOnTheFly.FlatAppearance.BorderSize = 0;
-            this.btnAutomateOnTheFly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAutomateOnTheFly.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAutomateOnTheFly.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAutomateOnTheFly.Location = new System.Drawing.Point(0, 323);
-            this.btnAutomateOnTheFly.Name = "btnAutomateOnTheFly";
-            this.btnAutomateOnTheFly.Size = new System.Drawing.Size(492, 47);
-            this.btnAutomateOnTheFly.TabIndex = 155;
-            this.btnAutomateOnTheFly.Text = "RUN CODE ON-THE-FLY\r\n";
-            this.btnAutomateOnTheFly.UseVisualStyleBackColor = false;
-            this.btnAutomateOnTheFly.Click += new System.EventHandler(this.btnAutomateOnTheFly_Click);
-            // 
             // btnAutomate
             // 
             this.btnAutomate.AutoEllipsis = true;
@@ -429,6 +411,24 @@ namespace ThisIsWin11
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.AutoEllipsis = true;
+            this.btnEdit.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(1020, 104);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(158, 40);
+            this.btnEdit.TabIndex = 175;
+            this.btnEdit.Text = "Script Editor";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAutomateMenu
             // 

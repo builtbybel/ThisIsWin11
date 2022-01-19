@@ -125,15 +125,15 @@ namespace ThisIsWin11
             try
             {
                 Helpers.Strings.CreateDataDir();
-                Database = File.OpenText(Helpers.Strings.Data.DataRootDir + "systemapps11.txt");
+                Database = File.OpenText(Helpers.Strings.Data.DataRootDir + "systemApps.txt");
             }
             catch (FileNotFoundException) // Create file if it doesnt exisits
             {
-                StreamWriter sw = File.CreateText(Helpers.Strings.Data.DataRootDir + "systemapps11.txt");
-                sw.Write(Resources.systemapps);    // Populate it with built in preset
+                StreamWriter sw = File.CreateText(Helpers.Strings.Data.DataRootDir + "systemApps.txt");
+                sw.Write(Properties.Resources.systemApps);    // Populate it with built in preset
                 sw.Close();
 
-                Database = File.OpenText(Helpers.Strings.Data.DataRootDir + "systemapps11.txt");
+                Database = File.OpenText(Helpers.Strings.Data.DataRootDir + "systemApps.txt");
             }
             finally
             {
