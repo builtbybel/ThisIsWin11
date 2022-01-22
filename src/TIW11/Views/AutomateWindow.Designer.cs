@@ -416,7 +416,7 @@ namespace ThisIsWin11
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEdit.AutoEllipsis = true;
-            this.btnEdit.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEdit.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -437,7 +437,7 @@ namespace ThisIsWin11
             this.btnAutomateMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnAutomateMenu.FlatAppearance.BorderSize = 0;
             this.btnAutomateMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAutomateMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutomateMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAutomateMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAutomateMenu.Location = new System.Drawing.Point(1161, 0);
             this.btnAutomateMenu.Name = "btnAutomateMenu";

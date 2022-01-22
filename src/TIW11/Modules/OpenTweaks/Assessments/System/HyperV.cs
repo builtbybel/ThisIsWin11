@@ -31,8 +31,6 @@ namespace ThisIsWin11.OpenTweaks.Assessment.System
                 if (Status.ToString() == "Enabled")
                 {
                     logger.Log("Microsoft-Hyper-V is already enabled.");
-                    logger.Log("You will find here a tutorial how-to install WSA on any version of Windows 11:\nhttps://levelup.gitconnected.com/installing-windows-subsystem-for-android-in-windows-11-c33e98c4071c");
-
                     return false;
 
                 }

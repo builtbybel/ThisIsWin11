@@ -74,7 +74,7 @@ namespace ThisIsWin11
             this.btnGlobalNav.FlatAppearance.BorderSize = 0;
             this.btnGlobalNav.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnGlobalNav.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGlobalNav.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGlobalNav.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGlobalNav.ForeColor = System.Drawing.Color.DimGray;
             this.btnGlobalNav.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnGlobalNav.Location = new System.Drawing.Point(8, 6);
@@ -97,7 +97,7 @@ namespace ThisIsWin11
             this.btnExtensions.FlatAppearance.BorderSize = 0;
             this.btnExtensions.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnExtensions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExtensions.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExtensions.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExtensions.ForeColor = System.Drawing.Color.DimGray;
             this.btnExtensions.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnExtensions.Location = new System.Drawing.Point(8, 242);
@@ -119,7 +119,7 @@ namespace ThisIsWin11
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.MediumVioletRed;
             this.btnHome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnHome.Location = new System.Drawing.Point(8, 45);
@@ -141,15 +141,15 @@ namespace ThisIsWin11
             this.btnSettings.FlatAppearance.BorderSize = 0;
             this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.DimGray;
             this.btnSettings.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnSettings.Location = new System.Drawing.Point(8, 817);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(27, 32);
+            this.btnSettings.Size = new System.Drawing.Size(31, 32);
             this.btnSettings.TabIndex = 143;
-            this.btnSettings.Text = "..";
+            this.btnSettings.Text = "...";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSettings.UseVisualStyleBackColor = false;
             // 
@@ -161,7 +161,7 @@ namespace ThisIsWin11
             this.btnAutomate.FlatAppearance.BorderSize = 0;
             this.btnAutomate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnAutomate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAutomate.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutomate.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAutomate.ForeColor = System.Drawing.Color.DimGray;
             this.btnAutomate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnAutomate.Location = new System.Drawing.Point(8, 202);
@@ -183,7 +183,7 @@ namespace ThisIsWin11
             this.btnPackages.FlatAppearance.BorderSize = 0;
             this.btnPackages.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnPackages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPackages.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPackages.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPackages.ForeColor = System.Drawing.Color.DimGray;
             this.btnPackages.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnPackages.Location = new System.Drawing.Point(8, 162);
@@ -205,7 +205,7 @@ namespace ThisIsWin11
             this.btnApps.FlatAppearance.BorderSize = 0;
             this.btnApps.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnApps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApps.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApps.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApps.ForeColor = System.Drawing.Color.DimGray;
             this.btnApps.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnApps.Location = new System.Drawing.Point(8, 122);
@@ -227,7 +227,7 @@ namespace ThisIsWin11
             this.btnCustomize.FlatAppearance.BorderSize = 0;
             this.btnCustomize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnCustomize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomize.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomize.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomize.ForeColor = System.Drawing.Color.DimGray;
             this.btnCustomize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnCustomize.Location = new System.Drawing.Point(8, 82);

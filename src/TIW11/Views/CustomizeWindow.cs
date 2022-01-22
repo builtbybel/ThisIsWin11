@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ThisIsWin11.OpenTweaks;
 using ThisIsWin11.OpenTweaks.ITreeNode;
-using ThisIsWin11.Properties;
 
 namespace ThisIsWin11
 {
@@ -61,10 +60,9 @@ namespace ThisIsWin11
 
         private void RegisterTheme()
         {
-
             Color colorBackground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkBackgroundColor : ThemeHelper.LightBackgroundColor;
             Color colorForeground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForgroundColor;
-            Color colorForegroundControl = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForegroundControl;
+            Color colorForegroundContrast = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForegroundContrast;
 
             this.BackColor =
             pnlLeft.BackColor =
@@ -85,8 +83,8 @@ namespace ThisIsWin11
             tvwAssessments.ForeColor =
                 colorForeground;
 
-            rtbPS.ForeColor = 
-                colorForegroundControl;
+            rtbPS.ForeColor =
+                colorForegroundContrast;
         }
 
         #region 64 available customizations in OpenTweaks (last update 2022/01/07)
@@ -518,7 +516,8 @@ namespace ThisIsWin11
                         {
                             if (treeNode.Text.Contains(line))
                             {
-                                treeNode.BackColor = Color.Yellow;
+                                if (!ThemeHelper.AppsUseLightTheme()) treeNode.BackColor = Color.FromArgb(67, 53, 25);
+                                else treeNode.BackColor = Color.Yellow;
                                 treeNode.Text += "\x20" + "(" + Path.GetFileNameWithoutExtension(f.FileName) + ")";
                                 treeNode.Checked = true;
                             }

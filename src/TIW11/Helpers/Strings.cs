@@ -26,7 +26,7 @@ namespace ThisIsWin11.Helpers
             public const string URL_TWITTER = "https://twitter.com/builtbybel";
             public const string URL_DONATE = "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donate@builtbybel.com&lc=US&item_name=%20Builtbybel&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted";
             public const string URL_GITREPO = "https://github.com/builtbybel/ThisIsWin11";
-            public const string URL_FEEDBACK = URL_GITREPO + "/issues";
+            public const string URL_FEEDBACK = URL_GITREPO + "/issues/new?labels=crash+report&title=[BUG] or [FEEDBACK] or [SUGGESTION]&body=Describe your issue here:";
             public const string URL_GITLATEST = URL_GITREPO +"/releases/latest";
             public const string URL_GITCHANGELOG = "https://raw.githubusercontent.com/builtbybel/thisiswin11/main/changes.txt";
             public const string URL_POWERUI_PLUGS = "https://github.com/builtbybel/ThisIsWin11/tree/main/collections";

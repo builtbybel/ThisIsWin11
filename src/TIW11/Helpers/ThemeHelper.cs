@@ -8,20 +8,26 @@ namespace ThisIsWin11
     public class ThemeHelper
     {
         // Dark theme
-        public static Color DarkBackgroundColor = Color.FromArgb(31, 31, 31);
+        public static Color DarkBackgroundColor = Color.FromArgb(32, 32, 32);
+
+        public static Color DarkBackgroundContrast = Color.FromArgb(45, 45, 45);
+
         public static Color DarkForgroundColor = Color.FromArgb(230, 230, 230);
-        public static Color DarkForgroundColorful = Color.FromArgb(255, 148, 238);
+        public static Color DarkForgroundAccent = Color.FromArgb(255, 148, 238);
 
         public static Color DarkMouseOverBackColor = Color.HotPink;
 
         // Light theme
         public static Color LightBackgroundColor = Color.White;
 
-        public static Color LightForgroundColor = Color.Black;
-        public static Color LightForegroundControl = Color.FromArgb(64, 64, 64);
-        public static Color LightForgroundColorful = Color.DimGray;
+        public static Color LightBackgroundContrast = Color.Gainsboro;
+        public static Color LightBackgroundButtonContrast = Color.White;
 
-        public static Color LightkMouseOverBackColor = Color.WhiteSmoke;
+        public static Color LightForgroundColor = Color.Black;
+        public static Color LightForegroundContrast = Color.Black;
+        public static Color LightForgroundAccent = Color.DimGray;
+
+        public static Color LightMouseOverBackColor = Color.WhiteSmoke;
 
         // Get default Windows 11 theme
         public static bool AppsUseLightTheme()
@@ -45,8 +51,9 @@ namespace ThisIsWin11
             }
 
             if (AppsUseLightTheme)
-
+            {
                 return true;
+            }
             else
 
                 return false;

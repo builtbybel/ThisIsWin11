@@ -1,11 +1,33 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Web;
 using System.Windows.Forms;
 
 namespace ThisIsWin11
 {
     internal static class Program
     {
+        /// <summary>
+        /// Gets App version
+        /// </summary>
         internal static string GetCurrentVersionTostring() => new Version(Application.ProductVersion).ToString(3);
+
+        /// <summary>
+        /// Sends Crash report to GitHub with exception details
+        /// </summary>
+        public static void SendCrashReport(Exception ex)
+        {
+            string header = HttpUtility.UrlEncode(ex.Message);
+            string body = $"***ThisIsWin1 {GetCurrentVersionTostring()}***\n\n" +
+                          $"**Message**\n{ex.Message}\n\n" +
+                          $"**Source**\n{ex.Source}\n\n" +
+                          $"**Stack Trace**\n```{ex.StackTrace}```\n\n";
+
+            body = HttpUtility.UrlEncode(body);
+
+            string uri = $"https://github.com/builtbybel/ThisIsWin11/issues/new?labels=crash+report&title={header}&body={body}";
+            Process.Start(uri);
+        }
 
         /// <summary>
         /// The main entry point for the application.
@@ -56,8 +78,20 @@ namespace ThisIsWin11
                     packages.ShowDialog();
                 }
             }
+#if !DEBUG
             else
-                Application.Run(new MainWindow());
+                try
+                {
+                }
+                catch (Exception ex)
+                {
+                    SendCrashReport(ex);
+                    throw;
+                }
+
+#endif
+
+            Application.Run(new MainWindow());
         }
     }
 }

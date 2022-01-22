@@ -42,7 +42,7 @@ namespace ThisIsWin11
             this.lblSettingsAppMain = new System.Windows.Forms.Label();
             this.lblAppMediaTwitter = new System.Windows.Forms.LinkLabel();
             this.lblAppMediaPayPal = new System.Windows.Forms.LinkLabel();
-            this.btnAppMediaGitHubIssues = new System.Windows.Forms.Button();
+            this.btnAppMediaGitHubIssues = new ThisIsWin11.Controls.RoundedButton();
             this.lblHeartFillEmoji = new System.Windows.Forms.Label();
             this.lblSettingsSubWith = new System.Windows.Forms.Label();
             this.lblSettingsSubDev = new System.Windows.Forms.Label();
@@ -242,6 +242,7 @@ namespace ThisIsWin11
             // btnAppMediaGitHubIssues
             // 
             this.btnAppMediaGitHubIssues.AutoSize = true;
+            this.btnAppMediaGitHubIssues.FlatAppearance.BorderSize = 0;
             this.btnAppMediaGitHubIssues.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAppMediaGitHubIssues.Location = new System.Drawing.Point(505, 350);
             this.btnAppMediaGitHubIssues.Name = "btnAppMediaGitHubIssues";
@@ -317,7 +318,7 @@ namespace ThisIsWin11
             this.btnSettingsMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSettingsMenu.FlatAppearance.BorderSize = 0;
             this.btnSettingsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettingsMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettingsMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettingsMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSettingsMenu.Location = new System.Drawing.Point(1161, 0);
             this.btnSettingsMenu.Name = "btnSettingsMenu";
@@ -446,7 +447,7 @@ namespace ThisIsWin11
         private System.Windows.Forms.Label lblSettingsAppMain;
         private System.Windows.Forms.LinkLabel lblAppMediaTwitter;
         private System.Windows.Forms.LinkLabel lblAppMediaPayPal;
-        private System.Windows.Forms.Button btnAppMediaGitHubIssues;
+        private Controls.RoundedButton btnAppMediaGitHubIssues;
         private System.Windows.Forms.Label lblHeartFillEmoji;
         private System.Windows.Forms.Label lblSettingsSubWith;
         private System.Windows.Forms.Label lblSettingsSubDev;

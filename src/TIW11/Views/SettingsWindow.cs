@@ -24,7 +24,10 @@ namespace ThisIsWin11
 
         private void RegisterTheme()
         {
+            FlatStyle buttonStyle = !ThemeHelper.AppsUseLightTheme() ? FlatStyle.Flat : FlatStyle.Standard;
             Color colorBackground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkBackgroundColor : ThemeHelper.LightBackgroundColor;
+            Color colorBackgroundButtonContrast = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkBackgroundContrast : ThemeHelper.LightBackgroundButtonContrast;
+
             Color colorForeground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForgroundColor;
 
             this.BackColor =
@@ -39,7 +42,6 @@ namespace ThisIsWin11
             lblSettingsSubDev.BackColor =
             lblSettingsAppMain.BackColor =
             rtbSettingsAbout.BackColor =
-            btnAppMediaGitHubIssues.BackColor =
                 colorBackground;
 
             this.ForeColor =
@@ -51,6 +53,10 @@ namespace ThisIsWin11
             lblSettingsAppMain.ForeColor =
             rtbSettingsAbout.ForeColor =
                 colorForeground;
+
+            btnAppMediaGitHubIssues.BackColor = colorBackgroundButtonContrast;
+
+            btnAppMediaGitHubIssues.FlatStyle = buttonStyle;
         }
 
         private void SettingsWindow_Load(object sender, EventArgs e)

@@ -96,7 +96,7 @@ namespace ThisIsWin11
             this.btnAppsMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnAppsMenu.FlatAppearance.BorderSize = 0;
             this.btnAppsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAppsMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAppsMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAppsMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAppsMenu.Location = new System.Drawing.Point(252, 0);
             this.btnAppsMenu.Name = "btnAppsMenu";

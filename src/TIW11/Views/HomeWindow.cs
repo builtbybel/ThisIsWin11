@@ -28,18 +28,28 @@ namespace ThisIsWin11
 
         private void RegisterTheme()
         {
+            FlatStyle buttonStyle = !ThemeHelper.AppsUseLightTheme() ? FlatStyle.Flat : FlatStyle.Standard;
             Color colorBackground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkBackgroundColor : ThemeHelper.LightBackgroundColor;
+            Color colorBackgroundButtonContrast = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkBackgroundContrast : ThemeHelper.LightBackgroundButtonContrast;
+
             Color colorForeground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForgroundColor;
-            Color colorForegroundControl = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForegroundControl;
-            Color colorForegroundColorful = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColorful : ThemeHelper.LightForgroundColorful;
+            Color colorForegroundContrast = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForegroundContrast;
+            Color colorForegroundAccent = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundAccent : ThemeHelper.LightForgroundAccent;
 
             pnlLeft.BackColor =
             pnlRight.BackColor =
+            lblHeader.BackColor =
+                colorBackground;
+
             btnRefresh.BackColor =
             btnBack.BackColor =
             btnNext.BackColor =
-            lblHeader.BackColor =
-             colorBackground;
+                colorBackgroundButtonContrast;
+
+            btnRefresh.FlatStyle =
+            btnBack.FlatStyle =
+            btnNext.FlatStyle =
+                 buttonStyle;
 
             lblHeader.ForeColor =
             btnRefresh.ForeColor =
@@ -48,10 +58,10 @@ namespace ThisIsWin11
                 colorForeground;
 
             lblDesc.ForeColor =
-                colorForegroundControl;
+                colorForegroundContrast;
 
             lnkSubHeader.LinkColor =
-                colorForegroundColorful;
+                colorForegroundAccent;
         }
 
         private void HomeWindow_Shown(object sender, EventArgs e)

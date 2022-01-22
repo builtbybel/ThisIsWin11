@@ -48,7 +48,7 @@ namespace ThisIsWin11
             BorderStyle textStyle = !ThemeHelper.AppsUseLightTheme() ? BorderStyle.None : BorderStyle.Fixed3D;
             Color colorBackground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkBackgroundColor : ThemeHelper.LightBackgroundColor;
             Color colorForeground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForgroundColor;
-            Color colorForegroundControl = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForegroundControl;
+            Color colorForegroundContrast = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForegroundContrast;
 
             this.BackColor =
             pnlLeft.BackColor =
@@ -77,7 +77,7 @@ namespace ThisIsWin11
 
             rtbDesc.ForeColor =
             txtScriptName.ForeColor =
-                colorForegroundControl;
+                colorForegroundContrast;
 
             txtScriptName.BorderStyle = textStyle;
 

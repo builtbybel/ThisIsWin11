@@ -48,7 +48,7 @@ namespace ThisIsWin11
         {
             Color colorBackground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkBackgroundColor : ThemeHelper.LightBackgroundColor;
             Color colorForeground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForgroundColor;
-            Color colorForegroundControl = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForegroundControl;
+            Color colorForegroundContrast = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForegroundContrast;
 
             this.BackColor =
             pnlLeft.BackColor =
@@ -67,7 +67,7 @@ namespace ThisIsWin11
                 colorForeground;
 
             rtbPS.ForeColor = 
-                colorForegroundControl;
+                colorForegroundContrast;
         }
 
         private void IntializePackages(TreeView treeview)

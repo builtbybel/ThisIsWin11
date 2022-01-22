@@ -67,7 +67,7 @@ namespace ThisIsWin11
             this.btnPluginsMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnPluginsMenu.FlatAppearance.BorderSize = 0;
             this.btnPluginsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPluginsMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPluginsMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPluginsMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnPluginsMenu.Location = new System.Drawing.Point(1161, 0);
             this.btnPluginsMenu.Name = "btnPluginsMenu";

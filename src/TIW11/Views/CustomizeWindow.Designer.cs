@@ -64,7 +64,7 @@ namespace ThisIsWin11
             this.btnCustomizeMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCustomizeMenu.FlatAppearance.BorderSize = 0;
             this.btnCustomizeMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomizeMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomizeMenu.Font = new System.Drawing.Font("Segoe Fluent Icons", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomizeMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCustomizeMenu.Location = new System.Drawing.Point(627, 0);
             this.btnCustomizeMenu.Name = "btnCustomizeMenu";

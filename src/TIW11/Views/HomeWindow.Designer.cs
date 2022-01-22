@@ -34,18 +34,18 @@ namespace ThisIsWin11
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnCustomizer = new System.Windows.Forms.Button();
             this.pnlLeft = new System.Windows.Forms.Panel();
-            this.btnCustomButton = new ThisIsWin11.Controls.RoundedButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblDesc = new System.Windows.Forms.Label();
+            this.btnCustomButton = new ThisIsWin11.Controls.RoundedButton();
             this.menuGetStarted = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuGetStartedInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
             this.lnkSubHeader = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
+            this.btnNext = new ThisIsWin11.Controls.RoundedButton();
+            this.btnBack = new ThisIsWin11.Controls.RoundedButton();
             this.cbTable = new System.Windows.Forms.ComboBox();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnRefresh = new ThisIsWin11.Controls.RoundedButton();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.pbView = new System.Windows.Forms.PictureBox();
             this.pnlLeft.SuspendLayout();
@@ -127,24 +127,6 @@ namespace ThisIsWin11
             this.pnlLeft.Size = new System.Drawing.Size(670, 862);
             this.pnlLeft.TabIndex = 164;
             // 
-            // btnCustomButton
-            // 
-            this.btnCustomButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCustomButton.AutoEllipsis = true;
-            this.btnCustomButton.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.btnCustomButton.FlatAppearance.BorderColor = System.Drawing.Color.MediumVioletRed;
-            this.btnCustomButton.FlatAppearance.BorderSize = 0;
-            this.btnCustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomButton.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCustomButton.Location = new System.Drawing.Point(68, 554);
-            this.btnCustomButton.Name = "btnCustomButton";
-            this.btnCustomButton.Size = new System.Drawing.Size(207, 40);
-            this.btnCustomButton.TabIndex = 156;
-            this.btnCustomButton.Text = "Tweet about this app";
-            this.btnCustomButton.UseVisualStyleBackColor = false;
-            this.btnCustomButton.Click += new System.EventHandler(this.btnCustomButton_Click);
-            // 
             // linkLabel1
             // 
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.MediumVioletRed;
@@ -173,6 +155,24 @@ namespace ThisIsWin11
             this.lblDesc.Size = new System.Drawing.Size(575, 326);
             this.lblDesc.TabIndex = 137;
             this.lblDesc.Text = "cheat sheet";
+            // 
+            // btnCustomButton
+            // 
+            this.btnCustomButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCustomButton.AutoEllipsis = true;
+            this.btnCustomButton.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnCustomButton.FlatAppearance.BorderColor = System.Drawing.Color.MediumVioletRed;
+            this.btnCustomButton.FlatAppearance.BorderSize = 0;
+            this.btnCustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomButton.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomButton.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCustomButton.Location = new System.Drawing.Point(68, 554);
+            this.btnCustomButton.Name = "btnCustomButton";
+            this.btnCustomButton.Size = new System.Drawing.Size(207, 40);
+            this.btnCustomButton.TabIndex = 156;
+            this.btnCustomButton.Text = "Tweet about this app";
+            this.btnCustomButton.UseVisualStyleBackColor = false;
+            this.btnCustomButton.Click += new System.EventHandler(this.btnCustomButton_Click);
             // 
             // menuGetStarted
             // 
@@ -278,8 +278,7 @@ namespace ThisIsWin11
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRefresh.BackColor = System.Drawing.Color.White;
-            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
             this.btnRefresh.Font = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.Color.Black;
             this.btnRefresh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -349,10 +348,10 @@ namespace ThisIsWin11
         private System.Windows.Forms.ToolTip tt;
         private System.Windows.Forms.LinkLabel lnkSubHeader;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Button btnBack;
+        private ThisIsWin11.Controls.RoundedButton btnNext;
+        private ThisIsWin11.Controls.RoundedButton btnBack;
         private System.Windows.Forms.ComboBox cbTable;
-        private System.Windows.Forms.Button btnRefresh;
+        private ThisIsWin11.Controls.RoundedButton btnRefresh;
         private System.Windows.Forms.Panel pnlRight;
         public System.Windows.Forms.PictureBox pbView;
         private ThisIsWin11.Controls.RoundedButton btnConfigurator;

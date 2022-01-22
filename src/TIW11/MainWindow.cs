@@ -19,11 +19,11 @@ namespace ThisIsWin11
 
             this.MinimumSize = new Size(810, 755);
 
-            RegisterView(new HomeWindow(this), btnHome);                    // Home page
-            RegisterView(new CustomizeWindow(), btnCustomize);              // Customize page
-            RegisterView(new AppsWindow(), btnApps);                        // Apps page
+            RegisterView(new HomeWindow(this), btnHome);                    // Get Started
+            RegisterView(new CustomizeWindow(), btnCustomize);              // OpenTweaks
+            RegisterView(new AppsWindow(), btnApps);                        // PumpedApp
             RegisterView(new PackagesWindow(), btnPackages);                // Packages page
-            RegisterView(new AutomateWindow(), btnAutomate);                // Automate page
+            RegisterView(new AutomateWindow(), btnAutomate);                // PowerUI
             RegisterView(new ExtensionsWindow(), btnExtensions);            // Extensions page
             RegisterView(new SettingsWindow(this), btnSettings);            // Settings page
 
@@ -95,8 +95,6 @@ namespace ThisIsWin11
             button.Tag = form.Name;
             button.Click += SwitchView;
             panelButtons.Add(form.Name, button);
-
- 
         }
 
         private void SwitchView(object sender, EventArgs e)
@@ -108,9 +106,8 @@ namespace ThisIsWin11
 
         public void ActivateView(string viewButton)
         {
-         
-            Color colorDarkBackground = !ThemeHelper.AppsUseLightTheme() ? Color.FromArgb(32, 32, 32) : Color.White;
-            Color colorDarkForeground = !ThemeHelper.AppsUseLightTheme() ? Color.FromArgb(204, 204, 204) : Color.Black;
+            Color colorBackground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkBackgroundColor : ThemeHelper.LightBackgroundColor;
+            Color colorForeground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForgroundColor;
 
             Form form = panelForms[viewButton];
             this.pnlContainer.Controls.Clear();
@@ -119,28 +116,28 @@ namespace ThisIsWin11
 
             foreach (Button btn in panelButtons.Values.Where(b => b.Tag.ToString() != viewButton))
             {
-                btn.BackColor = colorDarkBackground;
-                btn.ForeColor = colorDarkForeground;
+                btn.BackColor = colorBackground;
+                btn.ForeColor = colorForeground;
 
                 if (!ThemeHelper.AppsUseLightTheme())
                 {
                     btn.FlatAppearance.MouseOverBackColor = ThemeHelper.DarkMouseOverBackColor;
-                    btn.FlatAppearance.MouseDownBackColor = colorDarkBackground;
+                    btn.FlatAppearance.MouseDownBackColor = colorBackground;
                 }
                 else
                 {
-                    btn.FlatAppearance.MouseOverBackColor = 
-                    btn.FlatAppearance.MouseDownBackColor = ThemeHelper.LightkMouseOverBackColor;
+                    btn.FlatAppearance.MouseOverBackColor =
+                    btn.FlatAppearance.MouseDownBackColor = ThemeHelper.LightMouseOverBackColor;
                 }
             }
 
             Button button = panelButtons[viewButton];
-            button.BackColor = colorDarkBackground;
+            button.BackColor = colorBackground;
             button.ForeColor = Color.MediumVioletRed;
 
-            btnGlobalNav.BackColor = colorDarkBackground;
-            btnGlobalNav.ForeColor = colorDarkForeground;
-            pnlNav.BackColor = colorDarkBackground;
+            btnGlobalNav.BackColor = colorBackground;
+            btnGlobalNav.ForeColor = colorForeground;
+            pnlNav.BackColor = colorBackground;
         }
 
         private void btnMenu_Click(object sender, EventArgs e)

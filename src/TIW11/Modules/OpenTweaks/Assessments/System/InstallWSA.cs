@@ -39,8 +39,10 @@ namespace ThisIsWin11.OpenTweaks.Assessment.System
                 using (var client = new WebClient())
                 {
                     logger.Log("- Installing WSA");
+                    logger.Log("\nYou must be in a Beta or Dev channel of the Windows Insider Program....");
                     WindowsHelper.RunWT("winget install \"9p3395vx91nr\" --accept-source-agreements --accept-package-agreements");
                     logger.Log("Done.");
+                    logger.Log("\n\nIf you do not meet the requirements, check the following tutorial how-to install WSA on any version of Windows 11:\nhttps://levelup.gitconnected.com/installing-windows-subsystem-for-android-in-windows-11-c33e98c4071c");
                     return true;
                 }
             }

@@ -47,8 +47,10 @@ namespace ThisIsWin11
         private void RegisterTheme()
         {
             Color colorBackground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkBackgroundColor : ThemeHelper.LightBackgroundColor;
+            Color colorBackgroundContrast = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkBackgroundContrast : ThemeHelper.LightBackgroundContrast;
+
             Color colorForeground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForgroundColor;
-            Color colorForegroundControl = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForegroundControl;
+            Color colorForegroundContrast = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForegroundContrast;
 
             this.BackColor =
             pnlLeft.BackColor =
@@ -75,23 +77,18 @@ namespace ThisIsWin11
             rtbPS.ForeColor =
                 colorForeground;
 
+            btnAdd.BackColor =
+            btnAddAll.BackColor =
+            btnRemove.BackColor =
+            btnRemoveAll.BackColor =
+                colorBackgroundContrast;
+
             lstApps.ForeColor =
-                colorForegroundControl;
-
-            if (!ThemeHelper.AppsUseLightTheme())
-            {
-                btnAdd.BackColor =
-                btnAddAll.BackColor =
-                btnRemove.BackColor =
-                btnRemoveAll.BackColor =
-                     Color.FromArgb(55,55,55);
-
-                btnAdd.ForeColor =
-                btnAddAll.ForeColor =
-                btnRemove.ForeColor =
-                btnRemoveAll.ForeColor =
-                     colorForeground;
-            }
+            btnAdd.ForeColor =
+            btnAddAll.ForeColor =
+            btnRemove.ForeColor =
+            btnRemoveAll.ForeColor =
+                colorForegroundContrast;
         }
 
         private void InitializeApps()

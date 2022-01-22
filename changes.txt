@@ -1,9 +1,6 @@
 
-- Built-in support for build 22000.466 Preview
-- Improved dark mode (inherited from Windows 11 app theme mode)
-- Dropped support uncalled-for virtual sysnative folder
-- Polished UI of automation aka PowerUI module
-- Minor fixes
+- Fixed a bug that caused PumpedApp to always show all systemapps
+- Improved and somehow lightened dark mode colors
 
 All changes can be viewed here: https://github.com/builtbybel/ThisIsWin11/releases/latest
 
