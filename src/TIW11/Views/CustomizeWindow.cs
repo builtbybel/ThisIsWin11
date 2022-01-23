@@ -87,7 +87,7 @@ namespace ThisIsWin11
                 colorForegroundContrast;
         }
 
-        #region 64 available customizations in OpenTweaks (last update 2022/01/07)
+        #region 65 Customizations last update 2022/01/23
 
         public void InitializeAssessments()
         {
@@ -129,9 +129,10 @@ namespace ThisIsWin11
                 Checked = true,
             };
 
-            TreeNode thirdparty = new TreeNode("Third-Party", new TreeNode[] {
-                new AssessmentNode(new OpenTweaks.Assessment.ThirdParty.WindowsSpyBlocker()),
-                new AssessmentNode(new OpenTweaks.Assessment.ThirdParty.ShutUp11()),
+            TreeNode paranoia = new TreeNode("Paranoia", new TreeNode[] {
+                new AssessmentNode(new OpenTweaks.Assessment.Paranoia.CleanMgr()),
+                new AssessmentNode(new OpenTweaks.Assessment.Paranoia.WindowsSpyBlocker()),
+                new AssessmentNode(new OpenTweaks.Assessment.Paranoia.ShutUp11()),
             })
             {
                 Checked = true,
@@ -216,7 +217,7 @@ namespace ThisIsWin11
             {
                 settings,
                 personalization,
-                thirdparty,
+                paranoia,
                 system,
                 update,
                 gaming,
@@ -233,7 +234,7 @@ namespace ThisIsWin11
             tvwAssessments.EndUpdate();
         }
 
-        #endregion 64 available customizations in OpenTweaks (last update 2022/01/07)
+        #endregion 65 Customizations last update 2022/01/23
 
         private List<AssessmentNode> CollectAssessmentNodes()
         {

@@ -8,8 +8,12 @@ namespace ThisIsWin11
     public class ThemeHelper
     {
         // Dark theme
-        public static Color DarkBackgroundColor = Color.FromArgb(32, 32, 32);
+        // Navigation panel
+        public static Color DarkBackgroundColorNav = Color.FromArgb(156, 27, 107);
+        public static Color DarkForgroundColorNav = Color.White;
+        public static Color DarkMouseOverBackColorNav = Color.FromArgb(238, 125, 195);
 
+        public static Color DarkBackgroundColor = Color.FromArgb(32, 32, 32);
         public static Color DarkBackgroundContrast = Color.FromArgb(45, 45, 45);
 
         public static Color DarkForgroundColor = Color.FromArgb(230, 230, 230);
@@ -18,8 +22,12 @@ namespace ThisIsWin11
         public static Color DarkMouseOverBackColor = Color.HotPink;
 
         // Light theme
-        public static Color LightBackgroundColor = Color.White;
+        // Navigation panel
+        public static Color LightBackgroundColorNav = Color.FromArgb(227, 0, 141);
+        public static Color LightForgroundColorNav = Color.White;
+        public static Color LightMouseOverBackColorNav = Color.FromArgb(238, 125, 195);
 
+        public static Color LightBackgroundColor = Color.White;
         public static Color LightBackgroundContrast = Color.Gainsboro;
         public static Color LightBackgroundButtonContrast = Color.White;
 

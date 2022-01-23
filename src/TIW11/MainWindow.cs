@@ -71,7 +71,7 @@ namespace ThisIsWin11
                 btnApps.Text += space + space + "Apps";
                 btnPackages.Text += space + space + "Packages";
                 btnAutomate.Text += space + space + "Automate";
-                btnExtensions.Text += space + space + "Extensions";
+                // btnExtensions.Text += space + space + "Extensions";
                 btnSettings.Text += space + space + "Settings";
 
                 pnlNav.AutoSize = true;
@@ -106,8 +106,9 @@ namespace ThisIsWin11
 
         public void ActivateView(string viewButton)
         {
-            Color colorBackground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkBackgroundColor : ThemeHelper.LightBackgroundColor;
-            Color colorForeground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColor : ThemeHelper.LightForgroundColor;
+            Color colorBackground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkBackgroundColorNav : ThemeHelper.LightBackgroundColorNav;
+            Color colorForeground = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkForgroundColorNav : ThemeHelper.LightForgroundColorNav;
+            Color colorMouseOver = !ThemeHelper.AppsUseLightTheme() ? ThemeHelper.DarkMouseOverBackColorNav : ThemeHelper.LightMouseOverBackColorNav;
 
             Form form = panelForms[viewButton];
             this.pnlContainer.Controls.Clear();
@@ -121,19 +122,19 @@ namespace ThisIsWin11
 
                 if (!ThemeHelper.AppsUseLightTheme())
                 {
-                    btn.FlatAppearance.MouseOverBackColor = ThemeHelper.DarkMouseOverBackColor;
+                    btn.FlatAppearance.MouseOverBackColor = colorMouseOver;
                     btn.FlatAppearance.MouseDownBackColor = colorBackground;
                 }
                 else
                 {
                     btn.FlatAppearance.MouseOverBackColor =
-                    btn.FlatAppearance.MouseDownBackColor = ThemeHelper.LightMouseOverBackColor;
+                    btn.FlatAppearance.MouseDownBackColor = colorMouseOver;
                 }
             }
 
             Button button = panelButtons[viewButton];
             button.BackColor = colorBackground;
-            button.ForeColor = Color.MediumVioletRed;
+            button.ForeColor = Color.Black;
 
             btnGlobalNav.BackColor = colorBackground;
             btnGlobalNav.ForeColor = colorForeground;

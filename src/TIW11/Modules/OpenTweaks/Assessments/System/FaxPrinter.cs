@@ -33,7 +33,7 @@ namespace ThisIsWin11.OpenTweaks.Assessment.System
 
             if (powerShell.Streams.Error.Count > 0)
             {
-                logger.Log("Fax Printer not found");
+                logger.Log("Fax Printer not found.");
                 return false;
             }
 

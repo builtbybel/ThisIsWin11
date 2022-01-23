@@ -80,6 +80,7 @@
     <Compile Include="Modules\GetStarted\Pages.cs" />
     <Compile Include="Helpers\Strings.cs" />
     <Compile Include="Helpers\Utils.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Paranoia\CleanMgr.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Personalization\TaskbarMM.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Personalization\WidgetsR.cs" />
     <Compile Include="Modules\Extensions\PluginsBase.cs" />
@@ -103,8 +104,8 @@
     <Compile Include="Modules\OpenTweaks\Assessments\System\HyperV.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\System\InstallWSA.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Update\Wusa.cs" />
-    <Compile Include="Modules\OpenTweaks\Assessments\Third-Party\ShutUp11.cs" />
-    <Compile Include="Modules\OpenTweaks\Assessments\Third-Party\WindowsSpyBlocker.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Paranoia\ShutUp11.cs" />
+    <Compile Include="Modules\OpenTweaks\Assessments\Paranoia\WindowsSpyBlocker.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Privacy\TailoredExperiences.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Privacy\WindowsTips.cs" />
     <Compile Include="Modules\OpenTweaks\Assessments\Personalization\HiddenFileFolder.cs" />

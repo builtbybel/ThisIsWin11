@@ -194,10 +194,12 @@ namespace ThisIsWin11
             this.tvwAssessments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tvwAssessments.HotTracking = true;
             this.tvwAssessments.ItemHeight = 30;
+            this.tvwAssessments.LineColor = System.Drawing.Color.HotPink;
             this.tvwAssessments.Location = new System.Drawing.Point(3, 82);
             this.tvwAssessments.Name = "tvwAssessments";
             this.tvwAssessments.ShowLines = false;
             this.tvwAssessments.ShowNodeToolTips = true;
+            this.tvwAssessments.ShowRootLines = false;
             this.tvwAssessments.Size = new System.Drawing.Size(672, 691);
             this.tvwAssessments.TabIndex = 168;
             this.tvwAssessments.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvwAssessments_AfterCheck);
@@ -332,12 +334,12 @@ namespace ThisIsWin11
             // btnCustomizeUndo
             // 
             this.btnCustomizeUndo.AutoEllipsis = true;
-            this.btnCustomizeUndo.BackColor = System.Drawing.Color.Teal;
+            this.btnCustomizeUndo.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnCustomizeUndo.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnCustomizeUndo.FlatAppearance.BorderSize = 0;
             this.btnCustomizeUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomizeUndo.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomizeUndo.ForeColor = System.Drawing.Color.White;
+            this.btnCustomizeUndo.ForeColor = System.Drawing.Color.Black;
             this.btnCustomizeUndo.Location = new System.Drawing.Point(0, 779);
             this.btnCustomizeUndo.Name = "btnCustomizeUndo";
             this.btnCustomizeUndo.Size = new System.Drawing.Size(678, 36);
