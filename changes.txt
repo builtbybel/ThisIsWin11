@@ -1,3 +1,4 @@
+
 - Added some accent color to left-hand sidebar
 - Improved and somehow lightened dark mode colors
 - Added new tree "Paranoia" to customization module aka OpenTweaks (this option is dedicated to the original PowerToys TweakUI > Paranoia tab)
