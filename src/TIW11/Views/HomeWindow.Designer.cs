@@ -160,17 +160,17 @@ namespace ThisIsWin11
             // 
             this.btnCustomButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCustomButton.AutoEllipsis = true;
-            this.btnCustomButton.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnCustomButton.BackColor = System.Drawing.Color.Magenta;
             this.btnCustomButton.FlatAppearance.BorderColor = System.Drawing.Color.MediumVioletRed;
             this.btnCustomButton.FlatAppearance.BorderSize = 0;
             this.btnCustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomButton.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomButton.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomButton.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCustomButton.Location = new System.Drawing.Point(68, 554);
             this.btnCustomButton.Name = "btnCustomButton";
             this.btnCustomButton.Size = new System.Drawing.Size(207, 40);
             this.btnCustomButton.TabIndex = 156;
-            this.btnCustomButton.Text = "Tweet about this app";
+            this.btnCustomButton.Text = "TWEET ABOUT THIS APP";
             this.btnCustomButton.UseVisualStyleBackColor = false;
             this.btnCustomButton.Click += new System.EventHandler(this.btnCustomButton_Click);
             // 

@@ -138,7 +138,7 @@ namespace ThisIsWin11
             this.btnSettings.Location = new System.Drawing.Point(8, 817);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(34, 32);
+            this.btnSettings.Size = new System.Drawing.Size(28, 32);
             this.btnSettings.TabIndex = 143;
             this.btnSettings.Text = "...";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

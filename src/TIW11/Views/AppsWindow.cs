@@ -83,11 +83,13 @@ namespace ThisIsWin11
             btnRemoveAll.BackColor =
                 colorBackgroundContrast;
 
-            lstApps.ForeColor =
             btnAdd.ForeColor =
             btnAddAll.ForeColor =
             btnRemove.ForeColor =
             btnRemoveAll.ForeColor =
+                colorForeground;
+
+            lstApps.ForeColor =
                 colorForegroundContrast;
         }
 

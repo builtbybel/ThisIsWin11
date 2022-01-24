@@ -134,7 +134,7 @@ namespace ThisIsWin11
 
             Button button = panelButtons[viewButton];
             button.BackColor = colorBackground;
-            button.ForeColor = Color.Black;
+            button.ForeColor = Color.MediumVioletRed;
 
             btnGlobalNav.BackColor = colorBackground;
             btnGlobalNav.ForeColor = colorForeground;

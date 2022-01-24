@@ -6,7 +6,8 @@ namespace ThisIsWin11.Helpers
 {
     internal class Strings
     {
-        public static readonly string TweetIntent = "https://twitter.com/intent/tweet?text=Try%20the%20new%20%23ThisIsWin11%20app%20and%20personalize%20%23Windows11%20and%20streamline%20it%20to%20your%20liking.%0a%0ahttps://github.com/builtbybel/ThisIsWin11";
+  
+        public static readonly string TweetIntent = "https://twitter.com/intent/tweet?text=Try%20the%20new%20%23ThisIsWin11%20app%20which%20allows%20you%20to%20customize%20the%20more%20obscure%20settings%20of%20%23Windows11%20systems%20UI.%0a%0ahttps://github.com/builtbybel/ThisIsWin11";
 
         public static class Data
         {
