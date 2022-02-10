@@ -34,7 +34,7 @@ namespace ThisIsWin11.OpenTweaks.Assessment.Gaming
             {
                 Registry.SetValue(keyName, "PowerThrottlingOff", desiredValue, RegistryValueKind.DWord);
 
-                logger.Log("- PowerThrottling has been successfully enabled.");
+                logger.Log("- PowerThrottling has been successfully disabled.");
                 logger.Log(keyName);
                 return true;
             }

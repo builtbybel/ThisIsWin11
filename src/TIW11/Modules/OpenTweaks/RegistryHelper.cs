@@ -7,8 +7,6 @@ namespace ThisIsWin11.OpenTweaks.Assessment
     // Check whether registry values equal
     internal class RegistryHelper
     {
-        public AssessmentBase Assessment { get; }
-
         public static bool IntEquals(string keyName, string valueName, int expectedValue)
         {
             try
