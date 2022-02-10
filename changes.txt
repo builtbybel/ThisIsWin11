@@ -1,11 +1,3 @@
 
-- Added some accent color to left-hand sidebar
-- Improved and somehow lightened dark mode colors
-- Added new tree "Paranoia" to customization module aka OpenTweaks (this option is dedicated to the original PowerToys TweakUI > Paranoia tab)
-- Added option to OpenTweaks > Paranoia category to remove some system traces with cleanmgr.exe or Burnbytes
-- Fixed a bug that caused PumpedApp to always show all systemapps
-- Minor fixes
-
-
-All changes can be viewed here: https://github.com/builtbybel/ThisIsWin11/releases/latest
-
+The "lite" version of TIW11 - named BreakingApp - can now also be tested. I got it out of my archive
+- https://github.com/builtbybel/BreakingApp -
