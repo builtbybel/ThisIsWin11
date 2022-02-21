@@ -1,3 +1,8 @@
 
-The "lite" version of TIW11 - named BreakingApp - can now also be tested. I got it out of my archive
-- https://github.com/builtbybel/BreakingApp -
+Try the new TweakUI replica - named TweakUIX - Stable is just out!
+- https://github.com/builtbybel/TweakUIX -
+
+Issues adressed in this release of TIW11:
+- Maintenance release
+- Built-in support for build 22000.527
+- Minor fixes
