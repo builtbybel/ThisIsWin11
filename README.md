@@ -35,7 +35,13 @@ ThisIsWin11 lets you customize Windows 11 all in one place. It is slowly expande
 
 
 ### Installation
-A classic installation is not necessary at all, because TIW11 is 100% portable. All you have to do is to extract the `TIW11.zip` archive and run the file provided as .exe
+Install from [Scoop](https://scoop.sh/):
+```powershell
+scoop bucket add extras
+scoop install thisiswin11
+```
+
+Alternatively, a classic installation is not necessary at all, because TIW11 is 100% portable. All you have to do is to extract the `TIW11.zip` archive and run the file provided as .exe
  
 ## Support
 If you like the tool please consider supporting me via PayPal.
