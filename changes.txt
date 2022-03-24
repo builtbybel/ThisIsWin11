@@ -1,8 +1,3 @@
 
-Try the new TweakUI replica - named TweakUIX - Stable is just out!
-- https://github.com/builtbybel/TweakUIX -
-
-Issues adressed in this release of TIW11:
-- Maintenance release
-- Built-in support for build 22000.527
-- Minor fixes
+- Added Tweakomatic (Reloaded) app to ThisIsWin11 package.
+Only die-hard Microsoft fans might still know the original Tweakomatic. To invoke goto Automation > Script Editor section . I've pushed also a separate repo for tweakomatic here. NOTE: The tweakomatic app is only rolled out in the complete TIW11.zip package and is not distributed via the automatic update function.
