@@ -1,3 +1,6 @@
 
-- Added Tweakomatic (Reloaded) app to ThisIsWin11 package.
-Only die-hard Microsoft fans might still know the original Tweakomatic. To invoke goto Automation > Script Editor section . I've pushed also a separate repo for tweakomatic here. NOTE: The tweakomatic app is only rolled out in the complete TIW11.zip package and is not distributed via the automatic update function.
+- Added new Taskbar and Start menu, Desktop and My Computer trees to customization module aka OpenTweaks (this areas are dedicated to the original PowerToys TweakUI)
+- Improved OpenTweaks module
+- Added option to enable the most useful Windows 11 feature (#IronyOff), called "Desktop Stickers" to OpenTweaks
+- Added my experimental TweakUI replica app, called TweakUIX to ThisIsWin11 package
+- Minor fixes
