@@ -48,6 +48,9 @@ If you like the tool please consider supporting me via PayPal.
 
 - You can [buy me a coffee or donut, some banana, a shirt, BMW i4 or Taycan, the stars or whatever you want here](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donate@builtbybel.com&lc=US&item_name=%20Builtbybel&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
 
+## Credits
+Icon by [Alfredo Creates, CC Atribution](https://icon-icons.com/de/symbol/Unternehmens-social-media-logo-Marke-windows/82802)
+
  ---
 > [builtbybel](https://www.builtbybel.com) &nbsp;&middot;&nbsp;
 > GitHub [@builtbybel](https://github.com/builtbybel) &nbsp;&middot;&nbsp;
