@@ -1,4 +1,5 @@
 
+Don't forget to try the new [LoveWindowsAgain](https://github.com/builtbybel/LoveWindowsAgain) app
 - Added new Taskbar and Start menu, Desktop and My Computer trees to customization module aka OpenTweaks (this areas are dedicated to the original PowerToys TweakUI)
 - Improved OpenTweaks module
 - Added option to enable the most useful Windows 11 feature (#IronyOff), called "Desktop Stickers" to OpenTweaks
