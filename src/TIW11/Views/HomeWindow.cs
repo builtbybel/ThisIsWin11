@@ -91,8 +91,11 @@ namespace ThisIsWin11
             }
 
             btnRefresh.Text = "\uE72C";
+            btnRefresh.AccessibleName = "Refresh";
             btnBack.Text = "\uE76B";
+            btnBack.AccessibleName = "<Back";
             btnNext.Text = "\uE76C";
+            btnNext.AccessibleName = "Next>";
         }
 
         private void btnHome_Click(object sender, EventArgs e)
