@@ -1,7 +1,3 @@
 
-Don't forget to try the new [LoveWindowsAgain](https://github.com/builtbybel/LoveWindowsAgain) app
-- Added new Taskbar and Start menu, Desktop and My Computer trees to customization module aka OpenTweaks (this areas are dedicated to the original PowerToys TweakUI)
-- Improved OpenTweaks module
-- Added option to enable the most useful Windows 11 feature (#IronyOff), called "Desktop Stickers" to OpenTweaks
-- Added my experimental TweakUI replica app, called TweakUIX to ThisIsWin11 package
-- Minor fixes
+Sign of Life! The project is alive 🚀 Had a busy schedule the past couple of months.....I'm slowly waking up again
+ThisIsWin11 and LoveWindowsAgain App https://github.com/builtbybel/LoveWindowsAgain have now been merged into one package.
