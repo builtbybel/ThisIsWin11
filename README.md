@@ -41,6 +41,9 @@ scoop bucket add extras
 scoop install thisiswin11
 ```
 
+[A short video of Love Windows Again in action](https://replayable.io/replay/630bc9fe7cbbbd00678aa1e2)
+
+
 Alternatively, a classic installation is not necessary at all, because TIW11 is 100% portable. All you have to do is to extract the `TIW11.zip` archive and run the file provided as .exe
  
 ## Support
