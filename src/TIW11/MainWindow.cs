@@ -1,8 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using Microsoft.Win32;
 
 namespace ThisIsWin11
 {
@@ -13,9 +15,19 @@ namespace ThisIsWin11
 
         private bool isGlobalNavOpen = false;
 
+        [DllImport("DwmApi")]
+        private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
+
         public MainWindow()
         {
             InitializeComponent();
+
+            int lightmode = (int)Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", "1");
+            if (lightmode != 1)
+            {
+                if (DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0)
+                    DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4);
+            }
 
             this.MinimumSize = new Size(810, 755);
 
