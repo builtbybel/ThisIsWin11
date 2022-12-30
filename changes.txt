@@ -1,3 +1,4 @@
 
-Sign of Life! The project is alive. Had a busy schedule the past couple of months.....I'm slowly waking up again
-ThisIsWin11 and LoveWindowsAgain App https://github.com/builtbybel/LoveWindowsAgain have now been merged into one package.
+- Titlebar matches Windows now and has Mica behind it #175
+- Fix some links
+- Minor fixes
