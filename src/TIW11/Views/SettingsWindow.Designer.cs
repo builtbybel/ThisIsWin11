@@ -187,7 +187,7 @@ namespace ThisIsWin11
             this.lblAppMediaGitHub.Size = new System.Drawing.Size(336, 22);
             this.lblAppMediaGitHub.TabIndex = 166;
             this.lblAppMediaGitHub.TabStop = true;
-            this.lblAppMediaGitHub.Text = "GitHub (2.6k Starred)";
+            this.lblAppMediaGitHub.Text = "GitHub (3.6k Starred)";
             this.lblAppMediaGitHub.VisitedLinkColor = System.Drawing.Color.MediumVioletRed;
             this.lblAppMediaGitHub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAppMediaGitHub_LinkClicked);
             // 

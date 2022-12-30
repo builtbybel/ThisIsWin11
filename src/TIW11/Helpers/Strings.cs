@@ -31,6 +31,7 @@ namespace ThisIsWin11.Helpers
             public const string URL_GITLATEST = URL_GITREPO +"/releases/latest";
             public const string URL_GITCHANGELOG = "https://raw.githubusercontent.com/builtbybel/thisiswin11/main/changes.txt";
             public const string URL_POWERUI_PLUGS = "https://github.com/builtbybel/ThisIsWin11/tree/main/collections";
+            public const string URL_INFOABOUTAPP = "https://www.builtbybel.com/apps/thisiswin11";
         }
 
         public static class Paths
