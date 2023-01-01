@@ -556,5 +556,8 @@ namespace ThisIsWin11
 
         private void btnCustomButton_Click(object sender, EventArgs e)
             => Process.Start(Helpers.Strings.TweetIntent);
+
+        private void lnkMoreAboutApp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        => Process.Start(Helpers.Strings.Uri.URL_INFOABOUTAPP);
     }
 }

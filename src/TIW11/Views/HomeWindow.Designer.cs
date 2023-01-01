@@ -37,6 +37,7 @@ namespace ThisIsWin11
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblDesc = new System.Windows.Forms.Label();
             this.btnCustomButton = new ThisIsWin11.Controls.RoundedButton();
+            this.lnkMoreAboutApp = new System.Windows.Forms.LinkLabel();
             this.menuGetStarted = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuGetStartedInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.tt = new System.Windows.Forms.ToolTip(this.components);
@@ -174,6 +175,21 @@ namespace ThisIsWin11
             this.btnCustomButton.UseVisualStyleBackColor = false;
             this.btnCustomButton.Click += new System.EventHandler(this.btnCustomButton_Click);
             // 
+            // lnkMoreAboutApp
+            // 
+            this.lnkMoreAboutApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lnkMoreAboutApp.AutoSize = true;
+            this.lnkMoreAboutApp.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkMoreAboutApp.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lnkMoreAboutApp.LinkColor = System.Drawing.Color.DeepPink;
+            this.lnkMoreAboutApp.Location = new System.Drawing.Point(372, 779);
+            this.lnkMoreAboutApp.Name = "lnkMoreAboutApp";
+            this.lnkMoreAboutApp.Size = new System.Drawing.Size(168, 17);
+            this.lnkMoreAboutApp.TabIndex = 157;
+            this.lnkMoreAboutApp.TabStop = true;
+            this.lnkMoreAboutApp.Text = "Learn more about this app...";
+            this.lnkMoreAboutApp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkMoreAboutApp_LinkClicked);
+            // 
             // menuGetStarted
             // 
             this.menuGetStarted.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -293,6 +309,7 @@ namespace ThisIsWin11
             // pnlRight
             // 
             this.pnlRight.BackColor = System.Drawing.Color.White;
+            this.pnlRight.Controls.Add(this.lnkMoreAboutApp);
             this.pnlRight.Controls.Add(this.panel1);
             this.pnlRight.Controls.Add(this.lnkSubHeader);
             this.pnlRight.Controls.Add(this.pbView);
@@ -332,6 +349,7 @@ namespace ThisIsWin11
             this.menuGetStarted.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlRight.ResumeLayout(false);
+            this.pnlRight.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbView)).EndInit();
             this.ResumeLayout(false);
 
@@ -356,5 +374,6 @@ namespace ThisIsWin11
         public System.Windows.Forms.PictureBox pbView;
         private ThisIsWin11.Controls.RoundedButton btnConfigurator;
         private ThisIsWin11.Controls.RoundedButton btnCustomButton;
+        private System.Windows.Forms.LinkLabel lnkMoreAboutApp;
     }
 }

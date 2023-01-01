@@ -1,13 +1,18 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace ThisIsWin11
 {
     public partial class MainWindow : Form
     {
+        [DllImport("DwmApi")]
+        private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
+
         private Dictionary<string, Form> panelForms = new Dictionary<string, Form>();
         private Dictionary<string, Button> panelButtons = new Dictionary<string, Button>();
 
@@ -80,6 +85,15 @@ namespace ThisIsWin11
                 tt.SetToolTip(btnGlobalNav, "Close Navigation");
 
                 isGlobalNavOpen = false;
+            }
+
+            // Titlebar matches Windows now and has Mica behind it
+            int lightmode = (int)Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", "1");
+
+            if (lightmode != 1)
+            {
+                if (DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0)
+                    DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4);
             }
         }
 

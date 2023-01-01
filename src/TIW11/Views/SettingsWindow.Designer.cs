@@ -53,7 +53,7 @@ namespace ThisIsWin11
             this.menuFeedbackHub = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTheme = new System.Windows.Forms.LinkLabel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblSettingsMode = new System.Windows.Forms.Label();
             this.menuSettings.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -187,7 +187,7 @@ namespace ThisIsWin11
             this.lblAppMediaGitHub.Size = new System.Drawing.Size(336, 22);
             this.lblAppMediaGitHub.TabIndex = 166;
             this.lblAppMediaGitHub.TabStop = true;
-            this.lblAppMediaGitHub.Text = "GitHub (1.7k Starred)";
+            this.lblAppMediaGitHub.Text = "GitHub (3.6k Starred)";
             this.lblAppMediaGitHub.VisitedLinkColor = System.Drawing.Color.MediumVioletRed;
             this.lblAppMediaGitHub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAppMediaGitHub_LinkClicked);
             // 
@@ -382,21 +382,21 @@ namespace ThisIsWin11
             this.lblTheme.VisitedLinkColor = System.Drawing.Color.MediumVioletRed;
             this.lblTheme.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblTheme_LinkClicked);
             // 
-            // label2
+            // lblSettingsMode
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblSettingsMode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoEllipsis = true;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(60, 266);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 36);
-            this.label2.TabIndex = 182;
-            this.label2.Text = "Mode";
+            this.lblSettingsMode.AutoEllipsis = true;
+            this.lblSettingsMode.AutoSize = true;
+            this.lblSettingsMode.BackColor = System.Drawing.Color.White;
+            this.lblSettingsMode.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettingsMode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblSettingsMode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblSettingsMode.Location = new System.Drawing.Point(60, 266);
+            this.lblSettingsMode.Name = "lblSettingsMode";
+            this.lblSettingsMode.Size = new System.Drawing.Size(86, 36);
+            this.lblSettingsMode.TabIndex = 182;
+            this.lblSettingsMode.Text = "Mode";
             // 
             // SettingsWindow
             // 
@@ -405,7 +405,7 @@ namespace ThisIsWin11
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1210, 862);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblSettingsMode);
             this.Controls.Add(this.lblTheme);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSettingsMenu);
@@ -463,7 +463,7 @@ namespace ThisIsWin11
         private Controls.RoundedButton btnSettingsMenu;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.LinkLabel lblTheme;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblSettingsMode;
         public System.Windows.Forms.Button btnCheckForUpdates;
     }
 }

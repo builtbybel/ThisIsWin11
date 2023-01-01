@@ -14,7 +14,7 @@ namespace ThisIsWin11
 {
     public partial class CustomizeWindow : Form
     {
-        private static readonly string componentsVersion = "110";
+        private static readonly string componentsVersion = "150";
         private readonly string osWarning = "We could not recognize this system as Windows 11. Some settings are not tested on this operating system and could lead to malfunction.";
 
         private GetStarted.OS osInfo = new GetStarted.OS();
@@ -107,44 +107,57 @@ namespace ThisIsWin11
                 Checked = true,
             };
 
-            TreeNode personalization = new TreeNode("Personalization", new TreeNode[] {
-                new AssessmentNode(new OpenTweaks.Assessment.Personalization.AppsTheme()),
-                new AssessmentNode(new OpenTweaks.Assessment.Personalization.WindowsTheme()),
-                new AssessmentNode(new OpenTweaks.Assessment.Personalization.Transparency()),
-                new AssessmentNode(new OpenTweaks.Assessment.Personalization.SnapAssistFlyout()),
-                new AssessmentNode(new OpenTweaks.Assessment.Personalization.Widgets()),
-                new AssessmentNode(new OpenTweaks.Assessment.Personalization.WidgetsRemove()),
-                new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskbarAl()),
-                new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskbarSi()),
-                new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskbarMM()),
-                new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskbarSearch()),
-                new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskbarChat()),
-                new AssessmentNode(new OpenTweaks.Assessment.Personalization.TaskView()),
-                new AssessmentNode(new OpenTweaks.Assessment.Personalization.FileExplorer()),
-                new AssessmentNode(new OpenTweaks.Assessment.Personalization.MostUsedApps()),
-                new AssessmentNode(new OpenTweaks.Assessment.Personalization.HiddenFileFolder()),
-                new AssessmentNode(new OpenTweaks.Assessment.Personalization.HiddenFileExt()),
+            TreeNode explorer = new TreeNode("Explorer", new TreeNode[] {
+                new AssessmentNode(new OpenTweaks.Assessment.Explorer.FileExplorer()),
+                new AssessmentNode(new OpenTweaks.Assessment.Explorer.HiddenFileFolder()),
+                new AssessmentNode(new OpenTweaks.Assessment.Explorer.HiddenFileExt()),
             })
             {
                 Checked = true,
             };
 
-            TreeNode paranoia = new TreeNode("Paranoia", new TreeNode[] {
-                new AssessmentNode(new OpenTweaks.Assessment.Paranoia.CleanMgr()),
-                new AssessmentNode(new OpenTweaks.Assessment.Paranoia.WindowsSpyBlocker()),
-                new AssessmentNode(new OpenTweaks.Assessment.Paranoia.ShutUp11()),
+            System.Windows.Forms.TreeNode taskbar = new System.Windows.Forms.TreeNode("Taskbar and Start menu", new System.Windows.Forms.TreeNode[] {
+                new AssessmentNode(new OpenTweaks.Assessment.Taskbar.TaskbarAl()),
+                new AssessmentNode(new OpenTweaks.Assessment.Taskbar.TaskbarSi()),
+                new AssessmentNode(new OpenTweaks.Assessment.Taskbar.TaskbarMM()),
+                new AssessmentNode(new OpenTweaks.Assessment.Taskbar.TaskbarSearch()),
+                new AssessmentNode(new OpenTweaks.Assessment.Taskbar.TaskbarChat()),
+                new AssessmentNode(new OpenTweaks.Assessment.Taskbar.TaskView()),
+                new AssessmentNode(new OpenTweaks.Assessment.Taskbar.MostUsedApps()),
             })
             {
                 Checked = true,
             };
 
-            TreeNode system = new TreeNode("System", new TreeNode[] {
+            System.Windows.Forms.TreeNode desktop = new System.Windows.Forms.TreeNode("Desktop", new System.Windows.Forms.TreeNode[] {
+                new AssessmentNode(new OpenTweaks.Assessment.Desktop.AppsTheme()),
+                new AssessmentNode(new OpenTweaks.Assessment.Desktop.WindowsTheme()),
+                new AssessmentNode(new OpenTweaks.Assessment.Desktop.Transparency()),
+                new AssessmentNode(new OpenTweaks.Assessment.Desktop.SnapAssistFlyout()),
+                new AssessmentNode(new OpenTweaks.Assessment.Desktop.Widgets()),
+                new AssessmentNode(new OpenTweaks.Assessment.Desktop.WidgetsRemove()),
+                new AssessmentNode(new OpenTweaks.Assessment.Desktop.Stickers()),
+            })
+            {
+                Checked = true,
+            };
+
+            System.Windows.Forms.TreeNode system = new System.Windows.Forms.TreeNode("My Computer", new System.Windows.Forms.TreeNode[] {
                 new AssessmentNode(new OpenTweaks.Assessment.System.Fax()),
                 new AssessmentNode(new OpenTweaks.Assessment.System.XPSWriter()),
+                new AssessmentNode(new OpenTweaks.Assessment.System.RemoveW11Watermark()),
                 new AssessmentNode(new OpenTweaks.Assessment.System.EnableWSL()),
                 new AssessmentNode(new OpenTweaks.Assessment.System.InstallWSA()),
                 new AssessmentNode(new OpenTweaks.Assessment.System.HyperV()),
                 new AssessmentNode(new OpenTweaks.Assessment.System.TeamsAutostart()),
+             })
+            {
+                Checked = true,
+            };
+            TreeNode paranoia = new TreeNode("Paranoia", new TreeNode[] {
+                new AssessmentNode(new OpenTweaks.Assessment.Paranoia.CleanMgr()),
+                new AssessmentNode(new OpenTweaks.Assessment.Paranoia.WindowsSpyBlocker()),
+                new AssessmentNode(new OpenTweaks.Assessment.Paranoia.ShutUp11()),
             })
             {
                 Checked = true,
@@ -216,9 +229,11 @@ namespace ThisIsWin11
             root.Nodes.AddRange(new TreeNode[]
             {
                 settings,
-                personalization,
-                paranoia,
+                explorer,
+                taskbar,
+                desktop,
                 system,
+                paranoia,
                 update,
                 gaming,
                 privacy,

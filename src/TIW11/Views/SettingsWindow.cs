@@ -41,6 +41,7 @@ namespace ThisIsWin11
             lblHeartFillEmoji.BackColor =
             lblSettingsSubDev.BackColor =
             lblSettingsAppMain.BackColor =
+            lblSettingsMode.BackColor =
             rtbSettingsAbout.BackColor =
                 colorBackground;
 
@@ -52,6 +53,7 @@ namespace ThisIsWin11
             lblSettingsApp.ForeColor =
             lblSettingsAppMain.ForeColor =
             rtbSettingsAbout.ForeColor =
+             lblSettingsMode.ForeColor =
                 colorForeground;
 
             btnAppMediaGitHubIssues.BackColor = colorBackgroundButtonContrast;

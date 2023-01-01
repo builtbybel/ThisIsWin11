@@ -22,7 +22,7 @@ ThisIsWin11 lets you customize Windows 11 all in one place. It is slowly expande
 - **OpenTweaks** allows it to customize the more obscure settings of Windows 11 system's UI. It replaces Microsoft PowerToys **[TweakUI](https://en.wikipedia.org/wiki/Tweak_UI)** _(available from Windows 95 - Windows XP)_ which was no longer integrated into the relaunched PowerToys as of Windows 10.
 - **PumpedApp** makes it possible to remove unwanted features and apps from Windows 11 such as the Camera and Alarm apps, and other preinstalled bloat that you can live without.
 - **Packages** powered by [Windows Package Manager](https://github.com/microsoft/winget-cli) allows you to create your own custom install packages.
-- **PowerUI** allows you applying automation capabilities based on PowerShell and community scripts.
+- **PowerUI** allows you to apply automation capabilities based on PowerShell and community scripts.
  - **Extensions** allows you creating custom tweaks
   
  ## System Requirements
@@ -47,6 +47,9 @@ Alternatively, a classic installation is not necessary at all, because TIW11 is 
 If you like the tool please consider supporting me via PayPal.
 
 - You can [buy me a coffee or donut, some banana, a shirt, BMW i4 or Taycan, the stars or whatever you want here](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donate@builtbybel.com&lc=US&item_name=%20Builtbybel&no_note=0&cn=&currency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted)
+
+## Credits
+Icon by [Alfredo Creates, CC Atribution](https://icon-icons.com/de/symbol/Unternehmens-social-media-logo-Marke-windows/82802)
 
  ---
 > [builtbybel](https://www.builtbybel.com) &nbsp;&middot;&nbsp;

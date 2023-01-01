@@ -1,3 +1,4 @@
 
-- Added Tweakomatic (Reloaded) app to ThisIsWin11 package.
-Only die-hard Microsoft fans might still know the original Tweakomatic. To invoke goto Automation > Script Editor section . I've pushed also a separate repo for tweakomatic here. NOTE: The tweakomatic app is only rolled out in the complete TIW11.zip package and is not distributed via the automatic update function.
+- Titlebar matches Windows now and has Mica behind it #175
+- Fix some links
+- Minor fixes
