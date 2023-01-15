@@ -1,0 +1,29 @@
+name: Request a Feature
+description: Create a report to help us improve (search for duplicates first)
+labels: enhancement
+body:
+ - type: textarea
+   attributes:
+    label: Feature description
+    description: Explain clearly
+    placeholder: |
+     Tell us here about the feature
+   validations:
+    required: true
+ - type: textarea
+   attributes:
+    label: Logs
+    description: Provide logs
+    placeholder: |
+     example_log.txt
+   validations:
+    required: false
+ - type: checkboxes
+   attributes:
+    label: Issue tracker rule checks (please read carefully)
+    options:
+     - label: "I have checked that this feature <a href='https://github.com/builtbybel/ThisIsWin11/issues' target='_blank'>is not already asked.</a>"
+       required: true
+     - label: "I have checked that this feature is not already implemented"
+       required: true
+       
