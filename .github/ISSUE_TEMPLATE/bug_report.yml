@@ -1,0 +1,46 @@
+name: Bug report
+description: Create a report to help us improve (search for duplicates first)
+labels: bug
+body:
+ - type: textarea
+   attributes:
+    label: Issue description
+    description: Explain clearly and unambiguously what went wrong
+    placeholder: |
+      Tell us here about the bug/problem
+   validations:
+    required: true
+ - type: textarea
+   attributes:
+    label: How to reproduce this issue?
+    description: Try to explain what you did for the bug to occur. A good explanation of steps to reproduce helps us locate the bug faster. If applicable, add screenshots to help explain your problem.
+    placeholder: |
+      Step 1: ...
+      Step 2: ...
+      ...
+   validations:
+     required: true
+ - type: textarea
+   attributes:
+    label: Details
+    description: To understand the issue, we need some details of your setup & system
+    placeholder: |
+       Version: v1.12.2 / v1.9 ...]
+   validations:
+     required: true
+ - type: textarea
+   attributes:
+    label: Logs
+    description: 
+    placeholder: |
+      [example_log.txt / example_log.md ...]
+   validations:
+    required: false
+ - type: checkboxes
+   attributes:
+    label: Issue tracker rule checks (please read carefully)
+    options:
+     - label: "I have checked that my problem <a href='https://github.com/builtbybel/ThisIsWin11/issues' target='_blank'>is not already reported</a>"
+       required: true
+     - label: "I have checked that my problem is not already fixed"
+       required: true
