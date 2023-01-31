@@ -1,4 +1,2 @@
 
-- Titlebar matches Windows now and has Mica behind it #175
-- Fix some links
-- Minor fixes
+This release of ThisIsWin11 fixes some minor issues and has been repackaged with the new Debloos app. This univeral Debloater and PC Manager is going to be sooner or later the successor of ThisIsWin11.
