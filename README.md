@@ -7,23 +7,23 @@
 
 ## ... well
 # ThisIsWin11
-### which helps you know, set up and customize Windows 11.
+### Which helps you know, set up and customize Windows 11.
 
 ![screenshot](https://github.com/builtbybel/ThisIsWin11/blob/main/assets/tiw11.png)
- _This is not a product made by Microsoft and it's in no way related to them._
+ _ This is not a product made by Microsoft, and it's in no way related to them._
  
 
 ## Features 
-ThisIsWin11 lets you customize Windows 11 all in one place. It is slowly expanded as a practical all-rounder for Windows 11 replacing some discontinued PowerToys components and adding additional ones.
+ThisIsWin11 lets you customize Windows 11 all in one place. It is slowly expanded as a practical all-rounder for Windows 11, replacing some discontinued PowerToys components and adding additional ones.
  
 **Included components**
 
-- **GetStarted** ThisIsWin11 is starting off with a helpful introduction to what you can find in Windows 11. This component extends Microsoft's Get Started app.
-- **OpenTweaks** allows it to customize the more obscure settings of Windows 11 system's UI. It replaces Microsoft PowerToys **[TweakUI](https://en.wikipedia.org/wiki/Tweak_UI)** _(available from Windows 95 - Windows XP)_ which was no longer integrated into the relaunched PowerToys as of Windows 10.
-- **PumpedApp** makes it possible to remove unwanted features and apps from Windows 11 such as the Camera and Alarm apps, and other preinstalled bloat that you can live without.
+- **GetStarted** ThisIsWin11 starts with a helpful introduction to what you can find in Windows 11. This component extends Microsoft's Get Started app.
+- **OpenTweaks** allows it to customize the more obscure settings of the Windows 11 system's UI. It replaces Microsoft PowerToys **[TweakUI](https://en.wikipedia.org/wiki/Tweak_UI)** _(available from Windows 95 - Windows XP)_, which was no longer integrated into the relaunched PowerToys as of Windows 10.
+- **PumpedApp** makes it possible to remove unwanted features and apps from Windows 11, such as the Camera and Alarm apps and other preinstalled bloat that you can live without.
 - **Packages** powered by [Windows Package Manager](https://github.com/microsoft/winget-cli) allows you to create your own custom install packages.
 - **PowerUI** allows you to apply automation capabilities based on PowerShell and community scripts.
- - **Extensions** allows you creating custom tweaks
+ - **Extensions** allow you to create custom tweaks.
   
  ## System Requirements
 - Windows 11 ONLY (do NOT use this app on Windows 10)
@@ -41,7 +41,7 @@ scoop bucket add extras
 scoop install thisiswin11
 ```
 
-Alternatively, a classic installation is not necessary at all, because TIW11 is 100% portable. All you have to do is to extract the `TIW11.zip` archive and run the file provided as .exe
+Alternatively, a classic installation is unnecessary because TIW11 is 100% portable. All you have to do is to extract the `TIW11.zip` archive and run the file provided as .exe
  
 ## Support
 If you like the tool please consider supporting me via PayPal.
